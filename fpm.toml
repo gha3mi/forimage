@@ -15,3 +15,18 @@ library = false
 implicit-typing = false
 implicit-external = false
 source-form = "free"
+
+[[example]]
+name = "example1"
+source-dir = "example"
+main = "example1.f90"
+
+[[example]]
+name = "example2"
+source-dir = "example"
+main = "example2.f90"
+
+[[example]]
+name = "example3"
+source-dir = "example"
+main = "example3.f90"
