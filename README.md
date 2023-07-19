@@ -1,8 +1,8 @@
 # ForImage
-A Fortran library for reading and writing images. 
+
+A Fortran library for reading and writing images.
 
 ![ForImage](media/logo.png)
-
 
 - [ForImage](#forimage)
   - [Todo](#todo)
@@ -11,7 +11,6 @@ A Fortran library for reading and writing images.
   - [Documentation](#documentation)
   - [Running examples](#running-examples)
   - [Contributing](#contributing)
-
 
 ## Todo
 
@@ -24,13 +23,15 @@ A Fortran library for reading and writing images.
 
 Please note that ForImage is currently under development.
 
-
 ## Installation
 
 ### fpm
-ForImage can be cloned and then built using [fpm](https://github.com/fortran-lang/fpm), following the instructions provided in the documentation available on Fortran Package Manager.
 
-```bash
+ForImage can be cloned and then built using
+[fpm](https://github.com/fortran-lang/fpm), following the instructions provided
+in the documentation available on Fortran Package Manager.
+
+```shell
 git clone https://github.com/gha3mi/forimage.git
 cd forimage
 fpm install --perfix .
@@ -44,35 +45,43 @@ forimage = {git="https://github.com/gha3mi/forimage.git"}
 ```
 
 ## Documentation
-To generate the documentation for the `ForImage` module using [ford](https://github.com/Fortran-FOSS-Programmers/ford) run the following command:
-```bash
+
+To generate the documentation for the `ForImage` module using
+[ford](https://github.com/Fortran-FOSS-Programmers/ford) run the following
+command:
+
+```shell
 ford ford.yml
 ```
 
 ## Running examples
 
-To run the examples using `fpm`, you can use response files for specific compilers:
+To run the examples using `fpm`, you can use response files for specific
+compilers:
 
 - For Intel Fortran Compiler (ifort):
-```bash
-fpm @ifort
-```
+
+  ```shell
+  fpm @ifort
+  ```
 
 - For Intel Fortran Compiler (ifx):
-```bash
-fpm @ifx
-```
+
+  ```shell
+  fpm @ifx
+  ```
 
 - For NVIDIA Compiler (nvfortran):
-```bash
-fpm @nvidia
-```
+
+  ```shell
+  fpm @nvidia
+  ```
 
 - For GNU Fortran Compiler (gfortran):
-```bash
-fpm @gfortran
-```
 
+  ```shell
+  fpm @gfortran
+  ```
 
 ## Contributing
 
