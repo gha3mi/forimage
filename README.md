@@ -34,7 +34,7 @@ in the documentation available on Fortran Package Manager.
 ```shell
 git clone https://github.com/gha3mi/forimage.git
 cd forimage
-fpm install --perfix .
+fpm install --prefix .
 ```
 
 Or you can easily include this package as a dependency in your `fpm.toml` file.
@@ -62,25 +62,25 @@ compilers:
 - For Intel Fortran Compiler (ifort):
 
   ```shell
-  fpm @ifort
+  fpm @example-ifort
   ```
 
 - For Intel Fortran Compiler (ifx):
 
   ```shell
-  fpm @ifx
+  fpm @example-ifx
   ```
 
 - For NVIDIA Compiler (nvfortran):
 
   ```shell
-  fpm @nvidia
+  fpm @example-nvidia
   ```
 
 - For GNU Fortran Compiler (gfortran):
 
   ```shell
-  fpm @gfortran
+  fpm @example-gfortran
   ```
 
 ## Contributing
