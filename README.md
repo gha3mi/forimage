@@ -41,7 +41,7 @@ To use ForImage, follow the steps below:
 
 - **Build using the Fortran Package Manager (fpm):**
 
-   ForImage can be built using the Fortran Package Manager (fpm).
+   ForImage can be built using [fpm](https://github.com/fortran-lang/fpm).
    Make sure you have fpm installed, and then execute the following command:
 
    ```shell
