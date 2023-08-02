@@ -1,2 +1,0 @@
-@ifort
-options run --example --all --compiler ifort --flag "-Ofast -xHost -mtune=native"
