@@ -4,11 +4,11 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-      <meta name="description" content="Documentation for forimage">
+      <meta name="description" content="Documentation for ForImage">
     <meta name="author" content="Seyed Ali Ghasemi" >
     <link rel="icon" href="./favicon.png">
 
-    <title> forimage </title>
+    <title> ForImage </title>
 
     <link href="./css/bootstrap.min.css" rel="stylesheet">
     <link href="./css/pygments.css" rel="stylesheet">
@@ -39,7 +39,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="./index.html">forimage <small>v0.1.0</small></a>
+          <a class="navbar-brand" href="./index.html">ForImage <small>0.1.0</small></a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
@@ -51,10 +51,11 @@
                  Contents <span class="caret"></span>
               </a>
               <ul class="dropdown-menu">
-                    <li><a href="./sourcefile/forimage.f90.html">Source File</a></li>
+                    <li><a href="./lists/files.html">Source Files</a></li>
                   <li><a href="./lists/modules.html">Modules</a></li>
                   <li><a href="./lists/procedures.html">Procedures</a></li>
                   <li><a href="./lists/types.html">Derived Types</a></li>
+                  <li><a href="./lists/programs.html">Programs</a></li>
               </ul>
             </li>
                 <li class="visible-xs hidden-sm visible-lg">
@@ -68,6 +69,9 @@
               </li>
               <li class="visible-xs hidden-sm visible-lg">
                 <a href="./lists/types.html">Derived Types</a>
+              </li>
+              <li class="visible-xs hidden-sm visible-lg">
+                <a href="./lists/programs.html">Programs</a>
               </li>
           </ul>
             <form action="./search.html" class="navbar-form navbar-right" role="search">
@@ -94,8 +98,73 @@
 
       <div class="row" id='text'>
         <div class="col-md-8">
-          <h1>forimage</h1>
-          
+          <h1>ForImage</h1>
+          <p><a href="https://github.com/gha3mi/forimage"><img alt="GitHub" src="https://img.shields.io/badge/GitHub-ForImage-blue.svg?style=social&amp;logo=github"></a>
+<a href="https://github.com/gha3mi/forimage/releases"><img alt="Version" src="https://img.shields.io/github/v/tag/gha3mi/forimage?color=blue&amp;logo=github&amp;style=flat"></a>
+<a href="https://gha3mi.github.io/forimage/"><img alt="Documentation" src="https://img.shields.io/badge/ford-Documentation%20-blueviolet.svg"></a>
+<a href="https://github.com/gha3mi/forimage/blob/main/LICENSE"><img alt="License" src="https://img.shields.io/github/license/gha3mi/forimage?color=green"></a>
+<a href="https://github.com/gha3mi/forimage/actions/workflows/ci.yml"><img alt="Build" src="https://github.com/gha3mi/forimage/actions/workflows/ci.yml/badge.svg"></a></p>
+<p><img alt="ForImage" src="https://github.com/gha3mi/forimage/raw/main/media/logo.png" width="750"></p>
+<p><strong>ForImage</strong>: A Fortran library for reading and writing images.</p>
+<ul>
+<li><a href="#todo">Todo</a></li>
+<li><a href="#fpm-dependency">fpm dependency</a></li>
+<li><a href="#how-to-run-examples">How to run examples</a></li>
+<li><a href="#api-documentation">API documentation</a></li>
+<li><a href="#contributing">Contributing</a></li>
+</ul>
+<h2>Todo</h2>
+<ul>
+<li>[x] pbm (ASCII/plain)</li>
+<li>[x] pgm (ASCII/plain)</li>
+<li>[x] ppm (ASCII/plain)</li>
+<li>[ ] pbm (binary/raw)</li>
+<li>[ ] pgm (binary/raw)</li>
+<li>[ ] ppm (binary/raw)</li>
+</ul>
+<p>Please note that ForImage is currently under development.</p>
+<h2>fpm dependency</h2>
+<p>If you want to use <code>ForImage</code> as a dependency in your own fpm project,
+you can easily include it by adding the following line to your <code>fpm.toml</code> file:</p>
+<div class="codehilite"><pre><span></span><code><span class="k">[dependencies]</span><span class="w"></span>
+<span class="n">forimage</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="n">git</span><span class="o">=</span><span class="s">&quot;https://github.com/gha3mi/forimage.git&quot;</span><span class="p">}</span><span class="w"></span>
+</code></pre></div>
+
+<h2>How to run examples</h2>
+<p><strong>Clone the repository:</strong></p>
+<p>You can clone the <code>ForImage</code> repository from GitHub using the following command:</p>
+<div class="codehilite"><pre><span></span><code>git clone https://github.com/gha3mi/formatmul.git
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code><span class="nb">cd</span> formatmul
+</code></pre></div>
+
+<p>To run the examples using <code>fpm</code>, you can use response files for specific
+compilers:</p>
+<p><strong>For Intel Fortran Compiler (ifort):</strong></p>
+<p><code>shell
+  fpm @ifort</code></p>
+<p><strong>For Intel Fortran Compiler (ifx):</strong></p>
+<p><code>shell
+  fpm @ifx</code></p>
+<p><strong>For NVIDIA Compiler (nvfortran):</strong></p>
+<p><code>shell
+  fpm @nvidia</code></p>
+<p><strong>For GNU Fortran Compiler (gfortran):</strong></p>
+<p><code>shell
+  fpm @gfortran</code></p>
+<h2>API documentation</h2>
+<p>The most up-to-date API documentation for the master branch is available
+<a href="https://gha3mi.github.io/forimage/">here</a>.
+To generate the API documentation for <code>ForImage</code> using
+<a href="https://github.com/Fortran-FOSS-Programmers/ford">ford</a> run the following
+command:</p>
+<div class="codehilite"><pre><span></span><code>ford ford.yml
+</code></pre></div>
+
+<h2>Contributing</h2>
+<p>Contributions to <code>ForImage</code> are welcome!
+If you find any issues or would like to suggest improvements, please open an issue.</p>
         </div>
         <div class="col-md-4">
 	  <div class="well">
@@ -114,7 +183,7 @@
           <div class="col-xs-6 col-sm-3">
             <div>
               <h3>Source Files</h3>
-              <ul><li><a href='./sourcefile/forimage.f90.html'>forimage.f90</a></li></ul>
+              <ul><li><a href='./sourcefile/example1.f90.html'>example1.f90</a></li><li><a href='./sourcefile/example2.f90.html'>example2.f90</a></li><li><a href='./sourcefile/example3.f90.html'>example3.f90</a></li><li><a href='./sourcefile/forimage.f90.html'>forimage.f90</a></li></ul>
             </div>
             <div>
               <ul>
@@ -161,14 +230,14 @@
     <footer>
       <div class="container">
         <div class="row">
-          <div class="col-xs-6 col-md-6"><p>forimage was developed by Seyed Ali Ghasemi<br>&copy; 2023 
+          <div class="col-xs-6 col-md-6"><p>ForImage was developed by Seyed Ali Ghasemi<br>&copy; 2023 
 </p>
           </div>
           <div class="col-xs-6 col-md-6">
             <p class="text-right">
               Documentation generated by
               <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
- on 2023-08-02T19:04:41.114556             </p>
+ on 2023-08-02T19:07:42.802824             </p>
           </div>
         </div>
         <br>
