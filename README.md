@@ -39,7 +39,7 @@ forimage = {git="https://github.com/gha3mi/forimage.git"}
 
 **Clone the repository:**
 
-You can clone the `ForMatmul` repository from GitHub using the following command:
+You can clone the `ForImage` repository from GitHub using the following command:
 
 ```shell
 git clone https://github.com/gha3mi/formatmul.git
