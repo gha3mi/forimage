@@ -80,7 +80,7 @@ contains
       this%encoding = encoding
 
       select case (encoding)
-      case ('raw')
+      case ('binary','raw')
          
          print*, 'Error: not implementet yet!'
 
@@ -93,7 +93,7 @@ contains
 
          end select
 
-      case ('plain')
+      case ('ascii','plain')
 
          select case (file_format)
          case ('pbm')
@@ -150,7 +150,7 @@ contains
       character(2)                        :: magic_number
 
       select case (encoding)
-      case ('plain')
+      case ('ascii','plain')
          select case (file_format)
          case ('pbm')
             magic_number = 'P1'
@@ -159,7 +159,7 @@ contains
          case ('ppm')
             magic_number = 'P3'
          end select
-      case ('raw')
+      case ('binary','raw')
          error stop 'Error: not implementet yet!'
          select case (file_format)
          case ('pbm')

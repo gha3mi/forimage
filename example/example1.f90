@@ -16,10 +16,10 @@ program example1
     px(9,:)  = [0,0,0,0,0,0]
     px(10,:) = [0,0,0,0,0,0]
 
-    call ex1%set_pnm(encoding='plain', file_format='pbm', width=10, height=6, comment='example 1', pixels=px)
+    call ex1%set_pnm(encoding='ascii', file_format='pbm', width=10, height=6, comment='example 1', pixels=px)
     call ex1%export_pnm('pnm_files/example1')
 
-    call ex1%import_pnm('pnm_files/example1','pbm','plain')
+    call ex1%import_pnm('pnm_files/example1','pbm','ascii')
     call ex1%export_pnm('pnm_files/example1_ex')
 
     call ex1%dlloc()

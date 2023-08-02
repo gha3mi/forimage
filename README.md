@@ -17,9 +17,9 @@ A Fortran library for reading and writing images.
 - [x] pbm (ASCII/plain)
 - [x] pgm (ASCII/plain)
 - [x] ppm (ASCII/plain)
-- [ ] pbm (Binary/raw)
-- [ ] pgm (Binary/raw)
-- [ ] ppm (Binary/raw)
+- [ ] pbm (binary/raw)
+- [ ] pgm (binary/raw)
+- [ ] ppm (binary/raw)
 
 Please note that ForImage is currently under development.
 
