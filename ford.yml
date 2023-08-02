@@ -1,11 +1,12 @@
-project:             forimage
-version:             v0.1.0
+project:             ForImage
+version:             {!VERSION!}
 year:                2023
 project_github:      https://github.com/gha3mi/forimage
 author:              Seyed Ali Ghasemi
 email:               info@gha3mi.com
 github:              https://github.com/gha3mi
 src_dir:             ./src
+                     ./example
 output_dir:          ./doc
 source:              true
 graph:               true
@@ -15,4 +16,7 @@ display:             public
                      private
                      protected
 print_creation_date: true
+favicon:             ./media/logo.png
+media_dir:           ./media
 
+{!README.md!}
