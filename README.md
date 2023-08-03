@@ -67,7 +67,7 @@ compilers:
 **For NVIDIA Compiler (nvfortran):**
 
   ```shell
-  fpm @nvidia
+  fpm @nvfortran
   ```
 
 **For GNU Fortran Compiler (gfortran):**
