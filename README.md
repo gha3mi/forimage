@@ -42,11 +42,11 @@ forimage = {git="https://github.com/gha3mi/forimage.git"}
 You can clone the `ForImage` repository from GitHub using the following command:
 
 ```shell
-git clone https://github.com/gha3mi/formatmul.git
+git clone https://github.com/gha3mi/forimage.git
 ```
 
 ```shell
-cd formatmul
+cd forimage
 ```
 
 To run the examples using `fpm`, you can use response files for specific
