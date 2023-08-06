@@ -134,7 +134,8 @@ contains
 
 !===============================================================================
 !> author: Seyed Ali Ghasemi
-pure subroutine set_pnm(this, encoding, file_format,width,height,max_color,comment,pixels)
+   pure subroutine set_pnm(this, encoding, file_format, width, height, &
+                           max_color, comment, pixels)
       class(format_pnm), intent(inout)     :: this
       integer, intent(in)                  :: width
       integer, intent(in)                  :: height
@@ -181,11 +182,14 @@ pure subroutine set_pnm(this, encoding, file_format,width,height,max_color,comme
       class(format_pnm), intent(inout) :: this
       select case (this%magic_number)
       case ('P1')
- if (.not.allocated(this%pixels)) allocate(this%pixels(this%height, this%width))
+         if (.not. allocated(this%pixels)) allocate (this%pixels(this%height, &
+                                                                 this%width))
       case ('P2')
- if (.not.allocated(this%pixels)) allocate(this%pixels(this%height, this%width))
+         if (.not. allocated(this%pixels)) allocate (this%pixels(this%height, &
+                                                                 this%width))
       case ('P3')
-if (.not.allocated(this%pixels)) allocate(this%pixels(this%height, 3*this%width))
+         if (.not. allocated(this%pixels)) allocate (this%pixels(this%height, &
+                                                                 3*this%width))
       end select
    end subroutine allocate_pixels
 !===============================================================================
@@ -237,7 +241,8 @@ if (.not.allocated(this%pixels)) allocate(this%pixels(this%height, 3*this%width)
 
 !===============================================================================
 !> author: Seyed Ali Ghasemi
-elemental pure subroutine set_header(this, magic_number, width, height, comment, max_color)
+   elemental pure subroutine set_header(this, magic_number, width, height, &
+                                        comment, max_color)
       class(format_pnm), intent(inout) :: this
       character(*), intent(in)         :: magic_number
       integer, intent(in)              :: width
@@ -289,7 +294,8 @@ elemental pure subroutine set_header(this, magic_number, width, height, comment,
       character(*), intent(in)         :: file_name
       integer :: nunit, i
 
-   open (newunit=nunit, file=file_name//'.'//this%file_format, status='replace')
+      open (newunit=nunit, file=file_name//'.'//this%file_format, &
+            status='replace')
       write (nunit, '(a)') this%magic_number
       write (nunit, '(a,a)') '# ', this%comment
       write (nunit, '(g0,1x,g0)') this%width, this%height
