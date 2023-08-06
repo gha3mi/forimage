@@ -37,6 +37,57 @@ contains
 
 !===============================================================================
 !> author: Seyed Ali Ghasemi
+   elemental pure subroutine allocate_pixels(this)
+      class(format_pnm), intent(inout) :: this
+      select case (this%magic_number)
+      case ('P1')
+         if (.not. allocated(this%pixels)) allocate (this%pixels(this%height, &
+                                                                 this%width))
+      case ('P2')
+         if (.not. allocated(this%pixels)) allocate (this%pixels(this%height, &
+                                                                 this%width))
+      case ('P3')
+         if (.not. allocated(this%pixels)) allocate (this%pixels(this%height, &
+                                                                 3*this%width))
+      end select
+   end subroutine allocate_pixels
+!===============================================================================
+
+
+!===============================================================================
+!> author: Seyed Ali Ghasemi
+   elemental pure subroutine deallocate_pnm(this)
+      class(format_pnm), intent(inout)    :: this
+      if (allocated(this%pixels)) deallocate (this%pixels)
+   end subroutine deallocate_pnm
+!===============================================================================
+
+
+!===============================================================================
+!> author: Seyed Ali Ghasemi
+   impure subroutine export_pnm(this, file_name)
+      class(format_pnm), intent(inout) :: this
+      character(*), intent(in)         :: file_name
+      integer :: nunit, i
+
+      open (newunit=nunit, file=file_name//'.'//this%file_format, &
+            status='replace')
+      write (nunit, '(a)') this%magic_number
+      write (nunit, '(a,a)') '# ', this%comment
+      write (nunit, '(g0,1x,g0)') this%width, this%height
+      if (this%file_format /= 'pbm') write (nunit, '(g0)') this%max_color
+      do i = 1, size(this%pixels, 1)
+         write (nunit, '(*(g0,1x))') this%pixels(i, :)
+      end do
+      close (nunit)
+   end subroutine export_pnm
+!===============================================================================
+
+
+! still unsort, start:
+
+!===============================================================================
+!> author: Seyed Ali Ghasemi
    elemental pure subroutine set_file_format(this, file_format)
       class(format_pnm), intent(inout) :: this
       character(3), intent(in)         :: file_format
