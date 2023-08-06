@@ -1,0 +1,45 @@
+# Configuration file for work of fprettify on source code.
+#
+# This file determines how to maintain white space, indentations, use of
+# upper/lower case.  Though some of them represent default levels of the
+# linter's parameters (as by version 0.3.7), all of them are compiled in
+# the program's sequence when requesting help by `./fprettify -h`.  The
+# style is applied by
+#
+# ```shell
+# fprettify -c ./fprettify.rc source.f90
+# ```
+# 
+# to overwrite the old form of file `source.f90`.
+#
+# The constraint of 80 characters per line was set to ease visual access
+# of ford's multicolumn html, reading git logs/check changes by vimdiff.
+
+indent=3
+line-length=80
+whitespace=2
+whitespace-comma=True
+whitespace-assignment=True
+
+# Control whitespace around '::' declarations
+whitespace-decl=True
+enable-decl=False
+
+whitespace-relational=True
+whitespace-logical=True
+whitespace-plusminus=True
+whitespace-multdiv=False
+whitespace-print=True
+
+whitespace-type=False
+whitespace-intrinsics=True
+strict-indent=True
+enable-replacements=False
+c-relations=False
+
+case=[1,1,1,1]
+strip-comments=False
+disable-fypp=False
+disable-indent-mod=False
+
+# END
