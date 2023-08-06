@@ -16,20 +16,20 @@ module forimage
       character(3)                          :: file_format
       character(5)                          :: encoding
    contains
-      procedure :: set_format
-      procedure :: set_file_format
-      procedure :: set_magicnumber
-      procedure :: set_width
-      procedure :: set_height
-      procedure :: set_comment
-      procedure :: set_max_color
-      procedure :: set_header
       procedure :: allocate_pixels
-      procedure :: set_pixels
-      procedure :: export_pnm
-      procedure :: set_pnm
-      procedure :: import_pnm
       procedure :: dlloc => deallocate_pnm
+      procedure :: export_pnm
+      procedure :: import_pnm
+      procedure :: set_comment
+      procedure :: set_file_format
+      procedure :: set_format
+      procedure :: set_header
+      procedure :: set_height
+      procedure :: set_magicnumber
+      procedure :: set_max_color
+      procedure :: set_pixels
+      procedure :: set_pnm
+      procedure :: set_width
    end type format_pnm
 !===============================================================================
 
