@@ -7,14 +7,14 @@ module forimage
 
    !===============================================================================
    type format_pnm
-      character(2)                         :: magic_number
-      integer                              :: width
-      integer                              :: height
-      character(70)                        :: comment
-      integer                              :: max_color
+      character(2)                          :: magic_number
+      integer                               :: width
+      integer                               :: height
+      character(70)                         :: comment
+      integer                               :: max_color
       integer, dimension(:, :), allocatable :: pixels
-      character(3)                         :: file_format
-      character(5)                         :: encoding
+      character(3)                          :: file_format
+      character(5)                          :: encoding
    contains
       procedure :: set_format
       procedure :: set_file_format
@@ -135,15 +135,15 @@ contains
    !===============================================================================
    !> author: Seyed Ali Ghasemi
    pure subroutine set_pnm(this, encoding, file_format,width,height,max_color,comment,pixels)
-      class(format_pnm), intent(inout)    :: this
-      integer, intent(in)                 :: width
-      integer, intent(in)                 :: height
-      character(*), intent(in)            :: comment
-      integer, optional, intent(in)                 :: max_color
+      class(format_pnm), intent(inout)     :: this
+      integer, intent(in)                  :: width
+      integer, intent(in)                  :: height
+      character(*), intent(in)             :: comment
+      integer, optional, intent(in)        :: max_color
       integer, dimension(:, :), intent(in) :: pixels
-      character(*), intent(in)            :: encoding
-      character(3), intent(in)            :: file_format
-      character(2)                        :: magic_number
+      character(*), intent(in)             :: encoding
+      character(3), intent(in)             :: file_format
+      character(2)                         :: magic_number
 
       select case (encoding)
       case ('ascii', 'plain')
@@ -243,7 +243,7 @@ contains
       integer, intent(in)              :: width
       integer, intent(in)              :: height
       character(*), intent(in)         :: comment
-      integer, optional, intent(in)              :: max_color
+      integer, optional, intent(in)    :: max_color
 
       call this%set_magicnumber(magic_number)
       call this%set_width(height)
@@ -256,8 +256,8 @@ contains
    !===============================================================================
    !> author: Seyed Ali Ghasemi
    pure subroutine set_pixels(this, pixels)
-      class(format_pnm), intent(inout) :: this
-      integer, dimension(:, :), intent(in)              :: pixels
+      class(format_pnm), intent(inout)     :: this
+      integer, dimension(:, :), intent(in) :: pixels
       this%pixels = pixels
    end subroutine set_pixels
    !===============================================================================
