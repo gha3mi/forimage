@@ -1,7 +1,7 @@
 module forimage
 
    implicit none
-   
+
    private
    public format_pnm
 
@@ -12,7 +12,7 @@ module forimage
       integer                              :: height
       character(70)                        :: comment
       integer                              :: max_color
-      integer, dimension(:,:), allocatable :: pixels
+      integer, dimension(:, :), allocatable :: pixels
       character(3)                         :: file_format
       character(5)                         :: encoding
    contains
@@ -38,33 +38,30 @@ contains
    !===============================================================================
    !> author: Seyed Ali Ghasemi
    elemental pure subroutine set_file_format(this, file_format)
-   class(format_pnm), intent(inout) :: this
-   character(3), intent(in)         :: file_format
+      class(format_pnm), intent(inout) :: this
+      character(3), intent(in)         :: file_format
 
-   this%file_format = file_format
+      this%file_format = file_format
    end subroutine set_file_format
    !===============================================================================
-
 
    !===============================================================================
    !> author: Seyed Ali Ghasemi
    elemental pure subroutine set_format(this, encoding)
-   class(format_pnm), intent(inout) :: this
-   character(*), intent(in)         :: encoding
+      class(format_pnm), intent(inout) :: this
+      character(*), intent(in)         :: encoding
 
-   this%encoding = encoding
+      this%encoding = encoding
    end subroutine set_format
    !===============================================================================
-
 
    !===============================================================================
    !> author: Seyed Ali Ghasemi
    elemental pure subroutine deallocate_pnm(this)
       class(format_pnm), intent(inout)    :: this
-      if (allocated(this%pixels)) deallocate(this%pixels)
+      if (allocated(this%pixels)) deallocate (this%pixels)
    end subroutine deallocate_pnm
    !===============================================================================
-
 
    !===============================================================================
    !> author: Seyed Ali Ghasemi
@@ -80,9 +77,9 @@ contains
       this%encoding = encoding
 
       select case (encoding)
-      case ('binary','raw')
-         
-         print*, 'Error: not implementet yet!'
+      case ('binary', 'raw')
+
+         print *, 'Error: not implementet yet!'
 
          select case (file_format)
          case ('pbm')
@@ -93,48 +90,47 @@ contains
 
          end select
 
-      case ('ascii','plain')
+      case ('ascii', 'plain')
 
          select case (file_format)
          case ('pbm')
-            open (newunit = nunit, file = file_name//'.'//file_format)
-            read(nunit,*) this%magic_number
-            read(nunit,*) temp,this%comment
-            read(nunit,*) this%width, this%height
+            open (newunit=nunit, file=file_name//'.'//file_format)
+            read (nunit, *) this%magic_number
+            read (nunit, *) temp, this%comment
+            read (nunit, *) this%width, this%height
             call this%allocate_pixels()
-            do i = 1, size(this%pixels,1)
-               read(nunit, *) this%pixels(i,:)
+            do i = 1, size(this%pixels, 1)
+               read (nunit, *) this%pixels(i, :)
             end do
-            close(nunit)
+            close (nunit)
          case ('pgm')
-            open (newunit = nunit, file = file_name//'.'//file_format)
-            read(nunit,*) this%magic_number
-            read(nunit,*) temp,this%comment
-            read(nunit,*) this%width, this%height
-            read(nunit,*) this%max_color
+            open (newunit=nunit, file=file_name//'.'//file_format)
+            read (nunit, *) this%magic_number
+            read (nunit, *) temp, this%comment
+            read (nunit, *) this%width, this%height
+            read (nunit, *) this%max_color
             call this%allocate_pixels()
-            do i = 1, size(this%pixels,1)
-               read(nunit, *) this%pixels(i,:)
+            do i = 1, size(this%pixels, 1)
+               read (nunit, *) this%pixels(i, :)
             end do
-            close(nunit)
+            close (nunit)
          case ('ppm')
-            open (newunit = nunit, file = file_name//'.'//file_format)
-            read(nunit,*) this%magic_number
-            read(nunit,*) temp,this%comment
-            read(nunit,*) this%width, this%height
-            read(nunit,*) this%max_color
+            open (newunit=nunit, file=file_name//'.'//file_format)
+            read (nunit, *) this%magic_number
+            read (nunit, *) temp, this%comment
+            read (nunit, *) this%width, this%height
+            read (nunit, *) this%max_color
             call this%allocate_pixels()
-            do i = 1, size(this%pixels,1)
-               read(nunit, *) this%pixels(i,:)
+            do i = 1, size(this%pixels, 1)
+               read (nunit, *) this%pixels(i, :)
             end do
-            close(nunit)
+            close (nunit)
          end select
 
       end select
 
    end subroutine import_pnm
    !===============================================================================
-
 
    !===============================================================================
    !> author: Seyed Ali Ghasemi
@@ -144,13 +140,13 @@ contains
       integer, intent(in)                 :: height
       character(*), intent(in)            :: comment
       integer, optional, intent(in)                 :: max_color
-      integer, dimension(:,:), intent(in) :: pixels
+      integer, dimension(:, :), intent(in) :: pixels
       character(*), intent(in)            :: encoding
       character(3), intent(in)            :: file_format
       character(2)                        :: magic_number
 
       select case (encoding)
-      case ('ascii','plain')
+      case ('ascii', 'plain')
          select case (file_format)
          case ('pbm')
             magic_number = 'P1'
@@ -159,7 +155,7 @@ contains
          case ('ppm')
             magic_number = 'P3'
          end select
-      case ('binary','raw')
+      case ('binary', 'raw')
          error stop 'Error: not implementet yet!'
          select case (file_format)
          case ('pbm')
@@ -173,28 +169,26 @@ contains
 
       call this%set_format(encoding)
       call this%set_file_format(file_format)
-      call this%set_header(magic_number,width,height,comment,max_color)
+      call this%set_header(magic_number, width, height, comment, max_color)
       call this%allocate_pixels()
       call this%set_pixels(pixels)
    end subroutine set_pnm
    !===============================================================================
 
-
    !===============================================================================
    !> author: Seyed Ali Ghasemi
    elemental pure subroutine allocate_pixels(this)
       class(format_pnm), intent(inout) :: this
-      select case(this%magic_number)
-         case('P1')
-         if (.not.allocated(this%pixels)) allocate(this%pixels(this%height, this%width))
-         case('P2')
-         if (.not.allocated(this%pixels)) allocate(this%pixels(this%height, this%width))
-         case('P3')
+      select case (this%magic_number)
+      case ('P1')
+ if (.not.allocated(this%pixels)) allocate(this%pixels(this%height, this%width))
+      case ('P2')
+ if (.not.allocated(this%pixels)) allocate(this%pixels(this%height, this%width))
+      case ('P3')
          if (.not.allocated(this%pixels)) allocate(this%pixels(this%height, 3*this%width))
       end select
    end subroutine allocate_pixels
    !===============================================================================
-
 
    !===============================================================================
    !> author: Seyed Ali Ghasemi
@@ -205,7 +199,6 @@ contains
    end subroutine set_magicnumber
    !===============================================================================
 
-
    !===============================================================================
    !> author: Seyed Ali Ghasemi
    elemental pure subroutine set_width(this, width)
@@ -214,7 +207,6 @@ contains
       this%width = width
    end subroutine set_width
    !===============================================================================
-
 
    !===============================================================================
    !> author: Seyed Ali Ghasemi
@@ -225,7 +217,6 @@ contains
    end subroutine set_height
    !===============================================================================
 
-
    !===============================================================================
    !> author: Seyed Ali Ghasemi
    elemental pure subroutine set_comment(this, comment)
@@ -235,7 +226,6 @@ contains
    end subroutine set_comment
    !===============================================================================
 
-
    !===============================================================================
    !> author: Seyed Ali Ghasemi
    elemental pure subroutine set_max_color(this, max_color)
@@ -244,7 +234,6 @@ contains
       this%max_color = max_color
    end subroutine set_max_color
    !===============================================================================
-
 
    !===============================================================================
    !> author: Seyed Ali Ghasemi
@@ -264,37 +253,34 @@ contains
    end subroutine set_header
    !===============================================================================
 
-
    !===============================================================================
    !> author: Seyed Ali Ghasemi
    pure subroutine set_pixels(this, pixels)
       class(format_pnm), intent(inout) :: this
-      integer, dimension(:,:), intent(in)              :: pixels
+      integer, dimension(:, :), intent(in)              :: pixels
       this%pixels = pixels
    end subroutine set_pixels
    !===============================================================================
 
-
    !===============================================================================
    !> author: Seyed Ali Ghasemi
-   elemental pure subroutine set_pixel(this, grey,r,g,b, i, j)
+   elemental pure subroutine set_pixel(this, grey, r, g, b, i, j)
       class(format_pnm), intent(inout) :: this
       integer, intent(in), optional    :: grey
       integer, intent(in), optional    :: r, g, b
       integer, intent(in)              :: i, j
-      select case(this%magic_number)
-         case('P1')
-         this%pixels(i,j) = grey
-         case('P2')
-         this%pixels(i,j) = grey
-         case('P3')
-         this%pixels(i,3*j-2) = r
-         this%pixels(i,3*j-1) = g
-         this%pixels(i,3*j-0) = b
+      select case (this%magic_number)
+      case ('P1')
+         this%pixels(i, j) = grey
+      case ('P2')
+         this%pixels(i, j) = grey
+      case ('P3')
+         this%pixels(i, 3*j - 2) = r
+         this%pixels(i, 3*j - 1) = g
+         this%pixels(i, 3*j - 0) = b
       end select
    end subroutine set_pixel
    !===============================================================================
-
 
    !===============================================================================
    !> author: Seyed Ali Ghasemi
@@ -303,15 +289,15 @@ contains
       character(*), intent(in)         :: file_name
       integer :: nunit, i
 
-      open (newunit = nunit, file = file_name//'.'//this%file_format, status='replace')
-      write(nunit,'(a)') this%magic_number
-      write(nunit,'(a,a)') '# ',this%comment
-      write(nunit, '(g0,1x,g0)') this%width, this%height
-      if (this%file_format /= 'pbm') write(nunit,'(g0)') this%max_color
-      do i = 1, size(this%pixels,1)
-         write(nunit, '(*(g0,1x))') this%pixels(i,:)
+   open (newunit=nunit, file=file_name//'.'//this%file_format, status='replace')
+      write (nunit, '(a)') this%magic_number
+      write (nunit, '(a,a)') '# ', this%comment
+      write (nunit, '(g0,1x,g0)') this%width, this%height
+      if (this%file_format /= 'pbm') write (nunit, '(g0)') this%max_color
+      do i = 1, size(this%pixels, 1)
+         write (nunit, '(*(g0,1x))') this%pixels(i, :)
       end do
-      close(nunit)
+      close (nunit)
    end subroutine export_pnm
    !===============================================================================
 
