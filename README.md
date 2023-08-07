@@ -90,5 +90,8 @@ ford ford.yml
 
 ## Contributing
 
-Contributions to `ForImage` are welcome!
-If you find any issues or would like to suggest improvements, please open an issue.
+Contributions to `ForImage` are welcome!  If you find any issues or would like
+to suggest improvements, please open an issue.  For consistency of the source
+code, use `snake_case` to name the variables and procedures and use
+[fprettify](https://github.com/pseewald/fprettify) altogether with the style
+file `fprettify.rc`. 
