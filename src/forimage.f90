@@ -53,7 +53,6 @@ contains
    end subroutine allocate_pixels
 !===============================================================================
 
-
 !===============================================================================
 !> author: Seyed Ali Ghasemi
    elemental pure subroutine deallocate_pnm(this)
@@ -61,7 +60,6 @@ contains
       if (allocated(this%pixels)) deallocate (this%pixels)
    end subroutine deallocate_pnm
 !===============================================================================
-
 
 !===============================================================================
 !> author: Seyed Ali Ghasemi
@@ -83,7 +81,6 @@ contains
    end subroutine export_pnm
 !===============================================================================
 
-
 !===============================================================================
 !> author: Seyed Ali Ghasemi
    impure subroutine import_pnm(this, file_name, file_format, encoding)
@@ -100,7 +97,7 @@ contains
       select case (encoding)
       case ('binary', 'raw')
 
-         print *, 'Error: not implementet yet!'
+         print *, 'Error: not implemented yet!'
 
          select case (file_format)
          case ('pbm')
@@ -153,7 +150,6 @@ contains
    end subroutine import_pnm
 !===============================================================================
 
-
 !===============================================================================
 !> author: Seyed Ali Ghasemi
    elemental pure subroutine set_comment(this, comment)
@@ -162,7 +158,6 @@ contains
       this%comment = comment
    end subroutine set_comment
 !===============================================================================
-
 
 !===============================================================================
 !> author: Seyed Ali Ghasemi
@@ -174,7 +169,6 @@ contains
    end subroutine set_file_format
 !===============================================================================
 
-
 !===============================================================================
 !> author: Seyed Ali Ghasemi
    elemental pure subroutine set_format(this, encoding)
@@ -184,7 +178,6 @@ contains
       this%encoding = encoding
    end subroutine set_format
 !===============================================================================
-
 
 !===============================================================================
 !> author: Seyed Ali Ghasemi
@@ -205,7 +198,6 @@ contains
    end subroutine set_header
 !===============================================================================
 
-
 !===============================================================================
 !> author: Seyed Ali Ghasemi
    elemental pure subroutine set_height(this, height)
@@ -214,7 +206,6 @@ contains
       this%height = height
    end subroutine set_height
 !===============================================================================
-
 
 !===============================================================================
 !> author: Seyed Ali Ghasemi
@@ -225,7 +216,6 @@ contains
    end subroutine set_magicnumber
 !===============================================================================
 
-
 !===============================================================================
 !> author: Seyed Ali Ghasemi
    elemental pure subroutine set_max_color(this, max_color)
@@ -235,7 +225,6 @@ contains
    end subroutine set_max_color
 !===============================================================================
 
-
 !===============================================================================
 !> author: Seyed Ali Ghasemi
    pure subroutine set_pixels(this, pixels)
@@ -244,7 +233,6 @@ contains
       this%pixels = pixels
    end subroutine set_pixels
 !===============================================================================
-
 
 !===============================================================================
 !> author: Seyed Ali Ghasemi
@@ -271,7 +259,7 @@ contains
             magic_number = 'P3'
          end select
       case ('binary', 'raw')
-         error stop 'Error: not implementet yet!'
+         error stop 'Error: not implemented yet!'
          select case (file_format)
          case ('pbm')
             magic_number = 'P4'
@@ -289,7 +277,6 @@ contains
       call this%set_pixels(pixels)
    end subroutine set_pnm
 !===============================================================================
-
 
 !===============================================================================
 !> author: Seyed Ali Ghasemi
