@@ -84,36 +84,6 @@ contains
 !===============================================================================
 
 
-! still unsort, start:
-
-!===============================================================================
-!> author: Seyed Ali Ghasemi
-   elemental pure subroutine set_file_format(this, file_format)
-      class(format_pnm), intent(inout) :: this
-      character(3), intent(in)         :: file_format
-
-      this%file_format = file_format
-   end subroutine set_file_format
-!===============================================================================
-
-!===============================================================================
-!> author: Seyed Ali Ghasemi
-   elemental pure subroutine set_format(this, encoding)
-      class(format_pnm), intent(inout) :: this
-      character(*), intent(in)         :: encoding
-
-      this%encoding = encoding
-   end subroutine set_format
-!===============================================================================
-
-!===============================================================================
-!> author: Seyed Ali Ghasemi
-   elemental pure subroutine deallocate_pnm(this)
-      class(format_pnm), intent(inout)    :: this
-      if (allocated(this%pixels)) deallocate (this%pixels)
-   end subroutine deallocate_pnm
-!===============================================================================
-
 !===============================================================================
 !> author: Seyed Ali Ghasemi
    impure subroutine import_pnm(this, file_name, file_format, encoding)
@@ -183,6 +153,99 @@ contains
    end subroutine import_pnm
 !===============================================================================
 
+
+!===============================================================================
+!> author: Seyed Ali Ghasemi
+   elemental pure subroutine set_comment(this, comment)
+      class(format_pnm), intent(inout) :: this
+      character(*), intent(in)         :: comment
+      this%comment = comment
+   end subroutine set_comment
+!===============================================================================
+
+
+!===============================================================================
+!> author: Seyed Ali Ghasemi
+   elemental pure subroutine set_file_format(this, file_format)
+      class(format_pnm), intent(inout) :: this
+      character(3), intent(in)         :: file_format
+
+      this%file_format = file_format
+   end subroutine set_file_format
+!===============================================================================
+
+
+!===============================================================================
+!> author: Seyed Ali Ghasemi
+   elemental pure subroutine set_format(this, encoding)
+      class(format_pnm), intent(inout) :: this
+      character(*), intent(in)         :: encoding
+
+      this%encoding = encoding
+   end subroutine set_format
+!===============================================================================
+
+
+!===============================================================================
+!> author: Seyed Ali Ghasemi
+   elemental pure subroutine set_header(this, magic_number, width, height, &
+                                        comment, max_color)
+      class(format_pnm), intent(inout) :: this
+      character(*), intent(in)         :: magic_number
+      integer, intent(in)              :: width
+      integer, intent(in)              :: height
+      character(*), intent(in)         :: comment
+      integer, optional, intent(in)    :: max_color
+
+      call this%set_magicnumber(magic_number)
+      call this%set_width(height)
+      call this%set_height(width)
+      call this%set_comment(comment)
+      if (this%file_format /= 'pbm') call this%set_max_color(max_color)
+   end subroutine set_header
+!===============================================================================
+
+
+!===============================================================================
+!> author: Seyed Ali Ghasemi
+   elemental pure subroutine set_height(this, height)
+      class(format_pnm), intent(inout) :: this
+      integer, intent(in)              :: height
+      this%height = height
+   end subroutine set_height
+!===============================================================================
+
+
+!===============================================================================
+!> author: Seyed Ali Ghasemi
+   elemental pure subroutine set_magicnumber(this, magic_number)
+      class(format_pnm), intent(inout) :: this
+      character(*), intent(in)         :: magic_number
+      this%magic_number = magic_number
+   end subroutine set_magicnumber
+!===============================================================================
+
+
+!===============================================================================
+!> author: Seyed Ali Ghasemi
+   elemental pure subroutine set_max_color(this, max_color)
+      class(format_pnm), intent(inout) :: this
+      integer, intent(in)              :: max_color
+      this%max_color = max_color
+   end subroutine set_max_color
+!===============================================================================
+
+
+!===============================================================================
+!> author: Seyed Ali Ghasemi
+   pure subroutine set_pixels(this, pixels)
+      class(format_pnm), intent(inout)     :: this
+      integer, dimension(:, :), intent(in) :: pixels
+      this%pixels = pixels
+   end subroutine set_pixels
+!===============================================================================
+
+
 !===============================================================================
 !> author: Seyed Ali Ghasemi
    pure subroutine set_pnm(this, encoding, file_format, width, height, &
@@ -227,32 +290,6 @@ contains
    end subroutine set_pnm
 !===============================================================================
 
-!===============================================================================
-!> author: Seyed Ali Ghasemi
-   elemental pure subroutine allocate_pixels(this)
-      class(format_pnm), intent(inout) :: this
-      select case (this%magic_number)
-      case ('P1')
-         if (.not. allocated(this%pixels)) allocate (this%pixels(this%height, &
-                                                                 this%width))
-      case ('P2')
-         if (.not. allocated(this%pixels)) allocate (this%pixels(this%height, &
-                                                                 this%width))
-      case ('P3')
-         if (.not. allocated(this%pixels)) allocate (this%pixels(this%height, &
-                                                                 3*this%width))
-      end select
-   end subroutine allocate_pixels
-!===============================================================================
-
-!===============================================================================
-!> author: Seyed Ali Ghasemi
-   elemental pure subroutine set_magicnumber(this, magic_number)
-      class(format_pnm), intent(inout) :: this
-      character(*), intent(in)         :: magic_number
-      this%magic_number = magic_number
-   end subroutine set_magicnumber
-!===============================================================================
 
 !===============================================================================
 !> author: Seyed Ali Ghasemi
@@ -261,101 +298,6 @@ contains
       integer, intent(in)              :: width
       this%width = width
    end subroutine set_width
-!===============================================================================
-
-!===============================================================================
-!> author: Seyed Ali Ghasemi
-   elemental pure subroutine set_height(this, height)
-      class(format_pnm), intent(inout) :: this
-      integer, intent(in)              :: height
-      this%height = height
-   end subroutine set_height
-!===============================================================================
-
-!===============================================================================
-!> author: Seyed Ali Ghasemi
-   elemental pure subroutine set_comment(this, comment)
-      class(format_pnm), intent(inout) :: this
-      character(*), intent(in)         :: comment
-      this%comment = comment
-   end subroutine set_comment
-!===============================================================================
-
-!===============================================================================
-!> author: Seyed Ali Ghasemi
-   elemental pure subroutine set_max_color(this, max_color)
-      class(format_pnm), intent(inout) :: this
-      integer, intent(in)              :: max_color
-      this%max_color = max_color
-   end subroutine set_max_color
-!===============================================================================
-
-!===============================================================================
-!> author: Seyed Ali Ghasemi
-   elemental pure subroutine set_header(this, magic_number, width, height, &
-                                        comment, max_color)
-      class(format_pnm), intent(inout) :: this
-      character(*), intent(in)         :: magic_number
-      integer, intent(in)              :: width
-      integer, intent(in)              :: height
-      character(*), intent(in)         :: comment
-      integer, optional, intent(in)    :: max_color
-
-      call this%set_magicnumber(magic_number)
-      call this%set_width(height)
-      call this%set_height(width)
-      call this%set_comment(comment)
-      if (this%file_format /= 'pbm') call this%set_max_color(max_color)
-   end subroutine set_header
-!===============================================================================
-
-!===============================================================================
-!> author: Seyed Ali Ghasemi
-   pure subroutine set_pixels(this, pixels)
-      class(format_pnm), intent(inout)     :: this
-      integer, dimension(:, :), intent(in) :: pixels
-      this%pixels = pixels
-   end subroutine set_pixels
-!===============================================================================
-
-!===============================================================================
-!> author: Seyed Ali Ghasemi
-   elemental pure subroutine set_pixel(this, grey, r, g, b, i, j)
-      class(format_pnm), intent(inout) :: this
-      integer, intent(in), optional    :: grey
-      integer, intent(in), optional    :: r, g, b
-      integer, intent(in)              :: i, j
-      select case (this%magic_number)
-      case ('P1')
-         this%pixels(i, j) = grey
-      case ('P2')
-         this%pixels(i, j) = grey
-      case ('P3')
-         this%pixels(i, 3*j - 2) = r
-         this%pixels(i, 3*j - 1) = g
-         this%pixels(i, 3*j - 0) = b
-      end select
-   end subroutine set_pixel
-!===============================================================================
-
-!===============================================================================
-!> author: Seyed Ali Ghasemi
-   impure subroutine export_pnm(this, file_name)
-      class(format_pnm), intent(inout) :: this
-      character(*), intent(in)         :: file_name
-      integer :: nunit, i
-
-      open (newunit=nunit, file=file_name//'.'//this%file_format, &
-            status='replace')
-      write (nunit, '(a)') this%magic_number
-      write (nunit, '(a,a)') '# ', this%comment
-      write (nunit, '(g0,1x,g0)') this%width, this%height
-      if (this%file_format /= 'pbm') write (nunit, '(g0)') this%max_color
-      do i = 1, size(this%pixels, 1)
-         write (nunit, '(*(g0,1x))') this%pixels(i, :)
-      end do
-      close (nunit)
-   end subroutine export_pnm
 !===============================================================================
 
 end module forimage
