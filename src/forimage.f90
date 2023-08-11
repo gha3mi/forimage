@@ -1,7 +1,7 @@
 module forimage
 
    implicit none
-   
+
    private
    public format_pnm
 
@@ -38,10 +38,10 @@ contains
    !===============================================================================
    !> author: Seyed Ali Ghasemi
    elemental pure subroutine set_file_format(this, file_format)
-   class(format_pnm), intent(inout) :: this
-   character(3), intent(in)         :: file_format
+      class(format_pnm), intent(inout) :: this
+      character(3), intent(in)         :: file_format
 
-   this%file_format = file_format
+      this%file_format = file_format
    end subroutine set_file_format
    !===============================================================================
 
@@ -49,10 +49,10 @@ contains
    !===============================================================================
    !> author: Seyed Ali Ghasemi
    elemental pure subroutine set_format(this, encoding)
-   class(format_pnm), intent(inout) :: this
-   character(*), intent(in)         :: encoding
+      class(format_pnm), intent(inout) :: this
+      character(*), intent(in)         :: encoding
 
-   this%encoding = encoding
+      this%encoding = encoding
    end subroutine set_format
    !===============================================================================
 
@@ -80,23 +80,23 @@ contains
       this%encoding = encoding
 
       select case (encoding)
-      case ('binary','raw')
-         
+       case ('binary','raw')
+
          print*, 'Error: not implementet yet!'
 
          select case (file_format)
-         case ('pbm')
+          case ('pbm')
 
-         case ('pgm')
+          case ('pgm')
 
-         case ('ppm')
+          case ('ppm')
 
          end select
 
-      case ('ascii','plain')
+       case ('ascii','plain')
 
          select case (file_format)
-         case ('pbm')
+          case ('pbm')
             open (newunit = nunit, file = file_name//'.'//file_format)
             read(nunit,*) this%magic_number
             read(nunit,*) temp,this%comment
@@ -106,7 +106,7 @@ contains
                read(nunit, *) this%pixels(i,:)
             end do
             close(nunit)
-         case ('pgm')
+          case ('pgm')
             open (newunit = nunit, file = file_name//'.'//file_format)
             read(nunit,*) this%magic_number
             read(nunit,*) temp,this%comment
@@ -117,7 +117,7 @@ contains
                read(nunit, *) this%pixels(i,:)
             end do
             close(nunit)
-         case ('ppm')
+          case ('ppm')
             open (newunit = nunit, file = file_name//'.'//file_format)
             read(nunit,*) this%magic_number
             read(nunit,*) temp,this%comment
@@ -150,23 +150,23 @@ contains
       character(2)                        :: magic_number
 
       select case (encoding)
-      case ('ascii','plain')
+       case ('ascii','plain')
          select case (file_format)
-         case ('pbm')
+          case ('pbm')
             magic_number = 'P1'
-         case ('pgm')
+          case ('pgm')
             magic_number = 'P2'
-         case ('ppm')
+          case ('ppm')
             magic_number = 'P3'
          end select
-      case ('binary','raw')
+       case ('binary','raw')
          error stop 'Error: not implementet yet!'
          select case (file_format)
-         case ('pbm')
+          case ('pbm')
             magic_number = 'P4'
-         case ('pgm')
+          case ('pgm')
             magic_number = 'P5'
-         case ('ppm')
+          case ('ppm')
             magic_number = 'P6'
          end select
       end select
@@ -185,11 +185,11 @@ contains
    elemental pure subroutine allocate_pixels(this)
       class(format_pnm), intent(inout) :: this
       select case(this%magic_number)
-         case('P1')
+       case('P1')
          if (.not.allocated(this%pixels)) allocate(this%pixels(this%height, this%width))
-         case('P2')
+       case('P2')
          if (.not.allocated(this%pixels)) allocate(this%pixels(this%height, this%width))
-         case('P3')
+       case('P3')
          if (.not.allocated(this%pixels)) allocate(this%pixels(this%height, 3*this%width))
       end select
    end subroutine allocate_pixels
@@ -283,11 +283,11 @@ contains
       integer, intent(in), optional    :: r, g, b
       integer, intent(in)              :: i, j
       select case(this%magic_number)
-         case('P1')
+       case('P1')
          this%pixels(i,j) = grey
-         case('P2')
+       case('P2')
          this%pixels(i,j) = grey
-         case('P3')
+       case('P3')
          this%pixels(i,3*j-2) = r
          this%pixels(i,3*j-1) = g
          this%pixels(i,3*j-0) = b
