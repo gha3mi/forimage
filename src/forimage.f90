@@ -60,7 +60,7 @@ contains
    !=======================================
    !> author: Seyed Ali Ghasemi
    elemental pure subroutine deallocate_pnm(this)
-      class(format_pnm), intent(inout)    :: this
+      class(format_pnm), intent(inout) :: this
       if (allocated(this%pixels)) deallocate(this%pixels)
    end subroutine deallocate_pnm
    !=======================================
@@ -69,10 +69,10 @@ contains
    !=======================================
    !> author: Seyed Ali Ghasemi
    impure subroutine import_pnm(this, file_name, file_format, encoding)
-      class(format_pnm), intent(inout)   :: this
-      character(*), intent(in)           :: file_name
-      character(*), intent(in)           :: encoding
-      character(3), intent(in)           :: file_format
+      class(format_pnm), intent(inout) :: this
+      character(*), intent(in)         :: file_name
+      character(*), intent(in)         :: encoding
+      character(3), intent(in)         :: file_format
       integer :: nunit, i
       character :: temp
 
@@ -273,8 +273,8 @@ contains
    !=======================================
    !> author: Seyed Ali Ghasemi
    pure subroutine set_pixels(this, pixels)
-      class(format_pnm), intent(inout)     :: this
-      integer, dimension(:,:), intent(in)  :: pixels
+      class(format_pnm), intent(inout)    :: this
+      integer, dimension(:,:), intent(in) :: pixels
       this%pixels = pixels
    end subroutine set_pixels
    !=======================================
@@ -306,9 +306,9 @@ contains
    impure subroutine export_pnm(this, file_name)
       class(format_pnm), intent(inout) :: this
       character(*), intent(in)         :: file_name
-      integer :: nunit, i
+      integer                          :: nunit, i
 
-      open (newunit = nunit, file = file_name//'.'//this%file_format,
+      open (newunit = nunit, file = file_name//'.'//this%file_format, &
       status='replace')
       write(nunit,'(a)') this%magic_number
       write(nunit,'(a,a)') '# ', this%comment
