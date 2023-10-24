@@ -75,22 +75,47 @@ contains
       character(3), intent(in)           :: file_format
       integer :: nunit, i
       character :: temp
+      character, allocatable :: temp_pixel(:)
 
       this%file_format = file_format
       this%encoding = encoding
 
       select case (encoding)
       case ('binary','raw')
-         
-         print*, 'Error: not implementet yet!'
 
          select case (file_format)
          case ('pbm')
-
+            open (newunit = nunit, file = file_name//'.'//file_format)
+            read(nunit,*) this%magic_number
+            read(nunit,*) temp,this%comment
+            read(nunit,*) this%width, this%height
+            call this%allocate_pixels()
+            allocate(temp_pixel(this%height*this%width))
+            read(nunit, '(*(a))', advance='no') temp_pixel
+            this%pixels = transpose(reshape(ichar(temp_pixel), [this%height, this%width]))
+            close(nunit)
          case ('pgm')
-
+            open (newunit = nunit, file = file_name//'.'//file_format)
+            read(nunit,*) this%magic_number
+            read(nunit,*) temp,this%comment
+            read(nunit,*) this%width, this%height
+            read(nunit,*) this%max_color
+            call this%allocate_pixels()
+            allocate(temp_pixel(this%height*this%width))
+            read(nunit, '(*(a))', advance='no') temp_pixel
+            this%pixels = transpose(reshape(ichar(temp_pixel), [this%height, this%width]))
+            close(nunit)
          case ('ppm')
-
+            open (newunit = nunit, file = file_name//'.'//file_format)
+            read(nunit,*) this%magic_number
+            read(nunit,*) temp,this%comment
+            read(nunit,*) this%width, this%height
+            read(nunit,*) this%max_color
+            call this%allocate_pixels()
+            allocate(temp_pixel(this%height*this%width*3))
+            read(nunit, '(*(a))', advance='no') temp_pixel
+            this%pixels = transpose(reshape(ichar(temp_pixel), [this%height, 3*this%width]))
+            close(nunit)
          end select
 
       case ('ascii','plain')
@@ -143,7 +168,7 @@ contains
       integer, intent(in)                 :: width
       integer, intent(in)                 :: height
       character(*), intent(in)            :: comment
-      integer, optional, intent(in)                 :: max_color
+      integer, optional, intent(in)       :: max_color
       integer, dimension(:,:), intent(in) :: pixels
       character(*), intent(in)            :: encoding
       character(3), intent(in)            :: file_format
@@ -160,7 +185,6 @@ contains
             magic_number = 'P3'
          end select
       case ('binary','raw')
-         error stop 'Error: not implementet yet!'
          select case (file_format)
          case ('pbm')
             magic_number = 'P4'
@@ -257,8 +281,8 @@ contains
       integer, optional, intent(in)              :: max_color
 
       call this%set_magicnumber(magic_number)
-      call this%set_width(height)
-      call this%set_height(width)
+      call this%set_width(width)
+      call this%set_height(height)
       call this%set_comment(comment)
       if (this%file_format /= 'pbm') call this%set_max_color(max_color)
    end subroutine set_header
@@ -301,16 +325,25 @@ contains
    impure subroutine export_pnm(this, file_name)
       class(format_pnm), intent(inout) :: this
       character(*), intent(in)         :: file_name
-      integer :: nunit, i
+      integer :: nunit, i, j
 
       open (newunit = nunit, file = file_name//'.'//this%file_format, status='replace')
       write(nunit,'(a)') this%magic_number
       write(nunit,'(a,a)') '# ',this%comment
       write(nunit, '(g0,1x,g0)') this%width, this%height
       if (this%file_format /= 'pbm') write(nunit,'(g0)') this%max_color
-      do i = 1, size(this%pixels,1)
-         write(nunit, '(*(g0,1x))') this%pixels(i,:)
-      end do
+      select case (this%magic_number)
+       case ('P1', 'P2', 'P3')
+         do i = 1, size(this%pixels,1)
+            write(nunit, '(*(g0,1x))') this%pixels(i,:)
+         end do
+       case  ('P4', 'P5', 'P6')
+         do i = 1, size(this%pixels,1)
+            do j = 1, size(this%pixels,2)
+               write(nunit, '(*(a))', advance='no') achar(this%pixels(i,j))
+            end do
+         end do
+      end select
       close(nunit)
    end subroutine export_pnm
    !===============================================================================

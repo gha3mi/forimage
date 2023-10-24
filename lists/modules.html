@@ -11,81 +11,55 @@
     <title>All Modules &ndash; ForImage
 </title>
 
-    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link href="../css/pygments.css" rel="stylesheet">
     <link href="../css/font-awesome.min.css" rel="stylesheet">
     <link href="../css/local.css" rel="stylesheet">
       <link  href="../tipuesearch/tipuesearch.css" rel="stylesheet">
 
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-        <![endif]-->
-
-         <script src="../js/jquery-2.1.3.min.js"></script>
-         <script src="../js/svg-pan-zoom.min.js"></script>
-
+    <script src="https://code.jquery.com/jquery-3.7.0.slim.min.js" integrity="sha256-tG5mcZUtJsZvyKAxYLVXrmjKBVLd6VpVccqz/r4ypFE=" crossorigin="anonymous"></script>
   </head>
 
   <body>
 
     <!-- Fixed navbar -->
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
+    <div class="container-fluid mb-sm-4 mb-xl-2">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+          <a class="navbar-brand" href="../index.html">ForImage <small>0.2.0</small></a>
+          <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar"
+                  aria-expanded="false" aria-controls="navbar" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon">
           </button>
-          <a class="navbar-brand" href="../index.html">ForImage <small>0.1.0</small></a>
-        </div>
-        <div id="navbar" class="navbar-collapse collapse">
-          <ul class="nav navbar-nav">
-            <li class="dropdown hidden-xs visible-sm visible-md hidden-lg">
-              <a href="#" class="dropdown-toggle"
-                 data-toggle="dropdown" role="button"
-                 aria-haspopup="true"
-                 aria-expanded="false">
-                 Contents <span class="caret"></span>
-              </a>
-              <ul class="dropdown-menu">
-                    <li><a href="../lists/files.html">Source Files</a></li>
-                  <li><a href="../lists/modules.html">Modules</a></li>
-                  <li><a href="../lists/procedures.html">Procedures</a></li>
-                  <li><a href="../lists/types.html">Derived Types</a></li>
-                  <li><a href="../lists/programs.html">Programs</a></li>
-              </ul>
-            </li>
-                <li class="visible-xs hidden-sm visible-lg">
-                  <a href="../lists/files.html">Source Files</a>
+
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link" href="../lists/files.html">Source Files</a>
+                  </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/modules.html">Modules</a>
                 </li>
-              <li class="visible-xs hidden-sm visible-lg">
-                <a href="../lists/modules.html">Modules</a>
-              </li>
-              <li class="visible-xs hidden-sm visible-lg">
-                <a href="../lists/procedures.html">Procedures</a>
-              </li>
-              <li class="visible-xs hidden-sm visible-lg">
-                <a href="../lists/types.html">Derived Types</a>
-              </li>
-              <li class="visible-xs hidden-sm visible-lg">
-                <a href="../lists/programs.html">Programs</a>
-              </li>
-          </ul>
-            <form action="../search.html" class="navbar-form navbar-right" role="search">
-              <div class="form-group">
-                <input type="text" class="form-control" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/procedures.html">Procedures</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/types.html">Derived Types</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/programs.html">Programs</a>
+                </li>
+            </ul>
+              <div class="d-flex align-items-end flex-grow-1">
+                <form action="../search.html" role="search" class="ms-auto">
+                  <input type="text" class="form-control" aria-label="Search" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+                </form>
               </div>
-              <!--
-                  <button type="submit" class="btn btn-default">Submit</button>
-                  -->
-            </form>
-        </div><!--/.nav-collapse -->
-      </div>
-    </nav>
+          </div><!--/.nav-collapse -->
+        </div>
+      </nav>
+    </div>
 
     <div class="container">
       <div class="row">
@@ -102,69 +76,204 @@
 <!-- Generated by graphviz version 2.43.0 (0)
  -->
 <!-- Title: module~~graph~~ModuleGraph Pages: 1 -->
-<svg id="modulegraphModuleGraph" width="170pt" height="116pt"
- viewBox="0.00 0.00 170.00 116.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<g id="module~~graph~~ModuleGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 112)">
+<svg id="modulegraphModuleGraph" width="177pt" height="494pt"
+ viewBox="0.00 0.00 177.00 494.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="module~~graph~~ModuleGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 490)">
 <title>module~~graph~~ModuleGraph</title>
-<polygon fill="white" stroke="transparent" points="-4,4 -4,-112 166,-112 166,4 -4,4"/>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-490 173,-490 173,4 -4,4"/>
 <!-- module~forimage -->
 <g id="module~~graph~~ModuleGraph_node1" class="node">
 <title>module~forimage</title>
 <g id="a_module~~graph~~ModuleGraph_node1"><a xlink:href=".././module/forimage.html" xlink:title="forimage">
-<polygon fill="#337ab7" stroke="#337ab7" points="61,-66 0,-66 0,-42 61,-42 61,-66"/>
-<text text-anchor="middle" x="30.5" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">forimage</text>
+<polygon fill="#337ab7" stroke="#337ab7" points="61,-255 0,-255 0,-231 61,-231 61,-255"/>
+<text text-anchor="middle" x="30.5" y="-240.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">forimage</text>
 </a>
 </g>
 </g>
-<!-- program~example1 -->
+<!-- program~example -->
 <g id="module~~graph~~ModuleGraph_node2" class="node">
+<title>program~example</title>
+<g id="a_module~~graph~~ModuleGraph_node2"><a xlink:href=".././program/example.html" xlink:title="example">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="162,-486 104,-486 104,-462 162,-462 162,-486"/>
+<text text-anchor="middle" x="133" y="-471.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">example</text>
+</a>
+</g>
+</g>
+<!-- program~example&#45;&gt;module~forimage -->
+<g id="module~~graph~~ModuleGraph_edge1" class="edge">
+<title>program~example&#45;&gt;module~forimage</title>
+<path fill="none" stroke="transparent" stroke-dasharray="5,2" d="M106.49,-461.8C102.95,-459.27 99.63,-456.34 97,-453 51.81,-395.53 37.58,-306.57 33.27,-265.36"/>
+<polygon fill="transparent" stroke="transparent" points="36.75,-264.92 32.32,-255.29 29.78,-265.58 36.75,-264.92"/>
+</g>
+<!-- program~example1 -->
+<g id="module~~graph~~ModuleGraph_node3" class="node">
 <title>program~example1</title>
-<g id="a_module~~graph~~ModuleGraph_node2"><a xlink:href=".././program/example1.html" xlink:title="example1">
-<polygon fill="#f0ad4e" stroke="#f0ad4e" points="162,-108 97,-108 97,-84 162,-84 162,-108"/>
-<text text-anchor="middle" x="129.5" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">example1</text>
+<g id="a_module~~graph~~ModuleGraph_node3"><a xlink:href=".././program/example1.html" xlink:title="example1">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="165.5,-444 100.5,-444 100.5,-420 165.5,-420 165.5,-444"/>
+<text text-anchor="middle" x="133" y="-429.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">example1</text>
 </a>
 </g>
 </g>
 <!-- program~example1&#45;&gt;module~forimage -->
-<g id="module~~graph~~ModuleGraph_edge1" class="edge">
+<g id="module~~graph~~ModuleGraph_edge2" class="edge">
 <title>program~example1&#45;&gt;module~forimage</title>
-<path fill="none" stroke="transparent" stroke-dasharray="5,2" d="M100.7,-83.96C90.76,-79.66 79.39,-74.73 68.77,-70.14"/>
-<polygon fill="transparent" stroke="transparent" points="69.87,-66.8 59.3,-66.04 67.09,-73.22 69.87,-66.8"/>
+<path fill="none" stroke="transparent" stroke-dasharray="5,2" d="M107.05,-419.88C103.35,-417.32 99.83,-414.36 97,-411 60.01,-367.18 42.42,-300.06 35.41,-265.41"/>
+<polygon fill="transparent" stroke="transparent" points="38.8,-264.54 33.49,-255.38 31.93,-265.86 38.8,-264.54"/>
+</g>
+<!-- program~example10 -->
+<g id="module~~graph~~ModuleGraph_node4" class="node">
+<title>program~example10</title>
+<g id="a_module~~graph~~ModuleGraph_node4"><a xlink:href=".././program/example10.html" xlink:title="example10">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="169,-402 97,-402 97,-378 169,-378 169,-402"/>
+<text text-anchor="middle" x="133" y="-387.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">example10</text>
+</a>
+</g>
+</g>
+<!-- program~example10&#45;&gt;module~forimage -->
+<g id="module~~graph~~ModuleGraph_edge3" class="edge">
+<title>program~example10&#45;&gt;module~forimage</title>
+<path fill="none" stroke="transparent" stroke-dasharray="5,2" d="M107.71,-377.86C103.85,-375.27 100.11,-372.3 97,-369 67.92,-338.09 48.33,-291.77 38.62,-264.75"/>
+<polygon fill="transparent" stroke="transparent" points="41.85,-263.39 35.27,-255.09 35.24,-265.68 41.85,-263.39"/>
+</g>
+<!-- program~example11 -->
+<g id="module~~graph~~ModuleGraph_node5" class="node">
+<title>program~example11</title>
+<g id="a_module~~graph~~ModuleGraph_node5"><a xlink:href=".././program/example11.html" xlink:title="example11">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="169,-360 97,-360 97,-336 169,-336 169,-360"/>
+<text text-anchor="middle" x="133" y="-345.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">example11</text>
+</a>
+</g>
+</g>
+<!-- program~example11&#45;&gt;module~forimage -->
+<g id="module~~graph~~ModuleGraph_edge4" class="edge">
+<title>program~example11&#45;&gt;module~forimage</title>
+<path fill="none" stroke="#392550" stroke-dasharray="5,2" d="M108.93,-335.82C104.77,-333.17 100.61,-330.19 97,-327 75.89,-308.32 56.7,-282.1 44.62,-263.95"/>
+<polygon fill="#392550" stroke="#392550" points="47.37,-261.75 38.98,-255.27 41.5,-265.56 47.37,-261.75"/>
+</g>
+<!-- program~example12 -->
+<g id="module~~graph~~ModuleGraph_node6" class="node">
+<title>program~example12</title>
+<g id="a_module~~graph~~ModuleGraph_node6"><a xlink:href=".././program/example12.html" xlink:title="example12">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="169,-318 97,-318 97,-294 169,-294 169,-318"/>
+<text text-anchor="middle" x="133" y="-303.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">example12</text>
+</a>
+</g>
+</g>
+<!-- program~example12&#45;&gt;module~forimage -->
+<g id="module~~graph~~ModuleGraph_edge5" class="edge">
+<title>program~example12&#45;&gt;module~forimage</title>
+<path fill="none" stroke="#025578" stroke-dasharray="5,2" d="M111.58,-293.89C106.78,-291 101.7,-287.91 97,-285 84.29,-277.11 70.31,-268.19 58.55,-260.6"/>
+<polygon fill="#025578" stroke="#025578" points="60.34,-257.59 50.04,-255.1 56.54,-263.47 60.34,-257.59"/>
 </g>
 <!-- program~example2 -->
-<g id="module~~graph~~ModuleGraph_node3" class="node">
+<g id="module~~graph~~ModuleGraph_node7" class="node">
 <title>program~example2</title>
-<g id="a_module~~graph~~ModuleGraph_node3"><a xlink:href=".././program/example2.html" xlink:title="example2">
-<polygon fill="#f0ad4e" stroke="#f0ad4e" points="162,-66 97,-66 97,-42 162,-42 162,-66"/>
-<text text-anchor="middle" x="129.5" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">example2</text>
+<g id="a_module~~graph~~ModuleGraph_node7"><a xlink:href=".././program/example2.html" xlink:title="example2">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="165.5,-276 100.5,-276 100.5,-252 165.5,-252 165.5,-276"/>
+<text text-anchor="middle" x="133" y="-261.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">example2</text>
 </a>
 </g>
 </g>
 <!-- program~example2&#45;&gt;module~forimage -->
-<g id="module~~graph~~ModuleGraph_edge2" class="edge">
+<g id="module~~graph~~ModuleGraph_edge6" class="edge">
 <title>program~example2&#45;&gt;module~forimage</title>
-<path fill="none" stroke="#025525" stroke-dasharray="5,2" stroke-opacity="0.019608" d="M96.74,-54C88.57,-54 79.68,-54 71.16,-54"/>
-<polygon fill="#025525" fill-opacity="0.019608" stroke="#025525" stroke-opacity="0.019608" points="71.03,-50.5 61.03,-54 71.03,-57.5 71.03,-50.5"/>
+<path fill="none" stroke="#025519" stroke-dasharray="5,2" stroke-opacity="0.023529" d="M100.48,-257.41C91.16,-255.47 80.85,-253.31 71.09,-251.27"/>
+<polygon fill="#025519" fill-opacity="0.023529" stroke="#025519" stroke-opacity="0.023529" points="71.7,-247.82 61.2,-249.21 70.27,-254.68 71.7,-247.82"/>
 </g>
 <!-- program~example3 -->
-<g id="module~~graph~~ModuleGraph_node4" class="node">
+<g id="module~~graph~~ModuleGraph_node8" class="node">
 <title>program~example3</title>
-<g id="a_module~~graph~~ModuleGraph_node4"><a xlink:href=".././program/example3.html" xlink:title="example3">
-<polygon fill="#f0ad4e" stroke="#f0ad4e" points="162,-24 97,-24 97,0 162,0 162,-24"/>
-<text text-anchor="middle" x="129.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">example3</text>
+<g id="a_module~~graph~~ModuleGraph_node8"><a xlink:href=".././program/example3.html" xlink:title="example3">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="165.5,-234 100.5,-234 100.5,-210 165.5,-210 165.5,-234"/>
+<text text-anchor="middle" x="133" y="-219.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">example3</text>
 </a>
 </g>
 </g>
 <!-- program~example3&#45;&gt;module~forimage -->
-<g id="module~~graph~~ModuleGraph_edge3" class="edge">
+<g id="module~~graph~~ModuleGraph_edge7" class="edge">
 <title>program~example3&#45;&gt;module~forimage</title>
-<path fill="none" stroke="#127025" stroke-dasharray="5,2" stroke-opacity="0.019608" d="M100.7,-24.04C90.76,-28.34 79.39,-33.27 68.77,-37.86"/>
-<polygon fill="#127025" fill-opacity="0.019608" stroke="#127025" stroke-opacity="0.019608" points="67.09,-34.78 59.3,-41.96 69.87,-41.2 67.09,-34.78"/>
+<path fill="none" stroke="#019625" stroke-dasharray="5,2" stroke-opacity="0.019608" d="M100.48,-228.59C91.16,-230.53 80.85,-232.69 71.09,-234.73"/>
+<polygon fill="#019625" fill-opacity="0.019608" stroke="#019625" stroke-opacity="0.019608" points="70.27,-231.32 61.2,-236.79 71.7,-238.18 70.27,-231.32"/>
+</g>
+<!-- program~example4 -->
+<g id="module~~graph~~ModuleGraph_node9" class="node">
+<title>program~example4</title>
+<g id="a_module~~graph~~ModuleGraph_node9"><a xlink:href=".././program/example4.html" xlink:title="example4">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="165.5,-192 100.5,-192 100.5,-168 165.5,-168 165.5,-192"/>
+<text text-anchor="middle" x="133" y="-177.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">example4</text>
+</a>
+</g>
+</g>
+<!-- program~example4&#45;&gt;module~forimage -->
+<g id="module~~graph~~ModuleGraph_edge8" class="edge">
+<title>program~example4&#45;&gt;module~forimage</title>
+<path fill="none" stroke="#078255" stroke-dasharray="5,2" d="M111.58,-192.11C106.78,-195 101.7,-198.09 97,-201 84.29,-208.89 70.31,-217.81 58.55,-225.4"/>
+<polygon fill="#078255" stroke="#078255" points="56.54,-222.53 50.04,-230.9 60.34,-228.41 56.54,-222.53"/>
+</g>
+<!-- program~example6 -->
+<g id="module~~graph~~ModuleGraph_node10" class="node">
+<title>program~example6</title>
+<g id="a_module~~graph~~ModuleGraph_node10"><a xlink:href=".././program/example6.html" xlink:title="example6">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="165.5,-150 100.5,-150 100.5,-126 165.5,-126 165.5,-150"/>
+<text text-anchor="middle" x="133" y="-135.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">example6</text>
+</a>
+</g>
+</g>
+<!-- program~example6&#45;&gt;module~forimage -->
+<g id="module~~graph~~ModuleGraph_edge9" class="edge">
+<title>program~example6&#45;&gt;module~forimage</title>
+<path fill="none" stroke="#390255" stroke-dasharray="5,2" d="M108.93,-150.18C104.77,-152.83 100.61,-155.81 97,-159 75.89,-177.68 56.7,-203.9 44.62,-222.05"/>
+<polygon fill="#390255" stroke="#390255" points="41.5,-220.44 38.98,-230.73 47.37,-224.25 41.5,-220.44"/>
+</g>
+<!-- program~example7 -->
+<g id="module~~graph~~ModuleGraph_node11" class="node">
+<title>program~example7</title>
+<g id="a_module~~graph~~ModuleGraph_node11"><a xlink:href=".././program/example7.html" xlink:title="example7">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="165.5,-108 100.5,-108 100.5,-84 165.5,-84 165.5,-108"/>
+<text text-anchor="middle" x="133" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">example7</text>
+</a>
+</g>
+</g>
+<!-- program~example7&#45;&gt;module~forimage -->
+<g id="module~~graph~~ModuleGraph_edge10" class="edge">
+<title>program~example7&#45;&gt;module~forimage</title>
+<path fill="none" stroke="#156025" stroke-dasharray="5,2" stroke-opacity="0.019608" d="M107.71,-108.14C103.85,-110.73 100.11,-113.7 97,-117 67.92,-147.91 48.33,-194.23 38.62,-221.25"/>
+<polygon fill="#156025" fill-opacity="0.019608" stroke="#156025" stroke-opacity="0.019608" points="35.24,-220.32 35.27,-230.91 41.85,-222.61 35.24,-220.32"/>
+</g>
+<!-- program~example8 -->
+<g id="module~~graph~~ModuleGraph_node12" class="node">
+<title>program~example8</title>
+<g id="a_module~~graph~~ModuleGraph_node12"><a xlink:href=".././program/example8.html" xlink:title="example8">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="165.5,-66 100.5,-66 100.5,-42 165.5,-42 165.5,-66"/>
+<text text-anchor="middle" x="133" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">example8</text>
+</a>
+</g>
+</g>
+<!-- program~example8&#45;&gt;module~forimage -->
+<g id="module~~graph~~ModuleGraph_edge11" class="edge">
+<title>program~example8&#45;&gt;module~forimage</title>
+<path fill="none" stroke="#255023" stroke-dasharray="5,2" stroke-opacity="0.019608" d="M107.05,-66.12C103.35,-68.68 99.83,-71.64 97,-75 60.01,-118.82 42.42,-185.94 35.41,-220.59"/>
+<polygon fill="#255023" fill-opacity="0.019608" stroke="#255023" stroke-opacity="0.019608" points="31.93,-220.14 33.49,-230.62 38.8,-221.46 31.93,-220.14"/>
+</g>
+<!-- program~example9 -->
+<g id="module~~graph~~ModuleGraph_node13" class="node">
+<title>program~example9</title>
+<g id="a_module~~graph~~ModuleGraph_node13"><a xlink:href=".././program/example9.html" xlink:title="example9">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="165.5,-24 100.5,-24 100.5,0 165.5,0 165.5,-24"/>
+<text text-anchor="middle" x="133" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">example9</text>
+</a>
+</g>
+</g>
+<!-- program~example9&#45;&gt;module~forimage -->
+<g id="module~~graph~~ModuleGraph_edge12" class="edge">
+<title>program~example9&#45;&gt;module~forimage</title>
+<path fill="none" stroke="#255011" stroke-dasharray="5,2" stroke-opacity="0.027451" d="M106.49,-24.2C102.95,-26.73 99.63,-29.66 97,-33 51.81,-90.47 37.58,-179.43 33.27,-220.64"/>
+<polygon fill="#255011" fill-opacity="0.027451" stroke="#255011" stroke-opacity="0.027451" points="29.78,-220.42 32.32,-230.71 36.75,-221.08 29.78,-220.42"/>
 </g>
 </g>
 </svg>
-</div>        <div><a type="button" class="graph-help" data-toggle="modal" href="#graph-help-text">Help</a></div>
-          <div class="modal fade" id="graph-help-text" tabindex="-1" role="dialog">
+</div>        <div><a type="button" class="graph-help" data-toggle="modal" href="#ModuleGraph-help-text">Help</a></div>
+          <div class="modal fade" id="ModuleGraph-help-text" tabindex="-1" role="dialog">
             <div class="modal-dialog modal-lg" role="document">
               <div class="modal-content">
                 <div class="modal-header">
@@ -241,32 +350,27 @@ large graphs.</div>
     </div> <!-- /container -->
     <footer>
       <div class="container">
-        <div class="row">
-          <div class="col-xs-6 col-md-6"><p>ForImage was developed by Seyed Ali Ghasemi<br>&copy; 2023 
+        <div class="row justify-content-between">
+          <div class="col"><p>ForImage was developed by Seyed Ali Ghasemi<br>&copy; 2023 
 </p>
           </div>
-          <div class="col-xs-6 col-md-6">
-            <p class="text-right">
+          <div class="col">
+            <p class="text-end">
               Documentation generated by
               <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
- on 2023-08-03T10:31:04.631884             </p>
+ on 2023-10-24T18:58:19.511346             </p>
           </div>
         </div>
         <br>
       </div> <!-- /container -->
     </footer>
 
-    <!-- Bootstrap core JavaScript
-         ================================================== -->
-         <!-- Placed at the end of the document so the pages load faster -->
-    <!--
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-        -->
-        <script src="../js/bootstrap.min.js"></script>
-        <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-        <script src="../js/ie10-viewport-bug-workaround.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>    
 
-        <!-- MathJax JavaScript
+    <!-- MathJax JavaScript
              ================================================== -->
              <!-- Placed at the end of the document so the pages load faster -->
         <script type="text/x-mathjax-config">
