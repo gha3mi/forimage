@@ -1,8 +1,8 @@
-program example2
+program example
     use forimage, only: format_pnm
     implicit none
     
-    type(format_pnm) :: ex2
+    type(format_pnm) :: ex5
     integer, dimension(60,60) :: px
 
     px = transpose(reshape(&
@@ -3608,9 +3608,9 @@ program example2
     255]&
     ,shape=shape(px)))
 
-    call ex2%set_pnm(encoding='ascii', file_format='pgm', width=60, height=60, max_color=255, comment='example 2', pixels=px)
-    call ex2%export_pnm('pnm_files/example2_ascii')
+    call ex5%set_pnm(encoding='binary', file_format='pgm', width=60, height=60, max_color=255, comment='example 2', pixels=px)
+    call ex5%export_pnm('pnm_files/example5_binary')
+    
+    call ex5%dlloc()
 
-    call ex2%dlloc()
-
-end program example2
+end program example

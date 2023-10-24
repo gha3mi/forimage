@@ -1,8 +1,8 @@
-program example1
+program example4
     use forimage, only: format_pnm
     implicit none
     
-    type(format_pnm) :: ex1
+    type(format_pnm) :: ex4
     integer, dimension(10,6) :: px
 
     px(1,:)  = [0,0,0,0,1,0]
@@ -16,9 +16,9 @@ program example1
     px(9,:)  = [0,0,0,0,0,0]
     px(10,:) = [0,0,0,0,0,0]
 
-    call ex1%set_pnm(encoding='ascii', file_format='pbm', width=6, height=10, comment='example 1', pixels=px)
-    call ex1%export_pnm('pnm_files/example1_ascii')
+    call ex4%set_pnm(encoding='binary', file_format='pbm', width=6, height=10, comment='example 1', pixels=px)
+    call ex4%export_pnm('pnm_files/example4_binary')
 
-    call ex1%dlloc()
+    call ex4%dlloc()
 
-end program example1
+end program example4

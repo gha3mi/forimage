@@ -8,22 +8,10 @@
 
 **ForImage**: A Fortran library for reading and writing images.
 
-- [Todo](#todo)
 - [fpm dependency](#fpm-dependency)
 - [How to run examples](#how-to-run-examples)
 - [API documentation](#api-documentation)
 - [Contributing](#contributing)
-
-## Todo
-
-- [x] pbm (ASCII/plain)
-- [x] pgm (ASCII/plain)
-- [x] ppm (ASCII/plain)
-- [ ] pbm (binary/raw)
-- [ ] pgm (binary/raw)
-- [ ] ppm (binary/raw)
-
-Please note that ForImage is currently under development.
 
 ## fpm dependency
 
@@ -49,7 +37,11 @@ git clone https://github.com/gha3mi/forimage.git
 cd forimage
 ```
 
-To run the examples using `fpm`, you can use response files for specific
+```shell
+fpm --example run --all
+```
+
+<!-- To run the examples using `fpm`, you can use response files for specific
 compilers:
 
 **For Intel Fortran Compiler (ifort):**
@@ -74,7 +66,7 @@ compilers:
 
   ```shell
   fpm @gfortran
-  ```
+  ``` -->
 
 ## API documentation
 
