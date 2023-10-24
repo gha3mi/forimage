@@ -1,5 +1,5 @@
 [![GitHub](https://img.shields.io/badge/GitHub-ForImage-blue.svg?style=social&logo=github)](https://github.com/gha3mi/forimage)
-[![Version](https://img.shields.io/github/v/tag/gha3mi/forimage?color=blue&logo=github&style=flat)](https://github.com/gha3mi/forimage/releases)
+[![Version](https://img.shields.io/github/release/gha3mi/forimage.svg)](https://github.com/gha3mi/forimage/releases/latest)
 [![Documentation](https://img.shields.io/badge/ford-Documentation%20-blueviolet.svg)](https://gha3mi.github.io/forimage/)
 [![License](https://img.shields.io/github/license/gha3mi/forimage?color=green)](https://github.com/gha3mi/forimage/blob/main/LICENSE)
 [![Build](https://github.com/gha3mi/forimage/actions/workflows/ci.yml/badge.svg)](https://github.com/gha3mi/forimage/actions/workflows/ci.yml)
