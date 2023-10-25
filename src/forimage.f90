@@ -14,7 +14,7 @@ module forimage
       integer                              :: max_color
       integer, dimension(:,:), allocatable :: pixels
       character(3)                         :: file_format
-      character(5)                         :: encoding
+      character(6)                         :: encoding
    contains
       procedure :: set_format
       procedure :: set_file_format
@@ -52,7 +52,7 @@ contains
       class(format_pnm), intent(inout) :: this
       character(*), intent(in)         :: encoding
 
-      this%encoding = encoding
+      this%encoding = trim(encoding)
    end subroutine set_format
    !===============================================================================
 
@@ -77,10 +77,10 @@ contains
       character :: temp
       character, allocatable :: temp_pixel(:)
 
-      this%file_format = file_format
-      this%encoding = encoding
+      call this%set_file_format(file_format)
+      call this%set_format(encoding)
 
-      select case (encoding)
+      select case (this%encoding)
        case ('binary','raw')
 
          select case (file_format)
@@ -174,9 +174,12 @@ contains
       character(3), intent(in)            :: file_format
       character(2)                        :: magic_number
 
-      select case (encoding)
+      call this%set_format(encoding)
+      call this%set_file_format(file_format)
+
+      select case (this%encoding)
        case ('ascii','plain')
-         select case (file_format)
+         select case (this%file_format)
           case ('pbm')
             magic_number = 'P1'
           case ('pgm')
@@ -185,7 +188,7 @@ contains
             magic_number = 'P3'
          end select
        case ('binary','raw')
-         select case (file_format)
+         select case (this%file_format)
           case ('pbm')
             magic_number = 'P4'
           case ('pgm')
@@ -195,8 +198,6 @@ contains
          end select
       end select
 
-      call this%set_format(encoding)
-      call this%set_file_format(file_format)
       call this%set_header(magic_number,width,height,comment,max_color)
       call this%allocate_pixels()
       call this%set_pixels(pixels)
