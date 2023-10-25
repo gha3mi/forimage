@@ -89,10 +89,10 @@ contains
             read(nunit,*) this%magic_number
             read(nunit,*) temp,this%comment
             read(nunit,*) this%width, this%height
-            call this%allocate_pixels()
             allocate(temp_pixel(this%height*this%width))
             read(nunit, '(*(a))', advance='yes') temp_pixel
             close(nunit)
+            call this%allocate_pixels()
             this%pixels = transpose(reshape(ichar(temp_pixel), [this%height, this%width]))
          case ('pgm')
             open (newunit = nunit, file = file_name//'.'//file_format)
@@ -100,10 +100,10 @@ contains
             read(nunit,*) temp,this%comment
             read(nunit,*) this%width, this%height
             read(nunit,*) this%max_color
-            call this%allocate_pixels()
             allocate(temp_pixel(this%height*this%width))
             read(nunit, '(*(a))', advance='yes') temp_pixel
             close(nunit)
+            call this%allocate_pixels()
             this%pixels = transpose(reshape(ichar(temp_pixel), [this%height, this%width]))
          case ('ppm')
             open (newunit = nunit, file = file_name//'.'//file_format)
@@ -111,10 +111,10 @@ contains
             read(nunit,*) temp,this%comment
             read(nunit,*) this%width, this%height
             read(nunit,*) this%max_color
-            call this%allocate_pixels()
             allocate(temp_pixel(this%height*this%width*3))
             read(nunit, '(*(a))', advance='yes') temp_pixel
             close(nunit)
+            call this%allocate_pixels()
             this%pixels = transpose(reshape(ichar(temp_pixel), [this%height, 3*this%width]))
          end select
 
