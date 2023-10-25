@@ -1,7 +1,7 @@
 module forimage
 
    implicit none
-   
+
    private
    public format_pnm
 
@@ -38,10 +38,10 @@ contains
    !===============================================================================
    !> author: Seyed Ali Ghasemi
    elemental pure subroutine set_file_format(this, file_format)
-   class(format_pnm), intent(inout) :: this
-   character(3), intent(in)         :: file_format
+      class(format_pnm), intent(inout) :: this
+      character(3), intent(in)         :: file_format
 
-   this%file_format = file_format
+      this%file_format = file_format
    end subroutine set_file_format
    !===============================================================================
 
@@ -49,10 +49,10 @@ contains
    !===============================================================================
    !> author: Seyed Ali Ghasemi
    elemental pure subroutine set_format(this, encoding)
-   class(format_pnm), intent(inout) :: this
-   character(*), intent(in)         :: encoding
+      class(format_pnm), intent(inout) :: this
+      character(*), intent(in)         :: encoding
 
-   this%encoding = encoding
+      this%encoding = encoding
    end subroutine set_format
    !===============================================================================
 
@@ -81,10 +81,10 @@ contains
       this%encoding = encoding
 
       select case (encoding)
-      case ('binary','raw')
+       case ('binary','raw')
 
          select case (file_format)
-         case ('pbm')
+          case ('pbm')
             open (newunit = nunit, file = file_name//'.'//file_format)
             read(nunit,*) this%magic_number
             read(nunit,*) temp,this%comment
@@ -94,7 +94,7 @@ contains
             close(nunit)
             call this%allocate_pixels()
             this%pixels = transpose(reshape(ichar(temp_pixel), [this%height, this%width]))
-         case ('pgm')
+          case ('pgm')
             open (newunit = nunit, file = file_name//'.'//file_format)
             read(nunit,*) this%magic_number
             read(nunit,*) temp,this%comment
@@ -105,7 +105,7 @@ contains
             close(nunit)
             call this%allocate_pixels()
             this%pixels = transpose(reshape(ichar(temp_pixel), [this%height, this%width]))
-         case ('ppm')
+          case ('ppm')
             open (newunit = nunit, file = file_name//'.'//file_format)
             read(nunit,*) this%magic_number
             read(nunit,*) temp,this%comment
@@ -118,10 +118,10 @@ contains
             this%pixels = transpose(reshape(ichar(temp_pixel), [this%height, 3*this%width]))
          end select
 
-      case ('ascii','plain')
+       case ('ascii','plain')
 
          select case (file_format)
-         case ('pbm')
+          case ('pbm')
             open (newunit = nunit, file = file_name//'.'//file_format)
             read(nunit,*) this%magic_number
             read(nunit,*) temp,this%comment
@@ -131,7 +131,7 @@ contains
                read(nunit, *) this%pixels(i,:)
             end do
             close(nunit)
-         case ('pgm')
+          case ('pgm')
             open (newunit = nunit, file = file_name//'.'//file_format)
             read(nunit,*) this%magic_number
             read(nunit,*) temp,this%comment
@@ -142,7 +142,7 @@ contains
                read(nunit, *) this%pixels(i,:)
             end do
             close(nunit)
-         case ('ppm')
+          case ('ppm')
             open (newunit = nunit, file = file_name//'.'//file_format)
             read(nunit,*) this%magic_number
             read(nunit,*) temp,this%comment
@@ -175,22 +175,22 @@ contains
       character(2)                        :: magic_number
 
       select case (encoding)
-      case ('ascii','plain')
+       case ('ascii','plain')
          select case (file_format)
-         case ('pbm')
+          case ('pbm')
             magic_number = 'P1'
-         case ('pgm')
+          case ('pgm')
             magic_number = 'P2'
-         case ('ppm')
+          case ('ppm')
             magic_number = 'P3'
          end select
-      case ('binary','raw')
+       case ('binary','raw')
          select case (file_format)
-         case ('pbm')
+          case ('pbm')
             magic_number = 'P4'
-         case ('pgm')
+          case ('pgm')
             magic_number = 'P5'
-         case ('ppm')
+          case ('ppm')
             magic_number = 'P6'
          end select
       end select
@@ -209,11 +209,11 @@ contains
    elemental pure subroutine allocate_pixels(this)
       class(format_pnm), intent(inout) :: this
       select case(this%magic_number)
-         case('P1')
+       case('P1')
          if (.not.allocated(this%pixels)) allocate(this%pixels(this%height, this%width))
-         case('P2')
+       case('P2')
          if (.not.allocated(this%pixels)) allocate(this%pixels(this%height, this%width))
-         case('P3')
+       case('P3')
          if (.not.allocated(this%pixels)) allocate(this%pixels(this%height, 3*this%width))
       end select
    end subroutine allocate_pixels
@@ -278,7 +278,7 @@ contains
       integer, intent(in)              :: width
       integer, intent(in)              :: height
       character(*), intent(in)         :: comment
-      integer, optional, intent(in)              :: max_color
+      integer, optional, intent(in)    :: max_color
 
       call this%set_magicnumber(magic_number)
       call this%set_width(width)
@@ -293,7 +293,7 @@ contains
    !> author: Seyed Ali Ghasemi
    pure subroutine set_pixels(this, pixels)
       class(format_pnm), intent(inout) :: this
-      integer, dimension(:,:), intent(in)              :: pixels
+      integer, dimension(:,:), intent(in) :: pixels
       this%pixels = pixels
    end subroutine set_pixels
    !===============================================================================
@@ -307,11 +307,11 @@ contains
       integer, intent(in), optional    :: r, g, b
       integer, intent(in)              :: i, j
       select case(this%magic_number)
-         case('P1')
+       case('P1')
          this%pixels(i,j) = grey
-         case('P2')
+       case('P2')
          this%pixels(i,j) = grey
-         case('P3')
+       case('P3')
          this%pixels(i,3*j-2) = r
          this%pixels(i,3*j-1) = g
          this%pixels(i,3*j-0) = b
@@ -322,27 +322,59 @@ contains
 
    !===============================================================================
    !> author: Seyed Ali Ghasemi
-   impure subroutine export_pnm(this, file_name)
-      class(format_pnm), intent(inout) :: this
-      character(*), intent(in)         :: file_name
-      integer :: nunit, i, j
+   impure subroutine export_pnm(this, file_name, encoding)
+      class(format_pnm), intent(inout)        :: this
+      character(*),      intent(in)           :: file_name
+      character(*),      intent(in), optional :: encoding
+      integer                                 :: nunit, i, j
 
-      open (newunit = nunit, file = file_name//'.'//this%file_format, status='replace')
-      write(nunit,'(a)') this%magic_number
-      write(nunit,'(a,a)') '# ',this%comment
-      write(nunit, '(g0,1x,g0)') this%width, this%height
-      if (this%file_format /= 'pbm') write(nunit,'(g0)') this%max_color
+      if (present(encoding)) then
+         call this%set_format(encoding)
+
+         select case (this%encoding)
+          case ('ascii','plain')
+            select case (this%file_format)
+             case ('pbm')
+               this%magic_number = 'P1'
+             case ('pgm')
+               this%magic_number = 'P2'
+             case ('ppm')
+               this%magic_number = 'P3'
+            end select
+          case ('binary','raw')
+            select case (this%file_format)
+             case ('pbm')
+               this%magic_number = 'P4'
+             case ('pgm')
+               this%magic_number = 'P5'
+             case ('ppm')
+               this%magic_number = 'P6'
+            end select
+         end select
+      end if
+
       select case (this%magic_number)
        case ('P1', 'P2', 'P3')
+         open (newunit = nunit, file = file_name//'.'//this%file_format, status='replace')
+         write(nunit,'(a)') this%magic_number
+         write(nunit,'(a,a)') '# ',this%comment
+         write(nunit, '(g0,1x,g0)') this%width, this%height
+         if (this%file_format /= 'pbm') write(nunit,'(g0)') this%max_color
          do i = 1, size(this%pixels,1)
             write(nunit, '(*(g0,1x))') this%pixels(i,:)
          end do
+         close(nunit)
        case  ('P4', 'P5', 'P6')
+         open (newunit = nunit, file = file_name//'.'//this%file_format, status='replace')
+         write(nunit,'(a)') this%magic_number
+         write(nunit,'(a,a)') '# ',this%comment
+         write(nunit, '(g0,1x,g0)') this%width, this%height
+         if (this%file_format /= 'pbm') write(nunit,'(g0)') this%max_color
          do i = 1, size(this%pixels,1)
-               write(nunit, '(*(a))', advance='no') achar(this%pixels(i,:))
+            write(nunit, '(*(a))', advance='no') achar(this%pixels(i,:))
          end do
+         close(nunit)
       end select
-      close(nunit)
    end subroutine export_pnm
    !===============================================================================
 
