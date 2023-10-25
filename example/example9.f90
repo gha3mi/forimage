@@ -7,6 +7,6 @@ program example9
     call ex9%import_pnm('pnm_files/example3_ascii','ppm','ascii')
     call ex9%export_pnm('pnm_files/example3_ascii_ex')
 
-    call ex9%dlloc()
+    call ex9%finalize()
 
 end program example9

@@ -13,6 +13,6 @@ program example6
     call ex6%set_pnm(encoding='binary', file_format='ppm', width=4, height=4, max_color=15, comment='example 2', pixels=px)
     call ex6%export_pnm('pnm_files/example6_binary')
 
-    call ex6%dlloc()
+    call ex6%finalize()
 
 end program example6
