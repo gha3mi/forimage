@@ -91,9 +91,9 @@ contains
             read(nunit,*) this%width, this%height
             call this%allocate_pixels()
             allocate(temp_pixel(this%height*this%width))
-            read(nunit, '(*(a))', advance='no') temp_pixel
-            this%pixels = transpose(reshape(ichar(temp_pixel), [this%height, this%width]))
+            read(nunit, '(*(a))', advance='yes') temp_pixel
             close(nunit)
+            this%pixels = transpose(reshape(ichar(temp_pixel), [this%height, this%width]))
          case ('pgm')
             open (newunit = nunit, file = file_name//'.'//file_format)
             read(nunit,*) this%magic_number
@@ -102,9 +102,9 @@ contains
             read(nunit,*) this%max_color
             call this%allocate_pixels()
             allocate(temp_pixel(this%height*this%width))
-            read(nunit, '(*(a))', advance='no') temp_pixel
-            this%pixels = transpose(reshape(ichar(temp_pixel), [this%height, this%width]))
+            read(nunit, '(*(a))', advance='yes') temp_pixel
             close(nunit)
+            this%pixels = transpose(reshape(ichar(temp_pixel), [this%height, this%width]))
          case ('ppm')
             open (newunit = nunit, file = file_name//'.'//file_format)
             read(nunit,*) this%magic_number
@@ -113,9 +113,9 @@ contains
             read(nunit,*) this%max_color
             call this%allocate_pixels()
             allocate(temp_pixel(this%height*this%width*3))
-            read(nunit, '(*(a))', advance='no') temp_pixel
-            this%pixels = transpose(reshape(ichar(temp_pixel), [this%height, 3*this%width]))
+            read(nunit, '(*(a))', advance='yes') temp_pixel
             close(nunit)
+            this%pixels = transpose(reshape(ichar(temp_pixel), [this%height, 3*this%width]))
          end select
 
       case ('ascii','plain')
@@ -339,9 +339,7 @@ contains
          end do
        case  ('P4', 'P5', 'P6')
          do i = 1, size(this%pixels,1)
-            do j = 1, size(this%pixels,2)
-               write(nunit, '(*(a))', advance='no') achar(this%pixels(i,j))
-            end do
+               write(nunit, '(*(a))', advance='no') achar(this%pixels(i,:))
          end do
       end select
       close(nunit)
