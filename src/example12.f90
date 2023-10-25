@@ -7,6 +7,6 @@ program example12
     call ex12%import_pnm('pnm_files/example6_binary','ppm','binary')
     call ex12%export_pnm('pnm_files/example6_binary_ex')
 
-    call ex12%dlloc()
+    call ex12%finalize()
 
 end program example12

@@ -19,6 +19,6 @@ program example4
     call ex4%set_pnm(encoding='binary', file_format='pbm', width=6, height=10, comment='example 1', pixels=px)
     call ex4%export_pnm('pnm_files/example4_binary')
 
-    call ex4%dlloc()
+    call ex4%finalize()
 
 end program example4

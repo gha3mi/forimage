@@ -19,6 +19,6 @@ program example1
     call ex1%set_pnm(encoding='ascii', file_format='pbm', width=6, height=10, comment='example 1', pixels=px)
     call ex1%export_pnm('pnm_files/example1_ascii')
 
-    call ex1%dlloc()
+    call ex1%finalize()
 
 end program example1

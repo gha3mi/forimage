@@ -13,6 +13,6 @@ program example3
     call ex3%set_pnm(encoding='ascii', file_format='ppm', width=4, height=4, max_color=15, comment='example 2', pixels=px)
     call ex3%export_pnm('pnm_files/example3_ascii')
 
-    call ex3%dlloc()
+    call ex3%finalize()
 
 end program example3

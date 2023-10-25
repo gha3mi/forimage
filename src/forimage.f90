@@ -29,7 +29,7 @@ module forimage
       procedure :: export_pnm
       procedure :: set_pnm
       procedure :: import_pnm
-      procedure :: dlloc => deallocate_pnm
+      procedure :: finalize => deallocate_pnm
    end type format_pnm
    !===============================================================================
 
