@@ -75,7 +75,7 @@
             <li class="list-inline-item" id="statements"><i class="fa fa-list-ol"></i>
               <a data-bs-toggle="tooltip"
                  data-bs-placement="bottom" data-html="true"
-                 title="16.1% of total for procedures.">36 statements</a>
+                 title="14.2% of total for procedures.">36 statements</a>
             </li>
 
             <li class="list-inline-item" id="source-file">
@@ -176,7 +176,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-encoding~3"></span>
+              <span class="anchor" id="variable-encoding~4"></span>
               character(len=*),
             </td>
 <td>intent(in)</td>
@@ -763,22 +763,22 @@ large graphs.</div>
 <span class="w">      </span><span class="kt">character</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="w">                        </span><span class="kd">::</span><span class="w"> </span><span class="n">magic_number</span>
 
 <span class="w">      </span><span class="k">select case</span><span class="w"> </span><span class="p">(</span><span class="n">encoding</span><span class="p">)</span>
-<span class="w">      </span><span class="k">case</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;ascii&#39;</span><span class="p">,</span><span class="s1">&#39;plain&#39;</span><span class="p">)</span>
+<span class="w">       </span><span class="k">case</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;ascii&#39;</span><span class="p">,</span><span class="s1">&#39;plain&#39;</span><span class="p">)</span>
 <span class="w">         </span><span class="k">select case</span><span class="w"> </span><span class="p">(</span><span class="n">file_format</span><span class="p">)</span>
-<span class="w">         </span><span class="k">case</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;pbm&#39;</span><span class="p">)</span>
+<span class="w">          </span><span class="k">case</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;pbm&#39;</span><span class="p">)</span>
 <span class="w">            </span><span class="n">magic_number</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;P1&#39;</span>
-<span class="w">         </span><span class="k">case</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;pgm&#39;</span><span class="p">)</span>
+<span class="w">          </span><span class="k">case</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;pgm&#39;</span><span class="p">)</span>
 <span class="w">            </span><span class="n">magic_number</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;P2&#39;</span>
-<span class="w">         </span><span class="k">case</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;ppm&#39;</span><span class="p">)</span>
+<span class="w">          </span><span class="k">case</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;ppm&#39;</span><span class="p">)</span>
 <span class="w">            </span><span class="n">magic_number</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;P3&#39;</span>
 <span class="w">         </span><span class="k">end select</span>
-<span class="k">      case</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;binary&#39;</span><span class="p">,</span><span class="s1">&#39;raw&#39;</span><span class="p">)</span>
+<span class="k">       case</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;binary&#39;</span><span class="p">,</span><span class="s1">&#39;raw&#39;</span><span class="p">)</span>
 <span class="w">         </span><span class="k">select case</span><span class="w"> </span><span class="p">(</span><span class="n">file_format</span><span class="p">)</span>
-<span class="w">         </span><span class="k">case</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;pbm&#39;</span><span class="p">)</span>
+<span class="w">          </span><span class="k">case</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;pbm&#39;</span><span class="p">)</span>
 <span class="w">            </span><span class="n">magic_number</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;P4&#39;</span>
-<span class="w">         </span><span class="k">case</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;pgm&#39;</span><span class="p">)</span>
+<span class="w">          </span><span class="k">case</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;pgm&#39;</span><span class="p">)</span>
 <span class="w">            </span><span class="n">magic_number</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;P5&#39;</span>
-<span class="w">         </span><span class="k">case</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;ppm&#39;</span><span class="p">)</span>
+<span class="w">          </span><span class="k">case</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;ppm&#39;</span><span class="p">)</span>
 <span class="w">            </span><span class="n">magic_number</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;P6&#39;</span>
 <span class="w">         </span><span class="k">end select</span>
 <span class="k">      end select</span>
@@ -809,7 +809,7 @@ large graphs.</div>
             <p class="text-end">
               Documentation generated by
               <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
- on 2023-10-25T08:29:03.887292             </p>
+ on 2023-10-25T09:34:37.765799             </p>
           </div>
         </div>
         <br>
