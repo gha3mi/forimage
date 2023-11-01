@@ -1,0 +1,1369 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="Documentation for ForImage">
+    <meta name="author" content="Seyed Ali Ghasemi" >
+    <link rel="icon" href="../favicon.png">
+
+    <title>lut &ndash; ForImage</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="../css/pygments.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/local.css" rel="stylesheet">
+      <link  href="../tipuesearch/tipuesearch.css" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-3.7.0.slim.min.js" integrity="sha256-tG5mcZUtJsZvyKAxYLVXrmjKBVLd6VpVccqz/r4ypFE=" crossorigin="anonymous"></script>
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <div class="container-fluid mb-sm-4 mb-xl-2">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+          <a class="navbar-brand" href="../index.html">ForImage <small>0.3.0</small></a>
+          <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar"
+                  aria-expanded="false" aria-controls="navbar" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon">
+          </button>
+
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link" href="../lists/files.html">Source Files</a>
+                  </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/modules.html">Modules</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/procedures.html">Procedures</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/types.html">Derived Types</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/programs.html">Programs</a>
+                </li>
+            </ul>
+              <div class="d-flex align-items-end flex-grow-1">
+                <form action="../search.html" role="search" class="ms-auto">
+                  <input type="text" class="form-control" aria-label="Search" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+                </form>
+              </div>
+          </div><!--/.nav-collapse -->
+        </div>
+      </nav>
+    </div>
+
+    <div class="container">
+  <div class="row">
+    <h1>lut
+      <small>Module</small>
+      
+    </h1>
+      <div class="container p-2 mb-4 bg-light border rounded-3">
+    <div class="row align-items-center justify-content-between" id="info-bar">
+      <div class="col">
+        <ul class="list-inline" style="margin-bottom:0px;display:inline">
+
+            <li class="list-inline-item" id="statements"><i class="fa fa-list-ol"></i>
+              <a data-bs-toggle="tooltip"
+                 data-bs-placement="bottom" data-html="true"
+                 title="26.1% of total for modules and submodules.">103 statements</a>
+            </li>
+
+            <li class="list-inline-item" id="source-file">
+              <i class="fa fa-code"></i>
+              <a href="../src/lut.f90"> Source File</a>
+            </li>
+        </ul>
+      </div>
+      <div class="col">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb justify-content-end mb-0">
+                <li class="breadcrumb-item"><a href='../sourcefile/lut.f90.html'>lut.f90</a></li>
+            <li class="breadcrumb-item active" aria-current="page">lut</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </div>
+  <script>
+    $(function () {
+    $('[data-bs-toggle="tooltip"]').tooltip()
+    })
+  </script>
+
+  </div>
+
+  <div class="row">
+    <div class="col-md-3">
+        <div id="sidebar">
+      <h3>Contents</h3>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+      <div class="card mb-4">
+      <a data-bs-toggle="collapse" href="#types-0"
+         aria-expanded="false" aria-controls="types-0">
+         <h4 class="card-header bg-primary text-white">Derived Types</h4>
+      </a>
+      <div id="types-0" class="collapse">
+        <div class="list-group list-group-flush">
+            <a class="list-group-item" href="../module/lut.html#type-format_lut">format_lut</a>
+        </div>
+      </div>
+    </div>
+
+      <div class="card mb-4">
+      <a data-bs-toggle="collapse" href="#funcs-0"
+         aria-expanded="false" aria-controls="funcs-0">
+         <h4 class="card-header bg-primary text-white">Functions</h4>
+      </a>
+      <div id="funcs-0" class="collapse">
+        <div class="list-group list-group-flush">
+            <a class="list-group-item" href="../module/lut.html#proc-get_num_colors">get_num_colors</a>
+            <a class="list-group-item" href="../module/lut.html#proc-get_dim_colors">get_dim_colors</a>
+            <a class="list-group-item" href="../module/lut.html#proc-get_colors">get_colors</a>
+        </div>
+      </div>
+    </div>
+
+      <div class="card mb-4">
+      <a data-bs-toggle="collapse" href="#subs-0"
+         aria-expanded="false" aria-controls="subs-0">
+         <h4 class="card-header bg-primary text-white">Subroutines</h4>
+      </a>
+      <div id="subs-0" class="collapse">
+        <div class="list-group list-group-flush">
+            <a class="list-group-item" href="../module/lut.html#proc-allocate_colors">allocate_colors</a>
+            <a class="list-group-item" href="../module/lut.html#proc-set">set</a>
+            <a class="list-group-item" href="../module/lut.html#proc-set_num_colors">set_num_colors</a>
+            <a class="list-group-item" href="../module/lut.html#proc-set_dim_colors">set_dim_colors</a>
+            <a class="list-group-item" href="../module/lut.html#proc-set_colors">set_colors</a>
+            <a class="list-group-item" href="../module/lut.html#proc-deallocate_lut">deallocate_lut</a>
+            <a class="list-group-item" href="../module/lut.html#proc-import">import</a>
+            <a class="list-group-item" href="../module/lut.html#proc-export">export</a>
+        </div>
+      </div>
+    </div>
+
+  
+  
+  
+  
+  
+  
+  
+
+
+  </div>
+
+    </div>
+
+    <div class="col-md-9" id='text'>
+      
+<br>      
+          <div class="card">
+      <h3 class="card-header card-title bg-light">Used by</h3>
+      <div class="card-body">
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.43.0 (0)
+ -->
+<!-- Title: module~~lut~~UsedByGraph Pages: 1 -->
+<svg id="modulelutUsedByGraph" width="267pt" height="662pt"
+ viewBox="0.00 0.00 267.00 662.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="module~~lut~~UsedByGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 658)">
+<title>module~~lut~~UsedByGraph</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-658 263,-658 263,4 -4,4"/>
+<!-- module~lut -->
+<g id="module~~lut~~UsedByGraph_node1" class="node">
+<title>module~lut</title>
+<polygon fill="none" stroke="black" points="54,-339 0,-339 0,-315 54,-315 54,-339"/>
+<text text-anchor="middle" x="27" y="-324.6" font-family="Helvetica,sans-Serif" font-size="10.50">lut</text>
+</g>
+<!-- module~forimage -->
+<g id="module~~lut~~UsedByGraph_node2" class="node">
+<title>module~forimage</title>
+<g id="a_module~~lut~~UsedByGraph_node2"><a xlink:href=".././module/forimage.html" xlink:title="forimage">
+<polygon fill="#337ab7" stroke="#337ab7" points="151,-339 90,-339 90,-315 151,-315 151,-339"/>
+<text text-anchor="middle" x="120.5" y="-324.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">forimage</text>
+</a>
+</g>
+</g>
+<!-- module~forimage&#45;&gt;module~lut -->
+<g id="module~~lut~~UsedByGraph_edge1" class="edge">
+<title>module~forimage&#45;&gt;module~lut</title>
+<path fill="none" stroke="#255000" stroke-dasharray="5,2" d="M89.79,-327C81.63,-327 72.69,-327 64.21,-327"/>
+<polygon fill="#255000" stroke="#255000" points="64.17,-323.5 54.17,-327 64.17,-330.5 64.17,-323.5"/>
+</g>
+<!-- program~example -->
+<g id="module~~lut~~UsedByGraph_node3" class="node">
+<title>program~example</title>
+<g id="a_module~~lut~~UsedByGraph_node3"><a xlink:href=".././program/example.html" xlink:title="example">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="252,-654 194,-654 194,-630 252,-630 252,-654"/>
+<text text-anchor="middle" x="223" y="-639.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">example</text>
+</a>
+</g>
+</g>
+<!-- program~example&#45;&gt;module~forimage -->
+<g id="module~~lut~~UsedByGraph_edge2" class="edge">
+<title>program~example&#45;&gt;module~forimage</title>
+<path fill="none" stroke="#255000" stroke-dasharray="5,2" d="M196.24,-629.98C192.73,-627.43 189.49,-624.45 187,-621 125.3,-535.45 120.17,-402.2 120.76,-349.52"/>
+<polygon fill="#255000" stroke="#255000" points="124.27,-349.35 120.97,-339.28 117.27,-349.21 124.27,-349.35"/>
+</g>
+<!-- program~example1 -->
+<g id="module~~lut~~UsedByGraph_node4" class="node">
+<title>program~example1</title>
+<g id="a_module~~lut~~UsedByGraph_node4"><a xlink:href=".././program/example1.html" xlink:title="example1">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="255.5,-612 190.5,-612 190.5,-588 255.5,-588 255.5,-612"/>
+<text text-anchor="middle" x="223" y="-597.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">example1</text>
+</a>
+</g>
+</g>
+<!-- program~example1&#45;&gt;module~forimage -->
+<g id="module~~lut~~UsedByGraph_edge3" class="edge">
+<title>program~example1&#45;&gt;module~forimage</title>
+<path fill="none" stroke="#255000" stroke-dasharray="5,2" d="M196.35,-587.91C192.82,-585.37 189.55,-582.4 187,-579 133.48,-507.46 123.56,-396.17 121.82,-349.15"/>
+<polygon fill="#255000" stroke="#255000" points="125.31,-349.04 121.54,-339.14 118.32,-349.23 125.31,-349.04"/>
+</g>
+<!-- program~example10 -->
+<g id="module~~lut~~UsedByGraph_node5" class="node">
+<title>program~example10</title>
+<g id="a_module~~lut~~UsedByGraph_node5"><a xlink:href=".././program/example10.html" xlink:title="example10">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="259,-570 187,-570 187,-546 259,-546 259,-570"/>
+<text text-anchor="middle" x="223" y="-555.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">example10</text>
+</a>
+</g>
+</g>
+<!-- program~example10&#45;&gt;module~forimage -->
+<g id="module~~lut~~UsedByGraph_edge4" class="edge">
+<title>program~example10&#45;&gt;module~forimage</title>
+<path fill="none" stroke="#255000" stroke-dasharray="5,2" d="M196.49,-545.8C192.95,-543.27 189.63,-540.34 187,-537 141.81,-479.53 127.58,-390.57 123.27,-349.36"/>
+<polygon fill="#255000" stroke="#255000" points="126.75,-348.92 122.32,-339.29 119.78,-349.58 126.75,-348.92"/>
+</g>
+<!-- program~example11 -->
+<g id="module~~lut~~UsedByGraph_node6" class="node">
+<title>program~example11</title>
+<g id="a_module~~lut~~UsedByGraph_node6"><a xlink:href=".././program/example11.html" xlink:title="example11">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="259,-528 187,-528 187,-504 259,-504 259,-528"/>
+<text text-anchor="middle" x="223" y="-513.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">example11</text>
+</a>
+</g>
+</g>
+<!-- program~example11&#45;&gt;module~forimage -->
+<g id="module~~lut~~UsedByGraph_edge5" class="edge">
+<title>program~example11&#45;&gt;module~forimage</title>
+<path fill="none" stroke="#255000" stroke-dasharray="5,2" d="M197.05,-503.88C193.35,-501.32 189.83,-498.36 187,-495 150.01,-451.18 132.42,-384.06 125.41,-349.41"/>
+<polygon fill="#255000" stroke="#255000" points="128.8,-348.54 123.49,-339.38 121.93,-349.86 128.8,-348.54"/>
+</g>
+<!-- program~example12 -->
+<g id="module~~lut~~UsedByGraph_node7" class="node">
+<title>program~example12</title>
+<g id="a_module~~lut~~UsedByGraph_node7"><a xlink:href=".././program/example12.html" xlink:title="example12">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="259,-486 187,-486 187,-462 259,-462 259,-486"/>
+<text text-anchor="middle" x="223" y="-471.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">example12</text>
+</a>
+</g>
+</g>
+<!-- program~example12&#45;&gt;module~forimage -->
+<g id="module~~lut~~UsedByGraph_edge6" class="edge">
+<title>program~example12&#45;&gt;module~forimage</title>
+<path fill="none" stroke="#255000" stroke-dasharray="5,2" d="M197.71,-461.86C193.85,-459.27 190.11,-456.3 187,-453 157.92,-422.09 138.33,-375.77 128.62,-348.75"/>
+<polygon fill="#255000" stroke="#255000" points="131.85,-347.39 125.27,-339.09 125.24,-349.68 131.85,-347.39"/>
+</g>
+<!-- program~example13 -->
+<g id="module~~lut~~UsedByGraph_node8" class="node">
+<title>program~example13</title>
+<g id="a_module~~lut~~UsedByGraph_node8"><a xlink:href=".././program/example13.html" xlink:title="example13">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="259,-444 187,-444 187,-420 259,-420 259,-444"/>
+<text text-anchor="middle" x="223" y="-429.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">example13</text>
+</a>
+</g>
+</g>
+<!-- program~example13&#45;&gt;module~forimage -->
+<g id="module~~lut~~UsedByGraph_edge7" class="edge">
+<title>program~example13&#45;&gt;module~forimage</title>
+<path fill="none" stroke="#255000" stroke-dasharray="5,2" d="M198.93,-419.82C194.77,-417.17 190.61,-414.19 187,-411 165.89,-392.32 146.7,-366.1 134.62,-347.95"/>
+<polygon fill="#255000" stroke="#255000" points="137.37,-345.75 128.98,-339.27 131.5,-349.56 137.37,-345.75"/>
+</g>
+<!-- program~example14 -->
+<g id="module~~lut~~UsedByGraph_node9" class="node">
+<title>program~example14</title>
+<g id="a_module~~lut~~UsedByGraph_node9"><a xlink:href=".././program/example14.html" xlink:title="example14">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="259,-402 187,-402 187,-378 259,-378 259,-402"/>
+<text text-anchor="middle" x="223" y="-387.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">example14</text>
+</a>
+</g>
+</g>
+<!-- program~example14&#45;&gt;module~forimage -->
+<g id="module~~lut~~UsedByGraph_edge8" class="edge">
+<title>program~example14&#45;&gt;module~forimage</title>
+<path fill="none" stroke="#255000" stroke-dasharray="5,2" d="M201.58,-377.89C196.78,-375 191.7,-371.91 187,-369 174.29,-361.11 160.31,-352.19 148.55,-344.6"/>
+<polygon fill="#255000" stroke="#255000" points="150.34,-341.59 140.04,-339.1 146.54,-347.47 150.34,-341.59"/>
+</g>
+<!-- program~example15 -->
+<g id="module~~lut~~UsedByGraph_node10" class="node">
+<title>program~example15</title>
+<g id="a_module~~lut~~UsedByGraph_node10"><a xlink:href=".././program/example15.html" xlink:title="example15">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="259,-360 187,-360 187,-336 259,-336 259,-360"/>
+<text text-anchor="middle" x="223" y="-345.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">example15</text>
+</a>
+</g>
+</g>
+<!-- program~example15&#45;&gt;module~forimage -->
+<g id="module~~lut~~UsedByGraph_edge9" class="edge">
+<title>program~example15&#45;&gt;module~forimage</title>
+<path fill="none" stroke="#255000" stroke-dasharray="5,2" d="M186.85,-340.66C178.56,-338.92 169.67,-337.06 161.19,-335.29"/>
+<polygon fill="#255000" stroke="#255000" points="161.64,-331.81 151.13,-333.19 160.2,-338.66 161.64,-331.81"/>
+</g>
+<!-- program~example16 -->
+<g id="module~~lut~~UsedByGraph_node11" class="node">
+<title>program~example16</title>
+<g id="a_module~~lut~~UsedByGraph_node11"><a xlink:href=".././program/example16.html" xlink:title="example16">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="259,-318 187,-318 187,-294 259,-294 259,-318"/>
+<text text-anchor="middle" x="223" y="-303.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">example16</text>
+</a>
+</g>
+</g>
+<!-- program~example16&#45;&gt;module~forimage -->
+<g id="module~~lut~~UsedByGraph_edge10" class="edge">
+<title>program~example16&#45;&gt;module~forimage</title>
+<path fill="none" stroke="#255000" stroke-dasharray="5,2" d="M186.85,-313.34C178.56,-315.08 169.67,-316.94 161.19,-318.71"/>
+<polygon fill="#255000" stroke="#255000" points="160.2,-315.34 151.13,-320.81 161.64,-322.19 160.2,-315.34"/>
+</g>
+<!-- program~example2 -->
+<g id="module~~lut~~UsedByGraph_node12" class="node">
+<title>program~example2</title>
+<g id="a_module~~lut~~UsedByGraph_node12"><a xlink:href=".././program/example2.html" xlink:title="example2">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="255.5,-276 190.5,-276 190.5,-252 255.5,-252 255.5,-276"/>
+<text text-anchor="middle" x="223" y="-261.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">example2</text>
+</a>
+</g>
+</g>
+<!-- program~example2&#45;&gt;module~forimage -->
+<g id="module~~lut~~UsedByGraph_edge11" class="edge">
+<title>program~example2&#45;&gt;module~forimage</title>
+<path fill="none" stroke="#255000" stroke-dasharray="5,2" d="M201.58,-276.11C196.78,-279 191.7,-282.09 187,-285 174.29,-292.89 160.31,-301.81 148.55,-309.4"/>
+<polygon fill="#255000" stroke="#255000" points="146.54,-306.53 140.04,-314.9 150.34,-312.41 146.54,-306.53"/>
+</g>
+<!-- program~example3 -->
+<g id="module~~lut~~UsedByGraph_node13" class="node">
+<title>program~example3</title>
+<g id="a_module~~lut~~UsedByGraph_node13"><a xlink:href=".././program/example3.html" xlink:title="example3">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="255.5,-234 190.5,-234 190.5,-210 255.5,-210 255.5,-234"/>
+<text text-anchor="middle" x="223" y="-219.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">example3</text>
+</a>
+</g>
+</g>
+<!-- program~example3&#45;&gt;module~forimage -->
+<g id="module~~lut~~UsedByGraph_edge12" class="edge">
+<title>program~example3&#45;&gt;module~forimage</title>
+<path fill="none" stroke="#255000" stroke-dasharray="5,2" d="M198.93,-234.18C194.77,-236.83 190.61,-239.81 187,-243 165.89,-261.68 146.7,-287.9 134.62,-306.05"/>
+<polygon fill="#255000" stroke="#255000" points="131.5,-304.44 128.98,-314.73 137.37,-308.25 131.5,-304.44"/>
+</g>
+<!-- program~example4 -->
+<g id="module~~lut~~UsedByGraph_node14" class="node">
+<title>program~example4</title>
+<g id="a_module~~lut~~UsedByGraph_node14"><a xlink:href=".././program/example4.html" xlink:title="example4">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="255.5,-192 190.5,-192 190.5,-168 255.5,-168 255.5,-192"/>
+<text text-anchor="middle" x="223" y="-177.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">example4</text>
+</a>
+</g>
+</g>
+<!-- program~example4&#45;&gt;module~forimage -->
+<g id="module~~lut~~UsedByGraph_edge13" class="edge">
+<title>program~example4&#45;&gt;module~forimage</title>
+<path fill="none" stroke="#255000" stroke-dasharray="5,2" d="M197.71,-192.14C193.85,-194.73 190.11,-197.7 187,-201 157.92,-231.91 138.33,-278.23 128.62,-305.25"/>
+<polygon fill="#255000" stroke="#255000" points="125.24,-304.32 125.27,-314.91 131.85,-306.61 125.24,-304.32"/>
+</g>
+<!-- program~example6 -->
+<g id="module~~lut~~UsedByGraph_node15" class="node">
+<title>program~example6</title>
+<g id="a_module~~lut~~UsedByGraph_node15"><a xlink:href=".././program/example6.html" xlink:title="example6">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="255.5,-150 190.5,-150 190.5,-126 255.5,-126 255.5,-150"/>
+<text text-anchor="middle" x="223" y="-135.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">example6</text>
+</a>
+</g>
+</g>
+<!-- program~example6&#45;&gt;module~forimage -->
+<g id="module~~lut~~UsedByGraph_edge14" class="edge">
+<title>program~example6&#45;&gt;module~forimage</title>
+<path fill="none" stroke="#255000" stroke-dasharray="5,2" d="M197.05,-150.12C193.35,-152.68 189.83,-155.64 187,-159 150.01,-202.82 132.42,-269.94 125.41,-304.59"/>
+<polygon fill="#255000" stroke="#255000" points="121.93,-304.14 123.49,-314.62 128.8,-305.46 121.93,-304.14"/>
+</g>
+<!-- program~example7 -->
+<g id="module~~lut~~UsedByGraph_node16" class="node">
+<title>program~example7</title>
+<g id="a_module~~lut~~UsedByGraph_node16"><a xlink:href=".././program/example7.html" xlink:title="example7">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="255.5,-108 190.5,-108 190.5,-84 255.5,-84 255.5,-108"/>
+<text text-anchor="middle" x="223" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">example7</text>
+</a>
+</g>
+</g>
+<!-- program~example7&#45;&gt;module~forimage -->
+<g id="module~~lut~~UsedByGraph_edge15" class="edge">
+<title>program~example7&#45;&gt;module~forimage</title>
+<path fill="none" stroke="#255000" stroke-dasharray="5,2" d="M196.49,-108.2C192.95,-110.73 189.63,-113.66 187,-117 141.81,-174.47 127.58,-263.43 123.27,-304.64"/>
+<polygon fill="#255000" stroke="#255000" points="119.78,-304.42 122.32,-314.71 126.75,-305.08 119.78,-304.42"/>
+</g>
+<!-- program~example8 -->
+<g id="module~~lut~~UsedByGraph_node17" class="node">
+<title>program~example8</title>
+<g id="a_module~~lut~~UsedByGraph_node17"><a xlink:href=".././program/example8.html" xlink:title="example8">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="255.5,-66 190.5,-66 190.5,-42 255.5,-42 255.5,-66"/>
+<text text-anchor="middle" x="223" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">example8</text>
+</a>
+</g>
+</g>
+<!-- program~example8&#45;&gt;module~forimage -->
+<g id="module~~lut~~UsedByGraph_edge16" class="edge">
+<title>program~example8&#45;&gt;module~forimage</title>
+<path fill="none" stroke="#255000" stroke-dasharray="5,2" d="M196.35,-66.09C192.82,-68.63 189.55,-71.6 187,-75 133.48,-146.54 123.56,-257.83 121.82,-304.85"/>
+<polygon fill="#255000" stroke="#255000" points="118.32,-304.77 121.54,-314.86 125.31,-304.96 118.32,-304.77"/>
+</g>
+<!-- program~example9 -->
+<g id="module~~lut~~UsedByGraph_node18" class="node">
+<title>program~example9</title>
+<g id="a_module~~lut~~UsedByGraph_node18"><a xlink:href=".././program/example9.html" xlink:title="example9">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="255.5,-24 190.5,-24 190.5,0 255.5,0 255.5,-24"/>
+<text text-anchor="middle" x="223" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">example9</text>
+</a>
+</g>
+</g>
+<!-- program~example9&#45;&gt;module~forimage -->
+<g id="module~~lut~~UsedByGraph_edge17" class="edge">
+<title>program~example9&#45;&gt;module~forimage</title>
+<path fill="none" stroke="#255000" stroke-dasharray="5,2" d="M196.24,-24.02C192.73,-26.57 189.49,-29.55 187,-33 125.3,-118.55 120.17,-251.8 120.76,-304.48"/>
+<polygon fill="#255000" stroke="#255000" points="117.27,-304.79 120.97,-314.72 124.27,-304.65 117.27,-304.79"/>
+</g>
+</g>
+</svg>
+</div>        <div><a type="button" class="graph-help" data-toggle="modal" href="#UsedByGraph-help-text">Help</a></div>
+          <div class="modal fade" id="UsedByGraph-help-text" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-lg" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                  <h4 class="modal-title" id="-graph-help-label">Graph Key</h4>
+                </div>
+              <div class="modal-body">
+<p>Nodes of different colours represent the following: </p>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.43.0 (0)
+ -->
+<!-- Title: Graph Key Pages: 1 -->
+<svg width="518pt" height="32pt"
+ viewBox="0.00 0.00 517.50 32.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 28)">
+<title>Graph Key</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-28 513.5,-28 513.5,4 -4,4"/>
+<!-- Module -->
+<g id="node1" class="node">
+<title>Module</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="54,-24 0,-24 0,0 54,0 54,-24"/>
+<text text-anchor="middle" x="27" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Module</text>
+</g>
+<!-- Submodule -->
+<g id="node2" class="node">
+<title>Submodule</title>
+<polygon fill="#5bc0de" stroke="#5bc0de" points="145.5,-24 72.5,-24 72.5,0 145.5,0 145.5,-24"/>
+<text text-anchor="middle" x="109" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Submodule</text>
+</g>
+<!-- Subroutine -->
+<g id="node3" class="node">
+<title>Subroutine</title>
+<polygon fill="#d9534f" stroke="#d9534f" points="234,-24 164,-24 164,0 234,0 234,-24"/>
+<text text-anchor="middle" x="199" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Subroutine</text>
+</g>
+<!-- Function -->
+<g id="node4" class="node">
+<title>Function</title>
+<polygon fill="#d94e8f" stroke="#d94e8f" points="310,-24 252,-24 252,0 310,0 310,-24"/>
+<text text-anchor="middle" x="281" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Function</text>
+</g>
+<!-- Program -->
+<g id="node5" class="node">
+<title>Program</title>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="386,-24 328,-24 328,0 386,0 386,-24"/>
+<text text-anchor="middle" x="357" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Program</text>
+</g>
+<!-- This Page&#39;s Entity -->
+<g id="node6" class="node">
+<title>This Page&#39;s Entity</title>
+<polygon fill="none" stroke="black" points="509.5,-24 404.5,-24 404.5,0 509.5,0 509.5,-24"/>
+<text text-anchor="middle" x="457" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50">This Page&#39;s Entity</text>
+</g>
+</g>
+</svg>
+
+<p>Solid arrows point from a submodule to the (sub)module which it is
+descended from. Dashed arrows point from a module or program unit to 
+modules which it uses.
+</p>
+ Where possible, edges connecting nodes are
+given different colours to make them easier to distinguish in
+large graphs.</div>
+            </div>
+          </div>
+        </div>
+            </li>
+        </ul>
+      </div>
+    </div>
+
+      <br>
+
+
+
+
+
+
+        <section>
+          <h2>Derived Types</h2>
+              <div class="card">
+    <div class="card-header codesum">
+      <span class="anchor" id="type-format_lut"></span>
+      <h3>
+        type, public&nbsp;::&nbsp;
+        <a href='../type/format_lut.html'>format_lut</a>
+        
+      </h3>
+    </div>
+    <div class="card-body">
+      
+
+        <h4>Components</h4>
+          <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Visibility</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+<th></th><th scope="col">Initial</th>        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-num_colors"></span>
+              integer,
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>num_colors</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-dim_colors"></span>
+              integer,
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>dim_colors</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-colors"></span>
+              integer,
+            </td>
+              <td>public,</td>
+            <td>
+              dimension(:,:), allocatable
+            </td>
+            <td>::</td>
+            <td><strong>colors</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+
+
+        <h4>Type-Bound Procedures</h4>
+        <table class="table table-striped varlist">
+          <tbody>
+              <tr>
+                <td>  procedure, public ::
+  <strong><a href='../type/format_lut.html#boundprocedure-allocate_colors'>allocate_colors</a></strong></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>  procedure, public ::
+  <strong><a href='../type/format_lut.html#boundprocedure-set'>set</a></strong></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>  procedure, public ::
+  <strong><a href='../type/format_lut.html#boundprocedure-set_num_colors'>set_num_colors</a></strong></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>  procedure, public ::
+  <strong><a href='../type/format_lut.html#boundprocedure-get_num_colors'>get_num_colors</a></strong></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>  procedure, public ::
+  <strong><a href='../type/format_lut.html#boundprocedure-set_dim_colors'>set_dim_colors</a></strong></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>  procedure, public ::
+  <strong><a href='../type/format_lut.html#boundprocedure-get_dim_colors'>get_dim_colors</a></strong></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>  procedure, public ::
+  <strong><a href='../type/format_lut.html#boundprocedure-set_colors'>set_colors</a></strong></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>  procedure, public ::
+  <strong><a href='../type/format_lut.html#boundprocedure-get_colors'>get_colors</a></strong></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>  procedure, public ::
+  <strong><a href='../type/format_lut.html#boundprocedure-export'>export</a></strong></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>  procedure, public ::
+  <strong><a href='../type/format_lut.html#boundprocedure-import'>import</a></strong></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>  procedure, public ::
+  <strong><a href='../type/format_lut.html#boundprocedure-finalize~2'>finalize</a></strong> => <a href='../proc/deallocate_lut.html'>deallocate_lut</a></td>
+                <td></td>
+              </tr>
+          </tbody>
+        </table>
+    </div>
+  </div>
+
+        </section>
+        <br>
+
+        <section>
+          <h2>Functions</h2>
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-get_num_colors"></span><h3>private pure elemental function <a href='../proc/get_num_colors.html'>get_num_colors</a>(this) result(num_colors)  
+</h3></div>
+    <div class="card-body">
+              <dl class="dl-horizontal">
+        <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
+    </dl>
+
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-this~18"></span>
+              class(<a href='../type/format_lut.html'>format_lut</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>this</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+    <h4>
+    Return Value
+    <small>integer</small>
+    </h4>
+    
+
+    </div>
+  </div>
+
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-get_dim_colors"></span><h3>private pure elemental function <a href='../proc/get_dim_colors.html'>get_dim_colors</a>(this) result(dim_colors)  
+</h3></div>
+    <div class="card-body">
+              <dl class="dl-horizontal">
+        <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
+    </dl>
+
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-this~20"></span>
+              class(<a href='../type/format_lut.html'>format_lut</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>this</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+    <h4>
+    Return Value
+    <small>integer</small>
+    </h4>
+    
+
+    </div>
+  </div>
+
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-get_colors"></span><h3>private pure function <a href='../proc/get_colors.html'>get_colors</a>(this) result(colors)  
+</h3></div>
+    <div class="card-body">
+              <dl class="dl-horizontal">
+        <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
+    </dl>
+
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-this~22"></span>
+              class(<a href='../type/format_lut.html'>format_lut</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>this</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+    <h4>
+    Return Value
+    <small>integer, dimension(:,:), allocatable</small>
+    </h4>
+    
+
+    </div>
+  </div>
+
+        </section>
+        <br>
+
+        <section>
+          <h2>Subroutines</h2>
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-allocate_colors"></span><h3>private pure elemental subroutine <a href='../proc/allocate_colors.html'>allocate_colors</a>(this)  
+</h3></div>
+    <div class="card-body">
+              <dl class="dl-horizontal">
+        <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
+    </dl>
+
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-this~15"></span>
+              class(<a href='../type/format_lut.html'>format_lut</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>this</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-set"></span><h3>private pure subroutine <a href='../proc/set.html'>set</a>(this, num_colors, dim_colors, colors)  
+</h3></div>
+    <div class="card-body">
+              <dl class="dl-horizontal">
+        <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
+    </dl>
+
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-this~16"></span>
+              class(<a href='../type/format_lut.html'>format_lut</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>this</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-num_colors~2"></span>
+              integer,
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>num_colors</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-dim_colors~2"></span>
+              integer,
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>dim_colors</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-colors~2"></span>
+              integer,
+            </td>
+<td>intent(in),</td>
+              <td></td>            <td>
+              dimension(:,:)
+            </td>
+            <td>::</td>
+            <td><strong>colors</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-set_num_colors"></span><h3>private pure elemental subroutine <a href='../proc/set_num_colors.html'>set_num_colors</a>(this, num_colors)  
+</h3></div>
+    <div class="card-body">
+              <dl class="dl-horizontal">
+        <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
+    </dl>
+
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-this~17"></span>
+              class(<a href='../type/format_lut.html'>format_lut</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>this</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-num_colors~3"></span>
+              integer,
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>num_colors</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-set_dim_colors"></span><h3>private pure elemental subroutine <a href='../proc/set_dim_colors.html'>set_dim_colors</a>(this, dim_colors)  
+</h3></div>
+    <div class="card-body">
+              <dl class="dl-horizontal">
+        <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
+    </dl>
+
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-this~19"></span>
+              class(<a href='../type/format_lut.html'>format_lut</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>this</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-dim_colors~3"></span>
+              integer,
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>dim_colors</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-set_colors"></span><h3>private pure subroutine <a href='../proc/set_colors.html'>set_colors</a>(this, colors)  
+</h3></div>
+    <div class="card-body">
+              <dl class="dl-horizontal">
+        <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
+    </dl>
+
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-this~21"></span>
+              class(<a href='../type/format_lut.html'>format_lut</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>this</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-colors~3"></span>
+              integer,
+            </td>
+<td>intent(in),</td>
+              <td></td>            <td>
+              dimension(:,:)
+            </td>
+            <td>::</td>
+            <td><strong>colors</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-deallocate_lut"></span><h3>private pure elemental subroutine <a href='../proc/deallocate_lut.html'>deallocate_lut</a>(this)  
+</h3></div>
+    <div class="card-body">
+              <dl class="dl-horizontal">
+        <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
+    </dl>
+
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-this~25"></span>
+              class(<a href='../type/format_lut.html'>format_lut</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>this</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-import"></span><h3>private impure subroutine <a href='../proc/import.html'>import</a>(this, file_name, dim_colors)  
+</h3></div>
+    <div class="card-body">
+              <dl class="dl-horizontal">
+        <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
+    </dl>
+
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-this~24"></span>
+              class(<a href='../type/format_lut.html'>format_lut</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>this</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-file_name~4"></span>
+              character(len=*),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>file_name</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-dim_colors~4"></span>
+              integer,
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>dim_colors</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-export"></span><h3>private impure subroutine <a href='../proc/export.html'>export</a>(this, file_name)  
+</h3></div>
+    <div class="card-body">
+              <dl class="dl-horizontal">
+        <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
+    </dl>
+
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-this~23"></span>
+              class(<a href='../type/format_lut.html'>format_lut</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>this</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-file_name~3"></span>
+              character(len=*),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>file_name</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+        </section>
+        <br>
+
+
+
+    </div>
+  </div>
+
+      <hr>
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+        <div class="row justify-content-between">
+          <div class="col"><p>ForImage was developed by Seyed Ali Ghasemi<br>&copy; 2023 
+</p>
+          </div>
+          <div class="col">
+            <p class="text-end">
+              Documentation generated by
+              <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
+ on 2023-11-01T13:23:20.512426             </p>
+          </div>
+        </div>
+        <br>
+      </div> <!-- /container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>    
+
+    <!-- MathJax JavaScript
+             ================================================== -->
+             <!-- Placed at the end of the document so the pages load faster -->
+        <script type="text/x-mathjax-config">
+          MathJax.Hub.Config({
+          TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } },
+          jax: ['input/TeX','input/MathML','output/HTML-CSS'],
+          extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']
+          });
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+          <script src="../tipuesearch/tipuesearch_content.js"></script>
+          <script src="../tipuesearch/tipuesearch_set.js"></script>
+          <script src="../tipuesearch/tipuesearch.js"></script>
+
+  </body>
+</html>
