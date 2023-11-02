@@ -75,7 +75,7 @@
             <li class="list-inline-item" id="statements"><i class="fa fa-list-ol"></i>
               <a data-bs-toggle="tooltip"
                  data-bs-placement="bottom" data-html="true"
-                 title=" 6.6% of total for procedures.">22 statements</a>
+                 title=" 8.2% of total for procedures.">28 statements</a>
             </li>
 
             <li class="list-inline-item" id="source-file">
@@ -161,7 +161,7 @@
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-this~24"></span>
+              <span class="anchor" id="variable-this~10"></span>
               class(<a href='../type/format_lut.html'>format_lut</a>),
             </td>
 <td>intent(inout)</td>
@@ -176,7 +176,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-file_name~4"></span>
+              <span class="anchor" id="variable-file_name~2"></span>
               character(len=*),
             </td>
 <td>intent(in)</td>
@@ -378,8 +378,11 @@ large graphs.</div>
 <span class="w">      </span><span class="kt">integer</span><span class="p">,</span><span class="w">           </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w">    </span><span class="kd">::</span><span class="w"> </span><span class="n">dim_colors</span>
 <span class="w">      </span><span class="kt">integer</span><span class="p">,</span><span class="w"> </span><span class="k">dimension</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">dim_colors</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">temp</span>
 <span class="w">      </span><span class="kt">integer</span><span class="w">                          </span><span class="kd">::</span><span class="w"> </span><span class="n">nunit</span><span class="p">,</span><span class="w"> </span><span class="n">iostat</span><span class="p">,</span><span class="w"> </span><span class="n">num_rows</span><span class="p">,</span><span class="w"> </span><span class="n">i</span>
+<span class="w">      </span><span class="kt">logical</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">file_exists</span>
 
-<span class="w">      </span><span class="k">open</span><span class="p">(</span><span class="n">unit</span><span class="o">=</span><span class="n">nunit</span><span class="p">,</span><span class="w"> </span><span class="k">file</span><span class="o">=</span><span class="n">file_name</span><span class="o">//</span><span class="s1">&#39;.lut&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">status</span><span class="o">=</span><span class="s1">&#39;old&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">action</span><span class="o">=</span><span class="s1">&#39;read&#39;</span><span class="p">)</span>
+<span class="w">      </span><span class="k">inquire</span><span class="p">(</span><span class="k">file</span><span class="o">=</span><span class="n">file_name</span><span class="o">//</span><span class="s1">&#39;.lut&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">exist</span><span class="o">=</span><span class="n">file_exists</span><span class="p">)</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">file_exists</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">      open</span><span class="p">(</span><span class="n">newunit</span><span class="o">=</span><span class="n">nunit</span><span class="p">,</span><span class="w"> </span><span class="k">file</span><span class="o">=</span><span class="n">file_name</span><span class="o">//</span><span class="s1">&#39;.lut&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">status</span><span class="o">=</span><span class="s1">&#39;old&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">action</span><span class="o">=</span><span class="s1">&#39;read&#39;</span><span class="p">)</span>
 <span class="w">         </span><span class="n">num_rows</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span>
 <span class="w">         </span><span class="k">do</span>
 <span class="k">            read</span><span class="p">(</span><span class="n">nunit</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="n">iostat</span><span class="o">=</span><span class="n">iostat</span><span class="p">)</span><span class="w"> </span><span class="n">temp</span><span class="p">(:,:)</span>
@@ -394,7 +397,10 @@ large graphs.</div>
 <span class="w">            </span><span class="k">read</span><span class="p">(</span><span class="n">nunit</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="n">this</span><span class="p">%</span><span class="n">colors</span><span class="p">(</span><span class="n">i</span><span class="p">,:)</span>
 <span class="w">         </span><span class="k">end do</span>
 <span class="k">      close</span><span class="p">(</span><span class="n">nunit</span><span class="p">)</span>
-<span class="w">   </span><span class="k">end subroutine import</span>
+<span class="w">      </span><span class="k">else</span>
+<span class="k">         error stop</span><span class="w"> </span><span class="s1">&#39;File &#39;</span><span class="o">//</span><span class="n">file_name</span><span class="o">//</span><span class="s1">&#39;.lut&#39;</span><span class="o">//</span><span class="s1">&#39; does not exist!&#39;</span>
+<span class="w">      </span><span class="k">end if</span>
+<span class="k">   end subroutine import</span>
 </pre></div>
 
     </section>
@@ -415,7 +421,7 @@ large graphs.</div>
             <p class="text-end">
               Documentation generated by
               <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
- on 2023-11-01T13:23:20.512426             </p>
+ on 2023-11-02T13:35:54.075501             </p>
           </div>
         </div>
         <br>

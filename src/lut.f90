@@ -129,8 +129,11 @@ contains
       integer,           intent(in)    :: dim_colors
       integer, dimension(1,dim_colors) :: temp
       integer                          :: nunit, iostat, num_rows, i
+      logical :: file_exists
 
-      open(unit=nunit, file=file_name//'.lut', status='old', action='read')
+      inquire(file=file_name//'.lut', exist=file_exists)
+      if (file_exists) then
+      open(newunit=nunit, file=file_name//'.lut', status='old', action='read')
          num_rows = 0
          do
             read(nunit, *, iostat=iostat) temp(:,:)
@@ -145,6 +148,9 @@ contains
             read(nunit, *) this%colors(i,:)
          end do
       close(nunit)
+      else
+         error stop 'File '//file_name//'.lut'//' does not exist!'
+      end if
    end subroutine import
    !===============================================================================
 
@@ -156,7 +162,7 @@ contains
       character(*),      intent(in)    :: file_name
       integer                          :: nunit, i
 
-      open(unit=nunit, file=file_name//'.lut', status='replace', action='write')
+      open(newunit=nunit, file=file_name//'.lut', status='replace', action='write')
       do i = 1, this%get_num_colors()
          write(nunit, '(*(I3,1x))') this%colors(i,:)
       end do
