@@ -98,3 +98,8 @@ main       = "example15.f90"
 name       = "example16"
 source-dir = "example"
 main       = "example16.f90"
+
+[[example]]
+name       = "example17"
+source-dir = "example"
+main       = "example17.f90"
