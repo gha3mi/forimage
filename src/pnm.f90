@@ -30,11 +30,22 @@ module pnm
       procedure :: set_pnm
       procedure :: import_pnm
       procedure :: finalize => deallocate_pnm
+      procedure :: negative
    end type format_pnm
    !===============================================================================
 
 contains
 
+   !===============================================================================
+   !> author: Seyed Ali Ghasemi
+   pure subroutine negative(this)
+      class(format_pnm), intent(inout) :: this
+
+      this%pixels = this%max_color - this%pixels
+   end subroutine negative
+   !===============================================================================
+
+   
    !===============================================================================
    !> author: Seyed Ali Ghasemi
    elemental pure subroutine set_file_format(this, file_format)
