@@ -113,7 +113,7 @@
       <div id="vars-0" class="collapse">
         <div class="list-group list-group-flush">
             <a class="list-group-item" href="../program/example19.html#variable-ex19">ex19</a>
-            <a class="list-group-item" href="../program/example19.html#variable-px~5">px</a>
+            <a class="list-group-item" href="../program/example19.html#variable-px">px</a>
         </div>
       </div>
     </div>
@@ -381,18 +381,18 @@ large graphs.</div>
 <path fill="none" stroke="#255000" d="M72.32,-175.7C85.79,-174.06 101.84,-172.11 118.14,-170.12"/>
 <polygon fill="#255000" stroke="#255000" points="118.79,-173.57 128.29,-168.89 117.94,-166.62 118.79,-173.57"/>
 </g>
-<!-- proc~swap_channel -->
+<!-- proc~swap_channels -->
 <g id="program~~example19~~CallsGraph_node5" class="node">
-<title>proc~swap_channel</title>
-<g id="a_program~~example19~~CallsGraph_node5"><a xlink:href=".././proc/swap_channel.html" xlink:title="pnm::format_pnm%swap_channel">
-<polygon fill="#d9534f" stroke="#d9534f" points="307.5,-129 113.5,-129 113.5,-105 307.5,-105 307.5,-129"/>
-<text text-anchor="middle" x="210.5" y="-114.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">pnm::format_pnm%swap_channel</text>
+<title>proc~swap_channels</title>
+<g id="a_program~~example19~~CallsGraph_node5"><a xlink:href=".././proc/swap_channels.html" xlink:title="pnm::format_pnm%swap_channels">
+<polygon fill="#d9534f" stroke="#d9534f" points="310,-129 111,-129 111,-105 310,-105 310,-129"/>
+<text text-anchor="middle" x="210.5" y="-114.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">pnm::format_pnm%swap_channels</text>
 </a>
 </g>
 </g>
-<!-- program~example19&#45;&gt;proc~swap_channel -->
+<!-- program~example19&#45;&gt;proc~swap_channels -->
 <g id="program~~example19~~CallsGraph_edge4" class="edge">
-<title>program~example19&#45;&gt;proc~swap_channel</title>
+<title>program~example19&#45;&gt;proc~swap_channels</title>
 <path fill="none" stroke="#255000" d="M53.69,-167.96C67.59,-158.49 88.23,-145.65 108,-138 113.95,-135.7 120.19,-133.63 126.54,-131.78"/>
 <polygon fill="#255000" stroke="#255000" points="127.85,-135.05 136.57,-129.04 126,-128.3 127.85,-135.05"/>
 </g>
@@ -671,7 +671,7 @@ large graphs.</div>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-px~5"></span>
+              <span class="anchor" id="variable-px"></span>
               integer,
             </td>
             <td>
@@ -714,7 +714,7 @@ large graphs.</div>
 <span class="w">    </span><span class="n">px</span><span class="p">(</span><span class="mi">4</span><span class="p">,:)</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mi">15</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">15</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
 
 <span class="w">    </span><span class="k">call </span><span class="n">ex19</span><span class="p">%</span><span class="n">set_pnm</span><span class="p">(</span><span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;binary&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">file_format</span><span class="o">=</span><span class="s1">&#39;ppm&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">width</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="n">height</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="n">max_color</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span><span class="w"> </span><span class="n">comment</span><span class="o">=</span><span class="s1">&#39;example 2&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">pixels</span><span class="o">=</span><span class="n">px</span><span class="p">)</span>
-<span class="w">    </span><span class="k">call </span><span class="n">ex19</span><span class="p">%</span><span class="n">swap_channel</span><span class="p">(</span><span class="n">swap</span><span class="o">=</span><span class="s1">&#39;bg&#39;</span><span class="p">)</span>
+<span class="w">    </span><span class="k">call </span><span class="n">ex19</span><span class="p">%</span><span class="n">swap_channels</span><span class="p">(</span><span class="n">swap</span><span class="o">=</span><span class="s1">&#39;bg&#39;</span><span class="p">)</span>
 <span class="w">    </span><span class="k">call </span><span class="n">ex19</span><span class="p">%</span><span class="n">export_pnm</span><span class="p">(</span><span class="s1">&#39;pnm_files/example6_binary_swap&#39;</span><span class="p">)</span>
 
 <span class="w">    </span><span class="k">call </span><span class="n">ex19</span><span class="p">%</span><span class="n">finalize</span><span class="p">()</span>
@@ -738,7 +738,7 @@ large graphs.</div>
             <p class="text-end">
               Documentation generated by
               <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
- on 2023-11-07T18:38:47.785494             </p>
+ on 2023-11-07T18:53:35.610394             </p>
           </div>
         </div>
         <br>

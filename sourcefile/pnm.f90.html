@@ -605,8 +605,8 @@ large graphs.</div>
 <a id="ln-33" name="ln-33" href="#ln-33"></a><span class="w">      </span><span class="k">procedure</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">finalize</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">deallocate_pnm</span>
 <a id="ln-34" name="ln-34" href="#ln-34"></a><span class="w">      </span><span class="k">procedure</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">negative</span>
 <a id="ln-35" name="ln-35" href="#ln-35"></a><span class="w">      </span><span class="k">procedure</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">brighten</span>
-<a id="ln-36" name="ln-36" href="#ln-36"></a><span class="w">      </span><span class="k">procedure</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">swap_channel</span>
-<a id="ln-37" name="ln-37" href="#ln-37"></a><span class="w">      </span><span class="k">procedure</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">remove_channel</span>
+<a id="ln-36" name="ln-36" href="#ln-36"></a><span class="w">      </span><span class="k">procedure</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">swap_channels</span>
+<a id="ln-37" name="ln-37" href="#ln-37"></a><span class="w">      </span><span class="k">procedure</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">remove_channels</span>
 <a id="ln-38" name="ln-38" href="#ln-38"></a><span class="w">      </span><span class="k">procedure</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">greyscale</span>
 <a id="ln-39" name="ln-39" href="#ln-39"></a><span class="w">      </span><span class="k">procedure</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">rotate</span>
 <a id="ln-40" name="ln-40" href="#ln-40"></a><span class="w">   </span><span class="k">end type </span><span class="n">format_pnm</span>
@@ -745,13 +745,13 @@ large graphs.</div>
 <a id="ln-173" name="ln-173" href="#ln-173"></a>
 <a id="ln-174" name="ln-174" href="#ln-174"></a><span class="w">   </span><span class="c">!===============================================================================</span>
 <a id="ln-175" name="ln-175" href="#ln-175"></a><span class="w">   </span><span class="c">!&gt; author: Seyed Ali Ghasemi</span>
-<a id="ln-176" name="ln-176" href="#ln-176"></a><span class="w">   </span><span class="k">pure subroutine </span><span class="n">remove_channel</span><span class="p">(</span><span class="n">this</span><span class="p">,</span><span class="w"> </span><span class="n">remove_r</span><span class="p">,</span><span class="w"> </span><span class="n">remove_g</span><span class="p">,</span><span class="w"> </span><span class="n">remove_b</span><span class="p">)</span>
+<a id="ln-176" name="ln-176" href="#ln-176"></a><span class="w">   </span><span class="k">pure subroutine </span><span class="n">remove_channels</span><span class="p">(</span><span class="n">this</span><span class="p">,</span><span class="w"> </span><span class="n">remove_r</span><span class="p">,</span><span class="w"> </span><span class="n">remove_g</span><span class="p">,</span><span class="w"> </span><span class="n">remove_b</span><span class="p">)</span>
 <a id="ln-177" name="ln-177" href="#ln-177"></a><span class="w">      </span><span class="k">class</span><span class="p">(</span><span class="n">format_pnm</span><span class="p">),</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">this</span>
 <a id="ln-178" name="ln-178" href="#ln-178"></a><span class="w">      </span><span class="kt">logical</span><span class="p">,</span><span class="w"> </span><span class="k">optional</span><span class="p">,</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w">    </span><span class="kd">::</span><span class="w"> </span><span class="n">remove_r</span><span class="p">,</span><span class="w"> </span><span class="n">remove_g</span><span class="p">,</span><span class="w"> </span><span class="n">remove_b</span>
 <a id="ln-179" name="ln-179" href="#ln-179"></a>
 <a id="ln-180" name="ln-180" href="#ln-180"></a><span class="w">      </span><span class="c">! Check if the file is ppm</span>
 <a id="ln-181" name="ln-181" href="#ln-181"></a><span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">this</span><span class="p">%</span><span class="n">file_format</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="s1">&#39;ppm&#39;</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
-<a id="ln-182" name="ln-182" href="#ln-182"></a><span class="k">         error stop</span><span class="w"> </span><span class="s1">&#39;remove_channel: This function is only for ppm files.&#39;</span>
+<a id="ln-182" name="ln-182" href="#ln-182"></a><span class="k">         error stop</span><span class="w"> </span><span class="s1">&#39;remove_channels: This function is only for ppm files.&#39;</span>
 <a id="ln-183" name="ln-183" href="#ln-183"></a><span class="w">      </span><span class="k">end if</span>
 <a id="ln-184" name="ln-184" href="#ln-184"></a>
 <a id="ln-185" name="ln-185" href="#ln-185"></a><span class="w">      </span><span class="c">! Remove R channel</span>
@@ -774,20 +774,20 @@ large graphs.</div>
 <a id="ln-202" name="ln-202" href="#ln-202"></a><span class="k">            </span><span class="n">this</span><span class="p">%</span><span class="n">pixels</span><span class="p">(:,</span><span class="mi">3</span><span class="p">:</span><span class="n">size</span><span class="p">(</span><span class="n">this</span><span class="p">%</span><span class="n">pixels</span><span class="p">,</span><span class="mi">2</span><span class="p">):</span><span class="mi">3</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span>
 <a id="ln-203" name="ln-203" href="#ln-203"></a><span class="w">         </span><span class="k">end if</span>
 <a id="ln-204" name="ln-204" href="#ln-204"></a><span class="k">      end if</span>
-<a id="ln-205" name="ln-205" href="#ln-205"></a><span class="k">   end subroutine </span><span class="n">remove_channel</span>
+<a id="ln-205" name="ln-205" href="#ln-205"></a><span class="k">   end subroutine </span><span class="n">remove_channels</span>
 <a id="ln-206" name="ln-206" href="#ln-206"></a><span class="w">   </span><span class="c">!===============================================================================</span>
 <a id="ln-207" name="ln-207" href="#ln-207"></a>
 <a id="ln-208" name="ln-208" href="#ln-208"></a>
 <a id="ln-209" name="ln-209" href="#ln-209"></a><span class="w">   </span><span class="c">!===============================================================================</span>
 <a id="ln-210" name="ln-210" href="#ln-210"></a><span class="w">   </span><span class="c">!&gt; author: Seyed Ali Ghasemi</span>
-<a id="ln-211" name="ln-211" href="#ln-211"></a><span class="w">   </span><span class="k">pure subroutine </span><span class="n">swap_channel</span><span class="p">(</span><span class="n">this</span><span class="p">,</span><span class="w"> </span><span class="n">swap</span><span class="p">)</span>
+<a id="ln-211" name="ln-211" href="#ln-211"></a><span class="w">   </span><span class="k">pure subroutine </span><span class="n">swap_channels</span><span class="p">(</span><span class="n">this</span><span class="p">,</span><span class="w"> </span><span class="n">swap</span><span class="p">)</span>
 <a id="ln-212" name="ln-212" href="#ln-212"></a><span class="w">      </span><span class="k">class</span><span class="p">(</span><span class="n">format_pnm</span><span class="p">),</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">this</span>
 <a id="ln-213" name="ln-213" href="#ln-213"></a><span class="w">      </span><span class="kt">character</span><span class="p">(</span><span class="o">*</span><span class="p">),</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w">         </span><span class="kd">::</span><span class="w"> </span><span class="n">swap</span>
 <a id="ln-214" name="ln-214" href="#ln-214"></a><span class="w">      </span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="n">j</span><span class="p">,</span><span class="w"> </span><span class="n">temp</span>
 <a id="ln-215" name="ln-215" href="#ln-215"></a>
 <a id="ln-216" name="ln-216" href="#ln-216"></a><span class="w">      </span><span class="c">! Check if the file is ppm</span>
 <a id="ln-217" name="ln-217" href="#ln-217"></a><span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">this</span><span class="p">%</span><span class="n">file_format</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="s1">&#39;ppm&#39;</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
-<a id="ln-218" name="ln-218" href="#ln-218"></a><span class="k">         error stop</span><span class="w"> </span><span class="s1">&#39;swap_channel: This function is only for ppm files.&#39;</span>
+<a id="ln-218" name="ln-218" href="#ln-218"></a><span class="k">         error stop</span><span class="w"> </span><span class="s1">&#39;swap_channels: This function is only for ppm files.&#39;</span>
 <a id="ln-219" name="ln-219" href="#ln-219"></a><span class="w">      </span><span class="k">end if</span>
 <a id="ln-220" name="ln-220" href="#ln-220"></a>
 <a id="ln-221" name="ln-221" href="#ln-221"></a><span class="w">      </span><span class="c">! Swap R and G channels</span>
@@ -823,7 +823,7 @@ large graphs.</div>
 <a id="ln-251" name="ln-251" href="#ln-251"></a><span class="k">         end do</span>
 <a id="ln-252" name="ln-252" href="#ln-252"></a><span class="k">      end if</span>
 <a id="ln-253" name="ln-253" href="#ln-253"></a>
-<a id="ln-254" name="ln-254" href="#ln-254"></a><span class="k">   end subroutine </span><span class="n">swap_channel</span>
+<a id="ln-254" name="ln-254" href="#ln-254"></a><span class="k">   end subroutine </span><span class="n">swap_channels</span>
 <a id="ln-255" name="ln-255" href="#ln-255"></a><span class="w">   </span><span class="c">!===============================================================================</span>
 <a id="ln-256" name="ln-256" href="#ln-256"></a>
 <a id="ln-257" name="ln-257" href="#ln-257"></a>
@@ -1211,7 +1211,7 @@ large graphs.</div>
             <p class="text-end">
               Documentation generated by
               <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
- on 2023-11-07T18:38:47.785494             </p>
+ on 2023-11-07T18:53:35.610394             </p>
           </div>
         </div>
         <br>

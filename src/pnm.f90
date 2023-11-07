@@ -33,8 +33,8 @@ module pnm
       procedure :: finalize => deallocate_pnm
       procedure :: negative
       procedure :: brighten
-      procedure :: swap_channel
-      procedure :: remove_channel
+      procedure :: swap_channels
+      procedure :: remove_channels
       procedure :: greyscale
       procedure :: rotate
    end type format_pnm
@@ -173,13 +173,13 @@ contains
 
    !===============================================================================
    !> author: Seyed Ali Ghasemi
-   pure subroutine remove_channel(this, remove_r, remove_g, remove_b)
+   pure subroutine remove_channels(this, remove_r, remove_g, remove_b)
       class(format_pnm), intent(inout) :: this
       logical, optional, intent(in)    :: remove_r, remove_g, remove_b
 
       ! Check if the file is ppm
       if (this%file_format /= 'ppm') then
-         error stop 'remove_channel: This function is only for ppm files.'
+         error stop 'remove_channels: This function is only for ppm files.'
       end if
 
       ! Remove R channel
@@ -202,20 +202,20 @@ contains
             this%pixels(:,3:size(this%pixels,2):3) = 0
          end if
       end if
-   end subroutine remove_channel
+   end subroutine remove_channels
    !===============================================================================
 
 
    !===============================================================================
    !> author: Seyed Ali Ghasemi
-   pure subroutine swap_channel(this, swap)
+   pure subroutine swap_channels(this, swap)
       class(format_pnm), intent(inout) :: this
       character(*), intent(in)         :: swap
       integer :: i, j, temp
 
       ! Check if the file is ppm
       if (this%file_format /= 'ppm') then
-         error stop 'swap_channel: This function is only for ppm files.'
+         error stop 'swap_channels: This function is only for ppm files.'
       end if
 
       ! Swap R and G channels
@@ -251,7 +251,7 @@ contains
          end do
       end if
 
-   end subroutine swap_channel
+   end subroutine swap_channels
    !===============================================================================
 
 
