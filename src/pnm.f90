@@ -31,10 +31,23 @@ module pnm
       procedure :: import_pnm
       procedure :: finalize => deallocate_pnm
       procedure :: negative
+      procedure :: brighten
    end type format_pnm
    !===============================================================================
 
 contains
+
+
+   !===============================================================================
+   !> author: Seyed Ali Ghasemi
+   pure subroutine brighten(this, factor)
+      class(format_pnm), intent(inout) :: this
+      integer,           intent(in)    :: factor
+
+      this%pixels = min(this%max_color, max(0, this%pixels + factor))
+   end subroutine brighten
+   !===============================================================================
+
 
    !===============================================================================
    !> author: Seyed Ali Ghasemi
