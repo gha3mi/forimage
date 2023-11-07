@@ -1,5 +1,6 @@
 module pnm
 
+   use iso_fortran_env, only: rk => real64
    implicit none
 
    private
@@ -34,10 +35,35 @@ module pnm
       procedure :: brighten
       procedure :: swap_channel
       procedure :: remove_channel
+      procedure :: greyscale
    end type format_pnm
    !===============================================================================
 
 contains
+
+   !===============================================================================
+   !> author: Seyed Ali Ghasemi
+   pure subroutine greyscale(this)
+      class(format_pnm), intent(inout) :: this
+      real(rk)                         :: gsc
+      integer                          :: i, j
+
+      do i = 1, this%height
+         do j = 1, this%width
+            ! Calculate a weighed average (here based on ITU Rec.709) of the 3 channels to get a gray color with the same brightness.
+            gsc = 0.2126_rk * real(this%pixels(i, 3*j-2), kind=rk) + &
+                  0.7152_rk * real(this%pixels(i, 3*j-1), kind=rk) + &
+                  0.0722_rk * real(this%pixels(i, 3*j-0), kind=rk)
+
+            ! Convert the greyscale value back to integer and set it for all RGB channels
+            this%pixels(i, 3*j-2) = int(gsc)
+            this%pixels(i, 3*j-1) = int(gsc)
+            this%pixels(i, 3*j-0) = int(gsc)
+         end do
+      end do
+
+   end subroutine greyscale
+   !===============================================================================
 
    !===============================================================================
    !> author: Seyed Ali Ghasemi
