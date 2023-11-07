@@ -33,10 +33,46 @@ module pnm
       procedure :: negative
       procedure :: brighten
       procedure :: swap_channel
+      procedure :: remove_channel
    end type format_pnm
    !===============================================================================
 
 contains
+
+   !===============================================================================
+   !> author: Seyed Ali Ghasemi
+   pure subroutine remove_channel(this, remove_r, remove_g, remove_b)
+      class(format_pnm), intent(inout) :: this
+      logical, optional, intent(in)    :: remove_r, remove_g, remove_b
+
+      ! Check if the file is ppm
+      if (this%file_format /= 'ppm') then
+         error stop 'remove_channel: This function is only for ppm files.'
+      end if
+
+      ! Remove R channel
+      if (present(remove_r)) then
+         if (remove_r) then
+            this%pixels(:,1:size(this%pixels,2):3) = 0
+         end if
+      end if
+
+      ! Remove G channel
+      if (present(remove_g)) then
+         if (remove_g) then
+            this%pixels(:,2:size(this%pixels,2):3) = 0
+         end if
+      end if
+
+      ! Remove B channel
+      if (present(remove_b)) then
+         if (remove_b) then
+            this%pixels(:,3:size(this%pixels,2):3) = 0
+         end if
+      end if
+   end subroutine remove_channel
+   !===============================================================================
+
 
    !===============================================================================
    !> author: Seyed Ali Ghasemi
