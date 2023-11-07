@@ -36,10 +36,116 @@ module pnm
       procedure :: swap_channel
       procedure :: remove_channel
       procedure :: greyscale
+      procedure :: rotate
    end type format_pnm
    !===============================================================================
 
 contains
+
+   !===============================================================================
+   !> author: Seyed Ali Ghasemi
+   pure subroutine rotate(this, angle)
+      class(format_pnm), intent(inout)     :: this
+      integer,           intent(in)        :: angle
+      integer, dimension(:,:), allocatable :: rotated_pixels
+      integer                              :: target_height, target_width
+      integer                              :: i, j
+
+      ! Determine the target height and width based on the rotation angle
+      select case (angle)
+       case (90, -270)
+         target_height = this%width
+         target_width  = this%height
+       case (180, -180)
+         target_height = this%height
+         target_width  = this%width
+       case (270, -90)
+         target_height = this%width
+         target_width  = this%height
+       case default
+         error stop "Invalid rotation angle. Valid angles are 90, 180, 270, -90, -180, -270."
+      end select
+
+      select case (this%file_format)
+       case ('pbm', 'pgm')
+
+         ! Allocate memory for rotated_pixels array
+         allocate(rotated_pixels(target_height, target_width))
+
+         ! Rotate pixels based on the specified angle
+         select case (angle)
+          case (90, -270)
+            do i = 1, this%height
+               do j = 1, this%width
+                  rotated_pixels(j, this%height-i+1) = this%pixels(i, j)
+               end do
+            end do
+          case (180, -180)
+            do i = 1, this%height
+               do j = 1, this%width
+                  rotated_pixels(this%height-i+1, this%width-j+1) = this%pixels(i, j)
+               end do
+            end do
+          case (270, -90)
+            do i = 1, this%height
+               do j = 1, this%width
+                  rotated_pixels(this%width-j+1, i) = this%pixels(i, j)
+               end do
+            end do
+         end select
+
+       case ('ppm')
+
+         ! Allocate memory for rotated_pixels array
+         allocate(rotated_pixels(target_height, 3*target_width))
+
+         ! Rotate pixels based on the specified angle
+         select case (angle)
+          case (90, -270)
+            do i = 1, this%height
+               do j = 1, this%width
+                  rotated_pixels(j, 3*(this%height-i+1)-2) = this%pixels(i, 3*j-2)
+                  rotated_pixels(j, 3*(this%height-i+1)-1) = this%pixels(i, 3*j-1)
+                  rotated_pixels(j, 3*(this%height-i+1)-0) = this%pixels(i, 3*j-0)
+               end do
+            end do
+          case (180, -180)
+            do i = 1, this%height
+               do j = 1, this%width
+                  rotated_pixels(this%height-i+1, 3*(this%width-j+1)-2) = this%pixels(i, 3*j-2)
+                  rotated_pixels(this%height-i+1, 3*(this%width-j+1)-1) = this%pixels(i, 3*j-1)
+                  rotated_pixels(this%height-i+1, 3*(this%width-j+1)-0) = this%pixels(i, 3*j-0)
+               end do
+            end do
+          case (270, -90)
+            do i = 1, this%height
+               do j = 1, this%width
+                  rotated_pixels(this%width-j+1, 3*i-2) = this%pixels(i, 3*j-2)
+                  rotated_pixels(this%width-j+1, 3*i-1) = this%pixels(i, 3*j-1)
+                  rotated_pixels(this%width-j+1, 3*i-0) = this%pixels(i, 3*j-0)
+               end do
+            end do
+         end select
+
+      end select
+
+
+
+      ! Update height and width of the image
+      this%height = target_height
+      this%width  = target_width
+
+      deallocate(this%pixels)
+      call this%allocate_pixels()
+
+      ! Update the original pixels with rotated pixels
+      this%pixels = rotated_pixels
+
+      ! Deallocate rotated_pixels array
+      deallocate(rotated_pixels)
+   end subroutine rotate
+   !===============================================================================
+
 
    !===============================================================================
    !> author: Seyed Ali Ghasemi
