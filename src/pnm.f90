@@ -32,10 +32,59 @@ module pnm
       procedure :: finalize => deallocate_pnm
       procedure :: negative
       procedure :: brighten
+      procedure :: swap_channel
    end type format_pnm
    !===============================================================================
 
 contains
+
+   !===============================================================================
+   !> author: Seyed Ali Ghasemi
+   pure subroutine swap_channel(this, swap)
+      class(format_pnm), intent(inout) :: this
+      character(*), intent(in)         :: swap
+      integer :: i, j, temp
+
+      ! Check if the file is ppm
+      if (this%file_format /= 'ppm') then
+         error stop 'swap_channel: This function is only for ppm files.'
+      end if
+
+      ! Swap R and G channels
+      if (swap=='rg' .or. swap=='gr' .or. swap=='RG' .or. swap=='GR') then
+         do i = 1, this%height
+            do j = 1, this%width
+               temp = this%pixels(i, 3*j-2)
+               this%pixels(i, 3*j-2) = this%pixels(i, 3*j-1)
+               this%pixels(i, 3*j-1) = temp
+            end do
+         end do
+      end if
+
+      ! Swap G and B channels
+      if (swap=='gb' .or. swap=='bg' .or. swap=='GB' .or. swap=='BG') then
+         do i = 1, this%height
+            do j = 1, this%width
+               temp = this%pixels(i, 3*j-1)
+               this%pixels(i, 3*j-1) = this%pixels(i, 3*j-0)
+               this%pixels(i, 3*j-0) = temp
+            end do
+         end do
+      end if
+
+      ! Swap R and B channels
+      if (swap=='rb' .or. swap=='br' .or. swap=='RB' .or. swap=='BR') then
+         do i = 1, this%height
+            do j = 1, this%width
+               temp = this%pixels(i, 3*j-2)
+               this%pixels(i, 3*j-2) = this%pixels(i, 3*j-0)
+               this%pixels(i, 3*j-0) = temp
+            end do
+         end do
+      end if
+
+   end subroutine swap_channel
+   !===============================================================================
 
 
    !===============================================================================
@@ -58,7 +107,7 @@ contains
    end subroutine negative
    !===============================================================================
 
-   
+
    !===============================================================================
    !> author: Seyed Ali Ghasemi
    elemental pure subroutine set_file_format(this, file_format)
