@@ -37,6 +37,8 @@ module pnm
       procedure :: remove_channels
       procedure :: greyscale
       procedure :: rotate
+      procedure :: flip_horizontal
+      procedure :: flip_vertical
    end type format_pnm
    !===============================================================================
 
@@ -44,7 +46,33 @@ contains
 
    !===============================================================================
    !> author: Seyed Ali Ghasemi
-   pure subroutine rotate(this, angle)
+   elemental pure subroutine flip_vertical(this)
+      class(format_pnm), intent(inout) :: this
+
+      this%pixels(:,:) = this%pixels(size(this%pixels,1):1:-1, :)
+   end subroutine flip_vertical
+   !===============================================================================
+
+
+   !===============================================================================
+   !> author: Seyed Ali Ghasemi
+   elemental pure subroutine flip_horizontal(this)
+      class(format_pnm), intent(inout) :: this
+      integer :: j
+      integer, dimension(size(this%pixels,1), 3) :: temp_pixels
+
+      do j = 1, this%width / 2
+         temp_pixels(:, :) = this%pixels(:, 3*j-2:3*j)
+         this%pixels(:, 3*j-2:3*j) = this%pixels(:, 3*(this%width-j+1)-2:3*(this%width-j+1))
+         this%pixels(:, 3*(this%width-j+1)-2:3*(this%width-j+1)) = temp_pixels(:, :)
+      end do
+   end subroutine flip_horizontal
+   !===============================================================================
+
+
+   !===============================================================================
+   !> author: Seyed Ali Ghasemi
+   elemental pure subroutine rotate(this, angle)
       class(format_pnm), intent(inout)     :: this
       integer,           intent(in)        :: angle
       integer, dimension(:,:), allocatable :: rotated_pixels
@@ -53,15 +81,12 @@ contains
 
       ! Determine the target height and width based on the rotation angle
       select case (angle)
-       case (90, -270)
+       case (90, -90, 270, -270)
          target_height = this%width
          target_width  = this%height
        case (180, -180)
          target_height = this%height
          target_width  = this%width
-       case (270, -90)
-         target_height = this%width
-         target_width  = this%height
        case default
          error stop "Invalid rotation angle. Valid angles are 90, 180, 270, -90, -180, -270."
       end select
@@ -104,32 +129,24 @@ contains
           case (90, -270)
             do i = 1, this%height
                do j = 1, this%width
-                  rotated_pixels(j, 3*(this%height-i+1)-2) = this%pixels(i, 3*j-2)
-                  rotated_pixels(j, 3*(this%height-i+1)-1) = this%pixels(i, 3*j-1)
-                  rotated_pixels(j, 3*(this%height-i+1)-0) = this%pixels(i, 3*j-0)
+                  rotated_pixels(j, 3*(this%height-i+1)-2:3*(this%height-i+1)) = this%pixels(i, 3*j-2:3*j)
                end do
             end do
           case (180, -180)
             do i = 1, this%height
                do j = 1, this%width
-                  rotated_pixels(this%height-i+1, 3*(this%width-j+1)-2) = this%pixels(i, 3*j-2)
-                  rotated_pixels(this%height-i+1, 3*(this%width-j+1)-1) = this%pixels(i, 3*j-1)
-                  rotated_pixels(this%height-i+1, 3*(this%width-j+1)-0) = this%pixels(i, 3*j-0)
+                  rotated_pixels(this%height-i+1, 3*(this%width-j+1)-2:3*(this%width-j+1)) = this%pixels(i, 3*j-2:3*j)
                end do
             end do
           case (270, -90)
             do i = 1, this%height
                do j = 1, this%width
-                  rotated_pixels(this%width-j+1, 3*i-2) = this%pixels(i, 3*j-2)
-                  rotated_pixels(this%width-j+1, 3*i-1) = this%pixels(i, 3*j-1)
-                  rotated_pixels(this%width-j+1, 3*i-0) = this%pixels(i, 3*j-0)
+                  rotated_pixels(this%width-j+1, 3*i-2:3*i) = this%pixels(i, 3*j-2:3*j)
                end do
             end do
          end select
 
       end select
-
-
 
       ! Update height and width of the image
       this%height = target_height
@@ -149,7 +166,7 @@ contains
 
    !===============================================================================
    !> author: Seyed Ali Ghasemi
-   pure subroutine greyscale(this)
+   elemental pure subroutine greyscale(this)
       class(format_pnm), intent(inout) :: this
       real(rk)                         :: gsc
       integer                          :: i, j
@@ -162,18 +179,17 @@ contains
                   0.0722_rk * real(this%pixels(i, 3*j-0), kind=rk)
 
             ! Convert the greyscale value back to integer and set it for all RGB channels
-            this%pixels(i, 3*j-2) = int(gsc)
-            this%pixels(i, 3*j-1) = int(gsc)
-            this%pixels(i, 3*j-0) = int(gsc)
+            this%pixels(i, 3*j-2:3*j) = int(gsc)
          end do
       end do
 
    end subroutine greyscale
    !===============================================================================
 
+
    !===============================================================================
    !> author: Seyed Ali Ghasemi
-   pure subroutine remove_channels(this, remove_r, remove_g, remove_b)
+   elemental pure subroutine remove_channels(this, remove_r, remove_g, remove_b)
       class(format_pnm), intent(inout) :: this
       logical, optional, intent(in)    :: remove_r, remove_g, remove_b
 
@@ -208,7 +224,7 @@ contains
 
    !===============================================================================
    !> author: Seyed Ali Ghasemi
-   pure subroutine swap_channels(this, swap)
+   elemental pure subroutine swap_channels(this, swap)
       class(format_pnm), intent(inout) :: this
       character(*), intent(in)         :: swap
       integer :: i, j, temp
@@ -257,7 +273,7 @@ contains
 
    !===============================================================================
    !> author: Seyed Ali Ghasemi
-   pure subroutine brighten(this, factor)
+   elemental pure subroutine brighten(this, factor)
       class(format_pnm), intent(inout) :: this
       integer,           intent(in)    :: factor
 
@@ -268,7 +284,7 @@ contains
 
    !===============================================================================
    !> author: Seyed Ali Ghasemi
-   pure subroutine negative(this)
+   elemental pure subroutine negative(this)
       class(format_pnm), intent(inout) :: this
 
       this%pixels = this%max_color - this%pixels
