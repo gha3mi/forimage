@@ -74,7 +74,7 @@
             <li class="list-inline-item" id="statements"><i class="fa fa-list-ol"></i>
               <a data-bs-toggle="tooltip"
                  data-bs-placement="bottom" data-html="true"
-                 title="<p>64.6% of total for derived types.</p>Including implementation: 426 statements, 80.5% of total for derived types.">31 statements</a>
+                 title="<p>66.0% of total for derived types.</p>Including implementation: 431 statements, 80.7% of total for derived types.">33 statements</a>
             </li>
 
             <li class="list-inline-item" id="source-file">
@@ -161,13 +161,15 @@
             <a class="list-group-item" href="../type/format_pnm.html#boundprocedure-export_pnm">export_pnm</a>
             <a class="list-group-item" href="../type/format_pnm.html#boundprocedure-set_pnm">set_pnm</a>
             <a class="list-group-item" href="../type/format_pnm.html#boundprocedure-import_pnm">import_pnm</a>
-            <a class="list-group-item" href="../type/format_pnm.html#boundprocedure-finalize">finalize</a>
+            <a class="list-group-item" href="../type/format_pnm.html#boundprocedure-finalize~2">finalize</a>
             <a class="list-group-item" href="../type/format_pnm.html#boundprocedure-negative">negative</a>
             <a class="list-group-item" href="../type/format_pnm.html#boundprocedure-brighten">brighten</a>
             <a class="list-group-item" href="../type/format_pnm.html#boundprocedure-swap_channels">swap_channels</a>
             <a class="list-group-item" href="../type/format_pnm.html#boundprocedure-remove_channels">remove_channels</a>
             <a class="list-group-item" href="../type/format_pnm.html#boundprocedure-greyscale">greyscale</a>
             <a class="list-group-item" href="../type/format_pnm.html#boundprocedure-rotate">rotate</a>
+            <a class="list-group-item" href="../type/format_pnm.html#boundprocedure-flip_horizontal">flip_horizontal</a>
+            <a class="list-group-item" href="../type/format_pnm.html#boundprocedure-flip_vertical">flip_vertical</a>
         </div>
       </div>
     </div>
@@ -1468,7 +1470,7 @@
           <div class="row">
               <div class="card mt-3">
     <div class="card-header codesum">
-      <span class="anchor" id="boundprocedure-finalize"></span>
+      <span class="anchor" id="boundprocedure-finalize~2"></span>
       <h3>
           procedure, public ::
   <strong>finalize</strong> => <a href='../proc/deallocate_pnm.html'>deallocate_pnm</a>
@@ -1535,7 +1537,7 @@
     <ul class="list-group">
         <li class="list-group-item">
                   <h3>
-    private pure subroutine <a href='../proc/negative.html'>negative</a>(this)  
+    private pure elemental subroutine <a href='../proc/negative.html'>negative</a>(this)  
 </h3>
         <dl class="dl-horizontal">
         <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
@@ -1592,7 +1594,7 @@
     <ul class="list-group">
         <li class="list-group-item">
                   <h3>
-    private pure subroutine <a href='../proc/brighten.html'>brighten</a>(this, factor)  
+    private pure elemental subroutine <a href='../proc/brighten.html'>brighten</a>(this, factor)  
 </h3>
         <dl class="dl-horizontal">
         <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
@@ -1664,7 +1666,7 @@
     <ul class="list-group">
         <li class="list-group-item">
                   <h3>
-    private pure subroutine <a href='../proc/swap_channels.html'>swap_channels</a>(this, swap)  
+    private pure elemental subroutine <a href='../proc/swap_channels.html'>swap_channels</a>(this, swap)  
 </h3>
         <dl class="dl-horizontal">
         <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
@@ -1736,7 +1738,7 @@
     <ul class="list-group">
         <li class="list-group-item">
                   <h3>
-    private pure subroutine <a href='../proc/remove_channels.html'>remove_channels</a>(this, remove_r, remove_g, remove_b)  
+    private pure elemental subroutine <a href='../proc/remove_channels.html'>remove_channels</a>(this, remove_r, remove_g, remove_b)  
 </h3>
         <dl class="dl-horizontal">
         <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
@@ -1838,7 +1840,7 @@
     <ul class="list-group">
         <li class="list-group-item">
                   <h3>
-    private pure subroutine <a href='../proc/greyscale.html'>greyscale</a>(this)  
+    private pure elemental subroutine <a href='../proc/greyscale.html'>greyscale</a>(this)  
 </h3>
         <dl class="dl-horizontal">
         <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
@@ -1895,7 +1897,7 @@
     <ul class="list-group">
         <li class="list-group-item">
                   <h3>
-    private pure subroutine <a href='../proc/rotate.html'>rotate</a>(this, angle)  
+    private pure elemental subroutine <a href='../proc/rotate.html'>rotate</a>(this, angle)  
 </h3>
         <dl class="dl-horizontal">
         <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
@@ -1954,6 +1956,120 @@
   </div>
 
           </div>
+          <div class="row">
+              <div class="card mt-3">
+    <div class="card-header codesum">
+      <span class="anchor" id="boundprocedure-flip_horizontal"></span>
+      <h3>
+          procedure, public ::
+  <strong>flip_horizontal</strong>
+        
+      </h3>
+    </div>
+    <ul class="list-group">
+        <li class="list-group-item">
+                  <h3>
+    private pure elemental subroutine <a href='../proc/flip_horizontal.html'>flip_horizontal</a>(this)  
+</h3>
+        <dl class="dl-horizontal">
+        <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
+    </dl>
+
+
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/format_pnm.html'>format_pnm</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>this</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+        </li>
+    </ul>
+  </div>
+
+          </div>
+          <div class="row">
+              <div class="card mt-3">
+    <div class="card-header codesum">
+      <span class="anchor" id="boundprocedure-flip_vertical"></span>
+      <h3>
+          procedure, public ::
+  <strong>flip_vertical</strong>
+        
+      </h3>
+    </div>
+    <ul class="list-group">
+        <li class="list-group-item">
+                  <h3>
+    private pure elemental subroutine <a href='../proc/flip_vertical.html'>flip_vertical</a>(this)  
+</h3>
+        <dl class="dl-horizontal">
+        <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
+    </dl>
+
+
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/format_pnm.html'>format_pnm</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>this</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+        </li>
+    </ul>
+  </div>
+
+          </div>
       </section>
 
     <section>
@@ -1988,6 +2104,8 @@
 <span class="w">      </span><span class="k">procedure</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">remove_channels</span>
 <span class="w">      </span><span class="k">procedure</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">greyscale</span>
 <span class="w">      </span><span class="k">procedure</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">rotate</span>
+<span class="w">      </span><span class="k">procedure</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">flip_horizontal</span>
+<span class="w">      </span><span class="k">procedure</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">flip_vertical</span>
 <span class="w">   </span><span class="k">end type </span><span class="n">format_pnm</span>
 </pre></div>
 
@@ -2008,7 +2126,7 @@
             <p class="text-end">
               Documentation generated by
               <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
- on 2023-11-07T18:53:35.610394             </p>
+ on 2023-11-08T08:11:41.378919             </p>
           </div>
         </div>
         <br>
