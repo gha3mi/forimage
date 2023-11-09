@@ -83,6 +83,12 @@ program demo
    call edit%export_pnm('pnm_files/mandelbrot_binary_crop')
    call edit%finalize()
 
+   ! Resize the image
+   edit = image ! Copy the format_pnm object
+   call edit%resize(800,200)
+   call edit%export_pnm('pnm_files/mandelbrot_binary_resize')
+   call edit%finalize()
+
    ! Import a PPM file with binary encoding and export it with ascii encoding
    edit = image ! Copy the format_pnm object
    call edit%import_pnm('pnm_files/mandelbrot_binary', 'ppm', 'binary')
