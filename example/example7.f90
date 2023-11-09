@@ -4,8 +4,8 @@ program example7
     
     type(format_pnm) :: ex7
 
-    call ex7%import_pnm('pnm_files/example1_ascii','pbm','ascii')
-    call ex7%export_pnm('pnm_files/example1_ascii_ex')
+    call ex7%import_pnm('pnm_files/img1_ascii','pbm','ascii')
+    call ex7%export_pnm('pnm_files/img1_ascii_ex')
 
     call ex7%finalize()
 

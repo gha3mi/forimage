@@ -4,8 +4,8 @@ program example13
     
     type(format_pnm) :: ex13
 
-    call ex13%import_pnm('pnm_files/example6_binary','ppm','binary')
-    call ex13%export_pnm('pnm_files/example6_binary_to_ascii_ex','ascii')
+    call ex13%import_pnm('pnm_files/img6_binary','ppm','binary')
+    call ex13%export_pnm('pnm_files/img6_binary_to_ascii_ex','ascii')
 
     call ex13%finalize()
 

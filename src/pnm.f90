@@ -39,10 +39,70 @@ module pnm
       procedure :: rotate
       procedure :: flip_horizontal
       procedure :: flip_vertical
+      procedure :: crop
    end type format_pnm
    !===============================================================================
 
 contains
+
+   !===============================================================================
+   !> author: Seyed Ali Ghasemi
+   elemental pure subroutine crop(this, start_row, end_row, start_col, end_col)
+      class(format_pnm), intent(inout)     :: this
+      integer,           intent(in)        :: start_row, end_row, start_col, end_col
+      integer                              :: cropped_start_row, cropped_end_row, cropped_start_col, cropped_end_col
+      integer, dimension(:,:), allocatable :: cropped_pixels
+      integer                              :: i, j, cropped_height, cropped_width
+
+      ! Check if the cropping coordinates are within the image boundaries
+      cropped_start_row = max(1, start_row)
+      cropped_end_row   = min(this%height, end_row)
+      cropped_start_col = max(1, start_col)
+      cropped_end_col   = min(this%width, end_col)
+
+      ! Calculate the dimensions of the cropped image
+      cropped_height = cropped_end_row - cropped_start_row + 1
+      cropped_width  = cropped_end_col - cropped_start_col + 1
+
+      select case (this%file_format)
+       case ('pbm', 'pgm')
+
+         ! Allocate memory for cropped image pixels
+         allocate(cropped_pixels(cropped_height, cropped_width))
+
+         ! Copy the cropped pixels to the new array
+         do i = 1, cropped_height
+            do j = 1, cropped_width
+               cropped_pixels(i, j) = this%pixels(cropped_start_row-1+i, (cropped_start_col-1)+j)
+            end do
+         end do
+
+       case ('ppm')
+
+         ! Allocate memory for cropped image pixels
+         allocate(cropped_pixels(cropped_height, 3*cropped_width))
+
+         ! Copy the cropped pixels to the new array
+         do i = 1, cropped_height
+            do j = 1, 3*cropped_width
+               cropped_pixels(i, j) = this%pixels(cropped_start_row-1+i, (cropped_start_col-1)*3+j)
+            end do
+         end do
+
+      end select
+
+      ! Update image dimensions and pixels
+      this%height = cropped_height
+      this%width  = cropped_width
+      deallocate(this%pixels)
+      call this%allocate_pixels()
+      this%pixels = cropped_pixels
+
+      ! Deallocate temporary array
+      deallocate(cropped_pixels)
+   end subroutine crop
+   !===============================================================================
+
 
    !===============================================================================
    !> author: Seyed Ali Ghasemi
@@ -58,14 +118,30 @@ contains
    !> author: Seyed Ali Ghasemi
    elemental pure subroutine flip_horizontal(this)
       class(format_pnm), intent(inout) :: this
+      integer, dimension(size(this%pixels,1)) :: buffer
+      integer, dimension(size(this%pixels,1), 3)  :: buffer3
       integer :: j
-      integer, dimension(size(this%pixels,1), 3) :: buffer
 
-      do j = 1, this%width / 2
-         buffer(:, :) = this%pixels(:, 3*j-2:3*j)
-         this%pixels(:, 3*j-2:3*j) = this%pixels(:, 3*(this%width-j+1)-2:3*(this%width-j+1))
-         this%pixels(:, 3*(this%width-j+1)-2:3*(this%width-j+1)) = buffer(:, :)
-      end do
+
+      select case (this%file_format)
+       case ('pbm', 'pgm')
+
+         do j = 1, this%width / 2
+            buffer(:) = this%pixels(:, this%width-j+1)
+            this%pixels(:, this%width-j+1) = this%pixels(:,j)
+            this%pixels(:, j) = buffer(:)
+         end do
+
+       case ('ppm')
+
+         do j = 1, this%width / 2
+            buffer3(:, :) = this%pixels(:, 3*j-2:3*j)
+            this%pixels(:, 3*j-2:3*j) = this%pixels(:, 3*(this%width-j+1)-2:3*(this%width-j+1))
+            this%pixels(:, 3*(this%width-j+1)-2:3*(this%width-j+1)) = buffer3(:, :)
+         end do
+
+      end select
+
    end subroutine flip_horizontal
    !===============================================================================
 
@@ -171,6 +247,9 @@ contains
       real(rk)                         :: gsc
       integer                          :: i, j
 
+      ! Check if the file is ppm
+      if (this%file_format /= 'ppm') error stop 'greyscale: This function is only for ppm files.'
+
       do i = 1, this%height
          do j = 1, this%width
             ! Calculate a weighed average (here based on ITU Rec.709) of the 3 channels to get a gray color with the same brightness.
@@ -194,9 +273,7 @@ contains
       logical, optional, intent(in)    :: remove_r, remove_g, remove_b
 
       ! Check if the file is ppm
-      if (this%file_format /= 'ppm') then
-         error stop 'remove_channels: This function is only for ppm files.'
-      end if
+      if (this%file_format /= 'ppm') error stop 'remove_channels: This function is only for ppm files.'
 
       ! Remove R channel
       if (present(remove_r)) then
@@ -230,9 +307,7 @@ contains
       integer :: i, j, temp
 
       ! Check if the file is ppm
-      if (this%file_format /= 'ppm') then
-         error stop 'swap_channels: This function is only for ppm files.'
-      end if
+      if (this%file_format /= 'ppm') error stop 'swap_channels: This function is only for ppm files.'
 
       ! Swap R and G channels
       if (swap=='rg' .or. swap=='gr' .or. swap=='RG' .or. swap=='GR') then

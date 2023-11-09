@@ -3609,7 +3609,7 @@ program example2
     ,shape=shape(px)))
 
     call ex2%set_pnm(encoding='ascii', file_format='pgm', width=60, height=60, max_color=255, comment='example 2', pixels=px)
-    call ex2%export_pnm('pnm_files/example2_ascii')
+    call ex2%export_pnm('pnm_files/img2_ascii')
 
     call ex2%finalize()
 

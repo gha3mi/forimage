@@ -4,8 +4,8 @@ program example8
     
     type(format_pnm) :: ex8
 
-    call ex8%import_pnm('pnm_files/example2_ascii','pgm','ascii')
-    call ex8%export_pnm('pnm_files/example2_ascii_ex')
+    call ex8%import_pnm('pnm_files/img2_ascii','pgm','ascii')
+    call ex8%export_pnm('pnm_files/img2_ascii_ex')
 
     call ex8%finalize()
 
