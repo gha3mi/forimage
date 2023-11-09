@@ -1,0 +1,1301 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="Documentation for ForImage">
+    <meta name="author" content="Seyed Ali Ghasemi" >
+    <link rel="icon" href="../favicon.png">
+
+    <title>demo &ndash; ForImage</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="../css/pygments.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/local.css" rel="stylesheet">
+      <link  href="../tipuesearch/tipuesearch.css" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-3.7.0.slim.min.js" integrity="sha256-tG5mcZUtJsZvyKAxYLVXrmjKBVLd6VpVccqz/r4ypFE=" crossorigin="anonymous"></script>
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <div class="container-fluid mb-sm-4 mb-xl-2">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+          <a class="navbar-brand" href="../index.html">ForImage <small>0.3.0</small></a>
+          <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar"
+                  aria-expanded="false" aria-controls="navbar" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon">
+          </button>
+
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link" href="../lists/files.html">Source Files</a>
+                  </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/modules.html">Modules</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/procedures.html">Procedures</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/types.html">Derived Types</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/programs.html">Programs</a>
+                </li>
+            </ul>
+              <div class="d-flex align-items-end flex-grow-1">
+                <form action="../search.html" role="search" class="ms-auto">
+                  <input type="text" class="form-control" aria-label="Search" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+                </form>
+              </div>
+          </div><!--/.nav-collapse -->
+        </div>
+      </nav>
+    </div>
+
+    <div class="container">
+  <div class="row">
+    <h1>demo      <small>Program</small>
+      
+    </h1>
+      <div class="container p-2 mb-4 bg-light border rounded-3">
+    <div class="row align-items-center justify-content-between" id="info-bar">
+      <div class="col">
+        <ul class="list-inline" style="margin-bottom:0px;display:inline">
+
+            <li class="list-inline-item" id="statements"><i class="fa fa-list-ol"></i>
+              <a data-bs-toggle="tooltip"
+                 data-bs-placement="bottom" data-html="true"
+                 title="18.5% of total for programs.">89 statements</a>
+            </li>
+
+            <li class="list-inline-item" id="source-file">
+              <i class="fa fa-code"></i>
+              <a href="../src/demo.f90"> Source File</a>
+            </li>
+        </ul>
+      </div>
+      <div class="col">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb justify-content-end mb-0">
+                <li class="breadcrumb-item"><a href='../sourcefile/demo.f90.html'>demo.f90</a></li>
+            <li class="breadcrumb-item active" aria-current="page">demo</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </div>
+  <script>
+    $(function () {
+    $('[data-bs-toggle="tooltip"]').tooltip()
+    })
+  </script>
+
+  </div>
+  
+  <div class="row">
+    <div class="col-md-3 hidden-xs hidden-sm visible-md visible-lg">
+      <div id="sidebar">
+      <h3>Contents</h3>
+  
+      <div class="card mb-4">
+      <a data-bs-toggle="collapse" href="#vars-0"
+         aria-expanded="false" aria-controls="vars-0">
+         <h4 class="card-header bg-primary text-white">Variables</h4>
+      </a>
+      <div id="vars-0" class="collapse">
+        <div class="list-group list-group-flush">
+            <a class="list-group-item" href="../program/demo.html#variable-image">image</a>
+            <a class="list-group-item" href="../program/demo.html#variable-edit">edit</a>
+            <a class="list-group-item" href="../program/demo.html#variable-height~5">height</a>
+            <a class="list-group-item" href="../program/demo.html#variable-width~5">width</a>
+            <a class="list-group-item" href="../program/demo.html#variable-px~4">px</a>
+        </div>
+      </div>
+    </div>
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+      <div class="card mb-4">
+      <a data-bs-toggle="collapse" href="#funcs-0"
+         aria-expanded="false" aria-controls="funcs-0">
+         <h4 class="card-header bg-primary text-white">Functions</h4>
+      </a>
+      <div id="funcs-0" class="collapse">
+        <div class="list-group list-group-flush">
+            <a class="list-group-item" href="../program/demo.html#proc-mandelbrot">mandelbrot</a>
+        </div>
+      </div>
+    </div>
+
+  
+  
+  
+  
+  
+  
+  
+  
+    <div class="card card-primary">
+      <div class="card-header text-left"><h3 class="card-title">Source Code</h3></div>
+      <div class="list-group">
+        <a class="list-group-item" href="../program/demo.html#src">demo</a>
+      </div>
+    </div>
+
+
+  </div>
+
+    </div>
+    
+    <div class="col-md-9" id='text'>
+        <div class="card mb-4">
+      <h3 class="card-header card-title bg-light">Uses</h3>
+      <div class="card-body">
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              <ul class="list-inline">
+                  <li class="list-inline-item"><a href='../module/forimage.html'>forimage</a></li>
+              </ul>
+            </li>
+            <li class="list-group-item">
+              <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.43.0 (0)
+ -->
+<!-- Title: program~~demo~~UsesGraph Pages: 1 -->
+<svg id="programdemoUsesGraph" width="544pt" height="85pt"
+ viewBox="0.00 0.00 544.00 85.22" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="program~~demo~~UsesGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 81.22)">
+<title>program~~demo~~UsesGraph</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-81.22 540,-81.22 540,4 -4,4"/>
+<!-- program~demo -->
+<g id="program~~demo~~UsesGraph_node1" class="node">
+<title>program~demo</title>
+<polygon fill="none" stroke="black" points="536,-66 482,-66 482,-42 536,-42 536,-66"/>
+<text text-anchor="middle" x="509" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50">demo</text>
+</g>
+<!-- module~forimage -->
+<g id="program~~demo~~UsesGraph_node2" class="node">
+<title>module~forimage</title>
+<g id="a_program~~demo~~UsesGraph_node2"><a xlink:href=".././module/forimage.html" xlink:title="forimage">
+<polygon fill="#337ab7" stroke="#337ab7" points="446,-66 385,-66 385,-42 446,-42 446,-66"/>
+<text text-anchor="middle" x="415.5" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">forimage</text>
+</a>
+</g>
+</g>
+<!-- program~demo&#45;&gt;module~forimage -->
+<g id="program~~demo~~UsesGraph_edge1" class="edge">
+<title>program~demo&#45;&gt;module~forimage</title>
+<path fill="none" stroke="#255000" stroke-dasharray="5,2" d="M481.53,-54C473.65,-54 464.84,-54 456.31,-54"/>
+<polygon fill="#255000" stroke="#255000" points="456.12,-50.5 446.12,-54 456.12,-57.5 456.12,-50.5"/>
+</g>
+<!-- module~forimage_parameters -->
+<g id="program~~demo~~UsesGraph_node3" class="node">
+<title>module~forimage_parameters</title>
+<g id="a_program~~demo~~UsesGraph_node3"><a xlink:href=".././module/forimage_parameters.html" xlink:title="forimage_parameters">
+<polygon fill="#337ab7" stroke="#337ab7" points="259,-65 130,-65 130,-41 259,-41 259,-65"/>
+<text text-anchor="middle" x="194.5" y="-50.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">forimage_parameters</text>
+</a>
+</g>
+</g>
+<!-- module~forimage&#45;&gt;module~forimage_parameters -->
+<g id="program~~demo~~UsesGraph_edge2" class="edge">
+<title>module~forimage&#45;&gt;module~forimage_parameters</title>
+<path fill="none" stroke="#255000" stroke-dasharray="5,2" d="M384.97,-65.61C373.88,-69.4 361.03,-73.12 349,-75 314.11,-80.46 274.67,-74.55 244.51,-67.48"/>
+<polygon fill="#255000" stroke="#255000" points="245.2,-64.05 234.66,-65.06 243.53,-70.85 245.2,-64.05"/>
+</g>
+<!-- module~lut -->
+<g id="program~~demo~~UsesGraph_node4" class="node">
+<title>module~lut</title>
+<g id="a_program~~demo~~UsesGraph_node4"><a xlink:href=".././module/lut.html" xlink:title="lut">
+<polygon fill="#337ab7" stroke="#337ab7" points="349,-66 295,-66 295,-42 349,-42 349,-66"/>
+<text text-anchor="middle" x="322" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">lut</text>
+</a>
+</g>
+</g>
+<!-- module~forimage&#45;&gt;module~lut -->
+<g id="program~~demo~~UsesGraph_edge3" class="edge">
+<title>module~forimage&#45;&gt;module~lut</title>
+<path fill="none" stroke="#255000" stroke-dasharray="5,2" d="M384.79,-54C376.63,-54 367.69,-54 359.21,-54"/>
+<polygon fill="#255000" stroke="#255000" points="359.17,-50.5 349.17,-54 359.17,-57.5 359.17,-50.5"/>
+</g>
+<!-- module~pnm -->
+<g id="program~~demo~~UsesGraph_node5" class="node">
+<title>module~pnm</title>
+<g id="a_program~~demo~~UsesGraph_node5"><a xlink:href=".././module/pnm.html" xlink:title="pnm">
+<polygon fill="#337ab7" stroke="#337ab7" points="349,-24 295,-24 295,0 349,0 349,-24"/>
+<text text-anchor="middle" x="322" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">pnm</text>
+</a>
+</g>
+</g>
+<!-- module~forimage&#45;&gt;module~pnm -->
+<g id="program~~demo~~UsesGraph_edge4" class="edge">
+<title>module~forimage&#45;&gt;module~pnm</title>
+<path fill="none" stroke="#255000" stroke-dasharray="5,2" d="M388.03,-41.85C378.76,-37.59 368.18,-32.74 358.29,-28.2"/>
+<polygon fill="#255000" stroke="#255000" points="359.64,-24.97 349.09,-23.98 356.72,-31.33 359.64,-24.97"/>
+</g>
+<!-- iso_fortran_env -->
+<g id="program~~demo~~UsesGraph_node6" class="node">
+<title>iso_fortran_env</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="94,-65 0,-65 0,-41 94,-41 94,-65"/>
+<text text-anchor="middle" x="47" y="-50.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">iso_fortran_env</text>
+</g>
+<!-- module~forimage_parameters&#45;&gt;iso_fortran_env -->
+<g id="program~~demo~~UsesGraph_edge5" class="edge">
+<title>module~forimage_parameters&#45;&gt;iso_fortran_env</title>
+<path fill="none" stroke="#255000" stroke-dasharray="5,2" d="M129.68,-53C121.31,-53 112.77,-53 104.53,-53"/>
+<polygon fill="#255000" stroke="#255000" points="104.28,-49.5 94.28,-53 104.28,-56.5 104.28,-49.5"/>
+</g>
+<!-- module~pnm&#45;&gt;module~forimage_parameters -->
+<g id="program~~demo~~UsesGraph_edge6" class="edge">
+<title>module~pnm&#45;&gt;module~forimage_parameters</title>
+<path fill="none" stroke="#002505" stroke-dasharray="5,2" d="M295,-20.5C279.73,-25.48 259.98,-31.93 242.11,-37.77"/>
+<polygon fill="#002505" stroke="#002505" points="240.84,-34.51 232.42,-40.94 243.01,-41.16 240.84,-34.51"/>
+</g>
+</g>
+</svg>
+</div>        <div><a type="button" class="graph-help" data-toggle="modal" href="#UsesGraph-help-text">Help</a></div>
+          <div class="modal fade" id="UsesGraph-help-text" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-lg" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                  <h4 class="modal-title" id="-graph-help-label">Graph Key</h4>
+                </div>
+              <div class="modal-body">
+<p>Nodes of different colours represent the following: </p>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.43.0 (0)
+ -->
+<!-- Title: Graph Key Pages: 1 -->
+<svg width="518pt" height="32pt"
+ viewBox="0.00 0.00 517.50 32.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 28)">
+<title>Graph Key</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-28 513.5,-28 513.5,4 -4,4"/>
+<!-- Module -->
+<g id="node1" class="node">
+<title>Module</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="54,-24 0,-24 0,0 54,0 54,-24"/>
+<text text-anchor="middle" x="27" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Module</text>
+</g>
+<!-- Submodule -->
+<g id="node2" class="node">
+<title>Submodule</title>
+<polygon fill="#5bc0de" stroke="#5bc0de" points="145.5,-24 72.5,-24 72.5,0 145.5,0 145.5,-24"/>
+<text text-anchor="middle" x="109" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Submodule</text>
+</g>
+<!-- Subroutine -->
+<g id="node3" class="node">
+<title>Subroutine</title>
+<polygon fill="#d9534f" stroke="#d9534f" points="234,-24 164,-24 164,0 234,0 234,-24"/>
+<text text-anchor="middle" x="199" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Subroutine</text>
+</g>
+<!-- Function -->
+<g id="node4" class="node">
+<title>Function</title>
+<polygon fill="#d94e8f" stroke="#d94e8f" points="310,-24 252,-24 252,0 310,0 310,-24"/>
+<text text-anchor="middle" x="281" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Function</text>
+</g>
+<!-- Program -->
+<g id="node5" class="node">
+<title>Program</title>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="386,-24 328,-24 328,0 386,0 386,-24"/>
+<text text-anchor="middle" x="357" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Program</text>
+</g>
+<!-- This Page&#39;s Entity -->
+<g id="node6" class="node">
+<title>This Page&#39;s Entity</title>
+<polygon fill="none" stroke="black" points="509.5,-24 404.5,-24 404.5,0 509.5,0 509.5,-24"/>
+<text text-anchor="middle" x="457" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50">This Page&#39;s Entity</text>
+</g>
+</g>
+</svg>
+
+<p>Solid arrows point from a submodule to the (sub)module which it is
+descended from. Dashed arrows point from a module or program unit to 
+modules which it uses.
+</p>
+ Where possible, edges connecting nodes are
+given different colours to make them easier to distinguish in
+large graphs.</div>
+            </div>
+          </div>
+        </div>
+            </li>
+        </ul>
+      </div>
+    </div>
+
+    
+    <br>
+    <div class="card">
+      <div class="card-header">
+  <h3 class="card-title">Calls</h3>
+      </div>
+      <div class="card-body">
+  <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.43.0 (0)
+ -->
+<!-- Title: program~~demo~~CallsGraph Pages: 1 -->
+<svg id="programdemoCallsGraph" width="641pt" height="485pt"
+ viewBox="0.00 0.00 641.00 484.92" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="program~~demo~~CallsGraph" class="graph" transform="scale(1.26 1.26) rotate(0) translate(4 605.74)">
+<title>program~~demo~~CallsGraph</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-605.74 802,-605.74 802,4 -4,4"/>
+<!-- program~demo -->
+<g id="program~~demo~~CallsGraph_node1" class="node">
+<title>program~demo</title>
+<polygon fill="none" stroke="black" points="54,-335 0,-335 0,-311 54,-311 54,-335"/>
+<text text-anchor="middle" x="27" y="-320.6" font-family="Helvetica,sans-Serif" font-size="10.50">demo</text>
+</g>
+<!-- proc~brighten -->
+<g id="program~~demo~~CallsGraph_node2" class="node">
+<title>proc~brighten</title>
+<g id="a_program~~demo~~CallsGraph_node2"><a xlink:href=".././proc/brighten.html" xlink:title="pnm::format_pnm%brighten">
+<polygon fill="#d9534f" stroke="#d9534f" points="274.5,-398 110.5,-398 110.5,-374 274.5,-374 274.5,-398"/>
+<text text-anchor="middle" x="192.5" y="-383.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">pnm::format_pnm%brighten</text>
+</a>
+</g>
+</g>
+<!-- program~demo&#45;&gt;proc~brighten -->
+<g id="program~~demo~~CallsGraph_edge1" class="edge">
+<title>program~demo&#45;&gt;proc~brighten</title>
+<path fill="none" stroke="#255000" d="M42.33,-335.12C54.32,-344.64 72.28,-357.51 90,-365 95.36,-367.27 100.99,-369.29 106.73,-371.11"/>
+<polygon fill="#255000" stroke="#255000" points="105.89,-374.51 116.47,-373.97 107.86,-367.79 105.89,-374.51"/>
+</g>
+<!-- proc~crop -->
+<g id="program~~demo~~CallsGraph_node3" class="node">
+<title>proc~crop</title>
+<g id="a_program~~demo~~CallsGraph_node3"><a xlink:href=".././proc/crop.html" xlink:title="pnm::format_pnm%crop">
+<polygon fill="#d9534f" stroke="#d9534f" points="263.5,-314 121.5,-314 121.5,-290 263.5,-290 263.5,-314"/>
+<text text-anchor="middle" x="192.5" y="-299.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">pnm::format_pnm%crop</text>
+</a>
+</g>
+</g>
+<!-- program~demo&#45;&gt;proc~crop -->
+<g id="program~~demo~~CallsGraph_edge2" class="edge">
+<title>program~demo&#45;&gt;proc~crop</title>
+<path fill="none" stroke="#255000" d="M54.27,-319.63C69.86,-317.62 90.55,-314.97 111.13,-312.32"/>
+<polygon fill="#255000" stroke="#255000" points="111.72,-315.78 121.2,-311.03 110.83,-308.83 111.72,-315.78"/>
+</g>
+<!-- proc~deallocate_pnm -->
+<g id="program~~demo~~CallsGraph_node4" class="node">
+<title>proc~deallocate_pnm</title>
+<g id="a_program~~demo~~CallsGraph_node4"><a xlink:href=".././proc/deallocate_pnm.html" xlink:title="pnm::format_pnm%deallocate_pnm">
+<polygon fill="#d9534f" stroke="#d9534f" points="295,-104 90,-104 90,-80 295,-80 295,-104"/>
+<text text-anchor="middle" x="192.5" y="-89.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">pnm::format_pnm%deallocate_pnm</text>
+</a>
+</g>
+</g>
+<!-- program~demo&#45;&gt;proc~deallocate_pnm -->
+<g id="program~~demo~~CallsGraph_edge3" class="edge">
+<title>program~demo&#45;&gt;proc~deallocate_pnm</title>
+<path fill="none" stroke="#255000" d="M27.6,-310.85C27.13,-274.76 30.98,-167.31 90,-113 91.16,-111.93 92.36,-110.92 93.59,-109.94"/>
+<polygon fill="#255000" stroke="#255000" points="95.84,-112.65 102.2,-104.18 91.94,-106.84 95.84,-112.65"/>
+</g>
+<!-- proc~export_pnm -->
+<g id="program~~demo~~CallsGraph_node5" class="node">
+<title>proc~export_pnm</title>
+<g id="a_program~~demo~~CallsGraph_node5"><a xlink:href=".././proc/export_pnm.html" xlink:title="pnm::format_pnm%export_pnm">
+<polygon fill="#d9534f" stroke="#d9534f" points="283.5,-146 101.5,-146 101.5,-122 283.5,-122 283.5,-146"/>
+<text text-anchor="middle" x="192.5" y="-131.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">pnm::format_pnm%export_pnm</text>
+</a>
+</g>
+</g>
+<!-- program~demo&#45;&gt;proc~export_pnm -->
+<g id="program~~demo~~CallsGraph_edge4" class="edge">
+<title>program~demo&#45;&gt;proc~export_pnm</title>
+<path fill="none" stroke="#255000" d="M28.65,-310.6C31,-279.29 41.69,-196.57 90,-155 91.36,-153.83 92.77,-152.72 94.22,-151.66"/>
+<polygon fill="#255000" stroke="#255000" points="96.31,-154.48 102.94,-146.22 92.61,-148.55 96.31,-154.48"/>
+</g>
+<!-- proc~flip_horizontal -->
+<g id="program~~demo~~CallsGraph_node6" class="node">
+<title>proc~flip_horizontal</title>
+<g id="a_program~~demo~~CallsGraph_node6"><a xlink:href=".././proc/flip_horizontal.html" xlink:title="pnm::format_pnm%flip_horizontal">
+<polygon fill="#d9534f" stroke="#d9534f" points="534.5,-594 340.5,-594 340.5,-570 534.5,-570 534.5,-594"/>
+<text text-anchor="middle" x="437.5" y="-579.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">pnm::format_pnm%flip_horizontal</text>
+</a>
+</g>
+</g>
+<!-- program~demo&#45;&gt;proc~flip_horizontal -->
+<g id="program~~demo~~CallsGraph_edge5" class="edge">
+<title>program~demo&#45;&gt;proc~flip_horizontal</title>
+<path fill="none" stroke="#255000" d="M29.61,-335.23C35.45,-377.59 56.94,-517.01 90,-545 166.79,-609.99 290.01,-606.16 366.95,-595.5"/>
+<polygon fill="#255000" stroke="#255000" points="367.64,-598.94 377.03,-594.03 366.63,-592.01 367.64,-598.94"/>
+</g>
+<!-- proc~flip_vertical -->
+<g id="program~~demo~~CallsGraph_node7" class="node">
+<title>proc~flip_vertical</title>
+<g id="a_program~~demo~~CallsGraph_node7"><a xlink:href=".././proc/flip_vertical.html" xlink:title="pnm::format_pnm%flip_vertical">
+<polygon fill="#d9534f" stroke="#d9534f" points="528,-552 347,-552 347,-528 528,-528 528,-552"/>
+<text text-anchor="middle" x="437.5" y="-537.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">pnm::format_pnm%flip_vertical</text>
+</a>
+</g>
+</g>
+<!-- program~demo&#45;&gt;proc~flip_vertical -->
+<g id="program~~demo~~CallsGraph_edge6" class="edge">
+<title>program~demo&#45;&gt;proc~flip_vertical</title>
+<path fill="none" stroke="#255000" d="M28.02,-335.17C28.8,-368.38 35.94,-460.98 90,-504 167.45,-565.63 287.48,-563.18 364,-553.39"/>
+<polygon fill="#255000" stroke="#255000" points="364.59,-556.84 374.03,-552.03 363.65,-549.9 364.59,-556.84"/>
+</g>
+<!-- proc~greyscale -->
+<g id="program~~demo~~CallsGraph_node8" class="node">
+<title>proc~greyscale</title>
+<g id="a_program~~demo~~CallsGraph_node8"><a xlink:href=".././proc/greyscale.html" xlink:title="pnm::format_pnm%greyscale">
+<polygon fill="#d9534f" stroke="#d9534f" points="522.5,-510 352.5,-510 352.5,-486 522.5,-486 522.5,-510"/>
+<text text-anchor="middle" x="437.5" y="-495.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">pnm::format_pnm%greyscale</text>
+</a>
+</g>
+</g>
+<!-- program~demo&#45;&gt;proc~greyscale -->
+<g id="program~~demo~~CallsGraph_edge7" class="edge">
+<title>program~demo&#45;&gt;proc~greyscale</title>
+<path fill="none" stroke="#255000" d="M29.24,-335.03C32.83,-363.14 46,-433.12 90,-465 168.91,-522.18 285.9,-520.41 361.68,-511.28"/>
+<polygon fill="#255000" stroke="#255000" points="362.15,-514.75 371.63,-510.01 361.27,-507.8 362.15,-514.75"/>
+</g>
+<!-- proc~import_pnm -->
+<g id="program~~demo~~CallsGraph_node9" class="node">
+<title>proc~import_pnm</title>
+<g id="a_program~~demo~~CallsGraph_node9"><a xlink:href=".././proc/import_pnm.html" xlink:title="pnm::format_pnm%import_pnm">
+<polygon fill="#d9534f" stroke="#d9534f" points="284.5,-230 100.5,-230 100.5,-206 284.5,-206 284.5,-230"/>
+<text text-anchor="middle" x="192.5" y="-215.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">pnm::format_pnm%import_pnm</text>
+</a>
+</g>
+</g>
+<!-- program~demo&#45;&gt;proc~import_pnm -->
+<g id="program~~demo~~CallsGraph_edge8" class="edge">
+<title>program~demo&#45;&gt;proc~import_pnm</title>
+<path fill="none" stroke="#255000" d="M33.43,-310.77C42.39,-292.12 62.07,-256.89 90,-239 92.77,-237.23 95.65,-235.6 98.63,-234.11"/>
+<polygon fill="#255000" stroke="#255000" points="100.09,-237.29 107.8,-230.03 97.24,-230.9 100.09,-237.29"/>
+</g>
+<!-- proc~mandelbrot -->
+<g id="program~~demo~~CallsGraph_node10" class="node">
+<title>proc~mandelbrot</title>
+<g id="a_program~~demo~~CallsGraph_node10"><a xlink:href=".././proc/mandelbrot.html" xlink:title="demo::mandelbrot">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="248.5,-62 136.5,-62 136.5,-38 248.5,-38 248.5,-62"/>
+<text text-anchor="middle" x="192.5" y="-47.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">demo::mandelbrot</text>
+</a>
+</g>
+</g>
+<!-- program~demo&#45;&gt;proc~mandelbrot -->
+<g id="program~~demo~~CallsGraph_edge9" class="edge">
+<title>program~demo&#45;&gt;proc~mandelbrot</title>
+<path fill="none" stroke="#255000" d="M29.28,-310.87C34.36,-265.31 54.47,-105.23 90,-71 99.96,-61.41 113.08,-55.68 126.58,-52.36"/>
+<polygon fill="#255000" stroke="#255000" points="127.33,-55.78 136.43,-50.35 125.93,-48.92 127.33,-55.78"/>
+</g>
+<!-- proc~negative -->
+<g id="program~~demo~~CallsGraph_node11" class="node">
+<title>proc~negative</title>
+<g id="a_program~~demo~~CallsGraph_node11"><a xlink:href=".././proc/negative.html" xlink:title="pnm::format_pnm%negative">
+<polygon fill="#d9534f" stroke="#d9534f" points="275.5,-356 109.5,-356 109.5,-332 275.5,-332 275.5,-356"/>
+<text text-anchor="middle" x="192.5" y="-341.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">pnm::format_pnm%negative</text>
+</a>
+</g>
+</g>
+<!-- program~demo&#45;&gt;proc~negative -->
+<g id="program~~demo~~CallsGraph_edge10" class="edge">
+<title>program~demo&#45;&gt;proc~negative</title>
+<path fill="none" stroke="#255000" d="M54.27,-326.37C66.83,-327.99 82.69,-330.02 99.14,-332.14"/>
+<polygon fill="#255000" stroke="#255000" points="99.07,-335.66 109.44,-333.46 99.96,-328.71 99.07,-335.66"/>
+</g>
+<!-- proc~remove_channels -->
+<g id="program~~demo~~CallsGraph_node12" class="node">
+<title>proc~remove_channels</title>
+<g id="a_program~~demo~~CallsGraph_node12"><a xlink:href=".././proc/remove_channels.html" xlink:title="pnm::format_pnm%remove_channels">
+<polygon fill="#d9534f" stroke="#d9534f" points="544,-468 331,-468 331,-444 544,-444 544,-468"/>
+<text text-anchor="middle" x="437.5" y="-453.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">pnm::format_pnm%remove_channels</text>
+</a>
+</g>
+</g>
+<!-- program~demo&#45;&gt;proc~remove_channels -->
+<g id="program~~demo~~CallsGraph_edge11" class="edge">
+<title>program~demo&#45;&gt;proc~remove_channels</title>
+<path fill="none" stroke="#255000" d="M31.08,-335.13C37.6,-358 55.13,-407.16 90,-429 171.19,-479.86 284.96,-478.02 359.67,-469.28"/>
+<polygon fill="#255000" stroke="#255000" points="360.45,-472.71 369.94,-468.01 359.59,-465.77 360.45,-472.71"/>
+</g>
+<!-- proc~rotate -->
+<g id="program~~demo~~CallsGraph_node13" class="node">
+<title>proc~rotate</title>
+<g id="a_program~~demo~~CallsGraph_node13"><a xlink:href=".././proc/rotate.html" xlink:title="pnm::format_pnm%rotate">
+<polygon fill="#d9534f" stroke="#d9534f" points="268,-272 117,-272 117,-248 268,-248 268,-272"/>
+<text text-anchor="middle" x="192.5" y="-257.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">pnm::format_pnm%rotate</text>
+</a>
+</g>
+</g>
+<!-- program~demo&#45;&gt;proc~rotate -->
+<g id="program~~demo~~CallsGraph_edge12" class="edge">
+<title>program~demo&#45;&gt;proc~rotate</title>
+<path fill="none" stroke="#255000" d="M42.33,-310.88C54.32,-301.36 72.28,-288.49 90,-281 95.42,-278.71 101.1,-276.67 106.9,-274.84"/>
+<polygon fill="#255000" stroke="#255000" points="108.13,-278.13 116.74,-271.96 106.16,-271.41 108.13,-278.13"/>
+</g>
+<!-- proc~set_pnm -->
+<g id="program~~demo~~CallsGraph_node14" class="node">
+<title>proc~set_pnm</title>
+<g id="a_program~~demo~~CallsGraph_node14"><a xlink:href=".././proc/set_pnm.html" xlink:title="pnm::format_pnm%set_pnm">
+<polygon fill="#d9534f" stroke="#d9534f" points="274.5,-188 110.5,-188 110.5,-164 274.5,-164 274.5,-188"/>
+<text text-anchor="middle" x="192.5" y="-173.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">pnm::format_pnm%set_pnm</text>
+</a>
+</g>
+</g>
+<!-- program~demo&#45;&gt;proc~set_pnm -->
+<g id="program~~demo~~CallsGraph_edge13" class="edge">
+<title>program~demo&#45;&gt;proc~set_pnm</title>
+<path fill="none" stroke="#255000" d="M30.31,-310.69C35.78,-285.17 52.02,-226.4 90,-197 93.44,-194.34 97.14,-191.99 101.01,-189.92"/>
+<polygon fill="#255000" stroke="#255000" points="102.74,-192.97 110.34,-185.58 99.79,-186.63 102.74,-192.97"/>
+</g>
+<!-- proc~swap_channels -->
+<g id="program~~demo~~CallsGraph_node15" class="node">
+<title>proc~swap_channels</title>
+<g id="a_program~~demo~~CallsGraph_node15"><a xlink:href=".././proc/swap_channels.html" xlink:title="pnm::format_pnm%swap_channels">
+<polygon fill="#d9534f" stroke="#d9534f" points="537,-426 338,-426 338,-402 537,-402 537,-426"/>
+<text text-anchor="middle" x="437.5" y="-411.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">pnm::format_pnm%swap_channels</text>
+</a>
+</g>
+</g>
+<!-- program~demo&#45;&gt;proc~swap_channels -->
+<g id="program~~demo~~CallsGraph_edge14" class="edge">
+<title>program~demo&#45;&gt;proc~swap_channels</title>
+<path fill="none" stroke="#255000" d="M32.79,-335.24C41.1,-354.58 60.22,-391.59 90,-407 130.03,-427.72 241.88,-426.58 327.78,-422.08"/>
+<polygon fill="#255000" stroke="#255000" points="328.06,-425.57 337.85,-421.53 327.68,-418.58 328.06,-425.57"/>
+</g>
+<!-- proc~set_pixels -->
+<g id="program~~demo~~CallsGraph_node21" class="node">
+<title>proc~set_pixels</title>
+<g id="a_program~~demo~~CallsGraph_node21"><a xlink:href=".././proc/set_pixels.html" xlink:title="pnm::format_pnm%set_pixels">
+<polygon fill="#d9534f" stroke="#d9534f" points="523,-314 352,-314 352,-290 523,-290 523,-314"/>
+<text text-anchor="middle" x="437.5" y="-299.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">pnm::format_pnm%set_pixels</text>
+</a>
+</g>
+</g>
+<!-- proc~brighten&#45;&gt;proc~set_pixels -->
+<g id="program~~demo~~CallsGraph_edge15" class="edge">
+<title>proc~brighten&#45;&gt;proc~set_pixels</title>
+<path fill="none" stroke="#255000" d="M261.73,-373.99C272.95,-371.41 284.38,-368.42 295,-365 333.87,-352.49 376.4,-332.66 404.59,-318.59"/>
+<polygon fill="#255000" stroke="#255000" points="406.22,-321.69 413.57,-314.06 403.06,-315.44 406.22,-321.69"/>
+</g>
+<!-- proc~allocate_pixels -->
+<g id="program~~demo~~CallsGraph_node16" class="node">
+<title>proc~allocate_pixels</title>
+<g id="a_program~~demo~~CallsGraph_node16"><a xlink:href=".././proc/allocate_pixels.html" xlink:title="pnm::format_pnm%allocate_pixels">
+<polygon fill="#d9534f" stroke="#d9534f" points="536.5,-272 338.5,-272 338.5,-248 536.5,-248 536.5,-272"/>
+<text text-anchor="middle" x="437.5" y="-257.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">pnm::format_pnm%allocate_pixels</text>
+</a>
+</g>
+</g>
+<!-- proc~crop&#45;&gt;proc~allocate_pixels -->
+<g id="program~~demo~~CallsGraph_edge16" class="edge">
+<title>proc~crop&#45;&gt;proc~allocate_pixels</title>
+<path fill="none" stroke="transparent" d="M263.13,-289.96C292.37,-284.91 326.53,-279.01 356.77,-273.78"/>
+<polygon fill="transparent" stroke="transparent" points="357.6,-277.19 366.86,-272.04 356.41,-270.29 357.6,-277.19"/>
+</g>
+<!-- proc~crop&#45;&gt;proc~set_pixels -->
+<g id="program~~demo~~CallsGraph_edge17" class="edge">
+<title>proc~crop&#45;&gt;proc~set_pixels</title>
+<path fill="none" stroke="transparent" d="M263.79,-302C288.04,-302 315.63,-302 341.52,-302"/>
+<polygon fill="transparent" stroke="transparent" points="341.73,-305.5 351.73,-302 341.73,-298.5 341.73,-305.5"/>
+</g>
+<!-- proc~set_format -->
+<g id="program~~demo~~CallsGraph_node19" class="node">
+<title>proc~set_format</title>
+<g id="a_program~~demo~~CallsGraph_node19"><a xlink:href=".././proc/set_format.html" xlink:title="pnm::format_pnm%set_format">
+<polygon fill="#d9534f" stroke="#d9534f" points="525.5,-150 349.5,-150 349.5,-126 525.5,-126 525.5,-150"/>
+<text text-anchor="middle" x="437.5" y="-135.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">pnm::format_pnm%set_format</text>
+</a>
+</g>
+</g>
+<!-- proc~export_pnm&#45;&gt;proc~set_format -->
+<g id="program~~demo~~CallsGraph_edge18" class="edge">
+<title>proc~export_pnm&#45;&gt;proc~set_format</title>
+<path fill="none" stroke="transparent" d="M283.64,-135.48C301.76,-135.78 320.88,-136.1 339.23,-136.4"/>
+<polygon fill="transparent" stroke="transparent" points="339.28,-139.9 349.33,-136.57 339.39,-132.9 339.28,-139.9"/>
+</g>
+<!-- proc~check_pixel_range -->
+<g id="program~~demo~~CallsGraph_node17" class="node">
+<title>proc~check_pixel_range</title>
+<g id="a_program~~demo~~CallsGraph_node17"><a xlink:href=".././proc/check_pixel_range.html" xlink:title="pnm::format_pnm%check_pixel_range">
+<polygon fill="#d9534f" stroke="#d9534f" points="798,-468 580,-468 580,-444 798,-444 798,-468"/>
+<text text-anchor="middle" x="689" y="-453.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">pnm::format_pnm%check_pixel_range</text>
+</a>
+</g>
+</g>
+<!-- proc~flip_horizontal&#45;&gt;proc~check_pixel_range -->
+<g id="program~~demo~~CallsGraph_edge19" class="edge">
+<title>proc~flip_horizontal&#45;&gt;proc~check_pixel_range</title>
+<path fill="none" stroke="#722550" d="M518.28,-569.99C527.13,-567.53 535.88,-564.56 544,-561 593.05,-539.49 641.6,-499.07 667.91,-475.14"/>
+<polygon fill="#722550" stroke="#722550" points="670.36,-477.64 675.33,-468.28 665.61,-472.49 670.36,-477.64"/>
+</g>
+<!-- proc~flip_vertical&#45;&gt;proc~check_pixel_range -->
+<g id="program~~demo~~CallsGraph_edge20" class="edge">
+<title>proc~flip_vertical&#45;&gt;proc~check_pixel_range</title>
+<path fill="none" stroke="#025536" d="M509.97,-527.95C521.45,-525.39 533.13,-522.41 544,-519 583.53,-506.58 626.82,-486.73 655.51,-472.63"/>
+<polygon fill="#025536" stroke="#025536" points="657.26,-475.68 664.65,-468.09 654.14,-469.41 657.26,-475.68"/>
+</g>
+<!-- proc~greyscale&#45;&gt;proc~check_pixel_range -->
+<g id="program~~demo~~CallsGraph_edge21" class="edge">
+<title>proc~greyscale&#45;&gt;proc~check_pixel_range</title>
+<path fill="none" stroke="#025514" stroke-opacity="0.019608" d="M510,-485.96C540.14,-480.89 575.39,-474.96 606.54,-469.71"/>
+<polygon fill="#025514" fill-opacity="0.019608" stroke="#025514" stroke-opacity="0.019608" points="607.21,-473.15 616.49,-468.04 606.05,-466.25 607.21,-473.15"/>
+</g>
+<!-- proc~import_pnm&#45;&gt;proc~allocate_pixels -->
+<g id="program~~demo~~CallsGraph_edge22" class="edge">
+<title>proc~import_pnm&#45;&gt;proc~allocate_pixels</title>
+<path fill="none" stroke="#025525" stroke-opacity="0.019608" d="M263.13,-230.04C292.37,-235.09 326.53,-240.99 356.77,-246.22"/>
+<polygon fill="#025525" fill-opacity="0.019608" stroke="#025525" stroke-opacity="0.019608" points="356.41,-249.71 366.86,-247.96 357.6,-242.81 356.41,-249.71"/>
+</g>
+<!-- proc~import_pnm&#45;&gt;proc~check_pixel_range -->
+<g id="program~~demo~~CallsGraph_edge23" class="edge">
+<title>proc~import_pnm&#45;&gt;proc~check_pixel_range</title>
+<path fill="none" stroke="#025525" stroke-opacity="0.019608" d="M284.91,-214.41C373.81,-212.52 501.47,-214.52 544,-239 621.43,-283.58 665.12,-388.63 681.03,-434.24"/>
+<polygon fill="#025525" fill-opacity="0.019608" stroke="#025525" stroke-opacity="0.019608" points="677.73,-435.4 684.24,-443.76 684.36,-433.16 677.73,-435.4"/>
+</g>
+<!-- proc~set_file_format -->
+<g id="program~~demo~~CallsGraph_node18" class="node">
+<title>proc~set_file_format</title>
+<g id="a_program~~demo~~CallsGraph_node18"><a xlink:href=".././proc/set_file_format.html" xlink:title="pnm::format_pnm%set_file_format">
+<polygon fill="#d9534f" stroke="#d9534f" points="536.5,-192 338.5,-192 338.5,-168 536.5,-168 536.5,-192"/>
+<text text-anchor="middle" x="437.5" y="-177.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">pnm::format_pnm%set_file_format</text>
+</a>
+</g>
+</g>
+<!-- proc~import_pnm&#45;&gt;proc~set_file_format -->
+<g id="program~~demo~~CallsGraph_edge24" class="edge">
+<title>proc~import_pnm&#45;&gt;proc~set_file_format</title>
+<path fill="none" stroke="#025525" stroke-opacity="0.019608" d="M270.39,-205.98C295.55,-202.04 323.68,-197.64 349.53,-193.6"/>
+<polygon fill="#025525" fill-opacity="0.019608" stroke="#025525" stroke-opacity="0.019608" points="350.36,-197.01 359.7,-192.01 349.28,-190.1 350.36,-197.01"/>
+</g>
+<!-- proc~import_pnm&#45;&gt;proc~set_format -->
+<g id="program~~demo~~CallsGraph_edge25" class="edge">
+<title>proc~import_pnm&#45;&gt;proc~set_format</title>
+<path fill="none" stroke="#025525" stroke-opacity="0.019608" d="M274.65,-205.95C281.74,-203.5 288.63,-200.55 295,-197 315.32,-185.68 310.63,-170.24 331,-159 334.53,-157.05 338.22,-155.28 342.01,-153.67"/>
+<polygon fill="#025525" fill-opacity="0.019608" stroke="#025525" stroke-opacity="0.019608" points="343.52,-156.84 351.62,-150 341.03,-150.3 343.52,-156.84"/>
+</g>
+<!-- proc~import_pnm&#45;&gt;proc~set_pixels -->
+<g id="program~~demo~~CallsGraph_edge26" class="edge">
+<title>proc~import_pnm&#45;&gt;proc~set_pixels</title>
+<path fill="none" stroke="#025525" stroke-opacity="0.019608" d="M275.88,-230.09C282.57,-232.54 289.03,-235.48 295,-239 316.17,-251.49 309.78,-268.59 331,-281 334.67,-283.15 338.53,-285.08 342.5,-286.82"/>
+<polygon fill="#025525" fill-opacity="0.019608" stroke="#025525" stroke-opacity="0.019608" points="341.38,-290.14 351.96,-290.53 343.93,-283.62 341.38,-290.14"/>
+</g>
+<!-- proc~negative&#45;&gt;proc~set_pixels -->
+<g id="program~~demo~~CallsGraph_edge27" class="edge">
+<title>proc~negative&#45;&gt;proc~set_pixels</title>
+<path fill="none" stroke="#036255" d="M263.13,-331.96C292.37,-326.91 326.53,-321.01 356.77,-315.78"/>
+<polygon fill="#036255" stroke="#036255" points="357.6,-319.19 366.86,-314.04 356.41,-312.29 357.6,-319.19"/>
+</g>
+<!-- proc~remove_channels&#45;&gt;proc~check_pixel_range -->
+<g id="program~~demo~~CallsGraph_edge28" class="edge">
+<title>proc~remove_channels&#45;&gt;proc~check_pixel_range</title>
+<path fill="none" stroke="#720255" d="M544.31,-456C552.62,-456 561.04,-456 569.43,-456"/>
+<polygon fill="#720255" stroke="#720255" points="569.63,-459.5 579.63,-456 569.63,-452.5 569.63,-459.5"/>
+</g>
+<!-- proc~rotate&#45;&gt;proc~allocate_pixels -->
+<g id="program~~demo~~CallsGraph_edge29" class="edge">
+<title>proc~rotate&#45;&gt;proc~allocate_pixels</title>
+<path fill="none" stroke="#182025" stroke-opacity="0.019608" d="M268.06,-260C287.04,-260 307.82,-260 328.11,-260"/>
+<polygon fill="#182025" fill-opacity="0.019608" stroke="#182025" stroke-opacity="0.019608" points="328.34,-263.5 338.34,-260 328.34,-256.5 328.34,-263.5"/>
+</g>
+<!-- proc~rotate&#45;&gt;proc~set_pixels -->
+<g id="program~~demo~~CallsGraph_edge30" class="edge">
+<title>proc~rotate&#45;&gt;proc~set_pixels</title>
+<path fill="none" stroke="#182025" stroke-opacity="0.019608" d="M263.13,-272.04C292.37,-277.09 326.53,-282.99 356.77,-288.22"/>
+<polygon fill="#182025" fill-opacity="0.019608" stroke="#182025" stroke-opacity="0.019608" points="356.41,-291.71 366.86,-289.96 357.6,-284.81 356.41,-291.71"/>
+</g>
+<!-- proc~set_pnm&#45;&gt;proc~allocate_pixels -->
+<g id="program~~demo~~CallsGraph_edge31" class="edge">
+<title>proc~set_pnm&#45;&gt;proc~allocate_pixels</title>
+<path fill="none" stroke="#255021" stroke-opacity="0.031373" d="M261.73,-188.01C272.95,-190.59 284.38,-193.58 295,-197 333.87,-209.51 376.4,-229.34 404.59,-243.41"/>
+<polygon fill="#255021" fill-opacity="0.031373" stroke="#255021" stroke-opacity="0.031373" points="403.06,-246.56 413.57,-247.94 406.22,-240.31 403.06,-246.56"/>
+</g>
+<!-- proc~set_pnm&#45;&gt;proc~set_file_format -->
+<g id="program~~demo~~CallsGraph_edge32" class="edge">
+<title>proc~set_pnm&#45;&gt;proc~set_file_format</title>
+<path fill="none" stroke="#255021" stroke-opacity="0.031373" d="M274.75,-177.34C291.9,-177.62 310.26,-177.92 328.22,-178.22"/>
+<polygon fill="#255021" fill-opacity="0.031373" stroke="#255021" stroke-opacity="0.031373" points="328.39,-181.72 338.45,-178.39 328.51,-174.72 328.39,-181.72"/>
+</g>
+<!-- proc~set_pnm&#45;&gt;proc~set_format -->
+<g id="program~~demo~~CallsGraph_edge33" class="edge">
+<title>proc~set_pnm&#45;&gt;proc~set_format</title>
+<path fill="none" stroke="#255021" stroke-opacity="0.031373" d="M270.39,-163.98C295.55,-160.04 323.68,-155.64 349.53,-151.6"/>
+<polygon fill="#255021" fill-opacity="0.031373" stroke="#255021" stroke-opacity="0.031373" points="350.36,-155.01 359.7,-150.01 349.28,-148.1 350.36,-155.01"/>
+</g>
+<!-- proc~set_header -->
+<g id="program~~demo~~CallsGraph_node20" class="node">
+<title>proc~set_header</title>
+<g id="a_program~~demo~~CallsGraph_node20"><a xlink:href=".././proc/set_header.html" xlink:title="pnm::format_pnm%set_header">
+<polygon fill="#d9534f" stroke="#d9534f" points="526.5,-108 348.5,-108 348.5,-84 526.5,-84 526.5,-108"/>
+<text text-anchor="middle" x="437.5" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">pnm::format_pnm%set_header</text>
+</a>
+</g>
+</g>
+<!-- proc~set_pnm&#45;&gt;proc~set_header -->
+<g id="program~~demo~~CallsGraph_edge34" class="edge">
+<title>proc~set_pnm&#45;&gt;proc~set_header</title>
+<path fill="none" stroke="#255021" stroke-opacity="0.031373" d="M274.65,-163.95C281.74,-161.5 288.63,-158.55 295,-155 315.32,-143.68 310.63,-128.24 331,-117 334.53,-115.05 338.22,-113.28 342.01,-111.67"/>
+<polygon fill="#255021" fill-opacity="0.031373" stroke="#255021" stroke-opacity="0.031373" points="343.52,-114.84 351.62,-108 341.03,-108.3 343.52,-114.84"/>
+</g>
+<!-- proc~set_pnm&#45;&gt;proc~set_pixels -->
+<g id="program~~demo~~CallsGraph_edge35" class="edge">
+<title>proc~set_pnm&#45;&gt;proc~set_pixels</title>
+<path fill="none" stroke="#255021" stroke-opacity="0.031373" d="M274.67,-185.15C282.01,-188.17 288.94,-192.05 295,-197 326.46,-222.7 299.45,-255.42 331,-281 334.61,-283.92 338.51,-286.48 342.61,-288.71"/>
+<polygon fill="#255021" fill-opacity="0.031373" stroke="#255021" stroke-opacity="0.031373" points="341.35,-291.98 351.89,-293.08 344.33,-285.65 341.35,-291.98"/>
+</g>
+<!-- proc~swap_channels&#45;&gt;proc~check_pixel_range -->
+<g id="program~~demo~~CallsGraph_edge36" class="edge">
+<title>proc~swap_channels&#45;&gt;proc~check_pixel_range</title>
+<path fill="none" stroke="#255010" stroke-opacity="0.035294" d="M510,-426.04C540.14,-431.11 575.39,-437.04 606.54,-442.29"/>
+<polygon fill="#255010" fill-opacity="0.035294" stroke="#255010" stroke-opacity="0.035294" points="606.05,-445.75 616.49,-443.96 607.21,-438.85 606.05,-445.75"/>
+</g>
+<!-- proc~set_comment -->
+<g id="program~~demo~~CallsGraph_node22" class="node">
+<title>proc~set_comment</title>
+<g id="a_program~~demo~~CallsGraph_node22"><a xlink:href=".././proc/set_comment.html" xlink:title="pnm::format_pnm%set_comment">
+<polygon fill="#d9534f" stroke="#d9534f" points="784.5,-108 593.5,-108 593.5,-84 784.5,-84 784.5,-108"/>
+<text text-anchor="middle" x="689" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">pnm::format_pnm%set_comment</text>
+</a>
+</g>
+</g>
+<!-- proc~set_header&#45;&gt;proc~set_comment -->
+<g id="program~~demo~~CallsGraph_edge37" class="edge">
+<title>proc~set_header&#45;&gt;proc~set_comment</title>
+<path fill="none" stroke="#002505" d="M526.82,-96C545.11,-96 564.56,-96 583.38,-96"/>
+<polygon fill="#002505" stroke="#002505" points="583.45,-99.5 593.45,-96 583.45,-92.5 583.45,-99.5"/>
+</g>
+<!-- proc~set_height -->
+<g id="program~~demo~~CallsGraph_node23" class="node">
+<title>proc~set_height</title>
+<g id="a_program~~demo~~CallsGraph_node23"><a xlink:href=".././proc/set_height.html" xlink:title="pnm::format_pnm%set_height">
+<polygon fill="#d9534f" stroke="#d9534f" points="776,-66 602,-66 602,-42 776,-42 776,-66"/>
+<text text-anchor="middle" x="689" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">pnm::format_pnm%set_height</text>
+</a>
+</g>
+</g>
+<!-- proc~set_header&#45;&gt;proc~set_height -->
+<g id="program~~demo~~CallsGraph_edge38" class="edge">
+<title>proc~set_header&#45;&gt;proc~set_height</title>
+<path fill="none" stroke="#002505" d="M510,-83.96C540.14,-78.89 575.39,-72.96 606.54,-67.71"/>
+<polygon fill="#002505" stroke="#002505" points="607.21,-71.15 616.49,-66.04 606.05,-64.25 607.21,-71.15"/>
+</g>
+<!-- proc~set_magicnumber -->
+<g id="program~~demo~~CallsGraph_node24" class="node">
+<title>proc~set_magicnumber</title>
+<g id="a_program~~demo~~CallsGraph_node24"><a xlink:href=".././proc/set_magicnumber.html" xlink:title="pnm::format_pnm%set_magicnumber">
+<polygon fill="#d9534f" stroke="#d9534f" points="796.5,-24 581.5,-24 581.5,0 796.5,0 796.5,-24"/>
+<text text-anchor="middle" x="689" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">pnm::format_pnm%set_magicnumber</text>
+</a>
+</g>
+</g>
+<!-- proc~set_header&#45;&gt;proc~set_magicnumber -->
+<g id="program~~demo~~CallsGraph_edge39" class="edge">
+<title>proc~set_header&#45;&gt;proc~set_magicnumber</title>
+<path fill="none" stroke="#002505" d="M461.4,-83.85C488.87,-69.75 536.66,-46.67 580,-33 587.86,-30.52 596.13,-28.28 604.46,-26.27"/>
+<polygon fill="#002505" stroke="#002505" points="605.28,-29.68 614.24,-24.02 603.71,-22.86 605.28,-29.68"/>
+</g>
+<!-- proc~set_max_color -->
+<g id="program~~demo~~CallsGraph_node25" class="node">
+<title>proc~set_max_color</title>
+<g id="a_program~~demo~~CallsGraph_node25"><a xlink:href=".././proc/set_max_color.html" xlink:title="pnm::format_pnm%set_max_color">
+<polygon fill="#d9534f" stroke="#d9534f" points="787,-192 591,-192 591,-168 787,-168 787,-192"/>
+<text text-anchor="middle" x="689" y="-177.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">pnm::format_pnm%set_max_color</text>
+</a>
+</g>
+</g>
+<!-- proc~set_header&#45;&gt;proc~set_max_color -->
+<g id="program~~demo~~CallsGraph_edge40" class="edge">
+<title>proc~set_header&#45;&gt;proc~set_max_color</title>
+<path fill="none" stroke="#002505" d="M524.66,-108.05C531.42,-110.51 537.96,-113.46 544,-117 565.22,-129.41 558.75,-146.63 580,-159 583.24,-160.89 586.63,-162.61 590.11,-164.18"/>
+<polygon fill="#002505" stroke="#002505" points="588.94,-167.49 599.53,-167.99 591.57,-161 588.94,-167.49"/>
+</g>
+<!-- proc~set_width -->
+<g id="program~~demo~~CallsGraph_node26" class="node">
+<title>proc~set_width</title>
+<g id="a_program~~demo~~CallsGraph_node26"><a xlink:href=".././proc/set_width.html" xlink:title="pnm::format_pnm%set_width">
+<polygon fill="#d9534f" stroke="#d9534f" points="773.5,-150 604.5,-150 604.5,-126 773.5,-126 773.5,-150"/>
+<text text-anchor="middle" x="689" y="-135.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">pnm::format_pnm%set_width</text>
+</a>
+</g>
+</g>
+<!-- proc~set_header&#45;&gt;proc~set_width -->
+<g id="program~~demo~~CallsGraph_edge41" class="edge">
+<title>proc~set_header&#45;&gt;proc~set_width</title>
+<path fill="none" stroke="#002505" d="M510,-108.04C540.14,-113.11 575.39,-119.04 606.54,-124.29"/>
+<polygon fill="#002505" stroke="#002505" points="606.05,-127.75 616.49,-125.96 607.21,-120.85 606.05,-127.75"/>
+</g>
+<!-- proc~set_pixels&#45;&gt;proc~check_pixel_range -->
+<g id="program~~demo~~CallsGraph_edge42" class="edge">
+<title>proc~set_pixels&#45;&gt;proc~check_pixel_range</title>
+<path fill="none" stroke="#255025" stroke-opacity="0.019608" d="M458.08,-314.08C502.08,-341.24 608.91,-407.18 659.95,-438.69"/>
+<polygon fill="#255025" fill-opacity="0.019608" stroke="#255025" stroke-opacity="0.019608" points="658.17,-441.7 668.51,-443.97 661.84,-435.74 658.17,-441.7"/>
+</g>
+</g>
+</svg>
+</div>                <script>
+                  var panprogramdemoCallsGraph = svgPanZoom('#programdemoCallsGraph',
+                    {zoomEnabled: true, controlIconsEnabled: true, fit: true, center: true,}
+                  );
+                </script>        <div><a type="button" class="graph-help" data-toggle="modal" href="#CallsGraph-help-text">Help</a></div>
+          <div class="modal fade" id="CallsGraph-help-text" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-lg" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                  <h4 class="modal-title" id="-graph-help-label">Graph Key</h4>
+                </div>
+              <div class="modal-body">
+<p>Nodes of different colours represent the following: </p>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.43.0 (0)
+ -->
+<!-- Title: Graph Key Pages: 1 -->
+<svg width="641pt" height="28pt"
+ viewBox="0.00 0.00 641.00 27.51" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1.16 1.16) rotate(0) translate(4 28)">
+<title>Graph Key</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-28 741.5,-28 741.5,4 -4,4"/>
+<!-- Subroutine -->
+<g id="node1" class="node">
+<title>Subroutine</title>
+<polygon fill="#d9534f" stroke="#d9534f" points="70,-24 0,-24 0,0 70,0 70,-24"/>
+<text text-anchor="middle" x="35" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Subroutine</text>
+</g>
+<!-- Function -->
+<g id="node2" class="node">
+<title>Function</title>
+<polygon fill="#d94e8f" stroke="#d94e8f" points="146,-24 88,-24 88,0 146,0 146,-24"/>
+<text text-anchor="middle" x="117" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Function</text>
+</g>
+<!-- Interface -->
+<g id="node3" class="node">
+<title>Interface</title>
+<polygon fill="#a7506f" stroke="#a7506f" points="225.5,-24 164.5,-24 164.5,0 225.5,0 225.5,-24"/>
+<text text-anchor="middle" x="195" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Interface</text>
+</g>
+<!-- Type Bound Procedure -->
+<g id="node4" class="node">
+<title>Type Bound Procedure</title>
+<polygon fill="#a7506f" stroke="#a7506f" points="374,-24 244,-24 244,0 374,0 374,-24"/>
+<text text-anchor="middle" x="309" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Type Bound Procedure</text>
+</g>
+<!-- Unknown Procedure Type -->
+<g id="node5" class="node">
+<title>Unknown Procedure Type</title>
+<polygon fill="#777777" stroke="#777777" points="537.5,-24 392.5,-24 392.5,0 537.5,0 537.5,-24"/>
+<text text-anchor="middle" x="465" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Unknown Procedure Type</text>
+</g>
+<!-- Program -->
+<g id="node6" class="node">
+<title>Program</title>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="614,-24 556,-24 556,0 614,0 614,-24"/>
+<text text-anchor="middle" x="585" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Program</text>
+</g>
+<!-- This Page&#39;s Entity -->
+<g id="node7" class="node">
+<title>This Page&#39;s Entity</title>
+<polygon fill="none" stroke="black" points="737.5,-24 632.5,-24 632.5,0 737.5,0 737.5,-24"/>
+<text text-anchor="middle" x="685" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50">This Page&#39;s Entity</text>
+</g>
+</g>
+</svg>
+
+<p>Solid arrows point from a procedure to one which it calls. Dashed 
+arrows point from an interface to procedures which implement that interface.
+This could include the module procedures in a generic interface or the
+implementation in a submodule of an interface in a parent module.
+</p>
+ Where possible, edges connecting nodes are
+given different colours to make them easier to distinguish in
+large graphs.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+<br>
+
+    <section>
+    <h2>Variables</h2>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+<th></th><th scope="col">Initial</th>        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-image"></span>
+              type(<a href='../type/format_pnm.html'>format_pnm</a>)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>image</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-edit"></span>
+              type(<a href='../type/format_pnm.html'>format_pnm</a>)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>edit</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-height~5"></span>
+              integer,
+            </td>
+            <td>
+parameter               
+            </td>
+            <td>::</td>
+            <td><strong>height</strong></td>
+<td> =</td>
+                <td>400</td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-width~5"></span>
+              integer,
+            </td>
+            <td>
+parameter               
+            </td>
+            <td>::</td>
+            <td><strong>width</strong></td>
+<td> =</td>
+                <td>400</td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-px~4"></span>
+              integer
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>px</strong>(height,3*width)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+    </section>
+    <br>
+    
+    
+    
+
+    
+ 
+    <section>
+    <h2>Functions</h2>
+      <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-mandelbrot"></span><h3> function <a href='../proc/mandelbrot.html'>mandelbrot</a>(h, w) result(pixels)  
+</h3></div>
+    <div class="card-body">
+          
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-h"></span>
+              integer,
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>h</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-w"></span>
+              integer,
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>w</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+    <h4>
+    Return Value
+    <small>integer, (h,3*w)</small>
+    </h4>
+    
+
+    </div>
+  </div>
+
+    </section>
+    <br>
+
+
+    
+
+    <section>
+    <h2 id="src">Source Code</h2>
+    <div class="hl codehilite"><pre><span></span><span class="k">program </span><span class="n">demo</span>
+
+<span class="w">   </span><span class="k">use </span><span class="n">forimage</span><span class="p">,</span><span class="w"> </span><span class="k">only</span><span class="p">:</span><span class="w"> </span><span class="n">format_pnm</span><span class="p">,</span><span class="w"> </span><span class="n">rk</span>
+<span class="w">   </span><span class="k">implicit none</span>
+
+<span class="w">   </span><span class="c">! Declare format_pnm object and parameters for image dimensions</span>
+<span class="w">   </span><span class="k">type</span><span class="p">(</span><span class="n">format_pnm</span><span class="p">)</span><span class="w">    </span><span class="kd">::</span><span class="w"> </span><span class="n">image</span><span class="p">,</span><span class="w"> </span><span class="n">edit</span>
+<span class="w">   </span><span class="kt">integer</span><span class="p">,</span><span class="w"> </span><span class="k">parameter</span><span class="w">  </span><span class="kd">::</span><span class="w"> </span><span class="n">height</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">400</span>
+<span class="w">   </span><span class="kt">integer</span><span class="p">,</span><span class="w"> </span><span class="k">parameter</span><span class="w">  </span><span class="kd">::</span><span class="w"> </span><span class="n">width</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="mi">400</span>
+<span class="w">   </span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">px</span><span class="p">(</span><span class="n">height</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="o">*</span><span class="n">width</span><span class="p">)</span>
+
+<span class="w">   </span><span class="c">! Generate Mandelbrot fractal and assign pixel values</span>
+<span class="w">   </span><span class="n">px</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mandelbrot</span><span class="p">(</span><span class="n">height</span><span class="p">,</span><span class="w"> </span><span class="n">width</span><span class="p">)</span>
+
+<span class="w">   </span><span class="c">! Set the properties of the format_pnm object (encoding, file format, width, height, max_color, comment and pixels)</span>
+<span class="w">   </span><span class="k">call </span><span class="n">image</span><span class="p">%</span><span class="n">set_pnm</span><span class="p">(&amp;</span>
+<span class="w">      </span><span class="n">encoding</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;binary&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="n">file_format</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;ppm&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="n">width</span><span class="w">       </span><span class="o">=</span><span class="w"> </span><span class="n">width</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="n">height</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="n">height</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="n">max_color</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="mi">255</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="n">comment</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;demo: mandelbrot&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="n">pixels</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="n">px</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="p">)</span>
+
+<span class="w">   </span><span class="c">! Export the image to a PPM file</span>
+<span class="w">   </span><span class="k">call </span><span class="n">image</span><span class="p">%</span><span class="n">export_pnm</span><span class="p">(</span><span class="s1">&#39;pnm_files/mandelbrot_binary&#39;</span><span class="p">)</span>
+
+<span class="w">   </span><span class="c">! Export the image to a PPM file with ascii encoding</span>
+<span class="w">   </span><span class="k">call </span><span class="n">image</span><span class="p">%</span><span class="n">export_pnm</span><span class="p">(</span><span class="s1">&#39;pnm_files/mandelbrot_ascii&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;ascii&#39;</span><span class="p">)</span>
+
+<span class="w">   </span><span class="c">! Export the image to a PPM file with a different encoding</span>
+<span class="w">   </span><span class="n">edit</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">image</span><span class="w"> </span><span class="c">! Copy the format_pnm object</span>
+<span class="w">   </span><span class="k">call </span><span class="n">edit</span><span class="p">%</span><span class="n">negative</span><span class="p">()</span>
+<span class="w">   </span><span class="k">call </span><span class="n">edit</span><span class="p">%</span><span class="n">export_pnm</span><span class="p">(</span><span class="s1">&#39;pnm_files/mandelbrot_binary_negative&#39;</span><span class="p">)</span>
+<span class="w">   </span><span class="k">call </span><span class="n">edit</span><span class="p">%</span><span class="n">finalize</span><span class="p">()</span>
+
+<span class="w">   </span><span class="c">! Brighten the image</span>
+<span class="w">   </span><span class="n">edit</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">image</span><span class="w"> </span><span class="c">! Copy the format_pnm object</span>
+<span class="w">   </span><span class="k">call </span><span class="n">edit</span><span class="p">%</span><span class="n">brighten</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+<span class="w">   </span><span class="k">call </span><span class="n">edit</span><span class="p">%</span><span class="n">export_pnm</span><span class="p">(</span><span class="s1">&#39;pnm_files/mandelbrot_binary_brighten&#39;</span><span class="p">)</span>
+<span class="w">   </span><span class="k">call </span><span class="n">edit</span><span class="p">%</span><span class="n">finalize</span><span class="p">()</span>
+
+<span class="w">   </span><span class="c">! Swap the red and blue channels</span>
+<span class="w">   </span><span class="n">edit</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">image</span><span class="w"> </span><span class="c">! Copy the format_pnm object</span>
+<span class="w">   </span><span class="k">call </span><span class="n">edit</span><span class="p">%</span><span class="n">swap_channels</span><span class="p">(</span><span class="s1">&#39;rb&#39;</span><span class="p">)</span>
+<span class="w">   </span><span class="k">call </span><span class="n">edit</span><span class="p">%</span><span class="n">export_pnm</span><span class="p">(</span><span class="s1">&#39;pnm_files/mandelbrot_binary_swap&#39;</span><span class="p">)</span>
+<span class="w">   </span><span class="k">call </span><span class="n">edit</span><span class="p">%</span><span class="n">finalize</span><span class="p">()</span>
+
+<span class="w">   </span><span class="c">! Remove the blue channel</span>
+<span class="w">   </span><span class="n">edit</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">image</span><span class="w"> </span><span class="c">! Copy the format_pnm object</span>
+<span class="w">   </span><span class="k">call </span><span class="n">edit</span><span class="p">%</span><span class="n">remove_channels</span><span class="p">(</span><span class="n">remove_b</span><span class="o">=</span><span class="p">.</span><span class="n">true</span><span class="p">.)</span>
+<span class="w">   </span><span class="k">call </span><span class="n">edit</span><span class="p">%</span><span class="n">export_pnm</span><span class="p">(</span><span class="s1">&#39;pnm_files/mandelbrot_binary_removel&#39;</span><span class="p">)</span>
+<span class="w">   </span><span class="k">call </span><span class="n">edit</span><span class="p">%</span><span class="n">finalize</span><span class="p">()</span>
+
+<span class="w">   </span><span class="c">! Convert the image to greyscale</span>
+<span class="w">   </span><span class="n">edit</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">image</span><span class="w"> </span><span class="c">! Copy the format_pnm object</span>
+<span class="w">   </span><span class="k">call </span><span class="n">edit</span><span class="p">%</span><span class="n">greyscale</span><span class="p">()</span>
+<span class="w">   </span><span class="k">call </span><span class="n">edit</span><span class="p">%</span><span class="n">export_pnm</span><span class="p">(</span><span class="s1">&#39;pnm_files/mandelbrot_binary_greyscale&#39;</span><span class="p">)</span>
+<span class="w">   </span><span class="k">call </span><span class="n">edit</span><span class="p">%</span><span class="n">finalize</span><span class="p">()</span>
+
+<span class="w">   </span><span class="c">! Rotate the image 90 degrees clockwise</span>
+<span class="w">   </span><span class="n">edit</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">image</span><span class="w"> </span><span class="c">! Copy the format_pnm object</span>
+<span class="w">   </span><span class="k">call </span><span class="n">edit</span><span class="p">%</span><span class="n">rotate</span><span class="p">(</span><span class="o">-</span><span class="mi">90</span><span class="p">)</span>
+<span class="w">   </span><span class="k">call </span><span class="n">edit</span><span class="p">%</span><span class="n">export_pnm</span><span class="p">(</span><span class="s1">&#39;pnm_files/mandelbrot_binary_rotate&#39;</span><span class="p">)</span>
+<span class="w">   </span><span class="k">call </span><span class="n">edit</span><span class="p">%</span><span class="n">finalize</span><span class="p">()</span>
+
+<span class="w">   </span><span class="c">! Flip the image horizontally</span>
+<span class="w">   </span><span class="n">edit</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">image</span><span class="w"> </span><span class="c">! Copy the format_pnm object</span>
+<span class="w">   </span><span class="k">call </span><span class="n">edit</span><span class="p">%</span><span class="n">flip_horizontal</span><span class="p">()</span>
+<span class="w">   </span><span class="k">call </span><span class="n">edit</span><span class="p">%</span><span class="n">export_pnm</span><span class="p">(</span><span class="s1">&#39;pnm_files/mandelbrot_binary_flip_horizontal&#39;</span><span class="p">)</span>
+<span class="w">   </span><span class="k">call </span><span class="n">edit</span><span class="p">%</span><span class="n">finalize</span><span class="p">()</span>
+
+<span class="w">   </span><span class="c">! Flip the image vertically</span>
+<span class="w">   </span><span class="n">edit</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">image</span><span class="w"> </span><span class="c">! Copy the format_pnm object</span>
+<span class="w">   </span><span class="k">call </span><span class="n">edit</span><span class="p">%</span><span class="n">flip_vertical</span><span class="p">()</span>
+<span class="w">   </span><span class="k">call </span><span class="n">edit</span><span class="p">%</span><span class="n">export_pnm</span><span class="p">(</span><span class="s1">&#39;pnm_files/mandelbrot_binary_flip_vertical&#39;</span><span class="p">)</span>
+<span class="w">   </span><span class="k">call </span><span class="n">edit</span><span class="p">%</span><span class="n">finalize</span><span class="p">()</span>
+
+<span class="w">   </span><span class="c">! Crop the image</span>
+<span class="w">   </span><span class="n">edit</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">image</span><span class="w"> </span><span class="c">! Copy the format_pnm object</span>
+<span class="w">   </span><span class="k">call </span><span class="n">edit</span><span class="p">%</span><span class="n">crop</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span><span class="mi">200</span><span class="p">,</span><span class="w"> </span><span class="mi">50</span><span class="p">,</span><span class="w"> </span><span class="mi">300</span><span class="p">)</span>
+<span class="w">   </span><span class="k">call </span><span class="n">edit</span><span class="p">%</span><span class="n">export_pnm</span><span class="p">(</span><span class="s1">&#39;pnm_files/mandelbrot_binary_crop&#39;</span><span class="p">)</span>
+<span class="w">   </span><span class="k">call </span><span class="n">edit</span><span class="p">%</span><span class="n">finalize</span><span class="p">()</span>
+
+<span class="w">   </span><span class="c">! Import a PPM file with binary encoding and export it with ascii encoding</span>
+<span class="w">   </span><span class="n">edit</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">image</span><span class="w"> </span><span class="c">! Copy the format_pnm object</span>
+<span class="w">   </span><span class="k">call </span><span class="n">edit</span><span class="p">%</span><span class="n">import_pnm</span><span class="p">(</span><span class="s1">&#39;pnm_files/mandelbrot_binary&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;ppm&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;binary&#39;</span><span class="p">)</span>
+<span class="w">   </span><span class="k">call </span><span class="n">edit</span><span class="p">%</span><span class="n">export_pnm</span><span class="p">(</span><span class="s1">&#39;pnm_files/mandelbrot_ascii_ex&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;ascii&#39;</span><span class="p">)</span>
+<span class="w">   </span><span class="k">call </span><span class="n">edit</span><span class="p">%</span><span class="n">finalize</span><span class="p">()</span>
+
+<span class="w">   </span><span class="c">! Import a PPM file with ascii encoding and export it with binary encoding</span>
+<span class="w">   </span><span class="n">edit</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">image</span><span class="w"> </span><span class="c">! Copy the format_pnm object</span>
+<span class="w">   </span><span class="k">call </span><span class="n">edit</span><span class="p">%</span><span class="n">import_pnm</span><span class="p">(</span><span class="s1">&#39;pnm_files/mandelbrot_ascii&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;ppm&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;ascii&#39;</span><span class="p">)</span>
+<span class="w">   </span><span class="k">call </span><span class="n">edit</span><span class="p">%</span><span class="n">export_pnm</span><span class="p">(</span><span class="s1">&#39;pnm_files/mandelbrot_binary_ex&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;binary&#39;</span><span class="p">)</span>
+<span class="w">   </span><span class="k">call </span><span class="n">edit</span><span class="p">%</span><span class="n">finalize</span><span class="p">()</span>
+
+
+<span class="w">   </span><span class="c">! Finalize the format_pnm object to release resources</span>
+<span class="w">   </span><span class="k">call </span><span class="n">image</span><span class="p">%</span><span class="n">finalize</span><span class="p">()</span>
+
+<span class="k">contains</span>
+
+<span class="w">   </span><span class="c">! Function to generate Mandelbrot fractal</span>
+<span class="w">   </span><span class="k">function </span><span class="n">mandelbrot</span><span class="p">(</span><span class="n">h</span><span class="p">,</span><span class="w"> </span><span class="n">w</span><span class="p">)</span><span class="w"> </span><span class="k">result</span><span class="p">(</span><span class="n">pixels</span><span class="p">)</span>
+<span class="w">      </span><span class="kt">integer</span><span class="p">,</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">w</span><span class="p">,</span><span class="w"> </span><span class="n">h</span>
+<span class="w">      </span><span class="kt">integer</span><span class="w">             </span><span class="kd">::</span><span class="w"> </span><span class="n">pixels</span><span class="p">(</span><span class="n">h</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="o">*</span><span class="n">w</span><span class="p">)</span>
+<span class="w">      </span><span class="kt">integer</span><span class="p">,</span><span class="w"> </span><span class="k">parameter</span><span class="w">  </span><span class="kd">::</span><span class="w"> </span><span class="n">max_iter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">256</span>
+<span class="w">      </span><span class="kt">real</span><span class="p">(</span><span class="n">rk</span><span class="p">),</span><span class="w"> </span><span class="k">parameter</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">x_min</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">-</span><span class="mf">2.0_rk</span>
+<span class="w">      </span><span class="kt">real</span><span class="p">(</span><span class="n">rk</span><span class="p">),</span><span class="w"> </span><span class="k">parameter</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">x_max</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1.0_rk</span>
+<span class="w">      </span><span class="kt">real</span><span class="p">(</span><span class="n">rk</span><span class="p">),</span><span class="w"> </span><span class="k">parameter</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">y_min</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">-</span><span class="mf">1.5_rk</span>
+<span class="w">      </span><span class="kt">real</span><span class="p">(</span><span class="n">rk</span><span class="p">),</span><span class="w"> </span><span class="k">parameter</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">y_max</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1.5_rk</span>
+<span class="w">      </span><span class="kt">real</span><span class="p">(</span><span class="n">rk</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="n">x_temp</span><span class="p">,</span><span class="w"> </span><span class="n">zx</span><span class="p">,</span><span class="w"> </span><span class="n">zy</span><span class="p">,</span><span class="w"> </span><span class="n">zx2</span><span class="p">,</span><span class="w"> </span><span class="n">zy2</span><span class="p">,</span><span class="w"> </span><span class="n">scale_x</span><span class="p">,</span><span class="w"> </span><span class="n">scale_y</span>
+<span class="w">      </span><span class="kt">integer</span><span class="w">  </span><span class="kd">::</span><span class="w"> </span><span class="n">iter</span><span class="p">,</span><span class="w"> </span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="n">j</span>
+<span class="w">      </span><span class="c">! Calculate scale factors for mapping pixel coordinates to Mandelbrot coordinates</span>
+<span class="w">      </span><span class="n">scale_x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">x_max</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">x_min</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="kt">real</span><span class="p">(</span><span class="n">w</span><span class="p">,</span><span class="w"> </span><span class="nb">kind</span><span class="o">=</span><span class="n">rk</span><span class="p">)</span>
+<span class="w">      </span><span class="n">scale_y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">y_max</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">y_min</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="kt">real</span><span class="p">(</span><span class="n">h</span><span class="p">,</span><span class="w"> </span><span class="nb">kind</span><span class="o">=</span><span class="n">rk</span><span class="p">)</span>
+<span class="w">      </span><span class="c">! Generate Mandelbrot fractal</span>
+<span class="w">      </span><span class="k">do </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">h</span>
+<span class="w">         </span><span class="k">do </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">w</span>
+<span class="w">            </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x_min</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="kt">real</span><span class="p">(</span><span class="n">j</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="nb">kind</span><span class="o">=</span><span class="n">rk</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">scale_x</span>
+<span class="w">            </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">y_max</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="kt">real</span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="nb">kind</span><span class="o">=</span><span class="n">rk</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">scale_y</span>
+<span class="w">            </span><span class="n">zx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.0_rk</span>
+<span class="w">            </span><span class="n">zy</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.0_rk</span>
+<span class="w">            </span><span class="n">iter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span>
+<span class="w">            </span><span class="k">do while</span><span class="w"> </span><span class="p">(</span><span class="n">iter</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">max_iter</span><span class="w"> </span><span class="p">.</span><span class="nb">and</span><span class="p">.</span><span class="w"> </span><span class="n">zx</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">zx</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">zy</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">zy</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mf">4.0_rk</span><span class="p">)</span>
+<span class="w">               </span><span class="n">x_temp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">zx</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">zx</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">zy</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">zy</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">x</span>
+<span class="w">               </span><span class="n">zy</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">2.0_rk</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">zx</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">zy</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">y</span>
+<span class="w">               </span><span class="n">zx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x_temp</span>
+<span class="w">               </span><span class="n">iter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">iter</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">            </span><span class="k">end do</span>
+<span class="w">            </span><span class="c">! Assign colors</span>
+<span class="w">            </span><span class="n">pixels</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="o">*</span><span class="n">j</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">mod</span><span class="p">(</span><span class="n">iter</span><span class="o">*</span><span class="mi">7</span><span class="p">,</span><span class="w"> </span><span class="mi">256</span><span class="p">)</span><span class="w">     </span><span class="c">! Red channel</span>
+<span class="w">            </span><span class="n">pixels</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="o">*</span><span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">mod</span><span class="p">(</span><span class="n">iter</span><span class="o">*</span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">256</span><span class="p">)</span><span class="w">     </span><span class="c">! Green channel</span>
+<span class="w">            </span><span class="n">pixels</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="o">*</span><span class="n">j</span><span class="p">)</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="nb">mod</span><span class="p">(</span><span class="n">iter</span><span class="o">*</span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">256</span><span class="p">)</span><span class="w">    </span><span class="c">! Blue channel</span>
+<span class="w">         </span><span class="k">end do</span>
+<span class="k">      end do</span>
+<span class="k">   end function</span>
+
+<span class="k">end program </span><span class="n">demo</span>
+</pre></div>
+
+    </section>
+    
+    </div>
+  </div>
+
+      <hr>
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+        <div class="row justify-content-between">
+          <div class="col"><p>ForImage was developed by Seyed Ali Ghasemi<br>&copy; 2023 
+</p>
+          </div>
+          <div class="col">
+            <p class="text-end">
+              Documentation generated by
+              <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
+ on 2023-11-09T17:24:34.484889             </p>
+          </div>
+        </div>
+        <br>
+      </div> <!-- /container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>    
+
+    <!-- MathJax JavaScript
+             ================================================== -->
+             <!-- Placed at the end of the document so the pages load faster -->
+        <script type="text/x-mathjax-config">
+          MathJax.Hub.Config({
+          TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } },
+          jax: ['input/TeX','input/MathML','output/HTML-CSS'],
+          extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']
+          });
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+          <script src="../tipuesearch/tipuesearch_content.js"></script>
+          <script src="../tipuesearch/tipuesearch_set.js"></script>
+          <script src="../tipuesearch/tipuesearch.js"></script>
+
+  </body>
+</html>
