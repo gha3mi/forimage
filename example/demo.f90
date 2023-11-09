@@ -50,7 +50,7 @@ program demo
    ! Remove the blue channel
    edit = image ! Copy the format_pnm object
    call edit%remove_channels(remove_b=.true.)
-   call edit%export_pnm('pnm_files/mandelbrot_binary_removel')
+   call edit%export_pnm('pnm_files/mandelbrot_binary_remove')
    call edit%finalize()
 
    ! Convert the image to greyscale

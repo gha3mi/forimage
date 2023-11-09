@@ -19,14 +19,41 @@
 ForImage offers comprehensive support for PNM files, including creation, importing, and exporting capabilities. It seamlessly handles formats such as `PBM`, `PGM`, and `PPM` in both `ASCII` and `binary` representations. Available features include:
 
 - Negative
+
+<img alt="demo" src="https://github.com/gha3mi/forimage/raw/main/pnm_files/mandelbrot_binary_negative.png" width="400">
+
 - Brighten
+
+<img alt="demo" src="https://github.com/gha3mi/forimage/raw/main/pnm_files/mandelbrot_binary_brighten.png" width="400">
+
 - Swap Channels
+
+<img alt="demo" src="https://github.com/gha3mi/forimage/raw/main/pnm_files/mandelbrot_binary_swap.png" width="400">
+
 - Remove Channels
+
+<img alt="demo" src="https://github.com/gha3mi/forimage/raw/main/pnm_files/mandelbrot_binary_remove.png" width="400">
+
 - Greyscale
+
+<img alt="demo" src="https://github.com/gha3mi/forimage/raw/main/pnm_files/mandelbrot_binary_greyscale.png" width="400">
+
 - Rotate
+
+<img alt="demo" src="https://github.com/gha3mi/forimage/raw/main/pnm_files/mandelbrot_binary_rotate.png" width="400">
+
 - Flip Horizontal
+
+<img alt="demo" src="https://github.com/gha3mi/forimage/raw/main/pnm_files/mandelbrot_binary_flip_horizontal.png" width="400">
+
 - Flip Vertical
+
+<img alt="demo" src="https://github.com/gha3mi/forimage/raw/main/pnm_files/mandelbrot_binary_flip_vertical.png" width="400">
+
 - Crop
+
+<img alt="demo" src="https://github.com/gha3mi/forimage/raw/main/pnm_files/mandelbrot_binary_crop.png" width="250">
+
 
 ## fpm dependency
 
@@ -38,7 +65,7 @@ you can easily include it by adding the following line to your `fpm.toml` file:
 forimage = {git="https://github.com/gha3mi/forimage.git"}
 ```
 
-## How to run examples
+## How to run demo
 
 **Clone the repository:**
 
@@ -53,7 +80,7 @@ cd forimage
 ```
 
 ```shell
-fpm --example run --all
+fpm --example run demo
 ```
 
 Descriptions of all examples are available [`here`](https://github.com/gha3mi/forimage/tree/main/example).
