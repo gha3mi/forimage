@@ -26,6 +26,9 @@ program demo
    ! Export the image to a PPM file
    call image%export_pnm('pnm_files/mandelbrot_binary')
 
+   ! Export the image to a PPM file with ascii encoding
+   call image%export_pnm('pnm_files/mandelbrot_ascii', 'ascii')
+
    ! Export the image to a PPM file with a different encoding
    edit = image ! Copy the format_pnm object
    call edit%negative()
@@ -80,11 +83,18 @@ program demo
    call edit%export_pnm('pnm_files/mandelbrot_binary_crop')
    call edit%finalize()
 
-   ! import a PPM file with binary encoding and export it with ASCII encoding
+   ! Import a PPM file with binary encoding and export it with ascii encoding
    edit = image ! Copy the format_pnm object
    call edit%import_pnm('pnm_files/mandelbrot_binary', 'ppm', 'binary')
-   call edit%export_pnm('pnm_files/mandelbrot_ascii', 'ascii')
+   call edit%export_pnm('pnm_files/mandelbrot_ascii_ex', 'ascii')
    call edit%finalize()
+
+   ! Import a PPM file with ascii encoding and export it with binary encoding
+   edit = image ! Copy the format_pnm object
+   call edit%import_pnm('pnm_files/mandelbrot_ascii', 'ppm', 'ascii')
+   call edit%export_pnm('pnm_files/mandelbrot_binary_ex', 'binary')
+   call edit%finalize()
+
 
    ! Finalize the format_pnm object to release resources
    call image%finalize()
