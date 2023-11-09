@@ -60,6 +60,9 @@ Available features include:
 
 <img alt="demo" src="https://github.com/gha3mi/forimage/raw/main/pnm_files/mandelbrot_binary_crop.png" width="250">
 
+- Resize
+
+<img alt="demo" src="https://github.com/gha3mi/forimage/raw/main/pnm_files/mandelbrot_binary_resize.png" width="250">
 
 ## fpm dependency
 
