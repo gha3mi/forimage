@@ -88,43 +88,48 @@
 <li><a href="#contributing">Contributing</a></li>
 </ul>
 <h2>PNM File Support</h2>
-<p>ForImage offers comprehensive support for PNM files, including creation, importing, and exporting capabilities. It seamlessly handles formats such as <code>PBM</code>, <code>PGM</code>, and <code>PPM</code> in both <code>ASCII</code> and <code>binary</code> representations. Available features include:</p>
+<p>ForImage offers comprehensive support for PNM files, including creation, importing, and exporting capabilities. It seamlessly handles formats such as <code>PBM</code>, <code>PGM</code>, and <code>PPM</code> in both <code>ASCII</code> and <code>binary</code> representations. </p>
+<p>Available features include:</p>
+<ul>
+<li>Original</li>
+</ul>
+<p><img alt="demo" src="https://github.com/gha3mi/forimage/raw/main/pnm_files/mandelbrot_binary.png" width="400"> </p>
 <ul>
 <li>Negative</li>
 </ul>
-<p><img alt="demo" src="https://github.com/gha3mi/forimage/raw/main/pnm_files/mandelbrot_binary.png" width="400"> <img alt="demo" src="https://github.com/gha3mi/forimage/raw/main/pnm_files/mandelbrot_binary_negative.png" width="400"></p>
+<p><img alt="demo" src="https://github.com/gha3mi/forimage/raw/main/pnm_files/mandelbrot_binary_negative.png" width="400"></p>
 <ul>
 <li>Brighten</li>
 </ul>
-<p><img alt="demo" src="https://github.com/gha3mi/forimage/raw/main/pnm_files/mandelbrot_binary.png" width="400"> <img alt="demo" src="https://github.com/gha3mi/forimage/raw/main/pnm_files/mandelbrot_binary_brighten.png" width="400"></p>
+<p><img alt="demo" src="https://github.com/gha3mi/forimage/raw/main/pnm_files/mandelbrot_binary_brighten.png" width="400"></p>
 <ul>
 <li>Swap Channels</li>
 </ul>
-<p><img alt="demo" src="https://github.com/gha3mi/forimage/raw/main/pnm_files/mandelbrot_binary.png" width="400"> <img alt="demo" src="https://github.com/gha3mi/forimage/raw/main/pnm_files/mandelbrot_binary_swap.png" width="400"></p>
+<p><img alt="demo" src="https://github.com/gha3mi/forimage/raw/main/pnm_files/mandelbrot_binary_swap.png" width="400"></p>
 <ul>
 <li>Remove Channels</li>
 </ul>
-<p><img alt="demo" src="https://github.com/gha3mi/forimage/raw/main/pnm_files/mandelbrot_binary.png" width="400"> <img alt="demo" src="https://github.com/gha3mi/forimage/raw/main/pnm_files/mandelbrot_binary_remove.png" width="400"></p>
+<p><img alt="demo" src="https://github.com/gha3mi/forimage/raw/main/pnm_files/mandelbrot_binary_remove.png" width="400"></p>
 <ul>
 <li>Greyscale</li>
 </ul>
-<p><img alt="demo" src="https://github.com/gha3mi/forimage/raw/main/pnm_files/mandelbrot_binary.png" width="400"> <img alt="demo" src="https://github.com/gha3mi/forimage/raw/main/pnm_files/mandelbrot_binary_greyscale.png" width="400"></p>
+<p><img alt="demo" src="https://github.com/gha3mi/forimage/raw/main/pnm_files/mandelbrot_binary_greyscale.png" width="400"></p>
 <ul>
 <li>Rotate</li>
 </ul>
-<p><img alt="demo" src="https://github.com/gha3mi/forimage/raw/main/pnm_files/mandelbrot_binary.png" width="400"> <img alt="demo" src="https://github.com/gha3mi/forimage/raw/main/pnm_files/mandelbrot_binary_rotate.png" width="400"></p>
+<p><img alt="demo" src="https://github.com/gha3mi/forimage/raw/main/pnm_files/mandelbrot_binary_rotate.png" width="400"></p>
 <ul>
 <li>Flip Horizontal</li>
 </ul>
-<p><img alt="demo" src="https://github.com/gha3mi/forimage/raw/main/pnm_files/mandelbrot_binary.png" width="400"> <img alt="demo" src="https://github.com/gha3mi/forimage/raw/main/pnm_files/mandelbrot_binary_flip_horizontal.png" width="400"></p>
+<p><img alt="demo" src="https://github.com/gha3mi/forimage/raw/main/pnm_files/mandelbrot_binary_flip_horizontal.png" width="400"></p>
 <ul>
 <li>Flip Vertical</li>
 </ul>
-<p><img alt="demo" src="https://github.com/gha3mi/forimage/raw/main/pnm_files/mandelbrot_binary.png" width="400"> <img alt="demo" src="https://github.com/gha3mi/forimage/raw/main/pnm_files/mandelbrot_binary_flip_vertical.png" width="400"></p>
+<p><img alt="demo" src="https://github.com/gha3mi/forimage/raw/main/pnm_files/mandelbrot_binary_flip_vertical.png" width="400"></p>
 <ul>
 <li>Crop</li>
 </ul>
-<p><img alt="demo" src="https://github.com/gha3mi/forimage/raw/main/pnm_files/mandelbrot_binary.png" width="400"> <img alt="demo" src="https://github.com/gha3mi/forimage/raw/main/pnm_files/mandelbrot_binary_crop.png" width="250"></p>
+<p><img alt="demo" src="https://github.com/gha3mi/forimage/raw/main/pnm_files/mandelbrot_binary_crop.png" width="250"></p>
 <h2>fpm dependency</h2>
 <p>If you want to use <code>ForImage</code> as a dependency in your own fpm project,
 you can easily include it by adding the following line to your <code>fpm.toml</code> file:</p>
@@ -141,10 +146,10 @@ you can easily include it by adding the following line to your <code>fpm.toml</c
 <div class="codehilite"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>forimage
 </code></pre></div>
 
-<div class="codehilite"><pre><span></span><code>fpm<span class="w"> </span>--example<span class="w"> </span>run<span class="w"> </span>demo
+<div class="codehilite"><pre><span></span><code>fpm<span class="w"> </span>run<span class="w"> </span>--example<span class="w"> </span>demo
 </code></pre></div>
 
-<p>Descriptions of all examples are available <a href="https://github.com/gha3mi/forimage/tree/main/example"><code>here</code></a>.</p>
+<p>Descriptions of all examples are available <a href="https://github.com/gha3mi/forimage/tree/main/example">here</a>.</p>
 <!-- To run the examples using `fpm`, you can use response files for specific
 compilers:
 
@@ -256,7 +261,7 @@ If you find any issues or would like to suggest improvements, please open an iss
             <p class="text-end">
               Documentation generated by
               <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
- on 2023-11-09T17:38:53.069553             </p>
+ on 2023-11-09T18:39:16.767595             </p>
           </div>
         </div>
         <br>
