@@ -1,9 +1,10 @@
 module forimage
 
+   use forimage_parameters
    use pnm
    use lut
 
    private
-   public format_pnm, format_lut
+   public format_pnm, format_lut, rk, pi
 
 end module forimage
