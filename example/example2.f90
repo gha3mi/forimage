@@ -1,10 +1,14 @@
+! Description: Creates and exports a 60x60 PGM image in ascii format.
+
 program example2
     use forimage, only: format_pnm
     implicit none
     
+    ! Declare an object of type format_pnm
     type(format_pnm) :: ex2
-    integer, dimension(60,60) :: px
 
+    ! Define a 2D array representing pixel values for the image
+    integer, dimension(60,60) :: px
     px = transpose(reshape(&
     [255,&
     255,&
@@ -3608,9 +3612,13 @@ program example2
     255]&
     ,shape=shape(px)))
 
+    ! Set the properties of the format_pnm object (encoding, file format, width, height, comment and pixels)
     call ex2%set_pnm(encoding='ascii', file_format='pgm', width=60, height=60, max_color=255, comment='example 2', pixels=px)
+
+    ! Export the PNM image to a file named 'img2_ascii' in the specified format
     call ex2%export_pnm('pnm_files/img2_ascii')
 
+    ! Finalize the format_pnm object to release resources
     call ex2%finalize()
 
 end program example2

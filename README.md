@@ -6,12 +6,27 @@
 
 <img alt="ForImage" src="https://github.com/gha3mi/forimage/raw/main/media/logo.png" width="750">
 
-**ForImage**: A Fortran library for reading and writing images.
+**ForImage**: A Fortran library for PNM file processing and image editing.
 
+- [PNM File Support](#pnm-file-support)
 - [fpm dependency](#fpm-dependency)
 - [How to run examples](#how-to-run-examples)
 - [API documentation](#api-documentation)
 - [Contributing](#contributing)
+
+## PNM File Support
+
+ForImage offers comprehensive support for PNM files, including creation, importing, and exporting capabilities. It seamlessly handles formats such as `PBM`, `PGM`, and `PPM` in both `ASCII` and `binary` representations. Available features include:
+
+- Negative
+- Brighten
+- Swap Channels
+- Remove Channels
+- Greyscale
+- Rotate
+- Flip Horizontal
+- Flip Vertical
+- Crop
 
 ## fpm dependency
 
@@ -40,6 +55,8 @@ cd forimage
 ```shell
 fpm --example run --all
 ```
+
+Descriptions of all examples are available [`here`](https://github.com/gha3mi/forimage/tree/main/example).
 
 <!-- To run the examples using `fpm`, you can use response files for specific
 compilers:
