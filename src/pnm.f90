@@ -1,6 +1,6 @@
 module pnm
 
-   use iso_fortran_env, only: rk => real64
+   use forimage_parameters, only: rk
    implicit none
 
    private
@@ -26,6 +26,7 @@ module pnm
       procedure :: set_max_color
       procedure :: set_header
       procedure :: allocate_pixels
+      procedure :: check_pixel_range
       procedure :: set_pixels
       procedure :: export_pnm
       procedure :: set_pnm
@@ -96,7 +97,8 @@ contains
       this%width  = cropped_width
       deallocate(this%pixels)
       call this%allocate_pixels()
-      this%pixels = cropped_pixels
+
+      call this%set_pixels(cropped_pixels)
 
       ! Deallocate temporary array
       deallocate(cropped_pixels)
@@ -109,7 +111,9 @@ contains
    elemental pure subroutine flip_vertical(this)
       class(format_pnm), intent(inout) :: this
 
-      this%pixels(:,:) = this%pixels(size(this%pixels,1):1:-1, :)
+      this%pixels = this%pixels(size(this%pixels,1):1:-1, :)
+
+      call this%check_pixel_range(this%pixels)
    end subroutine flip_vertical
    !===============================================================================
 
@@ -132,6 +136,8 @@ contains
             this%pixels(:, j) = buffer(:)
          end do
 
+         call this%check_pixel_range(this%pixels)
+
        case ('ppm')
 
          do j = 1, this%width / 2
@@ -139,6 +145,8 @@ contains
             this%pixels(:, 3*j-2:3*j) = this%pixels(:, 3*(this%width-j+1)-2:3*(this%width-j+1))
             this%pixels(:, 3*(this%width-j+1)-2:3*(this%width-j+1)) = buffer3(:, :)
          end do
+
+         call this%check_pixel_range(this%pixels)
 
       end select
 
@@ -232,7 +240,7 @@ contains
       call this%allocate_pixels()
 
       ! Update the original pixels with rotated pixels
-      this%pixels = rotated_pixels
+      call this%set_pixels(rotated_pixels)
 
       ! Deallocate rotated_pixels array
       deallocate(rotated_pixels)
@@ -261,6 +269,8 @@ contains
             this%pixels(i, 3*j-2:3*j) = int(gsc)
          end do
       end do
+
+      call this%check_pixel_range(this%pixels)
 
    end subroutine greyscale
    !===============================================================================
@@ -295,6 +305,9 @@ contains
             this%pixels(:,3:size(this%pixels,2):3) = 0
          end if
       end if
+
+      call this%check_pixel_range(this%pixels)
+
    end subroutine remove_channels
    !===============================================================================
 
@@ -342,6 +355,7 @@ contains
          end do
       end if
 
+      call this%check_pixel_range(this%pixels)
    end subroutine swap_channels
    !===============================================================================
 
@@ -352,7 +366,7 @@ contains
       class(format_pnm), intent(inout) :: this
       integer,           intent(in)    :: factor
 
-      this%pixels = min(this%max_color, max(0, this%pixels + factor))
+      call this%set_pixels(min(this%max_color, max(0, this%pixels + factor)))
    end subroutine brighten
    !===============================================================================
 
@@ -362,7 +376,7 @@ contains
    elemental pure subroutine negative(this)
       class(format_pnm), intent(inout) :: this
 
-      this%pixels = this%max_color - this%pixels
+      call this%set_pixels(this%max_color - this%pixels)
    end subroutine negative
    !===============================================================================
 
@@ -431,7 +445,7 @@ contains
                read(nunit, '(*(a))', advance='yes') buffer_ch
                close(nunit)
                call this%allocate_pixels()
-               this%pixels = transpose(reshape(ichar(buffer_ch), [this%height, this%width]))
+               call this%set_pixels(transpose(reshape(ichar(buffer_ch), [this%height, this%width])))
              case ('pgm')
                open (newunit = nunit, file = file_name//'.'//file_format, iostat=iostat)
                if (iostat /= 0) error stop 'Error opening the file.'
@@ -444,7 +458,7 @@ contains
                read(nunit, '(*(a))', advance='yes') buffer_ch
                close(nunit)
                call this%allocate_pixels()
-               this%pixels = transpose(reshape(ichar(buffer_ch), [this%height, this%width]))
+               call this%set_pixels(transpose(reshape(ichar(buffer_ch), [this%height, this%width])))
              case ('ppm')
                open (newunit = nunit, file = file_name//'.'//file_format, iostat=iostat)
                if (iostat /= 0) error stop 'Error opening the file.'
@@ -457,7 +471,7 @@ contains
                read(nunit, '(*(a))', advance='yes') buffer_ch
                close(nunit)
                call this%allocate_pixels()
-               this%pixels = transpose(reshape(ichar(buffer_ch), [this%height, 3*this%width]))
+               call this%set_pixels(transpose(reshape(ichar(buffer_ch), [this%height, 3*this%width])))
             end select
 
           case ('ascii','plain')
@@ -477,6 +491,7 @@ contains
                   this%pixels(i,:) = buffer_int
                end do
                close(nunit)
+               call this%check_pixel_range(this%pixels)
              case ('pgm')
                open (newunit = nunit, file = file_name//'.'//file_format, iostat=iostat)
                if (iostat /= 0) error stop 'Error opening the file.'
@@ -491,6 +506,7 @@ contains
                   read(nunit, *) buffer_int
                   this%pixels(i,:) = buffer_int
                end do
+               call this%check_pixel_range(this%pixels)
                close(nunit)
              case ('ppm')
                open (newunit = nunit, file = file_name//'.'//file_format, iostat=iostat)
@@ -506,6 +522,7 @@ contains
                   read(nunit, *) buffer_int
                   this%pixels(i,:) = buffer_int
                end do
+               call this%check_pixel_range(this%pixels)
                close(nunit)
             end select
 
@@ -655,9 +672,31 @@ contains
 
    !===============================================================================
    !> author: Seyed Ali Ghasemi
+   pure subroutine check_pixel_range(this, pixels)
+      class(format_pnm), intent(inout) :: this
+      integer, dimension(:,:), intent(in) :: pixels
+
+      ! Check if the pixel values are within the valid range
+      select case (this%file_format)
+      case ('pbm')
+        if (maxval(pixels) > 1 .or. minval(pixels) < 0) error stop 'set_pixels: Invalid pixel values.'
+      case ('pgm')
+        if (maxval(pixels) > this%max_color .or. minval(pixels) < 0) error stop 'set_pixels: Invalid pixel values.'
+      case ('ppm')
+        if (maxval(pixels) > this%max_color .or. minval(pixels) < 0) error stop 'set_pixels: Invalid pixel values.'
+     end select
+   end subroutine check_pixel_range
+   !===============================================================================
+
+
+   !===============================================================================
+   !> author: Seyed Ali Ghasemi
    pure subroutine set_pixels(this, pixels)
       class(format_pnm), intent(inout) :: this
       integer, dimension(:,:), intent(in) :: pixels
+
+      call this%check_pixel_range(pixels)
+
       this%pixels = pixels
    end subroutine set_pixels
    !===============================================================================
@@ -730,7 +769,7 @@ contains
          if (this%file_format /= 'pbm') write(nunit,'(g0)') this%max_color
          do i = 1, size(this%pixels,1)
             buffer = this%pixels(i,:)
-            write(nunit, '(*(I3,1x))') buffer
+            write(nunit, '(*(g0,1x))') buffer
          end do
          close(nunit)
        case ('P4', 'P5', 'P6')
