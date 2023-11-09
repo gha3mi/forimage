@@ -3609,7 +3609,7 @@ program example
     ,shape=shape(px)))
 
     call ex5%set_pnm(encoding='binary', file_format='pgm', width=60, height=60, max_color=255, comment='example 2', pixels=px)
-    call ex5%export_pnm('pnm_files/example5_binary')
+    call ex5%export_pnm('pnm_files/img5_binary')
     
     call ex5%finalize()
 

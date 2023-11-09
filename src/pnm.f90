@@ -39,10 +39,70 @@ module pnm
       procedure :: rotate
       procedure :: flip_horizontal
       procedure :: flip_vertical
+      procedure :: crop
    end type format_pnm
    !===============================================================================
 
 contains
+
+   !===============================================================================
+   !> author: Seyed Ali Ghasemi
+   elemental pure subroutine crop(this, start_row, end_row, start_col, end_col)
+      class(format_pnm), intent(inout)     :: this
+      integer,           intent(in)        :: start_row, end_row, start_col, end_col
+      integer                              :: cropped_start_row, cropped_end_row, cropped_start_col, cropped_end_col
+      integer, dimension(:,:), allocatable :: cropped_pixels
+      integer                              :: i, j, cropped_height, cropped_width
+
+      ! Check if the cropping coordinates are within the image boundaries
+      cropped_start_row = max(1, start_row)
+      cropped_end_row   = min(this%height, end_row)
+      cropped_start_col = max(1, start_col)
+      cropped_end_col   = min(this%width, end_col)
+
+      ! Calculate the dimensions of the cropped image
+      cropped_height = cropped_end_row - cropped_start_row + 1
+      cropped_width  = cropped_end_col - cropped_start_col + 1
+
+      select case (this%file_format)
+       case ('pbm', 'pgm')
+
+         ! Allocate memory for cropped image pixels
+         allocate(cropped_pixels(cropped_height, cropped_width))
+
+         ! Copy the cropped pixels to the new array
+         do i = 1, cropped_height
+            do j = 1, cropped_width
+               cropped_pixels(i, j) = this%pixels(cropped_start_row-1+i, (cropped_start_col-1)+j)
+            end do
+         end do
+
+       case ('ppm')
+
+         ! Allocate memory for cropped image pixels
+         allocate(cropped_pixels(cropped_height, 3*cropped_width))
+
+         ! Copy the cropped pixels to the new array
+         do i = 1, cropped_height
+            do j = 1, 3*cropped_width
+               cropped_pixels(i, j) = this%pixels(cropped_start_row-1+i, (cropped_start_col-1)*3+j)
+            end do
+         end do
+
+      end select
+
+      ! Update image dimensions and pixels
+      this%height = cropped_height
+      this%width  = cropped_width
+      deallocate(this%pixels)
+      call this%allocate_pixels()
+      this%pixels = cropped_pixels
+
+      ! Deallocate temporary array
+      deallocate(cropped_pixels)
+   end subroutine crop
+   !===============================================================================
+
 
    !===============================================================================
    !> author: Seyed Ali Ghasemi
@@ -58,14 +118,30 @@ contains
    !> author: Seyed Ali Ghasemi
    elemental pure subroutine flip_horizontal(this)
       class(format_pnm), intent(inout) :: this
+      integer, dimension(size(this%pixels,1)) :: buffer
+      integer, dimension(size(this%pixels,1), 3)  :: buffer3
       integer :: j
-      integer, dimension(size(this%pixels,1), 3) :: temp_pixels
 
-      do j = 1, this%width / 2
-         temp_pixels(:, :) = this%pixels(:, 3*j-2:3*j)
-         this%pixels(:, 3*j-2:3*j) = this%pixels(:, 3*(this%width-j+1)-2:3*(this%width-j+1))
-         this%pixels(:, 3*(this%width-j+1)-2:3*(this%width-j+1)) = temp_pixels(:, :)
-      end do
+
+      select case (this%file_format)
+       case ('pbm', 'pgm')
+
+         do j = 1, this%width / 2
+            buffer(:) = this%pixels(:, this%width-j+1)
+            this%pixels(:, this%width-j+1) = this%pixels(:,j)
+            this%pixels(:, j) = buffer(:)
+         end do
+
+       case ('ppm')
+
+         do j = 1, this%width / 2
+            buffer3(:, :) = this%pixels(:, 3*j-2:3*j)
+            this%pixels(:, 3*j-2:3*j) = this%pixels(:, 3*(this%width-j+1)-2:3*(this%width-j+1))
+            this%pixels(:, 3*(this%width-j+1)-2:3*(this%width-j+1)) = buffer3(:, :)
+         end do
+
+      end select
+
    end subroutine flip_horizontal
    !===============================================================================
 
@@ -171,6 +247,9 @@ contains
       real(rk)                         :: gsc
       integer                          :: i, j
 
+      ! Check if the file is ppm
+      if (this%file_format /= 'ppm') error stop 'greyscale: This function is only for ppm files.'
+
       do i = 1, this%height
          do j = 1, this%width
             ! Calculate a weighed average (here based on ITU Rec.709) of the 3 channels to get a gray color with the same brightness.
@@ -194,9 +273,7 @@ contains
       logical, optional, intent(in)    :: remove_r, remove_g, remove_b
 
       ! Check if the file is ppm
-      if (this%file_format /= 'ppm') then
-         error stop 'remove_channels: This function is only for ppm files.'
-      end if
+      if (this%file_format /= 'ppm') error stop 'remove_channels: This function is only for ppm files.'
 
       ! Remove R channel
       if (present(remove_r)) then
@@ -230,9 +307,7 @@ contains
       integer :: i, j, temp
 
       ! Check if the file is ppm
-      if (this%file_format /= 'ppm') then
-         error stop 'swap_channels: This function is only for ppm files.'
-      end if
+      if (this%file_format /= 'ppm') error stop 'swap_channels: This function is only for ppm files.'
 
       ! Swap R and G channels
       if (swap=='rg' .or. swap=='gr' .or. swap=='RG' .or. swap=='GR') then
@@ -326,94 +401,119 @@ contains
    !===============================================================================
    !> author: Seyed Ali Ghasemi
    impure subroutine import_pnm(this, file_name, file_format, encoding)
-      class(format_pnm), intent(inout)   :: this
-      character(*), intent(in)           :: file_name
-      character(*), intent(in)           :: encoding
-      character(3), intent(in)           :: file_format
-      integer :: nunit, i
-      character :: temp
-      character, allocatable :: temp_pixel(:)
+      class(format_pnm), intent(inout)     :: this
+      character(*),      intent(in)        :: file_name, encoding
+      character(3),      intent(in)        :: file_format
+      integer                              :: nunit, i, iostat
+      character                            :: temp
+      character, dimension(:), allocatable :: buffer_ch
+      integer, dimension(:), allocatable   :: buffer_int
+      logical                              :: file_exists
 
-      call this%set_file_format(file_format)
-      call this%set_format(encoding)
+      inquire(file=file_name//'.'//file_format, exist=file_exists)
+      if (file_exists) then
 
-      select case (this%encoding)
-       case ('binary','raw')
+         call this%set_file_format(file_format)
+         call this%set_format(encoding)
 
-         select case (file_format)
-          case ('pbm')
-            open (newunit = nunit, file = file_name//'.'//file_format)
-            read(nunit,*) this%magic_number
-            read(nunit,*) temp,this%comment
-            read(nunit,*) this%width, this%height
-            allocate(temp_pixel(this%height*this%width))
-            read(nunit, '(*(a))', advance='yes') temp_pixel
-            close(nunit)
-            call this%allocate_pixels()
-            this%pixels = transpose(reshape(ichar(temp_pixel), [this%height, this%width]))
-          case ('pgm')
-            open (newunit = nunit, file = file_name//'.'//file_format)
-            read(nunit,*) this%magic_number
-            read(nunit,*) temp,this%comment
-            read(nunit,*) this%width, this%height
-            read(nunit,*) this%max_color
-            allocate(temp_pixel(this%height*this%width))
-            read(nunit, '(*(a))', advance='yes') temp_pixel
-            close(nunit)
-            call this%allocate_pixels()
-            this%pixels = transpose(reshape(ichar(temp_pixel), [this%height, this%width]))
-          case ('ppm')
-            open (newunit = nunit, file = file_name//'.'//file_format)
-            read(nunit,*) this%magic_number
-            read(nunit,*) temp,this%comment
-            read(nunit,*) this%width, this%height
-            read(nunit,*) this%max_color
-            allocate(temp_pixel(this%height*this%width*3))
-            read(nunit, '(*(a))', advance='yes') temp_pixel
-            close(nunit)
-            call this%allocate_pixels()
-            this%pixels = transpose(reshape(ichar(temp_pixel), [this%height, 3*this%width]))
+         select case (this%encoding)
+          case ('binary','raw')
+
+            select case (file_format)
+             case ('pbm')
+               open (newunit = nunit, file = file_name//'.'//file_format, iostat=iostat)
+               if (iostat /= 0) error stop 'Error opening the file.'
+               read(nunit,*) this%magic_number
+               read(nunit,'(a,a)') temp,this%comment
+               read(nunit,*) this%width, this%height
+               allocate(buffer_ch(this%height*this%width))
+               buffer_ch = achar(0)
+               read(nunit, '(*(a))', advance='yes') buffer_ch
+               close(nunit)
+               call this%allocate_pixels()
+               this%pixels = transpose(reshape(ichar(buffer_ch), [this%height, this%width]))
+             case ('pgm')
+               open (newunit = nunit, file = file_name//'.'//file_format, iostat=iostat)
+               if (iostat /= 0) error stop 'Error opening the file.'
+               read(nunit,*) this%magic_number
+               read(nunit,'(a,a)') temp,this%comment
+               read(nunit,*) this%width, this%height
+               read(nunit,*) this%max_color
+               allocate(buffer_ch(this%height*this%width))
+               buffer_ch = achar(0)
+               read(nunit, '(*(a))', advance='yes') buffer_ch
+               close(nunit)
+               call this%allocate_pixels()
+               this%pixels = transpose(reshape(ichar(buffer_ch), [this%height, this%width]))
+             case ('ppm')
+               open (newunit = nunit, file = file_name//'.'//file_format, iostat=iostat)
+               if (iostat /= 0) error stop 'Error opening the file.'
+               read(nunit,*) this%magic_number
+               read(nunit,'(a,a)') temp,this%comment
+               read(nunit,*) this%width, this%height
+               read(nunit,*) this%max_color
+               allocate(buffer_ch(this%height*this%width*3))
+               buffer_ch = achar(0)
+               read(nunit, '(*(a))', advance='yes') buffer_ch
+               close(nunit)
+               call this%allocate_pixels()
+               this%pixels = transpose(reshape(ichar(buffer_ch), [this%height, 3*this%width]))
+            end select
+
+          case ('ascii','plain')
+
+            select case (file_format)
+             case ('pbm')
+               open (newunit = nunit, file = file_name//'.'//file_format, iostat=iostat)
+               if (iostat /= 0) error stop 'Error opening the file.'
+               read(nunit,*) this%magic_number
+               read(nunit,'(a,a)') temp,this%comment
+               read(nunit,*) this%width, this%height
+               call this%allocate_pixels()
+               allocate(buffer_int(this%width))
+               buffer_int = 0
+               do i = 1, size(this%pixels,1)
+                  read(nunit, *) buffer_int
+                  this%pixels(i,:) = buffer_int
+               end do
+               close(nunit)
+             case ('pgm')
+               open (newunit = nunit, file = file_name//'.'//file_format, iostat=iostat)
+               if (iostat /= 0) error stop 'Error opening the file.'
+               read(nunit,*) this%magic_number
+               read(nunit,'(a,a)') temp,this%comment
+               read(nunit,*) this%width, this%height
+               read(nunit,*) this%max_color
+               call this%allocate_pixels()
+               allocate(buffer_int(this%width))
+               buffer_int = 0
+               do i = 1, size(this%pixels,1)
+                  read(nunit, *) buffer_int
+                  this%pixels(i,:) = buffer_int
+               end do
+               close(nunit)
+             case ('ppm')
+               open (newunit = nunit, file = file_name//'.'//file_format, iostat=iostat)
+               if (iostat /= 0) error stop 'Error opening the file.'
+               read(nunit,*) this%magic_number
+               read(nunit,'(a,a)') temp,this%comment
+               read(nunit,*) this%width, this%height
+               read(nunit,*) this%max_color
+               call this%allocate_pixels()
+               allocate(buffer_int(3*this%width))
+               buffer_int = 0
+               do i = 1, size(this%pixels,1)
+                  read(nunit, *) buffer_int
+                  this%pixels(i,:) = buffer_int
+               end do
+               close(nunit)
+            end select
+
          end select
 
-       case ('ascii','plain')
-
-         select case (file_format)
-          case ('pbm')
-            open (newunit = nunit, file = file_name//'.'//file_format)
-            read(nunit,*) this%magic_number
-            read(nunit,*) temp,this%comment
-            read(nunit,*) this%width, this%height
-            call this%allocate_pixels()
-            do i = 1, size(this%pixels,1)
-               read(nunit, *) this%pixels(i,:)
-            end do
-            close(nunit)
-          case ('pgm')
-            open (newunit = nunit, file = file_name//'.'//file_format)
-            read(nunit,*) this%magic_number
-            read(nunit,*) temp,this%comment
-            read(nunit,*) this%width, this%height
-            read(nunit,*) this%max_color
-            call this%allocate_pixels()
-            do i = 1, size(this%pixels,1)
-               read(nunit, *) this%pixels(i,:)
-            end do
-            close(nunit)
-          case ('ppm')
-            open (newunit = nunit, file = file_name//'.'//file_format)
-            read(nunit,*) this%magic_number
-            read(nunit,*) temp,this%comment
-            read(nunit,*) this%width, this%height
-            read(nunit,*) this%max_color
-            call this%allocate_pixels()
-            do i = 1, size(this%pixels,1)
-               read(nunit, *) this%pixels(i,:)
-            end do
-            close(nunit)
-         end select
-
-      end select
-
+      else
+         error stop 'Error: File does not exist.'
+      end if
    end subroutine import_pnm
    !===============================================================================
 
@@ -472,6 +572,12 @@ contains
        case('P2')
          if (.not.allocated(this%pixels)) allocate(this%pixels(this%height, this%width))
        case('P3')
+         if (.not.allocated(this%pixels)) allocate(this%pixels(this%height, 3*this%width))
+       case('P4')
+         if (.not.allocated(this%pixels)) allocate(this%pixels(this%height, this%width))
+       case('P5')
+         if (.not.allocated(this%pixels)) allocate(this%pixels(this%height, this%width))
+       case('P6')
          if (.not.allocated(this%pixels)) allocate(this%pixels(this%height, 3*this%width))
       end select
    end subroutine allocate_pixels
@@ -585,6 +691,9 @@ contains
       character(*),      intent(in)           :: file_name
       character(*),      intent(in), optional :: encoding
       integer                                 :: nunit, i, j
+      logical                                 :: file_exists
+      integer, dimension(size(this%pixels,2)) :: buffer
+      integer                                 :: iostat
 
       if (present(encoding)) then
          call this%set_format(encoding)
@@ -613,23 +722,27 @@ contains
 
       select case (this%magic_number)
        case ('P1', 'P2', 'P3')
-         open (newunit = nunit, file = file_name//'.'//this%file_format, status='replace')
+         open (newunit = nunit, file = file_name//'.'//this%file_format, status='replace', iostat=iostat)
+         if (iostat /= 0) error stop 'Error opening the file.'
          write(nunit,'(a)') this%magic_number
-         write(nunit,'(a,a)') '# ',this%comment
+         write(nunit,'(a,a)') '# ',trim(adjustl(this%comment))
          write(nunit, '(g0,1x,g0)') this%width, this%height
          if (this%file_format /= 'pbm') write(nunit,'(g0)') this%max_color
          do i = 1, size(this%pixels,1)
-            write(nunit, '(*(g0,1x))') this%pixels(i,:)
+            buffer = this%pixels(i,:)
+            write(nunit, '(*(I3,1x))') buffer
          end do
          close(nunit)
-       case  ('P4', 'P5', 'P6')
-         open (newunit = nunit, file = file_name//'.'//this%file_format, status='replace')
+       case ('P4', 'P5', 'P6')
+         open (newunit = nunit, file = file_name//'.'//this%file_format, status='replace', iostat=iostat)
+         if (iostat /= 0) error stop 'Error opening the file.'
          write(nunit,'(a)') this%magic_number
-         write(nunit,'(a,a)') '# ',this%comment
+         write(nunit,'(a,a)') '# ',trim(adjustl(this%comment))
          write(nunit, '(g0,1x,g0)') this%width, this%height
          if (this%file_format /= 'pbm') write(nunit,'(g0)') this%max_color
          do i = 1, size(this%pixels,1)
-            write(nunit, '(*(a))', advance='no') achar(this%pixels(i,:))
+            buffer = this%pixels(i,:)
+            write(nunit, '(*(a))', advance='no') achar(buffer)
          end do
          close(nunit)
       end select

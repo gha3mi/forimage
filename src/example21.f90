@@ -12,7 +12,7 @@ program example21
 
     call ex21%set_pnm(encoding='binary', file_format='ppm', width=4, height=4, max_color=15, comment='example 2', pixels=px)
     call ex21%greyscale()
-    call ex21%export_pnm('pnm_files/example6_binary_greyscale')
+    call ex21%export_pnm('pnm_files/img6_binary_greyscale')
 
     call ex21%finalize()
 end program example21

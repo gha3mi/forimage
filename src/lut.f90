@@ -130,10 +130,12 @@ contains
       integer, dimension(1,dim_colors) :: temp
       integer                          :: nunit, iostat, num_rows, i
       logical :: file_exists
+      integer, dimension(dim_colors) :: buffer
 
       inquire(file=file_name//'.lut', exist=file_exists)
       if (file_exists) then
-      open(newunit=nunit, file=file_name//'.lut', status='old', action='read')
+      open(newunit=nunit, file=file_name//'.lut', status='old', action='read', iostat=iostat)
+      if (iostat /= 0) error stop 'Error opening the file.'
          num_rows = 0
          do
             read(nunit, *, iostat=iostat) temp(:,:)
@@ -145,7 +147,8 @@ contains
          call this%allocate_colors()
          rewind(nunit)
          do i = 1, num_rows
-            read(nunit, *) this%colors(i,:)
+            read(nunit, *) buffer
+            this%colors(i,:) = buffer 
          end do
       close(nunit)
       else
@@ -158,13 +161,17 @@ contains
    !===============================================================================
    !> author: Seyed Ali Ghasemi
    impure subroutine export(this, file_name)
-      class(format_lut), intent(inout) :: this
-      character(*),      intent(in)    :: file_name
-      integer                          :: nunit, i
+      class(format_lut), intent(inout)    :: this
+      character(*),      intent(in)       :: file_name
+      integer                             :: nunit, i
+      integer, dimension(this%dim_colors) :: buffer
+      integer                             :: iostat
 
-      open(newunit=nunit, file=file_name//'.lut', status='replace', action='write')
+      open(newunit=nunit, file=file_name//'.lut', status='replace', action='write', iostat=iostat)
+      if (iostat /= 0) error stop 'Error opening the file.'
       do i = 1, this%get_num_colors()
-         write(nunit, '(*(I3,1x))') this%colors(i,:)
+         buffer = this%colors(i,:)
+         write(nunit, '(*(I3,1x))') buffer
       end do
       close(nunit)
    end subroutine export

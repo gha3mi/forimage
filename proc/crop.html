@@ -8,7 +8,7 @@
     <meta name="author" content="Seyed Ali Ghasemi" >
     <link rel="icon" href="../favicon.png">
 
-    <title>set &ndash; ForImage</title>
+    <title>crop &ndash; ForImage</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
@@ -62,7 +62,7 @@
 
     <div class="container">
   <div class="row">
-    <h1>set
+    <h1>crop
       <small>Subroutine</small>
       
     </h1>
@@ -75,21 +75,21 @@
             <li class="list-inline-item" id="statements"><i class="fa fa-list-ol"></i>
               <a data-bs-toggle="tooltip"
                  data-bs-placement="bottom" data-html="true"
-                 title=" 1.5% of total for procedures.">9 statements</a>
+                 title=" 6.0% of total for procedures.">35 statements</a>
             </li>
 
             <li class="list-inline-item" id="source-file">
               <i class="fa fa-code"></i>
-              <a href="../src/lut.f90"> Source File</a>
+              <a href="../src/pnm.f90"> Source File</a>
             </li>
         </ul>
       </div>
       <div class="col">
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb justify-content-end mb-0">
-                <li class="breadcrumb-item"><a href='../sourcefile/lut.f90.html'>lut.f90</a></li>
-                <li class="breadcrumb-item"><a href='../module/lut.html'>lut</a></li>
-            <li class="breadcrumb-item active" aria-current="page">set</li>
+                <li class="breadcrumb-item"><a href='../sourcefile/pnm.f90.html'>pnm.f90</a></li>
+                <li class="breadcrumb-item"><a href='../module/pnm.html'>pnm</a></li>
+            <li class="breadcrumb-item active" aria-current="page">crop</li>
           </ol>
         </nav>
       </div>
@@ -130,7 +130,7 @@
     <div class="card card-primary">
       <div class="card-header text-left"><h3 class="card-title">Source Code</h3></div>
       <div class="list-group">
-        <a class="list-group-item" href="../proc/set.html#src">set</a>
+        <a class="list-group-item" href="../proc/crop.html#src">crop</a>
       </div>
     </div>
 
@@ -140,13 +140,13 @@
     </div>
     
     <div class="col-md-9" id='text'>
-    <h2>private pure subroutine set(this, num_colors, dim_colors, colors)  
+    <h2>private pure elemental subroutine crop(this, start_row, end_row, start_col, end_col)  
 </h2>
     
 
 
     <h3>Type Bound</h3>
-    <p><a href='../type/format_lut.html'>format_lut</a></p>
+    <p><a href='../type/format_pnm.html'>format_pnm</a></p>
 
     <h3>Arguments</h3>
         <table class="table table-striped varlist">
@@ -161,8 +161,8 @@
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-this~25"></span>
-              class(<a href='../type/format_lut.html'>format_lut</a>),
+              <span class="anchor" id="variable-this~23"></span>
+              class(<a href='../type/format_pnm.html'>format_pnm</a>),
             </td>
 <td>intent(inout)</td>
               <td></td>            <td>
@@ -176,7 +176,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-num_colors~2"></span>
+              <span class="anchor" id="variable-start_row"></span>
               integer,
             </td>
 <td>intent(in)</td>
@@ -184,14 +184,14 @@
               
             </td>
             <td>::</td>
-            <td><strong>num_colors</strong></td>
+            <td><strong>start_row</strong></td>
             <td>
                 
             </td>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-dim_colors~2"></span>
+              <span class="anchor" id="variable-end_row"></span>
               integer,
             </td>
 <td>intent(in)</td>
@@ -199,22 +199,37 @@
               
             </td>
             <td>::</td>
-            <td><strong>dim_colors</strong></td>
+            <td><strong>end_row</strong></td>
             <td>
                 
             </td>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-colors~2"></span>
+              <span class="anchor" id="variable-start_col"></span>
               integer,
             </td>
-<td>intent(in),</td>
+<td>intent(in)</td>
               <td></td>            <td>
-              dimension(:,:)
+              
             </td>
             <td>::</td>
-            <td><strong>colors</strong></td>
+            <td><strong>start_col</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-end_col"></span>
+              integer,
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>end_col</strong></td>
             <td>
                 
             </td>
@@ -233,32 +248,32 @@
  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <!-- Generated by graphviz version 2.43.0 (0)
  -->
-<!-- Title: proc~~set~~CallsGraph Pages: 1 -->
-<svg id="procsetCallsGraph" width="336pt" height="32pt"
- viewBox="0.00 0.00 336.00 32.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<g id="proc~~set~~CallsGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 28)">
-<title>proc~~set~~CallsGraph</title>
-<polygon fill="white" stroke="transparent" points="-4,4 -4,-28 332,-28 332,4 -4,4"/>
-<!-- proc~set -->
-<g id="proc~~set~~CallsGraph_node1" class="node">
-<title>proc~set</title>
-<polygon fill="none" stroke="black" points="114,-24 0,-24 0,0 114,0 114,-24"/>
-<text text-anchor="middle" x="57" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50">lut::format_lut%set</text>
+<!-- Title: proc~~crop~~CallsGraph Pages: 1 -->
+<svg id="proccropCallsGraph" width="384pt" height="32pt"
+ viewBox="0.00 0.00 384.00 32.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="proc~~crop~~CallsGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 28)">
+<title>proc~~crop~~CallsGraph</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-28 380,-28 380,4 -4,4"/>
+<!-- proc~crop -->
+<g id="proc~~crop~~CallsGraph_node1" class="node">
+<title>proc~crop</title>
+<polygon fill="none" stroke="black" points="142,-24 0,-24 0,0 142,0 142,-24"/>
+<text text-anchor="middle" x="71" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50">pnm::format_pnm%crop</text>
 </g>
-<!-- proc~allocate_colors -->
-<g id="proc~~set~~CallsGraph_node2" class="node">
-<title>proc~allocate_colors</title>
-<g id="a_proc~~set~~CallsGraph_node2"><a xlink:href=".././proc/allocate_colors.html" xlink:title="lut::format_lut%allocate_colors">
-<polygon fill="#d9534f" stroke="#d9534f" points="328,-24 150,-24 150,0 328,0 328,-24"/>
-<text text-anchor="middle" x="239" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">lut::format_lut%allocate_colors</text>
+<!-- proc~allocate_pixels -->
+<g id="proc~~crop~~CallsGraph_node2" class="node">
+<title>proc~allocate_pixels</title>
+<g id="a_proc~~crop~~CallsGraph_node2"><a xlink:href=".././proc/allocate_pixels.html" xlink:title="pnm::format_pnm%allocate_pixels">
+<polygon fill="#d9534f" stroke="#d9534f" points="376,-24 178,-24 178,0 376,0 376,-24"/>
+<text text-anchor="middle" x="277" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">pnm::format_pnm%allocate_pixels</text>
 </a>
 </g>
 </g>
-<!-- proc~set&#45;&gt;proc~allocate_colors -->
-<g id="proc~~set~~CallsGraph_edge1" class="edge">
-<title>proc~set&#45;&gt;proc~allocate_colors</title>
-<path fill="none" stroke="#255000" d="M114.46,-12C122.54,-12 131.03,-12 139.64,-12"/>
-<polygon fill="#255000" stroke="#255000" points="139.76,-15.5 149.76,-12 139.76,-8.5 139.76,-15.5"/>
+<!-- proc~crop&#45;&gt;proc~allocate_pixels -->
+<g id="proc~~crop~~CallsGraph_edge1" class="edge">
+<title>proc~crop&#45;&gt;proc~allocate_pixels</title>
+<path fill="none" stroke="#255000" d="M142.21,-12C150.49,-12 159.08,-12 167.74,-12"/>
+<polygon fill="#255000" stroke="#255000" points="167.91,-15.5 177.91,-12 167.91,-8.5 167.91,-15.5"/>
 </g>
 </g>
 </svg>
@@ -353,32 +368,32 @@ large graphs.</div>
  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <!-- Generated by graphviz version 2.43.0 (0)
  -->
-<!-- Title: proc~~set~~CalledByGraph Pages: 1 -->
-<svg id="procsetCalledByGraph" width="230pt" height="32pt"
- viewBox="0.00 0.00 230.00 32.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<g id="proc~~set~~CalledByGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 28)">
-<title>proc~~set~~CalledByGraph</title>
-<polygon fill="white" stroke="transparent" points="-4,4 -4,-28 226,-28 226,4 -4,4"/>
-<!-- proc~set -->
-<g id="proc~~set~~CalledByGraph_node1" class="node">
-<title>proc~set</title>
-<polygon fill="none" stroke="black" points="222,-24 108,-24 108,0 222,0 222,-24"/>
-<text text-anchor="middle" x="165" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50">lut::format_lut%set</text>
+<!-- Title: proc~~crop~~CalledByGraph Pages: 1 -->
+<svg id="proccropCalledByGraph" width="258pt" height="32pt"
+ viewBox="0.00 0.00 258.00 32.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="proc~~crop~~CalledByGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 28)">
+<title>proc~~crop~~CalledByGraph</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-28 254,-28 254,4 -4,4"/>
+<!-- proc~crop -->
+<g id="proc~~crop~~CalledByGraph_node1" class="node">
+<title>proc~crop</title>
+<polygon fill="none" stroke="black" points="250,-24 108,-24 108,0 250,0 250,-24"/>
+<text text-anchor="middle" x="179" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50">pnm::format_pnm%crop</text>
 </g>
-<!-- program~example15 -->
-<g id="proc~~set~~CalledByGraph_node2" class="node">
-<title>program~example15</title>
-<g id="a_proc~~set~~CalledByGraph_node2"><a xlink:href=".././program/example15.html" xlink:title="example15">
+<!-- program~example24 -->
+<g id="proc~~crop~~CalledByGraph_node2" class="node">
+<title>program~example24</title>
+<g id="a_proc~~crop~~CalledByGraph_node2"><a xlink:href=".././program/example24.html" xlink:title="example24">
 <polygon fill="#f0ad4e" stroke="#f0ad4e" points="72,-24 0,-24 0,0 72,0 72,-24"/>
-<text text-anchor="middle" x="36" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">example15</text>
+<text text-anchor="middle" x="36" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">example24</text>
 </a>
 </g>
 </g>
-<!-- program~example15&#45;&gt;proc~set -->
-<g id="proc~~set~~CalledByGraph_edge1" class="edge">
-<title>program~example15&#45;&gt;proc~set</title>
-<path fill="none" stroke="#255000" d="M72.04,-12C79.96,-12 88.61,-12 97.35,-12"/>
-<polygon fill="#255000" stroke="#255000" points="97.61,-15.5 107.61,-12 97.61,-8.5 97.61,-15.5"/>
+<!-- program~example24&#45;&gt;proc~crop -->
+<g id="proc~~crop~~CalledByGraph_edge1" class="edge">
+<title>program~example24&#45;&gt;proc~crop</title>
+<path fill="none" stroke="#255000" d="M72.22,-12C80.1,-12 88.77,-12 97.66,-12"/>
+<polygon fill="#255000" stroke="#255000" points="97.76,-15.5 107.76,-12 97.76,-8.5 97.76,-15.5"/>
 </g>
 </g>
 </svg>
@@ -477,16 +492,60 @@ large graphs.</div>
     
     <section>
     <h2><span class="anchor" id="src"></span>Source Code</h2>
-    <div class="hl codehilite"><pre><span></span><span class="w">   </span><span class="k">pure subroutine </span><span class="n">set</span><span class="p">(</span><span class="n">this</span><span class="p">,</span><span class="w"> </span><span class="n">num_colors</span><span class="p">,</span><span class="w"> </span><span class="n">dim_colors</span><span class="p">,</span><span class="w"> </span><span class="n">colors</span><span class="p">)</span>
-<span class="w">      </span><span class="k">class</span><span class="p">(</span><span class="n">format_lut</span><span class="p">),</span><span class="w">       </span><span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">this</span>
-<span class="w">      </span><span class="kt">integer</span><span class="p">,</span><span class="w">                 </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w">    </span><span class="kd">::</span><span class="w"> </span><span class="n">num_colors</span><span class="p">,</span><span class="w"> </span><span class="n">dim_colors</span>
-<span class="w">      </span><span class="kt">integer</span><span class="p">,</span><span class="w"> </span><span class="k">dimension</span><span class="p">(:,:),</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w">    </span><span class="kd">::</span><span class="w"> </span><span class="n">colors</span>
+    <div class="hl codehilite"><pre><span></span><span class="w">   </span><span class="k">elemental pure subroutine </span><span class="n">crop</span><span class="p">(</span><span class="n">this</span><span class="p">,</span><span class="w"> </span><span class="n">start_row</span><span class="p">,</span><span class="w"> </span><span class="n">end_row</span><span class="p">,</span><span class="w"> </span><span class="n">start_col</span><span class="p">,</span><span class="w"> </span><span class="n">end_col</span><span class="p">)</span>
+<span class="w">      </span><span class="k">class</span><span class="p">(</span><span class="n">format_pnm</span><span class="p">),</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">)</span><span class="w">     </span><span class="kd">::</span><span class="w"> </span><span class="n">this</span>
+<span class="w">      </span><span class="kt">integer</span><span class="p">,</span><span class="w">           </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w">        </span><span class="kd">::</span><span class="w"> </span><span class="n">start_row</span><span class="p">,</span><span class="w"> </span><span class="n">end_row</span><span class="p">,</span><span class="w"> </span><span class="n">start_col</span><span class="p">,</span><span class="w"> </span><span class="n">end_col</span>
+<span class="w">      </span><span class="kt">integer</span><span class="w">                              </span><span class="kd">::</span><span class="w"> </span><span class="n">cropped_start_row</span><span class="p">,</span><span class="w"> </span><span class="n">cropped_end_row</span><span class="p">,</span><span class="w"> </span><span class="n">cropped_start_col</span><span class="p">,</span><span class="w"> </span><span class="n">cropped_end_col</span>
+<span class="w">      </span><span class="kt">integer</span><span class="p">,</span><span class="w"> </span><span class="k">dimension</span><span class="p">(:,:),</span><span class="w"> </span><span class="k">allocatable</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">cropped_pixels</span>
+<span class="w">      </span><span class="kt">integer</span><span class="w">                              </span><span class="kd">::</span><span class="w"> </span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="n">j</span><span class="p">,</span><span class="w"> </span><span class="n">cropped_height</span><span class="p">,</span><span class="w"> </span><span class="n">cropped_width</span>
 
-<span class="w">      </span><span class="n">this</span><span class="p">%</span><span class="n">num_colors</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">num_colors</span>
-<span class="w">      </span><span class="n">this</span><span class="p">%</span><span class="n">dim_colors</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dim_colors</span>
-<span class="w">      </span><span class="k">call </span><span class="n">this</span><span class="p">%</span><span class="n">allocate_colors</span><span class="p">()</span>
-<span class="w">      </span><span class="n">this</span><span class="p">%</span><span class="n">colors</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">colors</span>
-<span class="w">   </span><span class="k">end subroutine </span><span class="n">set</span>
+<span class="w">      </span><span class="c">! Check if the cropping coordinates are within the image boundaries</span>
+<span class="w">      </span><span class="n">cropped_start_row</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">max</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">start_row</span><span class="p">)</span>
+<span class="w">      </span><span class="n">cropped_end_row</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="nb">min</span><span class="p">(</span><span class="n">this</span><span class="p">%</span><span class="n">height</span><span class="p">,</span><span class="w"> </span><span class="n">end_row</span><span class="p">)</span>
+<span class="w">      </span><span class="n">cropped_start_col</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">max</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">start_col</span><span class="p">)</span>
+<span class="w">      </span><span class="n">cropped_end_col</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="nb">min</span><span class="p">(</span><span class="n">this</span><span class="p">%</span><span class="n">width</span><span class="p">,</span><span class="w"> </span><span class="n">end_col</span><span class="p">)</span>
+
+<span class="w">      </span><span class="c">! Calculate the dimensions of the cropped image</span>
+<span class="w">      </span><span class="n">cropped_height</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cropped_end_row</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">cropped_start_row</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">      </span><span class="n">cropped_width</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="n">cropped_end_col</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">cropped_start_col</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span>
+
+<span class="w">      </span><span class="k">select case</span><span class="w"> </span><span class="p">(</span><span class="n">this</span><span class="p">%</span><span class="n">file_format</span><span class="p">)</span>
+<span class="w">       </span><span class="k">case</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;pbm&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;pgm&#39;</span><span class="p">)</span>
+
+<span class="w">         </span><span class="c">! Allocate memory for cropped image pixels</span>
+<span class="w">         </span><span class="k">allocate</span><span class="p">(</span><span class="n">cropped_pixels</span><span class="p">(</span><span class="n">cropped_height</span><span class="p">,</span><span class="w"> </span><span class="n">cropped_width</span><span class="p">))</span>
+
+<span class="w">         </span><span class="c">! Copy the cropped pixels to the new array</span>
+<span class="w">         </span><span class="k">do </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">cropped_height</span>
+<span class="w">            </span><span class="k">do </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">cropped_width</span>
+<span class="w">               </span><span class="n">cropped_pixels</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="n">j</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">this</span><span class="p">%</span><span class="n">pixels</span><span class="p">(</span><span class="n">cropped_start_row</span><span class="o">-</span><span class="mi">1</span><span class="o">+</span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="n">cropped_start_col</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="n">j</span><span class="p">)</span>
+<span class="w">            </span><span class="k">end do</span>
+<span class="k">         end do</span>
+
+<span class="k">       case</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;ppm&#39;</span><span class="p">)</span>
+
+<span class="w">         </span><span class="c">! Allocate memory for cropped image pixels</span>
+<span class="w">         </span><span class="k">allocate</span><span class="p">(</span><span class="n">cropped_pixels</span><span class="p">(</span><span class="n">cropped_height</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="o">*</span><span class="n">cropped_width</span><span class="p">))</span>
+
+<span class="w">         </span><span class="c">! Copy the cropped pixels to the new array</span>
+<span class="w">         </span><span class="k">do </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">cropped_height</span>
+<span class="w">            </span><span class="k">do </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="o">*</span><span class="n">cropped_width</span>
+<span class="w">               </span><span class="n">cropped_pixels</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="n">j</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">this</span><span class="p">%</span><span class="n">pixels</span><span class="p">(</span><span class="n">cropped_start_row</span><span class="o">-</span><span class="mi">1</span><span class="o">+</span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="n">cropped_start_col</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="mi">3</span><span class="o">+</span><span class="n">j</span><span class="p">)</span>
+<span class="w">            </span><span class="k">end do</span>
+<span class="k">         end do</span>
+
+<span class="k">      end select</span>
+
+<span class="w">      </span><span class="c">! Update image dimensions and pixels</span>
+<span class="w">      </span><span class="n">this</span><span class="p">%</span><span class="n">height</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cropped_height</span>
+<span class="w">      </span><span class="n">this</span><span class="p">%</span><span class="n">width</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="n">cropped_width</span>
+<span class="w">      </span><span class="k">deallocate</span><span class="p">(</span><span class="n">this</span><span class="p">%</span><span class="n">pixels</span><span class="p">)</span>
+<span class="w">      </span><span class="k">call </span><span class="n">this</span><span class="p">%</span><span class="n">allocate_pixels</span><span class="p">()</span>
+<span class="w">      </span><span class="n">this</span><span class="p">%</span><span class="n">pixels</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cropped_pixels</span>
+
+<span class="w">      </span><span class="c">! Deallocate temporary array</span>
+<span class="w">      </span><span class="k">deallocate</span><span class="p">(</span><span class="n">cropped_pixels</span><span class="p">)</span>
+<span class="w">   </span><span class="k">end subroutine </span><span class="n">crop</span>
 </pre></div>
 
     </section>
