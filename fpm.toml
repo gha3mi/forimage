@@ -20,6 +20,11 @@ implicit-external = false
 source-form       = "free"
 
 [[example]]
+name       = "demo"
+source-dir = "example"
+main       = "demo.f90"
+
+[[example]]
 name       = "example1"
 source-dir = "example"
 main       = "example1.f90"
