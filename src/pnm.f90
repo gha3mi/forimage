@@ -41,10 +41,68 @@ module pnm
       procedure :: flip_horizontal
       procedure :: flip_vertical
       procedure :: crop
+      procedure :: resize
    end type format_pnm
    !===============================================================================
 
 contains
+
+   !===============================================================================
+   !> author: Seyed Ali Ghasemi
+   elemental pure subroutine resize(this, new_height, new_width)
+      class(format_pnm), intent(inout)     :: this
+      integer,           intent(in)        :: new_width, new_height
+      integer, dimension(:,:), allocatable :: resized_pixels
+      integer                              :: i_out, j_out, i_in, j_in, channel
+      real(rk)                             :: width_scale, height_scale
+
+      select case (this%file_format)
+       case ('pbm', 'pgm')
+
+         allocate(resized_pixels(new_height, new_width))
+
+         width_scale  = real(this%width, kind=rk) / real(new_width, kind=rk)
+         height_scale = real(this%height, kind=rk) / real(new_height, kind=rk)
+
+         do i_out = 1, new_height
+            do j_out = 1, new_width
+               i_in = min(this%height, max(1, int((real(i_out, kind=rk) - 0.5_rk) * height_scale) + 1))
+               j_in = min(this%width,  max(1, int((real(j_out, kind=rk) - 0.5_rk) * width_scale)  + 1))
+
+               resized_pixels(i_out, j_out) = this%pixels(i_in, j_in)
+            end do
+         end do
+
+       case ('ppm')
+
+         allocate(resized_pixels(new_height, 3*new_width))
+
+         width_scale  = real(this%width, kind=rk) / real(new_width, kind=rk)
+         height_scale = real(this%height, kind=rk) / real(new_height, kind=rk)
+
+         do i_out = 1, new_height
+            do j_out = 1, new_width
+               i_in = min(this%height,  max(1, int((real(i_out, kind=rk) - 0.5_rk) * height_scale) + 1))
+               j_in = min(3*this%width, max(1, int((real(j_out, kind=rk) - 0.5_rk) * width_scale)  + 1))
+
+               do channel = 1, 3
+                  resized_pixels(i_out, 3*(j_out-1) + channel) = this%pixels(i_in, 3*(j_in-1)+channel)
+               end do
+            end do
+         end do
+
+      end select
+
+      this%height = new_height
+      this%width = new_width
+      deallocate(this%pixels)
+      call this%allocate_pixels()
+      call this%set_pixels(resized_pixels)
+
+      deallocate(resized_pixels)
+   end subroutine resize
+   !===============================================================================
+
 
    !===============================================================================
    !> author: Seyed Ali Ghasemi
@@ -678,13 +736,13 @@ contains
 
       ! Check if the pixel values are within the valid range
       select case (this%file_format)
-      case ('pbm')
-        if (maxval(pixels) > 1 .or. minval(pixels) < 0) error stop 'set_pixels: Invalid pixel values.'
-      case ('pgm')
-        if (maxval(pixels) > this%max_color .or. minval(pixels) < 0) error stop 'set_pixels: Invalid pixel values.'
-      case ('ppm')
-        if (maxval(pixels) > this%max_color .or. minval(pixels) < 0) error stop 'set_pixels: Invalid pixel values.'
-     end select
+       case ('pbm')
+         if (maxval(pixels) > 1 .or. minval(pixels) < 0) error stop 'set_pixels: Invalid pixel values.'
+       case ('pgm')
+         if (maxval(pixels) > this%max_color .or. minval(pixels) < 0) error stop 'set_pixels: Invalid pixel values.'
+       case ('ppm')
+         if (maxval(pixels) > this%max_color .or. minval(pixels) < 0) error stop 'set_pixels: Invalid pixel values.'
+      end select
    end subroutine check_pixel_range
    !===============================================================================
 
