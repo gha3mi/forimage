@@ -23,6 +23,9 @@ program demo
       pixels      = px &
       )
 
+   ! Print information about the image
+   call image%print_info()
+
    ! Export the image to a PPM file
    call image%export_pnm('pnm_files/mandelbrot_binary')
 

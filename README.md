@@ -92,8 +92,6 @@ cd forimage
 fpm run --example demo
 ```
 
-Descriptions of all examples are available [here](https://github.com/gha3mi/forimage/tree/main/example).
-
 <!-- To run the examples using `fpm`, you can use response files for specific
 compilers:
 

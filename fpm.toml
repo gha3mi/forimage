@@ -24,127 +24,127 @@ name       = "demo"
 source-dir = "example"
 main       = "demo.f90"
 
-[[example]]
-name       = "example1"
-source-dir = "example"
-main       = "example1.f90"
+[[test]]
+name       = "test1"
+source-dir = "test"
+main       = "test1.f90"
 
-[[example]]
-name       = "example2"
-source-dir = "example"
-main       = "example2.f90"
+[[test]]
+name       = "test2"
+source-dir = "test"
+main       = "test2.f90"
 
-[[example]]
-name       = "example3"
-source-dir = "example"
-main       = "example3.f90"
+[[test]]
+name       = "test3"
+source-dir = "test"
+main       = "test3.f90"
 
-[[example]]
-name       = "example4"
-source-dir = "example"
-main       = "example4.f90"
+[[test]]
+name       = "test4"
+source-dir = "test"
+main       = "test4.f90"
 
-[[example]]
-name       = "example5"
-source-dir = "example"
-main       = "example5.f90"
+[[test]]
+name       = "test5"
+source-dir = "test"
+main       = "test5.f90"
 
-[[example]]
-name       = "example6"
-source-dir = "example"
-main       = "example6.f90"
+[[test]]
+name       = "test6"
+source-dir = "test"
+main       = "test6.f90"
 
-[[example]]
-name       = "example7"
-source-dir = "example"
-main       = "example7.f90"
+[[test]]
+name       = "test7"
+source-dir = "test"
+main       = "test7.f90"
 
-[[example]]
-name       = "example8"
-source-dir = "example"
-main       = "example8.f90"
+[[test]]
+name       = "test8"
+source-dir = "test"
+main       = "test8.f90"
 
-[[example]]
-name       = "example9"
-source-dir = "example"
-main       = "example9.f90"
+[[test]]
+name       = "test9"
+source-dir = "test"
+main       = "test9.f90"
 
-[[example]]
-name       = "example10"
-source-dir = "example"
-main       = "example10.f90"
+[[test]]
+name       = "test10"
+source-dir = "test"
+main       = "test10.f90"
 
-[[example]]
-name       = "example11"
-source-dir = "example"
-main       = "example11.f90"
+[[test]]
+name       = "test11"
+source-dir = "test"
+main       = "test11.f90"
 
-[[example]]
-name       = "example12"
-source-dir = "example"
-main       = "example12.f90"
+[[test]]
+name       = "test12"
+source-dir = "test"
+main       = "test12.f90"
 
-[[example]]
-name       = "example13"
-source-dir = "example"
-main       = "example13.f90"
+[[test]]
+name       = "test13"
+source-dir = "test"
+main       = "test13.f90"
 
-[[example]]
-name       = "example14"
-source-dir = "example"
-main       = "example14.f90"
+[[test]]
+name       = "test14"
+source-dir = "test"
+main       = "test14.f90"
 
-[[example]]
-name       = "example15"
-source-dir = "example"
-main       = "example15.f90"
+[[test]]
+name       = "test15"
+source-dir = "test"
+main       = "test15.f90"
 
-[[example]]
-name       = "example16"
-source-dir = "example"
-main       = "example16.f90"
+[[test]]
+name       = "test16"
+source-dir = "test"
+main       = "test16.f90"
 
-[[example]]
-name       = "example17"
-source-dir = "example"
-main       = "example17.f90"
+[[test]]
+name       = "test17"
+source-dir = "test"
+main       = "test17.f90"
 
-[[example]]
-name       = "example18"
-source-dir = "example"
-main       = "example18.f90"
+[[test]]
+name       = "test18"
+source-dir = "test"
+main       = "test18.f90"
 
-[[example]]
-name       = "example19"
-source-dir = "example"
-main       = "example19.f90"
+[[test]]
+name       = "test19"
+source-dir = "test"
+main       = "test19.f90"
 
-[[example]]
-name       = "example20"
-source-dir = "example"
-main       = "example20.f90"
+[[test]]
+name       = "test20"
+source-dir = "test"
+main       = "test20.f90"
 
-[[example]]
-name       = "example21"
-source-dir = "example"
-main       = "example21.f90"
+[[test]]
+name       = "test21"
+source-dir = "test"
+main       = "test21.f90"
 
-[[example]]
-name       = "example22"
-source-dir = "example"
-main       = "example22.f90"
+[[test]]
+name       = "test22"
+source-dir = "test"
+main       = "test22.f90"
 
-[[example]]
-name       = "example23"
-source-dir = "example"
-main       = "example23.f90"
+[[test]]
+name       = "test23"
+source-dir = "test"
+main       = "test23.f90"
 
-[[example]]
-name       = "example24"
-source-dir = "example"
-main       = "example24.f90"
+[[test]]
+name       = "test24"
+source-dir = "test"
+main       = "test24.f90"
 
-[[example]]
-name       = "example25"
-source-dir = "example"
-main       = "example25.f90"
+[[test]]
+name       = "test25"
+source-dir = "test"
+main       = "test25.f90"
