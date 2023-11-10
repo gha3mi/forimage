@@ -5,7 +5,7 @@ program test4
     implicit none
     
     ! Declare an object of type format_pnm
-    type(format_pnm) :: ex4
+    type(format_pnm) :: image
 
     ! Define a 2D array representing pixel values (0 and 1) for the image
     integer, dimension(10,6) :: px
@@ -25,15 +25,15 @@ program test4
     px(10,:) = [0,0,0,0,0,0]
 
     ! Set the properties of the format_pnm object (encoding, file format, width, height, comment and pixels)
-    call ex4%set_pnm(encoding='binary', file_format='pbm', width=6, height=10, comment='test 1', pixels=px)
+    call image%set_pnm(encoding='binary', file_format='pbm', width=6, height=10, comment='test 1', pixels=px)
 
     ! Export the PNM image to a file named 'img1_binary' in the specified format
-    call ex4%export_pnm('pnm_files/img1_binary')
+    call image%export_pnm('pnm_files/img1_binary')
 
     ! Print the image information to the screen
-    call ex4%print_info()
+    call image%print_info()
 
     ! Finalize the format_pnm object to release resources
-    call ex4%finalize()
+    call image%finalize()
 
 end program test4

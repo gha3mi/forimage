@@ -2,18 +2,18 @@ program test9
     use forimage, only: format_pnm
     implicit none
     
-    type(format_pnm) :: ex9
+    type(format_pnm) :: image
 
     print*,' '
     print'(a)', 'Test 9'
 
-    call ex9%import_pnm('pnm_files/img3_ascii','ppm','ascii')
+    call image%import_pnm('pnm_files/img3_ascii','ppm','ascii')
 
     ! Print the image information to the screen
-    call ex9%print_info()
+    call image%print_info()
 
-    call ex9%export_pnm('pnm_files/img3_ascii_ex')
+    call image%export_pnm('pnm_files/img3_ascii_ex')
 
-    call ex9%finalize()
+    call image%finalize()
 
 end program test9

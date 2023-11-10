@@ -2,7 +2,7 @@ program test21
     use forimage, only: format_pnm
     implicit none
     
-    type(format_pnm) :: ex21
+    type(format_pnm) :: image
     integer, dimension(4,12) :: px
 
     print*,' '
@@ -13,9 +13,9 @@ program test21
     px(3,:)  = [0,0,0,0,0,0,0,15,7,0,0,0]
     px(4,:)  = [15,0,15,0,0,0,0,0,0,0,0,0]
 
-    call ex21%set_pnm(encoding='binary', file_format='ppm', width=4, height=4, max_color=15, comment='test 2', pixels=px)
-    call ex21%greyscale()
-    call ex21%export_pnm('pnm_files/img3_binary_greyscale')
-    call ex21%print_info()
-    call ex21%finalize()
+    call image%set_pnm(encoding='binary', file_format='ppm', width=4, height=4, max_color=15, comment='test 2', pixels=px)
+    call image%greyscale()
+    call image%export_pnm('pnm_files/img3_binary_greyscale')
+    call image%print_info()
+    call image%finalize()
 end program test21

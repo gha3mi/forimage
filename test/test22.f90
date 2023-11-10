@@ -2,7 +2,7 @@ program test22
     use forimage, only: format_pnm
     implicit none
     
-    type(format_pnm) ::  ex22_1, ex22_2, ex22_3
+    type(format_pnm) ::  image1, image2, image3
     integer, dimension(10,6) :: px1
     integer, dimension(60,60) :: px2
     integer, dimension(4,12) :: px3
@@ -21,11 +21,11 @@ program test22
     px1(9,:)  = [0,0,0,0,0,0]
     px1(10,:) = [0,0,0,0,0,0]
 
-    call ex22_1%set_pnm(encoding='binary', file_format='pbm', width=6, height=10, comment='test 1', pixels=px1)
-    call ex22_1%rotate(-90)
-    call ex22_1%export_pnm('pnm_files/img1_binary_rotate')
-    call ex22_1%print_info()
-    call ex22_1%finalize()
+    call image1%set_pnm(encoding='binary', file_format='pbm', width=6, height=10, comment='test 1', pixels=px1)
+    call image1%rotate(-90)
+    call image1%export_pnm('pnm_files/img1_binary_rotate')
+    call image1%print_info()
+    call image1%finalize()
 
 
 
@@ -3636,11 +3636,11 @@ program test22
     255]&
     ,shape=shape(px2)))
 
-    call ex22_2%set_pnm(encoding='binary', file_format='pgm', width=60, height=60, max_color=255, comment='test 2', pixels=px2)
-    call ex22_2%rotate(-90)
-    call ex22_2%export_pnm('pnm_files/img2_binary_rotate')
-    call ex22_2%print_info()
-    call ex22_2%finalize()
+    call image2%set_pnm(encoding='binary', file_format='pgm', width=60, height=60, max_color=255, comment='test 2', pixels=px2)
+    call image2%rotate(-90)
+    call image2%export_pnm('pnm_files/img2_binary_rotate')
+    call image2%print_info()
+    call image2%finalize()
 
 
 
@@ -3654,9 +3654,9 @@ program test22
     px3(3,:)  = [0,0,0,0,0,0,0,15,7,0,0,0]
     px3(4,:)  = [15,0,15,0,0,0,0,0,0,0,0,0]
 
-    call ex22_3%set_pnm(encoding='binary', file_format='ppm', width=4, height=4, max_color=15, comment='test 2', pixels=px3)
-    call ex22_3%rotate(-90)
-    call ex22_3%export_pnm('pnm_files/img3_binary_rotate')
-    call ex22_3%print_info()
-    call ex22_3%finalize()
+    call image3%set_pnm(encoding='binary', file_format='ppm', width=4, height=4, max_color=15, comment='test 2', pixels=px3)
+    call image3%rotate(-90)
+    call image3%export_pnm('pnm_files/img3_binary_rotate')
+    call image3%print_info()
+    call image3%finalize()
 end program test22

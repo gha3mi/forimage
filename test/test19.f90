@@ -2,7 +2,7 @@ program test19
     use forimage, only: format_pnm
     implicit none
     
-    type(format_pnm) :: ex19
+    type(format_pnm) :: image
     integer, dimension(4,12) :: px
 
     print*,' '
@@ -13,9 +13,9 @@ program test19
     px(3,:)  = [0,0,0,0,0,0,0,15,7,0,0,0]
     px(4,:)  = [15,0,15,0,0,0,0,0,0,0,0,0]
 
-    call ex19%set_pnm(encoding='binary', file_format='ppm', width=4, height=4, max_color=15, comment='test 2', pixels=px)
-    call ex19%swap_channels(swap='bg')
-    call ex19%export_pnm('pnm_files/img3_binary_swap')
-    call ex19%print_info()
-    call ex19%finalize()
+    call image%set_pnm(encoding='binary', file_format='ppm', width=4, height=4, max_color=15, comment='test 2', pixels=px)
+    call image%swap_channels(swap='bg')
+    call image%export_pnm('pnm_files/img3_binary_swap')
+    call image%print_info()
+    call image%finalize()
 end program test19

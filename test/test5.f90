@@ -5,7 +5,7 @@ program test
     implicit none
     
     ! Declare an object of type format_pnm
-    type(format_pnm) :: ex5
+    type(format_pnm) :: image
 
     ! Define a 2D array representing pixel values for the image
     integer, dimension(60,60) :: px
@@ -3617,15 +3617,15 @@ program test
     ,shape=shape(px)))
 
     ! Set the properties of the format_pnm object (encoding, file format, width, height, comment and pixels)
-    call ex5%set_pnm(encoding='binary', file_format='pgm', width=60, height=60, max_color=255, comment='test 2', pixels=px)
+    call image%set_pnm(encoding='binary', file_format='pgm', width=60, height=60, max_color=255, comment='test 2', pixels=px)
 
     ! Export the PNM image to a file named 'img2_binary' in the specified format
-    call ex5%export_pnm('pnm_files/img2_binary')
+    call image%export_pnm('pnm_files/img2_binary')
     
     ! Print the image information to the screen
-    call ex5%print_info()
+    call image%print_info()
 
     ! Finalize the format_pnm object to release resources
-    call ex5%finalize()
+    call image%finalize()
 
 end program test

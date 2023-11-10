@@ -2,7 +2,7 @@ program test15
     use forimage, only: format_lut
     implicit none
     
-    type(format_lut) :: ex15
+    type(format_lut) :: image
     integer, dimension(1:8, 3) :: colors = reshape( [ &
           0,     0,     0,   &
         255,     0,     0,   &
@@ -17,9 +17,9 @@ program test15
     print*,' '
     print'(a)', 'Test 15'
 
-    call ex15%set(num_colors=8, dim_colors=3, colors=colors)
-    call ex15%export('lut_files/test15')
+    call image%set(num_colors=8, dim_colors=3, colors=colors)
+    call image%export('lut_files/test15')
 
-    call ex15%finalize()
+    call image%finalize()
 
 end program test15

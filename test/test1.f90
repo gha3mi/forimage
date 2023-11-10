@@ -5,7 +5,7 @@ program test1
     implicit none
     
     ! Declare an object of type format_pnm
-    type(format_pnm) :: ex1
+    type(format_pnm) :: image
 
     ! Define a 2D array representing pixel values (0 and 1) for the image
     integer, dimension(10,6) :: px
@@ -25,15 +25,15 @@ program test1
     px(10,:) = [0,0,0,0,0,0]
 
     ! Set the properties of the format_pnm object (encoding, file format, width, height, comment and pixels)
-    call ex1%set_pnm(encoding='ascii', file_format='pbm', width=6, height=10, comment='test 1', pixels=px)
+    call image%set_pnm(encoding='ascii', file_format='pbm', width=6, height=10, comment='test 1', pixels=px)
 
     ! Export the PNM image to a file named 'img1_ascii' in the specified format
-    call ex1%export_pnm('pnm_files/img1_ascii')
+    call image%export_pnm('pnm_files/img1_ascii')
 
     ! Print the image information to the screen
-    call ex1%print_info()
+    call image%print_info()
 
     ! Finalize the format_pnm object to release resources
-    call ex1%finalize()
+    call image%finalize()
 
 end program test1

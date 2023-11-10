@@ -2,18 +2,18 @@ program test7
     use forimage, only: format_pnm
     implicit none
     
-    type(format_pnm) :: ex7
+    type(format_pnm) :: image
 
     print*,' '
     print'(a)', 'Test 7'
 
-    call ex7%import_pnm('pnm_files/img1_ascii','pbm','ascii')
+    call image%import_pnm('pnm_files/img1_ascii','pbm','ascii')
 
     ! Print the image information to the screen
-    call ex7%print_info()
+    call image%print_info()
 
-    call ex7%export_pnm('pnm_files/img1_ascii_ex')
+    call image%export_pnm('pnm_files/img1_ascii_ex')
 
-    call ex7%finalize()
+    call image%finalize()
 
 end program test7
