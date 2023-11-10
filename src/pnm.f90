@@ -42,10 +42,129 @@ module pnm
       procedure :: flip_vertical
       procedure :: crop
       procedure :: resize
+      procedure :: print_info
    end type format_pnm
    !===============================================================================
 
 contains
+
+   !===============================================================================
+   !> author: Seyed Ali Ghasemi
+   elemental impure subroutine print_info(this)
+      class(format_pnm), intent(in) :: this
+      real(rk) :: avg, avg_red, avg_green, avg_blue
+      real(rk) :: asp_ratio
+      real(rk) :: pixel_size_kb, pixel_size_mb
+
+      select case (this%file_format)
+       case ('pbm', 'pgm')
+         call average_colors(this, avg)
+       case ('ppm')
+         call average_colors(this, avg, avg_red, avg_green, avg_blue)
+      end select
+      call aspect_ratio(this, asp_ratio)
+      call pixel_size(this, pixel_size_kb, pixel_size_mb)
+
+      print '(a)'                           , 'Image Information:'
+      print '(a)'                           , '-------------------------------------------'
+      print '(a, g0)'                       , 'Magic Number: ', this%magic_number
+      print '(a, a)'                        , 'File Format : ', this%file_format
+      print '(a, a)'                        , 'Encoding    : ', this%encoding
+      print '(a, a)'                        , 'Comment     : ', trim(this%comment)
+      print '(a, a, g0, a, g0)'             , 'Dimensions  : ', 'Height: ', this%height, ' Width: ', this%width
+      print '(a, g0)'                       , 'Total Pixels: ', this%width * this%height
+      print '(a, f6.2)'                     , 'Aspect Ratio: ', asp_ratio
+      print '(a, f8.2, a, f8.2, a)'         , 'Pixel Size  : ', pixel_size_kb, ' KB ', pixel_size_mb, ' MB'
+      print '(a, g0)'                       , 'Max Color   : ', this%max_color
+      select case (this%file_format)
+       case ('pbm', 'pgm')
+         print '(a, g0)'                     , 'Average     : ', avg
+       case ('ppm')
+         print '(a, a, f6.2, a, f6.2, a, f6.2)', 'Average RGB : ', 'R:', avg_red, ' G:', avg_green, ' B:', avg_blue
+      end select
+      print '(a)'                           , '-------------------------------------------'
+   end subroutine print_info
+   !===============================================================================
+
+
+   !===============================================================================
+   !> author: Seyed Ali Ghasemi
+   elemental pure subroutine pixel_size(this, pixel_size_kb, pixel_size_mb)
+      class(format_pnm), intent(in) :: this
+      real(rk), intent(out) :: pixel_size_kb, pixel_size_mb
+      integer :: bits_per_channel, bytes_per_pixel
+
+      bits_per_channel = 8
+
+      select case (this%file_format)
+       case ('pbm', 'pgm')
+         bytes_per_pixel = bits_per_channel
+       case ('ppm')
+         bytes_per_pixel = bits_per_channel*3
+      end select
+
+      pixel_size_kb = real(this%width*this%height * bytes_per_pixel, kind=rk) / 1024.0_rk
+      pixel_size_mb = pixel_size_kb / 1024.0_rk
+   end subroutine pixel_size
+   !===============================================================================
+
+
+   !===============================================================================
+   !> author: Seyed Ali Ghasemi
+   elemental pure subroutine average_colors(this, avg, avg_red, avg_green, avg_blue)
+      class(format_pnm), intent(in) :: this
+      real(rk), intent(out), optional :: avg_red, avg_green, avg_blue, avg
+      integer :: total_pixels
+      integer :: i, j
+
+      select case (this%file_format)
+       case ('pbm', 'pgm')
+
+         avg   = 0.0_rk
+         total_pixels = this%width*this%height
+
+         do i = 1, this%height
+            do j = 1, this%width
+               avg   = avg   + real(this%pixels(i, j), kind=rk)
+            end do
+         end do
+
+         avg   = avg   / real(total_pixels, kind=rk)
+
+       case ('ppm')
+
+         avg_red   = 0.0_rk
+         avg_green = 0.0_rk
+         avg_blue  = 0.0_rk
+         total_pixels = this%width*this%height
+
+         do i = 1, this%height
+            do j = 1, this%width
+               avg_red   = avg_red   + real(this%pixels(i, 3*j-2), kind=rk)
+               avg_green = avg_green + real(this%pixels(i, 3*j-1), kind=rk)
+               avg_blue  = avg_blue  + real(this%pixels(i, 3*j-0), kind=rk)
+            end do
+         end do
+
+         avg_red   = avg_red   / real(total_pixels, kind=rk)
+         avg_green = avg_green / real(total_pixels, kind=rk)
+         avg_blue  = avg_blue  / real(total_pixels, kind=rk)
+
+      end select
+
+   end subroutine average_colors
+   !===============================================================================
+
+
+   !===============================================================================
+   !> author: Seyed Ali Ghasemi
+   elemental pure subroutine aspect_ratio(this, ratio)
+      class(format_pnm), intent(in) :: this
+      real(rk), intent(out) :: ratio
+      ratio = real(this%width, kind=rk) / real(this%height, kind=rk)
+   end subroutine aspect_ratio
+   !===============================================================================
+
 
    !===============================================================================
    !> author: Seyed Ali Ghasemi
@@ -503,7 +622,7 @@ contains
                read(nunit, '(*(a))', advance='yes') buffer_ch
                close(nunit)
                call this%allocate_pixels()
-               call this%set_pixels(transpose(reshape(ichar(buffer_ch), [this%height, this%width])))
+               call this%set_pixels(transpose(reshape(ichar(buffer_ch), [this%width, this%height])))
              case ('pgm')
                open (newunit = nunit, file = file_name//'.'//file_format, iostat=iostat)
                if (iostat /= 0) error stop 'Error opening the file.'
@@ -529,7 +648,7 @@ contains
                read(nunit, '(*(a))', advance='yes') buffer_ch
                close(nunit)
                call this%allocate_pixels()
-               call this%set_pixels(transpose(reshape(ichar(buffer_ch), [this%height, 3*this%width])))
+               call this%set_pixels(transpose(reshape(ichar(buffer_ch), [3*this%width, this%height])))
             end select
 
           case ('ascii','plain')
