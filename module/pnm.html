@@ -485,7 +485,7 @@ large graphs.</div>
               <span class="anchor" id="variable-magic_number"></span>
               character(len=2),
             </td>
-              <td>public</td>
+              <td>private</td>
             <td>
               
             </td>
@@ -502,7 +502,7 @@ large graphs.</div>
               <span class="anchor" id="variable-width"></span>
               integer,
             </td>
-              <td>public</td>
+              <td>private</td>
             <td>
               
             </td>
@@ -519,7 +519,7 @@ large graphs.</div>
               <span class="anchor" id="variable-height"></span>
               integer,
             </td>
-              <td>public</td>
+              <td>private</td>
             <td>
               
             </td>
@@ -536,7 +536,7 @@ large graphs.</div>
               <span class="anchor" id="variable-comment"></span>
               character(len=70),
             </td>
-              <td>public</td>
+              <td>private</td>
             <td>
               
             </td>
@@ -553,7 +553,7 @@ large graphs.</div>
               <span class="anchor" id="variable-max_color"></span>
               integer,
             </td>
-              <td>public</td>
+              <td>private</td>
             <td>
               
             </td>
@@ -570,7 +570,7 @@ large graphs.</div>
               <span class="anchor" id="variable-pixels"></span>
               integer,
             </td>
-              <td>public,</td>
+              <td>private,</td>
             <td>
               dimension(:,:), allocatable
             </td>
@@ -587,7 +587,7 @@ large graphs.</div>
               <span class="anchor" id="variable-file_format"></span>
               character(len=3),
             </td>
-              <td>public</td>
+              <td>private</td>
             <td>
               
             </td>
@@ -604,7 +604,7 @@ large graphs.</div>
               <span class="anchor" id="variable-encoding"></span>
               character(len=6),
             </td>
-              <td>public</td>
+              <td>private</td>
             <td>
               
             </td>
@@ -626,63 +626,58 @@ large graphs.</div>
         <table class="table table-striped varlist">
           <tbody>
               <tr>
-                <td>  procedure, public ::
+                <td>  procedure, private ::
   <strong><a href='../type/format_pnm.html#boundprocedure-set_format'>set_format</a></strong></td>
                 <td></td>
               </tr>
               <tr>
-                <td>  procedure, public ::
+                <td>  procedure, private ::
   <strong><a href='../type/format_pnm.html#boundprocedure-set_file_format'>set_file_format</a></strong></td>
                 <td></td>
               </tr>
               <tr>
-                <td>  procedure, public ::
+                <td>  procedure, private ::
   <strong><a href='../type/format_pnm.html#boundprocedure-set_magicnumber'>set_magicnumber</a></strong></td>
                 <td></td>
               </tr>
               <tr>
-                <td>  procedure, public ::
+                <td>  procedure, private ::
   <strong><a href='../type/format_pnm.html#boundprocedure-set_width'>set_width</a></strong></td>
                 <td></td>
               </tr>
               <tr>
-                <td>  procedure, public ::
+                <td>  procedure, private ::
   <strong><a href='../type/format_pnm.html#boundprocedure-set_height'>set_height</a></strong></td>
                 <td></td>
               </tr>
               <tr>
-                <td>  procedure, public ::
+                <td>  procedure, private ::
   <strong><a href='../type/format_pnm.html#boundprocedure-set_comment'>set_comment</a></strong></td>
                 <td></td>
               </tr>
               <tr>
-                <td>  procedure, public ::
+                <td>  procedure, private ::
   <strong><a href='../type/format_pnm.html#boundprocedure-set_max_color'>set_max_color</a></strong></td>
                 <td></td>
               </tr>
               <tr>
-                <td>  procedure, public ::
+                <td>  procedure, private ::
   <strong><a href='../type/format_pnm.html#boundprocedure-set_header'>set_header</a></strong></td>
                 <td></td>
               </tr>
               <tr>
-                <td>  procedure, public ::
+                <td>  procedure, private ::
   <strong><a href='../type/format_pnm.html#boundprocedure-allocate_pixels'>allocate_pixels</a></strong></td>
                 <td></td>
               </tr>
               <tr>
-                <td>  procedure, public ::
+                <td>  procedure, private ::
   <strong><a href='../type/format_pnm.html#boundprocedure-check_pixel_range'>check_pixel_range</a></strong></td>
                 <td></td>
               </tr>
               <tr>
-                <td>  procedure, public ::
+                <td>  procedure, private ::
   <strong><a href='../type/format_pnm.html#boundprocedure-set_pixels'>set_pixels</a></strong></td>
-                <td></td>
-              </tr>
-              <tr>
-                <td>  procedure, public ::
-  <strong><a href='../type/format_pnm.html#boundprocedure-export_pnm'>export_pnm</a></strong></td>
                 <td></td>
               </tr>
               <tr>
@@ -692,7 +687,17 @@ large graphs.</div>
               </tr>
               <tr>
                 <td>  procedure, public ::
+  <strong><a href='../type/format_pnm.html#boundprocedure-print_info'>print_info</a></strong></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>  procedure, public ::
   <strong><a href='../type/format_pnm.html#boundprocedure-import_pnm'>import_pnm</a></strong></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>  procedure, public ::
+  <strong><a href='../type/format_pnm.html#boundprocedure-export_pnm'>export_pnm</a></strong></td>
                 <td></td>
               </tr>
               <tr>
@@ -750,11 +755,6 @@ large graphs.</div>
   <strong><a href='../type/format_pnm.html#boundprocedure-resize'>resize</a></strong></td>
                 <td></td>
               </tr>
-              <tr>
-                <td>  procedure, public ::
-  <strong><a href='../type/format_pnm.html#boundprocedure-print_info'>print_info</a></strong></td>
-                <td></td>
-              </tr>
           </tbody>
         </table>
     </div>
@@ -789,7 +789,7 @@ large graphs.</div>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-this~26"></span>
+              <span class="anchor" id="variable-this~13"></span>
               class(<a href='../type/format_pnm.html'>format_pnm</a>),
             </td>
 <td>intent(in)</td>
@@ -1066,7 +1066,7 @@ large graphs.</div>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-this~25"></span>
+              <span class="anchor" id="variable-this~26"></span>
               class(<a href='../type/format_pnm.html'>format_pnm</a>),
             </td>
 <td>intent(inout)</td>
@@ -1139,7 +1139,7 @@ large graphs.</div>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-this~24"></span>
+              <span class="anchor" id="variable-this~25"></span>
               class(<a href='../type/format_pnm.html'>format_pnm</a>),
             </td>
 <td>intent(inout)</td>
@@ -1242,7 +1242,7 @@ large graphs.</div>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-this~23"></span>
+              <span class="anchor" id="variable-this~24"></span>
               class(<a href='../type/format_pnm.html'>format_pnm</a>),
             </td>
 <td>intent(inout)</td>
@@ -1285,7 +1285,7 @@ large graphs.</div>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-this~22"></span>
+              <span class="anchor" id="variable-this~23"></span>
               class(<a href='../type/format_pnm.html'>format_pnm</a>),
             </td>
 <td>intent(inout)</td>
@@ -1328,7 +1328,7 @@ large graphs.</div>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-this~21"></span>
+              <span class="anchor" id="variable-this~22"></span>
               class(<a href='../type/format_pnm.html'>format_pnm</a>),
             </td>
 <td>intent(inout)</td>
@@ -1386,7 +1386,7 @@ large graphs.</div>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-this~20"></span>
+              <span class="anchor" id="variable-this~21"></span>
               class(<a href='../type/format_pnm.html'>format_pnm</a>),
             </td>
 <td>intent(inout)</td>
@@ -1429,7 +1429,7 @@ large graphs.</div>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-this~19"></span>
+              <span class="anchor" id="variable-this~20"></span>
               class(<a href='../type/format_pnm.html'>format_pnm</a>),
             </td>
 <td>intent(inout)</td>
@@ -1517,7 +1517,7 @@ large graphs.</div>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-this~18"></span>
+              <span class="anchor" id="variable-this~19"></span>
               class(<a href='../type/format_pnm.html'>format_pnm</a>),
             </td>
 <td>intent(inout)</td>
@@ -1575,7 +1575,7 @@ large graphs.</div>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-this~17"></span>
+              <span class="anchor" id="variable-this~18"></span>
               class(<a href='../type/format_pnm.html'>format_pnm</a>),
             </td>
 <td>intent(inout)</td>
@@ -1633,7 +1633,7 @@ large graphs.</div>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-this~16"></span>
+              <span class="anchor" id="variable-this~17"></span>
               class(<a href='../type/format_pnm.html'>format_pnm</a>),
             </td>
 <td>intent(inout)</td>
@@ -1792,7 +1792,7 @@ large graphs.</div>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-this~15"></span>
+              <span class="anchor" id="variable-this~16"></span>
               class(<a href='../type/format_pnm.html'>format_pnm</a>),
             </td>
 <td>intent(inout)</td>
@@ -1850,7 +1850,7 @@ large graphs.</div>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-file_name~2"></span>
+              <span class="anchor" id="variable-file_name"></span>
               character(len=*),
             </td>
 <td>intent(in)</td>
@@ -1880,7 +1880,7 @@ large graphs.</div>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-encoding~5"></span>
+              <span class="anchor" id="variable-encoding~4"></span>
               character(len=*),
             </td>
 <td>intent(in)</td>
@@ -1923,7 +1923,7 @@ large graphs.</div>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-this~13"></span>
+              <span class="anchor" id="variable-this~12"></span>
               class(<a href='../type/format_pnm.html'>format_pnm</a>),
             </td>
 <td>intent(inout)</td>
@@ -1938,7 +1938,7 @@ large graphs.</div>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-encoding~4"></span>
+              <span class="anchor" id="variable-encoding~3"></span>
               character(len=*),
             </td>
 <td>intent(in)</td>
@@ -2771,7 +2771,7 @@ large graphs.</div>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-this~12"></span>
+              <span class="anchor" id="variable-this~15"></span>
               class(<a href='../type/format_pnm.html'>format_pnm</a>),
             </td>
 <td>intent(inout)</td>
@@ -2786,7 +2786,7 @@ large graphs.</div>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-file_name"></span>
+              <span class="anchor" id="variable-file_name~2"></span>
               character(len=*),
             </td>
 <td>intent(in)</td>
@@ -2801,7 +2801,7 @@ large graphs.</div>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-encoding~3"></span>
+              <span class="anchor" id="variable-encoding~5"></span>
               character(len=*),
             </td>
 <td>intent(in),</td>
@@ -2841,7 +2841,7 @@ large graphs.</div>
             <p class="text-end">
               Documentation generated by
               <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
- on 2023-11-10T01:46:32.496455             </p>
+ on 2023-11-10T08:36:23.369994             </p>
           </div>
         </div>
         <br>

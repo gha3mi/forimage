@@ -8,29 +8,30 @@ module pnm
 
    !===============================================================================
    type format_pnm
-      character(2)                         :: magic_number
-      integer                              :: width
-      integer                              :: height
-      character(70)                        :: comment
-      integer                              :: max_color
-      integer, dimension(:,:), allocatable :: pixels
-      character(3)                         :: file_format
-      character(6)                         :: encoding
+      character(2)                         , private :: magic_number
+      integer                              , private :: width
+      integer                              , private :: height
+      character(70)                        , private :: comment
+      integer                              , private :: max_color
+      integer, dimension(:,:), allocatable , private :: pixels
+      character(3)                         , private :: file_format
+      character(6)                         , private :: encoding
    contains
-      procedure :: set_format
-      procedure :: set_file_format
-      procedure :: set_magicnumber
-      procedure :: set_width
-      procedure :: set_height
-      procedure :: set_comment
-      procedure :: set_max_color
-      procedure :: set_header
-      procedure :: allocate_pixels
-      procedure :: check_pixel_range
-      procedure :: set_pixels
-      procedure :: export_pnm
+      procedure, private :: set_format
+      procedure, private :: set_file_format
+      procedure, private :: set_magicnumber
+      procedure, private :: set_width
+      procedure, private :: set_height
+      procedure, private :: set_comment
+      procedure, private :: set_max_color
+      procedure, private :: set_header
+      procedure, private :: allocate_pixels
+      procedure, private :: check_pixel_range
+      procedure, private :: set_pixels
       procedure :: set_pnm
+      procedure :: print_info
       procedure :: import_pnm
+      procedure :: export_pnm
       procedure :: finalize => deallocate_pnm
       procedure :: negative
       procedure :: brighten
@@ -42,7 +43,6 @@ module pnm
       procedure :: flip_vertical
       procedure :: crop
       procedure :: resize
-      procedure :: print_info
    end type format_pnm
    !===============================================================================
 
@@ -75,11 +75,11 @@ contains
       print '(a, g0)'                       , 'Total Pixels: ', this%width * this%height
       print '(a, f6.2)'                     , 'Aspect Ratio: ', asp_ratio
       print '(a, f8.2, a, f8.2, a)'         , 'Pixel Size  : ', pixel_size_kb, ' KB ', pixel_size_mb, ' MB'
-      print '(a, g0)'                       , 'Max Color   : ', this%max_color
       select case (this%file_format)
        case ('pbm', 'pgm')
          print '(a, g0)'                     , 'Average     : ', avg
        case ('ppm')
+         print '(a, g0)'                       , 'Max Color   : ', this%max_color
          print '(a, a, f6.2, a, f6.2, a, f6.2)', 'Average RGB : ', 'R:', avg_red, ' G:', avg_green, ' B:', avg_blue
       end select
       print '(a)'                           , '-------------------------------------------'

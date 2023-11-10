@@ -159,9 +159,10 @@
             <a class="list-group-item" href="../type/format_pnm.html#boundprocedure-allocate_pixels">allocate_pixels</a>
             <a class="list-group-item" href="../type/format_pnm.html#boundprocedure-check_pixel_range">check_pixel_range</a>
             <a class="list-group-item" href="../type/format_pnm.html#boundprocedure-set_pixels">set_pixels</a>
-            <a class="list-group-item" href="../type/format_pnm.html#boundprocedure-export_pnm">export_pnm</a>
             <a class="list-group-item" href="../type/format_pnm.html#boundprocedure-set_pnm">set_pnm</a>
+            <a class="list-group-item" href="../type/format_pnm.html#boundprocedure-print_info">print_info</a>
             <a class="list-group-item" href="../type/format_pnm.html#boundprocedure-import_pnm">import_pnm</a>
+            <a class="list-group-item" href="../type/format_pnm.html#boundprocedure-export_pnm">export_pnm</a>
             <a class="list-group-item" href="../type/format_pnm.html#boundprocedure-finalize">finalize</a>
             <a class="list-group-item" href="../type/format_pnm.html#boundprocedure-negative">negative</a>
             <a class="list-group-item" href="../type/format_pnm.html#boundprocedure-brighten">brighten</a>
@@ -173,7 +174,6 @@
             <a class="list-group-item" href="../type/format_pnm.html#boundprocedure-flip_vertical">flip_vertical</a>
             <a class="list-group-item" href="../type/format_pnm.html#boundprocedure-crop">crop</a>
             <a class="list-group-item" href="../type/format_pnm.html#boundprocedure-resize">resize</a>
-            <a class="list-group-item" href="../type/format_pnm.html#boundprocedure-print_info">print_info</a>
         </div>
       </div>
     </div>
@@ -214,7 +214,7 @@
               <span class="anchor" id="variable-magic_number"></span>
               character(len=2),
             </td>
-              <td>public</td>
+              <td>private</td>
             <td>
               
             </td>
@@ -231,7 +231,7 @@
               <span class="anchor" id="variable-width"></span>
               integer,
             </td>
-              <td>public</td>
+              <td>private</td>
             <td>
               
             </td>
@@ -248,7 +248,7 @@
               <span class="anchor" id="variable-height"></span>
               integer,
             </td>
-              <td>public</td>
+              <td>private</td>
             <td>
               
             </td>
@@ -265,7 +265,7 @@
               <span class="anchor" id="variable-comment"></span>
               character(len=70),
             </td>
-              <td>public</td>
+              <td>private</td>
             <td>
               
             </td>
@@ -282,7 +282,7 @@
               <span class="anchor" id="variable-max_color"></span>
               integer,
             </td>
-              <td>public</td>
+              <td>private</td>
             <td>
               
             </td>
@@ -299,7 +299,7 @@
               <span class="anchor" id="variable-pixels"></span>
               integer,
             </td>
-              <td>public,</td>
+              <td>private,</td>
             <td>
               dimension(:,:), allocatable
             </td>
@@ -316,7 +316,7 @@
               <span class="anchor" id="variable-file_format"></span>
               character(len=3),
             </td>
-              <td>public</td>
+              <td>private</td>
             <td>
               
             </td>
@@ -333,7 +333,7 @@
               <span class="anchor" id="variable-encoding"></span>
               character(len=6),
             </td>
-              <td>public</td>
+              <td>private</td>
             <td>
               
             </td>
@@ -360,7 +360,7 @@
     <div class="card-header codesum">
       <span class="anchor" id="boundprocedure-set_format"></span>
       <h3>
-          procedure, public ::
+          procedure, private ::
   <strong>set_format</strong>
         
       </h3>
@@ -432,7 +432,7 @@
     <div class="card-header codesum">
       <span class="anchor" id="boundprocedure-set_file_format"></span>
       <h3>
-          procedure, public ::
+          procedure, private ::
   <strong>set_file_format</strong>
         
       </h3>
@@ -504,7 +504,7 @@
     <div class="card-header codesum">
       <span class="anchor" id="boundprocedure-set_magicnumber"></span>
       <h3>
-          procedure, public ::
+          procedure, private ::
   <strong>set_magicnumber</strong>
         
       </h3>
@@ -576,7 +576,7 @@
     <div class="card-header codesum">
       <span class="anchor" id="boundprocedure-set_width"></span>
       <h3>
-          procedure, public ::
+          procedure, private ::
   <strong>set_width</strong>
         
       </h3>
@@ -648,7 +648,7 @@
     <div class="card-header codesum">
       <span class="anchor" id="boundprocedure-set_height"></span>
       <h3>
-          procedure, public ::
+          procedure, private ::
   <strong>set_height</strong>
         
       </h3>
@@ -720,7 +720,7 @@
     <div class="card-header codesum">
       <span class="anchor" id="boundprocedure-set_comment"></span>
       <h3>
-          procedure, public ::
+          procedure, private ::
   <strong>set_comment</strong>
         
       </h3>
@@ -792,7 +792,7 @@
     <div class="card-header codesum">
       <span class="anchor" id="boundprocedure-set_max_color"></span>
       <h3>
-          procedure, public ::
+          procedure, private ::
   <strong>set_max_color</strong>
         
       </h3>
@@ -864,7 +864,7 @@
     <div class="card-header codesum">
       <span class="anchor" id="boundprocedure-set_header"></span>
       <h3>
-          procedure, public ::
+          procedure, private ::
   <strong>set_header</strong>
         
       </h3>
@@ -996,7 +996,7 @@
     <div class="card-header codesum">
       <span class="anchor" id="boundprocedure-allocate_pixels"></span>
       <h3>
-          procedure, public ::
+          procedure, private ::
   <strong>allocate_pixels</strong>
         
       </h3>
@@ -1053,7 +1053,7 @@
     <div class="card-header codesum">
       <span class="anchor" id="boundprocedure-check_pixel_range"></span>
       <h3>
-          procedure, public ::
+          procedure, private ::
   <strong>check_pixel_range</strong>
         
       </h3>
@@ -1125,7 +1125,7 @@
     <div class="card-header codesum">
       <span class="anchor" id="boundprocedure-set_pixels"></span>
       <h3>
-          procedure, public ::
+          procedure, private ::
   <strong>set_pixels</strong>
         
       </h3>
@@ -1179,93 +1179,6 @@
             </td>
             <td>::</td>
             <td><strong>pixels</strong></td>
-            <td>
-
-            </td>
-        </tr>
-    </tbody>
-  </table>
-
-
-        </li>
-    </ul>
-  </div>
-
-          </div>
-          <div class="row">
-              <div class="card mt-3">
-    <div class="card-header codesum">
-      <span class="anchor" id="boundprocedure-export_pnm"></span>
-      <h3>
-          procedure, public ::
-  <strong>export_pnm</strong>
-        
-      </h3>
-    </div>
-    <ul class="list-group">
-        <li class="list-group-item">
-                  <h3>
-    private impure subroutine <a href='../proc/export_pnm.html'>export_pnm</a>(this, file_name, encoding)  
-</h3>
-        <dl class="dl-horizontal">
-        <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
-    </dl>
-
-
-  
-
-  <h4>Arguments</h4>
-      <table class="table table-striped varlist">
-    <thead>
-      <tr>
-        <th scope="col">Type</th>
-<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
-        <th scope="col"></th>
-        <th scope="col">Name</th>
-        <th scope="col"></th>
-    </thead>
-    <tbody>
-        <tr>
-            <td>
-              <span class="anchor" ></span>
-              class(<a href='../type/format_pnm.html'>format_pnm</a>),
-            </td>
-<td>intent(inout)</td>
-              <td></td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>this</strong></td>
-            <td>
-
-            </td>
-        </tr>
-        <tr>
-            <td>
-              <span class="anchor" ></span>
-              character(len=*),
-            </td>
-<td>intent(in)</td>
-              <td></td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>file_name</strong></td>
-            <td>
-
-            </td>
-        </tr>
-        <tr>
-            <td>
-              <span class="anchor" ></span>
-              character(len=*),
-            </td>
-<td>intent(in),</td>
-              <td>optional</td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>encoding</strong></td>
             <td>
 
             </td>
@@ -1444,6 +1357,63 @@
           <div class="row">
               <div class="card mt-3">
     <div class="card-header codesum">
+      <span class="anchor" id="boundprocedure-print_info"></span>
+      <h3>
+          procedure, public ::
+  <strong>print_info</strong>
+        
+      </h3>
+    </div>
+    <ul class="list-group">
+        <li class="list-group-item">
+                  <h3>
+    private impure elemental subroutine <a href='../proc/print_info.html'>print_info</a>(this)  
+</h3>
+        <dl class="dl-horizontal">
+        <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
+    </dl>
+
+
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/format_pnm.html'>format_pnm</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>this</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+        </li>
+    </ul>
+  </div>
+
+          </div>
+          <div class="row">
+              <div class="card mt-3">
+    <div class="card-header codesum">
       <span class="anchor" id="boundprocedure-import_pnm"></span>
       <h3>
           procedure, public ::
@@ -1526,6 +1496,93 @@
             </td>
 <td>intent(in)</td>
               <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>encoding</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+        </li>
+    </ul>
+  </div>
+
+          </div>
+          <div class="row">
+              <div class="card mt-3">
+    <div class="card-header codesum">
+      <span class="anchor" id="boundprocedure-export_pnm"></span>
+      <h3>
+          procedure, public ::
+  <strong>export_pnm</strong>
+        
+      </h3>
+    </div>
+    <ul class="list-group">
+        <li class="list-group-item">
+                  <h3>
+    private impure subroutine <a href='../proc/export_pnm.html'>export_pnm</a>(this, file_name, encoding)  
+</h3>
+        <dl class="dl-horizontal">
+        <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
+    </dl>
+
+
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/format_pnm.html'>format_pnm</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>this</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              character(len=*),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>file_name</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              character(len=*),
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
               
             </td>
             <td>::</td>
@@ -2350,91 +2407,35 @@
   </div>
 
           </div>
-          <div class="row">
-              <div class="card mt-3">
-    <div class="card-header codesum">
-      <span class="anchor" id="boundprocedure-print_info"></span>
-      <h3>
-          procedure, public ::
-  <strong>print_info</strong>
-        
-      </h3>
-    </div>
-    <ul class="list-group">
-        <li class="list-group-item">
-                  <h3>
-    private impure elemental subroutine <a href='../proc/print_info.html'>print_info</a>(this)  
-</h3>
-        <dl class="dl-horizontal">
-        <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
-    </dl>
-
-
-  
-
-  <h4>Arguments</h4>
-      <table class="table table-striped varlist">
-    <thead>
-      <tr>
-        <th scope="col">Type</th>
-<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
-        <th scope="col"></th>
-        <th scope="col">Name</th>
-        <th scope="col"></th>
-    </thead>
-    <tbody>
-        <tr>
-            <td>
-              <span class="anchor" ></span>
-              class(<a href='../type/format_pnm.html'>format_pnm</a>),
-            </td>
-<td>intent(in)</td>
-              <td></td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>this</strong></td>
-            <td>
-
-            </td>
-        </tr>
-    </tbody>
-  </table>
-
-
-        </li>
-    </ul>
-  </div>
-
-          </div>
       </section>
 
     <section>
     <h3><span class="anchor" id="src"></span>Source Code</h3>
     <div class="hl codehilite"><pre><span></span><span class="w">   </span><span class="k">type </span><span class="n">format_pnm</span>
-<span class="w">      </span><span class="kt">character</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="w">                         </span><span class="kd">::</span><span class="w"> </span><span class="n">magic_number</span>
-<span class="w">      </span><span class="kt">integer</span><span class="w">                              </span><span class="kd">::</span><span class="w"> </span><span class="n">width</span>
-<span class="w">      </span><span class="kt">integer</span><span class="w">                              </span><span class="kd">::</span><span class="w"> </span><span class="n">height</span>
-<span class="w">      </span><span class="kt">character</span><span class="p">(</span><span class="mi">70</span><span class="p">)</span><span class="w">                        </span><span class="kd">::</span><span class="w"> </span><span class="n">comment</span>
-<span class="w">      </span><span class="kt">integer</span><span class="w">                              </span><span class="kd">::</span><span class="w"> </span><span class="n">max_color</span>
-<span class="w">      </span><span class="kt">integer</span><span class="p">,</span><span class="w"> </span><span class="k">dimension</span><span class="p">(:,:),</span><span class="w"> </span><span class="k">allocatable</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">pixels</span>
-<span class="w">      </span><span class="kt">character</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="w">                         </span><span class="kd">::</span><span class="w"> </span><span class="n">file_format</span>
-<span class="w">      </span><span class="kt">character</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span><span class="w">                         </span><span class="kd">::</span><span class="w"> </span><span class="n">encoding</span>
+<span class="w">      </span><span class="kt">character</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="w">                         </span><span class="p">,</span><span class="w"> </span><span class="k">private</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">magic_number</span>
+<span class="w">      </span><span class="kt">integer</span><span class="w">                              </span><span class="p">,</span><span class="w"> </span><span class="k">private</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">width</span>
+<span class="w">      </span><span class="kt">integer</span><span class="w">                              </span><span class="p">,</span><span class="w"> </span><span class="k">private</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">height</span>
+<span class="w">      </span><span class="kt">character</span><span class="p">(</span><span class="mi">70</span><span class="p">)</span><span class="w">                        </span><span class="p">,</span><span class="w"> </span><span class="k">private</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">comment</span>
+<span class="w">      </span><span class="kt">integer</span><span class="w">                              </span><span class="p">,</span><span class="w"> </span><span class="k">private</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">max_color</span>
+<span class="w">      </span><span class="kt">integer</span><span class="p">,</span><span class="w"> </span><span class="k">dimension</span><span class="p">(:,:),</span><span class="w"> </span><span class="k">allocatable</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="k">private</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">pixels</span>
+<span class="w">      </span><span class="kt">character</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="w">                         </span><span class="p">,</span><span class="w"> </span><span class="k">private</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">file_format</span>
+<span class="w">      </span><span class="kt">character</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span><span class="w">                         </span><span class="p">,</span><span class="w"> </span><span class="k">private</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">encoding</span>
 <span class="w">   </span><span class="k">contains</span>
-<span class="k">      procedure</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">set_format</span>
-<span class="w">      </span><span class="k">procedure</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">set_file_format</span>
-<span class="w">      </span><span class="k">procedure</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">set_magicnumber</span>
-<span class="w">      </span><span class="k">procedure</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">set_width</span>
-<span class="w">      </span><span class="k">procedure</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">set_height</span>
-<span class="w">      </span><span class="k">procedure</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">set_comment</span>
-<span class="w">      </span><span class="k">procedure</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">set_max_color</span>
-<span class="w">      </span><span class="k">procedure</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">set_header</span>
-<span class="w">      </span><span class="k">procedure</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">allocate_pixels</span>
-<span class="w">      </span><span class="k">procedure</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">check_pixel_range</span>
-<span class="w">      </span><span class="k">procedure</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">set_pixels</span>
-<span class="w">      </span><span class="k">procedure</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">export_pnm</span>
+<span class="k">      procedure</span><span class="p">,</span><span class="w"> </span><span class="k">private</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">set_format</span>
+<span class="w">      </span><span class="k">procedure</span><span class="p">,</span><span class="w"> </span><span class="k">private</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">set_file_format</span>
+<span class="w">      </span><span class="k">procedure</span><span class="p">,</span><span class="w"> </span><span class="k">private</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">set_magicnumber</span>
+<span class="w">      </span><span class="k">procedure</span><span class="p">,</span><span class="w"> </span><span class="k">private</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">set_width</span>
+<span class="w">      </span><span class="k">procedure</span><span class="p">,</span><span class="w"> </span><span class="k">private</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">set_height</span>
+<span class="w">      </span><span class="k">procedure</span><span class="p">,</span><span class="w"> </span><span class="k">private</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">set_comment</span>
+<span class="w">      </span><span class="k">procedure</span><span class="p">,</span><span class="w"> </span><span class="k">private</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">set_max_color</span>
+<span class="w">      </span><span class="k">procedure</span><span class="p">,</span><span class="w"> </span><span class="k">private</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">set_header</span>
+<span class="w">      </span><span class="k">procedure</span><span class="p">,</span><span class="w"> </span><span class="k">private</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">allocate_pixels</span>
+<span class="w">      </span><span class="k">procedure</span><span class="p">,</span><span class="w"> </span><span class="k">private</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">check_pixel_range</span>
+<span class="w">      </span><span class="k">procedure</span><span class="p">,</span><span class="w"> </span><span class="k">private</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">set_pixels</span>
 <span class="w">      </span><span class="k">procedure</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">set_pnm</span>
+<span class="w">      </span><span class="k">procedure</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">print_info</span>
 <span class="w">      </span><span class="k">procedure</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">import_pnm</span>
+<span class="w">      </span><span class="k">procedure</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">export_pnm</span>
 <span class="w">      </span><span class="k">procedure</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">finalize</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">deallocate_pnm</span>
 <span class="w">      </span><span class="k">procedure</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">negative</span>
 <span class="w">      </span><span class="k">procedure</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">brighten</span>
@@ -2446,7 +2447,6 @@
 <span class="w">      </span><span class="k">procedure</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">flip_vertical</span>
 <span class="w">      </span><span class="k">procedure</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">crop</span>
 <span class="w">      </span><span class="k">procedure</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">resize</span>
-<span class="w">      </span><span class="k">procedure</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">print_info</span>
 <span class="w">   </span><span class="k">end type </span><span class="n">format_pnm</span>
 </pre></div>
 
@@ -2467,7 +2467,7 @@
             <p class="text-end">
               Documentation generated by
               <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
- on 2023-11-10T01:46:32.496455             </p>
+ on 2023-11-10T08:36:23.369994             </p>
           </div>
         </div>
         <br>
