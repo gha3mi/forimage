@@ -4,7 +4,7 @@ program demo
    implicit none
 
    ! Declare format_pnm object and parameters for image dimensions
-   type(format_pnm)    :: image, edit
+   type(format_pnm)    :: image, copy_image
    integer, parameter  :: height = 400
    integer, parameter  :: width  = 400
    integer :: px(height, 3*width)
@@ -33,76 +33,76 @@ program demo
    call image%export_pnm('pnm_files/mandelbrot_ascii', 'ascii')
 
    ! Export the image to a PPM file with a different encoding
-   edit = image ! Copy the format_pnm object
-   call edit%negative()
-   call edit%export_pnm('pnm_files/mandelbrot_binary_negative')
-   call edit%finalize()
+   copy_image = image ! Copy the format_pnm object
+   call copy_image%negative()
+   call copy_image%export_pnm('pnm_files/mandelbrot_binary_negative')
+   call copy_image%finalize()
 
    ! Brighten the image
-   edit = image ! Copy the format_pnm object
-   call edit%brighten(100)
-   call edit%export_pnm('pnm_files/mandelbrot_binary_brighten')
-   call edit%finalize()
+   copy_image = image ! Copy the format_pnm object
+   call copy_image%brighten(100)
+   call copy_image%export_pnm('pnm_files/mandelbrot_binary_brighten')
+   call copy_image%finalize()
 
    ! Swap the red and blue channels
-   edit = image ! Copy the format_pnm object
-   call edit%swap_channels('rb')
-   call edit%export_pnm('pnm_files/mandelbrot_binary_swap')
-   call edit%finalize()
+   copy_image = image ! Copy the format_pnm object
+   call copy_image%swap_channels('rb')
+   call copy_image%export_pnm('pnm_files/mandelbrot_binary_swap')
+   call copy_image%finalize()
 
    ! Remove the blue channel
-   edit = image ! Copy the format_pnm object
-   call edit%remove_channels(remove_b=.true.)
-   call edit%export_pnm('pnm_files/mandelbrot_binary_remove')
-   call edit%finalize()
+   copy_image = image ! Copy the format_pnm object
+   call copy_image%remove_channels(remove_b=.true.)
+   call copy_image%export_pnm('pnm_files/mandelbrot_binary_remove')
+   call copy_image%finalize()
 
    ! Convert the image to greyscale
-   edit = image ! Copy the format_pnm object
-   call edit%greyscale()
-   call edit%export_pnm('pnm_files/mandelbrot_binary_greyscale')
-   call edit%finalize()
+   copy_image = image ! Copy the format_pnm object
+   call copy_image%greyscale()
+   call copy_image%export_pnm('pnm_files/mandelbrot_binary_greyscale')
+   call copy_image%finalize()
 
    ! Rotate the image 90 degrees clockwise
-   edit = image ! Copy the format_pnm object
-   call edit%rotate(-90)
-   call edit%export_pnm('pnm_files/mandelbrot_binary_rotate')
-   call edit%finalize()
+   copy_image = image ! Copy the format_pnm object
+   call copy_image%rotate(-90)
+   call copy_image%export_pnm('pnm_files/mandelbrot_binary_rotate')
+   call copy_image%finalize()
 
    ! Flip the image horizontally
-   edit = image ! Copy the format_pnm object
-   call edit%flip_horizontal()
-   call edit%export_pnm('pnm_files/mandelbrot_binary_flip_horizontal')
-   call edit%finalize()
+   copy_image = image ! Copy the format_pnm object
+   call copy_image%flip_horizontal()
+   call copy_image%export_pnm('pnm_files/mandelbrot_binary_flip_horizontal')
+   call copy_image%finalize()
 
    ! Flip the image vertically
-   edit = image ! Copy the format_pnm object
-   call edit%flip_vertical()
-   call edit%export_pnm('pnm_files/mandelbrot_binary_flip_vertical')
-   call edit%finalize()
+   copy_image = image ! Copy the format_pnm object
+   call copy_image%flip_vertical()
+   call copy_image%export_pnm('pnm_files/mandelbrot_binary_flip_vertical')
+   call copy_image%finalize()
 
    ! Crop the image
-   edit = image ! Copy the format_pnm object
-   call edit%crop(100,200, 50, 300)
-   call edit%export_pnm('pnm_files/mandelbrot_binary_crop')
-   call edit%finalize()
+   copy_image = image ! Copy the format_pnm object
+   call copy_image%crop(100,200, 50, 300)
+   call copy_image%export_pnm('pnm_files/mandelbrot_binary_crop')
+   call copy_image%finalize()
 
    ! Resize the image
-   edit = image ! Copy the format_pnm object
-   call edit%resize(800,200)
-   call edit%export_pnm('pnm_files/mandelbrot_binary_resize')
-   call edit%finalize()
+   copy_image = image ! Copy the format_pnm object
+   call copy_image%resize(800,200)
+   call copy_image%export_pnm('pnm_files/mandelbrot_binary_resize')
+   call copy_image%finalize()
 
    ! Import a PPM file with binary encoding and export it with ascii encoding
-   edit = image ! Copy the format_pnm object
-   call edit%import_pnm('pnm_files/mandelbrot_binary', 'ppm', 'binary')
-   call edit%export_pnm('pnm_files/mandelbrot_ascii_ex', 'ascii')
-   call edit%finalize()
+   copy_image = image ! Copy the format_pnm object
+   call copy_image%import_pnm('pnm_files/mandelbrot_binary', 'ppm', 'binary')
+   call copy_image%export_pnm('pnm_files/mandelbrot_ascii_ex', 'ascii')
+   call copy_image%finalize()
 
    ! Import a PPM file with ascii encoding and export it with binary encoding
-   edit = image ! Copy the format_pnm object
-   call edit%import_pnm('pnm_files/mandelbrot_ascii', 'ppm', 'ascii')
-   call edit%export_pnm('pnm_files/mandelbrot_binary_ex', 'binary')
-   call edit%finalize()
+   copy_image = image ! Copy the format_pnm object
+   call copy_image%import_pnm('pnm_files/mandelbrot_ascii', 'ppm', 'ascii')
+   call copy_image%export_pnm('pnm_files/mandelbrot_binary_ex', 'binary')
+   call copy_image%finalize()
 
 
    ! Finalize the format_pnm object to release resources
