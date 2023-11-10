@@ -15,8 +15,7 @@ jobs:
           - {compiler: intel-classic}
         exclude:
           - os: windows-latest
-            toolchain:
-              - {compiler: intel-classic}
+            toolchain: {compiler: intel-classic}
 
     steps:
     - name: Checkout code
