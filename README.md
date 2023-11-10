@@ -22,47 +22,47 @@ Available features include:
 
 - Original
 
-<img alt="demo" src="https://github.com/gha3mi/forimage/raw/main/pnm_files/mandelbrot_binary.png" width="400"> 
+<img alt="demo" src="https://github.com/gha3mi/forimage/raw/main/png_files/mandelbrot_binary.png" width="400"> 
 
 - Negative
 
-<img alt="demo" src="https://github.com/gha3mi/forimage/raw/main/pnm_files/mandelbrot_binary_negative.png" width="400">
+<img alt="demo" src="https://github.com/gha3mi/forimage/raw/main/png_files/mandelbrot_binary_negative.png" width="400">
 
 - Brighten
 
-<img alt="demo" src="https://github.com/gha3mi/forimage/raw/main/pnm_files/mandelbrot_binary_brighten.png" width="400">
+<img alt="demo" src="https://github.com/gha3mi/forimage/raw/main/png_files/mandelbrot_binary_brighten.png" width="400">
 
 - Swap Channels
 
-<img alt="demo" src="https://github.com/gha3mi/forimage/raw/main/pnm_files/mandelbrot_binary_swap.png" width="400">
+<img alt="demo" src="https://github.com/gha3mi/forimage/raw/main/png_files/mandelbrot_binary_swap.png" width="400">
 
 - Remove Channels
 
-<img alt="demo" src="https://github.com/gha3mi/forimage/raw/main/pnm_files/mandelbrot_binary_remove.png" width="400">
+<img alt="demo" src="https://github.com/gha3mi/forimage/raw/main/png_files/mandelbrot_binary_remove.png" width="400">
 
 - Greyscale
 
-<img alt="demo" src="https://github.com/gha3mi/forimage/raw/main/pnm_files/mandelbrot_binary_greyscale.png" width="400">
+<img alt="demo" src="https://github.com/gha3mi/forimage/raw/main/png_files/mandelbrot_binary_greyscale.png" width="400">
 
 - Rotate
 
-<img alt="demo" src="https://github.com/gha3mi/forimage/raw/main/pnm_files/mandelbrot_binary_rotate.png" width="400">
+<img alt="demo" src="https://github.com/gha3mi/forimage/raw/main/png_files/mandelbrot_binary_rotate.png" width="400">
 
 - Flip Horizontal
 
-<img alt="demo" src="https://github.com/gha3mi/forimage/raw/main/pnm_files/mandelbrot_binary_flip_horizontal.png" width="400">
+<img alt="demo" src="https://github.com/gha3mi/forimage/raw/main/png_files/mandelbrot_binary_flip_horizontal.png" width="400">
 
 - Flip Vertical
 
-<img alt="demo" src="https://github.com/gha3mi/forimage/raw/main/pnm_files/mandelbrot_binary_flip_vertical.png" width="400">
+<img alt="demo" src="https://github.com/gha3mi/forimage/raw/main/png_files/mandelbrot_binary_flip_vertical.png" width="400">
 
 - Crop
 
-<img alt="demo" src="https://github.com/gha3mi/forimage/raw/main/pnm_files/mandelbrot_binary_crop.png" width="250">
+<img alt="demo" src="https://github.com/gha3mi/forimage/raw/main/png_files/mandelbrot_binary_crop.png" width="250">
 
 - Resize
 
-<img alt="demo" src="https://github.com/gha3mi/forimage/raw/main/pnm_files/mandelbrot_binary_resize.png" width="250">
+<img alt="demo" src="https://github.com/gha3mi/forimage/raw/main/png_files/mandelbrot_binary_resize.png" width="250">
 
 ## fpm dependency
 
