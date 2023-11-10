@@ -113,7 +113,7 @@
       <div id="vars-0" class="collapse">
         <div class="list-group list-group-flush">
             <a class="list-group-item" href="../program/demo.html#variable-image">image</a>
-            <a class="list-group-item" href="../program/demo.html#variable-edit">edit</a>
+            <a class="list-group-item" href="../program/demo.html#variable-copy_image">copy_image</a>
             <a class="list-group-item" href="../program/demo.html#variable-height~5">height</a>
             <a class="list-group-item" href="../program/demo.html#variable-width~5">width</a>
             <a class="list-group-item" href="../program/demo.html#variable-px">px</a>
@@ -1054,14 +1054,14 @@ large graphs.</div>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-edit"></span>
+              <span class="anchor" id="variable-copy_image"></span>
               type(<a href='../type/format_pnm.html'>format_pnm</a>)
             </td>
             <td>
               
             </td>
             <td>::</td>
-            <td><strong>edit</strong></td>
+            <td><strong>copy_image</strong></td>
                 <td></td>
                 <td></td>
             <td>
@@ -1203,7 +1203,7 @@ parameter
 <span class="w">   </span><span class="k">implicit none</span>
 
 <span class="w">   </span><span class="c">! Declare format_pnm object and parameters for image dimensions</span>
-<span class="w">   </span><span class="k">type</span><span class="p">(</span><span class="n">format_pnm</span><span class="p">)</span><span class="w">    </span><span class="kd">::</span><span class="w"> </span><span class="n">image</span><span class="p">,</span><span class="w"> </span><span class="n">edit</span>
+<span class="w">   </span><span class="k">type</span><span class="p">(</span><span class="n">format_pnm</span><span class="p">)</span><span class="w">    </span><span class="kd">::</span><span class="w"> </span><span class="n">image</span><span class="p">,</span><span class="w"> </span><span class="n">copy_image</span>
 <span class="w">   </span><span class="kt">integer</span><span class="p">,</span><span class="w"> </span><span class="k">parameter</span><span class="w">  </span><span class="kd">::</span><span class="w"> </span><span class="n">height</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">400</span>
 <span class="w">   </span><span class="kt">integer</span><span class="p">,</span><span class="w"> </span><span class="k">parameter</span><span class="w">  </span><span class="kd">::</span><span class="w"> </span><span class="n">width</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="mi">400</span>
 <span class="w">   </span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">px</span><span class="p">(</span><span class="n">height</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="o">*</span><span class="n">width</span><span class="p">)</span>
@@ -1232,76 +1232,76 @@ parameter
 <span class="w">   </span><span class="k">call </span><span class="n">image</span><span class="p">%</span><span class="n">export_pnm</span><span class="p">(</span><span class="s1">&#39;pnm_files/mandelbrot_ascii&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;ascii&#39;</span><span class="p">)</span>
 
 <span class="w">   </span><span class="c">! Export the image to a PPM file with a different encoding</span>
-<span class="w">   </span><span class="n">edit</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">image</span><span class="w"> </span><span class="c">! Copy the format_pnm object</span>
-<span class="w">   </span><span class="k">call </span><span class="n">edit</span><span class="p">%</span><span class="n">negative</span><span class="p">()</span>
-<span class="w">   </span><span class="k">call </span><span class="n">edit</span><span class="p">%</span><span class="n">export_pnm</span><span class="p">(</span><span class="s1">&#39;pnm_files/mandelbrot_binary_negative&#39;</span><span class="p">)</span>
-<span class="w">   </span><span class="k">call </span><span class="n">edit</span><span class="p">%</span><span class="n">finalize</span><span class="p">()</span>
+<span class="w">   </span><span class="n">copy_image</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">image</span><span class="w"> </span><span class="c">! Copy the format_pnm object</span>
+<span class="w">   </span><span class="k">call </span><span class="n">copy_image</span><span class="p">%</span><span class="n">negative</span><span class="p">()</span>
+<span class="w">   </span><span class="k">call </span><span class="n">copy_image</span><span class="p">%</span><span class="n">export_pnm</span><span class="p">(</span><span class="s1">&#39;pnm_files/mandelbrot_binary_negative&#39;</span><span class="p">)</span>
+<span class="w">   </span><span class="k">call </span><span class="n">copy_image</span><span class="p">%</span><span class="n">finalize</span><span class="p">()</span>
 
 <span class="w">   </span><span class="c">! Brighten the image</span>
-<span class="w">   </span><span class="n">edit</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">image</span><span class="w"> </span><span class="c">! Copy the format_pnm object</span>
-<span class="w">   </span><span class="k">call </span><span class="n">edit</span><span class="p">%</span><span class="n">brighten</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
-<span class="w">   </span><span class="k">call </span><span class="n">edit</span><span class="p">%</span><span class="n">export_pnm</span><span class="p">(</span><span class="s1">&#39;pnm_files/mandelbrot_binary_brighten&#39;</span><span class="p">)</span>
-<span class="w">   </span><span class="k">call </span><span class="n">edit</span><span class="p">%</span><span class="n">finalize</span><span class="p">()</span>
+<span class="w">   </span><span class="n">copy_image</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">image</span><span class="w"> </span><span class="c">! Copy the format_pnm object</span>
+<span class="w">   </span><span class="k">call </span><span class="n">copy_image</span><span class="p">%</span><span class="n">brighten</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+<span class="w">   </span><span class="k">call </span><span class="n">copy_image</span><span class="p">%</span><span class="n">export_pnm</span><span class="p">(</span><span class="s1">&#39;pnm_files/mandelbrot_binary_brighten&#39;</span><span class="p">)</span>
+<span class="w">   </span><span class="k">call </span><span class="n">copy_image</span><span class="p">%</span><span class="n">finalize</span><span class="p">()</span>
 
 <span class="w">   </span><span class="c">! Swap the red and blue channels</span>
-<span class="w">   </span><span class="n">edit</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">image</span><span class="w"> </span><span class="c">! Copy the format_pnm object</span>
-<span class="w">   </span><span class="k">call </span><span class="n">edit</span><span class="p">%</span><span class="n">swap_channels</span><span class="p">(</span><span class="s1">&#39;rb&#39;</span><span class="p">)</span>
-<span class="w">   </span><span class="k">call </span><span class="n">edit</span><span class="p">%</span><span class="n">export_pnm</span><span class="p">(</span><span class="s1">&#39;pnm_files/mandelbrot_binary_swap&#39;</span><span class="p">)</span>
-<span class="w">   </span><span class="k">call </span><span class="n">edit</span><span class="p">%</span><span class="n">finalize</span><span class="p">()</span>
+<span class="w">   </span><span class="n">copy_image</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">image</span><span class="w"> </span><span class="c">! Copy the format_pnm object</span>
+<span class="w">   </span><span class="k">call </span><span class="n">copy_image</span><span class="p">%</span><span class="n">swap_channels</span><span class="p">(</span><span class="s1">&#39;rb&#39;</span><span class="p">)</span>
+<span class="w">   </span><span class="k">call </span><span class="n">copy_image</span><span class="p">%</span><span class="n">export_pnm</span><span class="p">(</span><span class="s1">&#39;pnm_files/mandelbrot_binary_swap&#39;</span><span class="p">)</span>
+<span class="w">   </span><span class="k">call </span><span class="n">copy_image</span><span class="p">%</span><span class="n">finalize</span><span class="p">()</span>
 
 <span class="w">   </span><span class="c">! Remove the blue channel</span>
-<span class="w">   </span><span class="n">edit</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">image</span><span class="w"> </span><span class="c">! Copy the format_pnm object</span>
-<span class="w">   </span><span class="k">call </span><span class="n">edit</span><span class="p">%</span><span class="n">remove_channels</span><span class="p">(</span><span class="n">remove_b</span><span class="o">=</span><span class="p">.</span><span class="n">true</span><span class="p">.)</span>
-<span class="w">   </span><span class="k">call </span><span class="n">edit</span><span class="p">%</span><span class="n">export_pnm</span><span class="p">(</span><span class="s1">&#39;pnm_files/mandelbrot_binary_remove&#39;</span><span class="p">)</span>
-<span class="w">   </span><span class="k">call </span><span class="n">edit</span><span class="p">%</span><span class="n">finalize</span><span class="p">()</span>
+<span class="w">   </span><span class="n">copy_image</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">image</span><span class="w"> </span><span class="c">! Copy the format_pnm object</span>
+<span class="w">   </span><span class="k">call </span><span class="n">copy_image</span><span class="p">%</span><span class="n">remove_channels</span><span class="p">(</span><span class="n">remove_b</span><span class="o">=</span><span class="p">.</span><span class="n">true</span><span class="p">.)</span>
+<span class="w">   </span><span class="k">call </span><span class="n">copy_image</span><span class="p">%</span><span class="n">export_pnm</span><span class="p">(</span><span class="s1">&#39;pnm_files/mandelbrot_binary_remove&#39;</span><span class="p">)</span>
+<span class="w">   </span><span class="k">call </span><span class="n">copy_image</span><span class="p">%</span><span class="n">finalize</span><span class="p">()</span>
 
 <span class="w">   </span><span class="c">! Convert the image to greyscale</span>
-<span class="w">   </span><span class="n">edit</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">image</span><span class="w"> </span><span class="c">! Copy the format_pnm object</span>
-<span class="w">   </span><span class="k">call </span><span class="n">edit</span><span class="p">%</span><span class="n">greyscale</span><span class="p">()</span>
-<span class="w">   </span><span class="k">call </span><span class="n">edit</span><span class="p">%</span><span class="n">export_pnm</span><span class="p">(</span><span class="s1">&#39;pnm_files/mandelbrot_binary_greyscale&#39;</span><span class="p">)</span>
-<span class="w">   </span><span class="k">call </span><span class="n">edit</span><span class="p">%</span><span class="n">finalize</span><span class="p">()</span>
+<span class="w">   </span><span class="n">copy_image</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">image</span><span class="w"> </span><span class="c">! Copy the format_pnm object</span>
+<span class="w">   </span><span class="k">call </span><span class="n">copy_image</span><span class="p">%</span><span class="n">greyscale</span><span class="p">()</span>
+<span class="w">   </span><span class="k">call </span><span class="n">copy_image</span><span class="p">%</span><span class="n">export_pnm</span><span class="p">(</span><span class="s1">&#39;pnm_files/mandelbrot_binary_greyscale&#39;</span><span class="p">)</span>
+<span class="w">   </span><span class="k">call </span><span class="n">copy_image</span><span class="p">%</span><span class="n">finalize</span><span class="p">()</span>
 
 <span class="w">   </span><span class="c">! Rotate the image 90 degrees clockwise</span>
-<span class="w">   </span><span class="n">edit</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">image</span><span class="w"> </span><span class="c">! Copy the format_pnm object</span>
-<span class="w">   </span><span class="k">call </span><span class="n">edit</span><span class="p">%</span><span class="n">rotate</span><span class="p">(</span><span class="o">-</span><span class="mi">90</span><span class="p">)</span>
-<span class="w">   </span><span class="k">call </span><span class="n">edit</span><span class="p">%</span><span class="n">export_pnm</span><span class="p">(</span><span class="s1">&#39;pnm_files/mandelbrot_binary_rotate&#39;</span><span class="p">)</span>
-<span class="w">   </span><span class="k">call </span><span class="n">edit</span><span class="p">%</span><span class="n">finalize</span><span class="p">()</span>
+<span class="w">   </span><span class="n">copy_image</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">image</span><span class="w"> </span><span class="c">! Copy the format_pnm object</span>
+<span class="w">   </span><span class="k">call </span><span class="n">copy_image</span><span class="p">%</span><span class="n">rotate</span><span class="p">(</span><span class="o">-</span><span class="mi">90</span><span class="p">)</span>
+<span class="w">   </span><span class="k">call </span><span class="n">copy_image</span><span class="p">%</span><span class="n">export_pnm</span><span class="p">(</span><span class="s1">&#39;pnm_files/mandelbrot_binary_rotate&#39;</span><span class="p">)</span>
+<span class="w">   </span><span class="k">call </span><span class="n">copy_image</span><span class="p">%</span><span class="n">finalize</span><span class="p">()</span>
 
 <span class="w">   </span><span class="c">! Flip the image horizontally</span>
-<span class="w">   </span><span class="n">edit</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">image</span><span class="w"> </span><span class="c">! Copy the format_pnm object</span>
-<span class="w">   </span><span class="k">call </span><span class="n">edit</span><span class="p">%</span><span class="n">flip_horizontal</span><span class="p">()</span>
-<span class="w">   </span><span class="k">call </span><span class="n">edit</span><span class="p">%</span><span class="n">export_pnm</span><span class="p">(</span><span class="s1">&#39;pnm_files/mandelbrot_binary_flip_horizontal&#39;</span><span class="p">)</span>
-<span class="w">   </span><span class="k">call </span><span class="n">edit</span><span class="p">%</span><span class="n">finalize</span><span class="p">()</span>
+<span class="w">   </span><span class="n">copy_image</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">image</span><span class="w"> </span><span class="c">! Copy the format_pnm object</span>
+<span class="w">   </span><span class="k">call </span><span class="n">copy_image</span><span class="p">%</span><span class="n">flip_horizontal</span><span class="p">()</span>
+<span class="w">   </span><span class="k">call </span><span class="n">copy_image</span><span class="p">%</span><span class="n">export_pnm</span><span class="p">(</span><span class="s1">&#39;pnm_files/mandelbrot_binary_flip_horizontal&#39;</span><span class="p">)</span>
+<span class="w">   </span><span class="k">call </span><span class="n">copy_image</span><span class="p">%</span><span class="n">finalize</span><span class="p">()</span>
 
 <span class="w">   </span><span class="c">! Flip the image vertically</span>
-<span class="w">   </span><span class="n">edit</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">image</span><span class="w"> </span><span class="c">! Copy the format_pnm object</span>
-<span class="w">   </span><span class="k">call </span><span class="n">edit</span><span class="p">%</span><span class="n">flip_vertical</span><span class="p">()</span>
-<span class="w">   </span><span class="k">call </span><span class="n">edit</span><span class="p">%</span><span class="n">export_pnm</span><span class="p">(</span><span class="s1">&#39;pnm_files/mandelbrot_binary_flip_vertical&#39;</span><span class="p">)</span>
-<span class="w">   </span><span class="k">call </span><span class="n">edit</span><span class="p">%</span><span class="n">finalize</span><span class="p">()</span>
+<span class="w">   </span><span class="n">copy_image</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">image</span><span class="w"> </span><span class="c">! Copy the format_pnm object</span>
+<span class="w">   </span><span class="k">call </span><span class="n">copy_image</span><span class="p">%</span><span class="n">flip_vertical</span><span class="p">()</span>
+<span class="w">   </span><span class="k">call </span><span class="n">copy_image</span><span class="p">%</span><span class="n">export_pnm</span><span class="p">(</span><span class="s1">&#39;pnm_files/mandelbrot_binary_flip_vertical&#39;</span><span class="p">)</span>
+<span class="w">   </span><span class="k">call </span><span class="n">copy_image</span><span class="p">%</span><span class="n">finalize</span><span class="p">()</span>
 
 <span class="w">   </span><span class="c">! Crop the image</span>
-<span class="w">   </span><span class="n">edit</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">image</span><span class="w"> </span><span class="c">! Copy the format_pnm object</span>
-<span class="w">   </span><span class="k">call </span><span class="n">edit</span><span class="p">%</span><span class="n">crop</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span><span class="mi">200</span><span class="p">,</span><span class="w"> </span><span class="mi">50</span><span class="p">,</span><span class="w"> </span><span class="mi">300</span><span class="p">)</span>
-<span class="w">   </span><span class="k">call </span><span class="n">edit</span><span class="p">%</span><span class="n">export_pnm</span><span class="p">(</span><span class="s1">&#39;pnm_files/mandelbrot_binary_crop&#39;</span><span class="p">)</span>
-<span class="w">   </span><span class="k">call </span><span class="n">edit</span><span class="p">%</span><span class="n">finalize</span><span class="p">()</span>
+<span class="w">   </span><span class="n">copy_image</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">image</span><span class="w"> </span><span class="c">! Copy the format_pnm object</span>
+<span class="w">   </span><span class="k">call </span><span class="n">copy_image</span><span class="p">%</span><span class="n">crop</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span><span class="mi">200</span><span class="p">,</span><span class="w"> </span><span class="mi">50</span><span class="p">,</span><span class="w"> </span><span class="mi">300</span><span class="p">)</span>
+<span class="w">   </span><span class="k">call </span><span class="n">copy_image</span><span class="p">%</span><span class="n">export_pnm</span><span class="p">(</span><span class="s1">&#39;pnm_files/mandelbrot_binary_crop&#39;</span><span class="p">)</span>
+<span class="w">   </span><span class="k">call </span><span class="n">copy_image</span><span class="p">%</span><span class="n">finalize</span><span class="p">()</span>
 
 <span class="w">   </span><span class="c">! Resize the image</span>
-<span class="w">   </span><span class="n">edit</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">image</span><span class="w"> </span><span class="c">! Copy the format_pnm object</span>
-<span class="w">   </span><span class="k">call </span><span class="n">edit</span><span class="p">%</span><span class="n">resize</span><span class="p">(</span><span class="mi">800</span><span class="p">,</span><span class="mi">200</span><span class="p">)</span>
-<span class="w">   </span><span class="k">call </span><span class="n">edit</span><span class="p">%</span><span class="n">export_pnm</span><span class="p">(</span><span class="s1">&#39;pnm_files/mandelbrot_binary_resize&#39;</span><span class="p">)</span>
-<span class="w">   </span><span class="k">call </span><span class="n">edit</span><span class="p">%</span><span class="n">finalize</span><span class="p">()</span>
+<span class="w">   </span><span class="n">copy_image</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">image</span><span class="w"> </span><span class="c">! Copy the format_pnm object</span>
+<span class="w">   </span><span class="k">call </span><span class="n">copy_image</span><span class="p">%</span><span class="n">resize</span><span class="p">(</span><span class="mi">800</span><span class="p">,</span><span class="mi">200</span><span class="p">)</span>
+<span class="w">   </span><span class="k">call </span><span class="n">copy_image</span><span class="p">%</span><span class="n">export_pnm</span><span class="p">(</span><span class="s1">&#39;pnm_files/mandelbrot_binary_resize&#39;</span><span class="p">)</span>
+<span class="w">   </span><span class="k">call </span><span class="n">copy_image</span><span class="p">%</span><span class="n">finalize</span><span class="p">()</span>
 
 <span class="w">   </span><span class="c">! Import a PPM file with binary encoding and export it with ascii encoding</span>
-<span class="w">   </span><span class="n">edit</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">image</span><span class="w"> </span><span class="c">! Copy the format_pnm object</span>
-<span class="w">   </span><span class="k">call </span><span class="n">edit</span><span class="p">%</span><span class="n">import_pnm</span><span class="p">(</span><span class="s1">&#39;pnm_files/mandelbrot_binary&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;ppm&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;binary&#39;</span><span class="p">)</span>
-<span class="w">   </span><span class="k">call </span><span class="n">edit</span><span class="p">%</span><span class="n">export_pnm</span><span class="p">(</span><span class="s1">&#39;pnm_files/mandelbrot_ascii_ex&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;ascii&#39;</span><span class="p">)</span>
-<span class="w">   </span><span class="k">call </span><span class="n">edit</span><span class="p">%</span><span class="n">finalize</span><span class="p">()</span>
+<span class="w">   </span><span class="n">copy_image</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">image</span><span class="w"> </span><span class="c">! Copy the format_pnm object</span>
+<span class="w">   </span><span class="k">call </span><span class="n">copy_image</span><span class="p">%</span><span class="n">import_pnm</span><span class="p">(</span><span class="s1">&#39;pnm_files/mandelbrot_binary&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;ppm&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;binary&#39;</span><span class="p">)</span>
+<span class="w">   </span><span class="k">call </span><span class="n">copy_image</span><span class="p">%</span><span class="n">export_pnm</span><span class="p">(</span><span class="s1">&#39;pnm_files/mandelbrot_ascii_ex&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;ascii&#39;</span><span class="p">)</span>
+<span class="w">   </span><span class="k">call </span><span class="n">copy_image</span><span class="p">%</span><span class="n">finalize</span><span class="p">()</span>
 
 <span class="w">   </span><span class="c">! Import a PPM file with ascii encoding and export it with binary encoding</span>
-<span class="w">   </span><span class="n">edit</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">image</span><span class="w"> </span><span class="c">! Copy the format_pnm object</span>
-<span class="w">   </span><span class="k">call </span><span class="n">edit</span><span class="p">%</span><span class="n">import_pnm</span><span class="p">(</span><span class="s1">&#39;pnm_files/mandelbrot_ascii&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;ppm&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;ascii&#39;</span><span class="p">)</span>
-<span class="w">   </span><span class="k">call </span><span class="n">edit</span><span class="p">%</span><span class="n">export_pnm</span><span class="p">(</span><span class="s1">&#39;pnm_files/mandelbrot_binary_ex&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;binary&#39;</span><span class="p">)</span>
-<span class="w">   </span><span class="k">call </span><span class="n">edit</span><span class="p">%</span><span class="n">finalize</span><span class="p">()</span>
+<span class="w">   </span><span class="n">copy_image</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">image</span><span class="w"> </span><span class="c">! Copy the format_pnm object</span>
+<span class="w">   </span><span class="k">call </span><span class="n">copy_image</span><span class="p">%</span><span class="n">import_pnm</span><span class="p">(</span><span class="s1">&#39;pnm_files/mandelbrot_ascii&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;ppm&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;ascii&#39;</span><span class="p">)</span>
+<span class="w">   </span><span class="k">call </span><span class="n">copy_image</span><span class="p">%</span><span class="n">export_pnm</span><span class="p">(</span><span class="s1">&#39;pnm_files/mandelbrot_binary_ex&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;binary&#39;</span><span class="p">)</span>
+<span class="w">   </span><span class="k">call </span><span class="n">copy_image</span><span class="p">%</span><span class="n">finalize</span><span class="p">()</span>
 
 
 <span class="w">   </span><span class="c">! Finalize the format_pnm object to release resources</span>
@@ -1365,7 +1365,7 @@ parameter
             <p class="text-end">
               Documentation generated by
               <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
- on 2023-11-10T08:36:23.369994             </p>
+ on 2023-11-10T09:17:08.797620             </p>
           </div>
         </div>
         <br>
