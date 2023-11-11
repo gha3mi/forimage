@@ -212,8 +212,8 @@ contains
 
       end select
 
-      this%height = new_height
-      this%width = new_width
+      call this%set_height(new_height)
+      call this%set_width(new_width)
       deallocate(this%pixels)
       call this%allocate_pixels()
       call this%set_pixels(resized_pixels)
@@ -270,8 +270,8 @@ contains
       end select
 
       ! Update image dimensions and pixels
-      this%height = cropped_height
-      this%width  = cropped_width
+      call this%set_height(cropped_height)
+      call this%set_width(cropped_width)
       deallocate(this%pixels)
       call this%allocate_pixels()
 
@@ -289,8 +289,16 @@ contains
       class(format_pnm), intent(inout) :: this
 
       this%pixels = this%pixels(size(this%pixels,1):1:-1, :)
-
       call this%check_pixel_range(this%pixels)
+
+      call this%set_height(size(this%pixels,1))
+      
+      select case (this%file_format)
+       case ('pbm', 'pgm')
+         call this%set_width(size(this%pixels,2))
+      case ('ppm')
+         call this%set_width(size(this%pixels,2)/3)
+      end select
    end subroutine flip_vertical
    !===============================================================================
 
@@ -325,6 +333,15 @@ contains
 
          call this%check_pixel_range(this%pixels)
 
+      end select
+
+      call this%set_height(size(this%pixels,1))
+      
+      select case (this%file_format)
+       case ('pbm', 'pgm')
+         call this%set_width(size(this%pixels,2))
+      case ('ppm')
+         call this%set_width(size(this%pixels,2)/3)
       end select
 
    end subroutine flip_horizontal
@@ -410,8 +427,8 @@ contains
       end select
 
       ! Update height and width of the image
-      this%height = target_height
-      this%width  = target_width
+      call this%set_height(target_height)
+      call this%set_width(target_width)
 
       deallocate(this%pixels)
       call this%allocate_pixels()
