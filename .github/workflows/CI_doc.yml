@@ -1,4 +1,4 @@
-name: CI_doc
+name: doc
 on: [push]
 jobs:
 
