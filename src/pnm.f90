@@ -13,11 +13,11 @@ module pnm
       integer                                  , private :: height
       character(70)                            , private :: comment
       integer                                  , private :: max_color
-      integer(ik), dimension(:,:), allocatable , private :: pixels
+      integer(ik), dimension(:,:), allocatable :: pixels
       character(3)                             , private :: file_format
       character(6)                             , private :: encoding
    contains
-      procedure, private :: set_format
+      procedure :: set_format
       procedure, private :: set_file_format
       procedure, private :: set_magicnumber
       procedure, private :: set_width
