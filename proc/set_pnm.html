@@ -267,7 +267,7 @@
         <tr>
             <td>
               <span class="anchor" id="variable-pixels~4"></span>
-              integer,
+              integer(kind=ik),
             </td>
 <td>intent(in),</td>
               <td></td>            <td>
@@ -692,15 +692,15 @@ large graphs.</div>
     <section>
     <h2><span class="anchor" id="src"></span>Source Code</h2>
     <div class="hl codehilite"><pre><span></span><span class="w">   </span><span class="k">pure subroutine </span><span class="n">set_pnm</span><span class="p">(</span><span class="n">this</span><span class="p">,</span><span class="w"> </span><span class="n">encoding</span><span class="p">,</span><span class="w"> </span><span class="n">file_format</span><span class="p">,</span><span class="n">width</span><span class="p">,</span><span class="n">height</span><span class="p">,</span><span class="n">max_color</span><span class="p">,</span><span class="n">comment</span><span class="p">,</span><span class="n">pixels</span><span class="p">)</span>
-<span class="w">      </span><span class="k">class</span><span class="p">(</span><span class="n">format_pnm</span><span class="p">),</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">)</span><span class="w">    </span><span class="kd">::</span><span class="w"> </span><span class="n">this</span>
-<span class="w">      </span><span class="kt">integer</span><span class="p">,</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w">                 </span><span class="kd">::</span><span class="w"> </span><span class="n">width</span>
-<span class="w">      </span><span class="kt">integer</span><span class="p">,</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w">                 </span><span class="kd">::</span><span class="w"> </span><span class="n">height</span>
-<span class="w">      </span><span class="kt">character</span><span class="p">(</span><span class="o">*</span><span class="p">),</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w">            </span><span class="kd">::</span><span class="w"> </span><span class="n">comment</span>
-<span class="w">      </span><span class="kt">integer</span><span class="p">,</span><span class="w"> </span><span class="k">optional</span><span class="p">,</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w">       </span><span class="kd">::</span><span class="w"> </span><span class="n">max_color</span>
-<span class="w">      </span><span class="kt">integer</span><span class="p">,</span><span class="w"> </span><span class="k">dimension</span><span class="p">(:,:),</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">pixels</span>
-<span class="w">      </span><span class="kt">character</span><span class="p">(</span><span class="o">*</span><span class="p">),</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w">            </span><span class="kd">::</span><span class="w"> </span><span class="n">encoding</span>
-<span class="w">      </span><span class="kt">character</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w">            </span><span class="kd">::</span><span class="w"> </span><span class="n">file_format</span>
-<span class="w">      </span><span class="kt">character</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="w">                        </span><span class="kd">::</span><span class="w"> </span><span class="n">magic_number</span>
+<span class="w">      </span><span class="k">class</span><span class="p">(</span><span class="n">format_pnm</span><span class="p">),</span><span class="w">           </span><span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">this</span>
+<span class="w">      </span><span class="kt">integer</span><span class="p">,</span><span class="w">                     </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w">    </span><span class="kd">::</span><span class="w"> </span><span class="n">width</span>
+<span class="w">      </span><span class="kt">integer</span><span class="p">,</span><span class="w">                     </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w">    </span><span class="kd">::</span><span class="w"> </span><span class="n">height</span>
+<span class="w">      </span><span class="kt">character</span><span class="p">(</span><span class="o">*</span><span class="p">),</span><span class="w">                </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w">    </span><span class="kd">::</span><span class="w"> </span><span class="n">comment</span>
+<span class="w">      </span><span class="kt">integer</span><span class="p">,</span><span class="w"> </span><span class="k">optional</span><span class="p">,</span><span class="w">           </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w">    </span><span class="kd">::</span><span class="w"> </span><span class="n">max_color</span>
+<span class="w">      </span><span class="kt">integer</span><span class="p">(</span><span class="n">ik</span><span class="p">),</span><span class="w"> </span><span class="k">dimension</span><span class="p">(:,:),</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w">    </span><span class="kd">::</span><span class="w"> </span><span class="n">pixels</span>
+<span class="w">      </span><span class="kt">character</span><span class="p">(</span><span class="o">*</span><span class="p">),</span><span class="w">                </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w">    </span><span class="kd">::</span><span class="w"> </span><span class="n">encoding</span>
+<span class="w">      </span><span class="kt">character</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span><span class="w">                </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w">    </span><span class="kd">::</span><span class="w"> </span><span class="n">file_format</span>
+<span class="w">      </span><span class="kt">character</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="w">                               </span><span class="kd">::</span><span class="w"> </span><span class="n">magic_number</span>
 
 <span class="w">      </span><span class="k">call </span><span class="n">this</span><span class="p">%</span><span class="n">set_format</span><span class="p">(</span><span class="n">encoding</span><span class="p">)</span>
 <span class="w">      </span><span class="k">call </span><span class="n">this</span><span class="p">%</span><span class="n">set_file_format</span><span class="p">(</span><span class="n">file_format</span><span class="p">)</span>
@@ -750,7 +750,7 @@ large graphs.</div>
             <p class="text-end">
               Documentation generated by
               <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
- on 2023-11-13T07:12:25.976469             </p>
+ on 2023-11-13T10:31:53.420181             </p>
           </div>
         </div>
         <br>

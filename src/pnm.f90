@@ -1,6 +1,6 @@
 module pnm
 
-   use forimage_parameters, only: rk
+   use forimage_parameters, only: rk, ik
    implicit none
 
    private
@@ -8,14 +8,14 @@ module pnm
 
    !===============================================================================
    type format_pnm
-      character(2)                         , private :: magic_number
-      integer                              , private :: width
-      integer                              , private :: height
-      character(70)                        , private :: comment
-      integer                              , private :: max_color
-      integer, dimension(:,:), allocatable , private :: pixels
-      character(3)                         , private :: file_format
-      character(6)                         , private :: encoding
+      character(2)                             , private :: magic_number
+      integer                                  , private :: width
+      integer                                  , private :: height
+      character(70)                            , private :: comment
+      integer                                  , private :: max_color
+      integer(ik), dimension(:,:), allocatable , private :: pixels
+      character(3)                             , private :: file_format
+      character(6)                             , private :: encoding
    contains
       procedure, private :: set_format
       procedure, private :: set_file_format
@@ -169,11 +169,11 @@ contains
    !===============================================================================
    !> author: Seyed Ali Ghasemi
    elemental pure subroutine resize(this, new_height, new_width)
-      class(format_pnm), intent(inout)     :: this
-      integer,           intent(in)        :: new_width, new_height
-      integer, dimension(:,:), allocatable :: resized_pixels
-      integer                              :: i_out, j_out, i_in, j_in, channel
-      real(rk)                             :: width_scale, height_scale
+      class(format_pnm), intent(inout)         :: this
+      integer,           intent(in)            :: new_width, new_height
+      integer(ik), dimension(:,:), allocatable :: resized_pixels
+      integer                                  :: i_out, j_out, i_in, j_in, channel
+      real(rk)                                 :: width_scale, height_scale
 
       select case (this%file_format)
        case ('pbm', 'pgm')
@@ -226,11 +226,11 @@ contains
    !===============================================================================
    !> author: Seyed Ali Ghasemi
    elemental pure subroutine crop(this, start_row, end_row, start_col, end_col)
-      class(format_pnm), intent(inout)     :: this
-      integer,           intent(in)        :: start_row, end_row, start_col, end_col
-      integer                              :: cropped_start_row, cropped_end_row, cropped_start_col, cropped_end_col
-      integer, dimension(:,:), allocatable :: cropped_pixels
-      integer                              :: i, j, cropped_height, cropped_width
+      class(format_pnm), intent(inout)         :: this
+      integer,           intent(in)            :: start_row, end_row, start_col, end_col
+      integer                                  :: cropped_start_row, cropped_end_row, cropped_start_col, cropped_end_col
+      integer(ik), dimension(:,:), allocatable :: cropped_pixels
+      integer                                  :: i, j, cropped_height, cropped_width
 
       ! Check if the cropping coordinates are within the image boundaries
       cropped_start_row = max(1, start_row)
@@ -307,8 +307,8 @@ contains
    !> author: Seyed Ali Ghasemi
    elemental pure subroutine flip_horizontal(this)
       class(format_pnm), intent(inout) :: this
-      integer, dimension(size(this%pixels,1)) :: buffer
-      integer, dimension(size(this%pixels,1), 3)  :: buffer3
+      integer(ik), dimension(size(this%pixels,1))     :: buffer
+      integer(ik), dimension(size(this%pixels,1), 3)  :: buffer3
       integer :: j
 
 
@@ -351,11 +351,11 @@ contains
    !===============================================================================
    !> author: Seyed Ali Ghasemi
    elemental pure subroutine rotate(this, angle)
-      class(format_pnm), intent(inout)     :: this
-      integer,           intent(in)        :: angle
-      integer, dimension(:,:), allocatable :: rotated_pixels
-      integer                              :: target_height, target_width
-      integer                              :: i, j
+      class(format_pnm), intent(inout)         :: this
+      integer,           intent(in)            :: angle
+      integer(ik), dimension(:,:), allocatable :: rotated_pixels
+      integer                                  :: target_height, target_width
+      integer                                  :: i, j
 
       ! Determine the target height and width based on the rotation angle
       select case (angle)
@@ -510,8 +510,9 @@ contains
    !> author: Seyed Ali Ghasemi
    elemental pure subroutine swap_channels(this, swap)
       class(format_pnm), intent(inout) :: this
-      character(*), intent(in)         :: swap
-      integer :: i, j, temp
+      character(*),      intent(in)    :: swap
+      integer(ik)                      :: temp
+      integer                          :: i, j
 
       ! Check if the file is ppm
       if (this%file_format /= 'ppm') error stop 'swap_channels: This function is only for ppm files.'
@@ -560,7 +561,12 @@ contains
       class(format_pnm), intent(inout) :: this
       integer,           intent(in)    :: factor
 
-      call this%set_pixels(min(this%max_color, max(0, this%pixels + factor)))
+      select case (this%file_format)
+       case ('pbm')
+         error stop 'brighten: This function is not supported for pbm files.'
+       case ('pgm', 'ppm')
+         call this%set_pixels(min(this%max_color, max(0, this%pixels + factor)))
+      end select
    end subroutine brighten
    !===============================================================================
 
@@ -609,14 +615,14 @@ contains
    !===============================================================================
    !> author: Seyed Ali Ghasemi
    impure subroutine import_pnm(this, file_name, file_format, encoding)
-      class(format_pnm), intent(inout)     :: this
-      character(*),      intent(in)        :: file_name, encoding
-      character(3),      intent(in)        :: file_format
-      integer                              :: nunit, i, iostat
-      character                            :: temp
-      character, dimension(:), allocatable :: buffer_ch
-      integer, dimension(:), allocatable   :: buffer_int
-      logical                              :: file_exists
+      class(format_pnm), intent(inout)       :: this
+      character(*),      intent(in)          :: file_name, encoding
+      character(3),      intent(in)          :: file_format
+      integer                                :: nunit, i, iostat
+      character                              :: temp
+      character,   dimension(:), allocatable :: buffer_ch
+      integer(ik), dimension(:), allocatable :: buffer_int
+      logical                                :: file_exists
 
       inquire(file=file_name//'.'//file_format, exist=file_exists)
       if (file_exists) then
@@ -635,11 +641,11 @@ contains
                read(nunit,'(a,a)') temp,this%comment
                read(nunit,*) this%width, this%height
                allocate(buffer_ch(this%height*this%width))
-               buffer_ch = achar(0)
+               buffer_ch = achar(0_ik)
                read(nunit, '(*(a))', advance='yes') buffer_ch
                close(nunit)
                call this%allocate_pixels()
-               call this%set_pixels(transpose(reshape(ichar(buffer_ch), [this%width, this%height])))
+               call this%set_pixels(transpose(reshape(ichar(buffer_ch, kind=ik), [this%width, this%height])))
              case ('pgm')
                open (newunit = nunit, file = file_name//'.'//file_format, iostat=iostat)
                if (iostat /= 0) error stop 'Error opening the file.'
@@ -648,11 +654,11 @@ contains
                read(nunit,*) this%width, this%height
                read(nunit,*) this%max_color
                allocate(buffer_ch(this%height*this%width))
-               buffer_ch = achar(0)
+               buffer_ch = achar(0_ik)
                read(nunit, '(*(a))', advance='yes') buffer_ch
                close(nunit)
                call this%allocate_pixels()
-               call this%set_pixels(transpose(reshape(ichar(buffer_ch), [this%height, this%width])))
+               call this%set_pixels(transpose(reshape(ichar(buffer_ch, kind=ik), [this%height, this%width])))
              case ('ppm')
                open (newunit = nunit, file = file_name//'.'//file_format, iostat=iostat)
                if (iostat /= 0) error stop 'Error opening the file.'
@@ -661,11 +667,11 @@ contains
                read(nunit,*) this%width, this%height
                read(nunit,*) this%max_color
                allocate(buffer_ch(this%height*this%width*3))
-               buffer_ch = achar(0)
+               buffer_ch = achar(0_ik)
                read(nunit, '(*(a))', advance='yes') buffer_ch
                close(nunit)
                call this%allocate_pixels()
-               call this%set_pixels(transpose(reshape(ichar(buffer_ch), [3*this%width, this%height])))
+               call this%set_pixels(transpose(reshape(ichar(buffer_ch, kind=ik), [3*this%width, this%height])))
             end select
 
           case ('ascii','plain')
@@ -679,7 +685,7 @@ contains
                read(nunit,*) this%width, this%height
                call this%allocate_pixels()
                allocate(buffer_int(this%width))
-               buffer_int = 0
+               buffer_int = 0_ik
                do i = 1, size(this%pixels,1)
                   read(nunit, *) buffer_int
                   this%pixels(i,:) = buffer_int
@@ -732,15 +738,15 @@ contains
    !===============================================================================
    !> author: Seyed Ali Ghasemi
    pure subroutine set_pnm(this, encoding, file_format,width,height,max_color,comment,pixels)
-      class(format_pnm), intent(inout)    :: this
-      integer, intent(in)                 :: width
-      integer, intent(in)                 :: height
-      character(*), intent(in)            :: comment
-      integer, optional, intent(in)       :: max_color
-      integer, dimension(:,:), intent(in) :: pixels
-      character(*), intent(in)            :: encoding
-      character(3), intent(in)            :: file_format
-      character(2)                        :: magic_number
+      class(format_pnm),           intent(inout) :: this
+      integer,                     intent(in)    :: width
+      integer,                     intent(in)    :: height
+      character(*),                intent(in)    :: comment
+      integer, optional,           intent(in)    :: max_color
+      integer(ik), dimension(:,:), intent(in)    :: pixels
+      character(*),                intent(in)    :: encoding
+      character(3),                intent(in)    :: file_format
+      character(2)                               :: magic_number
 
       call this%set_format(encoding)
       call this%set_file_format(file_format)
@@ -867,8 +873,8 @@ contains
    !===============================================================================
    !> author: Seyed Ali Ghasemi
    pure subroutine check_pixel_range(this, pixels)
-      class(format_pnm), intent(inout) :: this
-      integer, dimension(:,:), intent(in) :: pixels
+      class(format_pnm),           intent(inout) :: this
+      integer(ik), dimension(:,:), intent(in)    :: pixels
 
       ! Check if the pixel values are within the valid range
       select case (this%file_format)
@@ -887,7 +893,7 @@ contains
    !> author: Seyed Ali Ghasemi
    pure subroutine set_pixels(this, pixels)
       class(format_pnm), intent(inout) :: this
-      integer, dimension(:,:), intent(in) :: pixels
+      integer(ik), dimension(:,:), intent(in) :: pixels
 
       call this%check_pixel_range(pixels)
 
@@ -920,13 +926,13 @@ contains
    !===============================================================================
    !> author: Seyed Ali Ghasemi
    impure subroutine export_pnm(this, file_name, encoding)
-      class(format_pnm), intent(inout)        :: this
-      character(*),      intent(in)           :: file_name
-      character(*),      intent(in), optional :: encoding
-      integer                                 :: nunit, i, j
-      logical                                 :: file_exists
-      integer, dimension(size(this%pixels,2)) :: buffer
-      integer                                 :: iostat
+      class(format_pnm), intent(inout)            :: this
+      character(*),      intent(in)               :: file_name
+      character(*),      intent(in), optional     :: encoding
+      integer                                     :: nunit, i, j
+      logical                                     :: file_exists
+      integer(ik), dimension(size(this%pixels,2)) :: buffer
+      integer                                     :: iostat
 
       if (present(encoding)) then
          call this%set_format(encoding)

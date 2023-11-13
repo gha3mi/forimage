@@ -1,13 +1,13 @@
 program demo
 
-   use forimage, only: format_pnm, rk
+   use forimage, only: format_pnm, rk, ik
    implicit none
 
    ! Declare format_pnm object and parameters for image dimensions
    type(format_pnm)    :: image, copy_image
    integer, parameter  :: height = 400
    integer, parameter  :: width  = 400
-   integer :: px(height, 3*width)
+   integer(ik) :: px(height, 3*width)
 
    ! Generate Mandelbrot fractal and assign pixel values
    px = mandelbrot(height, width)
@@ -35,61 +35,61 @@ program demo
    ! Export the image to a PPM file with a different encoding
    copy_image = image ! Copy the format_pnm object
    call copy_image%negative()
-   call copy_image%export_pnm('pnm_files/mandelbrot_binary_negative')
+   call copy_image%export_pnm('pnm_files/mandelbrot_binary_negative', 'binary')
    call copy_image%finalize()
 
    ! Brighten the image
    copy_image = image ! Copy the format_pnm object
    call copy_image%brighten(100)
-   call copy_image%export_pnm('pnm_files/mandelbrot_binary_brighten')
+   call copy_image%export_pnm('pnm_files/mandelbrot_binary_brighten', 'binary')
    call copy_image%finalize()
 
    ! Swap the red and blue channels
    copy_image = image ! Copy the format_pnm object
    call copy_image%swap_channels('rb')
-   call copy_image%export_pnm('pnm_files/mandelbrot_binary_swap')
+   call copy_image%export_pnm('pnm_files/mandelbrot_binary_swap', 'binary')
    call copy_image%finalize()
 
    ! Remove the blue channel
    copy_image = image ! Copy the format_pnm object
    call copy_image%remove_channels(remove_b=.true.)
-   call copy_image%export_pnm('pnm_files/mandelbrot_binary_remove')
+   call copy_image%export_pnm('pnm_files/mandelbrot_binary_remove', 'binary')
    call copy_image%finalize()
 
    ! Convert the image to greyscale
    copy_image = image ! Copy the format_pnm object
    call copy_image%greyscale()
-   call copy_image%export_pnm('pnm_files/mandelbrot_binary_greyscale')
+   call copy_image%export_pnm('pnm_files/mandelbrot_binary_greyscale', 'binary')
    call copy_image%finalize()
 
    ! Rotate the image 90 degrees clockwise
    copy_image = image ! Copy the format_pnm object
    call copy_image%rotate(-90)
-   call copy_image%export_pnm('pnm_files/mandelbrot_binary_rotate')
+   call copy_image%export_pnm('pnm_files/mandelbrot_binary_rotate', 'binary')
    call copy_image%finalize()
 
    ! Flip the image horizontally
    copy_image = image ! Copy the format_pnm object
    call copy_image%flip_horizontal()
-   call copy_image%export_pnm('pnm_files/mandelbrot_binary_flip_horizontal')
+   call copy_image%export_pnm('pnm_files/mandelbrot_binary_flip_horizontal', 'binary')
    call copy_image%finalize()
 
    ! Flip the image vertically
    copy_image = image ! Copy the format_pnm object
    call copy_image%flip_vertical()
-   call copy_image%export_pnm('pnm_files/mandelbrot_binary_flip_vertical')
+   call copy_image%export_pnm('pnm_files/mandelbrot_binary_flip_vertical', 'binary')
    call copy_image%finalize()
 
    ! Crop the image
    copy_image = image ! Copy the format_pnm object
    call copy_image%crop(100,200, 50, 300)
-   call copy_image%export_pnm('pnm_files/mandelbrot_binary_crop')
+   call copy_image%export_pnm('pnm_files/mandelbrot_binary_crop', 'binary')
    call copy_image%finalize()
 
    ! Resize the image
    copy_image = image ! Copy the format_pnm object
    call copy_image%resize(800,200)
-   call copy_image%export_pnm('pnm_files/mandelbrot_binary_resize')
+   call copy_image%export_pnm('pnm_files/mandelbrot_binary_resize', 'binary')
    call copy_image%finalize()
 
    ! Import a PPM file with binary encoding and export it with ascii encoding
@@ -113,7 +113,7 @@ contains
    ! Function to generate Mandelbrot fractal
    function mandelbrot(h, w) result(pixels)
       integer, intent(in) :: w, h
-      integer             :: pixels(h, 3*w)
+      integer(ik)             :: pixels(h, 3*w)
       integer, parameter  :: max_iter = 256
       real(rk), parameter :: x_min = -2.0_rk
       real(rk), parameter :: x_max = 1.0_rk
