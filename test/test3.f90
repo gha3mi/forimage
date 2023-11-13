@@ -1,14 +1,14 @@
 ! Description: Creates and exports a 4x4 PPM image in ascii format.
 
 program test3
-    use forimage, only: format_pnm
+    use forimage, only: format_pnm, ik
     implicit none
     
     ! Declare an object of type format_pnm
     type(format_pnm) :: image
 
     ! Define a 2D array representing pixel values for the image
-    integer, dimension(4,12) :: px
+    integer(ik), dimension(4,12) :: px
 
     print*,' '
     print'(a)', 'Test 3'

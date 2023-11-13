@@ -5,6 +5,6 @@ module forimage
    use lut
 
    private
-   public format_pnm, format_lut, rk, pi
+   public format_pnm, format_lut, rk, ik, pi
 
 end module forimage

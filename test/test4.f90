@@ -1,14 +1,14 @@
 ! Description: Creates and exports a 6x10 PBM image in binary format.
 
 program test4
-    use forimage, only: format_pnm
+    use forimage, only: format_pnm, ik
     implicit none
     
     ! Declare an object of type format_pnm
     type(format_pnm) :: image
 
     ! Define a 2D array representing pixel values (0 and 1) for the image
-    integer, dimension(10,6) :: px
+    integer(ik), dimension(10,6) :: px
 
     print*,' '
     print'(a)', 'Test 4'
