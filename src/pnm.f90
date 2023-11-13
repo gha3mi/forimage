@@ -658,7 +658,7 @@ contains
                read(nunit, '(*(a))', advance='yes') buffer_ch
                close(nunit)
                call this%allocate_pixels()
-               call this%set_pixels(transpose(reshape(ichar(buffer_ch, kind=ik), [this%height, this%width])))
+               call this%set_pixels(transpose(reshape(ichar(buffer_ch, kind=ik), [this%width, this%height])))
              case ('ppm')
                open (newunit = nunit, file = file_name//'.'//file_format, iostat=iostat)
                if (iostat /= 0) error stop 'Error opening the file.'
