@@ -11,7 +11,7 @@ module pnm
       character(2)                             , private :: magic_number
       integer                                  , private :: width
       integer                                  , private :: height
-      character(70)                            , private :: comment
+      character(:), allocatable                , private :: comment
       integer                                  , private :: max_color
       integer(ik), dimension(:,:), allocatable :: pixels
       character(3)                             , private :: file_format
@@ -619,7 +619,6 @@ contains
       character(*),      intent(in)          :: file_name, encoding
       character(3),      intent(in)          :: file_format
       integer                                :: nunit, i, iostat
-      character                              :: temp
       character,   dimension(:), allocatable :: buffer_ch
       integer(ik), dimension(:), allocatable :: buffer_int
       logical                                :: file_exists
@@ -637,9 +636,7 @@ contains
              case ('pbm')
                open (newunit = nunit, file = file_name//'.'//file_format, iostat=iostat)
                if (iostat /= 0) error stop 'Error opening the file.'
-               read(nunit,*) this%magic_number
-               read(nunit,'(a,a)') temp,this%comment
-               read(nunit,*) this%width, this%height
+               call read_header(this, nunit)
                allocate(buffer_ch(this%height*this%width))
                buffer_ch = achar(0_ik)
                read(nunit, '(*(a))', advance='yes') buffer_ch
@@ -649,10 +646,7 @@ contains
              case ('pgm')
                open (newunit = nunit, file = file_name//'.'//file_format, iostat=iostat)
                if (iostat /= 0) error stop 'Error opening the file.'
-               read(nunit,*) this%magic_number
-               read(nunit,'(a,a)') temp,this%comment
-               read(nunit,*) this%width, this%height
-               read(nunit,*) this%max_color
+               call read_header(this, nunit)
                allocate(buffer_ch(this%height*this%width))
                buffer_ch = achar(0_ik)
                read(nunit, '(*(a))', advance='yes') buffer_ch
@@ -662,10 +656,7 @@ contains
              case ('ppm')
                open (newunit = nunit, file = file_name//'.'//file_format, iostat=iostat)
                if (iostat /= 0) error stop 'Error opening the file.'
-               read(nunit,*) this%magic_number
-               read(nunit,'(a,a)') temp,this%comment
-               read(nunit,*) this%width, this%height
-               read(nunit,*) this%max_color
+               call read_header(this, nunit)
                allocate(buffer_ch(this%height*this%width*3))
                buffer_ch = achar(0_ik)
                read(nunit, '(*(a))', advance='yes') buffer_ch
@@ -680,9 +671,7 @@ contains
              case ('pbm')
                open (newunit = nunit, file = file_name//'.'//file_format, iostat=iostat)
                if (iostat /= 0) error stop 'Error opening the file.'
-               read(nunit,*) this%magic_number
-               read(nunit,'(a,a)') temp,this%comment
-               read(nunit,*) this%width, this%height
+               call read_header(this, nunit)
                call this%allocate_pixels()
                allocate(buffer_int(this%width))
                buffer_int = 0_ik
@@ -695,10 +684,7 @@ contains
              case ('pgm')
                open (newunit = nunit, file = file_name//'.'//file_format, iostat=iostat)
                if (iostat /= 0) error stop 'Error opening the file.'
-               read(nunit,*) this%magic_number
-               read(nunit,'(a,a)') temp,this%comment
-               read(nunit,*) this%width, this%height
-               read(nunit,*) this%max_color
+               call read_header(this, nunit)
                call this%allocate_pixels()
                allocate(buffer_int(this%width))
                buffer_int = 0
@@ -711,10 +697,7 @@ contains
              case ('ppm')
                open (newunit = nunit, file = file_name//'.'//file_format, iostat=iostat)
                if (iostat /= 0) error stop 'Error opening the file.'
-               read(nunit,*) this%magic_number
-               read(nunit,'(a,a)') temp,this%comment
-               read(nunit,*) this%width, this%height
-               read(nunit,*) this%max_color
+               call read_header(this, nunit)
                call this%allocate_pixels()
                allocate(buffer_int(3*this%width))
                buffer_int = 0
@@ -963,10 +946,7 @@ contains
        case ('P1', 'P2', 'P3')
          open (newunit = nunit, file = file_name//'.'//this%file_format, status='replace', iostat=iostat)
          if (iostat /= 0) error stop 'Error opening the file.'
-         write(nunit,'(a)') this%magic_number
-         write(nunit,'(a,a)') '# ',trim(adjustl(this%comment))
-         write(nunit, '(g0,1x,g0)') this%width, this%height
-         if (this%file_format /= 'pbm') write(nunit,'(g0)') this%max_color
+         call write_header(this, nunit)
          do i = 1, size(this%pixels,1)
             buffer = this%pixels(i,:)
             write(nunit, '(*(g0,1x))') buffer
@@ -975,10 +955,7 @@ contains
        case ('P4', 'P5', 'P6')
          open (newunit = nunit, file = file_name//'.'//this%file_format, status='replace', iostat=iostat)
          if (iostat /= 0) error stop 'Error opening the file.'
-         write(nunit,'(a)') this%magic_number
-         write(nunit,'(a,a)') '# ',trim(adjustl(this%comment))
-         write(nunit, '(g0,1x,g0)') this%width, this%height
-         if (this%file_format /= 'pbm') write(nunit,'(g0)') this%max_color
+         call write_header(this, nunit)
          do i = 1, size(this%pixels,1)
             buffer = this%pixels(i,:)
             write(nunit, '(*(a))', advance='no') achar(buffer)
@@ -986,6 +963,63 @@ contains
          close(nunit)
       end select
    end subroutine export_pnm
+   !===============================================================================
+
+
+   !===============================================================================
+   !> author: Seyed Ali Ghasemi
+   subroutine write_header(this, nunit)
+      type(format_pnm), intent(in) :: this
+      integer, intent(in)           :: nunit
+      integer :: i, k
+
+      ! Write magic number
+      write(nunit,'(a)') this%magic_number
+
+      ! Write comments
+      k = ceiling(real(len(adjustl(this%comment)))/70.0)
+      if (len(adjustl(this%comment)) /=0 .and. len(adjustl(this%comment)) <= 70) then
+          write(nunit,'(a,a)') '# ',trim(adjustl(this%comment))
+      else if (len(adjustl(this%comment)) /=0 .and. len(adjustl(this%comment)) > 70 ) then
+         do i = 1, k-1
+            write(nunit,'(a,a)') '# ',adjustl(this%comment(70*(i-1)+1:70*(i-1)+70))
+         end do
+            write(nunit,'(a,a)') '# ',trim(adjustl(this%comment(70*(k-1)+1:)))
+      end if
+
+      ! Write width, height and max_color
+      write(nunit, '(g0,1x,g0)') this%width, this%height
+      if (this%file_format /= 'pbm') write(nunit,'(g0)') this%max_color
+   end subroutine write_header
+   !===============================================================================
+
+
+   !===============================================================================
+   !> author: Seyed Ali Ghasemi
+   subroutine read_header(this, nunit)
+      class(format_pnm), intent(inout) :: this
+      integer, intent(in)           :: nunit
+      character(len=70) :: comment
+      character :: temp
+      integer :: i, k
+
+      read(nunit,*)
+      k = 0
+      do
+         read(nunit,'(a)') temp
+         if (temp /= '#') exit
+         k = k + 1
+      end do
+      rewind(nunit)
+      read(nunit,*) this%magic_number
+      this%comment = ''
+      do i = 1, k
+         read(nunit,'(a,a,a)') temp, temp, comment
+         this%comment = this%comment//comment
+      end do               
+      read(nunit,*) this%width, this%height
+      if (this%file_format == 'pgm' .or. this%file_format == 'ppm') read(nunit,*) this%max_color
+   end subroutine read_header
    !===============================================================================
 
 end module pnm
