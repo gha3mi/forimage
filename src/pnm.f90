@@ -307,9 +307,6 @@ contains
    !> author: Seyed Ali Ghasemi
    elemental pure subroutine flip_horizontal(this)
       class(format_pnm), intent(inout) :: this
-      integer(ik), dimension(size(this%pixels,1), 3)  :: buffer
-      integer :: j
-
 
       select case (this%file_format)
        case ('pbm', 'pgm')
