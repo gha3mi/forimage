@@ -7,7 +7,7 @@ program demo
    type(format_pnm)    :: image, copy_image
    integer, parameter  :: height = 400
    integer, parameter  :: width  = 400
-   integer(ik) :: px(height, 3*width)
+   integer(ik)         :: px(height, 3*width)
 
    ! Generate Mandelbrot fractal and assign pixel values
    px = mandelbrot(height, width)
@@ -92,35 +92,33 @@ program demo
    call copy_image%export_pnm('pnm_files/mandelbrot_binary_resize', 'binary')
    call copy_image%finalize()
 
+   ! Finalize the format_pnm object to release resources
+   call image%finalize()
+
    ! Import a PPM file with binary encoding and export it with ascii encoding
-   copy_image = image ! Copy the format_pnm object
-   call copy_image%import_pnm('pnm_files/mandelbrot_binary', 'ppm', 'binary')
-   call copy_image%export_pnm('pnm_files/mandelbrot_ascii_ex', 'ascii')
-   call copy_image%finalize()
+   call image%import_pnm('pnm_files/mandelbrot_binary', 'ppm', 'binary')
+   call image%export_pnm('pnm_files/mandelbrot_ascii_ex', 'ascii')
+   call image%finalize()
 
    ! Import a PPM file with ascii encoding and export it with binary encoding
-   copy_image = image ! Copy the format_pnm object
-   call copy_image%import_pnm('pnm_files/mandelbrot_ascii', 'ppm', 'ascii')
-   call copy_image%export_pnm('pnm_files/mandelbrot_binary_ex', 'binary')
-   call copy_image%finalize()
-
-
-   ! Finalize the format_pnm object to release resources
+   call image%import_pnm('pnm_files/mandelbrot_ascii', 'ppm', 'ascii')
+   call image%export_pnm('pnm_files/mandelbrot_binary_ex', 'binary')
    call image%finalize()
 
 contains
 
    ! Function to generate Mandelbrot fractal
-   function mandelbrot(h, w) result(pixels)
-      integer, intent(in) :: w, h
-      integer(ik)             :: pixels(h, 3*w)
-      integer, parameter  :: max_iter = 256
-      real(rk), parameter :: x_min = -2.0_rk
-      real(rk), parameter :: x_max = 1.0_rk
-      real(rk), parameter :: y_min = -1.5_rk
-      real(rk), parameter :: y_max = 1.5_rk
-      real(rk) :: x, y, x_temp, zx, zy, zx2, zy2, scale_x, scale_y
-      integer  :: iter, i, j
+   pure function mandelbrot(h, w) result(pixels)
+      integer, intent(in)    :: w, h
+      integer(ik)            :: pixels(h, 3*w)
+      integer(ik), parameter :: max_iter = 256_ik
+      real(rk),    parameter :: x_min = -2.0_rk
+      real(rk),    parameter :: x_max = 1.0_rk
+      real(rk),    parameter :: y_min = -1.5_rk
+      real(rk),    parameter :: y_max = 1.5_rk
+      real(rk)               :: x, y, x_temp, zx, zy, zx2, zy2, scale_x, scale_y
+      integer(ik)            :: iter
+      integer                :: i, j
       ! Calculate scale factors for mapping pixel coordinates to Mandelbrot coordinates
       scale_x = (x_max - x_min) / real(w, kind=rk)
       scale_y = (y_max - y_min) / real(h, kind=rk)
@@ -131,17 +129,17 @@ contains
             y = y_max - real(i - 1, kind=rk) * scale_y
             zx = 0.0_rk
             zy = 0.0_rk
-            iter = 0
+            iter = 0_ik
             do while (iter < max_iter .and. zx * zx + zy * zy < 4.0_rk)
                x_temp = zx * zx - zy * zy + x
                zy = 2.0_rk * zx * zy + y
                zx = x_temp
-               iter = iter + 1
+               iter = iter + 1_ik
             end do
             ! Assign colors
-            pixels(i, 3*j-2) = mod(iter*7, 256)     ! Red channel
-            pixels(i, 3*j-1) = mod(iter*4, 256)     ! Green channel
-            pixels(i, 3*j)   = mod(iter*10, 256)    ! Blue channel
+            pixels(i, 3*j-2) = int(mod(iter*7_ik, 256_ik), kind=ik)     ! Red channel
+            pixels(i, 3*j-1) = int(mod(iter*4_ik, 256_ik), kind=ik)     ! Green channel
+            pixels(i, 3*j)   = int(mod(iter*10_ik, 256_ik), kind=ik)    ! Blue channel
          end do
       end do
    end function
