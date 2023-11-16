@@ -307,28 +307,23 @@ contains
    !> author: Seyed Ali Ghasemi
    elemental pure subroutine flip_horizontal(this)
       class(format_pnm), intent(inout) :: this
-      integer(ik), dimension(size(this%pixels,1))     :: buffer
-      integer(ik), dimension(size(this%pixels,1), 3)  :: buffer3
+      integer(ik), dimension(size(this%pixels,1), 3)  :: buffer
       integer :: j
 
 
       select case (this%file_format)
        case ('pbm', 'pgm')
 
-         do j = 1, this%width / 2
-            buffer(:) = this%pixels(:, this%width-j+1)
-            this%pixels(:, this%width-j+1) = this%pixels(:,j)
-            this%pixels(:, j) = buffer(:)
-         end do
+         this%pixels = this%pixels(:, this%width:1:-1)
 
          call this%check_pixel_range(this%pixels)
 
        case ('ppm')
 
          do j = 1, this%width / 2
-            buffer3(:, :) = this%pixels(:, 3*j-2:3*j)
+            buffer(:, :) = this%pixels(:, 3*j-2:3*j)
             this%pixels(:, 3*j-2:3*j) = this%pixels(:, 3*(this%width-j+1)-2:3*(this%width-j+1))
-            this%pixels(:, 3*(this%width-j+1)-2:3*(this%width-j+1)) = buffer3(:, :)
+            this%pixels(:, 3*(this%width-j+1)-2:3*(this%width-j+1)) = buffer(:, :)
          end do
 
          call this%check_pixel_range(this%pixels)
