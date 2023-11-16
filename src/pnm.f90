@@ -444,21 +444,21 @@ contains
       ! Remove R channel
       if (present(remove_r)) then
          if (remove_r) then
-            this%pixels(:,1:size(this%pixels,2):3) = 0
+            this%pixels(:,1:size(this%pixels,2):3) = 0_ik
          end if
       end if
 
       ! Remove G channel
       if (present(remove_g)) then
          if (remove_g) then
-            this%pixels(:,2:size(this%pixels,2):3) = 0
+            this%pixels(:,2:size(this%pixels,2):3) = 0_ik
          end if
       end if
 
       ! Remove B channel
       if (present(remove_b)) then
          if (remove_b) then
-            this%pixels(:,3:size(this%pixels,2):3) = 0
+            this%pixels(:,3:size(this%pixels,2):3) = 0_ik
          end if
       end if
 

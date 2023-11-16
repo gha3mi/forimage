@@ -161,7 +161,7 @@
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-this~31"></span>
+              <span class="anchor" id="variable-this~20"></span>
               class(<a href='../type/format_pnm.html'>format_pnm</a>),
             </td>
 <td>intent(inout)</td>
@@ -487,21 +487,21 @@ large graphs.</div>
 <span class="w">      </span><span class="c">! Remove R channel</span>
 <span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">remove_r</span><span class="p">))</span><span class="w"> </span><span class="k">then</span>
 <span class="k">         if</span><span class="w"> </span><span class="p">(</span><span class="n">remove_r</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
-<span class="k">            </span><span class="n">this</span><span class="p">%</span><span class="n">pixels</span><span class="p">(:,</span><span class="mi">1</span><span class="p">:</span><span class="n">size</span><span class="p">(</span><span class="n">this</span><span class="p">%</span><span class="n">pixels</span><span class="p">,</span><span class="mi">2</span><span class="p">):</span><span class="mi">3</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span>
+<span class="k">            </span><span class="n">this</span><span class="p">%</span><span class="n">pixels</span><span class="p">(:,</span><span class="mi">1</span><span class="p">:</span><span class="n">size</span><span class="p">(</span><span class="n">this</span><span class="p">%</span><span class="n">pixels</span><span class="p">,</span><span class="mi">2</span><span class="p">):</span><span class="mi">3</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0_ik</span>
 <span class="w">         </span><span class="k">end if</span>
 <span class="k">      end if</span>
 
 <span class="w">      </span><span class="c">! Remove G channel</span>
 <span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">remove_g</span><span class="p">))</span><span class="w"> </span><span class="k">then</span>
 <span class="k">         if</span><span class="w"> </span><span class="p">(</span><span class="n">remove_g</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
-<span class="k">            </span><span class="n">this</span><span class="p">%</span><span class="n">pixels</span><span class="p">(:,</span><span class="mi">2</span><span class="p">:</span><span class="n">size</span><span class="p">(</span><span class="n">this</span><span class="p">%</span><span class="n">pixels</span><span class="p">,</span><span class="mi">2</span><span class="p">):</span><span class="mi">3</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span>
+<span class="k">            </span><span class="n">this</span><span class="p">%</span><span class="n">pixels</span><span class="p">(:,</span><span class="mi">2</span><span class="p">:</span><span class="n">size</span><span class="p">(</span><span class="n">this</span><span class="p">%</span><span class="n">pixels</span><span class="p">,</span><span class="mi">2</span><span class="p">):</span><span class="mi">3</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0_ik</span>
 <span class="w">         </span><span class="k">end if</span>
 <span class="k">      end if</span>
 
 <span class="w">      </span><span class="c">! Remove B channel</span>
 <span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">remove_b</span><span class="p">))</span><span class="w"> </span><span class="k">then</span>
 <span class="k">         if</span><span class="w"> </span><span class="p">(</span><span class="n">remove_b</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
-<span class="k">            </span><span class="n">this</span><span class="p">%</span><span class="n">pixels</span><span class="p">(:,</span><span class="mi">3</span><span class="p">:</span><span class="n">size</span><span class="p">(</span><span class="n">this</span><span class="p">%</span><span class="n">pixels</span><span class="p">,</span><span class="mi">2</span><span class="p">):</span><span class="mi">3</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span>
+<span class="k">            </span><span class="n">this</span><span class="p">%</span><span class="n">pixels</span><span class="p">(:,</span><span class="mi">3</span><span class="p">:</span><span class="n">size</span><span class="p">(</span><span class="n">this</span><span class="p">%</span><span class="n">pixels</span><span class="p">,</span><span class="mi">2</span><span class="p">):</span><span class="mi">3</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0_ik</span>
 <span class="w">         </span><span class="k">end if</span>
 <span class="k">      end if</span>
 
@@ -528,7 +528,7 @@ large graphs.</div>
             <p class="text-end">
               Documentation generated by
               <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
- on 2023-11-16T10:09:20.476846             </p>
+ on 2023-11-16T10:30:31.177384             </p>
           </div>
         </div>
         <br>
