@@ -320,11 +320,9 @@ contains
 
        case ('ppm')
 
-         do j = 1, this%width / 2
-            buffer(:, :) = this%pixels(:, 3*j-2:3*j)
-            this%pixels(:, 3*j-2:3*j) = this%pixels(:, 3*(this%width-j+1)-2:3*(this%width-j+1))
-            this%pixels(:, 3*(this%width-j+1)-2:3*(this%width-j+1)) = buffer(:, :)
-         end do
+         this%pixels(:, 1:size(this%pixels, 2):3) = this%pixels(:, size(this%pixels, 2)-2:1:-3)
+         this%pixels(:, 2:size(this%pixels, 2):3) = this%pixels(:, size(this%pixels, 2)-1:2:-3)
+         this%pixels(:, 3:size(this%pixels, 2):3) = this%pixels(:, size(this%pixels, 2)-0:3:-3)
 
          call this%check_pixel_range(this%pixels)
 
