@@ -292,11 +292,11 @@ contains
       call this%check_pixel_range(this%pixels)
 
       call this%set_height(size(this%pixels,1))
-      
+
       select case (this%file_format)
        case ('pbm', 'pgm')
          call this%set_width(size(this%pixels,2))
-      case ('ppm')
+       case ('ppm')
          call this%set_width(size(this%pixels,2)/3)
       end select
    end subroutine flip_vertical
@@ -336,11 +336,11 @@ contains
       end select
 
       call this%set_height(size(this%pixels,1))
-      
+
       select case (this%file_format)
        case ('pbm', 'pgm')
          call this%set_width(size(this%pixels,2))
-      case ('ppm')
+       case ('ppm')
          call this%set_width(size(this%pixels,2)/3)
       end select
 
@@ -618,8 +618,8 @@ contains
       class(format_pnm), intent(inout)       :: this
       character(*),      intent(in)          :: file_name, encoding
       character(3),      intent(in)          :: file_format
-      integer                                :: nunit, i, iostat
-      character,   dimension(:), allocatable :: buffer_ch
+      integer                                :: nunit, i, j, iostat
+      character, dimension(:), allocatable   :: buffer_ch
       integer(ik), dimension(:), allocatable :: buffer_int
       logical                                :: file_exists
 
@@ -639,30 +639,32 @@ contains
                call read_header(this, nunit)
                allocate(buffer_ch(this%height*this%width))
                buffer_ch = achar(0_ik)
-               read(nunit, '(*(a))', advance='yes') buffer_ch
-               close(nunit)
+               read(nunit,'(*(a))', advance='no', iostat=iostat) buffer_ch
+               if (iostat /= 0) error stop 'Error reading the file.'
                call this%allocate_pixels()
-               call this%set_pixels(transpose(reshape(ichar(buffer_ch, kind=ik), [this%width, this%height])))
+               this%pixels = iachar(transpose(reshape(buffer_ch, [this%width, this%height])), kind=ik)
+               close(nunit)
              case ('pgm')
                open (newunit = nunit, file = file_name//'.'//file_format, iostat=iostat)
                if (iostat /= 0) error stop 'Error opening the file.'
                call read_header(this, nunit)
                allocate(buffer_ch(this%height*this%width))
                buffer_ch = achar(0_ik)
-               read(nunit, '(*(a))', advance='yes') buffer_ch
-               close(nunit)
+               read(nunit,'(*(a))', advance='no', iostat=iostat) buffer_ch
+               if (iostat /= 0) error stop 'Error reading the file.'
                call this%allocate_pixels()
-               call this%set_pixels(transpose(reshape(ichar(buffer_ch, kind=ik), [this%width, this%height])))
+               this%pixels = iachar(transpose(reshape(buffer_ch, [this%width, this%height])), kind=ik)
+               close(nunit)
              case ('ppm')
                open (newunit = nunit, file = file_name//'.'//file_format, iostat=iostat)
                if (iostat /= 0) error stop 'Error opening the file.'
                call read_header(this, nunit)
-               allocate(buffer_ch(this%height*this%width*3))
+               allocate(buffer_ch(this%height*3*this%width))
                buffer_ch = achar(0_ik)
-               read(nunit, '(*(a))', advance='yes') buffer_ch
-               close(nunit)
+               read(nunit,'(*(a))', advance='no', iostat=iostat) buffer_ch
                call this%allocate_pixels()
-               call this%set_pixels(transpose(reshape(ichar(buffer_ch, kind=ik), [3*this%width, this%height])))
+               this%pixels = iachar(transpose(reshape(buffer_ch, [this%width*3, this%height])), kind=ik)
+               close(nunit)
             end select
 
           case ('ascii','plain')
@@ -672,39 +674,33 @@ contains
                open (newunit = nunit, file = file_name//'.'//file_format, iostat=iostat)
                if (iostat /= 0) error stop 'Error opening the file.'
                call read_header(this, nunit)
-               call this%allocate_pixels()
-               allocate(buffer_int(this%width))
+               allocate(buffer_int(this%height*this%width))
                buffer_int = 0_ik
-               do i = 1, size(this%pixels,1)
-                  read(nunit, *) buffer_int
-                  this%pixels(i,:) = buffer_int
-               end do
+               read(nunit, *) buffer_int
+               call this%allocate_pixels()
+               this%pixels = transpose(reshape(buffer_int, [this%width, this%height]))
                close(nunit)
                call this%check_pixel_range(this%pixels)
              case ('pgm')
                open (newunit = nunit, file = file_name//'.'//file_format, iostat=iostat)
                if (iostat /= 0) error stop 'Error opening the file.'
                call read_header(this, nunit)
+               allocate(buffer_int(this%height*this%width))
+               buffer_int = 0_ik
+               read(nunit, *) buffer_int
                call this%allocate_pixels()
-               allocate(buffer_int(this%width))
-               buffer_int = 0
-               do i = 1, size(this%pixels,1)
-                  read(nunit, *) buffer_int
-                  this%pixels(i,:) = buffer_int
-               end do
+               this%pixels = transpose(reshape(buffer_int, [this%width, this%height]))
                call this%check_pixel_range(this%pixels)
                close(nunit)
              case ('ppm')
                open (newunit = nunit, file = file_name//'.'//file_format, iostat=iostat)
                if (iostat /= 0) error stop 'Error opening the file.'
                call read_header(this, nunit)
+               allocate(buffer_int(this%height*3*this%width))
+               buffer_int = 0_ik
+               read(nunit, *) buffer_int
                call this%allocate_pixels()
-               allocate(buffer_int(3*this%width))
-               buffer_int = 0
-               do i = 1, size(this%pixels,1)
-                  read(nunit, *) buffer_int
-                  this%pixels(i,:) = buffer_int
-               end do
+               this%pixels = transpose(reshape(buffer_int, [this%width*3, this%height]))
                call this%check_pixel_range(this%pixels)
                close(nunit)
             end select
@@ -914,7 +910,6 @@ contains
       character(*),      intent(in), optional     :: encoding
       integer                                     :: nunit, i, j
       logical                                     :: file_exists
-      integer(ik), dimension(size(this%pixels,2)) :: buffer
       integer                                     :: iostat
 
       if (present(encoding)) then
@@ -947,19 +942,13 @@ contains
          open (newunit = nunit, file = file_name//'.'//this%file_format, status='replace', iostat=iostat)
          if (iostat /= 0) error stop 'Error opening the file.'
          call write_header(this, nunit)
-         do i = 1, size(this%pixels,1)
-            buffer = this%pixels(i,:)
-            write(nunit, '(*(g0,1x))') buffer
-         end do
+         write(nunit, '(*(g0,1x))', advance='no') transpose(this%pixels)
          close(nunit)
        case ('P4', 'P5', 'P6')
          open (newunit = nunit, file = file_name//'.'//this%file_format, status='replace', iostat=iostat)
          if (iostat /= 0) error stop 'Error opening the file.'
          call write_header(this, nunit)
-         do i = 1, size(this%pixels,1)
-            buffer = this%pixels(i,:)
-            write(nunit, '(*(a))', advance='no') achar(buffer)
-         end do
+         write(nunit, '(*(a))', advance='no') transpose(achar(this%pixels))
          close(nunit)
       end select
    end subroutine export_pnm
@@ -979,12 +968,12 @@ contains
       ! Write comments
       k = ceiling(real(len(adjustl(this%comment)))/70.0)
       if (len(adjustl(this%comment)) /=0 .and. len(adjustl(this%comment)) <= 70) then
-          write(nunit,'(a,a)') '# ',trim(adjustl(this%comment))
+         write(nunit,'(a,a)') '# ',trim(adjustl(this%comment))
       else if (len(adjustl(this%comment)) /=0 .and. len(adjustl(this%comment)) > 70 ) then
          do i = 1, k-1
             write(nunit,'(a,a)') '# ',adjustl(this%comment(70*(i-1)+1:70*(i-1)+70))
          end do
-            write(nunit,'(a,a)') '# ',trim(adjustl(this%comment(70*(k-1)+1:)))
+         write(nunit,'(a,a)') '# ',trim(adjustl(this%comment(70*(k-1)+1:)))
       end if
 
       ! Write width, height and max_color
@@ -1016,7 +1005,7 @@ contains
       do i = 1, k
          read(nunit,'(a,a,a)') temp, temp, comment
          this%comment = this%comment//comment
-      end do               
+      end do
       read(nunit,*) this%width, this%height
       if (this%file_format == 'pgm' .or. this%file_format == 'ppm') read(nunit,*) this%max_color
    end subroutine read_header
