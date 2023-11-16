@@ -114,41 +114,17 @@ contains
    elemental pure subroutine average_colors(this, avg, avg_red, avg_green, avg_blue)
       class(format_pnm), intent(in) :: this
       real(rk), intent(out), optional :: avg_red, avg_green, avg_blue, avg
-      integer :: total_pixels
-      integer :: i, j
 
       select case (this%file_format)
        case ('pbm', 'pgm')
 
-         avg   = 0.0_rk
-         total_pixels = this%width*this%height
-
-         do i = 1, this%height
-            do j = 1, this%width
-               avg   = avg   + real(this%pixels(i, j), kind=rk)
-            end do
-         end do
-
-         avg   = avg   / real(total_pixels, kind=rk)
+         avg = sum(this%pixels) / real(this%width*this%height, kind=rk)
 
        case ('ppm')
 
-         avg_red   = 0.0_rk
-         avg_green = 0.0_rk
-         avg_blue  = 0.0_rk
-         total_pixels = this%width*this%height
-
-         do i = 1, this%height
-            do j = 1, this%width
-               avg_red   = avg_red   + real(this%pixels(i, 3*j-2), kind=rk)
-               avg_green = avg_green + real(this%pixels(i, 3*j-1), kind=rk)
-               avg_blue  = avg_blue  + real(this%pixels(i, 3*j-0), kind=rk)
-            end do
-         end do
-
-         avg_red   = avg_red   / real(total_pixels, kind=rk)
-         avg_green = avg_green / real(total_pixels, kind=rk)
-         avg_blue  = avg_blue  / real(total_pixels, kind=rk)
+         avg_red   = sum(this%pixels(:, 1:this%width:3)) / real(this%width*this%height, kind=rk)
+         avg_green = sum(this%pixels(:, 2:this%width:3)) / real(this%width*this%height, kind=rk)
+         avg_blue  = sum(this%pixels(:, 3:this%width:3)) / real(this%width*this%height, kind=rk)
 
       end select
 
@@ -436,7 +412,6 @@ contains
    !> author: Seyed Ali Ghasemi
    elemental pure subroutine greyscale(this)
       class(format_pnm), intent(inout) :: this
-      real(rk)                         :: gsc
       integer                          :: i, j
 
       ! Check if the file is ppm
@@ -444,13 +419,10 @@ contains
 
       do i = 1, this%height
          do j = 1, this%width
-            ! Calculate a weighed average (here based on ITU Rec.709) of the 3 channels to get a gray color with the same brightness.
-            gsc = 0.2126_rk * real(this%pixels(i, 3*j-2), kind=rk) + &
-                  0.7152_rk * real(this%pixels(i, 3*j-1), kind=rk) + &
-                  0.0722_rk * real(this%pixels(i, 3*j-0), kind=rk)
-
-            ! Convert the greyscale value back to integer and set it for all RGB channels
-            this%pixels(i, 3*j-2:3*j) = int(gsc)
+            ! Calculate the ITU Rec.709 weighted average of RGB channels to derive a greyscale value and assign it as an integer to all RGB channels.
+            this%pixels(i, 3*j-2:3*j) = int(0.2126_rk * real(this%pixels(i, 3*j-2), kind=rk) + &
+                                            0.7152_rk * real(this%pixels(i, 3*j-1), kind=rk) + &
+                                            0.0722_rk * real(this%pixels(i, 3*j-0), kind=rk), kind=ik)
          end do
       end do
 
