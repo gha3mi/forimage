@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="Documentation for ForImage">
+    <meta name="author" content="Seyed Ali Ghasemi" >
+    <link rel="icon" href="../favicon.png">
+
+    <title>initialize_colors &ndash; ForImage</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="../css/pygments.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/local.css" rel="stylesheet">
+      <link  href="../tipuesearch/tipuesearch.css" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-3.7.0.slim.min.js" integrity="sha256-tG5mcZUtJsZvyKAxYLVXrmjKBVLd6VpVccqz/r4ypFE=" crossorigin="anonymous"></script>
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <div class="container-fluid mb-sm-4 mb-xl-2">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+          <a class="navbar-brand" href="../index.html">ForImage <small>0.3.0</small></a>
+          <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar"
+                  aria-expanded="false" aria-controls="navbar" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon">
+          </button>
+
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link" href="../lists/files.html">Source Files</a>
+                  </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/modules.html">Modules</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/procedures.html">Procedures</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/types.html">Derived Types</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../program/demo.html">Program</a>
+                </li>
+            </ul>
+              <div class="d-flex align-items-end flex-grow-1">
+                <form action="../search.html" role="search" class="ms-auto">
+                  <input type="text" class="form-control" aria-label="Search" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+                </form>
+              </div>
+          </div><!--/.nav-collapse -->
+        </div>
+      </nav>
+    </div>
+
+    <div class="container">
+  <div class="row">
+    <h1>initialize_colors
+      <small>Subroutine</small>
+      
+    </h1>
+      <div class="container p-2 mb-4 bg-light border rounded-3">
+    <div class="row align-items-center justify-content-between" id="info-bar">
+      <div class="col">
+        <ul class="list-inline" style="margin-bottom:0px;display:inline">
+            <li class="list-inline-item" id="meta-author"><i class="fa fa-pencil"></i> Seyed Ali Ghasemi</li>
+
+            <li class="list-inline-item" id="statements"><i class="fa fa-list-ol"></i>
+              <a data-bs-toggle="tooltip"
+                 data-bs-placement="bottom" data-html="true"
+                 title=" 1.4% of total for procedures.">19 statements</a>
+            </li>
+
+            <li class="list-inline-item" id="source-file">
+              <i class="fa fa-code"></i>
+              <a href="../src/forcolor.f90"> Source File</a>
+            </li>
+        </ul>
+      </div>
+      <div class="col">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb justify-content-end mb-0">
+                <li class="breadcrumb-item"><a href='../sourcefile/forcolor.f90.html'>forcolor.f90</a></li>
+                <li class="breadcrumb-item"><a href='../module/forcolor.html'>forcolor</a></li>
+            <li class="breadcrumb-item active" aria-current="page">initialize_colors</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </div>
+  <script>
+    $(function () {
+    $('[data-bs-toggle="tooltip"]').tooltip()
+    })
+  </script>
+
+  </div>
+  
+  <div class="row">
+    <div class="col-md-3 hidden-xs hidden-sm visible-md visible-lg">
+      <div id="sidebar">
+      <h3>Contents</h3>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    <div class="card card-primary">
+      <div class="card-header text-left"><h3 class="card-title">Source Code</h3></div>
+      <div class="list-group">
+        <a class="list-group-item" href="../proc/initialize_colors.html#src">initialize_colors</a>
+      </div>
+    </div>
+
+
+  </div>
+
+    </div>
+    
+    <div class="col-md-9" id='text'>
+    <h2>private pure subroutine initialize_colors(colors)  
+</h2>
+    
+
+
+
+    <h3>Arguments</h3>
+        <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-colors~5"></span>
+              type(<a href='../type/color.html'>color</a>),
+            </td>
+<td>intent(out),</td>
+              <td></td>            <td>
+              dimension(:), allocatable
+            </td>
+            <td>::</td>
+            <td><strong>colors</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+    <br>
+    <div class="card">
+      <div class="card-header">
+  <h3 class="card-title">Calls</h3>
+      </div>
+      <div class="card-body">
+  <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.43.0 (0)
+ -->
+<!-- Title: proc~~initialize_colors~~CallsGraph Pages: 1 -->
+<svg id="procinitialize_colorsCallsGraph" width="641pt" height="308pt"
+ viewBox="0.00 0.00 641.00 308.10" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="proc~~initialize_colors~~CallsGraph" class="graph" transform="scale(1.33 1.33) rotate(0) translate(4 406)">
+<title>proc~~initialize_colors~~CallsGraph</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-406 849,-406 849,4 -4,4"/>
+<!-- proc~initialize_colors -->
+<g id="proc~~initialize_colors~~CallsGraph_node1" class="node">
+<title>proc~initialize_colors</title>
+<polygon fill="none" stroke="black" points="143,-254 0,-254 0,-230 143,-230 143,-254"/>
+<text text-anchor="middle" x="71.5" y="-239.6" font-family="Helvetica,sans-Serif" font-size="10.50">forcolor::initialize_colors</text>
+</g>
+<!-- proc~convert -->
+<g id="proc~~initialize_colors~~CallsGraph_node2" class="node">
+<title>proc~convert</title>
+<g id="a_proc~~initialize_colors~~CallsGraph_node2"><a xlink:href=".././proc/convert.html" xlink:title="forcolor::color%convert">
+<polygon fill="#d9534f" stroke="#d9534f" points="666,-213 527,-213 527,-189 666,-189 666,-213"/>
+<text text-anchor="middle" x="596.5" y="-198.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">forcolor::color%convert</text>
+</a>
+</g>
+</g>
+<!-- proc~initialize_colors&#45;&gt;proc~convert -->
+<g id="proc~~initialize_colors~~CallsGraph_edge1" class="edge">
+<title>proc~initialize_colors&#45;&gt;proc~convert</title>
+<path fill="none" stroke="#255000" d="M96.23,-254.09C161.78,-285.75 349.83,-364.67 491,-306 532.03,-288.95 565.28,-247.08 582.56,-221.67"/>
+<polygon fill="#255000" stroke="#255000" points="585.61,-223.4 588.19,-213.12 579.76,-219.55 585.61,-223.4"/>
+</g>
+<!-- proc~set~2 -->
+<g id="proc~~initialize_colors~~CallsGraph_node3" class="node">
+<title>proc~set~2</title>
+<g id="a_proc~~initialize_colors~~CallsGraph_node3"><a xlink:href=".././proc/set~2.html" xlink:title="forcolor::color%set">
+<polygon fill="#d9534f" stroke="#d9534f" points="293,-192 179,-192 179,-168 293,-168 293,-192"/>
+<text text-anchor="middle" x="236" y="-177.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">forcolor::color%set</text>
+</a>
+</g>
+</g>
+<!-- proc~initialize_colors&#45;&gt;proc~set~2 -->
+<g id="proc~~initialize_colors~~CallsGraph_edge2" class="edge">
+<title>proc~initialize_colors&#45;&gt;proc~set~2</title>
+<path fill="none" stroke="#255000" d="M104.22,-229.9C129.83,-220.13 166.06,-206.3 193.9,-195.68"/>
+<polygon fill="#255000" stroke="#255000" points="195.27,-198.91 203.36,-192.07 192.77,-192.37 195.27,-198.91"/>
+</g>
+<!-- proc~cmyk_to_rgb -->
+<g id="proc~~initialize_colors~~CallsGraph_node4" class="node">
+<title>proc~cmyk_to_rgb</title>
+<g id="a_proc~~initialize_colors~~CallsGraph_node4"><a xlink:href=".././proc/cmyk_to_rgb.html" xlink:title="forcolor::cmyk_to_rgb">
+<polygon fill="#d9534f" stroke="#d9534f" points="838,-402 709,-402 709,-378 838,-378 838,-402"/>
+<text text-anchor="middle" x="773.5" y="-387.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">forcolor::cmyk_to_rgb</text>
+</a>
+</g>
+</g>
+<!-- proc~convert&#45;&gt;proc~cmyk_to_rgb -->
+<g id="proc~~initialize_colors~~CallsGraph_edge3" class="edge">
+<title>proc~convert&#45;&gt;proc~cmyk_to_rgb</title>
+<path fill="none" stroke="#255000" d="M601.63,-213.26C612.69,-244.25 646.03,-326.28 702,-369 704.04,-370.56 706.2,-372 708.44,-373.34"/>
+<polygon fill="#255000" stroke="#255000" points="706.95,-376.51 717.44,-377.99 710.16,-370.29 706.95,-376.51"/>
+</g>
+<!-- proc~decimal_to_rgb -->
+<g id="proc~~initialize_colors~~CallsGraph_node5" class="node">
+<title>proc~decimal_to_rgb</title>
+<g id="a_proc~~initialize_colors~~CallsGraph_node5"><a xlink:href=".././proc/decimal_to_rgb.html" xlink:title="forcolor::decimal_to_rgb">
+<polygon fill="#d9534f" stroke="#d9534f" points="845,-360 702,-360 702,-336 845,-336 845,-360"/>
+<text text-anchor="middle" x="773.5" y="-345.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">forcolor::decimal_to_rgb</text>
+</a>
+</g>
+</g>
+<!-- proc~convert&#45;&gt;proc~decimal_to_rgb -->
+<g id="proc~~initialize_colors~~CallsGraph_edge4" class="edge">
+<title>proc~convert&#45;&gt;proc~decimal_to_rgb</title>
+<path fill="none" stroke="#255000" d="M604.15,-213.07C618.59,-238.16 655.29,-296.13 702,-327 704.58,-328.71 707.3,-330.28 710.12,-331.72"/>
+<polygon fill="#255000" stroke="#255000" points="708.81,-334.97 719.37,-335.93 711.71,-328.6 708.81,-334.97"/>
+</g>
+<!-- proc~hex_to_rgb -->
+<g id="proc~~initialize_colors~~CallsGraph_node6" class="node">
+<title>proc~hex_to_rgb</title>
+<g id="a_proc~~initialize_colors~~CallsGraph_node6"><a xlink:href=".././proc/hex_to_rgb.html" xlink:title="forcolor::hex_to_rgb">
+<polygon fill="#d9534f" stroke="#d9534f" points="833,-318 714,-318 714,-294 833,-294 833,-318"/>
+<text text-anchor="middle" x="773.5" y="-303.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">forcolor::hex_to_rgb</text>
+</a>
+</g>
+</g>
+<!-- proc~convert&#45;&gt;proc~hex_to_rgb -->
+<g id="proc~~initialize_colors~~CallsGraph_edge5" class="edge">
+<title>proc~convert&#45;&gt;proc~hex_to_rgb</title>
+<path fill="none" stroke="#255000" d="M609.24,-213.06C627.5,-231.16 664.49,-265.31 702,-285 705.69,-286.94 709.58,-288.72 713.57,-290.36"/>
+<polygon fill="#255000" stroke="#255000" points="712.4,-293.66 722.99,-293.92 714.87,-287.11 712.4,-293.66"/>
+</g>
+<!-- proc~hsl_to_rgb -->
+<g id="proc~~initialize_colors~~CallsGraph_node7" class="node">
+<title>proc~hsl_to_rgb</title>
+<g id="a_proc~~initialize_colors~~CallsGraph_node7"><a xlink:href=".././proc/hsl_to_rgb.html" xlink:title="forcolor::hsl_to_rgb">
+<polygon fill="#d9534f" stroke="#d9534f" points="831,-276 716,-276 716,-252 831,-252 831,-276"/>
+<text text-anchor="middle" x="773.5" y="-261.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">forcolor::hsl_to_rgb</text>
+</a>
+</g>
+</g>
+<!-- proc~convert&#45;&gt;proc~hsl_to_rgb -->
+<g id="proc~~initialize_colors~~CallsGraph_edge6" class="edge">
+<title>proc~convert&#45;&gt;proc~hsl_to_rgb</title>
+<path fill="none" stroke="#255000" d="M625.62,-213.12C646.5,-221.93 675.79,-233.85 702,-243 707.86,-245.04 714.03,-247.07 720.18,-249.01"/>
+<polygon fill="#255000" stroke="#255000" points="719.21,-252.37 729.8,-251.97 721.27,-245.68 719.21,-252.37"/>
+</g>
+<!-- proc~hsv_to_rgb -->
+<g id="proc~~initialize_colors~~CallsGraph_node8" class="node">
+<title>proc~hsv_to_rgb</title>
+<g id="a_proc~~initialize_colors~~CallsGraph_node8"><a xlink:href=".././proc/hsv_to_rgb.html" xlink:title="forcolor::hsv_to_rgb">
+<polygon fill="#d9534f" stroke="#d9534f" points="832.5,-234 714.5,-234 714.5,-210 832.5,-210 832.5,-234"/>
+<text text-anchor="middle" x="773.5" y="-219.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">forcolor::hsv_to_rgb</text>
+</a>
+</g>
+</g>
+<!-- proc~convert&#45;&gt;proc~hsv_to_rgb -->
+<g id="proc~~initialize_colors~~CallsGraph_edge7" class="edge">
+<title>proc~convert&#45;&gt;proc~hsv_to_rgb</title>
+<path fill="none" stroke="#255000" d="M666.16,-209.24C678.58,-210.73 691.53,-212.28 703.95,-213.77"/>
+<polygon fill="#255000" stroke="#255000" points="703.88,-217.29 714.23,-215.01 704.71,-210.34 703.88,-217.29"/>
+</g>
+<!-- proc~rgb_to_cmyk -->
+<g id="proc~~initialize_colors~~CallsGraph_node9" class="node">
+<title>proc~rgb_to_cmyk</title>
+<g id="a_proc~~initialize_colors~~CallsGraph_node9"><a xlink:href=".././proc/rgb_to_cmyk.html" xlink:title="forcolor::rgb_to_cmyk">
+<polygon fill="#d9534f" stroke="#d9534f" points="838,-192 709,-192 709,-168 838,-168 838,-192"/>
+<text text-anchor="middle" x="773.5" y="-177.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">forcolor::rgb_to_cmyk</text>
+</a>
+</g>
+</g>
+<!-- proc~convert&#45;&gt;proc~rgb_to_cmyk -->
+<g id="proc~~initialize_colors~~CallsGraph_edge8" class="edge">
+<title>proc~convert&#45;&gt;proc~rgb_to_cmyk</title>
+<path fill="none" stroke="#255000" d="M666.16,-192.76C676.83,-191.48 687.89,-190.15 698.66,-188.86"/>
+<polygon fill="#255000" stroke="#255000" points="699.38,-192.3 708.89,-187.63 698.54,-185.35 699.38,-192.3"/>
+</g>
+<!-- proc~rgb_to_decimal -->
+<g id="proc~~initialize_colors~~CallsGraph_node10" class="node">
+<title>proc~rgb_to_decimal</title>
+<g id="a_proc~~initialize_colors~~CallsGraph_node10"><a xlink:href=".././proc/rgb_to_decimal.html" xlink:title="forcolor::rgb_to_decimal">
+<polygon fill="#d9534f" stroke="#d9534f" points="845,-150 702,-150 702,-126 845,-126 845,-150"/>
+<text text-anchor="middle" x="773.5" y="-135.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">forcolor::rgb_to_decimal</text>
+</a>
+</g>
+</g>
+<!-- proc~convert&#45;&gt;proc~rgb_to_decimal -->
+<g id="proc~~initialize_colors~~CallsGraph_edge9" class="edge">
+<title>proc~convert&#45;&gt;proc~rgb_to_decimal</title>
+<path fill="none" stroke="#255000" d="M625.62,-188.88C646.5,-180.07 675.79,-168.15 702,-159 707.86,-156.96 714.03,-154.93 720.18,-152.99"/>
+<polygon fill="#255000" stroke="#255000" points="721.27,-156.32 729.8,-150.03 719.21,-149.63 721.27,-156.32"/>
+</g>
+<!-- proc~rgb_to_hex -->
+<g id="proc~~initialize_colors~~CallsGraph_node11" class="node">
+<title>proc~rgb_to_hex</title>
+<g id="a_proc~~initialize_colors~~CallsGraph_node11"><a xlink:href=".././proc/rgb_to_hex.html" xlink:title="forcolor::rgb_to_hex">
+<polygon fill="#d9534f" stroke="#d9534f" points="833,-108 714,-108 714,-84 833,-84 833,-108"/>
+<text text-anchor="middle" x="773.5" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">forcolor::rgb_to_hex</text>
+</a>
+</g>
+</g>
+<!-- proc~convert&#45;&gt;proc~rgb_to_hex -->
+<g id="proc~~initialize_colors~~CallsGraph_edge10" class="edge">
+<title>proc~convert&#45;&gt;proc~rgb_to_hex</title>
+<path fill="none" stroke="#255000" d="M609.24,-188.94C627.5,-170.84 664.49,-136.69 702,-117 705.69,-115.06 709.58,-113.28 713.57,-111.64"/>
+<polygon fill="#255000" stroke="#255000" points="714.87,-114.89 722.99,-108.08 712.4,-108.34 714.87,-114.89"/>
+</g>
+<!-- proc~rgb_to_hsl -->
+<g id="proc~~initialize_colors~~CallsGraph_node12" class="node">
+<title>proc~rgb_to_hsl</title>
+<g id="a_proc~~initialize_colors~~CallsGraph_node12"><a xlink:href=".././proc/rgb_to_hsl.html" xlink:title="forcolor::rgb_to_hsl">
+<polygon fill="#d9534f" stroke="#d9534f" points="831,-66 716,-66 716,-42 831,-42 831,-66"/>
+<text text-anchor="middle" x="773.5" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">forcolor::rgb_to_hsl</text>
+</a>
+</g>
+</g>
+<!-- proc~convert&#45;&gt;proc~rgb_to_hsl -->
+<g id="proc~~initialize_colors~~CallsGraph_edge11" class="edge">
+<title>proc~convert&#45;&gt;proc~rgb_to_hsl</title>
+<path fill="none" stroke="#255000" d="M604.15,-188.93C618.59,-163.84 655.29,-105.87 702,-75 704.58,-73.29 707.3,-71.72 710.12,-70.28"/>
+<polygon fill="#255000" stroke="#255000" points="711.71,-73.4 719.37,-66.07 708.81,-67.03 711.71,-73.4"/>
+</g>
+<!-- proc~rgb_to_hsv -->
+<g id="proc~~initialize_colors~~CallsGraph_node13" class="node">
+<title>proc~rgb_to_hsv</title>
+<g id="a_proc~~initialize_colors~~CallsGraph_node13"><a xlink:href=".././proc/rgb_to_hsv.html" xlink:title="forcolor::rgb_to_hsv">
+<polygon fill="#d9534f" stroke="#d9534f" points="832.5,-24 714.5,-24 714.5,0 832.5,0 832.5,-24"/>
+<text text-anchor="middle" x="773.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">forcolor::rgb_to_hsv</text>
+</a>
+</g>
+</g>
+<!-- proc~convert&#45;&gt;proc~rgb_to_hsv -->
+<g id="proc~~initialize_colors~~CallsGraph_edge12" class="edge">
+<title>proc~convert&#45;&gt;proc~rgb_to_hsv</title>
+<path fill="none" stroke="#255000" d="M601.63,-188.74C612.69,-157.75 646.03,-75.72 702,-33 704.04,-31.44 706.2,-30 708.44,-28.66"/>
+<polygon fill="#255000" stroke="#255000" points="710.16,-31.71 717.44,-24.01 706.95,-25.49 710.16,-31.71"/>
+</g>
+<!-- proc~set_cmyk -->
+<g id="proc~~initialize_colors~~CallsGraph_node14" class="node">
+<title>proc~set_cmyk</title>
+<g id="a_proc~~initialize_colors~~CallsGraph_node14"><a xlink:href=".././proc/set_cmyk.html" xlink:title="forcolor::color%set_cmyk">
+<polygon fill="#d9534f" stroke="#d9534f" points="484,-297 336,-297 336,-273 484,-273 484,-297"/>
+<text text-anchor="middle" x="410" y="-282.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">forcolor::color%set_cmyk</text>
+</a>
+</g>
+</g>
+<!-- proc~set~2&#45;&gt;proc~set_cmyk -->
+<g id="proc~~initialize_colors~~CallsGraph_edge13" class="edge">
+<title>proc~set~2&#45;&gt;proc~set_cmyk</title>
+<path fill="none" stroke="#025525" stroke-opacity="0.019608" d="M246.95,-192.28C262.51,-210.67 294.42,-245.19 329,-264 332.52,-265.91 336.22,-267.66 340.02,-269.25"/>
+<polygon fill="#025525" fill-opacity="0.019608" stroke="#025525" stroke-opacity="0.019608" points="339.04,-272.63 349.63,-272.9 341.53,-266.08 339.04,-272.63"/>
+</g>
+<!-- proc~set_decimal -->
+<g id="proc~~initialize_colors~~CallsGraph_node15" class="node">
+<title>proc~set_decimal</title>
+<g id="a_proc~~initialize_colors~~CallsGraph_node15"><a xlink:href=".././proc/set_decimal.html" xlink:title="forcolor::color%set_decimal">
+<polygon fill="#d9534f" stroke="#d9534f" points="491,-255 329,-255 329,-231 491,-231 491,-255"/>
+<text text-anchor="middle" x="410" y="-240.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">forcolor::color%set_decimal</text>
+</a>
+</g>
+</g>
+<!-- proc~set~2&#45;&gt;proc~set_decimal -->
+<g id="proc~~initialize_colors~~CallsGraph_edge14" class="edge">
+<title>proc~set~2&#45;&gt;proc~set_decimal</title>
+<path fill="none" stroke="#025525" stroke-opacity="0.019608" d="M260.36,-192.02C278.69,-201.11 305.02,-213.45 329,-222 335.04,-224.15 341.4,-226.19 347.79,-228.09"/>
+<polygon fill="#025525" fill-opacity="0.019608" stroke="#025525" stroke-opacity="0.019608" points="347.24,-231.58 357.82,-230.96 349.17,-224.85 347.24,-231.58"/>
+</g>
+<!-- proc~set_hex -->
+<g id="proc~~initialize_colors~~CallsGraph_node16" class="node">
+<title>proc~set_hex</title>
+<g id="a_proc~~initialize_colors~~CallsGraph_node16"><a xlink:href=".././proc/set_hex.html" xlink:title="forcolor::color%set_hex">
+<polygon fill="#d9534f" stroke="#d9534f" points="479,-213 341,-213 341,-189 479,-189 479,-213"/>
+<text text-anchor="middle" x="410" y="-198.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">forcolor::color%set_hex</text>
+</a>
+</g>
+</g>
+<!-- proc~set~2&#45;&gt;proc~set_hex -->
+<g id="proc~~initialize_colors~~CallsGraph_edge15" class="edge">
+<title>proc~set~2&#45;&gt;proc~set_hex</title>
+<path fill="none" stroke="#025525" stroke-opacity="0.019608" d="M293.32,-186.88C305.3,-188.34 318.16,-189.91 330.79,-191.45"/>
+<polygon fill="#025525" fill-opacity="0.019608" stroke="#025525" stroke-opacity="0.019608" points="330.5,-194.94 340.86,-192.68 331.35,-187.99 330.5,-194.94"/>
+</g>
+<!-- proc~set_hsl -->
+<g id="proc~~initialize_colors~~CallsGraph_node17" class="node">
+<title>proc~set_hsl</title>
+<g id="a_proc~~initialize_colors~~CallsGraph_node17"><a xlink:href=".././proc/set_hsl.html" xlink:title="forcolor::color%set_hsl">
+<polygon fill="#d9534f" stroke="#d9534f" points="477,-171 343,-171 343,-147 477,-147 477,-171"/>
+<text text-anchor="middle" x="410" y="-156.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">forcolor::color%set_hsl</text>
+</a>
+</g>
+</g>
+<!-- proc~set~2&#45;&gt;proc~set_hsl -->
+<g id="proc~~initialize_colors~~CallsGraph_edge16" class="edge">
+<title>proc~set~2&#45;&gt;proc~set_hsl</title>
+<path fill="none" stroke="#025525" stroke-opacity="0.019608" d="M293.32,-173.12C305.97,-171.58 319.59,-169.92 332.89,-168.29"/>
+<polygon fill="#025525" fill-opacity="0.019608" stroke="#025525" stroke-opacity="0.019608" points="333.48,-171.75 342.98,-167.06 332.63,-164.8 333.48,-171.75"/>
+</g>
+<!-- proc~set_hsv -->
+<g id="proc~~initialize_colors~~CallsGraph_node18" class="node">
+<title>proc~set_hsv</title>
+<g id="a_proc~~initialize_colors~~CallsGraph_node18"><a xlink:href=".././proc/set_hsv.html" xlink:title="forcolor::color%set_hsv">
+<polygon fill="#d9534f" stroke="#d9534f" points="478.5,-129 341.5,-129 341.5,-105 478.5,-105 478.5,-129"/>
+<text text-anchor="middle" x="410" y="-114.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">forcolor::color%set_hsv</text>
+</a>
+</g>
+</g>
+<!-- proc~set~2&#45;&gt;proc~set_hsv -->
+<g id="proc~~initialize_colors~~CallsGraph_edge17" class="edge">
+<title>proc~set~2&#45;&gt;proc~set_hsv</title>
+<path fill="none" stroke="#025525" stroke-opacity="0.019608" d="M260.36,-167.98C278.69,-158.89 305.02,-146.55 329,-138 335.04,-135.85 341.4,-133.81 347.79,-131.91"/>
+<polygon fill="#025525" fill-opacity="0.019608" stroke="#025525" stroke-opacity="0.019608" points="349.17,-135.15 357.82,-129.04 347.24,-128.42 349.17,-135.15"/>
+</g>
+<!-- proc~set_name -->
+<g id="proc~~initialize_colors~~CallsGraph_node19" class="node">
+<title>proc~set_name</title>
+<g id="a_proc~~initialize_colors~~CallsGraph_node19"><a xlink:href=".././proc/set_name.html" xlink:title="forcolor::color%set_name">
+<polygon fill="#d9534f" stroke="#d9534f" points="485,-87 335,-87 335,-63 485,-63 485,-87"/>
+<text text-anchor="middle" x="410" y="-72.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">forcolor::color%set_name</text>
+</a>
+</g>
+</g>
+<!-- proc~set~2&#45;&gt;proc~set_name -->
+<g id="proc~~initialize_colors~~CallsGraph_edge18" class="edge">
+<title>proc~set~2&#45;&gt;proc~set_name</title>
+<path fill="none" stroke="#025525" stroke-opacity="0.019608" d="M246.95,-167.72C262.51,-149.33 294.42,-114.81 329,-96 332.52,-94.09 336.22,-92.34 340.02,-90.75"/>
+<polygon fill="#025525" fill-opacity="0.019608" stroke="#025525" stroke-opacity="0.019608" points="341.53,-93.92 349.63,-87.1 339.04,-87.37 341.53,-93.92"/>
+</g>
+<!-- proc~set_rgb -->
+<g id="proc~~initialize_colors~~CallsGraph_node20" class="node">
+<title>proc~set_rgb</title>
+<g id="a_proc~~initialize_colors~~CallsGraph_node20"><a xlink:href=".././proc/set_rgb.html" xlink:title="forcolor::color%set_rgb">
+<polygon fill="#d9534f" stroke="#d9534f" points="478.5,-45 341.5,-45 341.5,-21 478.5,-21 478.5,-45"/>
+<text text-anchor="middle" x="410" y="-30.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">forcolor::color%set_rgb</text>
+</a>
+</g>
+</g>
+<!-- proc~set~2&#45;&gt;proc~set_rgb -->
+<g id="proc~~initialize_colors~~CallsGraph_edge19" class="edge">
+<title>proc~set~2&#45;&gt;proc~set_rgb</title>
+<path fill="none" stroke="#025525" stroke-opacity="0.019608" d="M242.38,-167.8C254.2,-142.47 284.91,-84.06 329,-54 331.53,-52.28 334.19,-50.69 336.95,-49.24"/>
+<polygon fill="#025525" fill-opacity="0.019608" stroke="#025525" stroke-opacity="0.019608" points="338.42,-52.42 346.02,-45.03 335.47,-46.07 338.42,-52.42"/>
+</g>
+<!-- proc~set_cmyk&#45;&gt;proc~convert -->
+<g id="proc~~initialize_colors~~CallsGraph_edge20" class="edge">
+<title>proc~set_cmyk&#45;&gt;proc~convert</title>
+<path fill="none" stroke="#012025" stroke-opacity="0.019608" d="M465.49,-272.94C474.16,-270.38 482.93,-267.41 491,-264 519.73,-251.87 549.97,-232.85 570.49,-218.89"/>
+<polygon fill="#012025" fill-opacity="0.019608" stroke="#012025" stroke-opacity="0.019608" points="572.69,-221.62 578.92,-213.06 568.71,-215.86 572.69,-221.62"/>
+</g>
+<!-- proc~set_decimal&#45;&gt;proc~convert -->
+<g id="proc~~initialize_colors~~CallsGraph_edge21" class="edge">
+<title>proc~set_decimal&#45;&gt;proc~convert</title>
+<path fill="none" stroke="#029255" d="M463.87,-230.96C485.39,-226.07 510.43,-220.37 532.86,-215.26"/>
+<polygon fill="#029255" stroke="#029255" points="533.65,-218.67 542.62,-213.04 532.09,-211.84 533.65,-218.67"/>
+</g>
+<!-- proc~set_hex&#45;&gt;proc~convert -->
+<g id="proc~~initialize_colors~~CallsGraph_edge22" class="edge">
+<title>proc~set_hex&#45;&gt;proc~convert</title>
+<path fill="none" stroke="#600255" d="M479.18,-201C491.37,-201 504.16,-201 516.62,-201"/>
+<polygon fill="#600255" stroke="#600255" points="516.99,-204.5 526.99,-201 516.99,-197.5 516.99,-204.5"/>
+</g>
+<!-- proc~set_hsl&#45;&gt;proc~convert -->
+<g id="proc~~initialize_colors~~CallsGraph_edge23" class="edge">
+<title>proc~set_hsl&#45;&gt;proc~convert</title>
+<path fill="none" stroke="#149025" stroke-opacity="0.019608" d="M463.87,-171.04C485.39,-175.93 510.43,-181.63 532.86,-186.74"/>
+<polygon fill="#149025" fill-opacity="0.019608" stroke="#149025" stroke-opacity="0.019608" points="532.09,-190.16 542.62,-188.96 533.65,-183.33 532.09,-190.16"/>
+</g>
+<!-- proc~set_hsv&#45;&gt;proc~convert -->
+<g id="proc~~initialize_colors~~CallsGraph_edge24" class="edge">
+<title>proc~set_hsv&#45;&gt;proc~convert</title>
+<path fill="none" stroke="#240025" stroke-opacity="0.019608" d="M465.49,-129.06C474.16,-131.62 482.93,-134.59 491,-138 519.73,-150.13 549.97,-169.15 570.49,-183.11"/>
+<polygon fill="#240025" fill-opacity="0.019608" stroke="#240025" stroke-opacity="0.019608" points="568.71,-186.14 578.92,-188.94 572.69,-180.38 568.71,-186.14"/>
+</g>
+<!-- proc~set_rgb&#45;&gt;proc~convert -->
+<g id="proc~~initialize_colors~~CallsGraph_edge25" class="edge">
+<title>proc~set_rgb&#45;&gt;proc~convert</title>
+<path fill="none" stroke="#255090" d="M474.44,-45.13C480.29,-47.57 485.92,-50.49 491,-54 537.95,-86.45 571.02,-147.21 586.17,-179.52"/>
+<polygon fill="#255090" stroke="#255090" points="583.13,-181.29 590.46,-188.94 589.5,-178.39 583.13,-181.29"/>
+</g>
+</g>
+</svg>
+</div>                <script>
+                  var panprocinitialize_colorsCallsGraph = svgPanZoom('#procinitialize_colorsCallsGraph',
+                    {zoomEnabled: true, controlIconsEnabled: true, fit: true, center: true,}
+                  );
+                </script>        <div><a type="button" class="graph-help" data-toggle="modal" href="#CallsGraph-help-text">Help</a></div>
+          <div class="modal fade" id="CallsGraph-help-text" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-lg" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                  <h4 class="modal-title" id="-graph-help-label">Graph Key</h4>
+                </div>
+              <div class="modal-body">
+<p>Nodes of different colours represent the following: </p>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.43.0 (0)
+ -->
+<!-- Title: Graph Key Pages: 1 -->
+<svg width="641pt" height="28pt"
+ viewBox="0.00 0.00 641.00 27.51" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1.16 1.16) rotate(0) translate(4 28)">
+<title>Graph Key</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-28 741.5,-28 741.5,4 -4,4"/>
+<!-- Subroutine -->
+<g id="node1" class="node">
+<title>Subroutine</title>
+<polygon fill="#d9534f" stroke="#d9534f" points="70,-24 0,-24 0,0 70,0 70,-24"/>
+<text text-anchor="middle" x="35" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Subroutine</text>
+</g>
+<!-- Function -->
+<g id="node2" class="node">
+<title>Function</title>
+<polygon fill="#d94e8f" stroke="#d94e8f" points="146,-24 88,-24 88,0 146,0 146,-24"/>
+<text text-anchor="middle" x="117" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Function</text>
+</g>
+<!-- Interface -->
+<g id="node3" class="node">
+<title>Interface</title>
+<polygon fill="#a7506f" stroke="#a7506f" points="225.5,-24 164.5,-24 164.5,0 225.5,0 225.5,-24"/>
+<text text-anchor="middle" x="195" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Interface</text>
+</g>
+<!-- Type Bound Procedure -->
+<g id="node4" class="node">
+<title>Type Bound Procedure</title>
+<polygon fill="#a7506f" stroke="#a7506f" points="374,-24 244,-24 244,0 374,0 374,-24"/>
+<text text-anchor="middle" x="309" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Type Bound Procedure</text>
+</g>
+<!-- Unknown Procedure Type -->
+<g id="node5" class="node">
+<title>Unknown Procedure Type</title>
+<polygon fill="#777777" stroke="#777777" points="537.5,-24 392.5,-24 392.5,0 537.5,0 537.5,-24"/>
+<text text-anchor="middle" x="465" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Unknown Procedure Type</text>
+</g>
+<!-- Program -->
+<g id="node6" class="node">
+<title>Program</title>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="614,-24 556,-24 556,0 614,0 614,-24"/>
+<text text-anchor="middle" x="585" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Program</text>
+</g>
+<!-- This Page&#39;s Entity -->
+<g id="node7" class="node">
+<title>This Page&#39;s Entity</title>
+<polygon fill="none" stroke="black" points="737.5,-24 632.5,-24 632.5,0 737.5,0 737.5,-24"/>
+<text text-anchor="middle" x="685" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50">This Page&#39;s Entity</text>
+</g>
+</g>
+</svg>
+
+<p>Solid arrows point from a procedure to one which it calls. Dashed 
+arrows point from an interface to procedures which implement that interface.
+This could include the module procedures in a generic interface or the
+implementation in a submodule of an interface in a parent module.
+</p>
+ Where possible, edges connecting nodes are
+given different colours to make them easier to distinguish in
+large graphs.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+  <h3 class="card-title">Called by</h3>
+      </div>
+      <div class="card-body">
+  <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.43.0 (0)
+ -->
+<!-- Title: proc~~initialize_colors~~CalledByGraph Pages: 1 -->
+<svg id="procinitialize_colorsCalledByGraph" width="401pt" height="158pt"
+ viewBox="0.00 0.00 401.00 158.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="proc~~initialize_colors~~CalledByGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 154)">
+<title>proc~~initialize_colors~~CalledByGraph</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-154 397,-154 397,4 -4,4"/>
+<!-- proc~initialize_colors -->
+<g id="proc~~initialize_colors~~CalledByGraph_node1" class="node">
+<title>proc~initialize_colors</title>
+<polygon fill="none" stroke="black" points="393,-87 250,-87 250,-63 393,-63 393,-87"/>
+<text text-anchor="middle" x="321.5" y="-72.6" font-family="Helvetica,sans-Serif" font-size="10.50">forcolor::initialize_colors</text>
+</g>
+<!-- proc~find_nearest -->
+<g id="proc~~initialize_colors~~CalledByGraph_node2" class="node">
+<title>proc~find_nearest</title>
+<g id="a_proc~~initialize_colors~~CalledByGraph_node2"><a xlink:href=".././proc/find_nearest.html" xlink:title="forcolor::color%find_nearest">
+<polygon fill="#d9534f" stroke="#d9534f" points="188.5,-150 25.5,-150 25.5,-126 188.5,-126 188.5,-150"/>
+<text text-anchor="middle" x="107" y="-135.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">forcolor::color%find_nearest</text>
+</a>
+</g>
+</g>
+<!-- proc~find_nearest&#45;&gt;proc~initialize_colors -->
+<g id="proc~~initialize_colors~~CalledByGraph_edge1" class="edge">
+<title>proc~find_nearest&#45;&gt;proc~initialize_colors</title>
+<path fill="none" stroke="#255000" d="M178,-125.99C190.09,-123.39 202.48,-120.38 214,-117 238.04,-109.94 264.22,-99.65 284.61,-91.03"/>
+<polygon fill="#255000" stroke="#255000" points="286.02,-94.23 293.83,-87.07 283.26,-87.8 286.02,-94.23"/>
+</g>
+<!-- proc~pick -->
+<g id="proc~~initialize_colors~~CalledByGraph_node3" class="node">
+<title>proc~pick</title>
+<g id="a_proc~~initialize_colors~~CalledByGraph_node3"><a xlink:href=".././proc/pick.html" xlink:title="forcolor::color%pick">
+<polygon fill="#d9534f" stroke="#d9534f" points="167,-108 47,-108 47,-84 167,-84 167,-108"/>
+<text text-anchor="middle" x="107" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">forcolor::color%pick</text>
+</a>
+</g>
+</g>
+<!-- proc~pick&#45;&gt;proc~initialize_colors -->
+<g id="proc~~initialize_colors~~CalledByGraph_edge2" class="edge">
+<title>proc~pick&#45;&gt;proc~initialize_colors</title>
+<path fill="none" stroke="#255000" d="M167.19,-90.15C189.65,-87.93 215.62,-85.36 239.74,-82.98"/>
+<polygon fill="#255000" stroke="#255000" points="240.33,-86.44 249.94,-81.97 239.65,-79.47 240.33,-86.44"/>
+</g>
+<!-- proc~print_available_colors -->
+<g id="proc~~initialize_colors~~CalledByGraph_node4" class="node">
+<title>proc~print_available_colors</title>
+<g id="a_proc~~initialize_colors~~CalledByGraph_node4"><a xlink:href=".././proc/print_available_colors.html" xlink:title="forcolor::color%print_available_colors">
+<polygon fill="#d9534f" stroke="#d9534f" points="214,-66 0,-66 0,-42 214,-42 214,-66"/>
+<text text-anchor="middle" x="107" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">forcolor::color%print_available_colors</text>
+</a>
+</g>
+</g>
+<!-- proc~print_available_colors&#45;&gt;proc~initialize_colors -->
+<g id="proc~~initialize_colors~~CalledByGraph_edge3" class="edge">
+<title>proc~print_available_colors&#45;&gt;proc~initialize_colors</title>
+<path fill="none" stroke="#255000" d="M214.25,-64.5C222.81,-65.35 231.36,-66.19 239.7,-67.01"/>
+<polygon fill="#255000" stroke="#255000" points="239.44,-70.51 249.74,-68.01 240.13,-63.54 239.44,-70.51"/>
+</g>
+<!-- proc~save_available_colors -->
+<g id="proc~~initialize_colors~~CalledByGraph_node5" class="node">
+<title>proc~save_available_colors</title>
+<g id="a_proc~~initialize_colors~~CalledByGraph_node5"><a xlink:href=".././proc/save_available_colors.html" xlink:title="forcolor::color%save_available_colors">
+<polygon fill="#d9534f" stroke="#d9534f" points="214,-24 0,-24 0,0 214,0 214,-24"/>
+<text text-anchor="middle" x="107" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">forcolor::color%save_available_colors</text>
+</a>
+</g>
+</g>
+<!-- proc~save_available_colors&#45;&gt;proc~initialize_colors -->
+<g id="proc~~initialize_colors~~CalledByGraph_edge4" class="edge">
+<title>proc~save_available_colors&#45;&gt;proc~initialize_colors</title>
+<path fill="none" stroke="#255000" d="M178,-24.01C190.09,-26.61 202.48,-29.62 214,-33 238.04,-40.06 264.22,-50.35 284.61,-58.97"/>
+<polygon fill="#255000" stroke="#255000" points="283.26,-62.2 293.83,-62.93 286.02,-55.77 283.26,-62.2"/>
+</g>
+</g>
+</svg>
+</div>        <div><a type="button" class="graph-help" data-toggle="modal" href="#CalledByGraph-help-text">Help</a></div>
+          <div class="modal fade" id="CalledByGraph-help-text" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-lg" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                  <h4 class="modal-title" id="-graph-help-label">Graph Key</h4>
+                </div>
+              <div class="modal-body">
+<p>Nodes of different colours represent the following: </p>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.43.0 (0)
+ -->
+<!-- Title: Graph Key Pages: 1 -->
+<svg width="641pt" height="28pt"
+ viewBox="0.00 0.00 641.00 27.51" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1.16 1.16) rotate(0) translate(4 28)">
+<title>Graph Key</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-28 741.5,-28 741.5,4 -4,4"/>
+<!-- Subroutine -->
+<g id="node1" class="node">
+<title>Subroutine</title>
+<polygon fill="#d9534f" stroke="#d9534f" points="70,-24 0,-24 0,0 70,0 70,-24"/>
+<text text-anchor="middle" x="35" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Subroutine</text>
+</g>
+<!-- Function -->
+<g id="node2" class="node">
+<title>Function</title>
+<polygon fill="#d94e8f" stroke="#d94e8f" points="146,-24 88,-24 88,0 146,0 146,-24"/>
+<text text-anchor="middle" x="117" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Function</text>
+</g>
+<!-- Interface -->
+<g id="node3" class="node">
+<title>Interface</title>
+<polygon fill="#a7506f" stroke="#a7506f" points="225.5,-24 164.5,-24 164.5,0 225.5,0 225.5,-24"/>
+<text text-anchor="middle" x="195" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Interface</text>
+</g>
+<!-- Type Bound Procedure -->
+<g id="node4" class="node">
+<title>Type Bound Procedure</title>
+<polygon fill="#a7506f" stroke="#a7506f" points="374,-24 244,-24 244,0 374,0 374,-24"/>
+<text text-anchor="middle" x="309" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Type Bound Procedure</text>
+</g>
+<!-- Unknown Procedure Type -->
+<g id="node5" class="node">
+<title>Unknown Procedure Type</title>
+<polygon fill="#777777" stroke="#777777" points="537.5,-24 392.5,-24 392.5,0 537.5,0 537.5,-24"/>
+<text text-anchor="middle" x="465" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Unknown Procedure Type</text>
+</g>
+<!-- Program -->
+<g id="node6" class="node">
+<title>Program</title>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="614,-24 556,-24 556,0 614,0 614,-24"/>
+<text text-anchor="middle" x="585" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Program</text>
+</g>
+<!-- This Page&#39;s Entity -->
+<g id="node7" class="node">
+<title>This Page&#39;s Entity</title>
+<polygon fill="none" stroke="black" points="737.5,-24 632.5,-24 632.5,0 737.5,0 737.5,-24"/>
+<text text-anchor="middle" x="685" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50">This Page&#39;s Entity</text>
+</g>
+</g>
+</svg>
+
+<p>Solid arrows point from a procedure to one which it calls. Dashed 
+arrows point from an interface to procedures which implement that interface.
+This could include the module procedures in a generic interface or the
+implementation in a submodule of an interface in a parent module.
+</p>
+ Where possible, edges connecting nodes are
+given different colours to make them easier to distinguish in
+large graphs.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br>
+
+
+    
+    
+
+    
+    
+
+
+
+    
+    <section>
+    <h2><span class="anchor" id="src"></span>Source Code</h2>
+    <div class="hl codehilite"><pre><span></span><span class="w">   </span><span class="k">pure subroutine </span><span class="n">initialize_colors</span><span class="p">(</span><span class="n">colors</span><span class="p">)</span>
+<span class="w">      </span><span class="k">type</span><span class="p">(</span><span class="n">color</span><span class="p">),</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="p">),</span><span class="w"> </span><span class="k">dimension</span><span class="p">(:),</span><span class="w"> </span><span class="k">allocatable</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">colors</span>
+
+<span class="w">      </span><span class="k">allocate</span><span class="p">(</span><span class="n">colors</span><span class="p">(</span><span class="mi">14</span><span class="p">))</span>
+
+<span class="w">      </span><span class="k">call </span><span class="n">colors</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">set</span><span class="p">(</span><span class="w"> </span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;Red&#39;</span><span class="p">,</span><span class="w">           </span><span class="n">r</span><span class="o">=</span><span class="mi">255_ik</span><span class="p">,</span><span class="w">    </span><span class="n">g</span><span class="o">=</span><span class="mi">0_ik</span><span class="p">,</span><span class="w">      </span><span class="n">b</span><span class="o">=</span><span class="mi">0_ik</span><span class="p">)</span>
+<span class="w">      </span><span class="k">call </span><span class="n">colors</span><span class="p">(</span><span class="mi">2</span><span class="p">)%</span><span class="n">set</span><span class="p">(</span><span class="w"> </span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;Green&#39;</span><span class="p">,</span><span class="w">         </span><span class="n">r</span><span class="o">=</span><span class="mi">0_ik</span><span class="p">,</span><span class="w">      </span><span class="n">g</span><span class="o">=</span><span class="mi">128_ik</span><span class="p">,</span><span class="w">    </span><span class="n">b</span><span class="o">=</span><span class="mi">0_ik</span><span class="p">)</span>
+<span class="w">      </span><span class="k">call </span><span class="n">colors</span><span class="p">(</span><span class="mi">3</span><span class="p">)%</span><span class="n">set</span><span class="p">(</span><span class="w"> </span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;Blue&#39;</span><span class="p">,</span><span class="w">          </span><span class="n">r</span><span class="o">=</span><span class="mi">0_ik</span><span class="p">,</span><span class="w">      </span><span class="n">g</span><span class="o">=</span><span class="mi">0_ik</span><span class="p">,</span><span class="w">      </span><span class="n">b</span><span class="o">=</span><span class="mi">255_ik</span><span class="p">)</span>
+<span class="w">      </span><span class="k">call </span><span class="n">colors</span><span class="p">(</span><span class="mi">4</span><span class="p">)%</span><span class="n">set</span><span class="p">(</span><span class="w"> </span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;Yellow&#39;</span><span class="p">,</span><span class="w">        </span><span class="n">r</span><span class="o">=</span><span class="mi">255_ik</span><span class="p">,</span><span class="w">    </span><span class="n">g</span><span class="o">=</span><span class="mi">255_ik</span><span class="p">,</span><span class="w">    </span><span class="n">b</span><span class="o">=</span><span class="mi">0_ik</span><span class="p">)</span>
+<span class="w">      </span><span class="k">call </span><span class="n">colors</span><span class="p">(</span><span class="mi">5</span><span class="p">)%</span><span class="n">set</span><span class="p">(</span><span class="w"> </span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;Cyan&#39;</span><span class="p">,</span><span class="w">          </span><span class="n">r</span><span class="o">=</span><span class="mi">0_ik</span><span class="p">,</span><span class="w">      </span><span class="n">g</span><span class="o">=</span><span class="mi">255_ik</span><span class="p">,</span><span class="w">    </span><span class="n">b</span><span class="o">=</span><span class="mi">255_ik</span><span class="p">)</span>
+<span class="w">      </span><span class="k">call </span><span class="n">colors</span><span class="p">(</span><span class="mi">6</span><span class="p">)%</span><span class="n">set</span><span class="p">(</span><span class="w"> </span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;Magenta&#39;</span><span class="p">,</span><span class="w">       </span><span class="n">r</span><span class="o">=</span><span class="mi">255_ik</span><span class="p">,</span><span class="w">    </span><span class="n">g</span><span class="o">=</span><span class="mi">0_ik</span><span class="p">,</span><span class="w">      </span><span class="n">b</span><span class="o">=</span><span class="mi">255_ik</span><span class="p">)</span>
+<span class="w">      </span><span class="k">call </span><span class="n">colors</span><span class="p">(</span><span class="mi">7</span><span class="p">)%</span><span class="n">set</span><span class="p">(</span><span class="w"> </span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;Black&#39;</span><span class="p">,</span><span class="w">         </span><span class="n">r</span><span class="o">=</span><span class="mi">0_ik</span><span class="p">,</span><span class="w">      </span><span class="n">g</span><span class="o">=</span><span class="mi">0_ik</span><span class="p">,</span><span class="w">      </span><span class="n">b</span><span class="o">=</span><span class="mi">0_ik</span><span class="p">)</span>
+<span class="w">      </span><span class="k">call </span><span class="n">colors</span><span class="p">(</span><span class="mi">8</span><span class="p">)%</span><span class="n">set</span><span class="p">(</span><span class="w"> </span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;White&#39;</span><span class="p">,</span><span class="w">         </span><span class="n">r</span><span class="o">=</span><span class="mi">255_ik</span><span class="p">,</span><span class="w">    </span><span class="n">g</span><span class="o">=</span><span class="mi">255_ik</span><span class="p">,</span><span class="w">    </span><span class="n">b</span><span class="o">=</span><span class="mi">255_ik</span><span class="p">)</span>
+<span class="w">      </span><span class="k">call </span><span class="n">colors</span><span class="p">(</span><span class="mi">9</span><span class="p">)%</span><span class="n">set</span><span class="p">(</span><span class="w"> </span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;Gray&#39;</span><span class="p">,</span><span class="w">          </span><span class="n">r</span><span class="o">=</span><span class="mi">128_ik</span><span class="p">,</span><span class="w">    </span><span class="n">g</span><span class="o">=</span><span class="mi">128_ik</span><span class="p">,</span><span class="w">    </span><span class="n">b</span><span class="o">=</span><span class="mi">128_ik</span><span class="p">)</span>
+<span class="w">      </span><span class="k">call </span><span class="n">colors</span><span class="p">(</span><span class="mi">10</span><span class="p">)%</span><span class="n">set</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;Brown&#39;</span><span class="p">,</span><span class="w">         </span><span class="n">r</span><span class="o">=</span><span class="mi">165_ik</span><span class="p">,</span><span class="w">    </span><span class="n">g</span><span class="o">=</span><span class="mi">42_ik</span><span class="p">,</span><span class="w">     </span><span class="n">b</span><span class="o">=</span><span class="mi">42_ik</span><span class="p">)</span>
+<span class="w">      </span><span class="k">call </span><span class="n">colors</span><span class="p">(</span><span class="mi">11</span><span class="p">)%</span><span class="n">set</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;Orange&#39;</span><span class="p">,</span><span class="w">        </span><span class="n">r</span><span class="o">=</span><span class="mi">255_ik</span><span class="p">,</span><span class="w">    </span><span class="n">g</span><span class="o">=</span><span class="mi">165_ik</span><span class="p">,</span><span class="w">    </span><span class="n">b</span><span class="o">=</span><span class="mi">0_ik</span><span class="p">)</span>
+<span class="w">      </span><span class="k">call </span><span class="n">colors</span><span class="p">(</span><span class="mi">12</span><span class="p">)%</span><span class="n">set</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;Gold&#39;</span><span class="p">,</span><span class="w">          </span><span class="n">r</span><span class="o">=</span><span class="mi">255_ik</span><span class="p">,</span><span class="w">    </span><span class="n">g</span><span class="o">=</span><span class="mi">215_ik</span><span class="p">,</span><span class="w">    </span><span class="n">b</span><span class="o">=</span><span class="mi">0_ik</span><span class="p">)</span>
+<span class="w">      </span><span class="k">call </span><span class="n">colors</span><span class="p">(</span><span class="mi">13</span><span class="p">)%</span><span class="n">set</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;Pink&#39;</span><span class="p">,</span><span class="w">          </span><span class="n">r</span><span class="o">=</span><span class="mi">255_ik</span><span class="p">,</span><span class="w">    </span><span class="n">g</span><span class="o">=</span><span class="mi">192_ik</span><span class="p">,</span><span class="w">    </span><span class="n">b</span><span class="o">=</span><span class="mi">203_ik</span><span class="p">)</span>
+<span class="w">      </span><span class="k">call </span><span class="n">colors</span><span class="p">(</span><span class="mi">14</span><span class="p">)%</span><span class="n">set</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;Violet&#39;</span><span class="p">,</span><span class="w">        </span><span class="n">r</span><span class="o">=</span><span class="mi">138_ik</span><span class="p">,</span><span class="w">    </span><span class="n">g</span><span class="o">=</span><span class="mi">43_ik</span><span class="p">,</span><span class="w">     </span><span class="n">b</span><span class="o">=</span><span class="mi">226_ik</span><span class="p">)</span>
+
+<span class="w">      </span><span class="k">call </span><span class="n">colors</span><span class="p">(:)%</span><span class="n">convert</span><span class="p">(</span><span class="s1">&#39;rgb2all&#39;</span><span class="p">)</span>
+<span class="w">   </span><span class="k">end subroutine </span><span class="n">initialize_colors</span>
+</pre></div>
+
+    </section>
+    <br>
+    
+    </div>
+  </div>
+
+      <hr>
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+        <div class="row justify-content-between">
+          <div class="col"><p>ForImage was developed by Seyed Ali Ghasemi<br>&copy; 2023 
+</p>
+          </div>
+          <div class="col">
+            <p class="text-end">
+              Documentation generated by
+              <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
+ on 2023-11-18T09:24:14.591282             </p>
+          </div>
+        </div>
+        <br>
+      </div> <!-- /container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>    
+
+    <!-- MathJax JavaScript
+             ================================================== -->
+             <!-- Placed at the end of the document so the pages load faster -->
+        <script type="text/x-mathjax-config">
+          MathJax.Hub.Config({
+          TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } },
+          jax: ['input/TeX','input/MathML','output/HTML-CSS'],
+          extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']
+          });
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+          <script src="../tipuesearch/tipuesearch_content.js"></script>
+          <script src="../tipuesearch/tipuesearch_set.js"></script>
+          <script src="../tipuesearch/tipuesearch.js"></script>
+
+  </body>
+</html>
