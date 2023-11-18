@@ -12,177 +12,135 @@ program example26
    real(rk)         :: hl, sl, vl
 
 
-
-   print*, ''
    ! Set the color using RGB values
-   call custom_color%set_rgb(245_ik, 127_ik, 64_ik)
+   call custom_color%set(name='custom_color', r=245_ik, g=127_ik, b=64_ik)
 
    ! Convert the color to other color spaces
-   call custom_color%convert('rgb2hex')
-   call custom_color%convert('rgb2decimal')
-   call custom_color%convert('rgb2cmyk')
-   call custom_color%convert('rgb2hsv')
-   call custom_color%convert('rgb2hsl')
+   call custom_color%convert('rgb2all')
 
    ! Get the values of the color in other color spaces
-   call custom_color%get_rgb(r, g, b)
-   call custom_color%get_hex(hex)
-   call custom_color%get_decimal(decimal)
-   call custom_color%get_cmyk(c, m, y, k)
-   call custom_color%get_hsv(h, s, v)
-   call custom_color%get_hsl(hl, sl, vl)
+   call custom_color%get(r=r, g=g, b=b)
+   call custom_color%get(hex=hex)
+   call custom_color%get(decimal=decimal)
+   call custom_color%get(c=c, m=m, y=y, k=k)
+   call custom_color%get(h=h, s=s, v=v)
+   call custom_color%get(hl=hl, sl=sl, vl=vl)
 
-   ! Print the values of the color in other color spaces
-   call custom_color%print_rgb()
-   call custom_color%print_hex()
-   call custom_color%print_decimal()
-   call custom_color%print_cmyk()
-   call custom_color%print_hsv()
-   call custom_color%print_hsl()
+   !
+   call custom_color%print()
 
 
 
-   print*, ''
+
    ! Set the color using a hex value
-   call custom_color%set_hex('#F57F40')
+   call custom_color%set(name='custom_color', hex='#F57F40')
 
    ! Convert the color to other color spaces
-   call custom_color%convert('hex2rgb')
-   call custom_color%convert('hex2decimal')
-   call custom_color%convert('hex2cmyk')
-   call custom_color%convert('hex2hsv')
-   call custom_color%convert('hex2hsl')
+   call custom_color%convert('hex2all')
+
+   ! Print the name of the color
+   call custom_color%print()
 
    ! Get the values of the color in other color spaces
-   call custom_color%get_rgb(r, g, b)
-   call custom_color%get_hex(hex)
-   call custom_color%get_decimal(decimal)
-   call custom_color%get_cmyk(c, m, y, k)
-   call custom_color%get_hsv(h, s, v)
-   call custom_color%get_hsl(hl, sl, vl)
+   call custom_color%get(r=r, g=g, b=b)
+   call custom_color%get(hex=hex)
+   call custom_color%get(decimal=decimal)
+   call custom_color%get(c=c, m=m, y=y, k=k)
+   call custom_color%get(h=h, s=s, v=v)
+   call custom_color%get(hl=hl, sl=sl, vl=vl)
 
-   ! Print the values of the color in other color spaces
-   call custom_color%print_rgb()
-   call custom_color%print_hex()
-   call custom_color%print_decimal()
-   call custom_color%print_cmyk()
-   call custom_color%print_hsv()
-   call custom_color%print_hsl()
+   !
+   call custom_color%print()
 
 
 
-   print*, ''
+
    ! Set the color using a decimal value
-   call custom_color%set_decimal(16088896)
+   call custom_color%set(name='custom_color', decimal=16088896)
 
    ! Convert the color to other color spaces
-   call custom_color%convert('decimal2rgb')
-   call custom_color%convert('decimal2hex')
-   call custom_color%convert('decimal2cmyk')
-   call custom_color%convert('decimal2hsv')
-   call custom_color%convert('decimal2hsl')
+   call custom_color%convert('decimal2all')
+
+   ! Print the name of the color
+   call custom_color%print()
 
    ! Get the values of the color in other color spaces
-   call custom_color%get_rgb(r, g, b)
-   call custom_color%get_hex(hex)
-   call custom_color%get_decimal(decimal)
-   call custom_color%get_cmyk(c, m, y, k)
-   call custom_color%get_hsv(h, s, v)
-   call custom_color%get_hsl(hl, sl, vl)
+   call custom_color%get(r=r, g=g, b=b)
+   call custom_color%get(hex=hex)
+   call custom_color%get(decimal=decimal)
+   call custom_color%get(c=c, m=m, y=y, k=k)
+   call custom_color%get(h=h, s=s, v=v)
+   call custom_color%get(hl=hl, sl=sl, vl=vl)
 
-   ! Print the values of the color in other color spaces
-   call custom_color%print_rgb()
-   call custom_color%print_hex()
-   call custom_color%print_decimal()
-   call custom_color%print_cmyk()
-   call custom_color%print_hsv()
-   call custom_color%print_hsl()
+   !
+   call custom_color%print()
 
 
 
-   print*, ''
+
    ! Set the color using a decimal value
-   call custom_color%set_cmyk(0_ik, 48_ik, 74_ik, 4_ik)
+   call custom_color%set(name='custom_color', c=0_ik, m=48_ik, y=74_ik, k=4_ik)
 
    ! Convert the color to other color spaces
-   call custom_color%convert('cmyk2rgb')
-   call custom_color%convert('cmyk2hex')
-   call custom_color%convert('cmyk2decimal')
-   call custom_color%convert('cmyk2hsv')
-   call custom_color%convert('cmyk2hsl')
+   call custom_color%convert('cmyk2all')
+
+   ! Print the name of the color
+   call custom_color%print()
 
    ! Get the values of the color in other color spaces
-   call custom_color%get_rgb(r, g, b)
-   call custom_color%get_hex(hex)
-   call custom_color%get_decimal(decimal)
-   call custom_color%get_cmyk(c, m, y, k)
-   call custom_color%get_hsv(h, s, v)
-   call custom_color%get_hsl(hl, sl, vl)
+   call custom_color%get(r=r, g=g, b=b)
+   call custom_color%get(hex=hex)
+   call custom_color%get(decimal=decimal)
+   call custom_color%get(c=c, m=m, y=y, k=k)
+   call custom_color%get(h=h, s=s, v=v)
+   call custom_color%get(hl=hl, sl=sl, vl=vl)
 
-   ! Print the values of the color in other color spaces
-   call custom_color%print_rgb()
-   call custom_color%print_hex()
-   call custom_color%print_decimal()
-   call custom_color%print_cmyk()
-   call custom_color%print_hsv()
-   call custom_color%print_hsl()
+   !
+   call custom_color%print()
 
 
 
-   print*, ''
    ! Set the color using a hsv value
-   call custom_color%set_hsv(20.8840_rk, 73.8776_rk, 96.0784_rk)
+   call custom_color%set(name='custom_color', h=20.8840_rk, s=73.8776_rk, v=96.0784_rk)
 
    ! Convert the color to other color spaces
-   call custom_color%convert('hsv2rgb')
-   call custom_color%convert('hsv2hex')
-   call custom_color%convert('hsv2cmyk')
-   call custom_color%convert('hsv2decimal')
-   call custom_color%convert('hsv2hsl')
+   call custom_color%convert('hsv2all')
+
+   ! Print the name of the color
+   call custom_color%print()
 
    ! Get the values of the color in other color spaces
-   call custom_color%get_rgb(r, g, b)
-   call custom_color%get_hex(hex)
-   call custom_color%get_decimal(decimal)
-   call custom_color%get_cmyk(c, m, y, k)
-   call custom_color%get_hsv(h, s, v)
-   call custom_color%get_hsl(hl, sl, vl)
+   call custom_color%get(r=r, g=g, b=b)
+   call custom_color%get(hex=hex)
+   call custom_color%get(decimal=decimal)
+   call custom_color%get(c=c, m=m, y=y, k=k)
+   call custom_color%get(h=h, s=s, v=v)
+   call custom_color%get(hl=hl, sl=sl, vl=vl)
 
-   ! Print the values of the color in other color spaces
-   call custom_color%print_rgb()
-   call custom_color%print_hex()
-   call custom_color%print_decimal()
-   call custom_color%print_cmyk()
-   call custom_color%print_hsv()
-   call custom_color%print_hsl()
+   !
+   call custom_color%print()
 
 
 
-   print*, ''
+
    ! Set the color using a hsv value
-   call custom_color%set_hsl(20.8840_rk, 90.0498_rk, 60.5882_rk)
+   call custom_color%set(name='custom_color', hl=20.8840_rk, sl=90.0498_rk, vl=60.5882_rk)
 
    ! Convert the color to other color spaces
-   call custom_color%convert('hsl2rgb')
-   call custom_color%convert('hsl2hex')
-   call custom_color%convert('hsl2cmyk')
-   call custom_color%convert('hsl2decimal')
-   call custom_color%convert('hsl2hsv')
+   call custom_color%convert('hsl2all')
+
+   ! Print the name of the color
+   call custom_color%print()
 
    ! Get the values of the color in other color spaces
-   call custom_color%get_rgb(r, g, b)
-   call custom_color%get_hex(hex)
-   call custom_color%get_decimal(decimal)
-   call custom_color%get_cmyk(c, m, y, k)
-   call custom_color%get_hsv(h, s, v)
-   call custom_color%get_hsl(hl, sl, vl)
+   call custom_color%get(r=r, g=g, b=b)
+   call custom_color%get(hex=hex)
+   call custom_color%get(decimal=decimal)
+   call custom_color%get(c=c, m=m, y=y, k=k)
+   call custom_color%get(h=h, s=s, v=v)
+   call custom_color%get(hl=hl, sl=sl, vl=vl)
 
-   ! Print the values of the color in other color spaces
-   call custom_color%print_rgb()
-   call custom_color%print_hex()
-   call custom_color%print_decimal()
-   call custom_color%print_cmyk()
-   call custom_color%print_hsv()
-   call custom_color%print_hsl()
+   !
+   call custom_color%print()
 
 end program example26

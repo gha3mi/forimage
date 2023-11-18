@@ -1,6 +1,7 @@
 module forcolor
 
    use forimage_parameters, only: rk, ik
+   use pnm, only: format_pnm
 
    implicit none
 
@@ -10,39 +11,227 @@ module forcolor
 
    !===============================================================================
    type :: color
-      integer(ik)     , private :: r=0_ik, g=0_ik, b=0_ik            !! rgb
-      integer(ik)     , private :: c=0_ik, m=0_ik, y=0_ik, k=0_ik    !! cmyk
-      integer(ik)     , private :: decimal=0_ik                      !! decimal
-      character(len=7), private :: hex='#000000'                     !! hex
-      real(rk)        , private :: h=0.0_rk, s=0.0_rk, v=0.0_rk      !! hsv
-      real(rk)        , private :: hl=0.0_rk, sl=0.0_rk, vl=0.0_rk   !! hsl
+      integer(ik)        , private :: r=0_ik, g=0_ik, b=0_ik            !! rgb
+      integer(ik)        , private :: c=0_ik, m=0_ik, y=0_ik, k=0_ik    !! cmyk
+      integer(ik)        , private :: decimal=0_ik                      !! decimal
+      character(len=7)   , private :: hex='#000000'                     !! hex
+      real(rk)           , private :: h=0.0_rk, s=0.0_rk, v=0.0_rk      !! hsv
+      real(rk)           , private :: hl=0.0_rk, sl=0.0_rk, vl=0.0_rk   !! hsl
+      character(len=256) , private :: color_name                        !! color name
    contains
-      procedure :: set_rgb
-      procedure :: set_hex
-      procedure :: set_decimal
-      procedure :: set_cmyk
-      procedure :: set_hsv
-      procedure :: set_hsl
+      procedure :: set
+      procedure, private :: set_name
+      procedure, private :: set_rgb
+      procedure, private :: set_hex
+      procedure, private :: set_decimal
+      procedure, private :: set_cmyk
+      procedure, private :: set_hsv
+      procedure, private :: set_hsl
+      procedure :: get
+      procedure, private :: get_name
+      procedure, private :: get_rgb
+      procedure, private :: get_hex
+      procedure, private :: get_decimal
+      procedure, private :: get_cmyk
+      procedure, private :: get_hsv
+      procedure, private :: get_hsl
+      procedure :: print
+      procedure, private :: print_name
+      procedure, private :: print_rgb
+      procedure, private :: print_hex
+      procedure, private :: print_decimal
+      procedure, private :: print_cmyk
+      procedure, private :: print_hsv
+      procedure, private :: print_hsl
+      procedure, private :: copy_color
+      generic :: assignment(=) => copy_color
       procedure :: convert
-      procedure :: get_rgb
-      procedure :: get_hex
-      procedure :: get_decimal
-      procedure :: get_cmyk
-      procedure :: get_hsv
-      procedure :: get_hsl
-      procedure :: print_rgb
-      procedure :: print_hex
-      procedure :: print_decimal
-      procedure :: print_cmyk
-      procedure :: print_hsv
-      procedure :: print_hsl
+      procedure :: pick
+      procedure :: find_nearest
+      procedure :: print_available_colors
+      procedure :: save
+      procedure :: save_available_colors
    end type color
    !===============================================================================
 
 contains
 
    !===============================================================================
-   !> author: seyed ali ghasemi
+   !> author: Seyed Ali Ghasemi
+   pure subroutine initialize_colors(colors)
+      type(color), intent(out), dimension(:), allocatable :: colors
+
+      allocate(colors(14))
+
+      call colors(1)%set( name='Red',           r=255_ik,    g=0_ik,      b=0_ik)
+      call colors(2)%set( name='Green',         r=0_ik,      g=128_ik,    b=0_ik)
+      call colors(3)%set( name='Blue',          r=0_ik,      g=0_ik,      b=255_ik)
+      call colors(4)%set( name='Yellow',        r=255_ik,    g=255_ik,    b=0_ik)
+      call colors(5)%set( name='Cyan',          r=0_ik,      g=255_ik,    b=255_ik)
+      call colors(6)%set( name='Magenta',       r=255_ik,    g=0_ik,      b=255_ik)
+      call colors(7)%set( name='Black',         r=0_ik,      g=0_ik,      b=0_ik)
+      call colors(8)%set( name='White',         r=255_ik,    g=255_ik,    b=255_ik)
+      call colors(9)%set( name='Gray',          r=128_ik,    g=128_ik,    b=128_ik)
+      call colors(10)%set(name='Brown',         r=165_ik,    g=42_ik,     b=42_ik)
+      call colors(11)%set(name='Orange',        r=255_ik,    g=165_ik,    b=0_ik)
+      call colors(12)%set(name='Gold',          r=255_ik,    g=215_ik,    b=0_ik)
+      call colors(13)%set(name='Pink',          r=255_ik,    g=192_ik,    b=203_ik)
+      call colors(14)%set(name='Violet',        r=138_ik,    g=43_ik,     b=226_ik)
+
+      call colors(:)%convert('rgb2all')
+   end subroutine initialize_colors
+   !===============================================================================
+
+
+   !===============================================================================
+   !> author: Seyed Ali Ghasemi
+   elemental impure subroutine print(this, option)
+      class(color), intent(inout) :: this
+      character(len=*), intent(in), optional :: option
+
+      if (present(option)) then
+
+         select case (trim(option))
+          case ('rgb')
+            call this%print_rgb()
+            print*,''
+          case ('hex')
+            call this%print_hex()
+            print*,''
+          case ('decimal')
+            call this%print_decimal()
+            print*,''
+          case ('cmyk')
+            call this%print_cmyk()
+            print*,''
+          case ('hsv')
+            call this%print_hsv()
+            print*,''
+          case ('hsl')
+            call this%print_hsl()
+            print*,''
+          case ('name')
+            call this%print_name()
+            print*,''
+          case default
+            error stop 'error: unknown option'
+         end select
+
+      else
+
+         call this%print_name()
+         call this%print_rgb()
+         call this%print_hex()
+         call this%print_decimal()
+         call this%print_cmyk()
+         call this%print_hsv()
+         call this%print_hsl()
+         print*,''
+
+      end if
+
+   end subroutine print
+   !===============================================================================
+
+
+   !===============================================================================
+   !> author: Seyed Ali Ghasemi
+   elemental impure subroutine print_name(this)
+      class(color), intent(in) :: this
+      print '(a,a)', 'color name: ', trim(this%color_name)
+   end subroutine print_name
+   !===============================================================================
+
+
+   !===============================================================================
+   !> author: Seyed Ali Ghasemi
+   elemental impure subroutine print_hsl(this)
+      class(color), intent(in) :: this
+      print '(a, 3(f8.4, 2x))', "hsl: ", this%hl, this%sl, this%vl
+   end subroutine print_hsl
+   !===============================================================================
+
+
+   !===============================================================================
+   !> author: Seyed Ali Ghasemi
+   elemental impure subroutine print_hsv(this)
+      class(color), intent(in) :: this
+      print '(a, 3(f8.4, 2x))', "hsv: ", this%h, this%s, this%v
+   end subroutine print_hsv
+   !===============================================================================
+
+
+   !===============================================================================
+   !> author: Seyed Ali Ghasemi
+   elemental impure subroutine print_rgb(this)
+      class(color), intent(in) :: this
+      print'(a,g0,a,g0,a,g0)', 'rgb: ', this%r, ', ', this%g, ', ', this%b
+   end subroutine print_rgb
+   !===============================================================================
+
+
+   !===============================================================================
+   !> author: Seyed Ali Ghasemi
+   elemental impure subroutine print_hex(this)
+      class(color), intent(in) :: this
+      print'(a,a)', 'hex: ', this%hex
+   end subroutine print_hex
+   !===============================================================================
+
+
+   !===============================================================================
+   !> author: Seyed Ali Ghasemi
+   elemental impure subroutine print_decimal(this)
+      class(color), intent(in) :: this
+      print'(a,g0)', 'decimal: ', this%decimal
+   end subroutine print_decimal
+   !===============================================================================
+
+
+   !===============================================================================
+   !> author: Seyed Ali Ghasemi
+   elemental impure subroutine print_cmyk(this)
+      class(color), intent(in) :: this
+      print'(a,g0,a,g0,a,g0,a,g0)', 'cmyk: ', this%c, ', ', this%m, ', ', this%y, ', ', this%k
+   end subroutine print_cmyk
+   !===============================================================================
+
+
+   !===============================================================================
+   !> author: Seyed Ali Ghasemi
+   elemental pure subroutine set(this, name, r,g,b, c,m,y,k, decimal, hex, h,s,v, hl,sl,vl)
+      class(color), intent(inout) :: this
+      character(len=*), intent(in) :: name
+      integer(ik),  intent(in), optional :: r, g, b, c, m, y, k, decimal
+      character(len=*), intent(in), optional :: hex
+      real(rk),     intent(in), optional :: h, s, v, hl, sl, vl
+
+      call this%set_name(name)
+
+      if (present(r) .and. present(g) .and. present(b))                  call this%set_rgb(r, g, b)
+      if (present(c) .and. present(m) .and. present(y) .and. present(k)) call this%set_cmyk(c, m, y, k)
+      if (present(decimal))                                              call this%set_decimal(decimal)
+      if (present(hex))                                                  call this%set_hex(hex)
+      if (present(h) .and. present(s) .and. present(v))                  call this%set_hsv(h, s, v)
+      if (present(hl) .and. present(sl) .and. present(vl))               call this%set_hsl(hl, sl, vl)
+
+   end subroutine set
+   !===============================================================================
+
+
+   !===============================================================================
+   !> author: Seyed Ali Ghasemi
+   elemental pure subroutine set_name(this, name)
+      class(color), intent(inout) :: this
+      character(len=*), intent(in) :: name
+
+      this%color_name = trim(name)
+   end subroutine set_name
+   !===============================================================================
+
+
+   !===============================================================================
+   !> author: Seyed Ali Ghasemi
    elemental pure subroutine set_hsl(this, h, s, l)
       class(color), intent(inout) :: this
       real(rk),    intent(in)    :: h, s, l
@@ -50,12 +239,118 @@ contains
       this%hl = h
       this%sl = s
       this%vl = l
+
+      call this%convert('hsl2all')
    end subroutine set_hsl
    !===============================================================================
 
 
    !===============================================================================
-   !> author: seyed ali ghasemi
+   !> author: Seyed Ali Ghasemi
+   elemental pure subroutine set_hsv(this, h, s, v)
+      class(color), intent(inout) :: this
+      real(rk),    intent(in)    :: h, s, v
+
+      this%h = h
+      this%s = s
+      this%v = v
+
+      call this%convert('hsv2all')
+   end subroutine set_hsv
+   !===============================================================================
+
+
+   !===============================================================================
+   !> author: Seyed Ali Ghasemi
+   elemental pure subroutine set_rgb(this, r, g, b)
+      class(color), intent(inout) :: this
+      integer(ik),  intent(in)    :: r, g, b
+
+      this%r = r
+      this%g = g
+      this%b = b
+
+      call this%convert('rgb2all')
+   end subroutine set_rgb
+   !===============================================================================
+
+
+   !===============================================================================
+   !> author: Seyed Ali Ghasemi
+   elemental pure subroutine set_hex(this, hex)
+      class(color), intent(inout) :: this
+      character(len=*), intent(in) :: hex
+
+      this%hex = hex
+
+      call this%convert('hex2all')
+   end subroutine set_hex
+   !===============================================================================
+
+
+   !===============================================================================
+   !> author: Seyed Ali Ghasemi
+   elemental pure subroutine set_decimal(this, decimal)
+      class(color), intent(inout) :: this
+      integer(ik),  intent(in)    :: decimal
+
+      this%decimal = decimal
+
+      call this%convert('decimal2all')
+   end subroutine set_decimal
+   !===============================================================================
+
+
+   !===============================================================================
+   !> author: Seyed Ali Ghasemi
+   elemental pure subroutine set_cmyk(this, c, m, y, k)
+      class(color), intent(inout) :: this
+      integer(ik),  intent(in)    :: c, m, y, k
+
+      this%c = c
+      this%m = m
+      this%y = y
+      this%k = k
+
+      call this%convert('cmyk2all')
+   end subroutine set_cmyk
+   !===============================================================================
+
+
+   !===============================================================================
+   !> author: Seyed Ali Ghasemi
+   elemental pure subroutine get(this, name, r,g,b, c,m,y,k, decimal, hex, h,s,v, hl,sl,vl)
+      class(color), intent(inout) :: this
+      character(len=*), intent(out), optional :: name
+      integer(ik),  intent(out), optional :: r, g, b, c, m, y, k, decimal
+      character(len=7), intent(out), optional :: hex
+      real(rk),     intent(out), optional :: h, s, v, hl, sl, vl
+
+      if (present(name))                                                 call this%get_name(name)
+      if (present(r) .and. present(g) .and. present(b))                  call this%get_rgb(r, g, b)
+      if (present(c) .and. present(m) .and. present(y) .and. present(k)) call this%get_cmyk(c, m, y, k)
+      if (present(decimal))                                              call this%get_decimal(decimal)
+      if (present(hex))                                                  call this%get_hex(hex)
+      if (present(h) .and. present(s) .and. present(v))                  call this%get_hsv(h, s, v)
+      if (present(hl) .and. present(sl) .and. present(vl))               call this%get_hsl(hl, sl, vl)
+
+   end subroutine get
+   !===============================================================================
+
+
+   !===============================================================================
+   !> author: Seyed Ali Ghasemi
+   elemental pure subroutine get_name(this, name)
+      class(color), intent(in) :: this
+      character(len=*), intent(out) :: name
+
+      name = this%color_name
+   end subroutine get_name
+   !===============================================================================
+
+
+   !===============================================================================
+   !> author: Seyed Ali Ghasemi
    elemental pure subroutine get_hsl(this, h, s, l)
       class(color), intent(in)  :: this
       real(rk),    intent(out) :: h, s, l
@@ -68,26 +363,7 @@ contains
 
 
    !===============================================================================
-   !> author: seyed ali ghasemi
-   elemental impure subroutine print_hsl(this)
-      class(color), intent(in) :: this
-      print '(a, 3(f8.4, 2x))', "hsl: ", this%hl, this%sl, this%vl
-   end subroutine print_hsl
-   !===============================================================================
-
-
-   !===============================================================================
-   elemental pure subroutine set_hsv(this, h, s, v)
-      class(color), intent(inout) :: this
-      real(rk),    intent(in)    :: h, s, v
-
-      this%h = h
-      this%s = s
-      this%v = v
-   end subroutine set_hsv
-   !===============================================================================
-
-   !===============================================================================
+   !> author: Seyed Ali Ghasemi
    elemental pure subroutine get_hsv(this, h, s, v)
       class(color), intent(in)  :: this
       real(rk),    intent(out) :: h, s, v
@@ -98,101 +374,9 @@ contains
    end subroutine get_hsv
    !===============================================================================
 
-   !===============================================================================
-   elemental impure subroutine print_hsv(this)
-      class(color), intent(in) :: this
-      print '(a, 3(f8.4, 2x))', "hsv: ", this%h, this%s, this%v
-   end subroutine print_hsv
-   !===============================================================================
-
 
    !===============================================================================
-   !> author: seyed ali ghasemi
-   elemental impure subroutine print_rgb(this)
-      class(color), intent(in) :: this
-      print'(a,g0,a,g0,a,g0)', 'rgb: ', this%r, ', ', this%g, ', ', this%b
-   end subroutine print_rgb
-   !===============================================================================
-
-
-   !===============================================================================
-   !> author: seyed ali ghasemi
-   elemental impure subroutine print_hex(this)
-      class(color), intent(in) :: this
-      print'(a,a)', 'hex: ', this%hex
-   end subroutine print_hex
-   !===============================================================================
-
-
-   !===============================================================================
-   !> author: seyed ali ghasemi
-   elemental impure subroutine print_decimal(this)
-      class(color), intent(in) :: this
-      print'(a,g0)', 'decimal: ', this%decimal
-   end subroutine print_decimal
-   !===============================================================================
-
-
-   !===============================================================================
-   !> author: seyed ali ghasemi
-   elemental impure subroutine print_cmyk(this)
-      class(color), intent(in) :: this
-      print'(a,g0,a,g0,a,g0,a,g0)', 'cmyk: ', this%c, ', ', this%m, ', ', this%y, ', ', this%k
-   end subroutine print_cmyk
-   !===============================================================================
-
-
-   !===============================================================================
-   !> author: seyed ali ghasemi
-   elemental pure subroutine set_rgb(this, r, g, b)
-      class(color), intent(inout) :: this
-      integer(ik),  intent(in)    :: r, g, b
-
-      this%r = r
-      this%g = g
-      this%b = b
-   end subroutine set_rgb
-   !===============================================================================
-
-
-   !===============================================================================
-   !> author: seyed ali ghasemi
-   elemental pure subroutine set_hex(this, hex)
-      class(color), intent(inout) :: this
-      character(len=*), intent(in) :: hex
-
-      this%hex = hex
-   end subroutine set_hex
-   !===============================================================================
-
-
-   !===============================================================================
-   !> author: seyed ali ghasemi
-   elemental pure subroutine set_decimal(this, decimal)
-      class(color), intent(inout) :: this
-      integer(ik),  intent(in)    :: decimal
-
-      this%decimal = decimal
-   end subroutine set_decimal
-   !===============================================================================
-
-
-   !===============================================================================
-   !> author: seyed ali ghasemi
-   elemental pure subroutine set_cmyk(this, c, m, y, k)
-      class(color), intent(inout) :: this
-      integer(ik),  intent(in)    :: c, m, y, k
-
-      this%c = c
-      this%m = m
-      this%y = y
-      this%k = k
-   end subroutine set_cmyk
-   !===============================================================================
-
-
-   !===============================================================================
-   !> author: seyed ali ghasemi
+   !> author: Seyed Ali Ghasemi
    elemental pure subroutine get_decimal(this, decimal)
       class(color), intent(in)  :: this
       integer(ik),  intent(out) :: decimal
@@ -203,7 +387,7 @@ contains
 
 
    !===============================================================================
-   !> author: seyed ali ghasemi
+   !> author: Seyed Ali Ghasemi
    elemental pure subroutine get_cmyk(this, c, m, y, k)
       class(color), intent(in)  :: this
       integer(ik),  intent(out) :: c, m, y, k
@@ -217,7 +401,7 @@ contains
 
 
    !===============================================================================
-   !> author: seyed ali ghasemi
+   !> author: Seyed Ali Ghasemi
    elemental pure subroutine get_hex(this, hex)
       class(color), intent(in)    :: this
       character(len=*), intent(out) :: hex
@@ -228,7 +412,7 @@ contains
 
 
    !===============================================================================
-   !> author: seyed ali ghasemi
+   !> author: Seyed Ali Ghasemi
    elemental pure subroutine get_rgb(this, r, g, b)
       class(color), intent(in)  :: this
       integer(ik),  intent(out) :: r, g, b
@@ -241,7 +425,7 @@ contains
 
 
    !===============================================================================
-   !> author: seyed ali ghasemi
+   !> author: Seyed Ali Ghasemi
    elemental pure subroutine convert(this, to)
       class(color),     intent(inout) :: this
       character(len=*), intent(in)    :: to
@@ -260,6 +444,12 @@ contains
          call rgb_to_hsv(this%r, this%g, this%b, this%h, this%s, this%v)
        case ('rgb2hsl')
          call rgb_to_hsl(this%r, this%g, this%b, this%hl, this%sl, this%vl)
+       case ('rgb2all')
+         call rgb_to_hex(this%r, this%g, this%b, this%hex)
+         call rgb_to_decimal(this%r, this%g, this%b, this%decimal)
+         call rgb_to_cmyk(this%r, this%g, this%b, this%c, this%m, this%y, this%k)
+         call rgb_to_hsv(this%r, this%g, this%b, this%h, this%s, this%v)
+         call rgb_to_hsl(this%r, this%g, this%b, this%hl, this%sl, this%vl)
 
        case ('hex2rgb')
          call hex_to_rgb(this%hex, this%r, this%g, this%b)
@@ -275,6 +465,12 @@ contains
        case ('hex2hsl')
          call hex_to_rgb(this%hex, r, g, b)
          call rgb_to_hsl(r, g, b, this%hl, this%sl, this%vl)
+       case ('hex2all')
+         call hex_to_rgb(this%hex, this%r, this%g, this%b)
+         call rgb_to_decimal(this%r, this%g, this%b, this%decimal)
+         call rgb_to_cmyk(this%r, this%g, this%b, this%c, this%m, this%y, this%k)
+         call rgb_to_hsv(this%r, this%g, this%b, this%h, this%s, this%v)
+         call rgb_to_hsl(this%r, this%g, this%b, this%hl, this%sl, this%vl)
 
        case ('decimal2rgb')
          call decimal_to_rgb(this%decimal, this%r, this%g, this%b)
@@ -290,6 +486,12 @@ contains
        case ('decimal2hsl')
          call decimal_to_rgb(this%decimal, r, g, b)
          call rgb_to_hsl(r, g, b, this%hl, this%sl, this%vl)
+       case ('decimal2all')
+         call decimal_to_rgb(this%decimal, this%r, this%g, this%b)
+         call rgb_to_hex(this%r, this%g, this%b, this%hex)
+         call rgb_to_cmyk(this%r, this%g, this%b, this%c, this%m, this%y, this%k)
+         call rgb_to_hsv(this%r, this%g, this%b, this%h, this%s, this%v)
+         call rgb_to_hsl(this%r, this%g, this%b, this%hl, this%sl, this%vl)
 
        case ('cmyk2rgb')
          call cmyk_to_rgb(this%c, this%m, this%y, this%k, this%r, this%g, this%b)
@@ -305,6 +507,12 @@ contains
        case ('cmyk2hsl')
          call cmyk_to_rgb(this%c, this%m, this%y, this%k, r, g, b)
          call rgb_to_hsl(r, g, b, this%hl, this%sl, this%vl)
+       case ('cmyk2all')
+         call cmyk_to_rgb(this%c, this%m, this%y, this%k, this%r, this%g, this%b)
+         call rgb_to_hex(this%r, this%g, this%b, this%hex)
+         call rgb_to_decimal(this%r, this%g, this%b, this%decimal)
+         call rgb_to_hsv(this%r, this%g, this%b, this%h, this%s, this%v)
+         call rgb_to_hsl(this%r, this%g, this%b, this%hl, this%sl, this%vl)
 
        case ('hsv2rgb')
          call hsv_to_rgb(this%h, this%s, this%v, this%r, this%g, this%b)
@@ -320,6 +528,12 @@ contains
        case ('hsv2hsl')
          call hsv_to_rgb(this%h, this%s, this%v, r, g, b)
          call rgb_to_hsl(r, g, b, this%hl, this%sl, this%vl)
+       case ('hsv2all')
+         call hsv_to_rgb(this%h, this%s, this%v, this%r, this%g, this%b)
+         call rgb_to_hex(this%r, this%g, this%b, this%hex)
+         call rgb_to_decimal(this%r, this%g, this%b, this%decimal)
+         call rgb_to_cmyk(this%r, this%g, this%b, this%c, this%m, this%y, this%k)
+         call rgb_to_hsl(this%r, this%g, this%b, this%hl, this%sl, this%vl)
 
        case ('hsl2hsv')
          call hsl_to_rgb(this%hl, this%sl, this%vl, r, g, b)
@@ -335,6 +549,12 @@ contains
        case ('hsl2cmyk')
          call hsl_to_rgb(this%hl, this%sl, this%vl, r, g, b)
          call rgb_to_cmyk(r, g, b, this%c, this%m, this%y, this%k)
+       case ('hsl2all')
+         call hsl_to_rgb(this%hl, this%sl, this%vl, this%r, this%g, this%b)
+         call rgb_to_hex(this%r, this%g, this%b, this%hex)
+         call rgb_to_decimal(this%r, this%g, this%b, this%decimal)
+         call rgb_to_cmyk(this%r, this%g, this%b, this%c, this%m, this%y, this%k)
+         call rgb_to_hsv(this%r, this%g, this%b, this%h, this%s, this%v)
 
       end select
    end subroutine convert
@@ -342,18 +562,18 @@ contains
 
 
    !===============================================================================
-   !> author: seyed ali ghasemi
+   !> author: Seyed Ali Ghasemi
    elemental pure subroutine rgb_to_hex(r, g, b, hex)
       integer(ik),      intent(in)  :: r, g, b
       character(len=7), intent(out) :: hex
 
-      write(hex, '("#",3(z2))') r, g, b
+      write(hex, '("#",3(z2.2))') r, g, b
    end subroutine rgb_to_hex
    !===============================================================================
 
 
    !===============================================================================
-   !> author: seyed ali ghasemi
+   !> author: Seyed Ali Ghasemi
    elemental pure subroutine rgb_to_decimal(r, g, b, decimal)
       implicit none
       integer(ik), intent(in)  :: r, g, b
@@ -365,7 +585,7 @@ contains
 
 
    !===============================================================================
-   !> author: seyed ali ghasemi
+   !> author: Seyed Ali Ghasemi
    elemental pure subroutine rgb_to_cmyk(r, g, b, c, m, y, k)
       integer(ik), intent(in)  :: r, g, b
       integer(ik), intent(out) :: c, m, y, k
@@ -397,7 +617,7 @@ contains
 
 
    !===============================================================================
-   !> author: seyed ali ghasemi
+   !> author: Seyed Ali Ghasemi
    elemental pure subroutine hex_to_rgb(hex, r, g, b)
       character(len=*), intent(in)  :: hex
       integer(ik),      intent(out) :: r, g, b
@@ -410,7 +630,7 @@ contains
 
 
    !===============================================================================
-   !> author: seyed ali ghasemi
+   !> author: Seyed Ali Ghasemi
    elemental pure subroutine decimal_to_rgb(decimal, r, g, b)
       integer(ik), intent(in)  :: decimal
       integer(ik), intent(out) :: r, g, b
@@ -423,7 +643,7 @@ contains
 
 
    !===============================================================================
-   !> author: seyed ali ghasemi
+   !> author: Seyed Ali Ghasemi
    elemental pure subroutine cmyk_to_rgb(c, m, y, k, r, g, b)
       integer(ik), intent(in)  :: c, m, y, k
       integer(ik), intent(out) :: r, g, b
@@ -441,7 +661,7 @@ contains
 
 
    !===============================================================================
-   !> author: seyed ali ghasemi
+   !> author: Seyed Ali Ghasemi
    elemental pure subroutine hsv_to_rgb(h, s, v, r, g, b)
       real(rk), intent(in) :: h, s, v
       integer, intent(out) :: r, g, b
@@ -498,7 +718,7 @@ contains
 
 
    !===============================================================================
-   !> author: seyed ali ghasemi
+   !> author: Seyed Ali Ghasemi
    elemental pure subroutine rgb_to_hsv(r, g, b, h, s, v)
       integer(ik), intent(in)  :: r, g, b
       real(rk),    intent(out) :: h, s, v
@@ -538,9 +758,8 @@ contains
    !===============================================================================
 
 
-
    !===============================================================================
-   !> author: seyed ali ghasemi
+   !> author: Seyed Ali Ghasemi
    elemental pure subroutine rgb_to_hsl(r, g, b, h, s, l)
       integer, intent(in) :: r, g, b
       real(rk), intent(out) :: h, s, l
@@ -556,7 +775,7 @@ contains
 
       l = (cmax + cmin) / 2.0_rk
 
-      if (cmax == cmin) then
+      if (abs(cmax - cmin) < 1e-6_rk) then
          s = 0.0_rk
       else
          if (l <= 0.5_rk) then
@@ -566,11 +785,11 @@ contains
          end if
       end if
 
-      if (cmax == rn) then
+      if (abs(cmax - rn) < 1e-6_rk) then
          h = 60.0_rk * mod((gn - bn) / (cmax - cmin), 6.0_rk)
-      else if (cmax == gn) then
+      else if (abs(cmax - gn) < 1e-6_rk) then
          h = 60.0_rk * ((bn - rn) / (cmax - cmin) + 2.0_rk)
-      else if (cmax == bn) then
+      else if (abs(cmax - bn) < 1e-6_rk) then
          h = 60.0_rk * ((rn - gn) / (cmax - cmin) + 4.0_rk)
       end if
 
@@ -585,7 +804,7 @@ contains
 
 
    !===============================================================================
-   !> author: seyed ali ghasemi
+   !> author: Seyed Ali Ghasemi
    elemental pure subroutine hsl_to_rgb(h, s, l, r, g, b)
       real(rk), intent(in) :: h, s, l
       integer(ik), intent(out) :: r, g, b
@@ -636,6 +855,171 @@ contains
       g = nint(g1 * 255.0_rk + m * 255.0_rk)
       b = nint(b1 * 255.0_rk + m * 255.0_rk)
    end subroutine hsl_to_rgb
+   !===============================================================================
+
+
+   !===============================================================================
+   !> author: Seyed Ali Ghasemi
+   elemental pure subroutine copy_color(this, from)
+      class(color), intent(inout) :: this
+      class(color), intent(in)    :: from
+
+      this%r = from%r
+      this%g = from%g
+      this%b = from%b
+
+      this%c = from%c
+      this%m = from%m
+      this%y = from%y
+      this%k = from%k
+
+      this%decimal = from%decimal
+
+      this%hex = from%hex
+
+      this%h = from%h
+      this%s = from%s
+      this%v = from%v
+
+      this%hl = from%hl
+      this%sl = from%sl
+      this%vl = from%vl
+
+      this%color_name = from%color_name
+
+   end subroutine copy_color
+   !===============================================================================
+
+
+   !===============================================================================
+   !> author: Seyed Ali Ghasemi
+   elemental pure subroutine pick(this, name)
+      class(color),     intent(inout) :: this
+      character(len=*), intent(in)    :: name
+      type(color), dimension(:), allocatable       :: colors
+      integer                         :: i
+
+      call initialize_colors(colors)
+
+      do concurrent (i = 1: size(colors))
+         if (trim(colors(i)%color_name) == trim(name)) then
+            this = colors(i)
+         end if
+      end do
+
+   end subroutine pick
+   !===============================================================================
+
+
+   !===============================================================================
+   !> author: Seyed Ali Ghasemi
+   elemental pure subroutine find_nearest(this, nearest_color)
+      class(color), intent(inout) :: this
+      type(color),  intent(out)   :: nearest_color
+      integer(ik) :: i, closestColorIndex, ri, gi, bi
+      real(rk)    :: dist, min_dist
+      type(color), dimension(:), allocatable :: colors
+
+      call initialize_colors(colors)
+
+      min_dist = huge(min_dist)
+      closestColorIndex = 0
+
+      do concurrent (i = 1: size(colors))
+         call colors(i)%get_rgb(ri, gi, bi)
+         dist = sqrt(&
+            (real((ri-this%r), kind=rk)/255.0_rk)**2&
+            + (real((gi-this%g), kind=rk)/255.0_rk)**2&
+            + (real((bi-this%b), kind=rk)/255.0_rk)**2&
+            )
+         if (dist < min_dist) then
+            min_dist = dist
+            closestColorIndex = i
+         end if
+      end do
+
+      if (closestColorIndex == 0) then
+         error stop 'error: no color found'
+      else
+         nearest_color = colors(closestColorIndex)
+      end if
+
+      call nearest_color%convert('rgb2all')
+
+   end subroutine find_nearest
+   !===============================================================================
+
+
+   !===============================================================================
+   !> author: Seyed Ali Ghasemi
+   elemental impure subroutine print_available_colors(this)
+      class(color), intent(inout) :: this
+      type(color), dimension(:), allocatable :: colors
+
+      call initialize_colors(colors)
+      call colors(:)%print()
+   end subroutine print_available_colors
+   !===============================================================================
+
+
+   !===============================================================================
+   !> author: Seyed Ali Ghasemi
+   elemental impure subroutine save(this, file_name, height, width)
+      class(color), intent(inout) :: this
+      character(len=*), intent(in), optional :: file_name
+      integer, intent(in), optional :: height, width
+      type(format_pnm) :: image
+      integer :: height_, width_
+      integer(ik), dimension(:,:), allocatable :: px
+
+      if (present(height)) then
+         height_ = height
+      else
+         height_ = 50
+      end if
+      if (present(width)) then
+         width_ = width
+      else
+         width_ = 50
+      end if
+
+      allocate(px(height_, 3*width_))
+
+      px(:,1:3*width_-2:3) = this%r
+      px(:,2:3*width_-1:3) = this%g
+      px(:,3:3*width_-0:3) = this%b
+
+      call image%set_pnm(&
+         encoding    = 'binary', &
+         file_format = 'ppm', &
+         width       = width_, &
+         height      = height_, &
+         max_color   = 255, &
+         comment     = trim(this%color_name), &
+         pixels      = px &
+         )
+
+      if (present(file_name)) then
+         call image%export_pnm(trim(file_name))
+      else
+         call image%export_pnm('pnm_files/colors/'//trim(this%color_name))
+      end if
+
+   end subroutine save
+   !===============================================================================
+
+
+   !===============================================================================
+   !> author: Seyed Ali Ghasemi
+   elemental impure subroutine save_available_colors(this, file_name, height, width)
+      class(color), intent(inout) :: this
+      character(len=*), intent(in), optional :: file_name
+      integer, intent(in), optional  :: height, width
+      type(color), dimension(:), allocatable :: colors
+
+      call initialize_colors(colors)
+      call colors(:)%save(file_name, height, width)
+   end subroutine save_available_colors
    !===============================================================================
 
 end module forcolor

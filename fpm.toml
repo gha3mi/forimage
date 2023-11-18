@@ -153,3 +153,18 @@ main       = "test25.f90"
 name       = "test26"
 source-dir = "test"
 main       = "test26.f90"
+
+[[test]]
+name       = "test27"
+source-dir = "test"
+main       = "test27.f90"
+
+[[test]]
+name       = "test28"
+source-dir = "test"
+main       = "test28.f90"
+
+[[test]]
+name       = "test29"
+source-dir = "test"
+main       = "test29.f90"
