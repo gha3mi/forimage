@@ -159,7 +159,7 @@
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-r~14"></span>
+              <span class="anchor" id="variable-r~13"></span>
               integer(kind=ik),
             </td>
 <td>intent(in)</td>
@@ -174,7 +174,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-g~14"></span>
+              <span class="anchor" id="variable-g~13"></span>
               integer(kind=ik),
             </td>
 <td>intent(in)</td>
@@ -189,7 +189,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-b~14"></span>
+              <span class="anchor" id="variable-b~13"></span>
               integer(kind=ik),
             </td>
 <td>intent(in)</td>
@@ -204,7 +204,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-h~10"></span>
+              <span class="anchor" id="variable-h~9"></span>
               real(kind=rk),
             </td>
 <td>intent(out)</td>
@@ -634,7 +634,7 @@ large graphs.</div>
 <span class="k">            </span><span class="n">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">delta</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">cmax</span>
 <span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">cmax</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">rn</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mf">1.0e-6_rk</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
 <span class="k">               </span><span class="n">h</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">6</span><span class="mf">0.0_rk</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nb">mod</span><span class="p">(((</span><span class="n">gn</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">bn</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">delta</span><span class="p">),</span><span class="w"> </span><span class="mf">6.0_rk</span><span class="p">)</span>
-<span class="w">            </span><span class="n">elseif</span><span class="w"> </span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">cmax</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">gn</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mf">1.0e-6_rk</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="w">            </span><span class="k">elseif</span><span class="w"> </span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">cmax</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">gn</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mf">1.0e-6_rk</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
 <span class="k">               </span><span class="n">h</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">6</span><span class="mf">0.0_rk</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(((</span><span class="n">bn</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">rn</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">delta</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">2.0_rk</span><span class="p">)</span>
 <span class="w">            </span><span class="k">else</span>
 <span class="k">               </span><span class="n">h</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">6</span><span class="mf">0.0_rk</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(((</span><span class="n">rn</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">gn</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">delta</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">4.0_rk</span><span class="p">)</span>
@@ -667,7 +667,7 @@ large graphs.</div>
             <p class="text-end">
               Documentation generated by
               <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
- on 2023-11-18T09:24:14.591282             </p>
+ on 2023-11-19T09:45:13.146466             </p>
           </div>
         </div>
         <br>

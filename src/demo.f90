@@ -116,7 +116,7 @@ contains
       real(rk),    parameter :: x_max = 1.0_rk
       real(rk),    parameter :: y_min = -1.5_rk
       real(rk),    parameter :: y_max = 1.5_rk
-      real(rk)               :: x, y, x_temp, zx, zy, zx2, zy2, scale_x, scale_y
+      real(rk)               :: x, y, x_temp, zx, zy, scale_x, scale_y
       integer(ik)            :: iter
       integer                :: i, j
       ! Calculate scale factors for mapping pixel coordinates to Mandelbrot coordinates

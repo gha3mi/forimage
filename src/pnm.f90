@@ -580,7 +580,7 @@ contains
       class(format_pnm), intent(inout)       :: this
       character(*),      intent(in)          :: file_name, encoding
       character(3),      intent(in)          :: file_format
-      integer                                :: nunit, i, j, iostat
+      integer                                :: nunit, iostat
       character, dimension(:), allocatable   :: buffer_ch
       integer(ik), dimension(:), allocatable :: buffer_int
       logical                                :: file_exists
@@ -870,8 +870,7 @@ contains
       class(format_pnm), intent(inout)            :: this
       character(*),      intent(in)               :: file_name
       character(*),      intent(in), optional     :: encoding
-      integer                                     :: nunit, i, j
-      logical                                     :: file_exists
+      integer                                     :: nunit
       integer                                     :: iostat
 
       if (present(encoding)) then
