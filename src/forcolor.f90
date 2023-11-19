@@ -63,22 +63,22 @@ contains
 
       allocate(colors(14))
 
-      call colors(1)%set( name='Red',           r=255_ik,    g=0_ik,      b=0_ik)
-      call colors(2)%set( name='Green',         r=0_ik,      g=128_ik,    b=0_ik)
-      call colors(3)%set( name='Blue',          r=0_ik,      g=0_ik,      b=255_ik)
-      call colors(4)%set( name='Yellow',        r=255_ik,    g=255_ik,    b=0_ik)
-      call colors(5)%set( name='Cyan',          r=0_ik,      g=255_ik,    b=255_ik)
-      call colors(6)%set( name='Magenta',       r=255_ik,    g=0_ik,      b=255_ik)
-      call colors(7)%set( name='Black',         r=0_ik,      g=0_ik,      b=0_ik)
-      call colors(8)%set( name='White',         r=255_ik,    g=255_ik,    b=255_ik)
-      call colors(9)%set( name='Gray',          r=128_ik,    g=128_ik,    b=128_ik)
-      call colors(10)%set(name='Brown',         r=165_ik,    g=42_ik,     b=42_ik)
-      call colors(11)%set(name='Orange',        r=255_ik,    g=165_ik,    b=0_ik)
-      call colors(12)%set(name='Gold',          r=255_ik,    g=215_ik,    b=0_ik)
-      call colors(13)%set(name='Pink',          r=255_ik,    g=192_ik,    b=203_ik)
-      call colors(14)%set(name='Violet',        r=138_ik,    g=43_ik,     b=226_ik)
+      call colors(1)%set( name='red',           r=255_ik,    g=0_ik,      b=0_ik)
+      call colors(2)%set( name='green',         r=0_ik,      g=128_ik,    b=0_ik)
+      call colors(3)%set( name='blue',          r=0_ik,      g=0_ik,      b=255_ik)
+      call colors(4)%set( name='yellow',        r=255_ik,    g=255_ik,    b=0_ik)
+      call colors(5)%set( name='cyan',          r=0_ik,      g=255_ik,    b=255_ik)
+      call colors(6)%set( name='magenta',       r=255_ik,    g=0_ik,      b=255_ik)
+      call colors(7)%set( name='black',         r=0_ik,      g=0_ik,      b=0_ik)
+      call colors(8)%set( name='white',         r=255_ik,    g=255_ik,    b=255_ik)
+      call colors(9)%set( name='gray',          r=128_ik,    g=128_ik,    b=128_ik)
+      call colors(10)%set(name='brown',         r=165_ik,    g=42_ik,     b=42_ik)
+      call colors(11)%set(name='orange',        r=255_ik,    g=165_ik,    b=0_ik)
+      call colors(12)%set(name='gold',          r=255_ik,    g=215_ik,    b=0_ik)
+      call colors(13)%set(name='pink',          r=255_ik,    g=192_ik,    b=203_ik)
+      call colors(14)%set(name='violet',        r=138_ik,    g=43_ik,     b=226_ik)
 
-      call colors(:)%convert('rgb2all')
+      call colors(1:14)%convert('rgb2all')
    end subroutine initialize_colors
    !===============================================================================
 
@@ -239,8 +239,6 @@ contains
       this%hl = h
       this%sl = s
       this%vl = l
-
-      call this%convert('hsl2all')
    end subroutine set_hsl
    !===============================================================================
 
@@ -254,8 +252,6 @@ contains
       this%h = h
       this%s = s
       this%v = v
-
-      call this%convert('hsv2all')
    end subroutine set_hsv
    !===============================================================================
 
@@ -269,8 +265,6 @@ contains
       this%r = r
       this%g = g
       this%b = b
-
-      call this%convert('rgb2all')
    end subroutine set_rgb
    !===============================================================================
 
@@ -282,8 +276,6 @@ contains
       character(len=*), intent(in) :: hex
 
       this%hex = hex
-
-      call this%convert('hex2all')
    end subroutine set_hex
    !===============================================================================
 
@@ -295,8 +287,6 @@ contains
       integer(ik),  intent(in)    :: decimal
 
       this%decimal = decimal
-
-      call this%convert('decimal2all')
    end subroutine set_decimal
    !===============================================================================
 
@@ -311,8 +301,6 @@ contains
       this%m = m
       this%y = y
       this%k = k
-
-      call this%convert('cmyk2all')
    end subroutine set_cmyk
    !===============================================================================
 
@@ -430,7 +418,6 @@ contains
       class(color),     intent(inout) :: this
       character(len=*), intent(in)    :: to
       integer(ik)                     :: r, g, b
-      real(rk)                        :: h, s, v
 
       select case (to)
 
@@ -785,7 +772,9 @@ contains
          end if
       end if
 
-      if (abs(cmax - rn) < 1e-6_rk) then
+      if (abs(cmax - cmin) < 1e-6_rk) then
+         h = 0.0_rk
+      elseif (abs(cmax - rn) < 1e-6_rk) then
          h = 60.0_rk * mod((gn - bn) / (cmax - cmin), 6.0_rk)
       else if (abs(cmax - gn) < 1e-6_rk) then
          h = 60.0_rk * ((bn - rn) / (cmax - cmin) + 2.0_rk)
@@ -894,10 +883,10 @@ contains
    !===============================================================================
    !> author: Seyed Ali Ghasemi
    elemental pure subroutine pick(this, name)
-      class(color),     intent(inout) :: this
-      character(len=*), intent(in)    :: name
-      type(color), dimension(:), allocatable       :: colors
-      integer                         :: i
+      class(color),     intent(inout)        :: this
+      character(len=*), intent(in)           :: name
+      type(color), dimension(:), allocatable :: colors
+      integer                                :: i
 
       call initialize_colors(colors)
 
@@ -943,8 +932,6 @@ contains
       else
          nearest_color = colors(closestColorIndex)
       end if
-
-      call nearest_color%convert('rgb2all')
 
    end subroutine find_nearest
    !===============================================================================
