@@ -1,4 +1,4 @@
-program demo
+program demo_ppm
 
    use forimage, only: format_pnm, rk, ik
    implicit none
@@ -144,4 +144,4 @@ contains
       end do
    end function
 
-end program demo
+end program demo_ppm

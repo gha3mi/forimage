@@ -47,7 +47,7 @@
                   <a class="nav-link" href="../lists/types.html">Derived Types</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="../program/demo.html">Program</a>
+                  <a class="nav-link" href="../lists/programs.html">Programs</a>
                 </li>
             </ul>
               <div class="d-flex align-items-end flex-grow-1">
@@ -74,7 +74,7 @@
             <li class="list-inline-item" id="statements"><i class="fa fa-list-ol"></i>
               <a data-bs-toggle="tooltip"
                  data-bs-placement="bottom" data-html="true"
-                 title="<p>43.8% of total for derived types.</p>Including implementation: 446 statements, 39.2% of total for derived types.">42 statements</a>
+                 title="<p>43.8% of total for derived types.</p>Including implementation: 457 statements, 39.8% of total for derived types.">42 statements</a>
             </li>
 
             <li class="list-inline-item" id="source-file">
@@ -156,7 +156,8 @@
       </a>
       <div id="boundprocs-0" class="collapse">
         <div class="list-group list-group-flush">
-            <a class="list-group-item" href="../type/color.html#boundprocedure-set">set</a>
+            <a class="list-group-item" href="../type/color.html#boundprocedure-set~2">set</a>
+            <a class="list-group-item" href="../type/color.html#boundprocedure-set_by_name">set_by_name</a>
             <a class="list-group-item" href="../type/color.html#boundprocedure-set_name">set_name</a>
             <a class="list-group-item" href="../type/color.html#boundprocedure-set_rgb">set_rgb</a>
             <a class="list-group-item" href="../type/color.html#boundprocedure-set_hex">set_hex</a>
@@ -183,7 +184,6 @@
             <a class="list-group-item" href="../type/color.html#boundprocedure-copy_color">copy_color</a>
             <a class="list-group-item" href="../type/color.html#boundprocedure-assignment%28%3D%29">assignment(=)</a>
             <a class="list-group-item" href="../type/color.html#boundprocedure-convert">convert</a>
-            <a class="list-group-item" href="../type/color.html#boundprocedure-pick">pick</a>
             <a class="list-group-item" href="../type/color.html#boundprocedure-find_nearest">find_nearest</a>
             <a class="list-group-item" href="../type/color.html#boundprocedure-print_available_colors">print_available_colors</a>
             <a class="list-group-item" href="../type/color.html#boundprocedure-save">save</a>
@@ -508,7 +508,7 @@
           <div class="row">
               <div class="card mt-3">
     <div class="card-header codesum">
-      <span class="anchor" id="boundprocedure-set"></span>
+      <span class="anchor" id="boundprocedure-set~2"></span>
       <h3>
           procedure, public ::
   <strong>set</strong>
@@ -518,7 +518,7 @@
     <ul class="list-group">
         <li class="list-group-item">
                   <h3>
-    private pure elemental subroutine <a href='../proc/set.html'>set</a>(this, name, r, g, b, c, m, y, k, decimal, hex, h, s, v, hl, sl, vl)  
+    private pure elemental subroutine <a href='../proc/set~2.html'>set</a>(this, name, r, g, b, c, m, y, k, decimal, hex, h, s, v, hl, sl, vl, use_library)  
 </h3>
         <dl class="dl-horizontal">
         <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
@@ -789,6 +789,93 @@
             </td>
             <td>::</td>
             <td><strong>vl</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              logical,
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>use_library</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+        </li>
+    </ul>
+  </div>
+
+          </div>
+          <div class="row">
+              <div class="card mt-3">
+    <div class="card-header codesum">
+      <span class="anchor" id="boundprocedure-set_by_name"></span>
+      <h3>
+          procedure, private ::
+  <strong>set_by_name</strong>
+        
+      </h3>
+    </div>
+    <ul class="list-group">
+        <li class="list-group-item">
+                  <h3>
+    private pure elemental subroutine <a href='../proc/set_by_name.html'>set_by_name</a>(this, name)  
+</h3>
+        <dl class="dl-horizontal">
+        <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
+    </dl>
+
+
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/color.html'>color</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>this</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              character(len=*),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>name</strong></td>
             <td>
 
             </td>
@@ -3067,78 +3154,6 @@
           <div class="row">
               <div class="card mt-3">
     <div class="card-header codesum">
-      <span class="anchor" id="boundprocedure-pick"></span>
-      <h3>
-          procedure, public ::
-  <strong>pick</strong>
-        
-      </h3>
-    </div>
-    <ul class="list-group">
-        <li class="list-group-item">
-                  <h3>
-    private pure elemental subroutine <a href='../proc/pick.html'>pick</a>(this, name)  
-</h3>
-        <dl class="dl-horizontal">
-        <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
-    </dl>
-
-
-  
-
-  <h4>Arguments</h4>
-      <table class="table table-striped varlist">
-    <thead>
-      <tr>
-        <th scope="col">Type</th>
-<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
-        <th scope="col"></th>
-        <th scope="col">Name</th>
-        <th scope="col"></th>
-    </thead>
-    <tbody>
-        <tr>
-            <td>
-              <span class="anchor" ></span>
-              class(<a href='../type/color.html'>color</a>),
-            </td>
-<td>intent(inout)</td>
-              <td></td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>this</strong></td>
-            <td>
-
-            </td>
-        </tr>
-        <tr>
-            <td>
-              <span class="anchor" ></span>
-              character(len=*),
-            </td>
-<td>intent(in)</td>
-              <td></td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>name</strong></td>
-            <td>
-
-            </td>
-        </tr>
-    </tbody>
-  </table>
-
-
-        </li>
-    </ul>
-  </div>
-
-          </div>
-          <div class="row">
-              <div class="card mt-3">
-    <div class="card-header codesum">
       <span class="anchor" id="boundprocedure-find_nearest"></span>
       <h3>
           procedure, public ::
@@ -3483,6 +3498,7 @@
 <span class="w">      </span><span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=</span><span class="mi">256</span><span class="p">)</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="k">private</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">color_name</span><span class="w">                        </span><span class="c">!! color name</span>
 <span class="w">   </span><span class="k">contains</span>
 <span class="k">      procedure</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">set</span>
+<span class="w">      </span><span class="k">procedure</span><span class="p">,</span><span class="w"> </span><span class="k">private</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">set_by_name</span>
 <span class="w">      </span><span class="k">procedure</span><span class="p">,</span><span class="w"> </span><span class="k">private</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">set_name</span>
 <span class="w">      </span><span class="k">procedure</span><span class="p">,</span><span class="w"> </span><span class="k">private</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">set_rgb</span>
 <span class="w">      </span><span class="k">procedure</span><span class="p">,</span><span class="w"> </span><span class="k">private</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">set_hex</span>
@@ -3509,7 +3525,6 @@
 <span class="w">      </span><span class="k">procedure</span><span class="p">,</span><span class="w"> </span><span class="k">private</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">copy_color</span>
 <span class="w">      </span><span class="k">generic</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">assignment</span><span class="p">(</span><span class="o">=</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">copy_color</span>
 <span class="w">      </span><span class="k">procedure</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">convert</span>
-<span class="w">      </span><span class="k">procedure</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">pick</span>
 <span class="w">      </span><span class="k">procedure</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">find_nearest</span>
 <span class="w">      </span><span class="k">procedure</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">print_available_colors</span>
 <span class="w">      </span><span class="k">procedure</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="k">save</span>
@@ -3534,7 +3549,7 @@
             <p class="text-end">
               Documentation generated by
               <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
- on 2023-11-19T09:57:32.806871             </p>
+ on 2023-11-20T20:02:45.435959             </p>
           </div>
         </div>
         <br>

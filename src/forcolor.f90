@@ -20,6 +20,7 @@ module forcolor
       character(len=256) , private :: color_name                        !! color name
    contains
       procedure :: set
+      procedure, private :: set_by_name
       procedure, private :: set_name
       procedure, private :: set_rgb
       procedure, private :: set_hex
@@ -46,7 +47,6 @@ module forcolor
       procedure, private :: copy_color
       generic :: assignment(=) => copy_color
       procedure :: convert
-      procedure :: pick
       procedure :: find_nearest
       procedure :: print_available_colors
       procedure :: save
@@ -199,23 +199,53 @@ contains
 
    !===============================================================================
    !> author: Seyed Ali Ghasemi
-   elemental pure subroutine set(this, name, r,g,b, c,m,y,k, decimal, hex, h,s,v, hl,sl,vl)
+   elemental pure subroutine set(this, name, r,g,b, c,m,y,k, decimal, hex, h,s,v, hl,sl,vl, use_library)
       class(color), intent(inout) :: this
       character(len=*), intent(in) :: name
       integer(ik),  intent(in), optional :: r, g, b, c, m, y, k, decimal
       character(len=*), intent(in), optional :: hex
       real(rk),     intent(in), optional :: h, s, v, hl, sl, vl
+      logical,      intent(in), optional :: use_library
+      logical :: use_library_
 
-      call this%set_name(name)
+      if (present(use_library)) then
+         use_library_ = use_library
+      else
+         use_library_ = .false.
+      end if      
 
-      if (present(r) .and. present(g) .and. present(b))                  call this%set_rgb(r, g, b)
-      if (present(c) .and. present(m) .and. present(y) .and. present(k)) call this%set_cmyk(c, m, y, k)
-      if (present(decimal))                                              call this%set_decimal(decimal)
-      if (present(hex))                                                  call this%set_hex(hex)
-      if (present(h) .and. present(s) .and. present(v))                  call this%set_hsv(h, s, v)
-      if (present(hl) .and. present(sl) .and. present(vl))               call this%set_hsl(hl, sl, vl)
-
+      if (use_library_) then
+         call this%set_by_name(name)
+      else
+         call this%set_name(name)
+         if (present(r) .and. present(g) .and. present(b))                  call this%set_rgb(r, g, b)
+         if (present(c) .and. present(m) .and. present(y) .and. present(k)) call this%set_cmyk(c, m, y, k)
+         if (present(decimal))                                              call this%set_decimal(decimal)
+         if (present(hex))                                                  call this%set_hex(hex)
+         if (present(h) .and. present(s) .and. present(v))                  call this%set_hsv(h, s, v)
+         if (present(hl) .and. present(sl) .and. present(vl))               call this%set_hsl(hl, sl, vl)
+      end if
    end subroutine set
+   !===============================================================================
+
+
+   !===============================================================================
+   !> author: Seyed Ali Ghasemi
+   elemental pure subroutine set_by_name(this, name)
+      class(color),     intent(inout)        :: this
+      character(len=*), intent(in)           :: name
+      type(color), dimension(:), allocatable :: colors
+      integer                                :: i
+
+      call initialize_colors(colors)
+
+      do concurrent (i = 1: size(colors))
+         if (trim(colors(i)%color_name) == trim(name)) then
+            this = colors(i)
+         end if
+      end do
+
+   end subroutine set_by_name
    !===============================================================================
 
 
@@ -879,25 +909,6 @@ contains
    end subroutine copy_color
    !===============================================================================
 
-
-   !===============================================================================
-   !> author: Seyed Ali Ghasemi
-   elemental pure subroutine pick(this, name)
-      class(color),     intent(inout)        :: this
-      character(len=*), intent(in)           :: name
-      type(color), dimension(:), allocatable :: colors
-      integer                                :: i
-
-      call initialize_colors(colors)
-
-      do concurrent (i = 1: size(colors))
-         if (trim(colors(i)%color_name) == trim(name)) then
-            this = colors(i)
-         end if
-      end do
-
-   end subroutine pick
-   !===============================================================================
 
 
    !===============================================================================
