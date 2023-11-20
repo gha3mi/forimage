@@ -20,9 +20,14 @@ implicit-external = false
 source-form       = "free"
 
 [[example]]
-name       = "demo"
+name       = "demo_ppm"
 source-dir = "example"
-main       = "demo.f90"
+main       = "demo_ppm.f90"
+
+[[example]]
+name       = "demo_color"
+source-dir = "example"
+main       = "demo_color.f90"
 
 [[test]]
 name       = "test1"
