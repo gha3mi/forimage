@@ -1,3 +1,7 @@
+! Description: Demonstrates the manipulation of color spaces and their conversions.
+! This program sets a custom color using various methods, converts it to different color spaces,
+! retrieves color values, finds the nearest color, and prints color details.
+
 program demo_color
 
    use forimage, only: rk, ik, color
@@ -26,7 +30,7 @@ program demo_color
    call custom_color%get(h=h, s=s, v=v)
    call custom_color%get(hl=hl, sl=sl, vl=vl)
 
-   !
+   ! Print the name and color values
    call custom_color%print()
 
 
@@ -38,7 +42,7 @@ program demo_color
    ! Convert the color to other color spaces
    call custom_color%convert('hex2all')
 
-   ! Print the name of the color
+   ! Print the name and color values
    call custom_color%print()
 
    ! Get the values of the color in other color spaces
@@ -49,7 +53,7 @@ program demo_color
    call custom_color%get(h=h, s=s, v=v)
    call custom_color%get(hl=hl, sl=sl, vl=vl)
 
-   !
+   ! Print the name and color values
    call custom_color%print()
 
 
@@ -61,7 +65,7 @@ program demo_color
    ! Convert the color to other color spaces
    call custom_color%convert('decimal2all')
 
-   ! Print the name of the color
+   ! Print the name and color values
    call custom_color%print()
 
    ! Get the values of the color in other color spaces
@@ -72,7 +76,7 @@ program demo_color
    call custom_color%get(h=h, s=s, v=v)
    call custom_color%get(hl=hl, sl=sl, vl=vl)
 
-   !
+   ! Print the name and color values
    call custom_color%print()
 
 
@@ -84,7 +88,7 @@ program demo_color
    ! Convert the color to other color spaces
    call custom_color%convert('cmyk2all')
 
-   ! Print the name of the color
+   ! Print the name and color values
    call custom_color%print()
 
    ! Get the values of the color in other color spaces
@@ -95,7 +99,7 @@ program demo_color
    call custom_color%get(h=h, s=s, v=v)
    call custom_color%get(hl=hl, sl=sl, vl=vl)
 
-   !
+   ! Print the name and color values
    call custom_color%print()
 
 
@@ -106,7 +110,7 @@ program demo_color
    ! Convert the color to other color spaces
    call custom_color%convert('hsv2all')
 
-   ! Print the name of the color
+   ! Print the name and color values
    call custom_color%print()
 
    ! Get the values of the color in other color spaces
@@ -117,7 +121,7 @@ program demo_color
    call custom_color%get(h=h, s=s, v=v)
    call custom_color%get(hl=hl, sl=sl, vl=vl)
 
-   !
+   ! Print the name and color values
    call custom_color%print()
 
 
@@ -129,7 +133,7 @@ program demo_color
    ! Convert the color to other color spaces
    call custom_color%convert('hsl2all')
 
-   ! Print the name of the color
+   ! Print the name and color values
    call custom_color%print()
 
    ! Get the values of the color in other color spaces
@@ -140,7 +144,7 @@ program demo_color
    call custom_color%get(h=h, s=s, v=v)
    call custom_color%get(hl=hl, sl=sl, vl=vl)
 
-   !
+   ! Print the name and color values
    call custom_color%print()
 
 
@@ -157,12 +161,13 @@ program demo_color
 
 
 
-   ! Set the color using a hsv value
+   ! Set the color using specific RGB values
    call custom_color%set(name='custom_color', r=100_ik, g=30_ik, b=30_ik)
 
    print'(a)', 'Find the nearest color to the custom color'
    call custom_color%find_nearest(nearest_color)
 
+   ! Print the name and values of the nearest color
    call nearest_color%print()
 
 end program demo_color

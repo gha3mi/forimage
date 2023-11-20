@@ -7,7 +7,9 @@
 
 <img alt="ForImage" src="https://github.com/gha3mi/forimage/raw/main/media/logo.png" width="750">
 
-**ForImage**: A Fortran library for PNM file processing and image editing.
+**ForImage**: A Fortran library for processing and editing PNM images and managing colors.
+
+A Fortran library for working with image files (PNM format) and managing colors effectively.
 
 - [PNM File Support](#pnm-file-support)
 - [fpm dependency](#fpm-dependency)
@@ -82,22 +84,41 @@ you can easily include it by adding the following line to your `fpm.toml` file:
 forimage = {git="https://github.com/gha3mi/forimage.git"}
 ```
 
-## How to run demo
+## How to run demos
 
 **Clone the repository:**
 
-You can clone the `ForImage` repository from GitHub using the following command:
+Clone the `ForImage` repository from GitHub using the following command:
+
 
 ```shell
 git clone https://github.com/gha3mi/forimage.git
 ```
 
+Navigate to the cloned directory:
+
 ```shell
 cd forimage
 ```
 
+### Running `demo_ppm`
+
+The `demo_ppm` program demonstrates various operations on PPM (Portable Pixmap) images. It generates Mandelbrot fractals, performs diverse manipulations, and exports images in the PPM format.
+
+To run `demo_ppm`, execute the following command:
+
 ```shell
-fpm run --example demo
+fpm run --example demo_ppm
+```
+
+### Running `demo_color`
+
+The `demo_color` program showcases manipulation of color spaces and their conversions. This program sets a custom color using various methods, converts it to different color spaces, retrieves color values, finds the nearest color, and prints color details.
+
+To run `demo_color`, execute the following command:
+
+```shell
+fpm run --example demo_color
 ```
 
 <!-- To run the examples using `fpm`, you can use response files for specific

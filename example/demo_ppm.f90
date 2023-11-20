@@ -1,3 +1,6 @@
+! Description: This program showcases different operations on PPM (Portable Pixmap) images.
+! It generates a Mandelbrot fractal, performs manipulations, and exports images in PPM format.
+
 program demo_ppm
 
    use forimage, only: format_pnm, rk, ik
