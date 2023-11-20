@@ -128,8 +128,8 @@
 			   <tr><td><a href='../proc/rotate.html'>rotate</a></td><td><a href='../module/pnm.html'>pnm</a></td><td>Subroutine</td><td></td></tr>
 			   <tr><td><a href='../proc/save.html'>save</a></td><td><a href='../module/forcolor.html'>forcolor</a></td><td>Subroutine</td><td></td></tr>
 			   <tr><td><a href='../proc/save_available_colors.html'>save_available_colors</a></td><td><a href='../module/forcolor.html'>forcolor</a></td><td>Subroutine</td><td></td></tr>
-			   <tr><td><a href='../proc/set.html'>set</a></td><td><a href='../module/lut.html'>lut</a></td><td>Subroutine</td><td></td></tr>
-			   <tr><td><a href='../proc/set~2.html'>set</a></td><td><a href='../module/forcolor.html'>forcolor</a></td><td>Subroutine</td><td></td></tr>
+			   <tr><td><a href='../proc/set.html'>set</a></td><td><a href='../module/forcolor.html'>forcolor</a></td><td>Subroutine</td><td></td></tr>
+			   <tr><td><a href='../proc/set~2.html'>set</a></td><td><a href='../module/lut.html'>lut</a></td><td>Subroutine</td><td></td></tr>
 			   <tr><td><a href='../proc/set_by_name.html'>set_by_name</a></td><td><a href='../module/forcolor.html'>forcolor</a></td><td>Subroutine</td><td></td></tr>
 			   <tr><td><a href='../proc/set_cmyk.html'>set_cmyk</a></td><td><a href='../module/forcolor.html'>forcolor</a></td><td>Subroutine</td><td></td></tr>
 			   <tr><td><a href='../proc/set_colors.html'>set_colors</a></td><td><a href='../module/lut.html'>lut</a></td><td>Subroutine</td><td></td></tr>
@@ -889,18 +889,18 @@
 <path fill="none" stroke="#025510" stroke-opacity="0.031373" d="M626.01,-1379.04C659.02,-1385.45 699.79,-1393.37 734.17,-1400.05"/>
 <polygon fill="#025510" fill-opacity="0.031373" stroke="#025510" stroke-opacity="0.031373" points="733.67,-1403.52 744.15,-1401.99 735.01,-1396.65 733.67,-1403.52"/>
 </g>
-<!-- proc~set~2 -->
-<g id="call~~graph~~CallGraph_node85" class="node">
-<title>proc~set~2</title>
-<g id="a_call~~graph~~CallGraph_node85"><a xlink:href=".././proc/set~2.html" xlink:title="forcolor::color%set">
+<!-- proc~set -->
+<g id="call~~graph~~CallGraph_node62" class="node">
+<title>proc~set</title>
+<g id="a_call~~graph~~CallGraph_node62"><a xlink:href=".././proc/set.html" xlink:title="forcolor::color%set">
 <polygon fill="#d9534f" stroke="#d9534f" points="864,-1055 750,-1055 750,-1031 864,-1031 864,-1055"/>
 <text text-anchor="middle" x="807" y="-1040.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">forcolor::color%set</text>
 </a>
 </g>
 </g>
-<!-- proc~initialize_colors&#45;&gt;proc~set~2 -->
+<!-- proc~initialize_colors&#45;&gt;proc~set -->
 <g id="call~~graph~~CallGraph_edge45" class="edge">
-<title>proc~initialize_colors&#45;&gt;proc~set~2</title>
+<title>proc~initialize_colors&#45;&gt;proc~set</title>
 <path fill="none" stroke="#025510" stroke-opacity="0.031373" d="M634.73,-1360.06C644.56,-1356.84 654.02,-1352.31 662,-1346 668.11,-1341.17 764.64,-1132.65 796.14,-1064.39"/>
 <polygon fill="#025510" fill-opacity="0.031373" stroke="#025510" stroke-opacity="0.031373" points="799.45,-1065.58 800.46,-1055.03 793.09,-1062.64 799.45,-1065.58"/>
 </g>
@@ -1219,21 +1219,6 @@
 <path fill="none" stroke="#110255" d="M404.59,-1344.05C429.38,-1347.66 456.54,-1351.62 481.21,-1355.22"/>
 <polygon fill="#110255" stroke="#110255" points="480.85,-1358.7 491.25,-1356.68 481.86,-1351.78 480.85,-1358.7"/>
 </g>
-<!-- proc~set -->
-<g id="call~~graph~~CallGraph_node62" class="node">
-<title>proc~set</title>
-<g id="a_call~~graph~~CallGraph_node62"><a xlink:href=".././proc/set.html" xlink:title="lut::format_lut%set">
-<polygon fill="#d9534f" stroke="#d9534f" points="146,-150 32,-150 32,-126 146,-126 146,-150"/>
-<text text-anchor="middle" x="89" y="-135.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">lut::format_lut%set</text>
-</a>
-</g>
-</g>
-<!-- proc~set&#45;&gt;proc~allocate_colors -->
-<g id="call~~graph~~CallGraph_edge70" class="edge">
-<title>proc~set&#45;&gt;proc~allocate_colors</title>
-<path fill="none" stroke="#280255" d="M146.26,-138C168.92,-138 195.74,-138 221.44,-138"/>
-<polygon fill="#280255" stroke="#280255" points="221.6,-141.5 231.6,-138 221.6,-134.5 221.6,-141.5"/>
-</g>
 <!-- proc~set_by_name -->
 <g id="call~~graph~~CallGraph_node63" class="node">
 <title>proc~set_by_name</title>
@@ -1243,11 +1228,11 @@
 </a>
 </g>
 </g>
-<!-- proc~set_by_name&#45;&gt;proc~initialize_colors -->
-<g id="call~~graph~~CallGraph_edge71" class="edge">
-<title>proc~set_by_name&#45;&gt;proc~initialize_colors</title>
-<path fill="none" stroke="#450255" d="M982.41,-1216.06C972.25,-1218.74 961.73,-1221.76 952,-1225 819.5,-1269.14 795.29,-1304.3 662,-1346 654.39,-1348.38 646.35,-1350.58 638.3,-1352.6"/>
-<polygon fill="#450255" stroke="#450255" points="637.4,-1349.21 628.49,-1354.95 639.03,-1356.02 637.4,-1349.21"/>
+<!-- proc~set&#45;&gt;proc~set_by_name -->
+<g id="call~~graph~~CallGraph_edge70" class="edge">
+<title>proc~set&#45;&gt;proc~set_by_name</title>
+<path fill="none" stroke="#280255" d="M816.92,-1055.28C837.48,-1082.67 891.12,-1148.98 952,-1183 955.48,-1184.94 959.14,-1186.71 962.9,-1188.31"/>
+<polygon fill="#280255" stroke="#280255" points="961.84,-1191.66 972.43,-1191.98 964.35,-1185.12 961.84,-1191.66"/>
 </g>
 <!-- proc~set_cmyk -->
 <g id="call~~graph~~CallGraph_node64" class="node">
@@ -1257,6 +1242,108 @@
 <text text-anchor="middle" x="1036" y="-1159.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">forcolor::color%set_cmyk</text>
 </a>
 </g>
+</g>
+<!-- proc~set&#45;&gt;proc~set_cmyk -->
+<g id="call~~graph~~CallGraph_edge71" class="edge">
+<title>proc~set&#45;&gt;proc~set_cmyk</title>
+<path fill="none" stroke="#280255" d="M822.11,-1055.13C846.8,-1075.76 900.15,-1117.68 952,-1141 956.71,-1143.12 961.67,-1145.05 966.72,-1146.8"/>
+<polygon fill="#280255" stroke="#280255" points="965.93,-1150.22 976.52,-1149.96 968.08,-1143.56 965.93,-1150.22"/>
+</g>
+<!-- proc~set_decimal -->
+<g id="call~~graph~~CallGraph_node67" class="node">
+<title>proc~set_decimal</title>
+<g id="a_call~~graph~~CallGraph_node67"><a xlink:href=".././proc/set_decimal.html" xlink:title="forcolor::color%set_decimal">
+<polygon fill="#d9534f" stroke="#d9534f" points="1117,-1132 955,-1132 955,-1108 1117,-1108 1117,-1132"/>
+<text text-anchor="middle" x="1036" y="-1117.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">forcolor::color%set_decimal</text>
+</a>
+</g>
+</g>
+<!-- proc~set&#45;&gt;proc~set_decimal -->
+<g id="call~~graph~~CallGraph_edge72" class="edge">
+<title>proc~set&#45;&gt;proc~set_decimal</title>
+<path fill="none" stroke="#280255" d="M836.05,-1055.09C864.8,-1067.21 910.99,-1085.89 952,-1099 958.91,-1101.21 966.2,-1103.34 973.48,-1105.34"/>
+<polygon fill="#280255" stroke="#280255" points="972.8,-1108.78 983.36,-1107.98 974.61,-1102.02 972.8,-1108.78"/>
+</g>
+<!-- proc~set_hex -->
+<g id="call~~graph~~CallGraph_node73" class="node">
+<title>proc~set_hex</title>
+<g id="a_call~~graph~~CallGraph_node73"><a xlink:href=".././proc/set_hex.html" xlink:title="forcolor::color%set_hex">
+<polygon fill="#d9534f" stroke="#d9534f" points="1105,-1090 967,-1090 967,-1066 1105,-1066 1105,-1090"/>
+<text text-anchor="middle" x="1036" y="-1075.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">forcolor::color%set_hex</text>
+</a>
+</g>
+</g>
+<!-- proc~set&#45;&gt;proc~set_hex -->
+<g id="call~~graph~~CallGraph_edge73" class="edge">
+<title>proc~set&#45;&gt;proc~set_hex</title>
+<path fill="none" stroke="#280255" d="M864.11,-1051.65C892.07,-1055.96 926.33,-1061.24 956.81,-1065.94"/>
+<polygon fill="#280255" stroke="#280255" points="956.57,-1069.45 966.99,-1067.51 957.64,-1062.53 956.57,-1069.45"/>
+</g>
+<!-- proc~set_hsl -->
+<g id="call~~graph~~CallGraph_node74" class="node">
+<title>proc~set_hsl</title>
+<g id="a_call~~graph~~CallGraph_node74"><a xlink:href=".././proc/set_hsl.html" xlink:title="forcolor::color%set_hsl">
+<polygon fill="#d9534f" stroke="#d9534f" points="1103,-1048 969,-1048 969,-1024 1103,-1024 1103,-1048"/>
+<text text-anchor="middle" x="1036" y="-1033.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">forcolor::color%set_hsl</text>
+</a>
+</g>
+</g>
+<!-- proc~set&#45;&gt;proc~set_hsl -->
+<g id="call~~graph~~CallGraph_edge74" class="edge">
+<title>proc~set&#45;&gt;proc~set_hsl</title>
+<path fill="none" stroke="#280255" d="M864.11,-1041.27C892.54,-1040.39 927.49,-1039.32 958.35,-1038.36"/>
+<polygon fill="#280255" stroke="#280255" points="958.76,-1041.85 968.65,-1038.05 958.55,-1034.86 958.76,-1041.85"/>
+</g>
+<!-- proc~set_hsv -->
+<g id="call~~graph~~CallGraph_node75" class="node">
+<title>proc~set_hsv</title>
+<g id="a_call~~graph~~CallGraph_node75"><a xlink:href=".././proc/set_hsv.html" xlink:title="forcolor::color%set_hsv">
+<polygon fill="#d9534f" stroke="#d9534f" points="1104.5,-1006 967.5,-1006 967.5,-982 1104.5,-982 1104.5,-1006"/>
+<text text-anchor="middle" x="1036" y="-991.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">forcolor::color%set_hsv</text>
+</a>
+</g>
+</g>
+<!-- proc~set&#45;&gt;proc~set_hsv -->
+<g id="call~~graph~~CallGraph_edge75" class="edge">
+<title>proc~set&#45;&gt;proc~set_hsv</title>
+<path fill="none" stroke="#280255" d="M863.82,-1030.95C895.7,-1024.07 935.86,-1015.4 969.26,-1008.19"/>
+<polygon fill="#280255" stroke="#280255" points="970.36,-1011.53 979.39,-1006 968.88,-1004.69 970.36,-1011.53"/>
+</g>
+<!-- proc~set_name -->
+<g id="call~~graph~~CallGraph_node78" class="node">
+<title>proc~set_name</title>
+<g id="a_call~~graph~~CallGraph_node78"><a xlink:href=".././proc/set_name.html" xlink:title="forcolor::color%set_name">
+<polygon fill="#d9534f" stroke="#d9534f" points="1111,-964 961,-964 961,-940 1111,-940 1111,-964"/>
+<text text-anchor="middle" x="1036" y="-949.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">forcolor::color%set_name</text>
+</a>
+</g>
+</g>
+<!-- proc~set&#45;&gt;proc~set_name -->
+<g id="call~~graph~~CallGraph_edge76" class="edge">
+<title>proc~set&#45;&gt;proc~set_name</title>
+<path fill="none" stroke="#280255" d="M852.45,-1030.98C872.61,-1024.53 896.29,-1015.51 916,-1004 934.23,-993.35 933.27,-982.74 952,-973 955.78,-971.03 959.76,-969.24 963.84,-967.62"/>
+<polygon fill="#280255" stroke="#280255" points="965.3,-970.81 973.51,-964.11 962.92,-964.23 965.3,-970.81"/>
+</g>
+<!-- proc~set_rgb -->
+<g id="call~~graph~~CallGraph_node83" class="node">
+<title>proc~set_rgb</title>
+<g id="a_call~~graph~~CallGraph_node83"><a xlink:href=".././proc/set_rgb.html" xlink:title="forcolor::color%set_rgb">
+<polygon fill="#d9534f" stroke="#d9534f" points="1104.5,-922 967.5,-922 967.5,-898 1104.5,-898 1104.5,-922"/>
+<text text-anchor="middle" x="1036" y="-907.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">forcolor::color%set_rgb</text>
+</a>
+</g>
+</g>
+<!-- proc~set&#45;&gt;proc~set_rgb -->
+<g id="call~~graph~~CallGraph_edge77" class="edge">
+<title>proc~set&#45;&gt;proc~set_rgb</title>
+<path fill="none" stroke="#280255" d="M864.27,-1031.56C882.39,-1025.7 901.51,-1016.96 916,-1004 942.97,-979.89 923.88,-953.75 952,-931 954.02,-929.36 956.16,-927.85 958.38,-926.46"/>
+<polygon fill="#280255" stroke="#280255" points="960.18,-929.46 967.32,-921.64 956.85,-923.3 960.18,-929.46"/>
+</g>
+<!-- proc~set_by_name&#45;&gt;proc~initialize_colors -->
+<g id="call~~graph~~CallGraph_edge78" class="edge">
+<title>proc~set_by_name&#45;&gt;proc~initialize_colors</title>
+<path fill="none" stroke="#450255" d="M982.41,-1216.06C972.25,-1218.74 961.73,-1221.76 952,-1225 819.5,-1269.14 795.29,-1304.3 662,-1346 654.39,-1348.38 646.35,-1350.58 638.3,-1352.6"/>
+<polygon fill="#450255" stroke="#450255" points="637.4,-1349.21 628.49,-1354.95 639.03,-1356.02 637.4,-1349.21"/>
 </g>
 <!-- proc~set_colors -->
 <g id="call~~graph~~CallGraph_node65" class="node">
@@ -1276,15 +1363,6 @@
 </a>
 </g>
 </g>
-<!-- proc~set_decimal -->
-<g id="call~~graph~~CallGraph_node67" class="node">
-<title>proc~set_decimal</title>
-<g id="a_call~~graph~~CallGraph_node67"><a xlink:href=".././proc/set_decimal.html" xlink:title="forcolor::color%set_decimal">
-<polygon fill="#d9534f" stroke="#d9534f" points="1117,-1132 955,-1132 955,-1108 1117,-1108 1117,-1132"/>
-<text text-anchor="middle" x="1036" y="-1117.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">forcolor::color%set_decimal</text>
-</a>
-</g>
-</g>
 <!-- proc~set_header -->
 <g id="call~~graph~~CallGraph_node71" class="node">
 <title>proc~set_header</title>
@@ -1295,13 +1373,13 @@
 </g>
 </g>
 <!-- proc~set_header&#45;&gt;proc~set_comment -->
-<g id="call~~graph~~CallGraph_edge72" class="edge">
+<g id="call~~graph~~CallGraph_edge79" class="edge">
 <title>proc~set_header&#45;&gt;proc~set_comment</title>
 <path fill="none" stroke="#183025" stroke-opacity="0.019608" d="M633.35,-953.04C662.46,-958.09 696.48,-963.99 726.59,-969.22"/>
 <polygon fill="#183025" fill-opacity="0.019608" stroke="#183025" stroke-opacity="0.019608" points="726.19,-972.7 736.64,-970.96 727.39,-965.8 726.19,-972.7"/>
 </g>
 <!-- proc~set_header&#45;&gt;proc~set_height -->
-<g id="call~~graph~~CallGraph_edge73" class="edge">
+<g id="call~~graph~~CallGraph_edge80" class="edge">
 <title>proc~set_header&#45;&gt;proc~set_height</title>
 <path fill="none" stroke="#183025" stroke-opacity="0.019608" d="M647.75,-928.82C652.82,-926.36 657.63,-923.45 662,-920 709.83,-882.27 776.27,-703.35 798.45,-640.72"/>
 <polygon fill="#183025" fill-opacity="0.019608" stroke="#183025" stroke-opacity="0.019608" points="801.83,-641.66 801.85,-631.06 795.23,-639.34 801.83,-641.66"/>
@@ -1316,7 +1394,7 @@
 </g>
 </g>
 <!-- proc~set_header&#45;&gt;proc~set_magicnumber -->
-<g id="call~~graph~~CallGraph_edge74" class="edge">
+<g id="call~~graph~~CallGraph_edge81" class="edge">
 <title>proc~set_header&#45;&gt;proc~set_magicnumber</title>
 <path fill="none" stroke="#183025" stroke-opacity="0.019608" d="M652.05,-941C664.21,-941 676.85,-941 689.42,-941"/>
 <polygon fill="#183025" fill-opacity="0.019608" stroke="#183025" stroke-opacity="0.019608" points="689.48,-944.5 699.48,-941 689.48,-937.5 689.48,-944.5"/>
@@ -1331,52 +1409,16 @@
 </g>
 </g>
 <!-- proc~set_header&#45;&gt;proc~set_max_color -->
-<g id="call~~graph~~CallGraph_edge75" class="edge">
+<g id="call~~graph~~CallGraph_edge82" class="edge">
 <title>proc~set_header&#45;&gt;proc~set_max_color</title>
 <path fill="none" stroke="#183025" stroke-opacity="0.019608" d="M633.35,-928.96C662.46,-923.91 696.48,-918.01 726.59,-912.78"/>
 <polygon fill="#183025" fill-opacity="0.019608" stroke="#183025" stroke-opacity="0.019608" points="727.39,-916.2 736.64,-911.04 726.19,-909.3 727.39,-916.2"/>
 </g>
 <!-- proc~set_header&#45;&gt;proc~set_width -->
-<g id="call~~graph~~CallGraph_edge76" class="edge">
+<g id="call~~graph~~CallGraph_edge83" class="edge">
 <title>proc~set_header&#45;&gt;proc~set_width</title>
 <path fill="none" stroke="#183025" stroke-opacity="0.019608" d="M651.82,-928.73C655.53,-926.24 658.96,-923.35 662,-920 710.31,-866.61 665.06,-662.02 698,-598 715.74,-563.52 751.17,-535.45 776.61,-518.54"/>
 <polygon fill="#183025" fill-opacity="0.019608" stroke="#183025" stroke-opacity="0.019608" points="778.65,-521.39 785.15,-513.03 774.85,-515.51 778.65,-521.39"/>
-</g>
-<!-- proc~set_hex -->
-<g id="call~~graph~~CallGraph_node73" class="node">
-<title>proc~set_hex</title>
-<g id="a_call~~graph~~CallGraph_node73"><a xlink:href=".././proc/set_hex.html" xlink:title="forcolor::color%set_hex">
-<polygon fill="#d9534f" stroke="#d9534f" points="1105,-1090 967,-1090 967,-1066 1105,-1066 1105,-1090"/>
-<text text-anchor="middle" x="1036" y="-1075.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">forcolor::color%set_hex</text>
-</a>
-</g>
-</g>
-<!-- proc~set_hsl -->
-<g id="call~~graph~~CallGraph_node74" class="node">
-<title>proc~set_hsl</title>
-<g id="a_call~~graph~~CallGraph_node74"><a xlink:href=".././proc/set_hsl.html" xlink:title="forcolor::color%set_hsl">
-<polygon fill="#d9534f" stroke="#d9534f" points="1103,-1048 969,-1048 969,-1024 1103,-1024 1103,-1048"/>
-<text text-anchor="middle" x="1036" y="-1033.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">forcolor::color%set_hsl</text>
-</a>
-</g>
-</g>
-<!-- proc~set_hsv -->
-<g id="call~~graph~~CallGraph_node75" class="node">
-<title>proc~set_hsv</title>
-<g id="a_call~~graph~~CallGraph_node75"><a xlink:href=".././proc/set_hsv.html" xlink:title="forcolor::color%set_hsv">
-<polygon fill="#d9534f" stroke="#d9534f" points="1104.5,-1006 967.5,-1006 967.5,-982 1104.5,-982 1104.5,-1006"/>
-<text text-anchor="middle" x="1036" y="-991.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">forcolor::color%set_hsv</text>
-</a>
-</g>
-</g>
-<!-- proc~set_name -->
-<g id="call~~graph~~CallGraph_node78" class="node">
-<title>proc~set_name</title>
-<g id="a_call~~graph~~CallGraph_node78"><a xlink:href=".././proc/set_name.html" xlink:title="forcolor::color%set_name">
-<polygon fill="#d9534f" stroke="#d9534f" points="1111,-964 961,-964 961,-940 1111,-940 1111,-964"/>
-<text text-anchor="middle" x="1036" y="-949.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">forcolor::color%set_name</text>
-</a>
-</g>
 </g>
 <!-- proc~set_pixel -->
 <g id="call~~graph~~CallGraph_node80" class="node">
@@ -1388,97 +1430,55 @@
 </g>
 </g>
 <!-- proc~set_pixels&#45;&gt;proc~check_pixel_range -->
-<g id="call~~graph~~CallGraph_edge77" class="edge">
+<g id="call~~graph~~CallGraph_edge84" class="edge">
 <title>proc~set_pixels&#45;&gt;proc~check_pixel_range</title>
 <path fill="none" stroke="#255015" stroke-opacity="0.015686" d="M588.09,-490.86C631.67,-468.89 723.64,-422.52 773.02,-397.63"/>
 <polygon fill="#255015" fill-opacity="0.015686" stroke="#255015" stroke-opacity="0.015686" points="774.65,-400.72 782.01,-393.09 771.5,-394.47 774.65,-400.72"/>
 </g>
 <!-- proc~set_pnm&#45;&gt;proc~allocate_pixels -->
-<g id="call~~graph~~CallGraph_edge78" class="edge">
+<g id="call~~graph~~CallGraph_edge85" class="edge">
 <title>proc~set_pnm&#45;&gt;proc~allocate_pixels</title>
 <path fill="none" stroke="#255013" stroke-opacity="0.027451" d="M358.02,-844.89C378.86,-837.44 405.36,-827.19 428,-816 444.81,-807.7 447.97,-803.72 464,-794 487.16,-779.95 513.46,-764.12 532.98,-752.4"/>
 <polygon fill="#255013" fill-opacity="0.027451" stroke="#255013" stroke-opacity="0.027451" points="534.93,-755.31 541.71,-747.16 531.33,-749.31 534.93,-755.31"/>
 </g>
 <!-- proc~set_pnm&#45;&gt;proc~set_file_format -->
-<g id="call~~graph~~CallGraph_edge79" class="edge">
+<g id="call~~graph~~CallGraph_edge86" class="edge">
 <title>proc~set_pnm&#45;&gt;proc~set_file_format</title>
 <path fill="none" stroke="#255013" stroke-opacity="0.027451" d="M403.25,-857C419.36,-857 436.5,-857 453.35,-857"/>
 <polygon fill="#255013" fill-opacity="0.027451" stroke="#255013" stroke-opacity="0.027451" points="453.79,-860.5 463.79,-857 453.79,-853.5 453.79,-860.5"/>
 </g>
 <!-- proc~set_pnm&#45;&gt;proc~set_format -->
-<g id="call~~graph~~CallGraph_edge80" class="edge">
+<g id="call~~graph~~CallGraph_edge87" class="edge">
 <title>proc~set_pnm&#45;&gt;proc~set_format</title>
 <path fill="none" stroke="#255013" stroke-opacity="0.027451" d="M390.77,-869.04C419.65,-874.09 453.39,-879.99 483.25,-885.22"/>
 <polygon fill="#255013" fill-opacity="0.027451" stroke="#255013" stroke-opacity="0.027451" points="482.76,-888.69 493.22,-886.96 483.97,-881.79 482.76,-888.69"/>
 </g>
 <!-- proc~set_pnm&#45;&gt;proc~set_header -->
-<g id="call~~graph~~CallGraph_edge81" class="edge">
+<g id="call~~graph~~CallGraph_edge88" class="edge">
 <title>proc~set_pnm&#45;&gt;proc~set_header</title>
 <path fill="none" stroke="#255013" stroke-opacity="0.027451" d="M403.1,-867.15C411.82,-869.95 420.31,-873.5 428,-878 449.23,-890.4 442.87,-907.43 464,-920 467.18,-921.89 470.5,-923.61 473.93,-925.18"/>
 <polygon fill="#255013" fill-opacity="0.027451" stroke="#255013" stroke-opacity="0.027451" points="472.62,-928.43 483.21,-928.98 475.28,-921.95 472.62,-928.43"/>
 </g>
 <!-- proc~set_pnm&#45;&gt;proc~set_pixels -->
-<g id="call~~graph~~CallGraph_edge82" class="edge">
+<g id="call~~graph~~CallGraph_edge89" class="edge">
 <title>proc~set_pnm&#45;&gt;proc~set_pixels</title>
 <path fill="none" stroke="#255013" stroke-opacity="0.027451" d="M378.73,-845C396.41,-838.85 414.74,-829.66 428,-816 461.48,-781.5 445.85,-758.52 464,-714 492.83,-643.27 532.54,-561.9 551.33,-524.21"/>
 <polygon fill="#255013" fill-opacity="0.027451" stroke="#255013" stroke-opacity="0.027451" points="554.5,-525.69 555.84,-515.19 548.24,-522.56 554.5,-525.69"/>
 </g>
-<!-- proc~set_rgb -->
-<g id="call~~graph~~CallGraph_node83" class="node">
-<title>proc~set_rgb</title>
-<g id="a_call~~graph~~CallGraph_node83"><a xlink:href=".././proc/set_rgb.html" xlink:title="forcolor::color%set_rgb">
-<polygon fill="#d9534f" stroke="#d9534f" points="1104.5,-922 967.5,-922 967.5,-898 1104.5,-898 1104.5,-922"/>
-<text text-anchor="middle" x="1036" y="-907.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">forcolor::color%set_rgb</text>
+<!-- proc~set~2 -->
+<g id="call~~graph~~CallGraph_node85" class="node">
+<title>proc~set~2</title>
+<g id="a_call~~graph~~CallGraph_node85"><a xlink:href=".././proc/set~2.html" xlink:title="lut::format_lut%set">
+<polygon fill="#d9534f" stroke="#d9534f" points="146,-150 32,-150 32,-126 146,-126 146,-150"/>
+<text text-anchor="middle" x="89" y="-135.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">lut::format_lut%set</text>
 </a>
 </g>
 </g>
-<!-- proc~set~2&#45;&gt;proc~set_by_name -->
-<g id="call~~graph~~CallGraph_edge83" class="edge">
-<title>proc~set~2&#45;&gt;proc~set_by_name</title>
-<path fill="none" stroke="#255085" d="M816.92,-1055.28C837.48,-1082.67 891.12,-1148.98 952,-1183 955.48,-1184.94 959.14,-1186.71 962.9,-1188.31"/>
-<polygon fill="#255085" stroke="#255085" points="961.84,-1191.66 972.43,-1191.98 964.35,-1185.12 961.84,-1191.66"/>
-</g>
-<!-- proc~set~2&#45;&gt;proc~set_cmyk -->
-<g id="call~~graph~~CallGraph_edge84" class="edge">
-<title>proc~set~2&#45;&gt;proc~set_cmyk</title>
-<path fill="none" stroke="#255085" d="M822.11,-1055.13C846.8,-1075.76 900.15,-1117.68 952,-1141 956.71,-1143.12 961.67,-1145.05 966.72,-1146.8"/>
-<polygon fill="#255085" stroke="#255085" points="965.93,-1150.22 976.52,-1149.96 968.08,-1143.56 965.93,-1150.22"/>
-</g>
-<!-- proc~set~2&#45;&gt;proc~set_decimal -->
-<g id="call~~graph~~CallGraph_edge85" class="edge">
-<title>proc~set~2&#45;&gt;proc~set_decimal</title>
-<path fill="none" stroke="#255085" d="M836.05,-1055.09C864.8,-1067.21 910.99,-1085.89 952,-1099 958.91,-1101.21 966.2,-1103.34 973.48,-1105.34"/>
-<polygon fill="#255085" stroke="#255085" points="972.8,-1108.78 983.36,-1107.98 974.61,-1102.02 972.8,-1108.78"/>
-</g>
-<!-- proc~set~2&#45;&gt;proc~set_hex -->
-<g id="call~~graph~~CallGraph_edge86" class="edge">
-<title>proc~set~2&#45;&gt;proc~set_hex</title>
-<path fill="none" stroke="#255085" d="M864.11,-1051.65C892.07,-1055.96 926.33,-1061.24 956.81,-1065.94"/>
-<polygon fill="#255085" stroke="#255085" points="956.57,-1069.45 966.99,-1067.51 957.64,-1062.53 956.57,-1069.45"/>
-</g>
-<!-- proc~set~2&#45;&gt;proc~set_hsl -->
-<g id="call~~graph~~CallGraph_edge87" class="edge">
-<title>proc~set~2&#45;&gt;proc~set_hsl</title>
-<path fill="none" stroke="#255085" d="M864.11,-1041.27C892.54,-1040.39 927.49,-1039.32 958.35,-1038.36"/>
-<polygon fill="#255085" stroke="#255085" points="958.76,-1041.85 968.65,-1038.05 958.55,-1034.86 958.76,-1041.85"/>
-</g>
-<!-- proc~set~2&#45;&gt;proc~set_hsv -->
-<g id="call~~graph~~CallGraph_edge88" class="edge">
-<title>proc~set~2&#45;&gt;proc~set_hsv</title>
-<path fill="none" stroke="#255085" d="M863.82,-1030.95C895.7,-1024.07 935.86,-1015.4 969.26,-1008.19"/>
-<polygon fill="#255085" stroke="#255085" points="970.36,-1011.53 979.39,-1006 968.88,-1004.69 970.36,-1011.53"/>
-</g>
-<!-- proc~set~2&#45;&gt;proc~set_name -->
-<g id="call~~graph~~CallGraph_edge89" class="edge">
-<title>proc~set~2&#45;&gt;proc~set_name</title>
-<path fill="none" stroke="#255085" d="M852.45,-1030.98C872.61,-1024.53 896.29,-1015.51 916,-1004 934.23,-993.35 933.27,-982.74 952,-973 955.78,-971.03 959.76,-969.24 963.84,-967.62"/>
-<polygon fill="#255085" stroke="#255085" points="965.3,-970.81 973.51,-964.11 962.92,-964.23 965.3,-970.81"/>
-</g>
-<!-- proc~set~2&#45;&gt;proc~set_rgb -->
+<!-- proc~set~2&#45;&gt;proc~allocate_colors -->
 <g id="call~~graph~~CallGraph_edge90" class="edge">
-<title>proc~set~2&#45;&gt;proc~set_rgb</title>
-<path fill="none" stroke="#255085" d="M864.27,-1031.56C882.39,-1025.7 901.51,-1016.96 916,-1004 942.97,-979.89 923.88,-953.75 952,-931 954.02,-929.36 956.16,-927.85 958.38,-926.46"/>
-<polygon fill="#255085" stroke="#255085" points="960.18,-929.46 967.32,-921.64 956.85,-923.3 960.18,-929.46"/>
+<title>proc~set~2&#45;&gt;proc~allocate_colors</title>
+<path fill="none" stroke="#255085" d="M146.26,-138C168.92,-138 195.74,-138 221.44,-138"/>
+<polygon fill="#255085" stroke="#255085" points="221.6,-141.5 231.6,-138 221.6,-134.5 221.6,-141.5"/>
 </g>
 <!-- proc~swap_channels -->
 <g id="call~~graph~~CallGraph_node86" class="node">
@@ -1534,9 +1534,9 @@
 <path fill="none" stroke="#255034" d="M127.21,-1313.56C148.27,-1315.57 175.88,-1318.22 203.61,-1320.87"/>
 <polygon fill="#255034" stroke="#255034" points="203.53,-1324.37 213.81,-1321.84 204.19,-1317.41 203.53,-1324.37"/>
 </g>
-<!-- program~demo_color&#45;&gt;proc~set~2 -->
+<!-- program~demo_color&#45;&gt;proc~set -->
 <g id="call~~graph~~CallGraph_edge97" class="edge">
-<title>program~demo_color&#45;&gt;proc~set~2</title>
+<title>program~demo_color&#45;&gt;proc~set</title>
 <path fill="none" stroke="#255034" d="M101.35,-1297.76C143.71,-1253.15 298.68,-1099.35 464,-1052 556.93,-1025.39 669.92,-1028.97 739.91,-1035.12"/>
 <polygon fill="#255034" stroke="#255034" points="739.64,-1038.61 749.92,-1036.04 740.28,-1031.64 739.64,-1038.61"/>
 </g>
@@ -1744,7 +1744,7 @@ large graphs.</div>
             <p class="text-end">
               Documentation generated by
               <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
- on 2023-11-20T20:40:23.774064             </p>
+ on 2023-11-20T20:40:52.656149             </p>
           </div>
         </div>
         <br>
