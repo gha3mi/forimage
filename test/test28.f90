@@ -5,7 +5,7 @@ program example28
 
    type(color) :: c
 
-   call c%pick('red')
+   call c%set('red', use_library=.true.)
    call c%print()
 
 end program example28
