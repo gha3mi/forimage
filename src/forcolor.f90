@@ -11,13 +11,14 @@ module forcolor
 
    !===============================================================================
    type :: color
-      integer(ik)        , private :: r=0_ik, g=0_ik, b=0_ik            !! rgb
-      integer(ik)        , private :: c=0_ik, m=0_ik, y=0_ik, k=0_ik    !! cmyk
-      integer(ik)        , private :: decimal=0_ik                      !! decimal
-      character(len=7)   , private :: hex='#000000'                     !! hex
-      real(rk)           , private :: h=0.0_rk, s=0.0_rk, v=0.0_rk      !! hsv
-      real(rk)           , private :: hl=0.0_rk, sl=0.0_rk, vl=0.0_rk   !! hsl
-      character(len=256) , private :: color_name                        !! color name
+      integer(ik)        , private :: r=0_ik, g=0_ik, b=0_ik                   !! rgb
+      integer(ik)        , private :: c=0_ik, m=0_ik, y=0_ik, k=0_ik           !! cmyk
+      integer(ik)        , private :: decimal=0_ik                             !! decimal
+      character(len=7)   , private :: hex='#000000'                            !! hex
+      real(rk)           , private :: h=0.0_rk, s=0.0_rk, v=0.0_rk             !! hsv
+      real(rk)           , private :: hl=0.0_rk, sl=0.0_rk, vl=0.0_rk          !! hsl
+      real(rk)           , private :: xyz_x=0.0_rk, xyz_y=0.0_rk, xyz_z=0.0_rk !! xyz
+      character(len=256) , private :: color_name                               !! color name
    contains
       procedure :: set
       procedure, private :: set_by_name
@@ -28,6 +29,7 @@ module forcolor
       procedure, private :: set_cmyk
       procedure, private :: set_hsv
       procedure, private :: set_hsl
+      procedure, private :: set_xyz
       procedure :: get
       procedure, private :: get_name
       procedure, private :: get_rgb
@@ -36,6 +38,7 @@ module forcolor
       procedure, private :: get_cmyk
       procedure, private :: get_hsv
       procedure, private :: get_hsl
+      procedure, private :: get_xyz
       procedure :: print
       procedure, private :: print_name
       procedure, private :: print_rgb
@@ -44,6 +47,7 @@ module forcolor
       procedure, private :: print_cmyk
       procedure, private :: print_hsv
       procedure, private :: print_hsl
+      procedure, private :: print_xyz
       procedure, private :: copy_color
       generic :: assignment(=) => copy_color
       procedure :: convert
@@ -113,6 +117,9 @@ contains
           case ('name')
             call this%print_name()
             print*,''
+          case ('xyz')
+            call this%print_xyz()
+            print*,''
           case default
             error stop 'error: unknown option'
          end select
@@ -126,6 +133,7 @@ contains
          call this%print_cmyk()
          call this%print_hsv()
          call this%print_hsl()
+         call this%print_xyz()
          print*,''
 
       end if
@@ -199,12 +207,22 @@ contains
 
    !===============================================================================
    !> author: Seyed Ali Ghasemi
-   elemental pure subroutine set(this, name, r,g,b, c,m,y,k, decimal, hex, h,s,v, hl,sl,vl, use_library)
+   elemental impure subroutine print_xyz(this)
+      class(color), intent(in) :: this
+      print'(a, 3(f8.4, 2x))', "xyz: ", this%xyz_x, this%xyz_y, this%xyz_z
+   end subroutine print_xyz
+   !===============================================================================
+
+
+
+   !===============================================================================
+   !> author: Seyed Ali Ghasemi
+   elemental pure subroutine set(this, name, r,g,b, c,m,y,k, decimal, hex, h,s,v, hl,sl,vl, xyz_x,xyz_y,xyz_z, use_library)
       class(color), intent(inout) :: this
       character(len=*), intent(in) :: name
       integer(ik),  intent(in), optional :: r, g, b, c, m, y, k, decimal
       character(len=*), intent(in), optional :: hex
-      real(rk),     intent(in), optional :: h, s, v, hl, sl, vl
+      real(rk),     intent(in), optional :: h, s, v, hl, sl, vl, xyz_x, xyz_y, xyz_z
       logical,      intent(in), optional :: use_library
       logical :: use_library_
 
@@ -212,7 +230,7 @@ contains
          use_library_ = use_library
       else
          use_library_ = .false.
-      end if      
+      end if
 
       if (use_library_) then
          call this%set_by_name(name)
@@ -224,6 +242,7 @@ contains
          if (present(hex))                                                  call this%set_hex(hex)
          if (present(h) .and. present(s) .and. present(v))                  call this%set_hsv(h, s, v)
          if (present(hl) .and. present(sl) .and. present(vl))               call this%set_hsl(hl, sl, vl)
+         if (present(xyz_x) .and. present(xyz_y) .and. present(xyz_z))      call this%set_xyz(xyz_x, xyz_y, xyz_z)
       end if
    end subroutine set
    !===============================================================================
@@ -337,12 +356,25 @@ contains
 
    !===============================================================================
    !> author: Seyed Ali Ghasemi
-   elemental pure subroutine get(this, name, r,g,b, c,m,y,k, decimal, hex, h,s,v, hl,sl,vl)
+   elemental pure subroutine set_xyz(this, x, y, z)
+      class(color), intent(inout) :: this
+      real(rk),    intent(in)    :: x, y, z
+
+      this%xyz_x = x
+      this%xyz_y = y
+      this%xyz_z = z
+   end subroutine set_xyz
+   !===============================================================================
+
+
+   !===============================================================================
+   !> author: Seyed Ali Ghasemi
+   elemental pure subroutine get(this, name, r,g,b, c,m,y,k, decimal, hex, h,s,v, hl,sl,vl, xyz_x,xyz_y,xyz_z)
       class(color), intent(inout) :: this
       character(len=*), intent(out), optional :: name
       integer(ik),  intent(out), optional :: r, g, b, c, m, y, k, decimal
       character(len=7), intent(out), optional :: hex
-      real(rk),     intent(out), optional :: h, s, v, hl, sl, vl
+      real(rk),     intent(out), optional :: h, s, v, hl, sl, vl, xyz_x, xyz_y, xyz_z
 
       if (present(name))                                                 call this%get_name(name)
       if (present(r) .and. present(g) .and. present(b))                  call this%get_rgb(r, g, b)
@@ -351,6 +383,7 @@ contains
       if (present(hex))                                                  call this%get_hex(hex)
       if (present(h) .and. present(s) .and. present(v))                  call this%get_hsv(h, s, v)
       if (present(hl) .and. present(sl) .and. present(vl))               call this%get_hsl(hl, sl, vl)
+      if (present(xyz_x) .and. present(xyz_y) .and. present(xyz_z))      call this%get_xyz(xyz_x, xyz_y, xyz_z)
 
    end subroutine get
    !===============================================================================
@@ -444,6 +477,19 @@ contains
 
    !===============================================================================
    !> author: Seyed Ali Ghasemi
+   elemental pure subroutine get_xyz(this, x, y, z)
+      class(color), intent(in)  :: this
+      real(rk),    intent(out) :: x, y, z
+
+      x = this%xyz_x
+      y = this%xyz_y
+      z = this%xyz_z
+   end subroutine get_xyz
+   !===============================================================================
+
+
+   !===============================================================================
+   !> author: Seyed Ali Ghasemi
    elemental pure subroutine convert(this, to)
       class(color),     intent(inout) :: this
       character(len=*), intent(in)    :: to
@@ -461,12 +507,15 @@ contains
          call rgb_to_hsv(this%r, this%g, this%b, this%h, this%s, this%v)
        case ('rgb2hsl')
          call rgb_to_hsl(this%r, this%g, this%b, this%hl, this%sl, this%vl)
+       case ('rgb2xyz')
+         call rgb_to_xyz(this%r, this%g, this%b, this%xyz_x, this%xyz_y, this%xyz_z)
        case ('rgb2all')
          call rgb_to_hex(this%r, this%g, this%b, this%hex)
          call rgb_to_decimal(this%r, this%g, this%b, this%decimal)
          call rgb_to_cmyk(this%r, this%g, this%b, this%c, this%m, this%y, this%k)
          call rgb_to_hsv(this%r, this%g, this%b, this%h, this%s, this%v)
          call rgb_to_hsl(this%r, this%g, this%b, this%hl, this%sl, this%vl)
+         call rgb_to_xyz(this%r, this%g, this%b, this%xyz_x, this%xyz_y, this%xyz_z)
 
        case ('hex2rgb')
          call hex_to_rgb(this%hex, this%r, this%g, this%b)
@@ -482,12 +531,16 @@ contains
        case ('hex2hsl')
          call hex_to_rgb(this%hex, r, g, b)
          call rgb_to_hsl(r, g, b, this%hl, this%sl, this%vl)
+       case ('hex2xyz')
+         call hex_to_rgb(this%hex, r, g, b)
+         call rgb_to_xyz(r, g, b, this%xyz_x, this%xyz_y, this%xyz_z)
        case ('hex2all')
          call hex_to_rgb(this%hex, this%r, this%g, this%b)
          call rgb_to_decimal(this%r, this%g, this%b, this%decimal)
          call rgb_to_cmyk(this%r, this%g, this%b, this%c, this%m, this%y, this%k)
          call rgb_to_hsv(this%r, this%g, this%b, this%h, this%s, this%v)
          call rgb_to_hsl(this%r, this%g, this%b, this%hl, this%sl, this%vl)
+         call rgb_to_xyz(this%r, this%g, this%b, this%xyz_x, this%xyz_y, this%xyz_z)
 
        case ('decimal2rgb')
          call decimal_to_rgb(this%decimal, this%r, this%g, this%b)
@@ -503,12 +556,16 @@ contains
        case ('decimal2hsl')
          call decimal_to_rgb(this%decimal, r, g, b)
          call rgb_to_hsl(r, g, b, this%hl, this%sl, this%vl)
+       case ('decimal2xyz')
+         call decimal_to_rgb(this%decimal, r, g, b)
+         call rgb_to_xyz(r, g, b, this%xyz_x, this%xyz_y, this%xyz_z)
        case ('decimal2all')
          call decimal_to_rgb(this%decimal, this%r, this%g, this%b)
          call rgb_to_hex(this%r, this%g, this%b, this%hex)
          call rgb_to_cmyk(this%r, this%g, this%b, this%c, this%m, this%y, this%k)
          call rgb_to_hsv(this%r, this%g, this%b, this%h, this%s, this%v)
          call rgb_to_hsl(this%r, this%g, this%b, this%hl, this%sl, this%vl)
+         call rgb_to_xyz(this%r, this%g, this%b, this%xyz_x, this%xyz_y, this%xyz_z)
 
        case ('cmyk2rgb')
          call cmyk_to_rgb(this%c, this%m, this%y, this%k, this%r, this%g, this%b)
@@ -524,12 +581,16 @@ contains
        case ('cmyk2hsl')
          call cmyk_to_rgb(this%c, this%m, this%y, this%k, r, g, b)
          call rgb_to_hsl(r, g, b, this%hl, this%sl, this%vl)
+       case ('cmyk2xyz')
+         call cmyk_to_rgb(this%c, this%m, this%y, this%k, r, g, b)
+         call rgb_to_xyz(r, g, b, this%xyz_x, this%xyz_y, this%xyz_z)
        case ('cmyk2all')
          call cmyk_to_rgb(this%c, this%m, this%y, this%k, this%r, this%g, this%b)
          call rgb_to_hex(this%r, this%g, this%b, this%hex)
          call rgb_to_decimal(this%r, this%g, this%b, this%decimal)
          call rgb_to_hsv(this%r, this%g, this%b, this%h, this%s, this%v)
          call rgb_to_hsl(this%r, this%g, this%b, this%hl, this%sl, this%vl)
+         call rgb_to_xyz(this%r, this%g, this%b, this%xyz_x, this%xyz_y, this%xyz_z)
 
        case ('hsv2rgb')
          call hsv_to_rgb(this%h, this%s, this%v, this%r, this%g, this%b)
@@ -545,12 +606,16 @@ contains
        case ('hsv2hsl')
          call hsv_to_rgb(this%h, this%s, this%v, r, g, b)
          call rgb_to_hsl(r, g, b, this%hl, this%sl, this%vl)
+       case ('hsv2xyz')
+         call hsv_to_rgb(this%h, this%s, this%v, r, g, b)
+         call rgb_to_xyz(r, g, b, this%xyz_x, this%xyz_y, this%xyz_z)
        case ('hsv2all')
          call hsv_to_rgb(this%h, this%s, this%v, this%r, this%g, this%b)
          call rgb_to_hex(this%r, this%g, this%b, this%hex)
          call rgb_to_decimal(this%r, this%g, this%b, this%decimal)
          call rgb_to_cmyk(this%r, this%g, this%b, this%c, this%m, this%y, this%k)
          call rgb_to_hsl(this%r, this%g, this%b, this%hl, this%sl, this%vl)
+         call rgb_to_xyz(this%r, this%g, this%b, this%xyz_x, this%xyz_y, this%xyz_z)
 
        case ('hsl2hsv')
          call hsl_to_rgb(this%hl, this%sl, this%vl, r, g, b)
@@ -566,12 +631,41 @@ contains
        case ('hsl2cmyk')
          call hsl_to_rgb(this%hl, this%sl, this%vl, r, g, b)
          call rgb_to_cmyk(r, g, b, this%c, this%m, this%y, this%k)
+       case ('hsl2xyz')
+         call hsl_to_rgb(this%hl, this%sl, this%vl, r, g, b)
+         call rgb_to_xyz(r, g, b, this%xyz_x, this%xyz_y, this%xyz_z)
        case ('hsl2all')
          call hsl_to_rgb(this%hl, this%sl, this%vl, this%r, this%g, this%b)
          call rgb_to_hex(this%r, this%g, this%b, this%hex)
          call rgb_to_decimal(this%r, this%g, this%b, this%decimal)
          call rgb_to_cmyk(this%r, this%g, this%b, this%c, this%m, this%y, this%k)
          call rgb_to_hsv(this%r, this%g, this%b, this%h, this%s, this%v)
+         call rgb_to_xyz(this%r, this%g, this%b, this%xyz_x, this%xyz_y, this%xyz_z)
+
+       case ('xyz2rgb')
+         call xyz_to_rgb(this%xyz_x, this%xyz_y, this%xyz_z, this%r, this%g, this%b)
+       case ('xyz2hex')
+         call xyz_to_rgb(this%xyz_x, this%xyz_y, this%xyz_z, r, g, b)
+         call rgb_to_hex(r, g, b, this%hex)
+       case ('xyz2decimal')
+         call xyz_to_rgb(this%xyz_x, this%xyz_y, this%xyz_z, r, g, b)
+         call rgb_to_decimal(r, g, b, this%decimal)
+       case ('xyz2cmyk')
+         call xyz_to_rgb(this%xyz_x, this%xyz_y, this%xyz_z, r, g, b)
+         call rgb_to_cmyk(r, g, b, this%c, this%m, this%y, this%k)
+       case ('xyz2hsv')
+         call xyz_to_rgb(this%xyz_x, this%xyz_y, this%xyz_z, r, g, b)
+         call rgb_to_hsv(r, g, b, this%h, this%s, this%v)
+       case ('xyz2hsl')
+         call xyz_to_rgb(this%xyz_x, this%xyz_y, this%xyz_z, r, g, b)
+         call rgb_to_hsl(r, g, b, this%hl, this%sl, this%vl)
+       case ('xyz2all')
+         call xyz_to_rgb(this%xyz_x, this%xyz_y, this%xyz_z, this%r, this%g, this%b)
+         call rgb_to_hex(this%r, this%g, this%b, this%hex)
+         call rgb_to_decimal(this%r, this%g, this%b, this%decimal)
+         call rgb_to_cmyk(this%r, this%g, this%b, this%c, this%m, this%y, this%k)
+         call rgb_to_hsv(this%r, this%g, this%b, this%h, this%s, this%v)
+         call rgb_to_hsl(this%r, this%g, this%b, this%hl, this%sl, this%vl)
 
       end select
    end subroutine convert
@@ -670,9 +764,9 @@ contains
       mg = real(m, kind=rk) / 100.0_rk
       yl = real(y, kind=rk) / 100.0_rk
 
-      r = nint(255.0_rk * (1.0_rk - cr) * (1.0_rk - real(k, kind=rk) / 100.0_rk))
-      g = nint(255.0_rk * (1.0_rk - mg) * (1.0_rk - real(k, kind=rk) / 100.0_rk))
-      b = nint(255.0_rk * (1.0_rk - yl) * (1.0_rk - real(k, kind=rk) / 100.0_rk))
+      r = nint(255.0_rk * (1.0_rk - cr) * (1.0_rk - real(k, kind=rk) / 100.0_rk), kind=ik)
+      g = nint(255.0_rk * (1.0_rk - mg) * (1.0_rk - real(k, kind=rk) / 100.0_rk), kind=ik)
+      b = nint(255.0_rk * (1.0_rk - yl) * (1.0_rk - real(k, kind=rk) / 100.0_rk), kind=ik)
    end subroutine cmyk_to_rgb
    !===============================================================================
 
@@ -723,9 +817,9 @@ contains
       end select
 
       m = v/100.0_rk - c
-      r = nint(255.0_rk * (r1 + m))
-      g = nint(255.0_rk * (g1 + m))
-      b = nint(255.0_rk * (b1 + m))
+      r = nint(255.0_rk * (r1 + m), kind=ik)
+      g = nint(255.0_rk * (g1 + m), kind=ik)
+      b = nint(255.0_rk * (b1 + m), kind=ik)
 
       r = max(0, min(255, r))
       g = max(0, min(255, g))
@@ -870,10 +964,98 @@ contains
 
       m = ln - c / 2.0_rk
 
-      r = nint(r1 * 255.0_rk + m * 255.0_rk)
-      g = nint(g1 * 255.0_rk + m * 255.0_rk)
-      b = nint(b1 * 255.0_rk + m * 255.0_rk)
+      r = nint(r1 * 255.0_rk + m * 255.0_rk, kind=ik)
+      g = nint(g1 * 255.0_rk + m * 255.0_rk, kind=ik)
+      b = nint(b1 * 255.0_rk + m * 255.0_rk, kind=ik)
    end subroutine hsl_to_rgb
+   !===============================================================================
+
+
+   !===============================================================================
+   !> author: Seyed Ali Ghasemi
+   elemental pure subroutine rgb_to_xyz(r, g, b, x, y, z)
+      integer(ik), intent(in) :: r, g, b
+      real(rk), intent(out) :: x, y, z
+      real(rk) :: rn, gn, bn
+
+      ! Normalize RGB values to the range [0, 1]
+      rn = real(r, kind=rk) / 255.0_rk
+      gn = real(g, kind=rk) / 255.0_rk
+      bn = real(b, kind=rk) / 255.0_rk
+
+      ! Apply gamma correction
+      if (rn <= 0.04045_rk) then
+         rn = rn / 12.92_rk
+      else
+         rn = ((rn + 0.055_rk) / 1.055_rk) ** 2.4_rk
+      end if
+
+      if (gn <= 0.04045_rk) then
+         gn = gn / 12.92_rk
+      else
+         gn = ((gn + 0.055_rk) / 1.055_rk) ** 2.4_rk
+      end if
+
+      if (bn <= 0.04045_rk) then
+         bn = bn / 12.92_rk
+      else
+         bn = ((bn + 0.055_rk) / 1.055_rk) ** 2.4_rk
+      end if
+
+      ! Convert RGB to XYZ using defined transformation matrix
+      x = 0.4124564_rk * rn + 0.3575761_rk * gn + 0.1804375_rk * bn
+      y = 0.2126729_rk * rn + 0.7151522_rk * gn + 0.0721750_rk * bn
+      z = 0.0193339_rk * rn + 0.1191920_rk * gn + 0.9503041_rk * bn
+
+      x = x*100.0_rk
+      y = y*100.0_rk
+      z = z*100.0_rk
+   end subroutine rgb_to_xyz
+   !===============================================================================
+
+
+   !===============================================================================
+   !> author: Seyed Ali Ghasemi
+   elemental pure subroutine xyz_to_rgb(x, y, z, r, g, b)
+      real(rk), intent(in) :: x, y, z
+      integer(ik), intent(out) :: r, g, b
+      real(rk) :: rn, gn, bn
+      real(rk) :: x1, y1, z1
+
+      x1 = x/100.0_rk
+      y1 = y/100.0_rk
+      z1 = z/100.0_rk
+
+      ! Convert XYZ to linear RGB
+      rn =  3.2404542_rk*x1  -1.5371385_rk*y1 -0.4985314_rk*z1
+      gn = -0.9692660_rk*x1  +1.8760108_rk*y1 +0.0415560_rk*z1
+      bn =  0.0556434_rk*x1  -0.2040259_rk*y1 +1.0572252_rk*z1
+
+      ! Apply gamma correction
+      if (rn <= 0.0031308_rk) then
+         rn = 12.92_rk * rn
+      else
+         rn = 1.055_rk * (rn ** (1.0_rk / 2.4_rk)) - 0.055_rk
+      end if
+
+      if (gn <= 0.0031308_rk) then
+         gn = 12.92_rk * gn
+      else
+         gn = 1.055_rk * (gn ** (1.0_rk / 2.4_rk)) - 0.055_rk
+      end if
+
+      if (bn <= 0.0031308_rk) then
+         bn = 12.92_rk * bn
+      else
+         bn = 1.055_rk * (bn ** (1.0_rk / 2.4_rk)) - 0.055_rk
+      end if
+
+      ! Scale and convert to integer RGB values
+      r = nint(rn*255.0_rk, kind=ik)
+      g = nint(gn*255.0_rk, kind=ik)
+      b = nint(bn*255.0_rk, kind=ik)
+
+   end subroutine xyz_to_rgb
    !===============================================================================
 
 
@@ -908,7 +1090,6 @@ contains
 
    end subroutine copy_color
    !===============================================================================
-
 
 
    !===============================================================================
