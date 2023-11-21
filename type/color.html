@@ -74,7 +74,7 @@
             <li class="list-inline-item" id="statements"><i class="fa fa-list-ol"></i>
               <a data-bs-toggle="tooltip"
                  data-bs-placement="bottom" data-html="true"
-                 title="<p>43.8% of total for derived types.</p>Including implementation: 457 statements, 39.8% of total for derived types.">42 statements</a>
+                 title="<p>46.0% of total for derived types.</p>Including implementation: 532 statements, 43.5% of total for derived types.">46 statements</a>
             </li>
 
             <li class="list-inline-item" id="source-file">
@@ -129,6 +129,9 @@
             <a class="list-group-item" href="../type/color.html#variable-hl">hl</a>
             <a class="list-group-item" href="../type/color.html#variable-sl">sl</a>
             <a class="list-group-item" href="../type/color.html#variable-vl">vl</a>
+            <a class="list-group-item" href="../type/color.html#variable-xyz_x">xyz_x</a>
+            <a class="list-group-item" href="../type/color.html#variable-xyz_y">xyz_y</a>
+            <a class="list-group-item" href="../type/color.html#variable-xyz_z">xyz_z</a>
             <a class="list-group-item" href="../type/color.html#variable-color_name">color_name</a>
         </div>
       </div>
@@ -165,6 +168,7 @@
             <a class="list-group-item" href="../type/color.html#boundprocedure-set_cmyk">set_cmyk</a>
             <a class="list-group-item" href="../type/color.html#boundprocedure-set_hsv">set_hsv</a>
             <a class="list-group-item" href="../type/color.html#boundprocedure-set_hsl">set_hsl</a>
+            <a class="list-group-item" href="../type/color.html#boundprocedure-set_xyz">set_xyz</a>
             <a class="list-group-item" href="../type/color.html#boundprocedure-get">get</a>
             <a class="list-group-item" href="../type/color.html#boundprocedure-get_name">get_name</a>
             <a class="list-group-item" href="../type/color.html#boundprocedure-get_rgb">get_rgb</a>
@@ -173,6 +177,7 @@
             <a class="list-group-item" href="../type/color.html#boundprocedure-get_cmyk">get_cmyk</a>
             <a class="list-group-item" href="../type/color.html#boundprocedure-get_hsv">get_hsv</a>
             <a class="list-group-item" href="../type/color.html#boundprocedure-get_hsl">get_hsl</a>
+            <a class="list-group-item" href="../type/color.html#boundprocedure-get_xyz">get_xyz</a>
             <a class="list-group-item" href="../type/color.html#boundprocedure-print">print</a>
             <a class="list-group-item" href="../type/color.html#boundprocedure-print_name">print_name</a>
             <a class="list-group-item" href="../type/color.html#boundprocedure-print_rgb">print_rgb</a>
@@ -181,6 +186,7 @@
             <a class="list-group-item" href="../type/color.html#boundprocedure-print_cmyk">print_cmyk</a>
             <a class="list-group-item" href="../type/color.html#boundprocedure-print_hsv">print_hsv</a>
             <a class="list-group-item" href="../type/color.html#boundprocedure-print_hsl">print_hsl</a>
+            <a class="list-group-item" href="../type/color.html#boundprocedure-print_xyz">print_xyz</a>
             <a class="list-group-item" href="../type/color.html#boundprocedure-copy_color">copy_color</a>
             <a class="list-group-item" href="../type/color.html#boundprocedure-assignment%28%3D%29">assignment(=)</a>
             <a class="list-group-item" href="../type/color.html#boundprocedure-convert">convert</a>
@@ -480,6 +486,57 @@
         </tr>
         <tr>
             <td>
+              <span class="anchor" id="variable-xyz_x"></span>
+              real(kind=rk),
+            </td>
+              <td>private</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>xyz_x</strong></td>
+<td> =</td>
+                <td>0.0_rk</td>
+            <td>
+                <p>xyz</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-xyz_y"></span>
+              real(kind=rk),
+            </td>
+              <td>private</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>xyz_y</strong></td>
+<td> =</td>
+                <td>0.0_rk</td>
+            <td>
+                <p>xyz</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-xyz_z"></span>
+              real(kind=rk),
+            </td>
+              <td>private</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>xyz_z</strong></td>
+<td> =</td>
+                <td>0.0_rk</td>
+            <td>
+                <p>xyz</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
               <span class="anchor" id="variable-color_name"></span>
               character(len=256),
             </td>
@@ -518,7 +575,7 @@
     <ul class="list-group">
         <li class="list-group-item">
                   <h3>
-    private pure elemental subroutine <a href='../proc/set.html'>set</a>(this, name, r, g, b, c, m, y, k, decimal, hex, h, s, v, hl, sl, vl, use_library)  
+    private pure elemental subroutine <a href='../proc/set.html'>set</a>(this, name, r, g, b, c, m, y, k, decimal, hex, h, s, v, hl, sl, vl, xyz_x, xyz_y, xyz_z, use_library)  
 </h3>
         <dl class="dl-horizontal">
         <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
@@ -789,6 +846,51 @@
             </td>
             <td>::</td>
             <td><strong>vl</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              real(kind=rk),
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>xyz_x</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              real(kind=rk),
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>xyz_y</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              real(kind=rk),
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>xyz_z</strong></td>
             <td>
 
             </td>
@@ -1531,6 +1633,108 @@
           <div class="row">
               <div class="card mt-3">
     <div class="card-header codesum">
+      <span class="anchor" id="boundprocedure-set_xyz"></span>
+      <h3>
+          procedure, private ::
+  <strong>set_xyz</strong>
+        
+      </h3>
+    </div>
+    <ul class="list-group">
+        <li class="list-group-item">
+                  <h3>
+    private pure elemental subroutine <a href='../proc/set_xyz.html'>set_xyz</a>(this, x, y, z)  
+</h3>
+        <dl class="dl-horizontal">
+        <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
+    </dl>
+
+
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/color.html'>color</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>this</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              real(kind=rk),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>x</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              real(kind=rk),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>y</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              real(kind=rk),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>z</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+        </li>
+    </ul>
+  </div>
+
+          </div>
+          <div class="row">
+              <div class="card mt-3">
+    <div class="card-header codesum">
       <span class="anchor" id="boundprocedure-get"></span>
       <h3>
           procedure, public ::
@@ -1541,7 +1745,7 @@
     <ul class="list-group">
         <li class="list-group-item">
                   <h3>
-    private pure elemental subroutine <a href='../proc/get.html'>get</a>(this, name, r, g, b, c, m, y, k, decimal, hex, h, s, v, hl, sl, vl)  
+    private pure elemental subroutine <a href='../proc/get.html'>get</a>(this, name, r, g, b, c, m, y, k, decimal, hex, h, s, v, hl, sl, vl, xyz_x, xyz_y, xyz_z)  
 </h3>
         <dl class="dl-horizontal">
         <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
@@ -1812,6 +2016,51 @@
             </td>
             <td>::</td>
             <td><strong>vl</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              real(kind=rk),
+            </td>
+<td>intent(out),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>xyz_x</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              real(kind=rk),
+            </td>
+<td>intent(out),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>xyz_y</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              real(kind=rk),
+            </td>
+<td>intent(out),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>xyz_z</strong></td>
             <td>
 
             </td>
@@ -2467,6 +2716,108 @@
           <div class="row">
               <div class="card mt-3">
     <div class="card-header codesum">
+      <span class="anchor" id="boundprocedure-get_xyz"></span>
+      <h3>
+          procedure, private ::
+  <strong>get_xyz</strong>
+        
+      </h3>
+    </div>
+    <ul class="list-group">
+        <li class="list-group-item">
+                  <h3>
+    private pure elemental subroutine <a href='../proc/get_xyz.html'>get_xyz</a>(this, x, y, z)  
+</h3>
+        <dl class="dl-horizontal">
+        <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
+    </dl>
+
+
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/color.html'>color</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>this</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              real(kind=rk),
+            </td>
+<td>intent(out)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>x</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              real(kind=rk),
+            </td>
+<td>intent(out)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>y</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              real(kind=rk),
+            </td>
+<td>intent(out)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>z</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+        </li>
+    </ul>
+  </div>
+
+          </div>
+          <div class="row">
+              <div class="card mt-3">
+    <div class="card-header codesum">
       <span class="anchor" id="boundprocedure-print"></span>
       <h3>
           procedure, public ::
@@ -2892,6 +3243,63 @@
         <li class="list-group-item">
                   <h3>
     private impure elemental subroutine <a href='../proc/print_hsl.html'>print_hsl</a>(this)  
+</h3>
+        <dl class="dl-horizontal">
+        <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
+    </dl>
+
+
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/color.html'>color</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>this</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+        </li>
+    </ul>
+  </div>
+
+          </div>
+          <div class="row">
+              <div class="card mt-3">
+    <div class="card-header codesum">
+      <span class="anchor" id="boundprocedure-print_xyz"></span>
+      <h3>
+          procedure, private ::
+  <strong>print_xyz</strong>
+        
+      </h3>
+    </div>
+    <ul class="list-group">
+        <li class="list-group-item">
+                  <h3>
+    private impure elemental subroutine <a href='../proc/print_xyz.html'>print_xyz</a>(this)  
 </h3>
         <dl class="dl-horizontal">
         <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
@@ -3489,13 +3897,14 @@
     <section>
     <h3><span class="anchor" id="src"></span>Source Code</h3>
     <div class="hl codehilite"><pre><span></span><span class="w">   </span><span class="k">type</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">color</span>
-<span class="w">      </span><span class="kt">integer</span><span class="p">(</span><span class="n">ik</span><span class="p">)</span><span class="w">        </span><span class="p">,</span><span class="w"> </span><span class="k">private</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">r</span><span class="o">=</span><span class="mi">0_ik</span><span class="p">,</span><span class="w"> </span><span class="n">g</span><span class="o">=</span><span class="mi">0_ik</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="o">=</span><span class="mi">0_ik</span><span class="w">            </span><span class="c">!! rgb</span>
-<span class="w">      </span><span class="kt">integer</span><span class="p">(</span><span class="n">ik</span><span class="p">)</span><span class="w">        </span><span class="p">,</span><span class="w"> </span><span class="k">private</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">c</span><span class="o">=</span><span class="mi">0_ik</span><span class="p">,</span><span class="w"> </span><span class="n">m</span><span class="o">=</span><span class="mi">0_ik</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="o">=</span><span class="mi">0_ik</span><span class="p">,</span><span class="w"> </span><span class="n">k</span><span class="o">=</span><span class="mi">0_ik</span><span class="w">    </span><span class="c">!! cmyk</span>
-<span class="w">      </span><span class="kt">integer</span><span class="p">(</span><span class="n">ik</span><span class="p">)</span><span class="w">        </span><span class="p">,</span><span class="w"> </span><span class="k">private</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">decimal</span><span class="o">=</span><span class="mi">0_ik</span><span class="w">                      </span><span class="c">!! decimal</span>
-<span class="w">      </span><span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=</span><span class="mi">7</span><span class="p">)</span><span class="w">   </span><span class="p">,</span><span class="w"> </span><span class="k">private</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">hex</span><span class="o">=</span><span class="s1">&#39;#000000&#39;</span><span class="w">                     </span><span class="c">!! hex</span>
-<span class="w">      </span><span class="kt">real</span><span class="p">(</span><span class="n">rk</span><span class="p">)</span><span class="w">           </span><span class="p">,</span><span class="w"> </span><span class="k">private</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">h</span><span class="o">=</span><span class="mf">0.0_rk</span><span class="p">,</span><span class="w"> </span><span class="n">s</span><span class="o">=</span><span class="mf">0.0_rk</span><span class="p">,</span><span class="w"> </span><span class="n">v</span><span class="o">=</span><span class="mf">0.0_rk</span><span class="w">      </span><span class="c">!! hsv</span>
-<span class="w">      </span><span class="kt">real</span><span class="p">(</span><span class="n">rk</span><span class="p">)</span><span class="w">           </span><span class="p">,</span><span class="w"> </span><span class="k">private</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">hl</span><span class="o">=</span><span class="mf">0.0_rk</span><span class="p">,</span><span class="w"> </span><span class="n">sl</span><span class="o">=</span><span class="mf">0.0_rk</span><span class="p">,</span><span class="w"> </span><span class="n">vl</span><span class="o">=</span><span class="mf">0.0_rk</span><span class="w">   </span><span class="c">!! hsl</span>
-<span class="w">      </span><span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=</span><span class="mi">256</span><span class="p">)</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="k">private</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">color_name</span><span class="w">                        </span><span class="c">!! color name</span>
+<span class="w">      </span><span class="kt">integer</span><span class="p">(</span><span class="n">ik</span><span class="p">)</span><span class="w">        </span><span class="p">,</span><span class="w"> </span><span class="k">private</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">r</span><span class="o">=</span><span class="mi">0_ik</span><span class="p">,</span><span class="w"> </span><span class="n">g</span><span class="o">=</span><span class="mi">0_ik</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="o">=</span><span class="mi">0_ik</span><span class="w">                   </span><span class="c">!! rgb</span>
+<span class="w">      </span><span class="kt">integer</span><span class="p">(</span><span class="n">ik</span><span class="p">)</span><span class="w">        </span><span class="p">,</span><span class="w"> </span><span class="k">private</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">c</span><span class="o">=</span><span class="mi">0_ik</span><span class="p">,</span><span class="w"> </span><span class="n">m</span><span class="o">=</span><span class="mi">0_ik</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="o">=</span><span class="mi">0_ik</span><span class="p">,</span><span class="w"> </span><span class="n">k</span><span class="o">=</span><span class="mi">0_ik</span><span class="w">           </span><span class="c">!! cmyk</span>
+<span class="w">      </span><span class="kt">integer</span><span class="p">(</span><span class="n">ik</span><span class="p">)</span><span class="w">        </span><span class="p">,</span><span class="w"> </span><span class="k">private</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">decimal</span><span class="o">=</span><span class="mi">0_ik</span><span class="w">                             </span><span class="c">!! decimal</span>
+<span class="w">      </span><span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=</span><span class="mi">7</span><span class="p">)</span><span class="w">   </span><span class="p">,</span><span class="w"> </span><span class="k">private</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">hex</span><span class="o">=</span><span class="s1">&#39;#000000&#39;</span><span class="w">                            </span><span class="c">!! hex</span>
+<span class="w">      </span><span class="kt">real</span><span class="p">(</span><span class="n">rk</span><span class="p">)</span><span class="w">           </span><span class="p">,</span><span class="w"> </span><span class="k">private</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">h</span><span class="o">=</span><span class="mf">0.0_rk</span><span class="p">,</span><span class="w"> </span><span class="n">s</span><span class="o">=</span><span class="mf">0.0_rk</span><span class="p">,</span><span class="w"> </span><span class="n">v</span><span class="o">=</span><span class="mf">0.0_rk</span><span class="w">             </span><span class="c">!! hsv</span>
+<span class="w">      </span><span class="kt">real</span><span class="p">(</span><span class="n">rk</span><span class="p">)</span><span class="w">           </span><span class="p">,</span><span class="w"> </span><span class="k">private</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">hl</span><span class="o">=</span><span class="mf">0.0_rk</span><span class="p">,</span><span class="w"> </span><span class="n">sl</span><span class="o">=</span><span class="mf">0.0_rk</span><span class="p">,</span><span class="w"> </span><span class="n">vl</span><span class="o">=</span><span class="mf">0.0_rk</span><span class="w">          </span><span class="c">!! hsl</span>
+<span class="w">      </span><span class="kt">real</span><span class="p">(</span><span class="n">rk</span><span class="p">)</span><span class="w">           </span><span class="p">,</span><span class="w"> </span><span class="k">private</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">xyz_x</span><span class="o">=</span><span class="mf">0.0_rk</span><span class="p">,</span><span class="w"> </span><span class="n">xyz_y</span><span class="o">=</span><span class="mf">0.0_rk</span><span class="p">,</span><span class="w"> </span><span class="n">xyz_z</span><span class="o">=</span><span class="mf">0.0_rk</span><span class="w"> </span><span class="c">!! xyz</span>
+<span class="w">      </span><span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=</span><span class="mi">256</span><span class="p">)</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="k">private</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">color_name</span><span class="w">                               </span><span class="c">!! color name</span>
 <span class="w">   </span><span class="k">contains</span>
 <span class="k">      procedure</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">set</span>
 <span class="w">      </span><span class="k">procedure</span><span class="p">,</span><span class="w"> </span><span class="k">private</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">set_by_name</span>
@@ -3506,6 +3915,7 @@
 <span class="w">      </span><span class="k">procedure</span><span class="p">,</span><span class="w"> </span><span class="k">private</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">set_cmyk</span>
 <span class="w">      </span><span class="k">procedure</span><span class="p">,</span><span class="w"> </span><span class="k">private</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">set_hsv</span>
 <span class="w">      </span><span class="k">procedure</span><span class="p">,</span><span class="w"> </span><span class="k">private</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">set_hsl</span>
+<span class="w">      </span><span class="k">procedure</span><span class="p">,</span><span class="w"> </span><span class="k">private</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">set_xyz</span>
 <span class="w">      </span><span class="k">procedure</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">get</span>
 <span class="w">      </span><span class="k">procedure</span><span class="p">,</span><span class="w"> </span><span class="k">private</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">get_name</span>
 <span class="w">      </span><span class="k">procedure</span><span class="p">,</span><span class="w"> </span><span class="k">private</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">get_rgb</span>
@@ -3514,6 +3924,7 @@
 <span class="w">      </span><span class="k">procedure</span><span class="p">,</span><span class="w"> </span><span class="k">private</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">get_cmyk</span>
 <span class="w">      </span><span class="k">procedure</span><span class="p">,</span><span class="w"> </span><span class="k">private</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">get_hsv</span>
 <span class="w">      </span><span class="k">procedure</span><span class="p">,</span><span class="w"> </span><span class="k">private</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">get_hsl</span>
+<span class="w">      </span><span class="k">procedure</span><span class="p">,</span><span class="w"> </span><span class="k">private</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">get_xyz</span>
 <span class="w">      </span><span class="k">procedure</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="k">print</span>
 <span class="k">      procedure</span><span class="p">,</span><span class="w"> </span><span class="k">private</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">print_name</span>
 <span class="w">      </span><span class="k">procedure</span><span class="p">,</span><span class="w"> </span><span class="k">private</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">print_rgb</span>
@@ -3522,6 +3933,7 @@
 <span class="w">      </span><span class="k">procedure</span><span class="p">,</span><span class="w"> </span><span class="k">private</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">print_cmyk</span>
 <span class="w">      </span><span class="k">procedure</span><span class="p">,</span><span class="w"> </span><span class="k">private</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">print_hsv</span>
 <span class="w">      </span><span class="k">procedure</span><span class="p">,</span><span class="w"> </span><span class="k">private</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">print_hsl</span>
+<span class="w">      </span><span class="k">procedure</span><span class="p">,</span><span class="w"> </span><span class="k">private</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">print_xyz</span>
 <span class="w">      </span><span class="k">procedure</span><span class="p">,</span><span class="w"> </span><span class="k">private</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">copy_color</span>
 <span class="w">      </span><span class="k">generic</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">assignment</span><span class="p">(</span><span class="o">=</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">copy_color</span>
 <span class="w">      </span><span class="k">procedure</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">convert</span>
@@ -3549,7 +3961,7 @@
             <p class="text-end">
               Documentation generated by
               <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
- on 2023-11-20T20:40:52.656149             </p>
+ on 2023-11-21T09:23:20.208695             </p>
           </div>
         </div>
         <br>
