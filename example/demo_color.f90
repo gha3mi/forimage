@@ -14,6 +14,7 @@ program demo_color
    integer(ik)      :: c, m, y, k
    real(rk)         :: h, s, v
    real(rk)         :: hl, sl, vl
+   real(rk)         :: xyz_x, xyz_y, xyz_z
 
 
    ! Set the color using RGB values
@@ -29,10 +30,10 @@ program demo_color
    call custom_color%get(c=c, m=m, y=y, k=k)
    call custom_color%get(h=h, s=s, v=v)
    call custom_color%get(hl=hl, sl=sl, vl=vl)
+   call custom_color%get(xyz_x=xyz_x, xyz_y=xyz_y, xyz_z=xyz_z)
 
    ! Print the name and color values
    call custom_color%print()
-
 
 
 
@@ -42,8 +43,6 @@ program demo_color
    ! Convert the color to other color spaces
    call custom_color%convert('hex2all')
 
-   ! Print the name and color values
-   call custom_color%print()
 
    ! Get the values of the color in other color spaces
    call custom_color%get(r=r, g=g, b=b)
@@ -52,10 +51,10 @@ program demo_color
    call custom_color%get(c=c, m=m, y=y, k=k)
    call custom_color%get(h=h, s=s, v=v)
    call custom_color%get(hl=hl, sl=sl, vl=vl)
+   call custom_color%get(xyz_x=xyz_x, xyz_y=xyz_y, xyz_z=xyz_z)
 
    ! Print the name and color values
    call custom_color%print()
-
 
 
 
@@ -65,8 +64,6 @@ program demo_color
    ! Convert the color to other color spaces
    call custom_color%convert('decimal2all')
 
-   ! Print the name and color values
-   call custom_color%print()
 
    ! Get the values of the color in other color spaces
    call custom_color%get(r=r, g=g, b=b)
@@ -75,10 +72,10 @@ program demo_color
    call custom_color%get(c=c, m=m, y=y, k=k)
    call custom_color%get(h=h, s=s, v=v)
    call custom_color%get(hl=hl, sl=sl, vl=vl)
+   call custom_color%get(xyz_x=xyz_x, xyz_y=xyz_y, xyz_z=xyz_z)
 
    ! Print the name and color values
    call custom_color%print()
-
 
 
 
@@ -88,8 +85,6 @@ program demo_color
    ! Convert the color to other color spaces
    call custom_color%convert('cmyk2all')
 
-   ! Print the name and color values
-   call custom_color%print()
 
    ! Get the values of the color in other color spaces
    call custom_color%get(r=r, g=g, b=b)
@@ -98,6 +93,7 @@ program demo_color
    call custom_color%get(c=c, m=m, y=y, k=k)
    call custom_color%get(h=h, s=s, v=v)
    call custom_color%get(hl=hl, sl=sl, vl=vl)
+   call custom_color%get(xyz_x=xyz_x, xyz_y=xyz_y, xyz_z=xyz_z)
 
    ! Print the name and color values
    call custom_color%print()
@@ -110,8 +106,6 @@ program demo_color
    ! Convert the color to other color spaces
    call custom_color%convert('hsv2all')
 
-   ! Print the name and color values
-   call custom_color%print()
 
    ! Get the values of the color in other color spaces
    call custom_color%get(r=r, g=g, b=b)
@@ -120,10 +114,10 @@ program demo_color
    call custom_color%get(c=c, m=m, y=y, k=k)
    call custom_color%get(h=h, s=s, v=v)
    call custom_color%get(hl=hl, sl=sl, vl=vl)
+   call custom_color%get(xyz_x=xyz_x, xyz_y=xyz_y, xyz_z=xyz_z)
 
    ! Print the name and color values
    call custom_color%print()
-
 
 
 
@@ -133,8 +127,6 @@ program demo_color
    ! Convert the color to other color spaces
    call custom_color%convert('hsl2all')
 
-   ! Print the name and color values
-   call custom_color%print()
 
    ! Get the values of the color in other color spaces
    call custom_color%get(r=r, g=g, b=b)
@@ -143,6 +135,27 @@ program demo_color
    call custom_color%get(c=c, m=m, y=y, k=k)
    call custom_color%get(h=h, s=s, v=v)
    call custom_color%get(hl=hl, sl=sl, vl=vl)
+   call custom_color%get(xyz_x=xyz_x, xyz_y=xyz_y, xyz_z=xyz_z)
+
+   ! Print the name and color values
+   call custom_color%print()
+
+
+
+   ! Set the color using a hsv value
+   call custom_color%set(name='custom_color', xyz_x=46.1753_rk, xyz_y=34.9669_rk, xyz_z=9.1672_rk)
+
+   ! Convert the color to other color spaces
+   call custom_color%convert('xyz2all')
+
+   ! Get the values of the color in other color spaces
+   call custom_color%get(r=r, g=g, b=b)
+   call custom_color%get(hex=hex)
+   call custom_color%get(decimal=decimal)
+   call custom_color%get(c=c, m=m, y=y, k=k)
+   call custom_color%get(h=h, s=s, v=v)
+   call custom_color%get(hl=hl, sl=sl, vl=vl)
+   call custom_color%get(xyz_x=xyz_x, xyz_y=xyz_y, xyz_z=xyz_z)
 
    ! Print the name and color values
    call custom_color%print()
