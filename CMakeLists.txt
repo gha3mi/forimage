@@ -55,3 +55,10 @@ if (BUILD_TESTING)
     enable_testing()
     add_subdirectory(test)
 endif()
+
+# Examples
+option(BUILD_FORIMAGE_EXAMPLES "Build examples")
+message(STATUS "Build FORIMAGE examples: ${BUILD_FORIMAGE_EXAMPLES}")
+if (BUILD_FORIMAGE_EXAMPLES)
+    add_subdirectory(example)
+endif()
