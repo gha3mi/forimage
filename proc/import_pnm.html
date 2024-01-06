@@ -1,3 +1,5 @@
+<!-- -*- mode: jinja2 -*- -->
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -17,7 +19,8 @@
     <link href="../css/local.css" rel="stylesheet">
       <link  href="../tipuesearch/tipuesearch.css" rel="stylesheet">
 
-    <script src="https://code.jquery.com/jquery-3.7.0.slim.min.js" integrity="sha256-tG5mcZUtJsZvyKAxYLVXrmjKBVLd6VpVccqz/r4ypFE=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="../js/svg-pan-zoom.min.js"></script>
   </head>
 
   <body>
@@ -161,7 +164,7 @@
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-this~59"></span>
+              <span class="anchor" id="variable-this~63"></span>
               class(<a href='../type/format_pnm.html'>format_pnm</a>),
             </td>
 <td>intent(inout)</td>
@@ -191,7 +194,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-file_format~4"></span>
+              <span class="anchor" id="variable-file_format~3"></span>
               character(len=3),
             </td>
 <td>intent(in)</td>
@@ -206,7 +209,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-encoding~4"></span>
+              <span class="anchor" id="variable-encoding~3"></span>
               character(len=*),
             </td>
 <td>intent(in)</td>
@@ -248,7 +251,7 @@
 <!-- proc~allocate_pixels -->
 <g id="proc~~import_pnm~~CallsGraph_node2" class="node">
 <title>proc~allocate_pixels</title>
-<g id="a_proc~~import_pnm~~CallsGraph_node2"><a xlink:href=".././proc/allocate_pixels.html" xlink:title="pnm::format_pnm%allocate_pixels">
+<g id="a_proc~~import_pnm~~CallsGraph_node2"><a xlink:href="../proc/allocate_pixels.html" xlink:title="pnm::format_pnm%allocate_pixels">
 <polygon fill="#d9534f" stroke="#d9534f" points="428,-192 230,-192 230,-168 428,-168 428,-192"/>
 <text text-anchor="middle" x="329" y="-177.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">pnm::format_pnm%allocate_pixels</text>
 </a>
@@ -263,7 +266,7 @@
 <!-- proc~check_pixel_range -->
 <g id="proc~~import_pnm~~CallsGraph_node3" class="node">
 <title>proc~check_pixel_range</title>
-<g id="a_proc~~import_pnm~~CallsGraph_node3"><a xlink:href=".././proc/check_pixel_range.html" xlink:title="pnm::format_pnm%check_pixel_range">
+<g id="a_proc~~import_pnm~~CallsGraph_node3"><a xlink:href="../proc/check_pixel_range.html" xlink:title="pnm::format_pnm%check_pixel_range">
 <polygon fill="#d9534f" stroke="#d9534f" points="438,-150 220,-150 220,-126 438,-126 438,-150"/>
 <text text-anchor="middle" x="329" y="-135.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">pnm::format_pnm%check_pixel_range</text>
 </a>
@@ -278,7 +281,7 @@
 <!-- proc~read_header -->
 <g id="proc~~import_pnm~~CallsGraph_node4" class="node">
 <title>proc~read_header</title>
-<g id="a_proc~~import_pnm~~CallsGraph_node4"><a xlink:href=".././proc/read_header.html" xlink:title="pnm::read_header">
+<g id="a_proc~~import_pnm~~CallsGraph_node4"><a xlink:href="../proc/read_header.html" xlink:title="pnm::read_header">
 <polygon fill="#d9534f" stroke="#d9534f" points="385,-108 273,-108 273,-84 385,-84 385,-108"/>
 <text text-anchor="middle" x="329" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">pnm::read_header</text>
 </a>
@@ -293,7 +296,7 @@
 <!-- proc~set_file_format -->
 <g id="proc~~import_pnm~~CallsGraph_node5" class="node">
 <title>proc~set_file_format</title>
-<g id="a_proc~~import_pnm~~CallsGraph_node5"><a xlink:href=".././proc/set_file_format.html" xlink:title="pnm::format_pnm%set_file_format">
+<g id="a_proc~~import_pnm~~CallsGraph_node5"><a xlink:href="../proc/set_file_format.html" xlink:title="pnm::format_pnm%set_file_format">
 <polygon fill="#d9534f" stroke="#d9534f" points="428,-66 230,-66 230,-42 428,-42 428,-66"/>
 <text text-anchor="middle" x="329" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">pnm::format_pnm%set_file_format</text>
 </a>
@@ -308,7 +311,7 @@
 <!-- proc~set_format -->
 <g id="proc~~import_pnm~~CallsGraph_node6" class="node">
 <title>proc~set_format</title>
-<g id="a_proc~~import_pnm~~CallsGraph_node6"><a xlink:href=".././proc/set_format.html" xlink:title="pnm::format_pnm%set_format">
+<g id="a_proc~~import_pnm~~CallsGraph_node6"><a xlink:href="../proc/set_format.html" xlink:title="pnm::format_pnm%set_format">
 <polygon fill="#d9534f" stroke="#d9534f" points="417,-24 241,-24 241,0 417,0 417,-24"/>
 <text text-anchor="middle" x="329" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">pnm::format_pnm%set_format</text>
 </a>
@@ -322,17 +325,17 @@
 </g>
 </g>
 </svg>
-</div>        <div><a type="button" class="graph-help" data-toggle="modal" href="#CallsGraph-help-text">Help</a></div>
+</div>          <div>
+            <a type="button" class="graph-help" data-bs-toggle="modal" href="#CallsGraph-help-text">Help</a>
+          </div>
           <div class="modal fade" id="CallsGraph-help-text" tabindex="-1" role="dialog">
             <div class="modal-dialog modal-lg" role="document">
               <div class="modal-content">
                 <div class="modal-header">
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
                   <h4 class="modal-title" id="-graph-help-label">Graph Key</h4>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-              <div class="modal-body">
+                <div class="modal-body">
 <p>Nodes of different colours represent the following: </p>
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
@@ -428,7 +431,7 @@ large graphs.</div>
 <!-- program~demo_ppm -->
 <g id="proc~~import_pnm~~CalledByGraph_node2" class="node">
 <title>program~demo_ppm</title>
-<g id="a_proc~~import_pnm~~CalledByGraph_node2"><a xlink:href=".././program/demo_ppm.html" xlink:title="demo_ppm">
+<g id="a_proc~~import_pnm~~CalledByGraph_node2"><a xlink:href="../program/demo_ppm.html" xlink:title="demo_ppm">
 <polygon fill="#f0ad4e" stroke="#f0ad4e" points="73,-24 0,-24 0,0 73,0 73,-24"/>
 <text text-anchor="middle" x="36.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">demo_ppm</text>
 </a>
@@ -442,17 +445,17 @@ large graphs.</div>
 </g>
 </g>
 </svg>
-</div>        <div><a type="button" class="graph-help" data-toggle="modal" href="#CalledByGraph-help-text">Help</a></div>
+</div>          <div>
+            <a type="button" class="graph-help" data-bs-toggle="modal" href="#CalledByGraph-help-text">Help</a>
+          </div>
           <div class="modal fade" id="CalledByGraph-help-text" tabindex="-1" role="dialog">
             <div class="modal-dialog modal-lg" role="document">
               <div class="modal-content">
                 <div class="modal-header">
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
                   <h4 class="modal-title" id="-graph-help-label">Graph Key</h4>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-              <div class="modal-body">
+                <div class="modal-body">
 <p>Nodes of different colours represent the following: </p>
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
@@ -654,7 +657,7 @@ large graphs.</div>
             <p class="text-end">
               Documentation generated by
               <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
- on 2023-11-21T09:25:16.072646             </p>
+ on 2024-01-06T20:16:41.236846             </p>
           </div>
         </div>
         <br>

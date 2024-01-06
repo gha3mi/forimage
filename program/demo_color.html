@@ -1,3 +1,5 @@
+<!-- -*- mode: jinja2 -*- -->
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -17,7 +19,8 @@
     <link href="../css/local.css" rel="stylesheet">
       <link  href="../tipuesearch/tipuesearch.css" rel="stylesheet">
 
-    <script src="https://code.jquery.com/jquery-3.7.0.slim.min.js" integrity="sha256-tG5mcZUtJsZvyKAxYLVXrmjKBVLd6VpVccqz/r4ypFE=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="../js/svg-pan-zoom.min.js"></script>
   </head>
 
   <body>
@@ -113,25 +116,25 @@
       <div id="vars-0" class="collapse">
         <div class="list-group list-group-flush">
             <a class="list-group-item" href="../program/demo_color.html#variable-custom_color">custom_color</a>
-            <a class="list-group-item" href="../program/demo_color.html#variable-nearest_color~2">nearest_color</a>
-            <a class="list-group-item" href="../program/demo_color.html#variable-r~19">r</a>
-            <a class="list-group-item" href="../program/demo_color.html#variable-g~19">g</a>
-            <a class="list-group-item" href="../program/demo_color.html#variable-b~19">b</a>
-            <a class="list-group-item" href="../program/demo_color.html#variable-hex~8">hex</a>
-            <a class="list-group-item" href="../program/demo_color.html#variable-decimal~8">decimal</a>
-            <a class="list-group-item" href="../program/demo_color.html#variable-c~8">c</a>
-            <a class="list-group-item" href="../program/demo_color.html#variable-m~8">m</a>
-            <a class="list-group-item" href="../program/demo_color.html#variable-y~12">y</a>
-            <a class="list-group-item" href="../program/demo_color.html#variable-k~8">k</a>
-            <a class="list-group-item" href="../program/demo_color.html#variable-h~13">h</a>
-            <a class="list-group-item" href="../program/demo_color.html#variable-s~12">s</a>
-            <a class="list-group-item" href="../program/demo_color.html#variable-v~8">v</a>
-            <a class="list-group-item" href="../program/demo_color.html#variable-hl~4">hl</a>
-            <a class="list-group-item" href="../program/demo_color.html#variable-sl~4">sl</a>
-            <a class="list-group-item" href="../program/demo_color.html#variable-vl~4">vl</a>
-            <a class="list-group-item" href="../program/demo_color.html#variable-xyz_x~4">xyz_x</a>
-            <a class="list-group-item" href="../program/demo_color.html#variable-xyz_y~4">xyz_y</a>
-            <a class="list-group-item" href="../program/demo_color.html#variable-xyz_z~4">xyz_z</a>
+            <a class="list-group-item" href="../program/demo_color.html#variable-nearest_color">nearest_color</a>
+            <a class="list-group-item" href="../program/demo_color.html#variable-r">r</a>
+            <a class="list-group-item" href="../program/demo_color.html#variable-g">g</a>
+            <a class="list-group-item" href="../program/demo_color.html#variable-b">b</a>
+            <a class="list-group-item" href="../program/demo_color.html#variable-hex">hex</a>
+            <a class="list-group-item" href="../program/demo_color.html#variable-decimal">decimal</a>
+            <a class="list-group-item" href="../program/demo_color.html#variable-c">c</a>
+            <a class="list-group-item" href="../program/demo_color.html#variable-m">m</a>
+            <a class="list-group-item" href="../program/demo_color.html#variable-y">y</a>
+            <a class="list-group-item" href="../program/demo_color.html#variable-k">k</a>
+            <a class="list-group-item" href="../program/demo_color.html#variable-h">h</a>
+            <a class="list-group-item" href="../program/demo_color.html#variable-s">s</a>
+            <a class="list-group-item" href="../program/demo_color.html#variable-v">v</a>
+            <a class="list-group-item" href="../program/demo_color.html#variable-hl">hl</a>
+            <a class="list-group-item" href="../program/demo_color.html#variable-sl">sl</a>
+            <a class="list-group-item" href="../program/demo_color.html#variable-vl">vl</a>
+            <a class="list-group-item" href="../program/demo_color.html#variable-xyz_x">xyz_x</a>
+            <a class="list-group-item" href="../program/demo_color.html#variable-xyz_y">xyz_y</a>
+            <a class="list-group-item" href="../program/demo_color.html#variable-xyz_z">xyz_z</a>
         </div>
       </div>
     </div>
@@ -197,7 +200,7 @@
 <!-- module~forimage -->
 <g id="program~~demo_color~~UsesGraph_node2" class="node">
 <title>module~forimage</title>
-<g id="a_program~~demo_color~~UsesGraph_node2"><a xlink:href=".././module/forimage.html" xlink:title="forimage">
+<g id="a_program~~demo_color~~UsesGraph_node2"><a xlink:href="../module/forimage.html" xlink:title="forimage">
 <polygon fill="#337ab7" stroke="#337ab7" points="536,-60.17 475,-60.17 475,-36.17 536,-36.17 536,-60.17"/>
 <text text-anchor="middle" x="505.5" y="-45.77" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">forimage</text>
 </a>
@@ -212,7 +215,7 @@
 <!-- module~forcolor -->
 <g id="program~~demo_color~~UsesGraph_node3" class="node">
 <title>module~forcolor</title>
-<g id="a_program~~demo_color~~UsesGraph_node3"><a xlink:href=".././module/forcolor.html" xlink:title="forcolor">
+<g id="a_program~~demo_color~~UsesGraph_node3"><a xlink:href="../module/forcolor.html" xlink:title="forcolor">
 <polygon fill="#337ab7" stroke="#337ab7" points="439,-81.17 385,-81.17 385,-57.17 439,-57.17 439,-81.17"/>
 <text text-anchor="middle" x="412" y="-66.77" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">forcolor</text>
 </a>
@@ -227,7 +230,7 @@
 <!-- module~forimage_parameters -->
 <g id="program~~demo_color~~UsesGraph_node4" class="node">
 <title>module~forimage_parameters</title>
-<g id="a_program~~demo_color~~UsesGraph_node4"><a xlink:href=".././module/forimage_parameters.html" xlink:title="forimage_parameters">
+<g id="a_program~~demo_color~~UsesGraph_node4"><a xlink:href="../module/forimage_parameters.html" xlink:title="forimage_parameters">
 <polygon fill="#337ab7" stroke="#337ab7" points="259,-101.17 130,-101.17 130,-77.17 259,-77.17 259,-101.17"/>
 <text text-anchor="middle" x="194.5" y="-86.77" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">forimage_parameters</text>
 </a>
@@ -241,7 +244,7 @@
 <!-- module~lut -->
 <g id="program~~demo_color~~UsesGraph_node5" class="node">
 <title>module~lut</title>
-<g id="a_program~~demo_color~~UsesGraph_node5"><a xlink:href=".././module/lut.html" xlink:title="lut">
+<g id="a_program~~demo_color~~UsesGraph_node5"><a xlink:href="../module/lut.html" xlink:title="lut">
 <polygon fill="#337ab7" stroke="#337ab7" points="439,-39.17 385,-39.17 385,-15.17 439,-15.17 439,-39.17"/>
 <text text-anchor="middle" x="412" y="-24.77" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">lut</text>
 </a>
@@ -256,7 +259,7 @@
 <!-- module~pnm -->
 <g id="program~~demo_color~~UsesGraph_node6" class="node">
 <title>module~pnm</title>
-<g id="a_program~~demo_color~~UsesGraph_node6"><a xlink:href=".././module/pnm.html" xlink:title="pnm">
+<g id="a_program~~demo_color~~UsesGraph_node6"><a xlink:href="../module/pnm.html" xlink:title="pnm">
 <polygon fill="#337ab7" stroke="#337ab7" points="349,-81.17 295,-81.17 295,-57.17 349,-57.17 349,-81.17"/>
 <text text-anchor="middle" x="322" y="-66.77" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">pnm</text>
 </a>
@@ -305,17 +308,17 @@
                   var panprogramdemo_colorUsesGraph = svgPanZoom('#programdemo_colorUsesGraph',
                     {zoomEnabled: true, controlIconsEnabled: true, fit: true, center: true,}
                   );
-                </script>        <div><a type="button" class="graph-help" data-toggle="modal" href="#UsesGraph-help-text">Help</a></div>
+                </script>          <div>
+            <a type="button" class="graph-help" data-bs-toggle="modal" href="#UsesGraph-help-text">Help</a>
+          </div>
           <div class="modal fade" id="UsesGraph-help-text" tabindex="-1" role="dialog">
             <div class="modal-dialog modal-lg" role="document">
               <div class="modal-content">
                 <div class="modal-header">
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
                   <h4 class="modal-title" id="-graph-help-label">Graph Key</h4>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-              <div class="modal-body">
+                <div class="modal-body">
 <p>Nodes of different colours represent the following: </p>
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
@@ -409,7 +412,7 @@ large graphs.</div>
 <!-- proc~convert -->
 <g id="program~~demo_color~~CallsGraph_node2" class="node">
 <title>proc~convert</title>
-<g id="a_program~~demo_color~~CallsGraph_node2"><a xlink:href=".././proc/convert.html" xlink:title="forcolor::color%convert">
+<g id="a_program~~demo_color~~CallsGraph_node2"><a xlink:href="../proc/convert.html" xlink:title="forcolor::color%convert">
 <polygon fill="#d9534f" stroke="#d9534f" points="700,-612 561,-612 561,-588 700,-588 700,-612"/>
 <text text-anchor="middle" x="630.5" y="-597.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">forcolor::color%convert</text>
 </a>
@@ -424,7 +427,7 @@ large graphs.</div>
 <!-- proc~find_nearest -->
 <g id="program~~demo_color~~CallsGraph_node3" class="node">
 <title>proc~find_nearest</title>
-<g id="a_program~~demo_color~~CallsGraph_node3"><a xlink:href=".././proc/find_nearest.html" xlink:title="forcolor::color%find_nearest">
+<g id="a_program~~demo_color~~CallsGraph_node3"><a xlink:href="../proc/find_nearest.html" xlink:title="forcolor::color%find_nearest">
 <polygon fill="#d9534f" stroke="#d9534f" points="300.5,-488 137.5,-488 137.5,-464 300.5,-464 300.5,-488"/>
 <text text-anchor="middle" x="219" y="-473.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">forcolor::color%find_nearest</text>
 </a>
@@ -439,7 +442,7 @@ large graphs.</div>
 <!-- proc~get -->
 <g id="program~~demo_color~~CallsGraph_node4" class="node">
 <title>proc~get</title>
-<g id="a_program~~demo_color~~CallsGraph_node4"><a xlink:href=".././proc/get.html" xlink:title="forcolor::color%get">
+<g id="a_program~~demo_color~~CallsGraph_node4"><a xlink:href="../proc/get.html" xlink:title="forcolor::color%get">
 <polygon fill="#d9534f" stroke="#d9534f" points="276.5,-381 161.5,-381 161.5,-357 276.5,-357 276.5,-381"/>
 <text text-anchor="middle" x="219" y="-366.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">forcolor::color%get</text>
 </a>
@@ -454,7 +457,7 @@ large graphs.</div>
 <!-- proc~print_available_colors -->
 <g id="program~~demo_color~~CallsGraph_node5" class="node">
 <title>proc~print_available_colors</title>
-<g id="a_program~~demo_color~~CallsGraph_node5"><a xlink:href=".././proc/print_available_colors.html" xlink:title="forcolor::color%print_available_colors">
+<g id="a_program~~demo_color~~CallsGraph_node5"><a xlink:href="../proc/print_available_colors.html" xlink:title="forcolor::color%print_available_colors">
 <polygon fill="#d9534f" stroke="#d9534f" points="326,-572 112,-572 112,-548 326,-548 326,-572"/>
 <text text-anchor="middle" x="219" y="-557.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">forcolor::color%print_available_colors</text>
 </a>
@@ -469,7 +472,7 @@ large graphs.</div>
 <!-- proc~save_available_colors -->
 <g id="program~~demo_color~~CallsGraph_node6" class="node">
 <title>proc~save_available_colors</title>
-<g id="a_program~~demo_color~~CallsGraph_node6"><a xlink:href=".././proc/save_available_colors.html" xlink:title="forcolor::color%save_available_colors">
+<g id="a_program~~demo_color~~CallsGraph_node6"><a xlink:href="../proc/save_available_colors.html" xlink:title="forcolor::color%save_available_colors">
 <polygon fill="#d9534f" stroke="#d9534f" points="326,-530 112,-530 112,-506 326,-506 326,-530"/>
 <text text-anchor="middle" x="219" y="-515.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">forcolor::color%save_available_colors</text>
 </a>
@@ -481,25 +484,25 @@ large graphs.</div>
 <path fill="none" stroke="#255000" d="M76.09,-501.35C85.01,-502.4 95.01,-503.57 105.46,-504.8"/>
 <polygon fill="#255000" stroke="#255000" points="105.25,-508.3 115.59,-505.99 106.07,-501.34 105.25,-508.3"/>
 </g>
-<!-- proc~set -->
+<!-- proc~set~2 -->
 <g id="program~~demo_color~~CallsGraph_node7" class="node">
-<title>proc~set</title>
-<g id="a_program~~demo_color~~CallsGraph_node7"><a xlink:href=".././proc/set.html" xlink:title="forcolor::color%set">
+<title>proc~set~2</title>
+<g id="a_program~~demo_color~~CallsGraph_node7"><a xlink:href="../proc/set~2.html" xlink:title="forcolor::color%set">
 <polygon fill="#d9534f" stroke="#d9534f" points="687.5,-192 573.5,-192 573.5,-168 687.5,-168 687.5,-192"/>
 <text text-anchor="middle" x="630.5" y="-177.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">forcolor::color%set</text>
 </a>
 </g>
 </g>
-<!-- program~demo_color&#45;&gt;proc~set -->
+<!-- program~demo_color&#45;&gt;proc~set~2 -->
 <g id="program~~demo_color~~CallsGraph_edge6" class="edge">
-<title>program~demo_color&#45;&gt;proc~set</title>
+<title>program~demo_color&#45;&gt;proc~set~2</title>
 <path fill="none" stroke="#255000" d="M42.51,-484.96C50.88,-457.94 74.13,-391.41 112,-348 200,-247.12 233.95,-219.03 362,-180 428.29,-159.8 508.18,-163.15 563.3,-169.45"/>
 <polygon fill="#255000" stroke="#255000" points="562.94,-172.94 573.29,-170.66 563.78,-165.99 562.94,-172.94"/>
 </g>
 <!-- proc~cmyk_to_rgb -->
 <g id="program~~demo_color~~CallsGraph_node8" class="node">
 <title>proc~cmyk_to_rgb</title>
-<g id="a_program~~demo_color~~CallsGraph_node8"><a xlink:href=".././proc/cmyk_to_rgb.html" xlink:title="forcolor::cmyk_to_rgb">
+<g id="a_program~~demo_color~~CallsGraph_node8"><a xlink:href="../proc/cmyk_to_rgb.html" xlink:title="forcolor::cmyk_to_rgb">
 <polygon fill="#d9534f" stroke="#d9534f" points="884.5,-864 755.5,-864 755.5,-840 884.5,-840 884.5,-864"/>
 <text text-anchor="middle" x="820" y="-849.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">forcolor::cmyk_to_rgb</text>
 </a>
@@ -514,7 +517,7 @@ large graphs.</div>
 <!-- proc~decimal_to_rgb -->
 <g id="program~~demo_color~~CallsGraph_node9" class="node">
 <title>proc~decimal_to_rgb</title>
-<g id="a_program~~demo_color~~CallsGraph_node9"><a xlink:href=".././proc/decimal_to_rgb.html" xlink:title="forcolor::decimal_to_rgb">
+<g id="a_program~~demo_color~~CallsGraph_node9"><a xlink:href="../proc/decimal_to_rgb.html" xlink:title="forcolor::decimal_to_rgb">
 <polygon fill="#d9534f" stroke="#d9534f" points="891.5,-822 748.5,-822 748.5,-798 891.5,-798 891.5,-822"/>
 <text text-anchor="middle" x="820" y="-807.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">forcolor::decimal_to_rgb</text>
 </a>
@@ -529,7 +532,7 @@ large graphs.</div>
 <!-- proc~hex_to_rgb -->
 <g id="program~~demo_color~~CallsGraph_node18" class="node">
 <title>proc~hex_to_rgb</title>
-<g id="a_program~~demo_color~~CallsGraph_node18"><a xlink:href=".././proc/hex_to_rgb.html" xlink:title="forcolor::hex_to_rgb">
+<g id="a_program~~demo_color~~CallsGraph_node18"><a xlink:href="../proc/hex_to_rgb.html" xlink:title="forcolor::hex_to_rgb">
 <polygon fill="#d9534f" stroke="#d9534f" points="879.5,-780 760.5,-780 760.5,-756 879.5,-756 879.5,-780"/>
 <text text-anchor="middle" x="820" y="-765.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">forcolor::hex_to_rgb</text>
 </a>
@@ -544,7 +547,7 @@ large graphs.</div>
 <!-- proc~hsl_to_rgb -->
 <g id="program~~demo_color~~CallsGraph_node19" class="node">
 <title>proc~hsl_to_rgb</title>
-<g id="a_program~~demo_color~~CallsGraph_node19"><a xlink:href=".././proc/hsl_to_rgb.html" xlink:title="forcolor::hsl_to_rgb">
+<g id="a_program~~demo_color~~CallsGraph_node19"><a xlink:href="../proc/hsl_to_rgb.html" xlink:title="forcolor::hsl_to_rgb">
 <polygon fill="#d9534f" stroke="#d9534f" points="877.5,-738 762.5,-738 762.5,-714 877.5,-714 877.5,-738"/>
 <text text-anchor="middle" x="820" y="-723.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">forcolor::hsl_to_rgb</text>
 </a>
@@ -559,7 +562,7 @@ large graphs.</div>
 <!-- proc~hsv_to_rgb -->
 <g id="program~~demo_color~~CallsGraph_node20" class="node">
 <title>proc~hsv_to_rgb</title>
-<g id="a_program~~demo_color~~CallsGraph_node20"><a xlink:href=".././proc/hsv_to_rgb.html" xlink:title="forcolor::hsv_to_rgb">
+<g id="a_program~~demo_color~~CallsGraph_node20"><a xlink:href="../proc/hsv_to_rgb.html" xlink:title="forcolor::hsv_to_rgb">
 <polygon fill="#d9534f" stroke="#d9534f" points="879,-696 761,-696 761,-672 879,-672 879,-696"/>
 <text text-anchor="middle" x="820" y="-681.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">forcolor::hsv_to_rgb</text>
 </a>
@@ -574,7 +577,7 @@ large graphs.</div>
 <!-- proc~rgb_to_cmyk -->
 <g id="program~~demo_color~~CallsGraph_node22" class="node">
 <title>proc~rgb_to_cmyk</title>
-<g id="a_program~~demo_color~~CallsGraph_node22"><a xlink:href=".././proc/rgb_to_cmyk.html" xlink:title="forcolor::rgb_to_cmyk">
+<g id="a_program~~demo_color~~CallsGraph_node22"><a xlink:href="../proc/rgb_to_cmyk.html" xlink:title="forcolor::rgb_to_cmyk">
 <polygon fill="#d9534f" stroke="#d9534f" points="884.5,-654 755.5,-654 755.5,-630 884.5,-630 884.5,-654"/>
 <text text-anchor="middle" x="820" y="-639.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">forcolor::rgb_to_cmyk</text>
 </a>
@@ -589,7 +592,7 @@ large graphs.</div>
 <!-- proc~rgb_to_decimal -->
 <g id="program~~demo_color~~CallsGraph_node23" class="node">
 <title>proc~rgb_to_decimal</title>
-<g id="a_program~~demo_color~~CallsGraph_node23"><a xlink:href=".././proc/rgb_to_decimal.html" xlink:title="forcolor::rgb_to_decimal">
+<g id="a_program~~demo_color~~CallsGraph_node23"><a xlink:href="../proc/rgb_to_decimal.html" xlink:title="forcolor::rgb_to_decimal">
 <polygon fill="#d9534f" stroke="#d9534f" points="891.5,-612 748.5,-612 748.5,-588 891.5,-588 891.5,-612"/>
 <text text-anchor="middle" x="820" y="-597.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">forcolor::rgb_to_decimal</text>
 </a>
@@ -604,7 +607,7 @@ large graphs.</div>
 <!-- proc~rgb_to_hex -->
 <g id="program~~demo_color~~CallsGraph_node24" class="node">
 <title>proc~rgb_to_hex</title>
-<g id="a_program~~demo_color~~CallsGraph_node24"><a xlink:href=".././proc/rgb_to_hex.html" xlink:title="forcolor::rgb_to_hex">
+<g id="a_program~~demo_color~~CallsGraph_node24"><a xlink:href="../proc/rgb_to_hex.html" xlink:title="forcolor::rgb_to_hex">
 <polygon fill="#d9534f" stroke="#d9534f" points="879.5,-570 760.5,-570 760.5,-546 879.5,-546 879.5,-570"/>
 <text text-anchor="middle" x="820" y="-555.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">forcolor::rgb_to_hex</text>
 </a>
@@ -619,7 +622,7 @@ large graphs.</div>
 <!-- proc~rgb_to_hsl -->
 <g id="program~~demo_color~~CallsGraph_node25" class="node">
 <title>proc~rgb_to_hsl</title>
-<g id="a_program~~demo_color~~CallsGraph_node25"><a xlink:href=".././proc/rgb_to_hsl.html" xlink:title="forcolor::rgb_to_hsl">
+<g id="a_program~~demo_color~~CallsGraph_node25"><a xlink:href="../proc/rgb_to_hsl.html" xlink:title="forcolor::rgb_to_hsl">
 <polygon fill="#d9534f" stroke="#d9534f" points="877.5,-528 762.5,-528 762.5,-504 877.5,-504 877.5,-528"/>
 <text text-anchor="middle" x="820" y="-513.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">forcolor::rgb_to_hsl</text>
 </a>
@@ -634,7 +637,7 @@ large graphs.</div>
 <!-- proc~rgb_to_hsv -->
 <g id="program~~demo_color~~CallsGraph_node26" class="node">
 <title>proc~rgb_to_hsv</title>
-<g id="a_program~~demo_color~~CallsGraph_node26"><a xlink:href=".././proc/rgb_to_hsv.html" xlink:title="forcolor::rgb_to_hsv">
+<g id="a_program~~demo_color~~CallsGraph_node26"><a xlink:href="../proc/rgb_to_hsv.html" xlink:title="forcolor::rgb_to_hsv">
 <polygon fill="#d9534f" stroke="#d9534f" points="879,-486 761,-486 761,-462 879,-462 879,-486"/>
 <text text-anchor="middle" x="820" y="-471.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">forcolor::rgb_to_hsv</text>
 </a>
@@ -649,7 +652,7 @@ large graphs.</div>
 <!-- proc~rgb_to_xyz -->
 <g id="program~~demo_color~~CallsGraph_node27" class="node">
 <title>proc~rgb_to_xyz</title>
-<g id="a_program~~demo_color~~CallsGraph_node27"><a xlink:href=".././proc/rgb_to_xyz.html" xlink:title="forcolor::rgb_to_xyz">
+<g id="a_program~~demo_color~~CallsGraph_node27"><a xlink:href="../proc/rgb_to_xyz.html" xlink:title="forcolor::rgb_to_xyz">
 <polygon fill="#d9534f" stroke="#d9534f" points="879,-444 761,-444 761,-420 879,-420 879,-444"/>
 <text text-anchor="middle" x="820" y="-429.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">forcolor::rgb_to_xyz</text>
 </a>
@@ -664,7 +667,7 @@ large graphs.</div>
 <!-- proc~xyz_to_rgb -->
 <g id="program~~demo_color~~CallsGraph_node37" class="node">
 <title>proc~xyz_to_rgb</title>
-<g id="a_program~~demo_color~~CallsGraph_node37"><a xlink:href=".././proc/xyz_to_rgb.html" xlink:title="forcolor::xyz_to_rgb">
+<g id="a_program~~demo_color~~CallsGraph_node37"><a xlink:href="../proc/xyz_to_rgb.html" xlink:title="forcolor::xyz_to_rgb">
 <polygon fill="#d9534f" stroke="#d9534f" points="879,-402 761,-402 761,-378 879,-378 879,-402"/>
 <text text-anchor="middle" x="820" y="-387.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">forcolor::xyz_to_rgb</text>
 </a>
@@ -679,7 +682,7 @@ large graphs.</div>
 <!-- proc~get_rgb -->
 <g id="program~~demo_color~~CallsGraph_node16" class="node">
 <title>proc~get_rgb</title>
-<g id="a_program~~demo_color~~CallsGraph_node16"><a xlink:href=".././proc/get_rgb.html" xlink:title="forcolor::color%get_rgb">
+<g id="a_program~~demo_color~~CallsGraph_node16"><a xlink:href="../proc/get_rgb.html" xlink:title="forcolor::color%get_rgb">
 <polygon fill="#d9534f" stroke="#d9534f" points="513,-507 374,-507 374,-483 513,-483 513,-507"/>
 <text text-anchor="middle" x="443.5" y="-492.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">forcolor::color%get_rgb</text>
 </a>
@@ -694,7 +697,7 @@ large graphs.</div>
 <!-- proc~initialize_colors -->
 <g id="program~~demo_color~~CallsGraph_node21" class="node">
 <title>proc~initialize_colors</title>
-<g id="a_program~~demo_color~~CallsGraph_node21"><a xlink:href=".././proc/initialize_colors.html" xlink:title="forcolor::initialize_colors">
+<g id="a_program~~demo_color~~CallsGraph_node21"><a xlink:href="../proc/initialize_colors.html" xlink:title="forcolor::initialize_colors">
 <polygon fill="#d9534f" stroke="#d9534f" points="515,-549 372,-549 372,-525 515,-525 515,-549"/>
 <text text-anchor="middle" x="443.5" y="-534.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">forcolor::initialize_colors</text>
 </a>
@@ -709,7 +712,7 @@ large graphs.</div>
 <!-- proc~get_cmyk -->
 <g id="program~~demo_color~~CallsGraph_node10" class="node">
 <title>proc~get_cmyk</title>
-<g id="a_program~~demo_color~~CallsGraph_node10"><a xlink:href=".././proc/get_cmyk.html" xlink:title="forcolor::color%get_cmyk">
+<g id="a_program~~demo_color~~CallsGraph_node10"><a xlink:href="../proc/get_cmyk.html" xlink:title="forcolor::color%get_cmyk">
 <polygon fill="#d9534f" stroke="#d9534f" points="518,-465 369,-465 369,-441 518,-441 518,-465"/>
 <text text-anchor="middle" x="443.5" y="-450.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">forcolor::color%get_cmyk</text>
 </a>
@@ -724,7 +727,7 @@ large graphs.</div>
 <!-- proc~get_decimal -->
 <g id="program~~demo_color~~CallsGraph_node11" class="node">
 <title>proc~get_decimal</title>
-<g id="a_program~~demo_color~~CallsGraph_node11"><a xlink:href=".././proc/get_decimal.html" xlink:title="forcolor::color%get_decimal">
+<g id="a_program~~demo_color~~CallsGraph_node11"><a xlink:href="../proc/get_decimal.html" xlink:title="forcolor::color%get_decimal">
 <polygon fill="#d9534f" stroke="#d9534f" points="525,-423 362,-423 362,-399 525,-399 525,-423"/>
 <text text-anchor="middle" x="443.5" y="-408.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">forcolor::color%get_decimal</text>
 </a>
@@ -739,7 +742,7 @@ large graphs.</div>
 <!-- proc~get_hex -->
 <g id="program~~demo_color~~CallsGraph_node12" class="node">
 <title>proc~get_hex</title>
-<g id="a_program~~demo_color~~CallsGraph_node12"><a xlink:href=".././proc/get_hex.html" xlink:title="forcolor::color%get_hex">
+<g id="a_program~~demo_color~~CallsGraph_node12"><a xlink:href="../proc/get_hex.html" xlink:title="forcolor::color%get_hex">
 <polygon fill="#d9534f" stroke="#d9534f" points="513,-381 374,-381 374,-357 513,-357 513,-381"/>
 <text text-anchor="middle" x="443.5" y="-366.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">forcolor::color%get_hex</text>
 </a>
@@ -754,7 +757,7 @@ large graphs.</div>
 <!-- proc~get_hsl -->
 <g id="program~~demo_color~~CallsGraph_node13" class="node">
 <title>proc~get_hsl</title>
-<g id="a_program~~demo_color~~CallsGraph_node13"><a xlink:href=".././proc/get_hsl.html" xlink:title="forcolor::color%get_hsl">
+<g id="a_program~~demo_color~~CallsGraph_node13"><a xlink:href="../proc/get_hsl.html" xlink:title="forcolor::color%get_hsl">
 <polygon fill="#d9534f" stroke="#d9534f" points="511.5,-339 375.5,-339 375.5,-315 511.5,-315 511.5,-339"/>
 <text text-anchor="middle" x="443.5" y="-324.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">forcolor::color%get_hsl</text>
 </a>
@@ -769,7 +772,7 @@ large graphs.</div>
 <!-- proc~get_hsv -->
 <g id="program~~demo_color~~CallsGraph_node14" class="node">
 <title>proc~get_hsv</title>
-<g id="a_program~~demo_color~~CallsGraph_node14"><a xlink:href=".././proc/get_hsv.html" xlink:title="forcolor::color%get_hsv">
+<g id="a_program~~demo_color~~CallsGraph_node14"><a xlink:href="../proc/get_hsv.html" xlink:title="forcolor::color%get_hsv">
 <polygon fill="#d9534f" stroke="#d9534f" points="513,-297 374,-297 374,-273 513,-273 513,-297"/>
 <text text-anchor="middle" x="443.5" y="-282.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">forcolor::color%get_hsv</text>
 </a>
@@ -784,7 +787,7 @@ large graphs.</div>
 <!-- proc~get_name -->
 <g id="program~~demo_color~~CallsGraph_node15" class="node">
 <title>proc~get_name</title>
-<g id="a_program~~demo_color~~CallsGraph_node15"><a xlink:href=".././proc/get_name.html" xlink:title="forcolor::color%get_name">
+<g id="a_program~~demo_color~~CallsGraph_node15"><a xlink:href="../proc/get_name.html" xlink:title="forcolor::color%get_name">
 <polygon fill="#d9534f" stroke="#d9534f" points="519,-255 368,-255 368,-231 519,-231 519,-255"/>
 <text text-anchor="middle" x="443.5" y="-240.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">forcolor::color%get_name</text>
 </a>
@@ -805,7 +808,7 @@ large graphs.</div>
 <!-- proc~get_xyz -->
 <g id="program~~demo_color~~CallsGraph_node17" class="node">
 <title>proc~get_xyz</title>
-<g id="a_program~~demo_color~~CallsGraph_node17"><a xlink:href=".././proc/get_xyz.html" xlink:title="forcolor::color%get_xyz">
+<g id="a_program~~demo_color~~CallsGraph_node17"><a xlink:href="../proc/get_xyz.html" xlink:title="forcolor::color%get_xyz">
 <polygon fill="#d9534f" stroke="#d9534f" points="512.5,-213 374.5,-213 374.5,-189 512.5,-189 512.5,-213"/>
 <text text-anchor="middle" x="443.5" y="-198.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">forcolor::color%get_xyz</text>
 </a>
@@ -832,135 +835,135 @@ large graphs.</div>
 <!-- proc~set_by_name -->
 <g id="program~~demo_color~~CallsGraph_node28" class="node">
 <title>proc~set_by_name</title>
-<g id="a_program~~demo_color~~CallsGraph_node28"><a xlink:href=".././proc/set_by_name.html" xlink:title="forcolor::color%set_by_name">
+<g id="a_program~~demo_color~~CallsGraph_node28"><a xlink:href="../proc/set_by_name.html" xlink:title="forcolor::color%set_by_name">
 <polygon fill="#d9534f" stroke="#d9534f" points="904,-360 736,-360 736,-336 904,-336 904,-360"/>
 <text text-anchor="middle" x="820" y="-345.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">forcolor::color%set_by_name</text>
 </a>
 </g>
 </g>
-<!-- proc~set&#45;&gt;proc~set_by_name -->
+<!-- proc~set~2&#45;&gt;proc~set_by_name -->
 <g id="program~~demo_color~~CallsGraph_edge31" class="edge">
-<title>proc~set&#45;&gt;proc~set_by_name</title>
+<title>proc~set~2&#45;&gt;proc~set_by_name</title>
 <path fill="none" stroke="#255025" stroke-opacity="0.019608" d="M636.52,-192.09C648.92,-220.4 683.81,-291.27 736,-327 738.41,-328.65 740.95,-330.18 743.57,-331.58"/>
 <polygon fill="#255025" fill-opacity="0.019608" stroke="#255025" stroke-opacity="0.019608" points="742.23,-334.82 752.77,-335.9 745.21,-328.48 742.23,-334.82"/>
 </g>
 <!-- proc~set_cmyk -->
 <g id="program~~demo_color~~CallsGraph_node29" class="node">
 <title>proc~set_cmyk</title>
-<g id="a_program~~demo_color~~CallsGraph_node29"><a xlink:href=".././proc/set_cmyk.html" xlink:title="forcolor::color%set_cmyk">
+<g id="a_program~~demo_color~~CallsGraph_node29"><a xlink:href="../proc/set_cmyk.html" xlink:title="forcolor::color%set_cmyk">
 <polygon fill="#d9534f" stroke="#d9534f" points="894,-318 746,-318 746,-294 894,-294 894,-318"/>
 <text text-anchor="middle" x="820" y="-303.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">forcolor::color%set_cmyk</text>
 </a>
 </g>
 </g>
-<!-- proc~set&#45;&gt;proc~set_cmyk -->
+<!-- proc~set~2&#45;&gt;proc~set_cmyk -->
 <g id="program~~demo_color~~CallsGraph_edge32" class="edge">
-<title>proc~set&#45;&gt;proc~set_cmyk</title>
+<title>proc~set~2&#45;&gt;proc~set_cmyk</title>
 <path fill="none" stroke="#255025" stroke-opacity="0.019608" d="M640.03,-192.17C656.15,-214.2 693.32,-260.69 736,-285 739.29,-286.88 742.75,-288.59 746.32,-290.15"/>
 <polygon fill="#255025" fill-opacity="0.019608" stroke="#255025" stroke-opacity="0.019608" points="745.35,-293.53 755.94,-293.93 747.91,-287.01 745.35,-293.53"/>
 </g>
 <!-- proc~set_decimal -->
 <g id="program~~demo_color~~CallsGraph_node30" class="node">
 <title>proc~set_decimal</title>
-<g id="a_program~~demo_color~~CallsGraph_node30"><a xlink:href=".././proc/set_decimal.html" xlink:title="forcolor::color%set_decimal">
+<g id="a_program~~demo_color~~CallsGraph_node30"><a xlink:href="../proc/set_decimal.html" xlink:title="forcolor::color%set_decimal">
 <polygon fill="#d9534f" stroke="#d9534f" points="901,-276 739,-276 739,-252 901,-252 901,-276"/>
 <text text-anchor="middle" x="820" y="-261.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">forcolor::color%set_decimal</text>
 </a>
 </g>
 </g>
-<!-- proc~set&#45;&gt;proc~set_decimal -->
+<!-- proc~set~2&#45;&gt;proc~set_decimal -->
 <g id="program~~demo_color~~CallsGraph_edge33" class="edge">
-<title>proc~set&#45;&gt;proc~set_decimal</title>
+<title>proc~set~2&#45;&gt;proc~set_decimal</title>
 <path fill="none" stroke="#255025" stroke-opacity="0.019608" d="M648.06,-192.11C668,-206.18 702.96,-229.22 736,-243 741.14,-245.15 746.56,-247.11 752.06,-248.91"/>
 <polygon fill="#255025" fill-opacity="0.019608" stroke="#255025" stroke-opacity="0.019608" points="751.43,-252.38 762.02,-251.96 753.48,-245.68 751.43,-252.38"/>
 </g>
 <!-- proc~set_hex -->
 <g id="program~~demo_color~~CallsGraph_node31" class="node">
 <title>proc~set_hex</title>
-<g id="a_program~~demo_color~~CallsGraph_node31"><a xlink:href=".././proc/set_hex.html" xlink:title="forcolor::color%set_hex">
+<g id="a_program~~demo_color~~CallsGraph_node31"><a xlink:href="../proc/set_hex.html" xlink:title="forcolor::color%set_hex">
 <polygon fill="#d9534f" stroke="#d9534f" points="889,-234 751,-234 751,-210 889,-210 889,-234"/>
 <text text-anchor="middle" x="820" y="-219.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">forcolor::color%set_hex</text>
 </a>
 </g>
 </g>
-<!-- proc~set&#45;&gt;proc~set_hex -->
+<!-- proc~set~2&#45;&gt;proc~set_hex -->
 <g id="program~~demo_color~~CallsGraph_edge34" class="edge">
-<title>proc~set&#45;&gt;proc~set_hex</title>
+<title>proc~set~2&#45;&gt;proc~set_hex</title>
 <path fill="none" stroke="#255025" stroke-opacity="0.019608" d="M685.23,-192.04C707.1,-196.93 732.55,-202.63 755.34,-207.74"/>
 <polygon fill="#255025" fill-opacity="0.019608" stroke="#255025" stroke-opacity="0.019608" points="754.74,-211.19 765.26,-209.96 756.27,-204.36 754.74,-211.19"/>
 </g>
 <!-- proc~set_hsl -->
 <g id="program~~demo_color~~CallsGraph_node32" class="node">
 <title>proc~set_hsl</title>
-<g id="a_program~~demo_color~~CallsGraph_node32"><a xlink:href=".././proc/set_hsl.html" xlink:title="forcolor::color%set_hsl">
+<g id="a_program~~demo_color~~CallsGraph_node32"><a xlink:href="../proc/set_hsl.html" xlink:title="forcolor::color%set_hsl">
 <polygon fill="#d9534f" stroke="#d9534f" points="887,-192 753,-192 753,-168 887,-168 887,-192"/>
 <text text-anchor="middle" x="820" y="-177.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">forcolor::color%set_hsl</text>
 </a>
 </g>
 </g>
-<!-- proc~set&#45;&gt;proc~set_hsl -->
+<!-- proc~set~2&#45;&gt;proc~set_hsl -->
 <g id="program~~demo_color~~CallsGraph_edge35" class="edge">
-<title>proc~set&#45;&gt;proc~set_hsl</title>
+<title>proc~set~2&#45;&gt;proc~set_hsl</title>
 <path fill="none" stroke="#255025" stroke-opacity="0.019608" d="M687.5,-180C704.8,-180 724.16,-180 742.59,-180"/>
 <polygon fill="#255025" fill-opacity="0.019608" stroke="#255025" stroke-opacity="0.019608" points="742.72,-183.5 752.72,-180 742.72,-176.5 742.72,-183.5"/>
 </g>
 <!-- proc~set_hsv -->
 <g id="program~~demo_color~~CallsGraph_node33" class="node">
 <title>proc~set_hsv</title>
-<g id="a_program~~demo_color~~CallsGraph_node33"><a xlink:href=".././proc/set_hsv.html" xlink:title="forcolor::color%set_hsv">
+<g id="a_program~~demo_color~~CallsGraph_node33"><a xlink:href="../proc/set_hsv.html" xlink:title="forcolor::color%set_hsv">
 <polygon fill="#d9534f" stroke="#d9534f" points="888.5,-150 751.5,-150 751.5,-126 888.5,-126 888.5,-150"/>
 <text text-anchor="middle" x="820" y="-135.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">forcolor::color%set_hsv</text>
 </a>
 </g>
 </g>
-<!-- proc~set&#45;&gt;proc~set_hsv -->
+<!-- proc~set~2&#45;&gt;proc~set_hsv -->
 <g id="program~~demo_color~~CallsGraph_edge36" class="edge">
-<title>proc~set&#45;&gt;proc~set_hsv</title>
+<title>proc~set~2&#45;&gt;proc~set_hsv</title>
 <path fill="none" stroke="#255025" stroke-opacity="0.019608" d="M685.23,-167.96C707.1,-163.07 732.55,-157.37 755.34,-152.26"/>
 <polygon fill="#255025" fill-opacity="0.019608" stroke="#255025" stroke-opacity="0.019608" points="756.27,-155.64 765.26,-150.04 754.74,-148.81 756.27,-155.64"/>
 </g>
 <!-- proc~set_name -->
 <g id="program~~demo_color~~CallsGraph_node34" class="node">
 <title>proc~set_name</title>
-<g id="a_program~~demo_color~~CallsGraph_node34"><a xlink:href=".././proc/set_name.html" xlink:title="forcolor::color%set_name">
+<g id="a_program~~demo_color~~CallsGraph_node34"><a xlink:href="../proc/set_name.html" xlink:title="forcolor::color%set_name">
 <polygon fill="#d9534f" stroke="#d9534f" points="895,-108 745,-108 745,-84 895,-84 895,-108"/>
 <text text-anchor="middle" x="820" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">forcolor::color%set_name</text>
 </a>
 </g>
 </g>
-<!-- proc~set&#45;&gt;proc~set_name -->
+<!-- proc~set~2&#45;&gt;proc~set_name -->
 <g id="program~~demo_color~~CallsGraph_edge37" class="edge">
-<title>proc~set&#45;&gt;proc~set_name</title>
+<title>proc~set~2&#45;&gt;proc~set_name</title>
 <path fill="none" stroke="#255025" stroke-opacity="0.019608" d="M648.06,-167.89C668,-153.82 702.96,-130.78 736,-117 741.14,-114.85 746.56,-112.89 752.06,-111.09"/>
 <polygon fill="#255025" fill-opacity="0.019608" stroke="#255025" stroke-opacity="0.019608" points="753.48,-114.32 762.02,-108.04 751.43,-107.62 753.48,-114.32"/>
 </g>
 <!-- proc~set_rgb -->
 <g id="program~~demo_color~~CallsGraph_node35" class="node">
 <title>proc~set_rgb</title>
-<g id="a_program~~demo_color~~CallsGraph_node35"><a xlink:href=".././proc/set_rgb.html" xlink:title="forcolor::color%set_rgb">
+<g id="a_program~~demo_color~~CallsGraph_node35"><a xlink:href="../proc/set_rgb.html" xlink:title="forcolor::color%set_rgb">
 <polygon fill="#d9534f" stroke="#d9534f" points="888.5,-66 751.5,-66 751.5,-42 888.5,-42 888.5,-66"/>
 <text text-anchor="middle" x="820" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">forcolor::color%set_rgb</text>
 </a>
 </g>
 </g>
-<!-- proc~set&#45;&gt;proc~set_rgb -->
+<!-- proc~set~2&#45;&gt;proc~set_rgb -->
 <g id="program~~demo_color~~CallsGraph_edge38" class="edge">
-<title>proc~set&#45;&gt;proc~set_rgb</title>
+<title>proc~set~2&#45;&gt;proc~set_rgb</title>
 <path fill="none" stroke="#255025" stroke-opacity="0.019608" d="M640.03,-167.83C656.15,-145.8 693.32,-99.31 736,-75 739.29,-73.12 742.75,-71.41 746.32,-69.85"/>
 <polygon fill="#255025" fill-opacity="0.019608" stroke="#255025" stroke-opacity="0.019608" points="747.91,-72.99 755.94,-66.07 745.35,-66.47 747.91,-72.99"/>
 </g>
 <!-- proc~set_xyz -->
 <g id="program~~demo_color~~CallsGraph_node36" class="node">
 <title>proc~set_xyz</title>
-<g id="a_program~~demo_color~~CallsGraph_node36"><a xlink:href=".././proc/set_xyz.html" xlink:title="forcolor::color%set_xyz">
+<g id="a_program~~demo_color~~CallsGraph_node36"><a xlink:href="../proc/set_xyz.html" xlink:title="forcolor::color%set_xyz">
 <polygon fill="#d9534f" stroke="#d9534f" points="888,-24 752,-24 752,0 888,0 888,-24"/>
 <text text-anchor="middle" x="820" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">forcolor::color%set_xyz</text>
 </a>
 </g>
 </g>
-<!-- proc~set&#45;&gt;proc~set_xyz -->
+<!-- proc~set~2&#45;&gt;proc~set_xyz -->
 <g id="program~~demo_color~~CallsGraph_edge39" class="edge">
-<title>proc~set&#45;&gt;proc~set_xyz</title>
+<title>proc~set~2&#45;&gt;proc~set_xyz</title>
 <path fill="none" stroke="#255025" stroke-opacity="0.019608" d="M636.52,-167.91C648.92,-139.6 683.81,-68.73 736,-33 738.41,-31.35 740.95,-29.82 743.57,-28.42"/>
 <polygon fill="#255025" fill-opacity="0.019608" stroke="#255025" stroke-opacity="0.019608" points="745.21,-31.52 752.77,-24.1 742.23,-25.18 745.21,-31.52"/>
 </g>
@@ -970,9 +973,9 @@ large graphs.</div>
 <path fill="none" stroke="#025515" stroke-opacity="0.011765" d="M480.17,-549.15C509.95,-559.29 552.57,-573.8 584.66,-584.73"/>
 <polygon fill="#025515" fill-opacity="0.011765" stroke="#025515" stroke-opacity="0.011765" points="583.66,-588.09 594.25,-588 585.92,-581.46 583.66,-588.09"/>
 </g>
-<!-- proc~initialize_colors&#45;&gt;proc~set -->
+<!-- proc~initialize_colors&#45;&gt;proc~set~2 -->
 <g id="program~~demo_color~~CallsGraph_edge41" class="edge">
-<title>proc~initialize_colors&#45;&gt;proc~set</title>
+<title>proc~initialize_colors&#45;&gt;proc~set~2</title>
 <path fill="none" stroke="#025515" stroke-opacity="0.011765" d="M512.72,-524.87C517.18,-522.42 521.34,-519.49 525,-516 548.64,-493.43 605.81,-273.7 623.91,-202.29"/>
 <polygon fill="#025515" fill-opacity="0.011765" stroke="#025515" stroke-opacity="0.011765" points="627.41,-202.71 626.46,-192.16 620.62,-201 627.41,-202.71"/>
 </g>
@@ -988,17 +991,17 @@ large graphs.</div>
                   var panprogramdemo_colorCallsGraph = svgPanZoom('#programdemo_colorCallsGraph',
                     {zoomEnabled: true, controlIconsEnabled: true, fit: true, center: true,}
                   );
-                </script>        <div><a type="button" class="graph-help" data-toggle="modal" href="#CallsGraph-help-text">Help</a></div>
+                </script>          <div>
+            <a type="button" class="graph-help" data-bs-toggle="modal" href="#CallsGraph-help-text">Help</a>
+          </div>
           <div class="modal fade" id="CallsGraph-help-text" tabindex="-1" role="dialog">
             <div class="modal-dialog modal-lg" role="document">
               <div class="modal-content">
                 <div class="modal-header">
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
                   <h4 class="modal-title" id="-graph-help-label">Graph Key</h4>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-              <div class="modal-body">
+                <div class="modal-body">
 <p>Nodes of different colours represent the following: </p>
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
@@ -1101,7 +1104,7 @@ large graphs.</div>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-nearest_color~2"></span>
+              <span class="anchor" id="variable-nearest_color"></span>
               type(<a href='../type/color.html'>color</a>)
             </td>
             <td>
@@ -1117,7 +1120,7 @@ large graphs.</div>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-r~19"></span>
+              <span class="anchor" id="variable-r"></span>
               integer(kind=ik)
             </td>
             <td>
@@ -1133,7 +1136,7 @@ large graphs.</div>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-g~19"></span>
+              <span class="anchor" id="variable-g"></span>
               integer(kind=ik)
             </td>
             <td>
@@ -1149,7 +1152,7 @@ large graphs.</div>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-b~19"></span>
+              <span class="anchor" id="variable-b"></span>
               integer(kind=ik)
             </td>
             <td>
@@ -1165,7 +1168,7 @@ large graphs.</div>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-hex~8"></span>
+              <span class="anchor" id="variable-hex"></span>
               character(len=7)
             </td>
             <td>
@@ -1181,7 +1184,7 @@ large graphs.</div>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-decimal~8"></span>
+              <span class="anchor" id="variable-decimal"></span>
               integer(kind=ik)
             </td>
             <td>
@@ -1197,7 +1200,7 @@ large graphs.</div>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-c~8"></span>
+              <span class="anchor" id="variable-c"></span>
               integer(kind=ik)
             </td>
             <td>
@@ -1213,7 +1216,7 @@ large graphs.</div>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-m~8"></span>
+              <span class="anchor" id="variable-m"></span>
               integer(kind=ik)
             </td>
             <td>
@@ -1229,7 +1232,7 @@ large graphs.</div>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-y~12"></span>
+              <span class="anchor" id="variable-y"></span>
               integer(kind=ik)
             </td>
             <td>
@@ -1245,7 +1248,7 @@ large graphs.</div>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-k~8"></span>
+              <span class="anchor" id="variable-k"></span>
               integer(kind=ik)
             </td>
             <td>
@@ -1261,7 +1264,7 @@ large graphs.</div>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-h~13"></span>
+              <span class="anchor" id="variable-h"></span>
               real(kind=rk)
             </td>
             <td>
@@ -1277,7 +1280,7 @@ large graphs.</div>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-s~12"></span>
+              <span class="anchor" id="variable-s"></span>
               real(kind=rk)
             </td>
             <td>
@@ -1293,7 +1296,7 @@ large graphs.</div>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-v~8"></span>
+              <span class="anchor" id="variable-v"></span>
               real(kind=rk)
             </td>
             <td>
@@ -1309,7 +1312,7 @@ large graphs.</div>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-hl~4"></span>
+              <span class="anchor" id="variable-hl"></span>
               real(kind=rk)
             </td>
             <td>
@@ -1325,7 +1328,7 @@ large graphs.</div>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-sl~4"></span>
+              <span class="anchor" id="variable-sl"></span>
               real(kind=rk)
             </td>
             <td>
@@ -1341,7 +1344,7 @@ large graphs.</div>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-vl~4"></span>
+              <span class="anchor" id="variable-vl"></span>
               real(kind=rk)
             </td>
             <td>
@@ -1357,7 +1360,7 @@ large graphs.</div>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-xyz_x~4"></span>
+              <span class="anchor" id="variable-xyz_x"></span>
               real(kind=rk)
             </td>
             <td>
@@ -1373,7 +1376,7 @@ large graphs.</div>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-xyz_y~4"></span>
+              <span class="anchor" id="variable-xyz_y"></span>
               real(kind=rk)
             </td>
             <td>
@@ -1389,7 +1392,7 @@ large graphs.</div>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-xyz_z~4"></span>
+              <span class="anchor" id="variable-xyz_z"></span>
               real(kind=rk)
             </td>
             <td>
@@ -1620,7 +1623,7 @@ large graphs.</div>
             <p class="text-end">
               Documentation generated by
               <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
- on 2023-11-21T09:25:16.072646             </p>
+ on 2024-01-06T20:16:41.236846             </p>
           </div>
         </div>
         <br>

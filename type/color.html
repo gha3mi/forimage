@@ -1,3 +1,5 @@
+<!-- -*- mode: jinja2 -*- -->
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -17,7 +19,8 @@
     <link href="../css/local.css" rel="stylesheet">
       <link  href="../tipuesearch/tipuesearch.css" rel="stylesheet">
 
-    <script src="https://code.jquery.com/jquery-3.7.0.slim.min.js" integrity="sha256-tG5mcZUtJsZvyKAxYLVXrmjKBVLd6VpVccqz/r4ypFE=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="../js/svg-pan-zoom.min.js"></script>
   </head>
 
   <body>
@@ -114,24 +117,24 @@
       </a>
       <div id="vars-0" class="collapse">
         <div class="list-group list-group-flush">
-            <a class="list-group-item" href="../type/color.html#variable-r">r</a>
-            <a class="list-group-item" href="../type/color.html#variable-g">g</a>
-            <a class="list-group-item" href="../type/color.html#variable-b">b</a>
-            <a class="list-group-item" href="../type/color.html#variable-c">c</a>
-            <a class="list-group-item" href="../type/color.html#variable-m">m</a>
-            <a class="list-group-item" href="../type/color.html#variable-y">y</a>
-            <a class="list-group-item" href="../type/color.html#variable-k">k</a>
-            <a class="list-group-item" href="../type/color.html#variable-decimal">decimal</a>
-            <a class="list-group-item" href="../type/color.html#variable-hex">hex</a>
-            <a class="list-group-item" href="../type/color.html#variable-h">h</a>
-            <a class="list-group-item" href="../type/color.html#variable-s">s</a>
-            <a class="list-group-item" href="../type/color.html#variable-v">v</a>
-            <a class="list-group-item" href="../type/color.html#variable-hl">hl</a>
-            <a class="list-group-item" href="../type/color.html#variable-sl">sl</a>
-            <a class="list-group-item" href="../type/color.html#variable-vl">vl</a>
-            <a class="list-group-item" href="../type/color.html#variable-xyz_x">xyz_x</a>
-            <a class="list-group-item" href="../type/color.html#variable-xyz_y">xyz_y</a>
-            <a class="list-group-item" href="../type/color.html#variable-xyz_z">xyz_z</a>
+            <a class="list-group-item" href="../type/color.html#variable-r~2">r</a>
+            <a class="list-group-item" href="../type/color.html#variable-g~2">g</a>
+            <a class="list-group-item" href="../type/color.html#variable-b~2">b</a>
+            <a class="list-group-item" href="../type/color.html#variable-c~2">c</a>
+            <a class="list-group-item" href="../type/color.html#variable-m~2">m</a>
+            <a class="list-group-item" href="../type/color.html#variable-y~3">y</a>
+            <a class="list-group-item" href="../type/color.html#variable-k~2">k</a>
+            <a class="list-group-item" href="../type/color.html#variable-decimal~2">decimal</a>
+            <a class="list-group-item" href="../type/color.html#variable-hex~2">hex</a>
+            <a class="list-group-item" href="../type/color.html#variable-h~3">h</a>
+            <a class="list-group-item" href="../type/color.html#variable-s~2">s</a>
+            <a class="list-group-item" href="../type/color.html#variable-v~2">v</a>
+            <a class="list-group-item" href="../type/color.html#variable-hl~2">hl</a>
+            <a class="list-group-item" href="../type/color.html#variable-sl~2">sl</a>
+            <a class="list-group-item" href="../type/color.html#variable-vl~2">vl</a>
+            <a class="list-group-item" href="../type/color.html#variable-xyz_x~2">xyz_x</a>
+            <a class="list-group-item" href="../type/color.html#variable-xyz_y~2">xyz_y</a>
+            <a class="list-group-item" href="../type/color.html#variable-xyz_z~2">xyz_z</a>
             <a class="list-group-item" href="../type/color.html#variable-color_name">color_name</a>
         </div>
       </div>
@@ -159,7 +162,7 @@
       </a>
       <div id="boundprocs-0" class="collapse">
         <div class="list-group list-group-flush">
-            <a class="list-group-item" href="../type/color.html#boundprocedure-set">set</a>
+            <a class="list-group-item" href="../type/color.html#boundprocedure-set~2">set</a>
             <a class="list-group-item" href="../type/color.html#boundprocedure-set_by_name">set_by_name</a>
             <a class="list-group-item" href="../type/color.html#boundprocedure-set_name">set_name</a>
             <a class="list-group-item" href="../type/color.html#boundprocedure-set_rgb">set_rgb</a>
@@ -213,7 +216,8 @@
     </div>
     
     <div class="col-md-9" id='text'>
-      <h2>type, public :: color</h2>
+      <h2>
+        type, public :: color</h2>
     
     <br>
 
@@ -231,7 +235,7 @@
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-r"></span>
+              <span class="anchor" id="variable-r~2"></span>
               integer(kind=ik),
             </td>
               <td>private</td>
@@ -248,7 +252,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-g"></span>
+              <span class="anchor" id="variable-g~2"></span>
               integer(kind=ik),
             </td>
               <td>private</td>
@@ -265,7 +269,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-b"></span>
+              <span class="anchor" id="variable-b~2"></span>
               integer(kind=ik),
             </td>
               <td>private</td>
@@ -282,7 +286,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-c"></span>
+              <span class="anchor" id="variable-c~2"></span>
               integer(kind=ik),
             </td>
               <td>private</td>
@@ -299,7 +303,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-m"></span>
+              <span class="anchor" id="variable-m~2"></span>
               integer(kind=ik),
             </td>
               <td>private</td>
@@ -316,7 +320,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-y"></span>
+              <span class="anchor" id="variable-y~3"></span>
               integer(kind=ik),
             </td>
               <td>private</td>
@@ -333,7 +337,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-k"></span>
+              <span class="anchor" id="variable-k~2"></span>
               integer(kind=ik),
             </td>
               <td>private</td>
@@ -350,7 +354,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-decimal"></span>
+              <span class="anchor" id="variable-decimal~2"></span>
               integer(kind=ik),
             </td>
               <td>private</td>
@@ -367,7 +371,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-hex"></span>
+              <span class="anchor" id="variable-hex~2"></span>
               character(len=7),
             </td>
               <td>private</td>
@@ -384,7 +388,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-h"></span>
+              <span class="anchor" id="variable-h~3"></span>
               real(kind=rk),
             </td>
               <td>private</td>
@@ -401,7 +405,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-s"></span>
+              <span class="anchor" id="variable-s~2"></span>
               real(kind=rk),
             </td>
               <td>private</td>
@@ -418,7 +422,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-v"></span>
+              <span class="anchor" id="variable-v~2"></span>
               real(kind=rk),
             </td>
               <td>private</td>
@@ -435,7 +439,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-hl"></span>
+              <span class="anchor" id="variable-hl~2"></span>
               real(kind=rk),
             </td>
               <td>private</td>
@@ -452,7 +456,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-sl"></span>
+              <span class="anchor" id="variable-sl~2"></span>
               real(kind=rk),
             </td>
               <td>private</td>
@@ -469,7 +473,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-vl"></span>
+              <span class="anchor" id="variable-vl~2"></span>
               real(kind=rk),
             </td>
               <td>private</td>
@@ -486,7 +490,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-xyz_x"></span>
+              <span class="anchor" id="variable-xyz_x~2"></span>
               real(kind=rk),
             </td>
               <td>private</td>
@@ -503,7 +507,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-xyz_y"></span>
+              <span class="anchor" id="variable-xyz_y~2"></span>
               real(kind=rk),
             </td>
               <td>private</td>
@@ -520,7 +524,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-xyz_z"></span>
+              <span class="anchor" id="variable-xyz_z~2"></span>
               real(kind=rk),
             </td>
               <td>private</td>
@@ -565,7 +569,7 @@
           <div class="row">
               <div class="card mt-3">
     <div class="card-header codesum">
-      <span class="anchor" id="boundprocedure-set"></span>
+      <span class="anchor" id="boundprocedure-set~2"></span>
       <h3>
           procedure, public ::
   <strong>set</strong>
@@ -575,7 +579,7 @@
     <ul class="list-group">
         <li class="list-group-item">
                   <h3>
-    private pure elemental subroutine <a href='../proc/set.html'>set</a>(this, name, r, g, b, c, m, y, k, decimal, hex, h, s, v, hl, sl, vl, xyz_x, xyz_y, xyz_z, use_library)  
+    private pure elemental subroutine <a href='../proc/set~2.html'>set</a>(this, name, r, g, b, c, m, y, k, decimal, hex, h, s, v, hl, sl, vl, xyz_x, xyz_y, xyz_z, use_library)  
 </h3>
         <dl class="dl-horizontal">
         <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
@@ -598,7 +602,7 @@
         <tr>
             <td>
               <span class="anchor" ></span>
-              class(<a href='../type/color.html'>color</a>),
+              class(<a href='color.html'>color</a>),
             </td>
 <td>intent(inout)</td>
               <td></td>            <td>
@@ -955,7 +959,7 @@
         <tr>
             <td>
               <span class="anchor" ></span>
-              class(<a href='../type/color.html'>color</a>),
+              class(<a href='color.html'>color</a>),
             </td>
 <td>intent(inout)</td>
               <td></td>            <td>
@@ -1027,7 +1031,7 @@
         <tr>
             <td>
               <span class="anchor" ></span>
-              class(<a href='../type/color.html'>color</a>),
+              class(<a href='color.html'>color</a>),
             </td>
 <td>intent(inout)</td>
               <td></td>            <td>
@@ -1099,7 +1103,7 @@
         <tr>
             <td>
               <span class="anchor" ></span>
-              class(<a href='../type/color.html'>color</a>),
+              class(<a href='color.html'>color</a>),
             </td>
 <td>intent(inout)</td>
               <td></td>            <td>
@@ -1201,7 +1205,7 @@
         <tr>
             <td>
               <span class="anchor" ></span>
-              class(<a href='../type/color.html'>color</a>),
+              class(<a href='color.html'>color</a>),
             </td>
 <td>intent(inout)</td>
               <td></td>            <td>
@@ -1273,7 +1277,7 @@
         <tr>
             <td>
               <span class="anchor" ></span>
-              class(<a href='../type/color.html'>color</a>),
+              class(<a href='color.html'>color</a>),
             </td>
 <td>intent(inout)</td>
               <td></td>            <td>
@@ -1345,7 +1349,7 @@
         <tr>
             <td>
               <span class="anchor" ></span>
-              class(<a href='../type/color.html'>color</a>),
+              class(<a href='color.html'>color</a>),
             </td>
 <td>intent(inout)</td>
               <td></td>            <td>
@@ -1462,7 +1466,7 @@
         <tr>
             <td>
               <span class="anchor" ></span>
-              class(<a href='../type/color.html'>color</a>),
+              class(<a href='color.html'>color</a>),
             </td>
 <td>intent(inout)</td>
               <td></td>            <td>
@@ -1564,7 +1568,7 @@
         <tr>
             <td>
               <span class="anchor" ></span>
-              class(<a href='../type/color.html'>color</a>),
+              class(<a href='color.html'>color</a>),
             </td>
 <td>intent(inout)</td>
               <td></td>            <td>
@@ -1666,7 +1670,7 @@
         <tr>
             <td>
               <span class="anchor" ></span>
-              class(<a href='../type/color.html'>color</a>),
+              class(<a href='color.html'>color</a>),
             </td>
 <td>intent(inout)</td>
               <td></td>            <td>
@@ -1768,7 +1772,7 @@
         <tr>
             <td>
               <span class="anchor" ></span>
-              class(<a href='../type/color.html'>color</a>),
+              class(<a href='color.html'>color</a>),
             </td>
 <td>intent(inout)</td>
               <td></td>            <td>
@@ -2110,7 +2114,7 @@
         <tr>
             <td>
               <span class="anchor" ></span>
-              class(<a href='../type/color.html'>color</a>),
+              class(<a href='color.html'>color</a>),
             </td>
 <td>intent(in)</td>
               <td></td>            <td>
@@ -2182,7 +2186,7 @@
         <tr>
             <td>
               <span class="anchor" ></span>
-              class(<a href='../type/color.html'>color</a>),
+              class(<a href='color.html'>color</a>),
             </td>
 <td>intent(in)</td>
               <td></td>            <td>
@@ -2284,7 +2288,7 @@
         <tr>
             <td>
               <span class="anchor" ></span>
-              class(<a href='../type/color.html'>color</a>),
+              class(<a href='color.html'>color</a>),
             </td>
 <td>intent(in)</td>
               <td></td>            <td>
@@ -2356,7 +2360,7 @@
         <tr>
             <td>
               <span class="anchor" ></span>
-              class(<a href='../type/color.html'>color</a>),
+              class(<a href='color.html'>color</a>),
             </td>
 <td>intent(in)</td>
               <td></td>            <td>
@@ -2428,7 +2432,7 @@
         <tr>
             <td>
               <span class="anchor" ></span>
-              class(<a href='../type/color.html'>color</a>),
+              class(<a href='color.html'>color</a>),
             </td>
 <td>intent(in)</td>
               <td></td>            <td>
@@ -2545,7 +2549,7 @@
         <tr>
             <td>
               <span class="anchor" ></span>
-              class(<a href='../type/color.html'>color</a>),
+              class(<a href='color.html'>color</a>),
             </td>
 <td>intent(in)</td>
               <td></td>            <td>
@@ -2647,7 +2651,7 @@
         <tr>
             <td>
               <span class="anchor" ></span>
-              class(<a href='../type/color.html'>color</a>),
+              class(<a href='color.html'>color</a>),
             </td>
 <td>intent(in)</td>
               <td></td>            <td>
@@ -2749,7 +2753,7 @@
         <tr>
             <td>
               <span class="anchor" ></span>
-              class(<a href='../type/color.html'>color</a>),
+              class(<a href='color.html'>color</a>),
             </td>
 <td>intent(in)</td>
               <td></td>            <td>
@@ -2851,7 +2855,7 @@
         <tr>
             <td>
               <span class="anchor" ></span>
-              class(<a href='../type/color.html'>color</a>),
+              class(<a href='color.html'>color</a>),
             </td>
 <td>intent(inout)</td>
               <td></td>            <td>
@@ -2923,7 +2927,7 @@
         <tr>
             <td>
               <span class="anchor" ></span>
-              class(<a href='../type/color.html'>color</a>),
+              class(<a href='color.html'>color</a>),
             </td>
 <td>intent(in)</td>
               <td></td>            <td>
@@ -2980,7 +2984,7 @@
         <tr>
             <td>
               <span class="anchor" ></span>
-              class(<a href='../type/color.html'>color</a>),
+              class(<a href='color.html'>color</a>),
             </td>
 <td>intent(in)</td>
               <td></td>            <td>
@@ -3037,7 +3041,7 @@
         <tr>
             <td>
               <span class="anchor" ></span>
-              class(<a href='../type/color.html'>color</a>),
+              class(<a href='color.html'>color</a>),
             </td>
 <td>intent(in)</td>
               <td></td>            <td>
@@ -3094,7 +3098,7 @@
         <tr>
             <td>
               <span class="anchor" ></span>
-              class(<a href='../type/color.html'>color</a>),
+              class(<a href='color.html'>color</a>),
             </td>
 <td>intent(in)</td>
               <td></td>            <td>
@@ -3151,7 +3155,7 @@
         <tr>
             <td>
               <span class="anchor" ></span>
-              class(<a href='../type/color.html'>color</a>),
+              class(<a href='color.html'>color</a>),
             </td>
 <td>intent(in)</td>
               <td></td>            <td>
@@ -3208,7 +3212,7 @@
         <tr>
             <td>
               <span class="anchor" ></span>
-              class(<a href='../type/color.html'>color</a>),
+              class(<a href='color.html'>color</a>),
             </td>
 <td>intent(in)</td>
               <td></td>            <td>
@@ -3265,7 +3269,7 @@
         <tr>
             <td>
               <span class="anchor" ></span>
-              class(<a href='../type/color.html'>color</a>),
+              class(<a href='color.html'>color</a>),
             </td>
 <td>intent(in)</td>
               <td></td>            <td>
@@ -3322,7 +3326,7 @@
         <tr>
             <td>
               <span class="anchor" ></span>
-              class(<a href='../type/color.html'>color</a>),
+              class(<a href='color.html'>color</a>),
             </td>
 <td>intent(in)</td>
               <td></td>            <td>
@@ -3379,7 +3383,7 @@
         <tr>
             <td>
               <span class="anchor" ></span>
-              class(<a href='../type/color.html'>color</a>),
+              class(<a href='color.html'>color</a>),
             </td>
 <td>intent(inout)</td>
               <td></td>            <td>
@@ -3394,7 +3398,7 @@
         <tr>
             <td>
               <span class="anchor" ></span>
-              class(<a href='../type/color.html'>color</a>),
+              class(<a href='color.html'>color</a>),
             </td>
 <td>intent(in)</td>
               <td></td>            <td>
@@ -3421,7 +3425,7 @@
       <span class="anchor" id="boundprocedure-assignment%28%3D%29"></span>
       <h3>
           generic, public ::
-  <strong>assignment(=)</strong> => <a href='../type/color.html#boundprocedure-copy_color'>copy_color</a>
+  <strong>assignment(=)</strong> => <a href='/home/runner/work/forimage/forimage/doc/type/color.html#boundprocedure-copy_color'>copy_color</a>
         
       </h3>
     </div>
@@ -3451,7 +3455,7 @@
         <tr>
             <td>
               <span class="anchor" ></span>
-              class(<a href='../type/color.html'>color</a>),
+              class(<a href='color.html'>color</a>),
             </td>
 <td>intent(inout)</td>
               <td></td>            <td>
@@ -3466,7 +3470,7 @@
         <tr>
             <td>
               <span class="anchor" ></span>
-              class(<a href='../type/color.html'>color</a>),
+              class(<a href='color.html'>color</a>),
             </td>
 <td>intent(in)</td>
               <td></td>            <td>
@@ -3523,7 +3527,7 @@
         <tr>
             <td>
               <span class="anchor" ></span>
-              class(<a href='../type/color.html'>color</a>),
+              class(<a href='color.html'>color</a>),
             </td>
 <td>intent(inout)</td>
               <td></td>            <td>
@@ -3595,7 +3599,7 @@
         <tr>
             <td>
               <span class="anchor" ></span>
-              class(<a href='../type/color.html'>color</a>),
+              class(<a href='color.html'>color</a>),
             </td>
 <td>intent(inout)</td>
               <td></td>            <td>
@@ -3610,7 +3614,7 @@
         <tr>
             <td>
               <span class="anchor" ></span>
-              type(<a href='../type/color.html'>color</a>),
+              type(<a href='color.html'>color</a>),
             </td>
 <td>intent(out)</td>
               <td></td>            <td>
@@ -3667,7 +3671,7 @@
         <tr>
             <td>
               <span class="anchor" ></span>
-              class(<a href='../type/color.html'>color</a>),
+              class(<a href='color.html'>color</a>),
             </td>
 <td>intent(inout)</td>
               <td></td>            <td>
@@ -3724,7 +3728,7 @@
         <tr>
             <td>
               <span class="anchor" ></span>
-              class(<a href='../type/color.html'>color</a>),
+              class(<a href='color.html'>color</a>),
             </td>
 <td>intent(inout)</td>
               <td></td>            <td>
@@ -3826,7 +3830,7 @@
         <tr>
             <td>
               <span class="anchor" ></span>
-              class(<a href='../type/color.html'>color</a>),
+              class(<a href='color.html'>color</a>),
             </td>
 <td>intent(inout)</td>
               <td></td>            <td>
@@ -3961,7 +3965,7 @@
             <p class="text-end">
               Documentation generated by
               <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
- on 2023-11-21T09:25:16.072646             </p>
+ on 2024-01-06T20:16:41.236846             </p>
           </div>
         </div>
         <br>

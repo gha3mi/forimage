@@ -1,3 +1,5 @@
+<!-- -*- mode: jinja2 -*- -->
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -17,7 +19,8 @@
     <link href="../css/local.css" rel="stylesheet">
       <link  href="../tipuesearch/tipuesearch.css" rel="stylesheet">
 
-    <script src="https://code.jquery.com/jquery-3.7.0.slim.min.js" integrity="sha256-tG5mcZUtJsZvyKAxYLVXrmjKBVLd6VpVccqz/r4ypFE=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="../js/svg-pan-zoom.min.js"></script>
   </head>
 
   <body>
@@ -161,7 +164,7 @@
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-this~57"></span>
+              <span class="anchor" id="variable-this~64"></span>
               class(<a href='../type/format_pnm.html'>format_pnm</a>),
             </td>
 <td>intent(inout)</td>
@@ -176,7 +179,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-encoding~3"></span>
+              <span class="anchor" id="variable-encoding~4"></span>
               character(len=*),
             </td>
 <td>intent(in)</td>
@@ -191,7 +194,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-file_format~3"></span>
+              <span class="anchor" id="variable-file_format~4"></span>
               character(len=3),
             </td>
 <td>intent(in)</td>
@@ -206,7 +209,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-width~6"></span>
+              <span class="anchor" id="variable-width~5"></span>
               integer,
             </td>
 <td>intent(in)</td>
@@ -221,7 +224,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-height~6"></span>
+              <span class="anchor" id="variable-height~5"></span>
               integer,
             </td>
 <td>intent(in)</td>
@@ -236,7 +239,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-max_color~4"></span>
+              <span class="anchor" id="variable-max_color~2"></span>
               integer,
             </td>
 <td>intent(in),</td>
@@ -251,7 +254,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-comment~4"></span>
+              <span class="anchor" id="variable-comment~2"></span>
               character(len=*),
             </td>
 <td>intent(in)</td>
@@ -266,7 +269,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-pixels~4"></span>
+              <span class="anchor" id="variable-pixels~3"></span>
               integer(kind=ik),
             </td>
 <td>intent(in),</td>
@@ -308,7 +311,7 @@
 <!-- proc~allocate_pixels -->
 <g id="proc~~set_pnm~~CallsGraph_node2" class="node">
 <title>proc~allocate_pixels</title>
-<g id="a_proc~~set_pnm~~CallsGraph_node2"><a xlink:href=".././proc/allocate_pixels.html" xlink:title="pnm::format_pnm%allocate_pixels">
+<g id="a_proc~~set_pnm~~CallsGraph_node2"><a xlink:href="../proc/allocate_pixels.html" xlink:title="pnm::format_pnm%allocate_pixels">
 <polygon fill="#d9534f" stroke="#d9534f" points="398,-255 200,-255 200,-231 398,-231 398,-255"/>
 <text text-anchor="middle" x="299" y="-240.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">pnm::format_pnm%allocate_pixels</text>
 </a>
@@ -323,7 +326,7 @@
 <!-- proc~set_file_format -->
 <g id="proc~~set_pnm~~CallsGraph_node3" class="node">
 <title>proc~set_file_format</title>
-<g id="a_proc~~set_pnm~~CallsGraph_node3"><a xlink:href=".././proc/set_file_format.html" xlink:title="pnm::format_pnm%set_file_format">
+<g id="a_proc~~set_pnm~~CallsGraph_node3"><a xlink:href="../proc/set_file_format.html" xlink:title="pnm::format_pnm%set_file_format">
 <polygon fill="#d9534f" stroke="#d9534f" points="398,-213 200,-213 200,-189 398,-189 398,-213"/>
 <text text-anchor="middle" x="299" y="-198.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">pnm::format_pnm%set_file_format</text>
 </a>
@@ -338,7 +341,7 @@
 <!-- proc~set_format -->
 <g id="proc~~set_pnm~~CallsGraph_node4" class="node">
 <title>proc~set_format</title>
-<g id="a_proc~~set_pnm~~CallsGraph_node4"><a xlink:href=".././proc/set_format.html" xlink:title="pnm::format_pnm%set_format">
+<g id="a_proc~~set_pnm~~CallsGraph_node4"><a xlink:href="../proc/set_format.html" xlink:title="pnm::format_pnm%set_format">
 <polygon fill="#d9534f" stroke="#d9534f" points="387,-171 211,-171 211,-147 387,-147 387,-171"/>
 <text text-anchor="middle" x="299" y="-156.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">pnm::format_pnm%set_format</text>
 </a>
@@ -353,7 +356,7 @@
 <!-- proc~set_header -->
 <g id="proc~~set_pnm~~CallsGraph_node5" class="node">
 <title>proc~set_header</title>
-<g id="a_proc~~set_pnm~~CallsGraph_node5"><a xlink:href=".././proc/set_header.html" xlink:title="pnm::format_pnm%set_header">
+<g id="a_proc~~set_pnm~~CallsGraph_node5"><a xlink:href="../proc/set_header.html" xlink:title="pnm::format_pnm%set_header">
 <polygon fill="#d9534f" stroke="#d9534f" points="388,-129 210,-129 210,-105 388,-105 388,-129"/>
 <text text-anchor="middle" x="299" y="-114.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">pnm::format_pnm%set_header</text>
 </a>
@@ -368,7 +371,7 @@
 <!-- proc~set_pixels -->
 <g id="proc~~set_pnm~~CallsGraph_node6" class="node">
 <title>proc~set_pixels</title>
-<g id="a_proc~~set_pnm~~CallsGraph_node6"><a xlink:href=".././proc/set_pixels.html" xlink:title="pnm::format_pnm%set_pixels">
+<g id="a_proc~~set_pnm~~CallsGraph_node6"><a xlink:href="../proc/set_pixels.html" xlink:title="pnm::format_pnm%set_pixels">
 <polygon fill="#d9534f" stroke="#d9534f" points="384.5,-66 213.5,-66 213.5,-42 384.5,-42 384.5,-66"/>
 <text text-anchor="middle" x="299" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">pnm::format_pnm%set_pixels</text>
 </a>
@@ -383,7 +386,7 @@
 <!-- proc~set_comment -->
 <g id="proc~~set_pnm~~CallsGraph_node8" class="node">
 <title>proc~set_comment</title>
-<g id="a_proc~~set_pnm~~CallsGraph_node8"><a xlink:href=".././proc/set_comment.html" xlink:title="pnm::format_pnm%set_comment">
+<g id="a_proc~~set_pnm~~CallsGraph_node8"><a xlink:href="../proc/set_comment.html" xlink:title="pnm::format_pnm%set_comment">
 <polygon fill="#d9534f" stroke="#d9534f" points="638.5,-234 447.5,-234 447.5,-210 638.5,-210 638.5,-234"/>
 <text text-anchor="middle" x="543" y="-219.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">pnm::format_pnm%set_comment</text>
 </a>
@@ -398,7 +401,7 @@
 <!-- proc~set_height -->
 <g id="proc~~set_pnm~~CallsGraph_node9" class="node">
 <title>proc~set_height</title>
-<g id="a_proc~~set_pnm~~CallsGraph_node9"><a xlink:href=".././proc/set_height.html" xlink:title="pnm::format_pnm%set_height">
+<g id="a_proc~~set_pnm~~CallsGraph_node9"><a xlink:href="../proc/set_height.html" xlink:title="pnm::format_pnm%set_height">
 <polygon fill="#d9534f" stroke="#d9534f" points="630,-192 456,-192 456,-168 630,-168 630,-192"/>
 <text text-anchor="middle" x="543" y="-177.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">pnm::format_pnm%set_height</text>
 </a>
@@ -413,7 +416,7 @@
 <!-- proc~set_magicnumber -->
 <g id="proc~~set_pnm~~CallsGraph_node10" class="node">
 <title>proc~set_magicnumber</title>
-<g id="a_proc~~set_pnm~~CallsGraph_node10"><a xlink:href=".././proc/set_magicnumber.html" xlink:title="pnm::format_pnm%set_magicnumber">
+<g id="a_proc~~set_pnm~~CallsGraph_node10"><a xlink:href="../proc/set_magicnumber.html" xlink:title="pnm::format_pnm%set_magicnumber">
 <polygon fill="#d9534f" stroke="#d9534f" points="650.5,-150 435.5,-150 435.5,-126 650.5,-126 650.5,-150"/>
 <text text-anchor="middle" x="543" y="-135.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">pnm::format_pnm%set_magicnumber</text>
 </a>
@@ -428,7 +431,7 @@
 <!-- proc~set_max_color -->
 <g id="proc~~set_pnm~~CallsGraph_node11" class="node">
 <title>proc~set_max_color</title>
-<g id="a_proc~~set_pnm~~CallsGraph_node11"><a xlink:href=".././proc/set_max_color.html" xlink:title="pnm::format_pnm%set_max_color">
+<g id="a_proc~~set_pnm~~CallsGraph_node11"><a xlink:href="../proc/set_max_color.html" xlink:title="pnm::format_pnm%set_max_color">
 <polygon fill="#d9534f" stroke="#d9534f" points="641,-108 445,-108 445,-84 641,-84 641,-108"/>
 <text text-anchor="middle" x="543" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">pnm::format_pnm%set_max_color</text>
 </a>
@@ -443,7 +446,7 @@
 <!-- proc~set_width -->
 <g id="proc~~set_pnm~~CallsGraph_node12" class="node">
 <title>proc~set_width</title>
-<g id="a_proc~~set_pnm~~CallsGraph_node12"><a xlink:href=".././proc/set_width.html" xlink:title="pnm::format_pnm%set_width">
+<g id="a_proc~~set_pnm~~CallsGraph_node12"><a xlink:href="../proc/set_width.html" xlink:title="pnm::format_pnm%set_width">
 <polygon fill="#d9534f" stroke="#d9534f" points="627.5,-66 458.5,-66 458.5,-42 627.5,-42 627.5,-66"/>
 <text text-anchor="middle" x="543" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">pnm::format_pnm%set_width</text>
 </a>
@@ -458,7 +461,7 @@
 <!-- proc~check_pixel_range -->
 <g id="proc~~set_pnm~~CallsGraph_node7" class="node">
 <title>proc~check_pixel_range</title>
-<g id="a_proc~~set_pnm~~CallsGraph_node7"><a xlink:href=".././proc/check_pixel_range.html" xlink:title="pnm::format_pnm%check_pixel_range">
+<g id="a_proc~~set_pnm~~CallsGraph_node7"><a xlink:href="../proc/check_pixel_range.html" xlink:title="pnm::format_pnm%check_pixel_range">
 <polygon fill="#d9534f" stroke="#d9534f" points="652,-24 434,-24 434,0 652,0 652,-24"/>
 <text text-anchor="middle" x="543" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">pnm::format_pnm%check_pixel_range</text>
 </a>
@@ -476,17 +479,17 @@
                   var panprocset_pnmCallsGraph = svgPanZoom('#procset_pnmCallsGraph',
                     {zoomEnabled: true, controlIconsEnabled: true, fit: true, center: true,}
                   );
-                </script>        <div><a type="button" class="graph-help" data-toggle="modal" href="#CallsGraph-help-text">Help</a></div>
+                </script>          <div>
+            <a type="button" class="graph-help" data-bs-toggle="modal" href="#CallsGraph-help-text">Help</a>
+          </div>
           <div class="modal fade" id="CallsGraph-help-text" tabindex="-1" role="dialog">
             <div class="modal-dialog modal-lg" role="document">
               <div class="modal-content">
                 <div class="modal-header">
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
                   <h4 class="modal-title" id="-graph-help-label">Graph Key</h4>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-              <div class="modal-body">
+                <div class="modal-body">
 <p>Nodes of different colours represent the following: </p>
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
@@ -582,7 +585,7 @@ large graphs.</div>
 <!-- proc~save -->
 <g id="proc~~set_pnm~~CalledByGraph_node2" class="node">
 <title>proc~save</title>
-<g id="a_proc~~set_pnm~~CalledByGraph_node2"><a xlink:href=".././proc/save.html" xlink:title="forcolor::color%save">
+<g id="a_proc~~set_pnm~~CalledByGraph_node2"><a xlink:href="../proc/save.html" xlink:title="forcolor::color%save">
 <polygon fill="#d9534f" stroke="#d9534f" points="123,-66 0,-66 0,-42 123,-42 123,-66"/>
 <text text-anchor="middle" x="61.5" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">forcolor::color%save</text>
 </a>
@@ -597,7 +600,7 @@ large graphs.</div>
 <!-- program~demo_ppm -->
 <g id="proc~~set_pnm~~CalledByGraph_node3" class="node">
 <title>program~demo_ppm</title>
-<g id="a_proc~~set_pnm~~CalledByGraph_node3"><a xlink:href=".././program/demo_ppm.html" xlink:title="demo_ppm">
+<g id="a_proc~~set_pnm~~CalledByGraph_node3"><a xlink:href="../program/demo_ppm.html" xlink:title="demo_ppm">
 <polygon fill="#f0ad4e" stroke="#f0ad4e" points="98,-24 25,-24 25,0 98,0 98,-24"/>
 <text text-anchor="middle" x="61.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">demo_ppm</text>
 </a>
@@ -611,17 +614,17 @@ large graphs.</div>
 </g>
 </g>
 </svg>
-</div>        <div><a type="button" class="graph-help" data-toggle="modal" href="#CalledByGraph-help-text">Help</a></div>
+</div>          <div>
+            <a type="button" class="graph-help" data-bs-toggle="modal" href="#CalledByGraph-help-text">Help</a>
+          </div>
           <div class="modal fade" id="CalledByGraph-help-text" tabindex="-1" role="dialog">
             <div class="modal-dialog modal-lg" role="document">
               <div class="modal-content">
                 <div class="modal-header">
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
                   <h4 class="modal-title" id="-graph-help-label">Graph Key</h4>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-              <div class="modal-body">
+                <div class="modal-body">
 <p>Nodes of different colours represent the following: </p>
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
@@ -765,7 +768,7 @@ large graphs.</div>
             <p class="text-end">
               Documentation generated by
               <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
- on 2023-11-21T09:25:16.072646             </p>
+ on 2024-01-06T20:16:41.236846             </p>
           </div>
         </div>
         <br>

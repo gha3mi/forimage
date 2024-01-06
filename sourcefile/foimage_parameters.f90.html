@@ -1,3 +1,5 @@
+<!-- -*- mode: jinja2 -*- -->
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -17,7 +19,8 @@
     <link href="../css/local.css" rel="stylesheet">
       <link  href="../tipuesearch/tipuesearch.css" rel="stylesheet">
 
-    <script src="https://code.jquery.com/jquery-3.7.0.slim.min.js" integrity="sha256-tG5mcZUtJsZvyKAxYLVXrmjKBVLd6VpVccqz/r4ypFE=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="../js/svg-pan-zoom.min.js"></script>
   </head>
 
   <body>
@@ -173,7 +176,7 @@
 <!-- sourcefile~forcolor.f90 -->
 <g id="sourcefile~~foimage_parameters.f90~~AfferentGraph_node2" class="node">
 <title>sourcefile~forcolor.f90</title>
-<g id="a_sourcefile~~foimage_parameters.f90~~AfferentGraph_node2"><a xlink:href=".././sourcefile/forcolor.f90.html" xlink:title="forcolor.f90">
+<g id="a_sourcefile~~foimage_parameters.f90~~AfferentGraph_node2"><a xlink:href="../sourcefile/forcolor.f90.html" xlink:title="forcolor.f90">
 <polygon fill="#f0ad4e" stroke="#f0ad4e" points="347,-45 274,-45 274,-21 347,-21 347,-45"/>
 <text text-anchor="middle" x="310.5" y="-30.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">forcolor.f90</text>
 </a>
@@ -189,7 +192,7 @@
 <!-- sourcefile~pnm.f90 -->
 <g id="sourcefile~~foimage_parameters.f90~~AfferentGraph_node4" class="node">
 <title>sourcefile~pnm.f90</title>
-<g id="a_sourcefile~~foimage_parameters.f90~~AfferentGraph_node4"><a xlink:href=".././sourcefile/pnm.f90.html" xlink:title="pnm.f90">
+<g id="a_sourcefile~~foimage_parameters.f90~~AfferentGraph_node4"><a xlink:href="../sourcefile/pnm.f90.html" xlink:title="pnm.f90">
 <polygon fill="#f0ad4e" stroke="#f0ad4e" points="238,-45 181,-45 181,-21 238,-21 238,-45"/>
 <text text-anchor="middle" x="209.5" y="-30.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">pnm.f90</text>
 </a>
@@ -204,7 +207,7 @@
 <!-- sourcefile~forimage.f90 -->
 <g id="sourcefile~~foimage_parameters.f90~~AfferentGraph_node3" class="node">
 <title>sourcefile~forimage.f90</title>
-<g id="a_sourcefile~~foimage_parameters.f90~~AfferentGraph_node3"><a xlink:href=".././sourcefile/forimage.f90.html" xlink:title="forimage.f90">
+<g id="a_sourcefile~~foimage_parameters.f90~~AfferentGraph_node3"><a xlink:href="../sourcefile/forimage.f90.html" xlink:title="forimage.f90">
 <polygon fill="#f0ad4e" stroke="#f0ad4e" points="465,-45 383,-45 383,-21 465,-21 465,-45"/>
 <text text-anchor="middle" x="424" y="-30.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">forimage.f90</text>
 </a>
@@ -236,7 +239,7 @@
 <!-- sourcefile~demo_color.f90 -->
 <g id="sourcefile~~foimage_parameters.f90~~AfferentGraph_node5" class="node">
 <title>sourcefile~demo_color.f90</title>
-<g id="a_sourcefile~~foimage_parameters.f90~~AfferentGraph_node5"><a xlink:href=".././sourcefile/demo_color.f90.html" xlink:title="demo_color.f90">
+<g id="a_sourcefile~~foimage_parameters.f90~~AfferentGraph_node5"><a xlink:href="../sourcefile/demo_color.f90.html" xlink:title="demo_color.f90">
 <polygon fill="#f0ad4e" stroke="#f0ad4e" points="595,-66 501,-66 501,-42 595,-42 595,-66"/>
 <text text-anchor="middle" x="548" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">demo_color.f90</text>
 </a>
@@ -251,7 +254,7 @@
 <!-- sourcefile~demo_ppm.f90 -->
 <g id="sourcefile~~foimage_parameters.f90~~AfferentGraph_node6" class="node">
 <title>sourcefile~demo_ppm.f90</title>
-<g id="a_sourcefile~~foimage_parameters.f90~~AfferentGraph_node6"><a xlink:href=".././sourcefile/demo_ppm.f90.html" xlink:title="demo_ppm.f90">
+<g id="a_sourcefile~~foimage_parameters.f90~~AfferentGraph_node6"><a xlink:href="../sourcefile/demo_ppm.f90.html" xlink:title="demo_ppm.f90">
 <polygon fill="#f0ad4e" stroke="#f0ad4e" points="594.5,-24 501.5,-24 501.5,0 594.5,0 594.5,-24"/>
 <text text-anchor="middle" x="548" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">demo_ppm.f90</text>
 </a>
@@ -265,17 +268,17 @@
 </g>
 </g>
 </svg>
-</div>        <div><a type="button" class="graph-help" data-toggle="modal" href="#AfferentGraph-help-text">Help</a></div>
+</div>          <div>
+            <a type="button" class="graph-help" data-bs-toggle="modal" href="#AfferentGraph-help-text">Help</a>
+          </div>
           <div class="modal fade" id="AfferentGraph-help-text" tabindex="-1" role="dialog">
             <div class="modal-dialog modal-lg" role="document">
               <div class="modal-content">
                 <div class="modal-header">
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
                   <h4 class="modal-title" id="-graph-help-label">Graph Key</h4>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-              <div class="modal-body">
+                <div class="modal-body">
 <p>Nodes of different colours represent the following: </p>
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
@@ -344,7 +347,7 @@ large graphs.</div>
             <p class="text-end">
               Documentation generated by
               <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
- on 2023-11-21T09:25:16.072646             </p>
+ on 2024-01-06T20:16:41.236846             </p>
           </div>
         </div>
         <br>

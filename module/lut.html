@@ -1,3 +1,5 @@
+<!-- -*- mode: jinja2 -*- -->
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -17,7 +19,8 @@
     <link href="../css/local.css" rel="stylesheet">
       <link  href="../tipuesearch/tipuesearch.css" rel="stylesheet">
 
-    <script src="https://code.jquery.com/jquery-3.7.0.slim.min.js" integrity="sha256-tG5mcZUtJsZvyKAxYLVXrmjKBVLd6VpVccqz/r4ypFE=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="../js/svg-pan-zoom.min.js"></script>
   </head>
 
   <body>
@@ -149,7 +152,7 @@
       <div id="subs-0" class="collapse">
         <div class="list-group list-group-flush">
             <a class="list-group-item" href="../module/lut.html#proc-allocate_colors">allocate_colors</a>
-            <a class="list-group-item" href="../module/lut.html#proc-set~2">set</a>
+            <a class="list-group-item" href="../module/lut.html#proc-set">set</a>
             <a class="list-group-item" href="../module/lut.html#proc-set_num_colors">set_num_colors</a>
             <a class="list-group-item" href="../module/lut.html#proc-set_dim_colors">set_dim_colors</a>
             <a class="list-group-item" href="../module/lut.html#proc-set_colors">set_colors</a>
@@ -201,7 +204,7 @@
 <!-- module~forimage -->
 <g id="module~~lut~~UsedByGraph_node2" class="node">
 <title>module~forimage</title>
-<g id="a_module~~lut~~UsedByGraph_node2"><a xlink:href=".././module/forimage.html" xlink:title="forimage">
+<g id="a_module~~lut~~UsedByGraph_node2"><a xlink:href="../module/forimage.html" xlink:title="forimage">
 <polygon fill="#337ab7" stroke="#337ab7" points="151,-45 90,-45 90,-21 151,-21 151,-45"/>
 <text text-anchor="middle" x="120.5" y="-30.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">forimage</text>
 </a>
@@ -216,7 +219,7 @@
 <!-- program~demo_color -->
 <g id="module~~lut~~UsedByGraph_node3" class="node">
 <title>program~demo_color</title>
-<g id="a_module~~lut~~UsedByGraph_node3"><a xlink:href=".././program/demo_color.html" xlink:title="demo_color">
+<g id="a_module~~lut~~UsedByGraph_node3"><a xlink:href="../program/demo_color.html" xlink:title="demo_color">
 <polygon fill="#f0ad4e" stroke="#f0ad4e" points="263,-66 187,-66 187,-42 263,-42 263,-66"/>
 <text text-anchor="middle" x="225" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">demo_color</text>
 </a>
@@ -231,7 +234,7 @@
 <!-- program~demo_ppm -->
 <g id="module~~lut~~UsedByGraph_node4" class="node">
 <title>program~demo_ppm</title>
-<g id="a_module~~lut~~UsedByGraph_node4"><a xlink:href=".././program/demo_ppm.html" xlink:title="demo_ppm">
+<g id="a_module~~lut~~UsedByGraph_node4"><a xlink:href="../program/demo_ppm.html" xlink:title="demo_ppm">
 <polygon fill="#f0ad4e" stroke="#f0ad4e" points="261.5,-24 188.5,-24 188.5,0 261.5,0 261.5,-24"/>
 <text text-anchor="middle" x="225" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">demo_ppm</text>
 </a>
@@ -245,17 +248,17 @@
 </g>
 </g>
 </svg>
-</div>        <div><a type="button" class="graph-help" data-toggle="modal" href="#UsedByGraph-help-text">Help</a></div>
+</div>          <div>
+            <a type="button" class="graph-help" data-bs-toggle="modal" href="#UsedByGraph-help-text">Help</a>
+          </div>
           <div class="modal fade" id="UsedByGraph-help-text" tabindex="-1" role="dialog">
             <div class="modal-dialog modal-lg" role="document">
               <div class="modal-content">
                 <div class="modal-header">
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
                   <h4 class="modal-title" id="-graph-help-label">Graph Key</h4>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-              <div class="modal-body">
+                <div class="modal-body">
 <p>Nodes of different colours represent the following: </p>
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
@@ -421,7 +424,7 @@ large graphs.</div>
               </tr>
               <tr>
                 <td>  procedure, public ::
-  <strong><a href='../type/format_lut.html#boundprocedure-set~2'>set</a></strong></td>
+  <strong><a href='../type/format_lut.html#boundprocedure-set'>set</a></strong></td>
                 <td></td>
               </tr>
               <tr>
@@ -466,7 +469,7 @@ large graphs.</div>
               </tr>
               <tr>
                 <td>  procedure, public ::
-  <strong><a href='../type/format_lut.html#boundprocedure-finalize'>finalize</a></strong> => <a href='../proc/deallocate_lut.html'>deallocate_lut</a></td>
+  <strong><a href='../type/format_lut.html#boundprocedure-finalize'>finalize</a></strong> => <a href='/home/runner/work/forimage/forimage/doc/proc/deallocate_lut.html'>deallocate_lut</a></td>
                 <td></td>
               </tr>
           </tbody>
@@ -480,7 +483,7 @@ large graphs.</div>
         <section>
           <h2>Functions</h2>
               <div class="card">
-    <div class="card-header codesum"><span class="anchor" id="proc-get_num_colors"></span><h3>private pure elemental function <a href='../proc/get_num_colors.html'>get_num_colors</a>(this) result(num_colors)  
+    <div class="card-header codesum"><span class="anchor" id="proc-get_num_colors"></span> <h3>private pure elemental function <a href='../proc/get_num_colors.html'>get_num_colors</a>(this) result(num_colors)  
 </h3></div>
     <div class="card-body">
               <dl class="dl-horizontal">
@@ -502,7 +505,7 @@ large graphs.</div>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-this~38"></span>
+              <span class="anchor" id="variable-this~5"></span>
               class(<a href='../type/format_lut.html'>format_lut</a>),
             </td>
 <td>intent(in)</td>
@@ -528,7 +531,7 @@ large graphs.</div>
   </div>
 
               <div class="card">
-    <div class="card-header codesum"><span class="anchor" id="proc-get_dim_colors"></span><h3>private pure elemental function <a href='../proc/get_dim_colors.html'>get_dim_colors</a>(this) result(dim_colors)  
+    <div class="card-header codesum"><span class="anchor" id="proc-get_dim_colors"></span> <h3>private pure elemental function <a href='../proc/get_dim_colors.html'>get_dim_colors</a>(this) result(dim_colors)  
 </h3></div>
     <div class="card-body">
               <dl class="dl-horizontal">
@@ -550,7 +553,7 @@ large graphs.</div>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-this~40"></span>
+              <span class="anchor" id="variable-this~6"></span>
               class(<a href='../type/format_lut.html'>format_lut</a>),
             </td>
 <td>intent(in)</td>
@@ -576,7 +579,7 @@ large graphs.</div>
   </div>
 
               <div class="card">
-    <div class="card-header codesum"><span class="anchor" id="proc-get_colors"></span><h3>private pure function <a href='../proc/get_colors.html'>get_colors</a>(this) result(colors)  
+    <div class="card-header codesum"><span class="anchor" id="proc-get_colors"></span> <h3>private pure function <a href='../proc/get_colors.html'>get_colors</a>(this) result(colors)  
 </h3></div>
     <div class="card-body">
               <dl class="dl-horizontal">
@@ -598,7 +601,7 @@ large graphs.</div>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-this~42"></span>
+              <span class="anchor" id="variable-this~8"></span>
               class(<a href='../type/format_lut.html'>format_lut</a>),
             </td>
 <td>intent(in)</td>
@@ -629,7 +632,7 @@ large graphs.</div>
         <section>
           <h2>Subroutines</h2>
               <div class="card">
-    <div class="card-header codesum"><span class="anchor" id="proc-allocate_colors"></span><h3>private pure elemental subroutine <a href='../proc/allocate_colors.html'>allocate_colors</a>(this)  
+    <div class="card-header codesum"><span class="anchor" id="proc-allocate_colors"></span> <h3>private pure elemental subroutine <a href='../proc/allocate_colors.html'>allocate_colors</a>(this)  
 </h3></div>
     <div class="card-body">
               <dl class="dl-horizontal">
@@ -651,7 +654,7 @@ large graphs.</div>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-this~35"></span>
+              <span class="anchor" id="variable-this"></span>
               class(<a href='../type/format_lut.html'>format_lut</a>),
             </td>
 <td>intent(inout)</td>
@@ -672,7 +675,7 @@ large graphs.</div>
   </div>
 
               <div class="card">
-    <div class="card-header codesum"><span class="anchor" id="proc-set~2"></span><h3>private pure subroutine <a href='../proc/set~2.html'>set</a>(this, num_colors, dim_colors, colors)  
+    <div class="card-header codesum"><span class="anchor" id="proc-set"></span> <h3>private pure subroutine <a href='../proc/set.html'>set</a>(this, num_colors, dim_colors, colors)  
 </h3></div>
     <div class="card-body">
               <dl class="dl-horizontal">
@@ -694,7 +697,7 @@ large graphs.</div>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-this~36"></span>
+              <span class="anchor" id="variable-this~2"></span>
               class(<a href='../type/format_lut.html'>format_lut</a>),
             </td>
 <td>intent(inout)</td>
@@ -760,7 +763,7 @@ large graphs.</div>
   </div>
 
               <div class="card">
-    <div class="card-header codesum"><span class="anchor" id="proc-set_num_colors"></span><h3>private pure elemental subroutine <a href='../proc/set_num_colors.html'>set_num_colors</a>(this, num_colors)  
+    <div class="card-header codesum"><span class="anchor" id="proc-set_num_colors"></span> <h3>private pure elemental subroutine <a href='../proc/set_num_colors.html'>set_num_colors</a>(this, num_colors)  
 </h3></div>
     <div class="card-body">
               <dl class="dl-horizontal">
@@ -782,7 +785,7 @@ large graphs.</div>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-this~37"></span>
+              <span class="anchor" id="variable-this~3"></span>
               class(<a href='../type/format_lut.html'>format_lut</a>),
             </td>
 <td>intent(inout)</td>
@@ -818,7 +821,7 @@ large graphs.</div>
   </div>
 
               <div class="card">
-    <div class="card-header codesum"><span class="anchor" id="proc-set_dim_colors"></span><h3>private pure elemental subroutine <a href='../proc/set_dim_colors.html'>set_dim_colors</a>(this, dim_colors)  
+    <div class="card-header codesum"><span class="anchor" id="proc-set_dim_colors"></span> <h3>private pure elemental subroutine <a href='../proc/set_dim_colors.html'>set_dim_colors</a>(this, dim_colors)  
 </h3></div>
     <div class="card-body">
               <dl class="dl-horizontal">
@@ -840,7 +843,7 @@ large graphs.</div>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-this~39"></span>
+              <span class="anchor" id="variable-this~4"></span>
               class(<a href='../type/format_lut.html'>format_lut</a>),
             </td>
 <td>intent(inout)</td>
@@ -876,7 +879,7 @@ large graphs.</div>
   </div>
 
               <div class="card">
-    <div class="card-header codesum"><span class="anchor" id="proc-set_colors"></span><h3>private pure subroutine <a href='../proc/set_colors.html'>set_colors</a>(this, colors)  
+    <div class="card-header codesum"><span class="anchor" id="proc-set_colors"></span> <h3>private pure subroutine <a href='../proc/set_colors.html'>set_colors</a>(this, colors)  
 </h3></div>
     <div class="card-body">
               <dl class="dl-horizontal">
@@ -898,7 +901,7 @@ large graphs.</div>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-this~41"></span>
+              <span class="anchor" id="variable-this~7"></span>
               class(<a href='../type/format_lut.html'>format_lut</a>),
             </td>
 <td>intent(inout)</td>
@@ -934,7 +937,7 @@ large graphs.</div>
   </div>
 
               <div class="card">
-    <div class="card-header codesum"><span class="anchor" id="proc-deallocate_lut"></span><h3>private pure elemental subroutine <a href='../proc/deallocate_lut.html'>deallocate_lut</a>(this)  
+    <div class="card-header codesum"><span class="anchor" id="proc-deallocate_lut"></span> <h3>private pure elemental subroutine <a href='../proc/deallocate_lut.html'>deallocate_lut</a>(this)  
 </h3></div>
     <div class="card-body">
               <dl class="dl-horizontal">
@@ -956,7 +959,7 @@ large graphs.</div>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-this~45"></span>
+              <span class="anchor" id="variable-this~9"></span>
               class(<a href='../type/format_lut.html'>format_lut</a>),
             </td>
 <td>intent(inout)</td>
@@ -977,7 +980,7 @@ large graphs.</div>
   </div>
 
               <div class="card">
-    <div class="card-header codesum"><span class="anchor" id="proc-import"></span><h3>private impure subroutine <a href='../proc/import.html'>import</a>(this, file_name, dim_colors)  
+    <div class="card-header codesum"><span class="anchor" id="proc-import"></span> <h3>private impure subroutine <a href='../proc/import.html'>import</a>(this, file_name, dim_colors)  
 </h3></div>
     <div class="card-body">
               <dl class="dl-horizontal">
@@ -999,7 +1002,7 @@ large graphs.</div>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-this~44"></span>
+              <span class="anchor" id="variable-this~10"></span>
               class(<a href='../type/format_lut.html'>format_lut</a>),
             </td>
 <td>intent(inout)</td>
@@ -1014,7 +1017,7 @@ large graphs.</div>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-file_name~4"></span>
+              <span class="anchor" id="variable-file_name"></span>
               character(len=*),
             </td>
 <td>intent(in)</td>
@@ -1029,7 +1032,7 @@ large graphs.</div>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-dim_colors~4"></span>
+              <span class="anchor" id="variable-dim_colors~5"></span>
               integer,
             </td>
 <td>intent(in)</td>
@@ -1050,7 +1053,7 @@ large graphs.</div>
   </div>
 
               <div class="card">
-    <div class="card-header codesum"><span class="anchor" id="proc-export"></span><h3>private impure subroutine <a href='../proc/export.html'>export</a>(this, file_name)  
+    <div class="card-header codesum"><span class="anchor" id="proc-export"></span> <h3>private impure subroutine <a href='../proc/export.html'>export</a>(this, file_name)  
 </h3></div>
     <div class="card-body">
               <dl class="dl-horizontal">
@@ -1072,7 +1075,7 @@ large graphs.</div>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-this~43"></span>
+              <span class="anchor" id="variable-this~11"></span>
               class(<a href='../type/format_lut.html'>format_lut</a>),
             </td>
 <td>intent(inout)</td>
@@ -1087,7 +1090,7 @@ large graphs.</div>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-file_name~3"></span>
+              <span class="anchor" id="variable-file_name~2"></span>
               character(len=*),
             </td>
 <td>intent(in)</td>
@@ -1127,7 +1130,7 @@ large graphs.</div>
             <p class="text-end">
               Documentation generated by
               <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
- on 2023-11-21T09:25:16.072646             </p>
+ on 2024-01-06T20:16:41.236846             </p>
           </div>
         </div>
         <br>

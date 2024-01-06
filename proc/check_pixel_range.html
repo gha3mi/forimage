@@ -1,3 +1,5 @@
+<!-- -*- mode: jinja2 -*- -->
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -17,7 +19,8 @@
     <link href="../css/local.css" rel="stylesheet">
       <link  href="../tipuesearch/tipuesearch.css" rel="stylesheet">
 
-    <script src="https://code.jquery.com/jquery-3.7.0.slim.min.js" integrity="sha256-tG5mcZUtJsZvyKAxYLVXrmjKBVLd6VpVccqz/r4ypFE=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="../js/svg-pan-zoom.min.js"></script>
   </head>
 
   <body>
@@ -161,7 +164,7 @@
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-this~55"></span>
+              <span class="anchor" id="variable-this~72"></span>
               class(<a href='../type/format_pnm.html'>format_pnm</a>),
             </td>
 <td>intent(inout)</td>
@@ -176,7 +179,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-pixels~2"></span>
+              <span class="anchor" id="variable-pixels~4"></span>
               integer(kind=ik),
             </td>
 <td>intent(in),</td>
@@ -218,7 +221,7 @@
 <!-- proc~flip_horizontal -->
 <g id="proc~~check_pixel_range~~CalledByGraph_node2" class="node">
 <title>proc~flip_horizontal</title>
-<g id="a_proc~~check_pixel_range~~CalledByGraph_node2"><a xlink:href=".././proc/flip_horizontal.html" xlink:title="pnm::format_pnm%flip_horizontal">
+<g id="a_proc~~check_pixel_range~~CalledByGraph_node2"><a xlink:href="../proc/flip_horizontal.html" xlink:title="pnm::format_pnm%flip_horizontal">
 <polygon fill="#d9534f" stroke="#d9534f" points="564.5,-472 370.5,-472 370.5,-448 564.5,-448 564.5,-472"/>
 <text text-anchor="middle" x="467.5" y="-457.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">pnm::format_pnm%flip_horizontal</text>
 </a>
@@ -233,7 +236,7 @@
 <!-- proc~flip_vertical -->
 <g id="proc~~check_pixel_range~~CalledByGraph_node3" class="node">
 <title>proc~flip_vertical</title>
-<g id="a_proc~~check_pixel_range~~CalledByGraph_node3"><a xlink:href=".././proc/flip_vertical.html" xlink:title="pnm::format_pnm%flip_vertical">
+<g id="a_proc~~check_pixel_range~~CalledByGraph_node3"><a xlink:href="../proc/flip_vertical.html" xlink:title="pnm::format_pnm%flip_vertical">
 <polygon fill="#d9534f" stroke="#d9534f" points="558,-430 377,-430 377,-406 558,-406 558,-430"/>
 <text text-anchor="middle" x="467.5" y="-415.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">pnm::format_pnm%flip_vertical</text>
 </a>
@@ -248,7 +251,7 @@
 <!-- proc~greyscale -->
 <g id="proc~~check_pixel_range~~CalledByGraph_node4" class="node">
 <title>proc~greyscale</title>
-<g id="a_proc~~check_pixel_range~~CalledByGraph_node4"><a xlink:href=".././proc/greyscale.html" xlink:title="pnm::format_pnm%greyscale">
+<g id="a_proc~~check_pixel_range~~CalledByGraph_node4"><a xlink:href="../proc/greyscale.html" xlink:title="pnm::format_pnm%greyscale">
 <polygon fill="#d9534f" stroke="#d9534f" points="552.5,-388 382.5,-388 382.5,-364 552.5,-364 552.5,-388"/>
 <text text-anchor="middle" x="467.5" y="-373.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">pnm::format_pnm%greyscale</text>
 </a>
@@ -263,7 +266,7 @@
 <!-- proc~import_pnm -->
 <g id="proc~~check_pixel_range~~CalledByGraph_node5" class="node">
 <title>proc~import_pnm</title>
-<g id="a_proc~~check_pixel_range~~CalledByGraph_node5"><a xlink:href=".././proc/import_pnm.html" xlink:title="pnm::format_pnm%import_pnm">
+<g id="a_proc~~check_pixel_range~~CalledByGraph_node5"><a xlink:href="../proc/import_pnm.html" xlink:title="pnm::format_pnm%import_pnm">
 <polygon fill="#d9534f" stroke="#d9534f" points="559.5,-346 375.5,-346 375.5,-322 559.5,-322 559.5,-346"/>
 <text text-anchor="middle" x="467.5" y="-331.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">pnm::format_pnm%import_pnm</text>
 </a>
@@ -278,7 +281,7 @@
 <!-- proc~remove_channels -->
 <g id="proc~~check_pixel_range~~CalledByGraph_node6" class="node">
 <title>proc~remove_channels</title>
-<g id="a_proc~~check_pixel_range~~CalledByGraph_node6"><a xlink:href=".././proc/remove_channels.html" xlink:title="pnm::format_pnm%remove_channels">
+<g id="a_proc~~check_pixel_range~~CalledByGraph_node6"><a xlink:href="../proc/remove_channels.html" xlink:title="pnm::format_pnm%remove_channels">
 <polygon fill="#d9534f" stroke="#d9534f" points="574,-304 361,-304 361,-280 574,-280 574,-304"/>
 <text text-anchor="middle" x="467.5" y="-289.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">pnm::format_pnm%remove_channels</text>
 </a>
@@ -293,7 +296,7 @@
 <!-- proc~set_pixels -->
 <g id="proc~~check_pixel_range~~CalledByGraph_node7" class="node">
 <title>proc~set_pixels</title>
-<g id="a_proc~~check_pixel_range~~CalledByGraph_node7"><a xlink:href=".././proc/set_pixels.html" xlink:title="pnm::format_pnm%set_pixels">
+<g id="a_proc~~check_pixel_range~~CalledByGraph_node7"><a xlink:href="../proc/set_pixels.html" xlink:title="pnm::format_pnm%set_pixels">
 <polygon fill="#d9534f" stroke="#d9534f" points="553,-150 382,-150 382,-126 553,-126 553,-150"/>
 <text text-anchor="middle" x="467.5" y="-135.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">pnm::format_pnm%set_pixels</text>
 </a>
@@ -308,7 +311,7 @@
 <!-- proc~swap_channels -->
 <g id="proc~~check_pixel_range~~CalledByGraph_node8" class="node">
 <title>proc~swap_channels</title>
-<g id="a_proc~~check_pixel_range~~CalledByGraph_node8"><a xlink:href=".././proc/swap_channels.html" xlink:title="pnm::format_pnm%swap_channels">
+<g id="a_proc~~check_pixel_range~~CalledByGraph_node8"><a xlink:href="../proc/swap_channels.html" xlink:title="pnm::format_pnm%swap_channels">
 <polygon fill="#d9534f" stroke="#d9534f" points="567,-262 368,-262 368,-238 567,-238 567,-262"/>
 <text text-anchor="middle" x="467.5" y="-247.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">pnm::format_pnm%swap_channels</text>
 </a>
@@ -323,7 +326,7 @@
 <!-- proc~brighten -->
 <g id="proc~~check_pixel_range~~CalledByGraph_node9" class="node">
 <title>proc~brighten</title>
-<g id="a_proc~~check_pixel_range~~CalledByGraph_node9"><a xlink:href=".././proc/brighten.html" xlink:title="pnm::format_pnm%brighten">
+<g id="a_proc~~check_pixel_range~~CalledByGraph_node9"><a xlink:href="../proc/brighten.html" xlink:title="pnm::format_pnm%brighten">
 <polygon fill="#d9534f" stroke="#d9534f" points="324,-234 160,-234 160,-210 324,-210 324,-234"/>
 <text text-anchor="middle" x="242" y="-219.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">pnm::format_pnm%brighten</text>
 </a>
@@ -338,7 +341,7 @@
 <!-- proc~crop -->
 <g id="proc~~check_pixel_range~~CalledByGraph_node10" class="node">
 <title>proc~crop</title>
-<g id="a_proc~~check_pixel_range~~CalledByGraph_node10"><a xlink:href=".././proc/crop.html" xlink:title="pnm::format_pnm%crop">
+<g id="a_proc~~check_pixel_range~~CalledByGraph_node10"><a xlink:href="../proc/crop.html" xlink:title="pnm::format_pnm%crop">
 <polygon fill="#d9534f" stroke="#d9534f" points="313,-192 171,-192 171,-168 313,-168 313,-192"/>
 <text text-anchor="middle" x="242" y="-177.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">pnm::format_pnm%crop</text>
 </a>
@@ -353,7 +356,7 @@
 <!-- proc~negative -->
 <g id="proc~~check_pixel_range~~CalledByGraph_node11" class="node">
 <title>proc~negative</title>
-<g id="a_proc~~check_pixel_range~~CalledByGraph_node11"><a xlink:href=".././proc/negative.html" xlink:title="pnm::format_pnm%negative">
+<g id="a_proc~~check_pixel_range~~CalledByGraph_node11"><a xlink:href="../proc/negative.html" xlink:title="pnm::format_pnm%negative">
 <polygon fill="#d9534f" stroke="#d9534f" points="325,-150 159,-150 159,-126 325,-126 325,-150"/>
 <text text-anchor="middle" x="242" y="-135.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">pnm::format_pnm%negative</text>
 </a>
@@ -368,7 +371,7 @@
 <!-- proc~resize -->
 <g id="proc~~check_pixel_range~~CalledByGraph_node12" class="node">
 <title>proc~resize</title>
-<g id="a_proc~~check_pixel_range~~CalledByGraph_node12"><a xlink:href=".././proc/resize.html" xlink:title="pnm::format_pnm%resize">
+<g id="a_proc~~check_pixel_range~~CalledByGraph_node12"><a xlink:href="../proc/resize.html" xlink:title="pnm::format_pnm%resize">
 <polygon fill="#d9534f" stroke="#d9534f" points="317,-108 167,-108 167,-84 317,-84 317,-108"/>
 <text text-anchor="middle" x="242" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">pnm::format_pnm%resize</text>
 </a>
@@ -383,7 +386,7 @@
 <!-- proc~rotate -->
 <g id="proc~~check_pixel_range~~CalledByGraph_node13" class="node">
 <title>proc~rotate</title>
-<g id="a_proc~~check_pixel_range~~CalledByGraph_node13"><a xlink:href=".././proc/rotate.html" xlink:title="pnm::format_pnm%rotate">
+<g id="a_proc~~check_pixel_range~~CalledByGraph_node13"><a xlink:href="../proc/rotate.html" xlink:title="pnm::format_pnm%rotate">
 <polygon fill="#d9534f" stroke="#d9534f" points="317.5,-66 166.5,-66 166.5,-42 317.5,-42 317.5,-66"/>
 <text text-anchor="middle" x="242" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">pnm::format_pnm%rotate</text>
 </a>
@@ -398,7 +401,7 @@
 <!-- proc~set_pnm -->
 <g id="proc~~check_pixel_range~~CalledByGraph_node14" class="node">
 <title>proc~set_pnm</title>
-<g id="a_proc~~check_pixel_range~~CalledByGraph_node14"><a xlink:href=".././proc/set_pnm.html" xlink:title="pnm::format_pnm%set_pnm">
+<g id="a_proc~~check_pixel_range~~CalledByGraph_node14"><a xlink:href="../proc/set_pnm.html" xlink:title="pnm::format_pnm%set_pnm">
 <polygon fill="#d9534f" stroke="#d9534f" points="324,-24 160,-24 160,0 324,0 324,-24"/>
 <text text-anchor="middle" x="242" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">pnm::format_pnm%set_pnm</text>
 </a>
@@ -413,7 +416,7 @@
 <!-- program~demo_ppm -->
 <g id="proc~~check_pixel_range~~CalledByGraph_node15" class="node">
 <title>program~demo_ppm</title>
-<g id="a_proc~~check_pixel_range~~CalledByGraph_node15"><a xlink:href=".././program/demo_ppm.html" xlink:title="demo_ppm">
+<g id="a_proc~~check_pixel_range~~CalledByGraph_node15"><a xlink:href="../program/demo_ppm.html" xlink:title="demo_ppm">
 <polygon fill="#f0ad4e" stroke="#f0ad4e" points="98,-254 25,-254 25,-230 98,-230 98,-254"/>
 <text text-anchor="middle" x="61.5" y="-239.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">demo_ppm</text>
 </a>
@@ -494,7 +497,7 @@
 <!-- proc~save -->
 <g id="proc~~check_pixel_range~~CalledByGraph_node16" class="node">
 <title>proc~save</title>
-<g id="a_proc~~check_pixel_range~~CalledByGraph_node16"><a xlink:href=".././proc/save.html" xlink:title="forcolor::color%save">
+<g id="a_proc~~check_pixel_range~~CalledByGraph_node16"><a xlink:href="../proc/save.html" xlink:title="forcolor::color%save">
 <polygon fill="#d9534f" stroke="#d9534f" points="123,-24 0,-24 0,0 123,0 123,-24"/>
 <text text-anchor="middle" x="61.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">forcolor::color%save</text>
 </a>
@@ -512,17 +515,17 @@
                   var panproccheck_pixel_rangeCalledByGraph = svgPanZoom('#proccheck_pixel_rangeCalledByGraph',
                     {zoomEnabled: true, controlIconsEnabled: true, fit: true, center: true,}
                   );
-                </script>        <div><a type="button" class="graph-help" data-toggle="modal" href="#CalledByGraph-help-text">Help</a></div>
+                </script>          <div>
+            <a type="button" class="graph-help" data-bs-toggle="modal" href="#CalledByGraph-help-text">Help</a>
+          </div>
           <div class="modal fade" id="CalledByGraph-help-text" tabindex="-1" role="dialog">
             <div class="modal-dialog modal-lg" role="document">
               <div class="modal-content">
                 <div class="modal-header">
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
                   <h4 class="modal-title" id="-graph-help-label">Graph Key</h4>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-              <div class="modal-body">
+                <div class="modal-body">
 <p>Nodes of different colours represent the following: </p>
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
@@ -641,7 +644,7 @@ large graphs.</div>
             <p class="text-end">
               Documentation generated by
               <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
- on 2023-11-21T09:25:16.072646             </p>
+ on 2024-01-06T20:16:41.236846             </p>
           </div>
         </div>
         <br>

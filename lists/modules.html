@@ -1,3 +1,5 @@
+<!-- -*- mode: jinja2 -*- -->
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -18,7 +20,8 @@
     <link href="../css/local.css" rel="stylesheet">
       <link  href="../tipuesearch/tipuesearch.css" rel="stylesheet">
 
-    <script src="https://code.jquery.com/jquery-3.7.0.slim.min.js" integrity="sha256-tG5mcZUtJsZvyKAxYLVXrmjKBVLd6VpVccqz/r4ypFE=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="../js/svg-pan-zoom.min.js"></script>
   </head>
 
   <body>
@@ -68,11 +71,31 @@
 			 <table class="table">
 			 <thead><tr><th>Module</th><th>Source File</th><th>Description</th></tr></thead>
 			 <tbody>
-			   <tr class="active"><td><a href='../module/forcolor.html'>forcolor</a></td><td><a href='../sourcefile/forcolor.f90.html'>forcolor.f90</a></td><td></td></tr>
-<!--active-->			   <tr class=""><td><a href='../module/forimage.html'>forimage</a></td><td><a href='../sourcefile/forimage.f90.html'>forimage.f90</a></td><td></td></tr>
-<!---->			   <tr class="active"><td><a href='../module/forimage_parameters.html'>forimage_parameters</a></td><td><a href='../sourcefile/foimage_parameters.f90.html'>foimage_parameters.f90</a></td><td></td></tr>
-<!--active-->			   <tr class=""><td><a href='../module/lut.html'>lut</a></td><td><a href='../sourcefile/lut.f90.html'>lut.f90</a></td><td></td></tr>
-<!---->			   <tr class="active"><td><a href='../module/pnm.html'>pnm</a></td><td><a href='../sourcefile/pnm.f90.html'>pnm.f90</a></td><td></td></tr>
+			   <tr class="active">
+                 <td><a href='../module/forcolor.html'>forcolor</a></td>
+                 <td><a href='../sourcefile/forcolor.f90.html'>forcolor.f90</a></td>
+                 <td></td>
+               </tr>
+<!--active-->			   <tr class="">
+                 <td><a href='../module/forimage.html'>forimage</a></td>
+                 <td><a href='../sourcefile/forimage.f90.html'>forimage.f90</a></td>
+                 <td></td>
+               </tr>
+<!---->			   <tr class="active">
+                 <td><a href='../module/forimage_parameters.html'>forimage_parameters</a></td>
+                 <td><a href='../sourcefile/foimage_parameters.f90.html'>foimage_parameters.f90</a></td>
+                 <td></td>
+               </tr>
+<!--active-->			   <tr class="">
+                 <td><a href='../module/lut.html'>lut</a></td>
+                 <td><a href='../sourcefile/lut.f90.html'>lut.f90</a></td>
+                 <td></td>
+               </tr>
+<!---->			   <tr class="active">
+                 <td><a href='../module/pnm.html'>pnm</a></td>
+                 <td><a href='../sourcefile/pnm.f90.html'>pnm.f90</a></td>
+                 <td></td>
+               </tr>
 <!--active-->			 </tbody></table>
              <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
@@ -88,7 +111,7 @@
 <!-- module~forcolor -->
 <g id="module~~graph~~ModuleGraph_node1" class="node">
 <title>module~forcolor</title>
-<g id="a_module~~graph~~ModuleGraph_node1"><a xlink:href=".././module/forcolor.html" xlink:title="forcolor">
+<g id="a_module~~graph~~ModuleGraph_node1"><a xlink:href="../module/forcolor.html" xlink:title="forcolor">
 <polygon fill="#337ab7" stroke="#337ab7" points="439,-81.17 385,-81.17 385,-57.17 439,-57.17 439,-81.17"/>
 <text text-anchor="middle" x="412" y="-66.77" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">forcolor</text>
 </a>
@@ -97,7 +120,7 @@
 <!-- module~forimage_parameters -->
 <g id="module~~graph~~ModuleGraph_node3" class="node">
 <title>module~forimage_parameters</title>
-<g id="a_module~~graph~~ModuleGraph_node3"><a xlink:href=".././module/forimage_parameters.html" xlink:title="forimage_parameters">
+<g id="a_module~~graph~~ModuleGraph_node3"><a xlink:href="../module/forimage_parameters.html" xlink:title="forimage_parameters">
 <polygon fill="#337ab7" stroke="#337ab7" points="259,-101.17 130,-101.17 130,-77.17 259,-77.17 259,-101.17"/>
 <text text-anchor="middle" x="194.5" y="-86.77" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">forimage_parameters</text>
 </a>
@@ -113,7 +136,7 @@
 <!-- module~pnm -->
 <g id="module~~graph~~ModuleGraph_node5" class="node">
 <title>module~pnm</title>
-<g id="a_module~~graph~~ModuleGraph_node5"><a xlink:href=".././module/pnm.html" xlink:title="pnm">
+<g id="a_module~~graph~~ModuleGraph_node5"><a xlink:href="../module/pnm.html" xlink:title="pnm">
 <polygon fill="#337ab7" stroke="#337ab7" points="349,-81.17 295,-81.17 295,-57.17 349,-57.17 349,-81.17"/>
 <text text-anchor="middle" x="322" y="-66.77" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">pnm</text>
 </a>
@@ -128,7 +151,7 @@
 <!-- module~forimage -->
 <g id="module~~graph~~ModuleGraph_node2" class="node">
 <title>module~forimage</title>
-<g id="a_module~~graph~~ModuleGraph_node2"><a xlink:href=".././module/forimage.html" xlink:title="forimage">
+<g id="a_module~~graph~~ModuleGraph_node2"><a xlink:href="../module/forimage.html" xlink:title="forimage">
 <polygon fill="#337ab7" stroke="#337ab7" points="536,-60.17 475,-60.17 475,-36.17 536,-36.17 536,-60.17"/>
 <text text-anchor="middle" x="505.5" y="-45.77" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">forimage</text>
 </a>
@@ -148,7 +171,7 @@
 <!-- module~lut -->
 <g id="module~~graph~~ModuleGraph_node4" class="node">
 <title>module~lut</title>
-<g id="a_module~~graph~~ModuleGraph_node4"><a xlink:href=".././module/lut.html" xlink:title="lut">
+<g id="a_module~~graph~~ModuleGraph_node4"><a xlink:href="../module/lut.html" xlink:title="lut">
 <polygon fill="#337ab7" stroke="#337ab7" points="439,-39.17 385,-39.17 385,-15.17 439,-15.17 439,-39.17"/>
 <text text-anchor="middle" x="412" y="-24.77" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">lut</text>
 </a>
@@ -187,7 +210,7 @@
 <!-- program~demo_color -->
 <g id="module~~graph~~ModuleGraph_node6" class="node">
 <title>program~demo_color</title>
-<g id="a_module~~graph~~ModuleGraph_node6"><a xlink:href=".././program/demo_color.html" xlink:title="demo_color">
+<g id="a_module~~graph~~ModuleGraph_node6"><a xlink:href="../program/demo_color.html" xlink:title="demo_color">
 <polygon fill="#f0ad4e" stroke="#f0ad4e" points="648,-81.17 572,-81.17 572,-57.17 648,-57.17 648,-81.17"/>
 <text text-anchor="middle" x="610" y="-66.77" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">demo_color</text>
 </a>
@@ -202,7 +225,7 @@
 <!-- program~demo_ppm -->
 <g id="module~~graph~~ModuleGraph_node7" class="node">
 <title>program~demo_ppm</title>
-<g id="a_module~~graph~~ModuleGraph_node7"><a xlink:href=".././program/demo_ppm.html" xlink:title="demo_ppm">
+<g id="a_module~~graph~~ModuleGraph_node7"><a xlink:href="../program/demo_ppm.html" xlink:title="demo_ppm">
 <polygon fill="#f0ad4e" stroke="#f0ad4e" points="646.5,-39.17 573.5,-39.17 573.5,-15.17 646.5,-15.17 646.5,-39.17"/>
 <text text-anchor="middle" x="610" y="-24.77" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">demo_ppm</text>
 </a>
@@ -216,17 +239,17 @@
 </g>
 </g>
 </svg>
-</div>        <div><a type="button" class="graph-help" data-toggle="modal" href="#ModuleGraph-help-text">Help</a></div>
+</div>          <div>
+            <a type="button" class="graph-help" data-bs-toggle="modal" href="#ModuleGraph-help-text">Help</a>
+          </div>
           <div class="modal fade" id="ModuleGraph-help-text" tabindex="-1" role="dialog">
             <div class="modal-dialog modal-lg" role="document">
               <div class="modal-content">
                 <div class="modal-header">
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
                   <h4 class="modal-title" id="-graph-help-label">Graph Key</h4>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-              <div class="modal-body">
+                <div class="modal-body">
 <p>Nodes of different colours represent the following: </p>
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
@@ -302,7 +325,7 @@ large graphs.</div>
             <p class="text-end">
               Documentation generated by
               <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
- on 2023-11-21T09:25:16.072646             </p>
+ on 2024-01-06T20:16:41.236846             </p>
           </div>
         </div>
         <br>
