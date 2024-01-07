@@ -9,8 +9,6 @@
 
 **ForImage**: A Fortran library for processing and editing PNM images and managing colors.
 
-A Fortran library for working with image files (PNM format) and managing colors effectively.
-
 - [PNM File Support](#pnm-file-support)
 - [fpm dependency](#fpm-dependency)
 - [How to run examples](#how-to-run-examples)
