@@ -2,6 +2,7 @@
 [![Version](https://img.shields.io/github/release/gha3mi/forimage.svg)](https://github.com/gha3mi/forimage/releases/latest)
 [![Documentation](https://img.shields.io/badge/ford-Documentation%20-blueviolet.svg)](https://gha3mi.github.io/forimage/)
 [![CI_test](https://github.com/gha3mi/forimage/actions/workflows/CI_test.yml/badge.svg)](https://github.com/gha3mi/forimage/actions/workflows/CI_test.yml)
+[![cmake](https://github.com/gha3mi/forimage/actions/workflows/cmake.yml/badge.svg)](https://github.com/gha3mi/forimage/actions/workflows/cmake.yml)
 [![CI_doc](https://github.com/gha3mi/forimage/actions/workflows/CI_doc.yml/badge.svg)](https://github.com/gha3mi/forimage/actions/workflows/CI_doc.yml) 
 [![License](https://img.shields.io/github/license/gha3mi/forimage?color=green)](https://github.com/gha3mi/forimage/blob/main/LICENSE)
 
@@ -15,6 +16,7 @@
 - [How to run demos](#how-to-run-demos)
   - [Running `demo_ppm`](#running-demo_ppm)
   - [Running `demo_color`](#running-demo_color)
+- [Projects Utilizing ForImage](#projects-utilizing-forimage)
 - [API documentation](#api-documentation)
 - [Contributing](#contributing)
 
@@ -122,32 +124,11 @@ To run `demo_color`, execute the following command:
 fpm run --example demo_color
 ```
 
-<!-- To run the examples using `fpm`, you can use response files for specific
-compilers:
+## Projects Utilizing ForImage
 
-**For Intel Fortran Compiler (ifort):**
+- [ForColormap](https://github.com/vmagnin/forcolormap): A Fortran library for colormaps
 
-  ```shell
-  fpm @ifort
-  ```
-
-**For Intel Fortran Compiler (ifx):**
-
-  ```shell
-  fpm @ifx
-  ```
-
-**For NVIDIA Compiler (nvfortran):**
-
-  ```shell
-  fpm @nvfortran
-  ```
-
-**For GNU Fortran Compiler (gfortran):**
-
-  ```shell
-  fpm @gfortran
-  ``` -->
+If your project utilizes ForImage and you want to be added to this list, please add your project and create a pull request.
 
 ## API documentation
 
