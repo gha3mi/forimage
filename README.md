@@ -14,12 +14,8 @@
 - [Color Support](#color-support)
 - [fpm dependency](#fpm-dependency)
 - [How to run demos](#how-to-run-demos)
-  - [Running `demo_ppm`](#running-demo_ppm)
-    - [Using fpm](#using-fpm)
-    - [Using CMake](#using-cmake)
-  - [Running `demo_color`](#running-demo_color)
-    - [Using fpm](#using-fpm-1)
-    - [Using CMake](#using-cmake-1)
+  - [Using fpm](#using-fpm)
+  - [Using CMake](#using-cmake)
 - [Projects Utilizing ForImage](#projects-utilizing-forimage)
 - [API documentation](#api-documentation)
 - [Contributing](#contributing)
@@ -93,10 +89,15 @@ forimage = {git="https://github.com/gha3mi/forimage.git"}
 
 ## How to run demos
 
+The `demo_ppm` program demonstrates various operations on PPM (Portable Pixmap) images. It generates Mandelbrot fractals, performs diverse manipulations, and exports images in the PPM format.
+
+The `demo_color` program showcases manipulation of color spaces and their conversions. This program sets a custom color using various methods, converts it to different color spaces, retrieves color values, finds the nearest color, and prints color details.
+
+To get started, follow these steps:
+
 **Clone the repository:**
 
 Clone the `ForImage` repository from GitHub using the following command:
-
 
 ```shell
 git clone https://github.com/gha3mi/forimage.git
@@ -108,57 +109,42 @@ Navigate to the cloned directory:
 cd forimage
 ```
 
-### Running `demo_ppm`
+### Using fpm
 
-The `demo_ppm` program demonstrates various operations on PPM (Portable Pixmap) images. It generates Mandelbrot fractals, performs diverse manipulations, and exports images in the PPM format.
-
-To run `demo_ppm`, execute the following commands:
-
-#### Using fpm
+Run the `demo_ppm` example:
 
 ```shell
 fpm run --example demo_ppm
 ```
 
-#### Using CMake
-
-```shell
-cmake -B ./build -DCMAKE_BUILD_TYPE=RELEASE -DCMAKE_Fortran_COMPILER=gfortran -DBUILD_TESTING=FALSE -DBUILD_FORIMAGE_EXAMPLES=TRUE
-```
-
-```shell
-cmake --build build/ --config release
-```
-
-```shell
-./build/example/demo_ppm
-```
-
-### Running `demo_color`
-
-The `demo_color` program showcases manipulation of color spaces and their conversions. This program sets a custom color using various methods, converts it to different color spaces, retrieves color values, finds the nearest color, and prints color details.
-
-To run `demo_color`, execute the following commands:
-
-#### Using fpm
+Run the `demo_color` example:
 
 ```shell
 fpm run --example demo_color
 ```
 
-#### Using CMake
+### Using CMake
 
 ```shell
-cmake -B ./build -DCMAKE_BUILD_TYPE=RELEASE -DCMAKE_Fortran_COMPILER=gfortran -DBUILD_TESTING=FALSE -DBUILD_FORIMAGE_EXAMPLES=TRUE
+cmake -B build -DBUILD_FORIMAGE_EXAMPLES=ON
 ```
 
 ```shell
-cmake --build build/ --config release
+cmake --build build
 ```
+
+Run the `demo_ppm` example:
+
+```shell
+./build/example/demo_ppm
+```
+
+Run the `demo_color` example:
 
 ```shell
 ./build/example/demo_color
 ```
+Note: The executable must be run from the forimage directory.
 
 ## Projects Utilizing ForImage
 
