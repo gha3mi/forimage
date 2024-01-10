@@ -11,6 +11,10 @@
 			"${workspaceFolder}/src",
 			"${workspaceFolder}/test",
 			"${workspaceFolder}/app"
-		]
+		],
+		"cmake.configureSettings": {
+			"BUILD_TESTING": "ON",
+			"BUILD_FORIMAGE_EXAMPLES": "ON"
+		}
 	}
 }
