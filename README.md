@@ -126,7 +126,7 @@ fpm run --example demo_color
 ### Using CMake
 
 ```shell
-cmake -B build -DBUILD_FORIMAGE_EXAMPLES=ON
+cmake -B build -D BUILD_FORIMAGE_EXAMPLES=on
 ```
 
 ```shell
