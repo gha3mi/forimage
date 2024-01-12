@@ -5,6 +5,9 @@ project(
     VERSION 0.3.0
 )
 
+# Get the macros and functions we'll need
+include("${PROJECT_SOURCE_DIR}/cmake/helper.cmake")
+
 # Set a default build type if none was specified
 if(NOT CMAKE_BUILD_TYPE AND NOT CMAKE_CONFIGURATION_TYPES)
   message(STATUS "Setting build type to 'Release' as none was specified.")
@@ -27,21 +30,13 @@ set(PROJECT_INCLUDE_DIR ${PROJECT_BINARY_DIR}/include)
 
 # Build
 add_subdirectory(src)
-add_library(${PROJECT_NAME} ${FORIMAGE_SOURCES})
-set_target_properties(
-    ${PROJECT_NAME}
-    PROPERTIES
-        POSITION_INDEPENDENT_CODE TRUE
-        OUTPUT_NAME ${PROJECT_NAME}
-        VERSION ${PROJECT_VERSION}
-        SOVERSION ${PROJECT_VERSION_MAJOR}
-        Fortran_MODULE_DIRECTORY ${CMAKE_INSTALL_INCLUDEDIR}
-)
-target_include_directories(
-    ${PROJECT_NAME}
-    PUBLIC
-        $<BUILD_INTERFACE:${PROJECT_INCLUDE_DIR}>
-        $<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}>
+add_fortran_library(
+  ${PROJECT_NAME}
+  ${PROJECT_INCLUDE_DIR}
+  ${CMAKE_INSTALL_INCLUDEDIR}
+  ${PROJECT_VERSION}
+  ${PROJECT_VERSION_MAJOR}
+  ${FORIMAGE_SOURCES}
 )
 
 # Installation
