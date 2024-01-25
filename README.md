@@ -19,6 +19,7 @@
 - [Projects Utilizing ForImage](#projects-utilizing-forimage)
 - [API documentation](#api-documentation)
 - [Contributing](#contributing)
+- [References](#references)
 
 ## PNM File Support
 
