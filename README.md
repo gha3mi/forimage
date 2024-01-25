@@ -168,3 +168,7 @@ ford ford.yml
 
 Contributions to `ForImage` are welcome!
 If you find any issues or would like to suggest improvements, please open an issue.
+
+## References
+
+- https://en.wikipedia.org/wiki/Netpbm#File_formats
