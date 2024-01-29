@@ -40,7 +40,7 @@ add_fortran_library(
 )
 
 # Installation
-add_subdirectory(install)
+add_subdirectory(cmake/install)
 
 # Testing
 option(BUILD_TESTING "Build tests")
