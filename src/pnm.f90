@@ -584,6 +584,7 @@ contains
       character, dimension(:), allocatable   :: buffer_ch
       integer(ik), dimension(:), allocatable :: buffer_int
       logical                                :: file_exists
+      integer                                :: pos
 
       inquire(file=file_name//'.'//file_format, exist=file_exists)
       if (file_exists) then
@@ -596,34 +597,49 @@ contains
 
             select case (file_format)
              case ('pbm')
-               open (newunit = nunit, file = file_name//'.'//file_format, iostat=iostat)
+               open (newunit = nunit, file = file_name//'.'//file_format, iostat=iostat, form='formatted',access='stream')
                if (iostat /= 0) error stop 'Error opening the file.'
-               call read_header(this, nunit)
+               call read_header(this, nunit, pos)
+               close(nunit)
                allocate(buffer_ch(this%height*this%width))
                buffer_ch = achar(0_ik)
-               read(nunit,'(*(a))', advance='no', iostat=iostat) buffer_ch
+
+               open (newunit = nunit, file = file_name//'.'//file_format, iostat=iostat,&
+               access='stream', form='unformatted', action='read', status='old', position='append')
+               if (iostat /= 0) error stop 'Error opening the file.'
+               read(nunit, iostat=iostat, pos=pos) buffer_ch
                if (iostat /= 0) error stop 'Error reading the file.'
                call this%allocate_pixels()
                this%pixels = iachar(transpose(reshape(buffer_ch, [this%width, this%height])), kind=ik)
                close(nunit)
              case ('pgm')
-               open (newunit = nunit, file = file_name//'.'//file_format, iostat=iostat)
+               open (newunit = nunit, file = file_name//'.'//file_format, iostat=iostat, form='formatted',access='stream')
                if (iostat /= 0) error stop 'Error opening the file.'
-               call read_header(this, nunit)
+               call read_header(this, nunit, pos)
+               close(nunit)
                allocate(buffer_ch(this%height*this%width))
                buffer_ch = achar(0_ik)
-               read(nunit,'(*(a))', advance='no', iostat=iostat) buffer_ch
+
+               open (newunit = nunit, file = file_name//'.'//file_format, iostat=iostat,&
+               access='stream', form='unformatted', action='read', status='old', position='append')
+               if (iostat /= 0) error stop 'Error opening the file.'
+               read(nunit, iostat=iostat, pos=pos) buffer_ch
                if (iostat /= 0) error stop 'Error reading the file.'
                call this%allocate_pixels()
                this%pixels = iachar(transpose(reshape(buffer_ch, [this%width, this%height])), kind=ik)
                close(nunit)
              case ('ppm')
-               open (newunit = nunit, file = file_name//'.'//file_format, iostat=iostat)
+               open (newunit = nunit, file = file_name//'.'//file_format, iostat=iostat, form='formatted',access='stream')
                if (iostat /= 0) error stop 'Error opening the file.'
-               call read_header(this, nunit)
+               call read_header(this, nunit, pos)
+               close(nunit)
                allocate(buffer_ch(this%height*3*this%width))
                buffer_ch = achar(0_ik)
-               read(nunit,'(*(a))', advance='no', iostat=iostat) buffer_ch
+
+               open (newunit = nunit, file = file_name//'.'//file_format, iostat=iostat,&
+               access='stream', form='unformatted', action='read', status='old', position='append')
+               if (iostat /= 0) error stop 'Error opening the file.'
+               read(nunit,iostat=iostat, pos=pos) buffer_ch
                call this%allocate_pixels()
                this%pixels = iachar(transpose(reshape(buffer_ch, [this%width*3, this%height])), kind=ik)
                close(nunit)
@@ -635,7 +651,7 @@ contains
              case ('pbm')
                open (newunit = nunit, file = file_name//'.'//file_format, iostat=iostat)
                if (iostat /= 0) error stop 'Error opening the file.'
-               call read_header(this, nunit)
+               call read_header(this, nunit, pos)
                allocate(buffer_int(this%height*this%width))
                buffer_int = 0_ik
                read(nunit, *) buffer_int
@@ -646,7 +662,7 @@ contains
              case ('pgm')
                open (newunit = nunit, file = file_name//'.'//file_format, iostat=iostat)
                if (iostat /= 0) error stop 'Error opening the file.'
-               call read_header(this, nunit)
+               call read_header(this, nunit, pos)
                allocate(buffer_int(this%height*this%width))
                buffer_int = 0_ik
                read(nunit, *) buffer_int
@@ -657,7 +673,7 @@ contains
              case ('ppm')
                open (newunit = nunit, file = file_name//'.'//file_format, iostat=iostat)
                if (iostat /= 0) error stop 'Error opening the file.'
-               call read_header(this, nunit)
+               call read_header(this, nunit, pos)
                allocate(buffer_int(this%height*3*this%width))
                buffer_int = 0_ik
                read(nunit, *) buffer_int
@@ -903,13 +919,22 @@ contains
          open (newunit = nunit, file = file_name//'.'//this%file_format, status='replace', iostat=iostat)
          if (iostat /= 0) error stop 'Error opening the file.'
          call write_header(this, nunit)
+         close(nunit)
+
+         open (newunit = nunit, file = file_name//'.'//this%file_format, status='old', iostat=iostat, position='append')
+         if (iostat /= 0) error stop 'Error opening the file.'
          write(nunit, '(*(g0,1x))', advance='no') transpose(this%pixels)
          close(nunit)
        case ('P4', 'P5', 'P6')
          open (newunit = nunit, file = file_name//'.'//this%file_format, status='replace', iostat=iostat)
          if (iostat /= 0) error stop 'Error opening the file.'
          call write_header(this, nunit)
-         write(nunit, '(*(a))', advance='no') transpose(achar(this%pixels))
+         close(nunit)
+
+         open (newunit = nunit, file = file_name//'.'//this%file_format, status='old', iostat=iostat,&
+         position='append', access = 'stream', form = 'unformatted')
+         if (iostat /= 0) error stop 'Error opening the file.'
+         write(nunit) transpose(achar(this%pixels))
          close(nunit)
       end select
    end subroutine export_pnm
@@ -946,9 +971,10 @@ contains
 
    !===============================================================================
    !> author: Seyed Ali Ghasemi
-   subroutine read_header(this, nunit)
+   subroutine read_header(this, nunit, pos)
       class(format_pnm), intent(inout) :: this
       integer, intent(in)           :: nunit
+      integer, intent(out)          :: pos
       character(len=70) :: comment
       character :: temp
       integer :: i, k
@@ -960,6 +986,8 @@ contains
          if (temp /= '#') exit
          k = k + 1
       end do
+      inquire(nunit, pos=pos)
+      
       rewind(nunit)
       read(nunit,*) this%magic_number
       this%comment = ''
@@ -968,7 +996,12 @@ contains
          this%comment = this%comment//comment
       end do
       read(nunit,*) this%width, this%height
-      if (this%file_format == 'pgm' .or. this%file_format == 'ppm') read(nunit,*) this%max_color
+      inquire(nunit, pos=pos)
+
+      if (this%file_format == 'pgm' .or. this%file_format == 'ppm') then
+         read(nunit,*) this%max_color
+         inquire(nunit, pos=pos)
+      end if
    end subroutine read_header
    !===============================================================================
 
