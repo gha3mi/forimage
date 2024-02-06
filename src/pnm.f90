@@ -264,7 +264,7 @@ contains
    elemental pure subroutine flip_vertical(this)
       class(format_pnm), intent(inout) :: this
 
-      this%pixels = this%pixels(size(this%pixels,1):1:-1, :)
+      this%pixels(:,:) = this%pixels(size(this%pixels,1):1:-1, :)
       call this%check_pixel_range(this%pixels)
 
       call this%set_height(size(this%pixels,1))
@@ -287,7 +287,7 @@ contains
       select case (this%file_format)
        case ('pbm', 'pgm')
 
-         this%pixels = this%pixels(:, this%width:1:-1)
+         this%pixels(:,:) = this%pixels(:, this%width:1:-1)
 
          call this%check_pixel_range(this%pixels)
 
@@ -295,7 +295,7 @@ contains
 
          this%pixels(:, 1:size(this%pixels, 2):3) = this%pixels(:, size(this%pixels, 2)-2:1:-3)
          this%pixels(:, 2:size(this%pixels, 2):3) = this%pixels(:, size(this%pixels, 2)-1:2:-3)
-         this%pixels(:, 3:size(this%pixels, 2):3) = this%pixels(:, size(this%pixels, 2)-0:3:-3)
+         this%pixels(:, 3:size(this%pixels, 2):3) = this%pixels(:, size(this%pixels, 2)  :3:-3)
 
          call this%check_pixel_range(this%pixels)
 
