@@ -597,15 +597,16 @@ contains
 
             select case (file_format)
              case ('pbm')
-               open (newunit = nunit, file = file_name//'.'//file_format, iostat=iostat, form='formatted',access='stream')
+               open (newunit = nunit, file = file_name//'.'//file_format,&
+               iostat=iostat, form='formatted', access='stream', action='read', status='old')
                if (iostat /= 0) error stop 'Error opening the file.'
                call read_header(this, nunit, pos)
                close(nunit)
                allocate(buffer_ch(this%height*this%width))
                buffer_ch = achar(0_ik)
 
-               open (newunit = nunit, file = file_name//'.'//file_format, iostat=iostat,&
-               access='stream', form='unformatted', action='read', status='old', position='append')
+               open (newunit = nunit, file = file_name//'.'//file_format,&
+               iostat=iostat, access='stream', form='unformatted', action='read', status='old', position='append')
                if (iostat /= 0) error stop 'Error opening the file.'
                read(nunit, iostat=iostat, pos=pos) buffer_ch
                if (iostat /= 0) error stop 'Error reading the file.'
@@ -613,15 +614,16 @@ contains
                this%pixels = iachar(transpose(reshape(buffer_ch, [this%width, this%height])), kind=ik)
                close(nunit)
              case ('pgm')
-               open (newunit = nunit, file = file_name//'.'//file_format, iostat=iostat, form='formatted',access='stream')
+               open (newunit = nunit, file = file_name//'.'//file_format,&
+               iostat=iostat, form='formatted', access='stream', action='read', status='old')
                if (iostat /= 0) error stop 'Error opening the file.'
                call read_header(this, nunit, pos)
                close(nunit)
                allocate(buffer_ch(this%height*this%width))
                buffer_ch = achar(0_ik)
 
-               open (newunit = nunit, file = file_name//'.'//file_format, iostat=iostat,&
-               access='stream', form='unformatted', action='read', status='old', position='append')
+               open (newunit = nunit, file = file_name//'.'//file_format,&
+               iostat=iostat, access='stream', form='unformatted', action='read', status='old', position='append')
                if (iostat /= 0) error stop 'Error opening the file.'
                read(nunit, iostat=iostat, pos=pos) buffer_ch
                if (iostat /= 0) error stop 'Error reading the file.'
@@ -629,15 +631,16 @@ contains
                this%pixels = iachar(transpose(reshape(buffer_ch, [this%width, this%height])), kind=ik)
                close(nunit)
              case ('ppm')
-               open (newunit = nunit, file = file_name//'.'//file_format, iostat=iostat, form='formatted',access='stream')
+               open (newunit = nunit, file = file_name//'.'//file_format,&
+               iostat=iostat, form='formatted', access='stream', action='read', status='old')
                if (iostat /= 0) error stop 'Error opening the file.'
                call read_header(this, nunit, pos)
                close(nunit)
                allocate(buffer_ch(this%height*3*this%width))
                buffer_ch = achar(0_ik)
 
-               open (newunit = nunit, file = file_name//'.'//file_format, iostat=iostat,&
-               access='stream', form='unformatted', action='read', status='old', position='append')
+               open (newunit = nunit, file = file_name//'.'//file_format,&
+               iostat=iostat, access='stream', form='unformatted', action='read', status='old', position='append')
                if (iostat /= 0) error stop 'Error opening the file.'
                read(nunit,iostat=iostat, pos=pos) buffer_ch
                call this%allocate_pixels()
@@ -649,7 +652,8 @@ contains
 
             select case (file_format)
              case ('pbm')
-               open (newunit = nunit, file = file_name//'.'//file_format, iostat=iostat)
+               open (newunit = nunit, file = file_name//'.'//file_format,&
+               iostat=iostat, access='stream', form='formatted', action='read', status='old')
                if (iostat /= 0) error stop 'Error opening the file.'
                call read_header(this, nunit, pos)
                allocate(buffer_int(this%height*this%width))
@@ -660,7 +664,8 @@ contains
                close(nunit)
                call this%check_pixel_range(this%pixels)
              case ('pgm')
-               open (newunit = nunit, file = file_name//'.'//file_format, iostat=iostat)
+               open (newunit = nunit, file = file_name//'.'//file_format,&
+               iostat=iostat, access='stream', form='formatted', action='read', status='old')
                if (iostat /= 0) error stop 'Error opening the file.'
                call read_header(this, nunit, pos)
                allocate(buffer_int(this%height*this%width))
@@ -671,7 +676,8 @@ contains
                call this%check_pixel_range(this%pixels)
                close(nunit)
              case ('ppm')
-               open (newunit = nunit, file = file_name//'.'//file_format, iostat=iostat)
+               open (newunit = nunit, file = file_name//'.'//file_format,&
+               iostat=iostat, access='stream', form='formatted', action='read', status='old')
                if (iostat /= 0) error stop 'Error opening the file.'
                call read_header(this, nunit, pos)
                allocate(buffer_int(this%height*3*this%width))
@@ -916,23 +922,26 @@ contains
 
       select case (this%magic_number)
        case ('P1', 'P2', 'P3')
-         open (newunit = nunit, file = file_name//'.'//this%file_format, status='replace', iostat=iostat)
+         open (newunit = nunit, file = file_name//'.'//this%file_format,&
+         status='replace', iostat=iostat, form='formatted', action='write')
          if (iostat /= 0) error stop 'Error opening the file.'
          call write_header(this, nunit)
          close(nunit)
 
-         open (newunit = nunit, file = file_name//'.'//this%file_format, status='old', iostat=iostat, position='append')
+         open (newunit = nunit, file = file_name//'.'//this%file_format,&
+         status='old', iostat=iostat, form='formatted', action='write', position='append')
          if (iostat /= 0) error stop 'Error opening the file.'
          write(nunit, '(*(g0,1x))', advance='no') transpose(this%pixels)
          close(nunit)
        case ('P4', 'P5', 'P6')
-         open (newunit = nunit, file = file_name//'.'//this%file_format, status='replace', iostat=iostat)
+         open (newunit = nunit, file = file_name//'.'//this%file_format,&
+         status='replace', iostat=iostat, form='formatted', action='write')
          if (iostat /= 0) error stop 'Error opening the file.'
          call write_header(this, nunit)
          close(nunit)
 
-         open (newunit = nunit, file = file_name//'.'//this%file_format, status='old', iostat=iostat,&
-         position='append', access = 'stream', form = 'unformatted')
+         open (newunit = nunit, file = file_name//'.'//this%file_format,&
+         status='old', iostat=iostat, access='stream', form='unformatted', action='write', position='append')
          if (iostat /= 0) error stop 'Error opening the file.'
          write(nunit) transpose(achar(this%pixels))
          close(nunit)
