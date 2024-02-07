@@ -74,6 +74,7 @@
       <div class="col">
         <ul class="list-inline" style="margin-bottom:0px;display:inline">
             <li class="list-inline-item" id="meta-author"><i class="fa fa-pencil"></i> Seyed Ali Ghasemi</li>
+            <li class="list-inline-item" id="meta-license"><i class="fa fa-legal"></i> BSD 3-Clause</li>
 
             <li class="list-inline-item" id="statements"><i class="fa fa-list-ol"></i>
               <a data-bs-toggle="tooltip"
@@ -147,6 +148,9 @@
 </h2>
     
 
+    <blockquote>
+<p>Checks if the pixel values are within the valid range.</p>
+</blockquote>
 
     <h3>Type Bound</h3>
     <p><a href='../type/format_pnm.html'>format_pnm</a></p>
@@ -164,7 +168,7 @@
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-this~61"></span>
+              <span class="anchor" id="variable-this~38"></span>
               class(<a href='../type/format_pnm.html'>format_pnm</a>),
             </td>
 <td>intent(inout)</td>
@@ -179,7 +183,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-pixels~4"></span>
+              <span class="anchor" id="variable-pixels~3"></span>
               integer(kind=ik),
             </td>
 <td>intent(in),</td>
@@ -617,11 +621,14 @@ large graphs.</div>
 <span class="w">      </span><span class="c">! Check if the pixel values are within the valid range</span>
 <span class="w">      </span><span class="k">select case</span><span class="w"> </span><span class="p">(</span><span class="n">this</span><span class="p">%</span><span class="n">file_format</span><span class="p">)</span>
 <span class="w">       </span><span class="k">case</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;pbm&#39;</span><span class="p">)</span>
-<span class="w">         </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">maxval</span><span class="p">(</span><span class="n">pixels</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="p">.</span><span class="nb">or</span><span class="p">.</span><span class="w"> </span><span class="nb">minval</span><span class="p">(</span><span class="n">pixels</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="k">error stop</span><span class="w"> </span><span class="s1">&#39;set_pixels: Invalid pixel values.&#39;</span>
+<span class="w">         </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">maxval</span><span class="p">(</span><span class="n">pixels</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="p">.</span><span class="nb">or</span><span class="p">.</span><span class="w"> </span><span class="nb">minval</span><span class="p">(</span><span class="n">pixels</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)&amp;</span>
+<span class="w">         </span><span class="k">error stop</span><span class="w"> </span><span class="s1">&#39;set_pixels: Invalid pixel values. Valid values are 0 and 1.&#39;</span>
 <span class="w">       </span><span class="k">case</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;pgm&#39;</span><span class="p">)</span>
-<span class="w">         </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">maxval</span><span class="p">(</span><span class="n">pixels</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">this</span><span class="p">%</span><span class="n">max_color</span><span class="w"> </span><span class="p">.</span><span class="nb">or</span><span class="p">.</span><span class="w"> </span><span class="nb">minval</span><span class="p">(</span><span class="n">pixels</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="k">error stop</span><span class="w"> </span><span class="s1">&#39;set_pixels: Invalid pixel values.&#39;</span>
+<span class="w">         </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">maxval</span><span class="p">(</span><span class="n">pixels</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">this</span><span class="p">%</span><span class="n">max_color</span><span class="w"> </span><span class="p">.</span><span class="nb">or</span><span class="p">.</span><span class="w"> </span><span class="nb">minval</span><span class="p">(</span><span class="n">pixels</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)&amp;</span>
+<span class="w">         </span><span class="k">error stop</span><span class="w"> </span><span class="s1">&#39;set_pixels: Invalid pixel values. Valid values are between 0 and max_color.&#39;</span>
 <span class="w">       </span><span class="k">case</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;ppm&#39;</span><span class="p">)</span>
-<span class="w">         </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">maxval</span><span class="p">(</span><span class="n">pixels</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">this</span><span class="p">%</span><span class="n">max_color</span><span class="w"> </span><span class="p">.</span><span class="nb">or</span><span class="p">.</span><span class="w"> </span><span class="nb">minval</span><span class="p">(</span><span class="n">pixels</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="k">error stop</span><span class="w"> </span><span class="s1">&#39;set_pixels: Invalid pixel values.&#39;</span>
+<span class="w">         </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">maxval</span><span class="p">(</span><span class="n">pixels</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">this</span><span class="p">%</span><span class="n">max_color</span><span class="w"> </span><span class="p">.</span><span class="nb">or</span><span class="p">.</span><span class="w"> </span><span class="nb">minval</span><span class="p">(</span><span class="n">pixels</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)&amp;</span>
+<span class="w">         </span><span class="k">error stop</span><span class="w"> </span><span class="s1">&#39;set_pixels: Invalid pixel values. Valid values are between 0 and max_color.&#39;</span>
 <span class="w">      </span><span class="k">end select</span>
 <span class="k">   end subroutine </span><span class="n">check_pixel_range</span>
 </pre></div>
@@ -637,14 +644,14 @@ large graphs.</div>
     <footer>
       <div class="container">
         <div class="row justify-content-between">
-          <div class="col"><p>ForImage was developed by Seyed Ali Ghasemi<br>&copy; 2023 
+          <div class="col"><p>ForImage was developed by Seyed Ali Ghasemi<br>&copy; 2023-2024 
 </p>
           </div>
           <div class="col">
             <p class="text-end">
               Documentation generated by
               <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
- on 2024-02-06T12:14:27.998388             </p>
+ on 2024-02-07T18:47:22.249853             </p>
           </div>
         </div>
         <br>
