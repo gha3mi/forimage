@@ -1,6 +1,6 @@
 project:             ForImage
-version:             {!VERSION!}
-year:                2023
+version:             0.3.0
+year:                2023-2024
 project_github:      https://github.com/gha3mi/forimage
 author:              Seyed Ali Ghasemi
 email:               info@gha3mi.com
