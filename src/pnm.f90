@@ -27,6 +27,7 @@ module pnm
    contains
       ! Procedures for setting individual attributes
       procedure :: set_format                 !!> Set the encoding of the PNM image.
+      procedure :: get_format                 !!> Get the encoding of the PNM image.
       procedure, private :: set_file_format   !!> Set the file format of the PNM image.
       procedure, private :: set_magicnumber   !!> Set the magic number of the PNM image.
       procedure, private :: set_width         !!> Set the width of the PNM image.
@@ -607,6 +608,19 @@ contains
 
       this%encoding = trim(encoding)
    end subroutine set_format
+   !===============================================================================
+
+
+   !===============================================================================
+   !> author: Seyed Ali Ghasemi
+   !> license: BSD 3-Clause
+   !!> Gets the encoding of the PNM image.
+   pure function get_format(this) result(encoding)
+      class(format_pnm), intent(in) :: this
+      character(:), allocatable        :: encoding
+
+      encoding = trim(this%encoding)
+   end function get_format
    !===============================================================================
 
 
