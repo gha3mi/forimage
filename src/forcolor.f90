@@ -775,7 +775,7 @@ contains
    !> author: Seyed Ali Ghasemi
    elemental pure subroutine hsv_to_rgb(h, s, v, r, g, b)
       real(rk), intent(in) :: h, s, v
-      integer, intent(out) :: r, g, b
+      integer(ik), intent(out) :: r, g, b
       real(rk) :: c, h_prime, x, m
       real(rk) :: h_dash, r1, g1, b1
 
@@ -872,7 +872,7 @@ contains
    !===============================================================================
    !> author: Seyed Ali Ghasemi
    elemental pure subroutine rgb_to_hsl(r, g, b, h, s, l)
-      integer, intent(in) :: r, g, b
+      integer(ik), intent(in) :: r, g, b
       real(rk), intent(out) :: h, s, l
       real(rk) :: rn, gn, bn
       real(rk) :: cmax, cmin
