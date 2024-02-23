@@ -65,7 +65,7 @@ program example26
 
 
    ! Set the color using a decimal value
-   call custom_color%set(name='custom_color', decimal=16088896)
+   call custom_color%set(name='custom_color', decimal=16088896_ik)
 
    ! Convert the color to other color spaces
    call custom_color%convert('decimal2all')
