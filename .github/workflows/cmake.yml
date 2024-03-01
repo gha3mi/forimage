@@ -6,47 +6,49 @@ on:
   pull_request:
     branches: [ "main" ]
 
-env:
-  BUILD_TYPE: Release
-
 jobs:
   test:
     runs-on: ${{ matrix.os }}
     strategy:
       fail-fast: false
       matrix:
-        os: [ubuntu-latest, macos-latest]
+        os: [ubuntu-latest, windows-latest, macos-latest]
         toolchain:
           - {compiler: gcc}
           - {compiler: intel}
           - {compiler: intel-classic}
           - {compiler: nvidia-hpc}
         exclude:
+          - os: windows-latest
+            toolchain: {compiler: nvidia-hpc}
           - os: macos-latest
             toolchain: {compiler: nvidia-hpc}
           - os: macos-latest
             toolchain: {compiler: intel}
 
     steps:
-      - uses: awvwgk/setup-fortran@v1
+      - uses: actions/checkout@v4
+
+      - uses: awvwgk/setup-fortran@main
         id: setup-fortran
         with:
           compiler: ${{ matrix.toolchain.compiler }}
           version: ${{ matrix.toolchain.version }}
 
-      - run: ${{ env.FC }} --version
+      - name: Install Ninja
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10' 
+      - run: pip install ninja
+          
+      - name: Configure CMake
+        run: cmake -B build -DCMAKE_BUILD_TYPE=Release -DCMAKE_Fortran_COMPILER=${{ env.FC }} -DBUILD_TESTING=TRUE -GNinja
         env:
           FC: ${{ steps.setup-fortran.outputs.fc }}
-          CC: ${{ steps.setup-fortran.outputs.cc }}
 
-      - uses: actions/checkout@v4
-      
-      - name: Configure CMake
-        run: cmake -B ${{github.workspace}}/build -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}} -DCMAKE_Fortran_COMPILER=${{ env.FC }} -DBUILD_TESTING=TRUE
-        
       - name: Build with CMake
-        run: cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}}
+        run: cmake --build build --config Release
 
       - name: Test with CMake
-        working-directory: ${{github.workspace}}/build
-        run: ctest -C ${{env.BUILD_TYPE}}
+        working-directory: build
+        run: ctest -C Release

@@ -39,7 +39,7 @@ jobs:
         github-token: ${{ secrets.GITHUB_TOKEN }}
 
     - name: Setup Fortran Compiler
-      uses: fortran-lang/setup-fortran@v1
+      uses: fortran-lang/setup-fortran@main
       id: setup-fortran
       with:
         compiler: ${{ matrix.toolchain.compiler }}
