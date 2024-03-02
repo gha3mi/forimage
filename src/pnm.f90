@@ -1,8 +1,8 @@
 !> author: Seyed Ali Ghasemi
 !> license: BSD 3-Clause
-!!> This module defines the `format_pnm` type for handling PNM (Portable Any Map) image files.
-!!> PNM files include both ASCII and binary representations for various image types, such as PBM, PGM, and PPM.
-!!> The module offers functionalities to manipulate, import, and export PNM images, along with image processing.
+!> This module defines the `format_pnm` type for handling PNM (Portable Any Map) image files.
+!> PNM files include both ASCII and binary representations for various image types, such as PBM, PGM, and PPM.
+!> The module offers functionalities to manipulate, import, and export PNM images, along with image processing.
 
 module pnm
    use forimage_parameters, only: rk, ik
@@ -14,20 +14,19 @@ module pnm
    !===============================================================================
    !> author: Seyed Ali Ghasemi
    !> license: BSD 3-Clause
-   !!> This type is designed to store and manipulate PNM (Portable Any Map) image files.
+   !> This type is designed to store and manipulate PNM (Portable Any Map) image files.
    type format_pnm
-      character(2)                             , private :: magic_number !!> Magic number representing the PNM image type (`P1`, `P2`, `P3`, `P4`, `P5`, `P6`).
-      integer                                  , private :: width        !!> Width (number of columns) of the image.
-      integer                                  , private :: height       !!> Height (number of rows) of the image.
-      character(:), allocatable                , private :: comment      !!> Optional comment associated with the image.
-      integer                                  , private :: max_color    !!> Maximum color value of the image. Used for PGM and PPM images.
-      integer(ik), dimension(:,:), allocatable :: pixels                 !!> Pixel values of the image.
-      character(3)                             , private :: file_format  !!> File format of the PNM image (`pbm`, `pgm`, `ppm`).
-      character(6)                             , private :: encoding     !!> Encoding of the PNM image (`ascii` or `plain`, `binary` or `raw`).
+      character(2)                             , private :: magic_number !! Magic number representing the PNM image type (`P1`, `P2`, `P3`, `P4`, `P5`, `P6`).
+      integer                                  , private :: width        !! Width (number of columns) of the image.
+      integer                                  , private :: height       !! Height (number of rows) of the image.
+      character(:), allocatable                , private :: comment      !! Optional comment associated with the image.
+      integer                                  , private :: max_color    !! Maximum color value of the image. Used for PGM and PPM images.
+      integer(ik), dimension(:,:), allocatable :: pixels                 !! Pixel values of the image.
+      character(3)                             , private :: file_format  !! File format of the PNM image (`pbm`, `pgm`, `ppm`).
+      character(6)                             , private :: encoding     !! Encoding of the PNM image (`ascii` or `plain`, `binary` or `raw`).
    contains
       ! Procedures for setting individual attributes
       procedure :: set_format                 !!> Set the encoding of the PNM image.
-      procedure :: get_format                 !!> Get the encoding of the PNM image.
       procedure, private :: set_file_format   !!> Set the file format of the PNM image.
       procedure, private :: set_magicnumber   !!> Set the magic number of the PNM image.
       procedure, private :: set_width         !!> Set the width of the PNM image.
@@ -39,6 +38,9 @@ module pnm
       procedure, private :: check_pixel_range !!> Check if the pixel values are within the valid range.
       procedure, private :: set_pixels        !!> Set the pixel values of the PNM image.
       
+      ! Procedures for setting individual attributes
+      procedure :: get_format                 !!> Get the encoding of the PNM image.
+
       ! High-level procedures for working with PNM images
       procedure :: set_pnm                    !!> Set the attributes of the PNM image.
       procedure :: print_info                 !!> Display information about the image (dimensions, aspect ratio, etc.).
@@ -65,7 +67,7 @@ contains
    !===============================================================================
    !> author: Seyed Ali Ghasemi
    !> license: BSD 3-Clause
-   !!> Displays information about the image e.g. dimensions, aspect ratio, etc.
+   !> Displays information about the image e.g. dimensions, aspect ratio, etc.
    elemental impure subroutine print_info(this)
       class(format_pnm), intent(in) :: this
       real(rk) :: avg, avg_red, avg_green, avg_blue
@@ -130,7 +132,7 @@ contains
    !===============================================================================
    !> author: Seyed Ali Ghasemi
    !> license: BSD 3-Clause
-   !!> Calculates the average color values of the image. Required for `print_info` method.
+   !> Calculates the average color values of the image. Required for `print_info` method.
    elemental pure subroutine average_colors(this, avg, avg_red, avg_green, avg_blue)
       class(format_pnm), intent(in) :: this
       real(rk), intent(out), optional :: avg_red, avg_green, avg_blue, avg
@@ -155,7 +157,7 @@ contains
    !===============================================================================
    !> author: Seyed Ali Ghasemi
    !> license: BSD 3-Clause
-   !!> Calculates the aspect ratio of the image. Required for `print_info` method.
+   !> Calculates the aspect ratio of the image. Required for `print_info` method.
    elemental pure subroutine aspect_ratio(this, ratio)
       class(format_pnm), intent(in) :: this
       real(rk), intent(out) :: ratio
@@ -167,7 +169,7 @@ contains
    !===============================================================================
    !> author: Seyed Ali Ghasemi
    !> license: BSD 3-Clause
-   !!> Resizes the image to specified dimensions.
+   !> Resizes the image to specified dimensions.
    elemental pure subroutine resize(this, new_height, new_width)
       class(format_pnm), intent(inout)         :: this
       integer,           intent(in)            :: new_width, new_height
@@ -226,7 +228,7 @@ contains
    !===============================================================================
    !> author: Seyed Ali Ghasemi
    !> license: BSD 3-Clause
-   !!> Crops the image to a specified region.
+   !> Crops the image to a specified region.
    elemental pure subroutine crop(this, start_row, end_row, start_col, end_col)
       class(format_pnm), intent(inout)         :: this
       integer,           intent(in)            :: start_row, end_row, start_col, end_col
@@ -288,7 +290,7 @@ contains
    !===============================================================================
    !> author: Seyed Ali Ghasemi
    !> license: BSD 3-Clause
-   !!> Flips the image vertically.
+   !> Flips the image vertically.
    elemental pure subroutine flip_vertical(this)
       class(format_pnm), intent(inout) :: this
 
@@ -310,7 +312,7 @@ contains
    !===============================================================================
    !> author: Seyed Ali Ghasemi
    !> license: BSD 3-Clause
-   !!> Flips the image horizontally.
+   !> Flips the image horizontally.
    elemental pure subroutine flip_horizontal(this)
       class(format_pnm), intent(inout) :: this
 
@@ -347,7 +349,7 @@ contains
    !===============================================================================
    !> author: Seyed Ali Ghasemi
    !> license: BSD 3-Clause
-   !!> Rotates the image by a specified angle. Supported angles are 90, 180, 270, -90, -180, -270.
+   !> Rotates the image by a specified angle. Supported angles are 90, 180, 270, -90, -180, -270.
    elemental pure subroutine rotate(this, angle)
       class(format_pnm), intent(inout)         :: this
       integer,           intent(in)            :: angle
@@ -443,7 +445,7 @@ contains
    !===============================================================================
    !> author: Seyed Ali Ghasemi
    !> license: BSD 3-Clause
-   !!> Converts a color image to greyscale. Only supported for PPM images.
+   !> Converts a color image to greyscale. Only supported for PPM images.
    elemental pure subroutine greyscale(this)
       class(format_pnm), intent(inout) :: this
       integer                          :: i, j
@@ -469,7 +471,7 @@ contains
    !===============================================================================
    !> author: Seyed Ali Ghasemi
    !> license: BSD 3-Clause
-   !!> Removes one or more RGB channels from the image. Only supported for PPM images.
+   !> Removes one or more RGB channels from the image. Only supported for PPM images.
    elemental pure subroutine remove_channels(this, remove_r, remove_g, remove_b)
       class(format_pnm), intent(inout) :: this
       logical, optional, intent(in)    :: remove_r, remove_g, remove_b
@@ -507,7 +509,7 @@ contains
    !===============================================================================
    !> author: Seyed Ali Ghasemi
    !> license: BSD 3-Clause
-   !!> Swaps the RGB channels of the image. Only supported for PPM images.
+   !> Swaps the RGB channels of the image. Only supported for PPM images.
    elemental pure subroutine swap_channels(this, swap)
       class(format_pnm), intent(inout) :: this
       character(*),      intent(in)    :: swap
@@ -558,7 +560,7 @@ contains
    !===============================================================================
    !> author: Seyed Ali Ghasemi
    !> license: BSD 3-Clause
-   !!> Brightens or darkens the image. Only supported for PGM and PPM images.
+   !> Brightens or darkens the image. Only supported for PGM and PPM images.
    elemental pure subroutine brighten(this, factor)
       class(format_pnm), intent(inout) :: this
       integer,           intent(in)    :: factor
@@ -576,7 +578,7 @@ contains
    !===============================================================================
    !> author: Seyed Ali Ghasemi
    !> license: BSD 3-Clause
-   !!> Inverts the colors of the image.
+   !> Inverts the colors of the image.
    elemental pure subroutine negative(this)
       class(format_pnm), intent(inout) :: this
 
@@ -588,7 +590,7 @@ contains
    !===============================================================================
    !> author: Seyed Ali Ghasemi
    !> license: BSD 3-Clause
-   !!> Sets the file format of the PNM image. Supported values are `pbm`, `pgm`, and `ppm`.
+   !> Sets the file format of the PNM image. Supported values are `pbm`, `pgm`, and `ppm`.
    elemental pure subroutine set_file_format(this, file_format)
       class(format_pnm), intent(inout) :: this
       character(3), intent(in)         :: file_format
@@ -601,7 +603,7 @@ contains
    !===============================================================================
    !> author: Seyed Ali Ghasemi
    !> license: BSD 3-Clause
-   !!> Sets the encoding of the PNM image. Supported values are `ascii` or `plain` and `binary` or `raw`.
+   !> Sets the encoding of the PNM image. Supported values are `ascii` or `plain` and `binary` or `raw`.
    elemental pure subroutine set_format(this, encoding)
       class(format_pnm), intent(inout) :: this
       character(*), intent(in)         :: encoding
@@ -614,7 +616,7 @@ contains
    !===============================================================================
    !> author: Seyed Ali Ghasemi
    !> license: BSD 3-Clause
-   !!> Gets the encoding of the PNM image.
+   !> Gets the encoding of the PNM image.
    pure function get_format(this) result(encoding)
       class(format_pnm), intent(in) :: this
       character(:), allocatable        :: encoding
@@ -627,7 +629,7 @@ contains
    !===============================================================================
    !> author: Seyed Ali Ghasemi
    !> license: BSD 3-Clause
-   !!> Deallocates memory for the pixels of the PNM image.
+   !> Deallocates memory for the pixels of the PNM image.
    elemental pure subroutine deallocate_pnm(this)
       class(format_pnm), intent(inout)    :: this
       if (allocated(this%pixels)) deallocate(this%pixels)
@@ -638,7 +640,7 @@ contains
    !===============================================================================
    !> author: Seyed Ali Ghasemi
    !> license: BSD 3-Clause
-   !!> Reads a PNM image from a file.
+   !> Reads a PNM image from a file.
    impure subroutine import_pnm(this, file_name, file_format, encoding)
       class(format_pnm), intent(inout)       :: this
       character(*),      intent(in)          :: file_name, encoding
@@ -764,7 +766,7 @@ contains
    !===============================================================================
    !> author: Seyed Ali Ghasemi
    !> license: BSD 3-Clause
-   !!> Sets the attributes of the PNM image.
+   !> Sets the attributes of the PNM image.
    pure subroutine set_pnm(this, encoding, file_format,width,height,max_color,comment,pixels)
       class(format_pnm),           intent(inout) :: this
       integer,                     intent(in)    :: width
@@ -810,7 +812,7 @@ contains
    !===============================================================================
    !> author: Seyed Ali Ghasemi
    !> license: BSD 3-Clause
-   !!> Allocates memory for the pixels of the PNM image.
+   !> Allocates memory for the pixels of the PNM image.
    elemental pure subroutine allocate_pixels(this)
       class(format_pnm), intent(inout) :: this
       select case(this%magic_number)
@@ -834,7 +836,7 @@ contains
    !===============================================================================
    !> author: Seyed Ali Ghasemi
    !> license: BSD 3-Clause
-   !!> Sets the magic number of the PNM image. Supported values are `P1`, `P2`, `P3`, `P4`, `P5`, and `P6`.
+   !> Sets the magic number of the PNM image. Supported values are `P1`, `P2`, `P3`, `P4`, `P5`, and `P6`.
    elemental pure subroutine set_magicnumber(this, magic_number)
       class(format_pnm), intent(inout) :: this
       character(*), intent(in)         :: magic_number
@@ -846,7 +848,7 @@ contains
    !===============================================================================
    !> author: Seyed Ali Ghasemi
    !> license: BSD 3-Clause
-   !!> Sets the width of the PNM image.
+   !> Sets the width of the PNM image.
    elemental pure subroutine set_width(this, width)
       class(format_pnm), intent(inout) :: this
       integer, intent(in)              :: width
@@ -858,7 +860,7 @@ contains
    !===============================================================================
    !> author: Seyed Ali Ghasemi
    !> license: BSD 3-Clause
-   !!> Sets the height of the PNM image.
+   !> Sets the height of the PNM image.
    elemental pure subroutine set_height(this, height)
       class(format_pnm), intent(inout) :: this
       integer, intent(in)              :: height
@@ -870,7 +872,7 @@ contains
    !===============================================================================
    !> author: Seyed Ali Ghasemi
    !> license: BSD 3-Clause
-   !!> Sets a comment for the PNM image.
+   !> Sets a comment for the PNM image.
    elemental pure subroutine set_comment(this, comment)
       class(format_pnm), intent(inout) :: this
       character(*), intent(in)         :: comment
@@ -882,7 +884,7 @@ contains
    !===============================================================================
    !> author: Seyed Ali Ghasemi
    !> license: BSD 3-Clause
-   !!> Sets the maximum color value of the PNM image. Only required for PGM and PPM images
+   !> Sets the maximum color value of the PNM image. Only required for PGM and PPM images
    elemental pure subroutine set_max_color(this, max_color)
       class(format_pnm), intent(inout) :: this
       integer, intent(in)              :: max_color
@@ -894,7 +896,7 @@ contains
    !===============================================================================
    !> author: Seyed Ali Ghasemi
    !> license: BSD 3-Clause
-   !!> Sets the header of the PNM image. The header includes the magic number, width, height, comment, and max_color.
+   !> Sets the header of the PNM image. The header includes the magic number, width, height, comment, and max_color.
    elemental pure subroutine set_header(this, magic_number, width, height, comment, max_color)
       class(format_pnm), intent(inout) :: this
       character(*), intent(in)         :: magic_number
@@ -915,7 +917,7 @@ contains
    !===============================================================================
    !> author: Seyed Ali Ghasemi
    !> license: BSD 3-Clause
-   !!> Checks if the pixel values are within the valid range.
+   !> Checks if the pixel values are within the valid range.
    pure subroutine check_pixel_range(this, pixels)
       class(format_pnm),           intent(inout) :: this
       integer(ik), dimension(:,:), intent(in)    :: pixels
@@ -939,7 +941,7 @@ contains
    !===============================================================================
    !> author: Seyed Ali Ghasemi
    !> license: BSD 3-Clause
-   !!> Sets the pixel values of the PNM image.
+   !> Sets the pixel values of the PNM image.
    pure subroutine set_pixels(this, pixels)
       class(format_pnm), intent(inout) :: this
       integer(ik), dimension(:,:), intent(in) :: pixels
@@ -954,7 +956,7 @@ contains
    !===============================================================================
    !> author: Seyed Ali Ghasemi
    !> license: BSD 3-Clause
-   !!> Sets the pixel values of the PNM image.
+   !> Sets the pixel values of the PNM image.
    elemental pure subroutine set_pixel(this, grey,r,g,b, i, j)
       class(format_pnm), intent(inout) :: this
       integer, intent(in), optional    :: grey
@@ -977,7 +979,7 @@ contains
    !===============================================================================
    !> author: Seyed Ali Ghasemi
    !> license: BSD 3-Clause
-   !!> Writes the PNM image to a file.
+   !> Writes the PNM image to a file.
    impure subroutine export_pnm(this, file_name, encoding)
       class(format_pnm), intent(inout)            :: this
       character(*),      intent(in)               :: file_name
@@ -1043,7 +1045,7 @@ contains
    !===============================================================================
    !> author: Seyed Ali Ghasemi
    !> license: BSD 3-Clause
-   !!> Writes the header of the PNM image to a file. Required before writing the pixels to the file.
+   !> Writes the header of the PNM image to a file. Required before writing the pixels to the file.
    subroutine write_header(this, nunit)
       type(format_pnm), intent(in) :: this
       integer, intent(in)           :: nunit
@@ -1073,7 +1075,7 @@ contains
    !===============================================================================
    !> author: Seyed Ali Ghasemi
    !> license: BSD 3-Clause
-   !!> Reads the header of the PNM image from a file. Required before reading the pixels from the file.
+   !> Reads the header of the PNM image from a file. Required before reading the pixels from the file.
    subroutine read_header(this, nunit, pos)
       class(format_pnm), intent(inout) :: this
       integer, intent(in)           :: nunit
