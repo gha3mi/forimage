@@ -154,7 +154,6 @@
       <div id="boundprocs-0" class="collapse">
         <div class="list-group list-group-flush">
             <a class="list-group-item" href="../type/format_pnm.html#boundprocedure-set_format">set_format</a>
-            <a class="list-group-item" href="../type/format_pnm.html#boundprocedure-get_format">get_format</a>
             <a class="list-group-item" href="../type/format_pnm.html#boundprocedure-set_file_format">set_file_format</a>
             <a class="list-group-item" href="../type/format_pnm.html#boundprocedure-set_magicnumber">set_magicnumber</a>
             <a class="list-group-item" href="../type/format_pnm.html#boundprocedure-set_width">set_width</a>
@@ -165,11 +164,12 @@
             <a class="list-group-item" href="../type/format_pnm.html#boundprocedure-allocate_pixels">allocate_pixels</a>
             <a class="list-group-item" href="../type/format_pnm.html#boundprocedure-check_pixel_range">check_pixel_range</a>
             <a class="list-group-item" href="../type/format_pnm.html#boundprocedure-set_pixels">set_pixels</a>
+            <a class="list-group-item" href="../type/format_pnm.html#boundprocedure-get_format">get_format</a>
             <a class="list-group-item" href="../type/format_pnm.html#boundprocedure-set_pnm">set_pnm</a>
             <a class="list-group-item" href="../type/format_pnm.html#boundprocedure-print_info">print_info</a>
             <a class="list-group-item" href="../type/format_pnm.html#boundprocedure-import_pnm">import_pnm</a>
             <a class="list-group-item" href="../type/format_pnm.html#boundprocedure-export_pnm">export_pnm</a>
-            <a class="list-group-item" href="../type/format_pnm.html#boundprocedure-finalize">finalize</a>
+            <a class="list-group-item" href="../type/format_pnm.html#boundprocedure-finalize~2">finalize</a>
             <a class="list-group-item" href="../type/format_pnm.html#boundprocedure-negative">negative</a>
             <a class="list-group-item" href="../type/format_pnm.html#boundprocedure-brighten">brighten</a>
             <a class="list-group-item" href="../type/format_pnm.html#boundprocedure-swap_channels">swap_channels</a>
@@ -201,9 +201,7 @@
     <div class="col-md-9" id='text'>
       <h2>
         type, public :: format_pnm</h2>
-    <blockquote>
-<p>This type is designed to store and manipulate PNM (Portable Any Map) image files.</p>
-</blockquote>
+    <p>This type is designed to store and manipulate PNM (Portable Any Map) image files.</p>
     <br>
 
     <section>
@@ -232,9 +230,7 @@
                 <td></td>
                 <td></td>
             <td>
-                <blockquote>
-<p>Magic number representing the PNM image type (<code>P1</code>, <code>P2</code>, <code>P3</code>, <code>P4</code>, <code>P5</code>, <code>P6</code>).</p>
-</blockquote>
+                <p>Magic number representing the PNM image type (<code>P1</code>, <code>P2</code>, <code>P3</code>, <code>P4</code>, <code>P5</code>, <code>P6</code>).</p>
             </td>
         </tr>
         <tr>
@@ -251,9 +247,7 @@
                 <td></td>
                 <td></td>
             <td>
-                <blockquote>
-<p>Width (number of columns) of the image.</p>
-</blockquote>
+                <p>Width (number of columns) of the image.</p>
             </td>
         </tr>
         <tr>
@@ -270,9 +264,7 @@
                 <td></td>
                 <td></td>
             <td>
-                <blockquote>
-<p>Height (number of rows) of the image.</p>
-</blockquote>
+                <p>Height (number of rows) of the image.</p>
             </td>
         </tr>
         <tr>
@@ -289,9 +281,7 @@
                 <td></td>
                 <td></td>
             <td>
-                <blockquote>
-<p>Optional comment associated with the image.</p>
-</blockquote>
+                <p>Optional comment associated with the image.</p>
             </td>
         </tr>
         <tr>
@@ -308,9 +298,7 @@
                 <td></td>
                 <td></td>
             <td>
-                <blockquote>
-<p>Maximum color value of the image. Used for PGM and PPM images.</p>
-</blockquote>
+                <p>Maximum color value of the image. Used for PGM and PPM images.</p>
             </td>
         </tr>
         <tr>
@@ -327,9 +315,7 @@
                 <td></td>
                 <td></td>
             <td>
-                <blockquote>
-<p>Pixel values of the image.</p>
-</blockquote>
+                <p>Pixel values of the image.</p>
             </td>
         </tr>
         <tr>
@@ -346,9 +332,7 @@
                 <td></td>
                 <td></td>
             <td>
-                <blockquote>
-<p>File format of the PNM image (<code>pbm</code>, <code>pgm</code>, <code>ppm</code>).</p>
-</blockquote>
+                <p>File format of the PNM image (<code>pbm</code>, <code>pgm</code>, <code>ppm</code>).</p>
             </td>
         </tr>
         <tr>
@@ -365,9 +349,7 @@
                 <td></td>
                 <td></td>
             <td>
-                <blockquote>
-<p>Encoding of the PNM image (<code>ascii</code> or <code>plain</code>, <code>binary</code> or <code>raw</code>).</p>
-</blockquote>
+                <p>Encoding of the PNM image (<code>ascii</code> or <code>plain</code>, <code>binary</code> or <code>raw</code>).</p>
             </td>
         </tr>
     </tbody>
@@ -407,7 +389,7 @@
     </dl>
 
 
-  <p>Sets the encoding of the PNM image. Supported values are <code>ascii</code> or <code>plain</code> and <code>binary</code> or <code>raw</code>.</p><a href="../proc/set_format.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+  <p>Sets the encoding of the PNM image. Supported values are <code>ascii</code> or <code>plain</code> and <code>binary</code> or <code>raw</code>.</p>
 
   <h4>Arguments</h4>
       <table class="table table-striped varlist">
@@ -462,75 +444,6 @@
           <div class="row">
               <div class="card mt-3">
     <div class="card-header codesum">
-      <span class="anchor" id="boundprocedure-get_format"></span>
-      <h3>
-          procedure, public ::
-  <strong>get_format</strong>
-        
-      </h3>
-    </div>
-      <div class="card-body">
-        
-        <blockquote>
-<p>Get the encoding of the PNM image.</p>
-</blockquote>
-      </div>
-    <ul class="list-group">
-        <li class="list-group-item">
-                  <h3>
-    private pure function <a href='../proc/get_format.html'>get_format</a>(this) result(encoding)  
-</h3>
-        <dl class="dl-horizontal">
-        <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
-        <dt>License</dt><dd>BSD 3-Clause</dd>
-    </dl>
-
-
-  <p>Gets the encoding of the PNM image.</p><a href="../proc/get_format.html" class="pull-right"><emph>Read more&hellip;</emph></a>
-
-  <h4>Arguments</h4>
-      <table class="table table-striped varlist">
-    <thead>
-      <tr>
-        <th scope="col">Type</th>
-<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
-        <th scope="col"></th>
-        <th scope="col">Name</th>
-        <th scope="col"></th>
-    </thead>
-    <tbody>
-        <tr>
-            <td>
-              <span class="anchor" ></span>
-              class(<a href='format_pnm.html'>format_pnm</a>),
-            </td>
-<td>intent(in)</td>
-              <td></td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>this</strong></td>
-            <td>
-
-            </td>
-        </tr>
-    </tbody>
-  </table>
-
-    <h4>
-    Return Value
-    <small>character(len=:), allocatable</small>
-    </h4>
-    
-
-        </li>
-    </ul>
-  </div>
-
-          </div>
-          <div class="row">
-              <div class="card mt-3">
-    <div class="card-header codesum">
       <span class="anchor" id="boundprocedure-set_file_format"></span>
       <h3>
           procedure, private ::
@@ -555,7 +468,7 @@
     </dl>
 
 
-  <p>Sets the file format of the PNM image. Supported values are <code>pbm</code>, <code>pgm</code>, and <code>ppm</code>.</p><a href="../proc/set_file_format.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+  <p>Sets the file format of the PNM image. Supported values are <code>pbm</code>, <code>pgm</code>, and <code>ppm</code>.</p>
 
   <h4>Arguments</h4>
       <table class="table table-striped varlist">
@@ -634,7 +547,7 @@
     </dl>
 
 
-  <p>Sets the magic number of the PNM image. Supported values are <code>P1</code>, <code>P2</code>, <code>P3</code>, <code>P4</code>, <code>P5</code>, and <code>P6</code>.</p><a href="../proc/set_magicnumber.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+  <p>Sets the magic number of the PNM image. Supported values are <code>P1</code>, <code>P2</code>, <code>P3</code>, <code>P4</code>, <code>P5</code>, and <code>P6</code>.</p>
 
   <h4>Arguments</h4>
       <table class="table table-striped varlist">
@@ -713,7 +626,7 @@
     </dl>
 
 
-  <p>Sets the width of the PNM image.</p><a href="../proc/set_width.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+  <p>Sets the width of the PNM image.</p>
 
   <h4>Arguments</h4>
       <table class="table table-striped varlist">
@@ -792,7 +705,7 @@
     </dl>
 
 
-  <p>Sets the height of the PNM image.</p><a href="../proc/set_height.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+  <p>Sets the height of the PNM image.</p>
 
   <h4>Arguments</h4>
       <table class="table table-striped varlist">
@@ -871,7 +784,7 @@
     </dl>
 
 
-  <p>Sets a comment for the PNM image.</p><a href="../proc/set_comment.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+  <p>Sets a comment for the PNM image.</p>
 
   <h4>Arguments</h4>
       <table class="table table-striped varlist">
@@ -950,7 +863,7 @@
     </dl>
 
 
-  <p>Sets the maximum color value of the PNM image. Only required for PGM and PPM images</p><a href="../proc/set_max_color.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+  <p>Sets the maximum color value of the PNM image. Only required for PGM and PPM images</p>
 
   <h4>Arguments</h4>
       <table class="table table-striped varlist">
@@ -1029,7 +942,7 @@
     </dl>
 
 
-  <p>Sets the header of the PNM image. The header includes the magic number, width, height, comment, and max_color.</p><a href="../proc/set_header.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+  <p>Sets the header of the PNM image. The header includes the magic number, width, height, comment, and max_color.</p>
 
   <h4>Arguments</h4>
       <table class="table table-striped varlist">
@@ -1168,7 +1081,7 @@
     </dl>
 
 
-  <p>Allocates memory for the pixels of the PNM image.</p><a href="../proc/allocate_pixels.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+  <p>Allocates memory for the pixels of the PNM image.</p>
 
   <h4>Arguments</h4>
       <table class="table table-striped varlist">
@@ -1232,7 +1145,7 @@
     </dl>
 
 
-  <p>Checks if the pixel values are within the valid range.</p><a href="../proc/check_pixel_range.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+  <p>Checks if the pixel values are within the valid range.</p>
 
   <h4>Arguments</h4>
       <table class="table table-striped varlist">
@@ -1311,7 +1224,7 @@
     </dl>
 
 
-  <p>Sets the pixel values of the PNM image.</p><a href="../proc/set_pixels.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+  <p>Sets the pixel values of the PNM image.</p>
 
   <h4>Arguments</h4>
       <table class="table table-striped varlist">
@@ -1366,6 +1279,75 @@
           <div class="row">
               <div class="card mt-3">
     <div class="card-header codesum">
+      <span class="anchor" id="boundprocedure-get_format"></span>
+      <h3>
+          procedure, public ::
+  <strong>get_format</strong>
+        
+      </h3>
+    </div>
+      <div class="card-body">
+        
+        <blockquote>
+<p>Get the encoding of the PNM image.</p>
+</blockquote>
+      </div>
+    <ul class="list-group">
+        <li class="list-group-item">
+                  <h3>
+    private pure function <a href='../proc/get_format.html'>get_format</a>(this) result(encoding)  
+</h3>
+        <dl class="dl-horizontal">
+        <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
+        <dt>License</dt><dd>BSD 3-Clause</dd>
+    </dl>
+
+
+  <p>Gets the encoding of the PNM image.</p>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='format_pnm.html'>format_pnm</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>this</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+    <h4>
+    Return Value
+    <small>character(len=:), allocatable</small>
+    </h4>
+    
+
+        </li>
+    </ul>
+  </div>
+
+          </div>
+          <div class="row">
+              <div class="card mt-3">
+    <div class="card-header codesum">
       <span class="anchor" id="boundprocedure-set_pnm"></span>
       <h3>
           procedure, public ::
@@ -1390,7 +1372,7 @@
     </dl>
 
 
-  <p>Sets the attributes of the PNM image.</p><a href="../proc/set_pnm.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+  <p>Sets the attributes of the PNM image.</p>
 
   <h4>Arguments</h4>
       <table class="table table-striped varlist">
@@ -1559,7 +1541,7 @@
     </dl>
 
 
-  <p>Displays information about the image e.g. dimensions, aspect ratio, etc.</p><a href="../proc/print_info.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+  <p>Displays information about the image e.g. dimensions, aspect ratio, etc.</p>
 
   <h4>Arguments</h4>
       <table class="table table-striped varlist">
@@ -1623,7 +1605,7 @@
     </dl>
 
 
-  <p>Reads a PNM image from a file.</p><a href="../proc/import_pnm.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+  <p>Reads a PNM image from a file.</p>
 
   <h4>Arguments</h4>
       <table class="table table-striped varlist">
@@ -1732,7 +1714,7 @@
     </dl>
 
 
-  <p>Writes the PNM image to a file.</p><a href="../proc/export_pnm.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+  <p>Writes the PNM image to a file.</p>
 
   <h4>Arguments</h4>
       <table class="table table-striped varlist">
@@ -1802,7 +1784,7 @@
           <div class="row">
               <div class="card mt-3">
     <div class="card-header codesum">
-      <span class="anchor" id="boundprocedure-finalize"></span>
+      <span class="anchor" id="boundprocedure-finalize~2"></span>
       <h3>
           procedure, public ::
   <strong>finalize</strong> => <a href='/home/runner/work/forimage/forimage/doc/proc/deallocate_pnm.html'>deallocate_pnm</a>
@@ -1826,7 +1808,7 @@
     </dl>
 
 
-  <p>Deallocates memory for the pixels of the PNM image.</p><a href="../proc/deallocate_pnm.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+  <p>Deallocates memory for the pixels of the PNM image.</p>
 
   <h4>Arguments</h4>
       <table class="table table-striped varlist">
@@ -1890,7 +1872,7 @@
     </dl>
 
 
-  <p>Inverts the colors of the image.</p><a href="../proc/negative.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+  <p>Inverts the colors of the image.</p>
 
   <h4>Arguments</h4>
       <table class="table table-striped varlist">
@@ -1954,7 +1936,7 @@
     </dl>
 
 
-  <p>Brightens or darkens the image. Only supported for PGM and PPM images.</p><a href="../proc/brighten.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+  <p>Brightens or darkens the image. Only supported for PGM and PPM images.</p>
 
   <h4>Arguments</h4>
       <table class="table table-striped varlist">
@@ -2033,7 +2015,7 @@
     </dl>
 
 
-  <p>Swaps the RGB channels of the image. Only supported for PPM images.</p><a href="../proc/swap_channels.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+  <p>Swaps the RGB channels of the image. Only supported for PPM images.</p>
 
   <h4>Arguments</h4>
       <table class="table table-striped varlist">
@@ -2112,7 +2094,7 @@
     </dl>
 
 
-  <p>Removes one or more RGB channels from the image. Only supported for PPM images.</p><a href="../proc/remove_channels.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+  <p>Removes one or more RGB channels from the image. Only supported for PPM images.</p>
 
   <h4>Arguments</h4>
       <table class="table table-striped varlist">
@@ -2221,7 +2203,7 @@
     </dl>
 
 
-  <p>Converts a color image to greyscale. Only supported for PPM images.</p><a href="../proc/greyscale.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+  <p>Converts a color image to greyscale. Only supported for PPM images.</p>
 
   <h4>Arguments</h4>
       <table class="table table-striped varlist">
@@ -2285,7 +2267,7 @@
     </dl>
 
 
-  <p>Rotates the image by a specified angle. Supported angles are 90, 180, 270, -90, -180, -270.</p><a href="../proc/rotate.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+  <p>Rotates the image by a specified angle. Supported angles are 90, 180, 270, -90, -180, -270.</p>
 
   <h4>Arguments</h4>
       <table class="table table-striped varlist">
@@ -2364,7 +2346,7 @@
     </dl>
 
 
-  <p>Flips the image horizontally.</p><a href="../proc/flip_horizontal.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+  <p>Flips the image horizontally.</p>
 
   <h4>Arguments</h4>
       <table class="table table-striped varlist">
@@ -2428,7 +2410,7 @@
     </dl>
 
 
-  <p>Flips the image vertically.</p><a href="../proc/flip_vertical.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+  <p>Flips the image vertically.</p>
 
   <h4>Arguments</h4>
       <table class="table table-striped varlist">
@@ -2492,7 +2474,7 @@
     </dl>
 
 
-  <p>Crops the image to a specified region.</p><a href="../proc/crop.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+  <p>Crops the image to a specified region.</p>
 
   <h4>Arguments</h4>
       <table class="table table-striped varlist">
@@ -2616,7 +2598,7 @@
     </dl>
 
 
-  <p>Resizes the image to specified dimensions.</p><a href="../proc/resize.html" class="pull-right"><emph>Read more&hellip;</emph></a>
+  <p>Resizes the image to specified dimensions.</p>
 
   <h4>Arguments</h4>
       <table class="table table-striped varlist">
@@ -2688,18 +2670,17 @@
     <section>
     <h3><span class="anchor" id="src"></span>Source Code</h3>
     <div class="hl codehilite"><pre><span></span><span class="w">   </span><span class="k">type </span><span class="n">format_pnm</span>
-<span class="w">      </span><span class="kt">character</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="w">                             </span><span class="p">,</span><span class="w"> </span><span class="k">private</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">magic_number</span><span class="w"> </span><span class="c">!!&gt; Magic number representing the PNM image type (`P1`, `P2`, `P3`, `P4`, `P5`, `P6`).</span>
-<span class="w">      </span><span class="kt">integer</span><span class="w">                                  </span><span class="p">,</span><span class="w"> </span><span class="k">private</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">width</span><span class="w">        </span><span class="c">!!&gt; Width (number of columns) of the image.</span>
-<span class="w">      </span><span class="kt">integer</span><span class="w">                                  </span><span class="p">,</span><span class="w"> </span><span class="k">private</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">height</span><span class="w">       </span><span class="c">!!&gt; Height (number of rows) of the image.</span>
-<span class="w">      </span><span class="kt">character</span><span class="p">(:),</span><span class="w"> </span><span class="k">allocatable</span><span class="w">                </span><span class="p">,</span><span class="w"> </span><span class="k">private</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">comment</span><span class="w">      </span><span class="c">!!&gt; Optional comment associated with the image.</span>
-<span class="w">      </span><span class="kt">integer</span><span class="w">                                  </span><span class="p">,</span><span class="w"> </span><span class="k">private</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">max_color</span><span class="w">    </span><span class="c">!!&gt; Maximum color value of the image. Used for PGM and PPM images.</span>
-<span class="w">      </span><span class="kt">integer</span><span class="p">(</span><span class="n">ik</span><span class="p">),</span><span class="w"> </span><span class="k">dimension</span><span class="p">(:,:),</span><span class="w"> </span><span class="k">allocatable</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">pixels</span><span class="w">                 </span><span class="c">!!&gt; Pixel values of the image.</span>
-<span class="w">      </span><span class="kt">character</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="w">                             </span><span class="p">,</span><span class="w"> </span><span class="k">private</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">file_format</span><span class="w">  </span><span class="c">!!&gt; File format of the PNM image (`pbm`, `pgm`, `ppm`).</span>
-<span class="w">      </span><span class="kt">character</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span><span class="w">                             </span><span class="p">,</span><span class="w"> </span><span class="k">private</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">encoding</span><span class="w">     </span><span class="c">!!&gt; Encoding of the PNM image (`ascii` or `plain`, `binary` or `raw`).</span>
+<span class="w">      </span><span class="kt">character</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="w">                             </span><span class="p">,</span><span class="w"> </span><span class="k">private</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">magic_number</span><span class="w"> </span><span class="c">!! Magic number representing the PNM image type (`P1`, `P2`, `P3`, `P4`, `P5`, `P6`).</span>
+<span class="w">      </span><span class="kt">integer</span><span class="w">                                  </span><span class="p">,</span><span class="w"> </span><span class="k">private</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">width</span><span class="w">        </span><span class="c">!! Width (number of columns) of the image.</span>
+<span class="w">      </span><span class="kt">integer</span><span class="w">                                  </span><span class="p">,</span><span class="w"> </span><span class="k">private</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">height</span><span class="w">       </span><span class="c">!! Height (number of rows) of the image.</span>
+<span class="w">      </span><span class="kt">character</span><span class="p">(:),</span><span class="w"> </span><span class="k">allocatable</span><span class="w">                </span><span class="p">,</span><span class="w"> </span><span class="k">private</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">comment</span><span class="w">      </span><span class="c">!! Optional comment associated with the image.</span>
+<span class="w">      </span><span class="kt">integer</span><span class="w">                                  </span><span class="p">,</span><span class="w"> </span><span class="k">private</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">max_color</span><span class="w">    </span><span class="c">!! Maximum color value of the image. Used for PGM and PPM images.</span>
+<span class="w">      </span><span class="kt">integer</span><span class="p">(</span><span class="n">ik</span><span class="p">),</span><span class="w"> </span><span class="k">dimension</span><span class="p">(:,:),</span><span class="w"> </span><span class="k">allocatable</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">pixels</span><span class="w">                 </span><span class="c">!! Pixel values of the image.</span>
+<span class="w">      </span><span class="kt">character</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="w">                             </span><span class="p">,</span><span class="w"> </span><span class="k">private</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">file_format</span><span class="w">  </span><span class="c">!! File format of the PNM image (`pbm`, `pgm`, `ppm`).</span>
+<span class="w">      </span><span class="kt">character</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span><span class="w">                             </span><span class="p">,</span><span class="w"> </span><span class="k">private</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">encoding</span><span class="w">     </span><span class="c">!! Encoding of the PNM image (`ascii` or `plain`, `binary` or `raw`).</span>
 <span class="w">   </span><span class="k">contains</span>
 <span class="w">      </span><span class="c">! Procedures for setting individual attributes</span>
 <span class="w">      </span><span class="k">procedure</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">set_format</span><span class="w">                 </span><span class="c">!!&gt; Set the encoding of the PNM image.</span>
-<span class="w">      </span><span class="k">procedure</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">get_format</span><span class="w">                 </span><span class="c">!!&gt; Get the encoding of the PNM image.</span>
 <span class="w">      </span><span class="k">procedure</span><span class="p">,</span><span class="w"> </span><span class="k">private</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">set_file_format</span><span class="w">   </span><span class="c">!!&gt; Set the file format of the PNM image.</span>
 <span class="w">      </span><span class="k">procedure</span><span class="p">,</span><span class="w"> </span><span class="k">private</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">set_magicnumber</span><span class="w">   </span><span class="c">!!&gt; Set the magic number of the PNM image.</span>
 <span class="w">      </span><span class="k">procedure</span><span class="p">,</span><span class="w"> </span><span class="k">private</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">set_width</span><span class="w">         </span><span class="c">!!&gt; Set the width of the PNM image.</span>
@@ -2711,6 +2692,9 @@
 <span class="w">      </span><span class="k">procedure</span><span class="p">,</span><span class="w"> </span><span class="k">private</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">check_pixel_range</span><span class="w"> </span><span class="c">!!&gt; Check if the pixel values are within the valid range.</span>
 <span class="w">      </span><span class="k">procedure</span><span class="p">,</span><span class="w"> </span><span class="k">private</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">set_pixels</span><span class="w">        </span><span class="c">!!&gt; Set the pixel values of the PNM image.</span>
 <span class="w">      </span>
+<span class="w">      </span><span class="c">! Procedures for setting individual attributes</span>
+<span class="w">      </span><span class="k">procedure</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">get_format</span><span class="w">                 </span><span class="c">!!&gt; Get the encoding of the PNM image.</span>
+
 <span class="w">      </span><span class="c">! High-level procedures for working with PNM images</span>
 <span class="w">      </span><span class="k">procedure</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">set_pnm</span><span class="w">                    </span><span class="c">!!&gt; Set the attributes of the PNM image.</span>
 <span class="w">      </span><span class="k">procedure</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">print_info</span><span class="w">                 </span><span class="c">!!&gt; Display information about the image (dimensions, aspect ratio, etc.).</span>
@@ -2749,7 +2733,7 @@
             <p class="text-end">
               Documentation generated by
               <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
- on 2024-03-01T11:55:36.383362             </p>
+ on 2024-03-02T10:04:01.476718             </p>
           </div>
         </div>
         <br>
