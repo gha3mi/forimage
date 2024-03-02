@@ -1,8 +1,11 @@
 name       = "forimage"
+description= "A Fortran library for processing and editing images and managing colors"
 version    = "VERSION"
 author     = "Seyed Ali Ghasemi"
 maintainer = "info@gha3mi.com"
-copyright  = "Copyright (c) 2023, Seyed Ali Ghasemi"
+copyright  = "Copyright (c) 2023-2024, Seyed Ali Ghasemi"
+categories = ["graphics"]
+keywords   = ["Fortran", "image","pnm", "ppm","pgm","pbm","colors"]
 license    = "LICENSE"
 
 [build]
