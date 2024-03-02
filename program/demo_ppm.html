@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-      <meta name="description" content="Documentation for ForImage">
+      <meta name="description" content="A Fortran library for processing and editing images and managing colors">
     <meta name="author" content="Seyed Ali Ghasemi" >
     <link rel="icon" href="../favicon.png">
 
@@ -72,6 +72,7 @@
     <div class="row align-items-center justify-content-between" id="info-bar">
       <div class="col">
         <ul class="list-inline" style="margin-bottom:0px;display:inline">
+            <li class="list-inline-item" id="meta-license"><i class="fa fa-legal"></i> BSD 3-Clause</li>
 
             <li class="list-inline-item" id="statements"><i class="fa fa-list-ol"></i>
               <a data-bs-toggle="tooltip"
@@ -115,11 +116,11 @@
       </a>
       <div id="vars-0" class="collapse">
         <div class="list-group list-group-flush">
-            <a class="list-group-item" href="../program/demo_ppm.html#variable-image">image</a>
             <a class="list-group-item" href="../program/demo_ppm.html#variable-copy_image">copy_image</a>
-            <a class="list-group-item" href="../program/demo_ppm.html#variable-height~5">height</a>
-            <a class="list-group-item" href="../program/demo_ppm.html#variable-width~5">width</a>
-            <a class="list-group-item" href="../program/demo_ppm.html#variable-px">px</a>
+            <a class="list-group-item" href="../program/demo_ppm.html#variable-height~7">height</a>
+            <a class="list-group-item" href="../program/demo_ppm.html#variable-image~2">image</a>
+            <a class="list-group-item" href="../program/demo_ppm.html#variable-px~2">px</a>
+            <a class="list-group-item" href="../program/demo_ppm.html#variable-width~7">width</a>
         </div>
       </div>
     </div>
@@ -1156,22 +1157,6 @@ large graphs.</div>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-image"></span>
-              type(<a href='../type/format_pnm.html'>format_pnm</a>)
-            </td>
-            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>image</strong></td>
-                <td></td>
-                <td></td>
-            <td>
-                
-            </td>
-        </tr>
-        <tr>
-            <td>
               <span class="anchor" id="variable-copy_image"></span>
               type(<a href='../type/format_pnm.html'>format_pnm</a>)
             </td>
@@ -1188,7 +1173,7 @@ large graphs.</div>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-height~5"></span>
+              <span class="anchor" id="variable-height~7"></span>
               integer,
             </td>
             <td>
@@ -1204,23 +1189,23 @@ parameter
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-width~5"></span>
-              integer,
+              <span class="anchor" id="variable-image~2"></span>
+              type(<a href='../type/format_pnm.html'>format_pnm</a>)
             </td>
             <td>
-parameter               
+              
             </td>
             <td>::</td>
-            <td><strong>width</strong></td>
-<td> =</td>
-                <td>400</td>
+            <td><strong>image</strong></td>
+                <td></td>
+                <td></td>
             <td>
                 
             </td>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-px"></span>
+              <span class="anchor" id="variable-px~2"></span>
               integer(kind=ik)
             </td>
             <td>
@@ -1230,6 +1215,22 @@ parameter
             <td><strong>px</strong>(height,3*width)</td>
                 <td></td>
                 <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-width~7"></span>
+              integer,
+            </td>
+            <td>
+parameter               
+            </td>
+            <td>::</td>
+            <td><strong>width</strong></td>
+<td> =</td>
+                <td>400</td>
             <td>
                 
             </td>
@@ -1267,7 +1268,7 @@ parameter
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-h~2"></span>
+              <span class="anchor" id="variable-h~12"></span>
               integer,
             </td>
 <td>intent(in)</td>
@@ -1474,14 +1475,14 @@ parameter
     <footer>
       <div class="container">
         <div class="row justify-content-between">
-          <div class="col"><p>ForImage was developed by Seyed Ali Ghasemi<br>&copy; 2023-2024 
+          <div class="col"><p>ForImage was developed by Seyed Ali Ghasemi<br>&copy; 2023-2024 BSD 3-Clause
 </p>
           </div>
           <div class="col">
             <p class="text-end">
               Documentation generated by
               <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
- on 2024-03-02T10:04:01.476718             </p>
+ on 2024-03-02T10:18:22.563314             </p>
           </div>
         </div>
         <br>

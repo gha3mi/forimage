@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-      <meta name="description" content="Documentation for ForImage">
+      <meta name="description" content="A Fortran library for processing and editing images and managing colors">
     <meta name="author" content="Seyed Ali Ghasemi" >
     <link rel="icon" href="../favicon.png">
 
@@ -73,6 +73,7 @@
     <div class="row align-items-center justify-content-between" id="info-bar">
       <div class="col">
         <ul class="list-inline" style="margin-bottom:0px;display:inline">
+            <li class="list-inline-item" id="meta-license"><i class="fa fa-legal"></i> BSD 3-Clause</li>
 
             <li class="list-inline-item" id="statements"><i class="fa fa-list-ol"></i>
               <a data-bs-toggle="tooltip"
@@ -137,9 +138,9 @@
       </a>
       <div id="funcs-0" class="collapse">
         <div class="list-group list-group-flush">
-            <a class="list-group-item" href="../module/lut.html#proc-get_num_colors">get_num_colors</a>
-            <a class="list-group-item" href="../module/lut.html#proc-get_dim_colors">get_dim_colors</a>
             <a class="list-group-item" href="../module/lut.html#proc-get_colors">get_colors</a>
+            <a class="list-group-item" href="../module/lut.html#proc-get_dim_colors">get_dim_colors</a>
+            <a class="list-group-item" href="../module/lut.html#proc-get_num_colors">get_num_colors</a>
         </div>
       </div>
     </div>
@@ -152,13 +153,13 @@
       <div id="subs-0" class="collapse">
         <div class="list-group list-group-flush">
             <a class="list-group-item" href="../module/lut.html#proc-allocate_colors">allocate_colors</a>
-            <a class="list-group-item" href="../module/lut.html#proc-set">set</a>
-            <a class="list-group-item" href="../module/lut.html#proc-set_num_colors">set_num_colors</a>
-            <a class="list-group-item" href="../module/lut.html#proc-set_dim_colors">set_dim_colors</a>
-            <a class="list-group-item" href="../module/lut.html#proc-set_colors">set_colors</a>
             <a class="list-group-item" href="../module/lut.html#proc-deallocate_lut">deallocate_lut</a>
-            <a class="list-group-item" href="../module/lut.html#proc-import">import</a>
             <a class="list-group-item" href="../module/lut.html#proc-export">export</a>
+            <a class="list-group-item" href="../module/lut.html#proc-import">import</a>
+            <a class="list-group-item" href="../module/lut.html#proc-set~2">set</a>
+            <a class="list-group-item" href="../module/lut.html#proc-set_colors">set_colors</a>
+            <a class="list-group-item" href="../module/lut.html#proc-set_dim_colors">set_dim_colors</a>
+            <a class="list-group-item" href="../module/lut.html#proc-set_num_colors">set_num_colors</a>
         </div>
       </div>
     </div>
@@ -359,15 +360,15 @@ large graphs.</div>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-num_colors"></span>
+              <span class="anchor" id="variable-colors~6"></span>
               integer,
             </td>
-              <td>public</td>
+              <td>public,</td>
             <td>
-              
+              dimension(:,:), allocatable
             </td>
             <td>::</td>
-            <td><strong>num_colors</strong></td>
+            <td><strong>colors</strong></td>
                 <td></td>
                 <td></td>
             <td>
@@ -393,15 +394,15 @@ large graphs.</div>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-colors"></span>
+              <span class="anchor" id="variable-num_colors"></span>
               integer,
             </td>
-              <td>public,</td>
+              <td>public</td>
             <td>
-              dimension(:,:), allocatable
+              
             </td>
             <td>::</td>
-            <td><strong>colors</strong></td>
+            <td><strong>num_colors</strong></td>
                 <td></td>
                 <td></td>
             <td>
@@ -424,32 +425,12 @@ large graphs.</div>
               </tr>
               <tr>
                 <td>  procedure, public ::
-  <strong><a href='../type/format_lut.html#boundprocedure-set'>set</a></strong></td>
+  <strong><a href='../type/format_lut.html#boundprocedure-export'>export</a></strong></td>
                 <td></td>
               </tr>
               <tr>
                 <td>  procedure, public ::
-  <strong><a href='../type/format_lut.html#boundprocedure-set_num_colors'>set_num_colors</a></strong></td>
-                <td></td>
-              </tr>
-              <tr>
-                <td>  procedure, public ::
-  <strong><a href='../type/format_lut.html#boundprocedure-get_num_colors'>get_num_colors</a></strong></td>
-                <td></td>
-              </tr>
-              <tr>
-                <td>  procedure, public ::
-  <strong><a href='../type/format_lut.html#boundprocedure-set_dim_colors'>set_dim_colors</a></strong></td>
-                <td></td>
-              </tr>
-              <tr>
-                <td>  procedure, public ::
-  <strong><a href='../type/format_lut.html#boundprocedure-get_dim_colors'>get_dim_colors</a></strong></td>
-                <td></td>
-              </tr>
-              <tr>
-                <td>  procedure, public ::
-  <strong><a href='../type/format_lut.html#boundprocedure-set_colors'>set_colors</a></strong></td>
+  <strong><a href='../type/format_lut.html#boundprocedure-finalize~2'>finalize</a></strong> => <a href='/home/runner/work/forimage/forimage/doc/proc/deallocate_lut.html'>deallocate_lut</a></td>
                 <td></td>
               </tr>
               <tr>
@@ -459,7 +440,12 @@ large graphs.</div>
               </tr>
               <tr>
                 <td>  procedure, public ::
-  <strong><a href='../type/format_lut.html#boundprocedure-export'>export</a></strong></td>
+  <strong><a href='../type/format_lut.html#boundprocedure-get_dim_colors'>get_dim_colors</a></strong></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>  procedure, public ::
+  <strong><a href='../type/format_lut.html#boundprocedure-get_num_colors'>get_num_colors</a></strong></td>
                 <td></td>
               </tr>
               <tr>
@@ -469,7 +455,22 @@ large graphs.</div>
               </tr>
               <tr>
                 <td>  procedure, public ::
-  <strong><a href='../type/format_lut.html#boundprocedure-finalize'>finalize</a></strong> => <a href='/home/runner/work/forimage/forimage/doc/proc/deallocate_lut.html'>deallocate_lut</a></td>
+  <strong><a href='../type/format_lut.html#boundprocedure-set~2'>set</a></strong></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>  procedure, public ::
+  <strong><a href='../type/format_lut.html#boundprocedure-set_colors'>set_colors</a></strong></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>  procedure, public ::
+  <strong><a href='../type/format_lut.html#boundprocedure-set_dim_colors'>set_dim_colors</a></strong></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>  procedure, public ::
+  <strong><a href='../type/format_lut.html#boundprocedure-set_num_colors'>set_num_colors</a></strong></td>
                 <td></td>
               </tr>
           </tbody>
@@ -483,107 +484,12 @@ large graphs.</div>
         <section>
           <h2>Functions</h2>
               <div class="card">
-    <div class="card-header codesum"><span class="anchor" id="proc-get_num_colors"></span> <h3>private pure elemental function <a href='../proc/get_num_colors.html'>get_num_colors</a>(this) result(num_colors)  
-</h3></div>
-    <div class="card-body">
-              <dl class="dl-horizontal">
-        <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
-    </dl>
-
-  
-
-  <h4>Arguments</h4>
-      <table class="table table-striped varlist">
-    <thead>
-      <tr>
-        <th scope="col">Type</th>
-<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
-        <th scope="col"></th>
-        <th scope="col">Name</th>
-        <th scope="col"></th>
-    </thead>
-    <tbody>
-        <tr>
-            <td>
-              <span class="anchor" id="variable-this~5"></span>
-              class(<a href='../type/format_lut.html'>format_lut</a>),
-            </td>
-<td>intent(in)</td>
-              <td></td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>this</strong></td>
-            <td>
-
-            </td>
-        </tr>
-    </tbody>
-  </table>
-
-    <h4>
-    Return Value
-    <small>integer</small>
-    </h4>
-    
-
-    </div>
-  </div>
-
-              <div class="card">
-    <div class="card-header codesum"><span class="anchor" id="proc-get_dim_colors"></span> <h3>private pure elemental function <a href='../proc/get_dim_colors.html'>get_dim_colors</a>(this) result(dim_colors)  
-</h3></div>
-    <div class="card-body">
-              <dl class="dl-horizontal">
-        <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
-    </dl>
-
-  
-
-  <h4>Arguments</h4>
-      <table class="table table-striped varlist">
-    <thead>
-      <tr>
-        <th scope="col">Type</th>
-<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
-        <th scope="col"></th>
-        <th scope="col">Name</th>
-        <th scope="col"></th>
-    </thead>
-    <tbody>
-        <tr>
-            <td>
-              <span class="anchor" id="variable-this~6"></span>
-              class(<a href='../type/format_lut.html'>format_lut</a>),
-            </td>
-<td>intent(in)</td>
-              <td></td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>this</strong></td>
-            <td>
-
-            </td>
-        </tr>
-    </tbody>
-  </table>
-
-    <h4>
-    Return Value
-    <small>integer</small>
-    </h4>
-    
-
-    </div>
-  </div>
-
-              <div class="card">
     <div class="card-header codesum"><span class="anchor" id="proc-get_colors"></span> <h3>private pure function <a href='../proc/get_colors.html'>get_colors</a>(this) result(colors)  
 </h3></div>
     <div class="card-body">
               <dl class="dl-horizontal">
         <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
+        <dt>License</dt><dd>BSD 3-Clause</dd>
     </dl>
 
   
@@ -601,7 +507,7 @@ large graphs.</div>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-this~8"></span>
+              <span class="anchor" id="variable-this~75"></span>
               class(<a href='../type/format_lut.html'>format_lut</a>),
             </td>
 <td>intent(in)</td>
@@ -626,17 +532,13 @@ large graphs.</div>
     </div>
   </div>
 
-        </section>
-        <br>
-
-        <section>
-          <h2>Subroutines</h2>
               <div class="card">
-    <div class="card-header codesum"><span class="anchor" id="proc-allocate_colors"></span> <h3>private pure elemental subroutine <a href='../proc/allocate_colors.html'>allocate_colors</a>(this)  
+    <div class="card-header codesum"><span class="anchor" id="proc-get_dim_colors"></span> <h3>private pure elemental function <a href='../proc/get_dim_colors.html'>get_dim_colors</a>(this) result(dim_colors)  
 </h3></div>
     <div class="card-body">
               <dl class="dl-horizontal">
         <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
+        <dt>License</dt><dd>BSD 3-Clause</dd>
     </dl>
 
   
@@ -654,7 +556,110 @@ large graphs.</div>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-this"></span>
+              <span class="anchor" id="variable-this~73"></span>
+              class(<a href='../type/format_lut.html'>format_lut</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>this</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+    <h4>
+    Return Value
+    <small>integer</small>
+    </h4>
+    
+
+    </div>
+  </div>
+
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-get_num_colors"></span> <h3>private pure elemental function <a href='../proc/get_num_colors.html'>get_num_colors</a>(this) result(num_colors)  
+</h3></div>
+    <div class="card-body">
+              <dl class="dl-horizontal">
+        <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
+        <dt>License</dt><dd>BSD 3-Clause</dd>
+    </dl>
+
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-this~72"></span>
+              class(<a href='../type/format_lut.html'>format_lut</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>this</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+    <h4>
+    Return Value
+    <small>integer</small>
+    </h4>
+    
+
+    </div>
+  </div>
+
+        </section>
+        <br>
+
+        <section>
+          <h2>Subroutines</h2>
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-allocate_colors"></span> <h3>private pure elemental subroutine <a href='../proc/allocate_colors.html'>allocate_colors</a>(this)  
+</h3></div>
+    <div class="card-body">
+              <dl class="dl-horizontal">
+        <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
+        <dt>License</dt><dd>BSD 3-Clause</dd>
+    </dl>
+
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-this~68"></span>
               class(<a href='../type/format_lut.html'>format_lut</a>),
             </td>
 <td>intent(inout)</td>
@@ -675,11 +680,12 @@ large graphs.</div>
   </div>
 
               <div class="card">
-    <div class="card-header codesum"><span class="anchor" id="proc-set"></span> <h3>private pure subroutine <a href='../proc/set.html'>set</a>(this, num_colors, dim_colors, colors)  
+    <div class="card-header codesum"><span class="anchor" id="proc-deallocate_lut"></span> <h3>private pure elemental subroutine <a href='../proc/deallocate_lut.html'>deallocate_lut</a>(this)  
 </h3></div>
     <div class="card-body">
               <dl class="dl-horizontal">
         <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
+        <dt>License</dt><dd>BSD 3-Clause</dd>
     </dl>
 
   
@@ -697,7 +703,184 @@ large graphs.</div>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-this~2"></span>
+              <span class="anchor" id="variable-this~76"></span>
+              class(<a href='../type/format_lut.html'>format_lut</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>this</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-export"></span> <h3>private impure subroutine <a href='../proc/export.html'>export</a>(this, file_name)  
+</h3></div>
+    <div class="card-body">
+              <dl class="dl-horizontal">
+        <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
+        <dt>License</dt><dd>BSD 3-Clause</dd>
+    </dl>
+
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-this~78"></span>
+              class(<a href='../type/format_lut.html'>format_lut</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>this</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-file_name~6"></span>
+              character(len=*),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>file_name</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-import"></span> <h3>private impure subroutine <a href='../proc/import.html'>import</a>(this, file_name, dim_colors)  
+</h3></div>
+    <div class="card-body">
+              <dl class="dl-horizontal">
+        <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
+        <dt>License</dt><dd>BSD 3-Clause</dd>
+    </dl>
+
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-this~77"></span>
+              class(<a href='../type/format_lut.html'>format_lut</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>this</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-file_name~5"></span>
+              character(len=*),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>file_name</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-dim_colors~5"></span>
+              integer,
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>dim_colors</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-set~2"></span> <h3>private pure subroutine <a href='../proc/set~2.html'>set</a>(this, num_colors, dim_colors, colors)  
+</h3></div>
+    <div class="card-body">
+              <dl class="dl-horizontal">
+        <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
+        <dt>License</dt><dd>BSD 3-Clause</dd>
+    </dl>
+
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-this~69"></span>
               class(<a href='../type/format_lut.html'>format_lut</a>),
             </td>
 <td>intent(inout)</td>
@@ -742,7 +925,7 @@ large graphs.</div>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-colors~2"></span>
+              <span class="anchor" id="variable-colors~7"></span>
               integer,
             </td>
 <td>intent(in),</td>
@@ -763,11 +946,12 @@ large graphs.</div>
   </div>
 
               <div class="card">
-    <div class="card-header codesum"><span class="anchor" id="proc-set_num_colors"></span> <h3>private pure elemental subroutine <a href='../proc/set_num_colors.html'>set_num_colors</a>(this, num_colors)  
+    <div class="card-header codesum"><span class="anchor" id="proc-set_colors"></span> <h3>private pure subroutine <a href='../proc/set_colors.html'>set_colors</a>(this, colors)  
 </h3></div>
     <div class="card-body">
               <dl class="dl-horizontal">
         <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
+        <dt>License</dt><dd>BSD 3-Clause</dd>
     </dl>
 
   
@@ -785,7 +969,7 @@ large graphs.</div>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-this~3"></span>
+              <span class="anchor" id="variable-this~74"></span>
               class(<a href='../type/format_lut.html'>format_lut</a>),
             </td>
 <td>intent(inout)</td>
@@ -800,15 +984,15 @@ large graphs.</div>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-num_colors~3"></span>
+              <span class="anchor" id="variable-colors~8"></span>
               integer,
             </td>
-<td>intent(in)</td>
+<td>intent(in),</td>
               <td></td>            <td>
-              
+              dimension(:,:)
             </td>
             <td>::</td>
-            <td><strong>num_colors</strong></td>
+            <td><strong>colors</strong></td>
             <td>
 
             </td>
@@ -826,6 +1010,7 @@ large graphs.</div>
     <div class="card-body">
               <dl class="dl-horizontal">
         <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
+        <dt>License</dt><dd>BSD 3-Clause</dd>
     </dl>
 
   
@@ -843,7 +1028,7 @@ large graphs.</div>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-this~4"></span>
+              <span class="anchor" id="variable-this~71"></span>
               class(<a href='../type/format_lut.html'>format_lut</a>),
             </td>
 <td>intent(inout)</td>
@@ -879,11 +1064,12 @@ large graphs.</div>
   </div>
 
               <div class="card">
-    <div class="card-header codesum"><span class="anchor" id="proc-set_colors"></span> <h3>private pure subroutine <a href='../proc/set_colors.html'>set_colors</a>(this, colors)  
+    <div class="card-header codesum"><span class="anchor" id="proc-set_num_colors"></span> <h3>private pure elemental subroutine <a href='../proc/set_num_colors.html'>set_num_colors</a>(this, num_colors)  
 </h3></div>
     <div class="card-body">
               <dl class="dl-horizontal">
         <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
+        <dt>License</dt><dd>BSD 3-Clause</dd>
     </dl>
 
   
@@ -901,7 +1087,7 @@ large graphs.</div>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-this~7"></span>
+              <span class="anchor" id="variable-this~70"></span>
               class(<a href='../type/format_lut.html'>format_lut</a>),
             </td>
 <td>intent(inout)</td>
@@ -916,123 +1102,7 @@ large graphs.</div>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-colors~3"></span>
-              integer,
-            </td>
-<td>intent(in),</td>
-              <td></td>            <td>
-              dimension(:,:)
-            </td>
-            <td>::</td>
-            <td><strong>colors</strong></td>
-            <td>
-
-            </td>
-        </tr>
-    </tbody>
-  </table>
-
-
-    </div>
-  </div>
-
-              <div class="card">
-    <div class="card-header codesum"><span class="anchor" id="proc-deallocate_lut"></span> <h3>private pure elemental subroutine <a href='../proc/deallocate_lut.html'>deallocate_lut</a>(this)  
-</h3></div>
-    <div class="card-body">
-              <dl class="dl-horizontal">
-        <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
-    </dl>
-
-  
-
-  <h4>Arguments</h4>
-      <table class="table table-striped varlist">
-    <thead>
-      <tr>
-        <th scope="col">Type</th>
-<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
-        <th scope="col"></th>
-        <th scope="col">Name</th>
-        <th scope="col"></th>
-    </thead>
-    <tbody>
-        <tr>
-            <td>
-              <span class="anchor" id="variable-this~9"></span>
-              class(<a href='../type/format_lut.html'>format_lut</a>),
-            </td>
-<td>intent(inout)</td>
-              <td></td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>this</strong></td>
-            <td>
-
-            </td>
-        </tr>
-    </tbody>
-  </table>
-
-
-    </div>
-  </div>
-
-              <div class="card">
-    <div class="card-header codesum"><span class="anchor" id="proc-import"></span> <h3>private impure subroutine <a href='../proc/import.html'>import</a>(this, file_name, dim_colors)  
-</h3></div>
-    <div class="card-body">
-              <dl class="dl-horizontal">
-        <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
-    </dl>
-
-  
-
-  <h4>Arguments</h4>
-      <table class="table table-striped varlist">
-    <thead>
-      <tr>
-        <th scope="col">Type</th>
-<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
-        <th scope="col"></th>
-        <th scope="col">Name</th>
-        <th scope="col"></th>
-    </thead>
-    <tbody>
-        <tr>
-            <td>
-              <span class="anchor" id="variable-this~10"></span>
-              class(<a href='../type/format_lut.html'>format_lut</a>),
-            </td>
-<td>intent(inout)</td>
-              <td></td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>this</strong></td>
-            <td>
-
-            </td>
-        </tr>
-        <tr>
-            <td>
-              <span class="anchor" id="variable-file_name"></span>
-              character(len=*),
-            </td>
-<td>intent(in)</td>
-              <td></td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>file_name</strong></td>
-            <td>
-
-            </td>
-        </tr>
-        <tr>
-            <td>
-              <span class="anchor" id="variable-dim_colors~5"></span>
+              <span class="anchor" id="variable-num_colors~3"></span>
               integer,
             </td>
 <td>intent(in)</td>
@@ -1040,65 +1110,7 @@ large graphs.</div>
               
             </td>
             <td>::</td>
-            <td><strong>dim_colors</strong></td>
-            <td>
-
-            </td>
-        </tr>
-    </tbody>
-  </table>
-
-
-    </div>
-  </div>
-
-              <div class="card">
-    <div class="card-header codesum"><span class="anchor" id="proc-export"></span> <h3>private impure subroutine <a href='../proc/export.html'>export</a>(this, file_name)  
-</h3></div>
-    <div class="card-body">
-              <dl class="dl-horizontal">
-        <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
-    </dl>
-
-  
-
-  <h4>Arguments</h4>
-      <table class="table table-striped varlist">
-    <thead>
-      <tr>
-        <th scope="col">Type</th>
-<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
-        <th scope="col"></th>
-        <th scope="col">Name</th>
-        <th scope="col"></th>
-    </thead>
-    <tbody>
-        <tr>
-            <td>
-              <span class="anchor" id="variable-this~11"></span>
-              class(<a href='../type/format_lut.html'>format_lut</a>),
-            </td>
-<td>intent(inout)</td>
-              <td></td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>this</strong></td>
-            <td>
-
-            </td>
-        </tr>
-        <tr>
-            <td>
-              <span class="anchor" id="variable-file_name~2"></span>
-              character(len=*),
-            </td>
-<td>intent(in)</td>
-              <td></td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>file_name</strong></td>
+            <td><strong>num_colors</strong></td>
             <td>
 
             </td>
@@ -1123,14 +1135,14 @@ large graphs.</div>
     <footer>
       <div class="container">
         <div class="row justify-content-between">
-          <div class="col"><p>ForImage was developed by Seyed Ali Ghasemi<br>&copy; 2023-2024 
+          <div class="col"><p>ForImage was developed by Seyed Ali Ghasemi<br>&copy; 2023-2024 BSD 3-Clause
 </p>
           </div>
           <div class="col">
             <p class="text-end">
               Documentation generated by
               <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
- on 2024-03-02T10:04:01.476718             </p>
+ on 2024-03-02T10:18:22.563314             </p>
           </div>
         </div>
         <br>
