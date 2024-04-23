@@ -1,0 +1,915 @@
+<!-- -*- mode: jinja2 -*- -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="A Fortran library for processing and editing images and managing colors">
+    <meta name="author" content="Seyed Ali Ghasemi" >
+    <link rel="icon" href="../favicon.png">
+
+    <title>test6 &ndash; ForImage</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="../css/pygments.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/local.css" rel="stylesheet">
+      <link  href="../tipuesearch/tipuesearch.css" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="../js/svg-pan-zoom.min.js"></script>
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <div class="container-fluid mb-sm-4 mb-xl-2">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+          <a class="navbar-brand" href="../index.html">ForImage <small>0.4.0</small></a>
+          <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar"
+                  aria-expanded="false" aria-controls="navbar" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon">
+          </button>
+
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link" href="../lists/files.html">Source Files</a>
+                  </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/modules.html">Modules</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/procedures.html">Procedures</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/types.html">Derived Types</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/programs.html">Programs</a>
+                </li>
+            </ul>
+              <div class="d-flex align-items-end flex-grow-1">
+                <form action="../search.html" role="search" class="ms-auto">
+                  <input type="text" class="form-control" aria-label="Search" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+                </form>
+              </div>
+          </div><!--/.nav-collapse -->
+        </div>
+      </nav>
+    </div>
+
+    <div class="container">
+  <div class="row">
+    <h1>test6      <small>Program</small>
+      
+    </h1>
+      <div class="container p-2 mb-4 bg-light border rounded-3">
+    <div class="row align-items-center justify-content-between" id="info-bar">
+      <div class="col">
+        <ul class="list-inline" style="margin-bottom:0px;display:inline">
+            <li class="list-inline-item" id="meta-license"><i class="fa fa-legal"></i> BSD 3-Clause</li>
+
+            <li class="list-inline-item" id="statements"><i class="fa fa-list-ol"></i>
+              <a data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true"
+                 title=" 1.9% of total for programs.">16 statements</a>
+            </li>
+
+            <li class="list-inline-item" id="source-file">
+              <i class="fa fa-code"></i>
+              <a href="../src/test6.f90"> Source File</a>
+            </li>
+        </ul>
+      </div>
+      <div class="col">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb justify-content-end mb-0">
+                <li class="breadcrumb-item"><a href='../sourcefile/test6.f90.html'>test6.f90</a></li>
+            <li class="breadcrumb-item active" aria-current="page">test6</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </div>
+  <script>
+    $(function () {
+    $('[data-bs-toggle="tooltip"]').tooltip()
+    })
+  </script>
+
+  </div>
+  
+  <div class="row">
+    <div class="col-md-3 hidden-xs hidden-sm visible-md visible-lg">
+      <div id="sidebar">
+      <h3>Contents</h3>
+  
+      <div class="card mb-4">
+      <a data-bs-toggle="collapse" href="#vars-0"
+         aria-expanded="false" aria-controls="vars-0">
+         <h4 class="card-header bg-primary text-white">Variables</h4>
+      </a>
+      <div id="vars-0" class="collapse">
+        <div class="list-group list-group-flush">
+            <a class="list-group-item" href="../program/test6.html#variable-image~4">image</a>
+            <a class="list-group-item" href="../program/test6.html#variable-px~3">px</a>
+        </div>
+      </div>
+    </div>
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    <div class="card card-primary">
+      <div class="card-header text-left"><h3 class="card-title">Source Code</h3></div>
+      <div class="list-group">
+        <a class="list-group-item" href="../program/test6.html#src">test6</a>
+      </div>
+    </div>
+
+
+  </div>
+
+    </div>
+    
+    <div class="col-md-9" id='text'>
+        <div class="card mb-4">
+      <h3 class="card-header card-title bg-light">Uses</h3>
+      <div class="card-body">
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              <ul class="list-inline">
+                  <li class="list-inline-item"><a href='../module/forimage.html'>forimage</a></li>
+              </ul>
+            </li>
+            <li class="list-group-item">
+              <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.43.0 (0)
+ -->
+<!-- Title: program~~test6~~UsesGraph Pages: 1 -->
+<svg id="programtest6UsesGraph" width="634pt" height="118pt"
+ viewBox="0.00 0.00 634.00 117.52" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="program~~test6~~UsesGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 113.52)">
+<title>program~~test6~~UsesGraph</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-113.52 630,-113.52 630,4 -4,4"/>
+<!-- program~test6 -->
+<g id="program~~test6~~UsesGraph_node1" class="node">
+<title>program~test6</title>
+<polygon fill="none" stroke="black" points="626,-60.17 572,-60.17 572,-36.17 626,-36.17 626,-60.17"/>
+<text text-anchor="middle" x="599" y="-45.77" font-family="Helvetica,sans-Serif" font-size="10.50">test6</text>
+</g>
+<!-- module~forimage -->
+<g id="program~~test6~~UsesGraph_node2" class="node">
+<title>module~forimage</title>
+<g id="a_program~~test6~~UsesGraph_node2"><a xlink:href="../module/forimage.html" xlink:title="forimage">
+<polygon fill="#337ab7" stroke="#337ab7" points="536,-60.17 475,-60.17 475,-36.17 536,-36.17 536,-60.17"/>
+<text text-anchor="middle" x="505.5" y="-45.77" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">forimage</text>
+</a>
+</g>
+</g>
+<!-- program~test6&#45;&gt;module~forimage -->
+<g id="program~~test6~~UsesGraph_edge1" class="edge">
+<title>program~test6&#45;&gt;module~forimage</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M571.53,-48.17C563.65,-48.17 554.84,-48.17 546.31,-48.17"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="546.12,-44.67 536.12,-48.17 546.12,-51.67 546.12,-44.67"/>
+</g>
+<!-- module~forcolor -->
+<g id="program~~test6~~UsesGraph_node3" class="node">
+<title>module~forcolor</title>
+<g id="a_program~~test6~~UsesGraph_node3"><a xlink:href="../module/forcolor.html" xlink:title="forcolor">
+<polygon fill="#337ab7" stroke="#337ab7" points="439,-81.17 385,-81.17 385,-57.17 439,-57.17 439,-81.17"/>
+<text text-anchor="middle" x="412" y="-66.77" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">forcolor</text>
+</a>
+</g>
+</g>
+<!-- module~forimage&#45;&gt;module~forcolor -->
+<g id="program~~test6~~UsesGraph_edge2" class="edge">
+<title>module~forimage&#45;&gt;module~forcolor</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M474.79,-54.98C466.54,-56.88 457.49,-58.95 448.93,-60.92"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="448.13,-57.51 439.17,-63.16 449.7,-64.33 448.13,-57.51"/>
+</g>
+<!-- module~forimage_parameters -->
+<g id="program~~test6~~UsesGraph_node4" class="node">
+<title>module~forimage_parameters</title>
+<g id="a_program~~test6~~UsesGraph_node4"><a xlink:href="../module/forimage_parameters.html" xlink:title="forimage_parameters">
+<polygon fill="#337ab7" stroke="#337ab7" points="259,-101.17 130,-101.17 130,-77.17 259,-77.17 259,-101.17"/>
+<text text-anchor="middle" x="194.5" y="-86.77" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">forimage_parameters</text>
+</a>
+</g>
+</g>
+<!-- module~forimage&#45;&gt;module~forimage_parameters -->
+<g id="program~~test6~~UsesGraph_edge3" class="edge">
+<title>module~forimage&#45;&gt;module~forimage_parameters</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M489.59,-60.27C476.9,-69.91 457.79,-82.96 439,-90.17 390.22,-108.88 375.22,-107.52 323,-109.17"/>
+</g>
+<!-- module~lut -->
+<g id="program~~test6~~UsesGraph_node5" class="node">
+<title>module~lut</title>
+<g id="a_program~~test6~~UsesGraph_node5"><a xlink:href="../module/lut.html" xlink:title="lut">
+<polygon fill="#337ab7" stroke="#337ab7" points="439,-39.17 385,-39.17 385,-15.17 439,-15.17 439,-39.17"/>
+<text text-anchor="middle" x="412" y="-24.77" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">lut</text>
+</a>
+</g>
+</g>
+<!-- module~forimage&#45;&gt;module~lut -->
+<g id="program~~test6~~UsesGraph_edge4" class="edge">
+<title>module~forimage&#45;&gt;module~lut</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M474.79,-41.35C466.54,-39.45 457.49,-37.38 448.93,-35.41"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="449.7,-32 439.17,-33.17 448.13,-38.82 449.7,-32"/>
+</g>
+<!-- module~pnm -->
+<g id="program~~test6~~UsesGraph_node6" class="node">
+<title>module~pnm</title>
+<g id="a_program~~test6~~UsesGraph_node6"><a xlink:href="../module/pnm.html" xlink:title="pnm">
+<polygon fill="#337ab7" stroke="#337ab7" points="349,-81.17 295,-81.17 295,-57.17 349,-57.17 349,-81.17"/>
+<text text-anchor="middle" x="322" y="-66.77" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">pnm</text>
+</a>
+</g>
+</g>
+<!-- module~forimage&#45;&gt;module~pnm -->
+<g id="program~~test6~~UsesGraph_edge5" class="edge">
+<title>module~forimage&#45;&gt;module~pnm</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M490.61,-35.86C478.1,-25.66 458.7,-11.94 439,-6.17 415.97,0.58 407.14,3.11 385,-6.17 364.41,-14.79 347.2,-33.95 336.18,-48.89"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="333.31,-46.9 330.43,-57.09 339.04,-50.92 333.31,-46.9"/>
+</g>
+<!-- module~forcolor&#45;&gt;module~forimage_parameters -->
+<g id="program~~test6~~UsesGraph_edge6" class="edge">
+<title>module~forcolor&#45;&gt;module~forimage_parameters</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M394.8,-81.25C377.85,-92.71 350.01,-108.31 323,-109.17"/>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M321,-109.17C298.83,-109.87 274.71,-106.93 253.6,-103.11"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="253.98,-99.62 243.5,-101.17 252.66,-106.49 253.98,-99.62"/>
+</g>
+<!-- module~forcolor&#45;&gt;module~pnm -->
+<g id="program~~test6~~UsesGraph_edge7" class="edge">
+<title>module~forcolor&#45;&gt;module~pnm</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M384.6,-69.17C376.61,-69.17 367.69,-69.17 359.18,-69.17"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="359.08,-65.67 349.08,-69.17 359.08,-72.67 359.08,-65.67"/>
+</g>
+<!-- iso_fortran_env -->
+<g id="program~~test6~~UsesGraph_node7" class="node">
+<title>iso_fortran_env</title>
+<g id="a_program~~test6~~UsesGraph_node7"><a xlink:href="http://fortranwiki.org/fortran/show/iso_fortran_env" xlink:title="iso_fortran_env">
+<polygon fill="#337ab7" stroke="#337ab7" points="94,-101.17 0,-101.17 0,-77.17 94,-77.17 94,-101.17"/>
+<text text-anchor="middle" x="47" y="-86.77" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">iso_fortran_env</text>
+</a>
+</g>
+</g>
+<!-- module~forimage_parameters&#45;&gt;iso_fortran_env -->
+<g id="program~~test6~~UsesGraph_edge8" class="edge">
+<title>module~forimage_parameters&#45;&gt;iso_fortran_env</title>
+<path fill="none" stroke="#7fff00" stroke-dasharray="5,2" d="M129.68,-89.17C121.31,-89.17 112.77,-89.17 104.53,-89.17"/>
+<polygon fill="#7fff00" stroke="#7fff00" points="104.28,-85.67 94.28,-89.17 104.28,-92.67 104.28,-85.67"/>
+</g>
+<!-- module~pnm&#45;&gt;module~forimage_parameters -->
+<g id="program~~test6~~UsesGraph_edge9" class="edge">
+<title>module~pnm&#45;&gt;module~forimage_parameters</title>
+<path fill="none" stroke="#7f00ff" stroke-dasharray="5,2" d="M295,-73.31C287.25,-74.55 278.34,-75.96 269.11,-77.44"/>
+<polygon fill="#7f00ff" stroke="#7f00ff" points="268.33,-74.01 259.01,-79.05 269.44,-80.93 268.33,-74.01"/>
+</g>
+</g>
+</svg>
+</div>          <div>
+            <a type="button" class="graph-help" data-bs-toggle="modal" href="#UsesGraph-help-text">Help</a>
+          </div>
+          <div class="modal fade" id="UsesGraph-help-text" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-lg" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h4 class="modal-title" id="-graph-help-label">Graph Key</h4>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+<p>Nodes of different colours represent the following: </p>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.43.0 (0)
+ -->
+<!-- Title: Graph Key Pages: 1 -->
+<svg width="518pt" height="32pt"
+ viewBox="0.00 0.00 517.50 32.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 28)">
+<title>Graph Key</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-28 513.5,-28 513.5,4 -4,4"/>
+<!-- Module -->
+<g id="node1" class="node">
+<title>Module</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="54,-24 0,-24 0,0 54,0 54,-24"/>
+<text text-anchor="middle" x="27" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Module</text>
+</g>
+<!-- Submodule -->
+<g id="node2" class="node">
+<title>Submodule</title>
+<polygon fill="#5bc0de" stroke="#5bc0de" points="145.5,-24 72.5,-24 72.5,0 145.5,0 145.5,-24"/>
+<text text-anchor="middle" x="109" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Submodule</text>
+</g>
+<!-- Subroutine -->
+<g id="node3" class="node">
+<title>Subroutine</title>
+<polygon fill="#d9534f" stroke="#d9534f" points="234,-24 164,-24 164,0 234,0 234,-24"/>
+<text text-anchor="middle" x="199" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Subroutine</text>
+</g>
+<!-- Function -->
+<g id="node4" class="node">
+<title>Function</title>
+<polygon fill="#d94e8f" stroke="#d94e8f" points="310,-24 252,-24 252,0 310,0 310,-24"/>
+<text text-anchor="middle" x="281" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Function</text>
+</g>
+<!-- Program -->
+<g id="node5" class="node">
+<title>Program</title>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="386,-24 328,-24 328,0 386,0 386,-24"/>
+<text text-anchor="middle" x="357" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Program</text>
+</g>
+<!-- This Page&#39;s Entity -->
+<g id="node6" class="node">
+<title>This Page&#39;s Entity</title>
+<polygon fill="none" stroke="black" points="509.5,-24 404.5,-24 404.5,0 509.5,0 509.5,-24"/>
+<text text-anchor="middle" x="457" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50">This Page&#39;s Entity</text>
+</g>
+</g>
+</svg>
+
+<p>Solid arrows point from a submodule to the (sub)module which it is
+descended from. Dashed arrows point from a module or program unit to 
+modules which it uses.
+</p>
+ Where possible, edges connecting nodes are
+given different colours to make them easier to distinguish in
+large graphs.</div>
+            </div>
+          </div>
+        </div>
+            </li>
+        </ul>
+      </div>
+    </div>
+
+    
+    <br>
+    <div class="card">
+      <div class="card-header">
+  <h3 class="card-title">Calls</h3>
+      </div>
+      <div class="card-body">
+  <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.43.0 (0)
+ -->
+<!-- Title: program~~test6~~CallsGraph Pages: 1 -->
+<svg id="programtest6CallsGraph" width="641pt" height="358pt"
+ viewBox="0.00 0.00 641.00 358.26" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="program~~test6~~CallsGraph" class="graph" transform="scale(1.09 1.09) rotate(0) translate(4 385)">
+<title>program~~test6~~CallsGraph</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-385 692,-385 692,4 -4,4"/>
+<!-- program~test6 -->
+<g id="program~~test6~~CallsGraph_node1" class="node">
+<title>program~test6</title>
+<polygon fill="none" stroke="black" points="54,-213 0,-213 0,-189 54,-189 54,-213"/>
+<text text-anchor="middle" x="27" y="-198.6" font-family="Helvetica,sans-Serif" font-size="10.50">test6</text>
+</g>
+<!-- proc~deallocate_pnm -->
+<g id="program~~test6~~CallsGraph_node2" class="node">
+<title>proc~deallocate_pnm</title>
+<g id="a_program~~test6~~CallsGraph_node2"><a xlink:href="../proc/deallocate_pnm.html" xlink:title="format_pnm%deallocate_pnm">
+<polygon fill="#d9534f" stroke="#d9534f" points="263,-276 90,-276 90,-252 263,-252 263,-276"/>
+<text text-anchor="middle" x="176.5" y="-261.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">format_pnm%deallocate_pnm</text>
+</a>
+</g>
+</g>
+<!-- program~test6&#45;&gt;proc~deallocate_pnm -->
+<g id="program~~test6~~CallsGraph_edge1" class="edge">
+<title>program~test6&#45;&gt;proc~deallocate_pnm</title>
+<path fill="none" stroke="#ff0000" d="M42.9,-213.33C54.93,-222.72 72.65,-235.29 90,-243 94.77,-245.12 99.78,-247.04 104.89,-248.79"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="104.22,-252.25 114.81,-251.94 106.33,-245.58 104.22,-252.25"/>
+</g>
+<!-- proc~export_pnm -->
+<g id="program~~test6~~CallsGraph_node3" class="node">
+<title>proc~export_pnm</title>
+<g id="a_program~~test6~~CallsGraph_node3"><a xlink:href="../proc/export_pnm.html" xlink:title="format_pnm%export_pnm">
+<polygon fill="#d9534f" stroke="#d9534f" points="252,-192 101,-192 101,-168 252,-168 252,-192"/>
+<text text-anchor="middle" x="176.5" y="-177.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">format_pnm%export_pnm</text>
+</a>
+</g>
+</g>
+<!-- program~test6&#45;&gt;proc~export_pnm -->
+<g id="program~~test6~~CallsGraph_edge2" class="edge">
+<title>program~test6&#45;&gt;proc~export_pnm</title>
+<path fill="none" stroke="#ff0000" d="M54.03,-197.29C64.58,-195.79 77.4,-193.97 90.72,-192.07"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="91.56,-195.49 100.97,-190.61 90.57,-188.56 91.56,-195.49"/>
+</g>
+<!-- proc~print_info -->
+<g id="program~~test6~~CallsGraph_node4" class="node">
+<title>proc~print_info</title>
+<g id="a_program~~test6~~CallsGraph_node4"><a xlink:href="../proc/print_info.html" xlink:title="format_pnm%print_info">
+<polygon fill="#d9534f" stroke="#d9534f" points="245.5,-87 107.5,-87 107.5,-63 245.5,-63 245.5,-87"/>
+<text text-anchor="middle" x="176.5" y="-72.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">format_pnm%print_info</text>
+</a>
+</g>
+</g>
+<!-- program~test6&#45;&gt;proc~print_info -->
+<g id="program~~test6~~CallsGraph_edge3" class="edge">
+<title>program~test6&#45;&gt;proc~print_info</title>
+<path fill="none" stroke="#ff0000" d="M42.14,-188.92C67.96,-166.87 122.87,-119.96 153.57,-93.73"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="155.85,-96.39 161.18,-87.23 151.31,-91.06 155.85,-96.39"/>
+</g>
+<!-- proc~set_pnm -->
+<g id="program~~test6~~CallsGraph_node5" class="node">
+<title>proc~set_pnm</title>
+<g id="a_program~~test6~~CallsGraph_node5"><a xlink:href="../proc/set_pnm.html" xlink:title="format_pnm%set_pnm">
+<polygon fill="#d9534f" stroke="#d9534f" points="243,-234 110,-234 110,-210 243,-210 243,-234"/>
+<text text-anchor="middle" x="176.5" y="-219.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">format_pnm%set_pnm</text>
+</a>
+</g>
+</g>
+<!-- program~test6&#45;&gt;proc~set_pnm -->
+<g id="program~~test6~~CallsGraph_edge4" class="edge">
+<title>program~test6&#45;&gt;proc~set_pnm</title>
+<path fill="none" stroke="#ff0000" d="M54.03,-204.71C66.91,-206.54 83.18,-208.86 99.6,-211.19"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="99.42,-214.7 109.81,-212.65 100.41,-207.77 99.42,-214.7"/>
+</g>
+<!-- proc~set_format -->
+<g id="program~~test6~~CallsGraph_node11" class="node">
+<title>proc~set_format</title>
+<g id="a_program~~test6~~CallsGraph_node11"><a xlink:href="../proc/set_format.html" xlink:title="format_pnm%set_format">
+<polygon fill="#d9534f" stroke="#d9534f" points="454.5,-192 309.5,-192 309.5,-168 454.5,-168 454.5,-192"/>
+<text text-anchor="middle" x="382" y="-177.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">format_pnm%set_format</text>
+</a>
+</g>
+</g>
+<!-- proc~export_pnm&#45;&gt;proc~set_format -->
+<g id="program~~test6~~CallsGraph_edge5" class="edge">
+<title>proc~export_pnm&#45;&gt;proc~set_format</title>
+<path fill="none" stroke="#7fff00" d="M252.12,-180C267.47,-180 283.72,-180 299.31,-180"/>
+<polygon fill="#7fff00" stroke="#7fff00" points="299.44,-183.5 309.44,-180 299.44,-176.5 299.44,-183.5"/>
+</g>
+<!-- proc~write_header -->
+<g id="program~~test6~~CallsGraph_node14" class="node">
+<title>proc~write_header</title>
+<g id="a_program~~test6~~CallsGraph_node14"><a xlink:href="../proc/write_header.html" xlink:title="write_header">
+<polygon fill="#d9534f" stroke="#d9534f" points="423,-150 341,-150 341,-126 423,-126 423,-150"/>
+<text text-anchor="middle" x="382" y="-135.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">write_header</text>
+</a>
+</g>
+</g>
+<!-- proc~export_pnm&#45;&gt;proc~write_header -->
+<g id="program~~test6~~CallsGraph_edge6" class="edge">
+<title>proc~export_pnm&#45;&gt;proc~write_header</title>
+<path fill="none" stroke="#7fff00" d="M235.81,-167.96C265.86,-161.76 302.13,-154.28 330.9,-148.34"/>
+<polygon fill="#7fff00" stroke="#7fff00" points="331.66,-151.76 340.74,-146.31 330.24,-144.9 331.66,-151.76"/>
+</g>
+<!-- proc~aspect_ratio -->
+<g id="program~~test6~~CallsGraph_node7" class="node">
+<title>proc~aspect_ratio</title>
+<g id="a_program~~test6~~CallsGraph_node7"><a xlink:href="../proc/aspect_ratio.html" xlink:title="aspect_ratio">
+<polygon fill="#d9534f" stroke="#d9534f" points="421,-108 343,-108 343,-84 421,-84 421,-108"/>
+<text text-anchor="middle" x="382" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">aspect_ratio</text>
+</a>
+</g>
+</g>
+<!-- proc~print_info&#45;&gt;proc~aspect_ratio -->
+<g id="program~~test6~~CallsGraph_edge7" class="edge">
+<title>proc~print_info&#45;&gt;proc~aspect_ratio</title>
+<path fill="none" stroke="#00ffff" d="M245.55,-82.02C274.21,-84.98 306.89,-88.35 332.98,-91.04"/>
+<polygon fill="#00ffff" stroke="#00ffff" points="332.68,-94.53 342.99,-92.08 333.4,-87.57 332.68,-94.53"/>
+</g>
+<!-- proc~average_colors -->
+<g id="program~~test6~~CallsGraph_node8" class="node">
+<title>proc~average_colors</title>
+<g id="a_program~~test6~~CallsGraph_node8"><a xlink:href="../proc/average_colors.html" xlink:title="average_colors">
+<polygon fill="#d9534f" stroke="#d9534f" points="429,-66 335,-66 335,-42 429,-42 429,-66"/>
+<text text-anchor="middle" x="382" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">average_colors</text>
+</a>
+</g>
+</g>
+<!-- proc~print_info&#45;&gt;proc~average_colors -->
+<g id="program~~test6~~CallsGraph_edge8" class="edge">
+<title>proc~print_info&#45;&gt;proc~average_colors</title>
+<path fill="none" stroke="#00ffff" d="M245.55,-67.98C271.23,-65.33 300.13,-62.34 324.63,-59.82"/>
+<polygon fill="#00ffff" stroke="#00ffff" points="325.25,-63.27 334.84,-58.76 324.53,-56.31 325.25,-63.27"/>
+</g>
+<!-- proc~pixel_size -->
+<g id="program~~test6~~CallsGraph_node9" class="node">
+<title>proc~pixel_size</title>
+<g id="a_program~~test6~~CallsGraph_node9"><a xlink:href="../proc/pixel_size.html" xlink:title="pixel_size">
+<polygon fill="#d9534f" stroke="#d9534f" points="414,-24 350,-24 350,0 414,0 414,-24"/>
+<text text-anchor="middle" x="382" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">pixel_size</text>
+</a>
+</g>
+</g>
+<!-- proc~print_info&#45;&gt;proc~pixel_size -->
+<g id="program~~test6~~CallsGraph_edge9" class="edge">
+<title>proc~print_info&#45;&gt;proc~pixel_size</title>
+<path fill="none" stroke="#00ffff" d="M210.01,-62.95C234.34,-54.13 268.54,-42.15 299,-33 312.23,-29.03 326.81,-25.14 339.96,-21.81"/>
+<polygon fill="#00ffff" stroke="#00ffff" points="340.83,-25.2 349.68,-19.38 339.13,-18.41 340.83,-25.2"/>
+</g>
+<!-- proc~allocate_pixels -->
+<g id="program~~test6~~CallsGraph_node6" class="node">
+<title>proc~allocate_pixels</title>
+<g id="a_program~~test6~~CallsGraph_node6"><a xlink:href="../proc/allocate_pixels.html" xlink:title="format_pnm%allocate_pixels">
+<polygon fill="#d9534f" stroke="#d9534f" points="465,-360 299,-360 299,-336 465,-336 465,-360"/>
+<text text-anchor="middle" x="382" y="-345.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">format_pnm%allocate_pixels</text>
+</a>
+</g>
+</g>
+<!-- proc~set_pnm&#45;&gt;proc~allocate_pixels -->
+<g id="program~~test6~~CallsGraph_edge10" class="edge">
+<title>proc~set_pnm&#45;&gt;proc~allocate_pixels</title>
+<path fill="none" stroke="#7f00ff" d="M243.17,-231.31C250.36,-234.24 257.17,-238.06 263,-243 293.98,-269.27 268.15,-300.58 299,-327 300.55,-328.33 302.17,-329.57 303.85,-330.74"/>
+<polygon fill="#7f00ff" stroke="#7f00ff" points="302.32,-333.9 312.71,-335.96 305.87,-327.86 302.32,-333.9"/>
+</g>
+<!-- proc~set_file_format -->
+<g id="program~~test6~~CallsGraph_node10" class="node">
+<title>proc~set_file_format</title>
+<g id="a_program~~test6~~CallsGraph_node10"><a xlink:href="../proc/set_file_format.html" xlink:title="format_pnm%set_file_format">
+<polygon fill="#d9534f" stroke="#d9534f" points="465,-318 299,-318 299,-294 465,-294 465,-318"/>
+<text text-anchor="middle" x="382" y="-303.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">format_pnm%set_file_format</text>
+</a>
+</g>
+</g>
+<!-- proc~set_pnm&#45;&gt;proc~set_file_format -->
+<g id="program~~test6~~CallsGraph_edge11" class="edge">
+<title>proc~set_pnm&#45;&gt;proc~set_file_format</title>
+<path fill="none" stroke="#7f00ff" d="M243.18,-233.61C250.13,-236.15 256.88,-239.24 263,-243 283.94,-255.88 278.12,-272.01 299,-285 301.96,-286.84 305.07,-288.52 308.29,-290.05"/>
+<polygon fill="#7f00ff" stroke="#7f00ff" points="307.01,-293.31 317.58,-294 309.74,-286.87 307.01,-293.31"/>
+</g>
+<!-- proc~set_pnm&#45;&gt;proc~set_format -->
+<g id="program~~test6~~CallsGraph_edge12" class="edge">
+<title>proc~set_pnm&#45;&gt;proc~set_format</title>
+<path fill="none" stroke="#7f00ff" d="M235.81,-209.96C259.76,-205.02 287.66,-199.26 312.57,-194.12"/>
+<polygon fill="#7f00ff" stroke="#7f00ff" points="313.59,-197.49 322.68,-192.04 312.18,-190.63 313.59,-197.49"/>
+</g>
+<!-- proc~set_header -->
+<g id="program~~test6~~CallsGraph_node12" class="node">
+<title>proc~set_header</title>
+<g id="a_program~~test6~~CallsGraph_node12"><a xlink:href="../proc/set_header.html" xlink:title="format_pnm%set_header">
+<polygon fill="#d9534f" stroke="#d9534f" points="455.5,-276 308.5,-276 308.5,-252 455.5,-252 455.5,-276"/>
+<text text-anchor="middle" x="382" y="-261.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">format_pnm%set_header</text>
+</a>
+</g>
+</g>
+<!-- proc~set_pnm&#45;&gt;proc~set_header -->
+<g id="program~~test6~~CallsGraph_edge13" class="edge">
+<title>proc~set_pnm&#45;&gt;proc~set_header</title>
+<path fill="none" stroke="#7f00ff" d="M235.81,-234.04C259.76,-238.98 287.66,-244.74 312.57,-249.88"/>
+<polygon fill="#7f00ff" stroke="#7f00ff" points="312.18,-253.37 322.68,-251.96 313.59,-246.51 312.18,-253.37"/>
+</g>
+<!-- proc~set_pixels -->
+<g id="program~~test6~~CallsGraph_node13" class="node">
+<title>proc~set_pixels</title>
+<g id="a_program~~test6~~CallsGraph_node13"><a xlink:href="../proc/set_pixels.html" xlink:title="format_pnm%set_pixels">
+<polygon fill="#d9534f" stroke="#d9534f" points="451.5,-234 312.5,-234 312.5,-210 451.5,-210 451.5,-234"/>
+<text text-anchor="middle" x="382" y="-219.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">format_pnm%set_pixels</text>
+</a>
+</g>
+</g>
+<!-- proc~set_pnm&#45;&gt;proc~set_pixels -->
+<g id="program~~test6~~CallsGraph_edge14" class="edge">
+<title>proc~set_pnm&#45;&gt;proc~set_pixels</title>
+<path fill="none" stroke="#7f00ff" d="M243.01,-222C261.91,-222 282.72,-222 302.33,-222"/>
+<polygon fill="#7f00ff" stroke="#7f00ff" points="302.46,-225.5 312.46,-222 302.46,-218.5 302.46,-225.5"/>
+</g>
+<!-- proc~set_comment -->
+<g id="program~~test6~~CallsGraph_node16" class="node">
+<title>proc~set_comment</title>
+<g id="a_program~~test6~~CallsGraph_node16"><a xlink:href="../proc/set_comment.html" xlink:title="format_pnm%set_comment">
+<polygon fill="#d9534f" stroke="#d9534f" points="674.5,-381 514.5,-381 514.5,-357 674.5,-357 674.5,-381"/>
+<text text-anchor="middle" x="594.5" y="-366.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">format_pnm%set_comment</text>
+</a>
+</g>
+</g>
+<!-- proc~set_header&#45;&gt;proc~set_comment -->
+<g id="program~~test6~~CallsGraph_edge15" class="edge">
+<title>proc~set_header&#45;&gt;proc~set_comment</title>
+<path fill="none" stroke="#0000ff" d="M449.63,-276.01C455.11,-278.47 460.32,-281.44 465,-285 490.65,-304.55 475.08,-328.81 501,-348 503.08,-349.54 505.26,-350.98 507.51,-352.31"/>
+<polygon fill="#0000ff" stroke="#0000ff" points="506.04,-355.48 516.53,-356.95 509.24,-349.26 506.04,-355.48"/>
+</g>
+<!-- proc~set_height -->
+<g id="program~~test6~~CallsGraph_node17" class="node">
+<title>proc~set_height</title>
+<g id="a_program~~test6~~CallsGraph_node17"><a xlink:href="../proc/set_height.html" xlink:title="format_pnm%set_height">
+<polygon fill="#d9534f" stroke="#d9534f" points="665.5,-339 523.5,-339 523.5,-315 665.5,-315 665.5,-339"/>
+<text text-anchor="middle" x="594.5" y="-324.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">format_pnm%set_height</text>
+</a>
+</g>
+</g>
+<!-- proc~set_header&#45;&gt;proc~set_height -->
+<g id="program~~test6~~CallsGraph_edge16" class="edge">
+<title>proc~set_header&#45;&gt;proc~set_height</title>
+<path fill="none" stroke="#0000ff" d="M438.82,-276.07C447.71,-278.62 456.71,-281.6 465,-285 482.14,-292.03 483.77,-299.2 501,-306 506.73,-308.26 512.76,-310.31 518.88,-312.16"/>
+<polygon fill="#0000ff" stroke="#0000ff" points="517.97,-315.54 528.54,-314.9 519.88,-308.8 517.97,-315.54"/>
+</g>
+<!-- proc~set_magicnumber -->
+<g id="program~~test6~~CallsGraph_node18" class="node">
+<title>proc~set_magicnumber</title>
+<g id="a_program~~test6~~CallsGraph_node18"><a xlink:href="../proc/set_magicnumber.html" xlink:title="format_pnm%set_magicnumber">
+<polygon fill="#d9534f" stroke="#d9534f" points="686.5,-297 502.5,-297 502.5,-273 686.5,-273 686.5,-297"/>
+<text text-anchor="middle" x="594.5" y="-282.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">format_pnm%set_magicnumber</text>
+</a>
+</g>
+</g>
+<!-- proc~set_header&#45;&gt;proc~set_magicnumber -->
+<g id="program~~test6~~CallsGraph_edge17" class="edge">
+<title>proc~set_header&#45;&gt;proc~set_magicnumber</title>
+<path fill="none" stroke="#0000ff" d="M455.74,-271.26C467.43,-272.42 479.73,-273.65 491.95,-274.87"/>
+<polygon fill="#0000ff" stroke="#0000ff" points="491.89,-278.38 502.19,-275.89 492.59,-271.42 491.89,-278.38"/>
+</g>
+<!-- proc~set_max_color -->
+<g id="program~~test6~~CallsGraph_node19" class="node">
+<title>proc~set_max_color</title>
+<g id="a_program~~test6~~CallsGraph_node19"><a xlink:href="../proc/set_max_color.html" xlink:title="format_pnm%set_max_color">
+<polygon fill="#d9534f" stroke="#d9534f" points="676.5,-255 512.5,-255 512.5,-231 676.5,-231 676.5,-255"/>
+<text text-anchor="middle" x="594.5" y="-240.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">format_pnm%set_max_color</text>
+</a>
+</g>
+</g>
+<!-- proc~set_header&#45;&gt;proc~set_max_color -->
+<g id="program~~test6~~CallsGraph_edge18" class="edge">
+<title>proc~set_header&#45;&gt;proc~set_max_color</title>
+<path fill="none" stroke="#0000ff" d="M455.74,-256.74C470.75,-255.25 486.74,-253.65 502.31,-252.1"/>
+<polygon fill="#0000ff" stroke="#0000ff" points="502.87,-255.56 512.47,-251.08 502.17,-248.59 502.87,-255.56"/>
+</g>
+<!-- proc~set_width -->
+<g id="program~~test6~~CallsGraph_node20" class="node">
+<title>proc~set_width</title>
+<g id="a_program~~test6~~CallsGraph_node20"><a xlink:href="../proc/set_width.html" xlink:title="format_pnm%set_width">
+<polygon fill="#d9534f" stroke="#d9534f" points="663,-213 526,-213 526,-189 663,-189 663,-213"/>
+<text text-anchor="middle" x="594.5" y="-198.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">format_pnm%set_width</text>
+</a>
+</g>
+</g>
+<!-- proc~set_header&#45;&gt;proc~set_width -->
+<g id="program~~test6~~CallsGraph_edge19" class="edge">
+<title>proc~set_header&#45;&gt;proc~set_width</title>
+<path fill="none" stroke="#0000ff" d="M438.82,-251.93C447.71,-249.38 456.71,-246.4 465,-243 482.14,-235.97 483.77,-228.8 501,-222 506.73,-219.74 512.76,-217.69 518.88,-215.84"/>
+<polygon fill="#0000ff" stroke="#0000ff" points="519.88,-219.2 528.54,-213.1 517.97,-212.46 519.88,-219.2"/>
+</g>
+<!-- proc~check_pixel_range -->
+<g id="program~~test6~~CallsGraph_node15" class="node">
+<title>proc~check_pixel_range</title>
+<g id="a_program~~test6~~CallsGraph_node15"><a xlink:href="../proc/check_pixel_range.html" xlink:title="format_pnm%check_pixel_range">
+<polygon fill="#d9534f" stroke="#d9534f" points="688,-171 501,-171 501,-147 688,-147 688,-171"/>
+<text text-anchor="middle" x="594.5" y="-156.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">format_pnm%check_pixel_range</text>
+</a>
+</g>
+</g>
+<!-- proc~set_pixels&#45;&gt;proc~check_pixel_range -->
+<g id="program~~test6~~CallsGraph_edge20" class="edge">
+<title>proc~set_pixels&#45;&gt;proc~check_pixel_range</title>
+<path fill="none" stroke="#aa00ff" d="M438.82,-209.93C447.71,-207.38 456.71,-204.4 465,-201 482.14,-193.97 483.77,-186.8 501,-180 506.73,-177.74 512.76,-175.69 518.88,-173.84"/>
+<polygon fill="#aa00ff" stroke="#aa00ff" points="519.88,-177.2 528.54,-171.1 517.97,-170.46 519.88,-177.2"/>
+</g>
+</g>
+</svg>
+</div>                <script>
+                  var panprogramtest6CallsGraph = svgPanZoom('#programtest6CallsGraph',
+                    {zoomEnabled: true, controlIconsEnabled: true, fit: true, center: true,}
+                  );
+                </script>          <div>
+            <a type="button" class="graph-help" data-bs-toggle="modal" href="#CallsGraph-help-text">Help</a>
+          </div>
+          <div class="modal fade" id="CallsGraph-help-text" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-lg" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h4 class="modal-title" id="-graph-help-label">Graph Key</h4>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+<p>Nodes of different colours represent the following: </p>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.43.0 (0)
+ -->
+<!-- Title: Graph Key Pages: 1 -->
+<svg width="641pt" height="28pt"
+ viewBox="0.00 0.00 641.00 27.51" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1.16 1.16) rotate(0) translate(4 28)">
+<title>Graph Key</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-28 741.5,-28 741.5,4 -4,4"/>
+<!-- Subroutine -->
+<g id="node1" class="node">
+<title>Subroutine</title>
+<polygon fill="#d9534f" stroke="#d9534f" points="70,-24 0,-24 0,0 70,0 70,-24"/>
+<text text-anchor="middle" x="35" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Subroutine</text>
+</g>
+<!-- Function -->
+<g id="node2" class="node">
+<title>Function</title>
+<polygon fill="#d94e8f" stroke="#d94e8f" points="146,-24 88,-24 88,0 146,0 146,-24"/>
+<text text-anchor="middle" x="117" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Function</text>
+</g>
+<!-- Interface -->
+<g id="node3" class="node">
+<title>Interface</title>
+<polygon fill="#a7506f" stroke="#a7506f" points="225.5,-24 164.5,-24 164.5,0 225.5,0 225.5,-24"/>
+<text text-anchor="middle" x="195" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Interface</text>
+</g>
+<!-- Type Bound Procedure -->
+<g id="node4" class="node">
+<title>Type Bound Procedure</title>
+<polygon fill="#a7506f" stroke="#a7506f" points="374,-24 244,-24 244,0 374,0 374,-24"/>
+<text text-anchor="middle" x="309" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Type Bound Procedure</text>
+</g>
+<!-- Unknown Procedure Type -->
+<g id="node5" class="node">
+<title>Unknown Procedure Type</title>
+<polygon fill="#777777" stroke="#777777" points="537.5,-24 392.5,-24 392.5,0 537.5,0 537.5,-24"/>
+<text text-anchor="middle" x="465" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Unknown Procedure Type</text>
+</g>
+<!-- Program -->
+<g id="node6" class="node">
+<title>Program</title>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="614,-24 556,-24 556,0 614,0 614,-24"/>
+<text text-anchor="middle" x="585" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Program</text>
+</g>
+<!-- This Page&#39;s Entity -->
+<g id="node7" class="node">
+<title>This Page&#39;s Entity</title>
+<polygon fill="none" stroke="black" points="737.5,-24 632.5,-24 632.5,0 737.5,0 737.5,-24"/>
+<text text-anchor="middle" x="685" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50">This Page&#39;s Entity</text>
+</g>
+</g>
+</svg>
+
+<p>Solid arrows point from a procedure to one which it calls. Dashed 
+arrows point from an interface to procedures which implement that interface.
+This could include the module procedures in a generic interface or the
+implementation in a submodule of an interface in a parent module.
+</p>
+ Where possible, edges connecting nodes are
+given different colours to make them easier to distinguish in
+large graphs.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+<br>
+
+    <section>
+    <h2>Variables</h2>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+<th></th><th scope="col">Initial</th>        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-image~4"></span>
+              type(<a href='../type/format_pnm.html'>format_pnm</a>)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>image</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-px~3"></span>
+              integer(kind=ik),
+            </td>
+            <td>
+              dimension(4,12)
+            </td>
+            <td>::</td>
+            <td><strong>px</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+    </section>
+    <br>
+    
+    
+    
+
+    
+
+
+    
+
+    <section>
+    <h2 id="src">Source Code</h2>
+    <div class="hl codehilite"><pre><span></span><span class="k">program </span><span class="n">test6</span>
+<span class="w">    </span><span class="k">use </span><span class="n">forimage</span><span class="p">,</span><span class="w"> </span><span class="k">only</span><span class="p">:</span><span class="w"> </span><span class="n">format_pnm</span><span class="p">,</span><span class="w"> </span><span class="n">ik</span>
+<span class="w">    </span><span class="k">implicit none</span>
+<span class="w">    </span>
+<span class="w">    </span><span class="c">! Declare an object of type format_pnm</span>
+<span class="w">    </span><span class="k">type</span><span class="p">(</span><span class="n">format_pnm</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">image</span>
+
+<span class="w">    </span><span class="c">! Define a 2D array representing pixel values (0 and 1) for the image</span>
+<span class="w">    </span><span class="kt">integer</span><span class="p">(</span><span class="n">ik</span><span class="p">),</span><span class="w"> </span><span class="k">dimension</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">12</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">px</span>
+
+<span class="w">    </span><span class="k">print</span><span class="o">*</span><span class="p">,</span><span class="s1">&#39; &#39;</span>
+<span class="w">    </span><span class="k">print</span><span class="s1">&#39;(a)&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Test 6&#39;</span>
+
+<span class="w">    </span><span class="n">px</span><span class="p">(</span><span class="mi">1</span><span class="p">,:)</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mi">14</span><span class="p">,</span><span class="mi">12</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">15</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">15</span><span class="p">]</span>
+<span class="w">    </span><span class="n">px</span><span class="p">(</span><span class="mi">2</span><span class="p">,:)</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">15</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
+<span class="w">    </span><span class="n">px</span><span class="p">(</span><span class="mi">3</span><span class="p">,:)</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">15</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
+<span class="w">    </span><span class="n">px</span><span class="p">(</span><span class="mi">4</span><span class="p">,:)</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mi">15</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">15</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="w">    </span><span class="c">! Set the properties of the format_pnm object (encoding, file format, width, height, comment and pixels)</span>
+<span class="w">    </span><span class="k">call </span><span class="n">image</span><span class="p">%</span><span class="n">set_pnm</span><span class="p">(</span><span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;binary&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">file_format</span><span class="o">=</span><span class="s1">&#39;ppm&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">width</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="n">height</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="n">max_color</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span><span class="w"> </span><span class="n">comment</span><span class="o">=</span><span class="s1">&#39;test 2&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">pixels</span><span class="o">=</span><span class="n">px</span><span class="p">)</span>
+
+<span class="w">    </span><span class="c">! Export the PNM image to a file named &#39;img3_binary&#39; in the specified format</span>
+<span class="w">    </span><span class="k">call </span><span class="n">image</span><span class="p">%</span><span class="n">export_pnm</span><span class="p">(</span><span class="s1">&#39;pnm_files/img3_binary&#39;</span><span class="p">)</span>
+
+<span class="w">    </span><span class="c">! Print the image information to the screen</span>
+<span class="w">    </span><span class="k">call </span><span class="n">image</span><span class="p">%</span><span class="n">print_info</span><span class="p">()</span>
+
+<span class="w">    </span><span class="c">! Finalize the format_pnm object to release resources</span>
+<span class="w">    </span><span class="k">call </span><span class="n">image</span><span class="p">%</span><span class="n">finalize</span><span class="p">()</span>
+
+<span class="k">end program </span><span class="n">test6</span>
+</pre></div>
+
+    </section>
+    
+    </div>
+  </div>
+
+      <hr>
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+        <div class="row justify-content-between">
+          <div class="col">
+            <p>
+              ForImage
+ was developed by Seyed Ali Ghasemi<br>              &copy; 2023-2024 BSD 3-Clause
+</p>
+          </div>
+          <div class="col">
+            <p class="text-end">
+              Documentation generated by
+              <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
+ on 2024-04-23T13:38:53.839855             </p>
+          </div>
+        </div>
+        <br>
+      </div> <!-- /container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>    
+
+    <!-- MathJax JavaScript
+             ================================================== -->
+             <!-- Placed at the end of the document so the pages load faster -->
+        <script type="text/x-mathjax-config">
+          MathJax.Hub.Config({
+          TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } },
+          jax: ['input/TeX','input/MathML','output/HTML-CSS'],
+          extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']
+          });
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+          <script src="../tipuesearch/tipuesearch_content.js"></script>
+          <script src="../tipuesearch/tipuesearch_set.js"></script>
+          <script src="../tipuesearch/tipuesearch.js"></script>
+
+  </body>
+</html>

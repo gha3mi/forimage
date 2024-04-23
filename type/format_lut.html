@@ -29,7 +29,7 @@
     <div class="container-fluid mb-sm-4 mb-xl-2">
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
         <div class="container">
-          <a class="navbar-brand" href="../index.html">ForImage <small>0.3.0</small></a>
+          <a class="navbar-brand" href="../index.html">ForImage <small>0.4.0</small></a>
           <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar"
                   aria-expanded="false" aria-controls="navbar" aria-label="Toggle navigation">
                   <span class="navbar-toggler-icon">
@@ -76,8 +76,7 @@
             <li class="list-inline-item" id="meta-license"><i class="fa fa-legal"></i> BSD 3-Clause</li>
 
             <li class="list-inline-item" id="statements"><i class="fa fa-list-ol"></i>
-              <a data-bs-toggle="tooltip"
-                 data-bs-placement="bottom" data-html="true"
+              <a data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true"
                  title="<p>16.8% of total for derived types.</p>Including implementation: 110 statements,  8.8% of total for derived types.">17 statements</a>
             </li>
 
@@ -118,7 +117,7 @@
       </a>
       <div id="vars-0" class="collapse">
         <div class="list-group list-group-flush">
-            <a class="list-group-item" href="../type/format_lut.html#variable-colors~6">colors</a>
+            <a class="list-group-item" href="../type/format_lut.html#variable-colors">colors</a>
             <a class="list-group-item" href="../type/format_lut.html#variable-dim_colors">dim_colors</a>
             <a class="list-group-item" href="../type/format_lut.html#variable-num_colors">num_colors</a>
         </div>
@@ -149,12 +148,12 @@
         <div class="list-group list-group-flush">
             <a class="list-group-item" href="../type/format_lut.html#boundprocedure-allocate_colors">allocate_colors</a>
             <a class="list-group-item" href="../type/format_lut.html#boundprocedure-export">export</a>
-            <a class="list-group-item" href="../type/format_lut.html#boundprocedure-finalize~2">finalize</a>
+            <a class="list-group-item" href="../type/format_lut.html#boundprocedure-finalize">finalize</a>
             <a class="list-group-item" href="../type/format_lut.html#boundprocedure-get_colors">get_colors</a>
             <a class="list-group-item" href="../type/format_lut.html#boundprocedure-get_dim_colors">get_dim_colors</a>
             <a class="list-group-item" href="../type/format_lut.html#boundprocedure-get_num_colors">get_num_colors</a>
             <a class="list-group-item" href="../type/format_lut.html#boundprocedure-import">import</a>
-            <a class="list-group-item" href="../type/format_lut.html#boundprocedure-set~2">set</a>
+            <a class="list-group-item" href="../type/format_lut.html#boundprocedure-set">set</a>
             <a class="list-group-item" href="../type/format_lut.html#boundprocedure-set_colors">set_colors</a>
             <a class="list-group-item" href="../type/format_lut.html#boundprocedure-set_dim_colors">set_dim_colors</a>
             <a class="list-group-item" href="../type/format_lut.html#boundprocedure-set_num_colors">set_num_colors</a>
@@ -177,7 +176,7 @@
     </div>
     
     <div class="col-md-9" id='text'>
-      <h2>
+      <h2 id="type-def-statement">
         type, public :: format_lut</h2>
     
     <br>
@@ -196,7 +195,7 @@
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-colors~6"></span>
+              <span class="anchor" id="variable-colors"></span>
               integer,
             </td>
               <td>public,</td>
@@ -389,7 +388,7 @@
           <div class="row">
               <div class="card mt-3">
     <div class="card-header codesum">
-      <span class="anchor" id="boundprocedure-finalize~2"></span>
+      <span class="anchor" id="boundprocedure-finalize"></span>
       <h3>
           procedure, public ::
   <strong>finalize</strong> => <a href='/home/runner/work/forimage/forimage/doc/proc/deallocate_lut.html'>deallocate_lut</a>
@@ -724,7 +723,7 @@
           <div class="row">
               <div class="card mt-3">
     <div class="card-header codesum">
-      <span class="anchor" id="boundprocedure-set~2"></span>
+      <span class="anchor" id="boundprocedure-set"></span>
       <h3>
           procedure, public ::
   <strong>set</strong>
@@ -734,7 +733,7 @@
     <ul class="list-group">
         <li class="list-group-item">
                   <h3>
-    private pure subroutine <a href='../proc/set~2.html'>set</a>(this, num_colors, dim_colors, colors)  
+    private pure subroutine <a href='../proc/set.html'>set</a>(this, num_colors, dim_colors, colors)  
 </h3>
         <dl class="dl-horizontal">
         <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
@@ -1076,14 +1075,17 @@
     <footer>
       <div class="container">
         <div class="row justify-content-between">
-          <div class="col"><p>ForImage was developed by Seyed Ali Ghasemi<br>&copy; 2023-2024 BSD 3-Clause
+          <div class="col">
+            <p>
+              ForImage
+ was developed by Seyed Ali Ghasemi<br>              &copy; 2023-2024 BSD 3-Clause
 </p>
           </div>
           <div class="col">
             <p class="text-end">
               Documentation generated by
               <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
- on 2024-03-02T10:18:22.563314             </p>
+ on 2024-04-23T13:38:53.839855             </p>
           </div>
         </div>
         <br>

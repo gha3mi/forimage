@@ -1,0 +1,1997 @@
+<!-- -*- mode: jinja2 -*- -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="A Fortran library for processing and editing images and managing colors">
+    <meta name="author" content="Seyed Ali Ghasemi" >
+    <link rel="icon" href="../favicon.png">
+
+    <title>example26 &ndash; ForImage</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="../css/pygments.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/local.css" rel="stylesheet">
+      <link  href="../tipuesearch/tipuesearch.css" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="../js/svg-pan-zoom.min.js"></script>
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <div class="container-fluid mb-sm-4 mb-xl-2">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+          <a class="navbar-brand" href="../index.html">ForImage <small>0.4.0</small></a>
+          <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar"
+                  aria-expanded="false" aria-controls="navbar" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon">
+          </button>
+
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link" href="../lists/files.html">Source Files</a>
+                  </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/modules.html">Modules</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/procedures.html">Procedures</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/types.html">Derived Types</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/programs.html">Programs</a>
+                </li>
+            </ul>
+              <div class="d-flex align-items-end flex-grow-1">
+                <form action="../search.html" role="search" class="ms-auto">
+                  <input type="text" class="form-control" aria-label="Search" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+                </form>
+              </div>
+          </div><!--/.nav-collapse -->
+        </div>
+      </nav>
+    </div>
+
+    <div class="container">
+  <div class="row">
+    <h1>example26      <small>Program</small>
+      
+    </h1>
+      <div class="container p-2 mb-4 bg-light border rounded-3">
+    <div class="row align-items-center justify-content-between" id="info-bar">
+      <div class="col">
+        <ul class="list-inline" style="margin-bottom:0px;display:inline">
+            <li class="list-inline-item" id="meta-license"><i class="fa fa-legal"></i> BSD 3-Clause</li>
+
+            <li class="list-inline-item" id="statements"><i class="fa fa-list-ol"></i>
+              <a data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true"
+                 title="14.4% of total for programs.">123 statements</a>
+            </li>
+
+            <li class="list-inline-item" id="source-file">
+              <i class="fa fa-code"></i>
+              <a href="../src/test26.f90"> Source File</a>
+            </li>
+        </ul>
+      </div>
+      <div class="col">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb justify-content-end mb-0">
+                <li class="breadcrumb-item"><a href='../sourcefile/test26.f90.html'>test26.f90</a></li>
+            <li class="breadcrumb-item active" aria-current="page">example26</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </div>
+  <script>
+    $(function () {
+    $('[data-bs-toggle="tooltip"]').tooltip()
+    })
+  </script>
+
+  </div>
+  
+  <div class="row">
+    <div class="col-md-3 hidden-xs hidden-sm visible-md visible-lg">
+      <div id="sidebar">
+      <h3>Contents</h3>
+  
+      <div class="card mb-4">
+      <a data-bs-toggle="collapse" href="#vars-0"
+         aria-expanded="false" aria-controls="vars-0">
+         <h4 class="card-header bg-primary text-white">Variables</h4>
+      </a>
+      <div id="vars-0" class="collapse">
+        <div class="list-group list-group-flush">
+            <a class="list-group-item" href="../program/example26.html#variable-b~21">b</a>
+            <a class="list-group-item" href="../program/example26.html#variable-c~13">c</a>
+            <a class="list-group-item" href="../program/example26.html#variable-custom_color~2">custom_color</a>
+            <a class="list-group-item" href="../program/example26.html#variable-decimal~9">decimal</a>
+            <a class="list-group-item" href="../program/example26.html#variable-g~21">g</a>
+            <a class="list-group-item" href="../program/example26.html#variable-h~14">h</a>
+            <a class="list-group-item" href="../program/example26.html#variable-hex~9">hex</a>
+            <a class="list-group-item" href="../program/example26.html#variable-hl~5">hl</a>
+            <a class="list-group-item" href="../program/example26.html#variable-k~11">k</a>
+            <a class="list-group-item" href="../program/example26.html#variable-m~11">m</a>
+            <a class="list-group-item" href="../program/example26.html#variable-name~6">name</a>
+            <a class="list-group-item" href="../program/example26.html#variable-r~21">r</a>
+            <a class="list-group-item" href="../program/example26.html#variable-s~13">s</a>
+            <a class="list-group-item" href="../program/example26.html#variable-sl~5">sl</a>
+            <a class="list-group-item" href="../program/example26.html#variable-tol">tol</a>
+            <a class="list-group-item" href="../program/example26.html#variable-v~9">v</a>
+            <a class="list-group-item" href="../program/example26.html#variable-vl~5">vl</a>
+            <a class="list-group-item" href="../program/example26.html#variable-xyz_x~5">xyz_x</a>
+            <a class="list-group-item" href="../program/example26.html#variable-xyz_y~5">xyz_y</a>
+            <a class="list-group-item" href="../program/example26.html#variable-xyz_z~5">xyz_z</a>
+            <a class="list-group-item" href="../program/example26.html#variable-y~14">y</a>
+        </div>
+      </div>
+    </div>
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+      <div class="card mb-4">
+      <a data-bs-toggle="collapse" href="#subs-0"
+         aria-expanded="false" aria-controls="subs-0">
+         <h4 class="card-header bg-primary text-white">Subroutines</h4>
+      </a>
+      <div id="subs-0" class="collapse">
+        <div class="list-group list-group-flush">
+            <a class="list-group-item" href="../program/example26.html#proc-check">check</a>
+        </div>
+      </div>
+    </div>
+
+  
+  
+  
+  
+  
+  
+  
+    <div class="card card-primary">
+      <div class="card-header text-left"><h3 class="card-title">Source Code</h3></div>
+      <div class="list-group">
+        <a class="list-group-item" href="../program/example26.html#src">example26</a>
+      </div>
+    </div>
+
+
+  </div>
+
+    </div>
+    
+    <div class="col-md-9" id='text'>
+        <div class="card mb-4">
+      <h3 class="card-header card-title bg-light">Uses</h3>
+      <div class="card-body">
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              <ul class="list-inline">
+                  <li class="list-inline-item"><a href='../module/forimage.html'>forimage</a></li>
+              </ul>
+            </li>
+            <li class="list-group-item">
+              <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.43.0 (0)
+ -->
+<!-- Title: program~~example26~~UsesGraph Pages: 1 -->
+<svg id="programexample26UsesGraph" width="641pt" height="116pt"
+ viewBox="0.00 0.00 641.00 115.53" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="program~~example26~~UsesGraph" class="graph" transform="scale(1.02 1.02) rotate(0) translate(4 113.52)">
+<title>program~~example26~~UsesGraph</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-113.52 648,-113.52 648,4 -4,4"/>
+<!-- program~example26 -->
+<g id="program~~example26~~UsesGraph_node1" class="node">
+<title>program~example26</title>
+<polygon fill="none" stroke="black" points="644,-60.17 572,-60.17 572,-36.17 644,-36.17 644,-60.17"/>
+<text text-anchor="middle" x="608" y="-45.77" font-family="Helvetica,sans-Serif" font-size="10.50">example26</text>
+</g>
+<!-- module~forimage -->
+<g id="program~~example26~~UsesGraph_node2" class="node">
+<title>module~forimage</title>
+<g id="a_program~~example26~~UsesGraph_node2"><a xlink:href="../module/forimage.html" xlink:title="forimage">
+<polygon fill="#337ab7" stroke="#337ab7" points="536,-60.17 475,-60.17 475,-36.17 536,-36.17 536,-60.17"/>
+<text text-anchor="middle" x="505.5" y="-45.77" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">forimage</text>
+</a>
+</g>
+</g>
+<!-- program~example26&#45;&gt;module~forimage -->
+<g id="program~~example26~~UsesGraph_edge1" class="edge">
+<title>program~example26&#45;&gt;module~forimage</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M571.85,-48.17C563.56,-48.17 554.67,-48.17 546.19,-48.17"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="546.13,-44.67 536.13,-48.17 546.13,-51.67 546.13,-44.67"/>
+</g>
+<!-- module~forcolor -->
+<g id="program~~example26~~UsesGraph_node3" class="node">
+<title>module~forcolor</title>
+<g id="a_program~~example26~~UsesGraph_node3"><a xlink:href="../module/forcolor.html" xlink:title="forcolor">
+<polygon fill="#337ab7" stroke="#337ab7" points="439,-81.17 385,-81.17 385,-57.17 439,-57.17 439,-81.17"/>
+<text text-anchor="middle" x="412" y="-66.77" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">forcolor</text>
+</a>
+</g>
+</g>
+<!-- module~forimage&#45;&gt;module~forcolor -->
+<g id="program~~example26~~UsesGraph_edge2" class="edge">
+<title>module~forimage&#45;&gt;module~forcolor</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M474.79,-54.98C466.54,-56.88 457.49,-58.95 448.93,-60.92"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="448.13,-57.51 439.17,-63.16 449.7,-64.33 448.13,-57.51"/>
+</g>
+<!-- module~forimage_parameters -->
+<g id="program~~example26~~UsesGraph_node4" class="node">
+<title>module~forimage_parameters</title>
+<g id="a_program~~example26~~UsesGraph_node4"><a xlink:href="../module/forimage_parameters.html" xlink:title="forimage_parameters">
+<polygon fill="#337ab7" stroke="#337ab7" points="259,-101.17 130,-101.17 130,-77.17 259,-77.17 259,-101.17"/>
+<text text-anchor="middle" x="194.5" y="-86.77" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">forimage_parameters</text>
+</a>
+</g>
+</g>
+<!-- module~forimage&#45;&gt;module~forimage_parameters -->
+<g id="program~~example26~~UsesGraph_edge3" class="edge">
+<title>module~forimage&#45;&gt;module~forimage_parameters</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M489.59,-60.27C476.9,-69.91 457.79,-82.96 439,-90.17 390.22,-108.88 375.22,-107.52 323,-109.17"/>
+</g>
+<!-- module~lut -->
+<g id="program~~example26~~UsesGraph_node5" class="node">
+<title>module~lut</title>
+<g id="a_program~~example26~~UsesGraph_node5"><a xlink:href="../module/lut.html" xlink:title="lut">
+<polygon fill="#337ab7" stroke="#337ab7" points="439,-39.17 385,-39.17 385,-15.17 439,-15.17 439,-39.17"/>
+<text text-anchor="middle" x="412" y="-24.77" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">lut</text>
+</a>
+</g>
+</g>
+<!-- module~forimage&#45;&gt;module~lut -->
+<g id="program~~example26~~UsesGraph_edge4" class="edge">
+<title>module~forimage&#45;&gt;module~lut</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M474.79,-41.35C466.54,-39.45 457.49,-37.38 448.93,-35.41"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="449.7,-32 439.17,-33.17 448.13,-38.82 449.7,-32"/>
+</g>
+<!-- module~pnm -->
+<g id="program~~example26~~UsesGraph_node6" class="node">
+<title>module~pnm</title>
+<g id="a_program~~example26~~UsesGraph_node6"><a xlink:href="../module/pnm.html" xlink:title="pnm">
+<polygon fill="#337ab7" stroke="#337ab7" points="349,-81.17 295,-81.17 295,-57.17 349,-57.17 349,-81.17"/>
+<text text-anchor="middle" x="322" y="-66.77" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">pnm</text>
+</a>
+</g>
+</g>
+<!-- module~forimage&#45;&gt;module~pnm -->
+<g id="program~~example26~~UsesGraph_edge5" class="edge">
+<title>module~forimage&#45;&gt;module~pnm</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M490.61,-35.86C478.1,-25.66 458.7,-11.94 439,-6.17 415.97,0.58 407.14,3.11 385,-6.17 364.41,-14.79 347.2,-33.95 336.18,-48.89"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="333.31,-46.9 330.43,-57.09 339.04,-50.92 333.31,-46.9"/>
+</g>
+<!-- module~forcolor&#45;&gt;module~forimage_parameters -->
+<g id="program~~example26~~UsesGraph_edge6" class="edge">
+<title>module~forcolor&#45;&gt;module~forimage_parameters</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M394.8,-81.25C377.85,-92.71 350.01,-108.31 323,-109.17"/>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M321,-109.17C298.83,-109.87 274.71,-106.93 253.6,-103.11"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="253.98,-99.62 243.5,-101.17 252.66,-106.49 253.98,-99.62"/>
+</g>
+<!-- module~forcolor&#45;&gt;module~pnm -->
+<g id="program~~example26~~UsesGraph_edge7" class="edge">
+<title>module~forcolor&#45;&gt;module~pnm</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M384.6,-69.17C376.61,-69.17 367.69,-69.17 359.18,-69.17"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="359.08,-65.67 349.08,-69.17 359.08,-72.67 359.08,-65.67"/>
+</g>
+<!-- iso_fortran_env -->
+<g id="program~~example26~~UsesGraph_node7" class="node">
+<title>iso_fortran_env</title>
+<g id="a_program~~example26~~UsesGraph_node7"><a xlink:href="http://fortranwiki.org/fortran/show/iso_fortran_env" xlink:title="iso_fortran_env">
+<polygon fill="#337ab7" stroke="#337ab7" points="94,-101.17 0,-101.17 0,-77.17 94,-77.17 94,-101.17"/>
+<text text-anchor="middle" x="47" y="-86.77" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">iso_fortran_env</text>
+</a>
+</g>
+</g>
+<!-- module~forimage_parameters&#45;&gt;iso_fortran_env -->
+<g id="program~~example26~~UsesGraph_edge8" class="edge">
+<title>module~forimage_parameters&#45;&gt;iso_fortran_env</title>
+<path fill="none" stroke="#7fff00" stroke-dasharray="5,2" d="M129.68,-89.17C121.31,-89.17 112.77,-89.17 104.53,-89.17"/>
+<polygon fill="#7fff00" stroke="#7fff00" points="104.28,-85.67 94.28,-89.17 104.28,-92.67 104.28,-85.67"/>
+</g>
+<!-- module~pnm&#45;&gt;module~forimage_parameters -->
+<g id="program~~example26~~UsesGraph_edge9" class="edge">
+<title>module~pnm&#45;&gt;module~forimage_parameters</title>
+<path fill="none" stroke="#7f00ff" stroke-dasharray="5,2" d="M295,-73.31C287.25,-74.55 278.34,-75.96 269.11,-77.44"/>
+<polygon fill="#7f00ff" stroke="#7f00ff" points="268.33,-74.01 259.01,-79.05 269.44,-80.93 268.33,-74.01"/>
+</g>
+</g>
+</svg>
+</div>                <script>
+                  var panprogramexample26UsesGraph = svgPanZoom('#programexample26UsesGraph',
+                    {zoomEnabled: true, controlIconsEnabled: true, fit: true, center: true,}
+                  );
+                </script>          <div>
+            <a type="button" class="graph-help" data-bs-toggle="modal" href="#UsesGraph-help-text">Help</a>
+          </div>
+          <div class="modal fade" id="UsesGraph-help-text" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-lg" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h4 class="modal-title" id="-graph-help-label">Graph Key</h4>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+<p>Nodes of different colours represent the following: </p>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.43.0 (0)
+ -->
+<!-- Title: Graph Key Pages: 1 -->
+<svg width="518pt" height="32pt"
+ viewBox="0.00 0.00 517.50 32.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 28)">
+<title>Graph Key</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-28 513.5,-28 513.5,4 -4,4"/>
+<!-- Module -->
+<g id="node1" class="node">
+<title>Module</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="54,-24 0,-24 0,0 54,0 54,-24"/>
+<text text-anchor="middle" x="27" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Module</text>
+</g>
+<!-- Submodule -->
+<g id="node2" class="node">
+<title>Submodule</title>
+<polygon fill="#5bc0de" stroke="#5bc0de" points="145.5,-24 72.5,-24 72.5,0 145.5,0 145.5,-24"/>
+<text text-anchor="middle" x="109" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Submodule</text>
+</g>
+<!-- Subroutine -->
+<g id="node3" class="node">
+<title>Subroutine</title>
+<polygon fill="#d9534f" stroke="#d9534f" points="234,-24 164,-24 164,0 234,0 234,-24"/>
+<text text-anchor="middle" x="199" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Subroutine</text>
+</g>
+<!-- Function -->
+<g id="node4" class="node">
+<title>Function</title>
+<polygon fill="#d94e8f" stroke="#d94e8f" points="310,-24 252,-24 252,0 310,0 310,-24"/>
+<text text-anchor="middle" x="281" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Function</text>
+</g>
+<!-- Program -->
+<g id="node5" class="node">
+<title>Program</title>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="386,-24 328,-24 328,0 386,0 386,-24"/>
+<text text-anchor="middle" x="357" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Program</text>
+</g>
+<!-- This Page&#39;s Entity -->
+<g id="node6" class="node">
+<title>This Page&#39;s Entity</title>
+<polygon fill="none" stroke="black" points="509.5,-24 404.5,-24 404.5,0 509.5,0 509.5,-24"/>
+<text text-anchor="middle" x="457" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50">This Page&#39;s Entity</text>
+</g>
+</g>
+</svg>
+
+<p>Solid arrows point from a submodule to the (sub)module which it is
+descended from. Dashed arrows point from a module or program unit to 
+modules which it uses.
+</p>
+ Where possible, edges connecting nodes are
+given different colours to make them easier to distinguish in
+large graphs.</div>
+            </div>
+          </div>
+        </div>
+            </li>
+        </ul>
+      </div>
+    </div>
+
+    
+    <br>
+    <div class="card">
+      <div class="card-header">
+  <h3 class="card-title">Calls</h3>
+      </div>
+      <div class="card-body">
+  <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.43.0 (0)
+ -->
+<!-- Title: program~~example26~~CallsGraph Pages: 1 -->
+<svg id="programexample26CallsGraph" width="641pt" height="726pt"
+ viewBox="0.00 0.00 641.00 725.84" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="program~~example26~~CallsGraph" class="graph" transform="scale(1.13 1.13) rotate(0) translate(4 815.82)">
+<title>program~~example26~~CallsGraph</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-815.82 720,-815.82 720,4 -4,4"/>
+<!-- program~example26 -->
+<g id="program~~example26~~CallsGraph_node1" class="node">
+<title>program~example26</title>
+<polygon fill="none" stroke="black" points="72,-685.82 0,-685.82 0,-661.82 72,-661.82 72,-685.82"/>
+<text text-anchor="middle" x="36" y="-671.42" font-family="Helvetica,sans-Serif" font-size="10.50">example26</text>
+</g>
+<!-- proc~check -->
+<g id="program~~example26~~CallsGraph_node2" class="node">
+<title>proc~check</title>
+<g id="a_program~~example26~~CallsGraph_node2"><a xlink:href="../proc/check.html" xlink:title="check">
+<polygon fill="#d9534f" stroke="#d9534f" points="168.5,-808.82 114.5,-808.82 114.5,-784.82 168.5,-784.82 168.5,-808.82"/>
+<text text-anchor="middle" x="141.5" y="-794.42" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">check</text>
+</a>
+</g>
+</g>
+<!-- program~example26&#45;&gt;proc~check -->
+<g id="program~~example26~~CallsGraph_edge1" class="edge">
+<title>program~example26&#45;&gt;proc~check</title>
+<path fill="none" stroke="#ff0000" d="M44.39,-685.95C56.38,-705.12 81.44,-743.09 108,-770.82 110.35,-773.28 112.93,-775.7 115.58,-778.03"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="113.64,-780.97 123.57,-784.66 118.11,-775.58 113.64,-780.97"/>
+</g>
+<!-- proc~convert -->
+<g id="program~~example26~~CallsGraph_node3" class="node">
+<title>proc~convert</title>
+<g id="a_program~~example26~~CallsGraph_node3"><a xlink:href="../proc/convert.html" xlink:title="color%convert">
+<polygon fill="#d9534f" stroke="#d9534f" points="586,-580.82 496,-580.82 496,-556.82 586,-556.82 586,-580.82"/>
+<text text-anchor="middle" x="541" y="-566.42" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">color%convert</text>
+</a>
+</g>
+</g>
+<!-- program~example26&#45;&gt;proc~convert -->
+<g id="program~~example26~~CallsGraph_edge2" class="edge">
+<title>program~example26&#45;&gt;proc~convert</title>
+<path fill="none" stroke="#ff0000" d="M57.37,-685.83C105.72,-712.72 230.8,-772.78 330,-737.82 415.35,-707.74 491.58,-626.68 523.77,-588.82"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="526.57,-590.92 530.3,-581.01 521.2,-586.43 526.57,-590.92"/>
+</g>
+<!-- proc~get -->
+<g id="program~~example26~~CallsGraph_node4" class="node">
+<title>proc~get</title>
+<g id="a_program~~example26~~CallsGraph_node4"><a xlink:href="../proc/get.html" xlink:title="color%get">
+<polygon fill="#d9534f" stroke="#d9534f" points="175,-602.82 108,-602.82 108,-578.82 175,-578.82 175,-602.82"/>
+<text text-anchor="middle" x="141.5" y="-588.42" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">color%get</text>
+</a>
+</g>
+</g>
+<!-- program~example26&#45;&gt;proc~get -->
+<g id="program~~example26~~CallsGraph_edge3" class="edge">
+<title>program~example26&#45;&gt;proc~get</title>
+<path fill="none" stroke="#ff0000" d="M52.27,-661.58C69.49,-647.77 97.68,-625.16 117.55,-609.23"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="119.89,-611.84 125.5,-602.85 115.51,-606.38 119.89,-611.84"/>
+</g>
+<!-- proc~set~2 -->
+<g id="program~~example26~~CallsGraph_node5" class="node">
+<title>proc~set~2</title>
+<g id="a_program~~example26~~CallsGraph_node5"><a xlink:href="../proc/set~2.html" xlink:title="color%set">
+<polygon fill="#d9534f" stroke="#d9534f" points="174,-224.82 109,-224.82 109,-200.82 174,-200.82 174,-224.82"/>
+<text text-anchor="middle" x="141.5" y="-210.42" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">color%set</text>
+</a>
+</g>
+</g>
+<!-- program~example26&#45;&gt;proc~set~2 -->
+<g id="program~~example26~~CallsGraph_edge4" class="edge">
+<title>program~example26&#45;&gt;proc~set~2</title>
+<path fill="none" stroke="#ff0000" d="M39.77,-661.49C53.8,-599 117.11,-316.99 135.49,-235.15"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="139,-235.5 137.77,-224.98 132.17,-233.97 139,-235.5"/>
+</g>
+<!-- proc~cmyk_to_rgb -->
+<g id="program~~example26~~CallsGraph_node6" class="node">
+<title>proc~cmyk_to_rgb</title>
+<g id="a_program~~example26~~CallsGraph_node6"><a xlink:href="../proc/cmyk_to_rgb.html" xlink:title="cmyk_to_rgb">
+<polygon fill="#d9534f" stroke="#d9534f" points="709,-811.82 629,-811.82 629,-787.82 709,-787.82 709,-811.82"/>
+<text text-anchor="middle" x="669" y="-797.42" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">cmyk_to_rgb</text>
+</a>
+</g>
+</g>
+<!-- proc~convert&#45;&gt;proc~cmyk_to_rgb -->
+<g id="program~~example26~~CallsGraph_edge5" class="edge">
+<title>proc~convert&#45;&gt;proc~cmyk_to_rgb</title>
+<path fill="none" stroke="#7fff00" d="M543.39,-580.94C548.03,-616.03 565.96,-719.06 622,-778.82 622.91,-779.8 623.88,-780.73 624.89,-781.62"/>
+<polygon fill="#7fff00" stroke="#7fff00" points="623.17,-784.69 633.33,-787.69 627.26,-779.01 623.17,-784.69"/>
+</g>
+<!-- proc~decimal_to_rgb -->
+<g id="program~~example26~~CallsGraph_node7" class="node">
+<title>proc~decimal_to_rgb</title>
+<g id="a_program~~example26~~CallsGraph_node7"><a xlink:href="../proc/decimal_to_rgb.html" xlink:title="decimal_to_rgb">
+<polygon fill="#d9534f" stroke="#d9534f" points="716,-769.82 622,-769.82 622,-745.82 716,-745.82 716,-769.82"/>
+<text text-anchor="middle" x="669" y="-755.42" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">decimal_to_rgb</text>
+</a>
+</g>
+</g>
+<!-- proc~convert&#45;&gt;proc~decimal_to_rgb -->
+<g id="program~~example26~~CallsGraph_edge6" class="edge">
+<title>proc~convert&#45;&gt;proc~decimal_to_rgb</title>
+<path fill="none" stroke="#7fff00" d="M544.75,-581.08C552.12,-611.36 575.03,-690.6 622,-736.82 623.1,-737.9 624.26,-738.93 625.47,-739.91"/>
+<polygon fill="#7fff00" stroke="#7fff00" points="623.81,-743.01 634.06,-745.71 627.73,-737.21 623.81,-743.01"/>
+</g>
+<!-- proc~hex_to_rgb -->
+<g id="program~~example26~~CallsGraph_node16" class="node">
+<title>proc~hex_to_rgb</title>
+<g id="a_program~~example26~~CallsGraph_node16"><a xlink:href="../proc/hex_to_rgb.html" xlink:title="hex_to_rgb">
+<polygon fill="#d9534f" stroke="#d9534f" points="704,-727.82 634,-727.82 634,-703.82 704,-703.82 704,-727.82"/>
+<text text-anchor="middle" x="669" y="-713.42" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">hex_to_rgb</text>
+</a>
+</g>
+</g>
+<!-- proc~convert&#45;&gt;proc~hex_to_rgb -->
+<g id="program~~example26~~CallsGraph_edge7" class="edge">
+<title>proc~convert&#45;&gt;proc~hex_to_rgb</title>
+<path fill="none" stroke="#7fff00" d="M546.81,-580.84C557.16,-605.33 583.71,-661.46 622,-694.82 623.32,-695.97 624.71,-697.07 626.16,-698.12"/>
+<polygon fill="#7fff00" stroke="#7fff00" points="624.57,-701.25 634.9,-703.57 628.27,-695.31 624.57,-701.25"/>
+</g>
+<!-- proc~hsl_to_rgb -->
+<g id="program~~example26~~CallsGraph_node17" class="node">
+<title>proc~hsl_to_rgb</title>
+<g id="a_program~~example26~~CallsGraph_node17"><a xlink:href="../proc/hsl_to_rgb.html" xlink:title="hsl_to_rgb">
+<polygon fill="#d9534f" stroke="#d9534f" points="702.5,-685.82 635.5,-685.82 635.5,-661.82 702.5,-661.82 702.5,-685.82"/>
+<text text-anchor="middle" x="669" y="-671.42" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">hsl_to_rgb</text>
+</a>
+</g>
+</g>
+<!-- proc~convert&#45;&gt;proc~hsl_to_rgb -->
+<g id="program~~example26~~CallsGraph_edge8" class="edge">
+<title>proc~convert&#45;&gt;proc~hsl_to_rgb</title>
+<path fill="none" stroke="#7fff00" d="M551.16,-581.08C564.92,-598.81 592.48,-631.79 622,-652.82 623.86,-654.15 625.81,-655.42 627.83,-656.64"/>
+<polygon fill="#7fff00" stroke="#7fff00" points="626.46,-659.87 636.91,-661.61 629.82,-653.73 626.46,-659.87"/>
+</g>
+<!-- proc~hsv_to_rgb -->
+<g id="program~~example26~~CallsGraph_node18" class="node">
+<title>proc~hsv_to_rgb</title>
+<g id="a_program~~example26~~CallsGraph_node18"><a xlink:href="../proc/hsv_to_rgb.html" xlink:title="hsv_to_rgb">
+<polygon fill="#d9534f" stroke="#d9534f" points="704,-643.82 634,-643.82 634,-619.82 704,-619.82 704,-643.82"/>
+<text text-anchor="middle" x="669" y="-629.42" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">hsv_to_rgb</text>
+</a>
+</g>
+</g>
+<!-- proc~convert&#45;&gt;proc~hsv_to_rgb -->
+<g id="program~~example26~~CallsGraph_edge9" class="edge">
+<title>proc~convert&#45;&gt;proc~hsv_to_rgb</title>
+<path fill="none" stroke="#7fff00" d="M564.25,-580.92C580.2,-589.5 602.28,-601.15 622,-610.82 625.09,-612.34 628.31,-613.88 631.55,-615.41"/>
+<polygon fill="#7fff00" stroke="#7fff00" points="630.1,-618.59 640.64,-619.63 633.05,-612.24 630.1,-618.59"/>
+</g>
+<!-- proc~rgb_to_cmyk -->
+<g id="program~~example26~~CallsGraph_node19" class="node">
+<title>proc~rgb_to_cmyk</title>
+<g id="a_program~~example26~~CallsGraph_node19"><a xlink:href="../proc/rgb_to_cmyk.html" xlink:title="rgb_to_cmyk">
+<polygon fill="#d9534f" stroke="#d9534f" points="709,-601.82 629,-601.82 629,-577.82 709,-577.82 709,-601.82"/>
+<text text-anchor="middle" x="669" y="-587.42" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">rgb_to_cmyk</text>
+</a>
+</g>
+</g>
+<!-- proc~convert&#45;&gt;proc~rgb_to_cmyk -->
+<g id="program~~example26~~CallsGraph_edge10" class="edge">
+<title>proc~convert&#45;&gt;proc~rgb_to_cmyk</title>
+<path fill="none" stroke="#7fff00" d="M586.07,-576.17C596.61,-577.92 607.93,-579.81 618.69,-581.6"/>
+<polygon fill="#7fff00" stroke="#7fff00" points="618.35,-585.1 628.79,-583.29 619.5,-578.19 618.35,-585.1"/>
+</g>
+<!-- proc~rgb_to_decimal -->
+<g id="program~~example26~~CallsGraph_node20" class="node">
+<title>proc~rgb_to_decimal</title>
+<g id="a_program~~example26~~CallsGraph_node20"><a xlink:href="../proc/rgb_to_decimal.html" xlink:title="rgb_to_decimal">
+<polygon fill="#d9534f" stroke="#d9534f" points="716,-559.82 622,-559.82 622,-535.82 716,-535.82 716,-559.82"/>
+<text text-anchor="middle" x="669" y="-545.42" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">rgb_to_decimal</text>
+</a>
+</g>
+</g>
+<!-- proc~convert&#45;&gt;proc~rgb_to_decimal -->
+<g id="program~~example26~~CallsGraph_edge11" class="edge">
+<title>proc~convert&#45;&gt;proc~rgb_to_decimal</title>
+<path fill="none" stroke="#7fff00" d="M586.07,-561.48C594.33,-560.1 603.07,-558.64 611.65,-557.21"/>
+<polygon fill="#7fff00" stroke="#7fff00" points="612.31,-560.65 621.6,-555.56 611.16,-553.75 612.31,-560.65"/>
+</g>
+<!-- proc~rgb_to_hex -->
+<g id="program~~example26~~CallsGraph_node21" class="node">
+<title>proc~rgb_to_hex</title>
+<g id="a_program~~example26~~CallsGraph_node21"><a xlink:href="../proc/rgb_to_hex.html" xlink:title="rgb_to_hex">
+<polygon fill="#d9534f" stroke="#d9534f" points="704,-517.82 634,-517.82 634,-493.82 704,-493.82 704,-517.82"/>
+<text text-anchor="middle" x="669" y="-503.42" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">rgb_to_hex</text>
+</a>
+</g>
+</g>
+<!-- proc~convert&#45;&gt;proc~rgb_to_hex -->
+<g id="program~~example26~~CallsGraph_edge12" class="edge">
+<title>proc~convert&#45;&gt;proc~rgb_to_hex</title>
+<path fill="none" stroke="#7fff00" d="M564.25,-556.72C580.2,-548.15 602.28,-536.49 622,-526.82 625.09,-525.31 628.31,-523.77 631.55,-522.24"/>
+<polygon fill="#7fff00" stroke="#7fff00" points="633.05,-525.4 640.64,-518.01 630.1,-519.05 633.05,-525.4"/>
+</g>
+<!-- proc~rgb_to_hsl -->
+<g id="program~~example26~~CallsGraph_node22" class="node">
+<title>proc~rgb_to_hsl</title>
+<g id="a_program~~example26~~CallsGraph_node22"><a xlink:href="../proc/rgb_to_hsl.html" xlink:title="rgb_to_hsl">
+<polygon fill="#d9534f" stroke="#d9534f" points="702.5,-475.82 635.5,-475.82 635.5,-451.82 702.5,-451.82 702.5,-475.82"/>
+<text text-anchor="middle" x="669" y="-461.42" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">rgb_to_hsl</text>
+</a>
+</g>
+</g>
+<!-- proc~convert&#45;&gt;proc~rgb_to_hsl -->
+<g id="program~~example26~~CallsGraph_edge13" class="edge">
+<title>proc~convert&#45;&gt;proc~rgb_to_hsl</title>
+<path fill="none" stroke="#7fff00" d="M551.16,-556.57C564.92,-538.84 592.48,-505.86 622,-484.82 623.86,-483.5 625.81,-482.23 627.83,-481.01"/>
+<polygon fill="#7fff00" stroke="#7fff00" points="629.82,-483.91 636.91,-476.04 626.46,-477.77 629.82,-483.91"/>
+</g>
+<!-- proc~rgb_to_hsv -->
+<g id="program~~example26~~CallsGraph_node23" class="node">
+<title>proc~rgb_to_hsv</title>
+<g id="a_program~~example26~~CallsGraph_node23"><a xlink:href="../proc/rgb_to_hsv.html" xlink:title="rgb_to_hsv">
+<polygon fill="#d9534f" stroke="#d9534f" points="704,-433.82 634,-433.82 634,-409.82 704,-409.82 704,-433.82"/>
+<text text-anchor="middle" x="669" y="-419.42" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">rgb_to_hsv</text>
+</a>
+</g>
+</g>
+<!-- proc~convert&#45;&gt;proc~rgb_to_hsv -->
+<g id="program~~example26~~CallsGraph_edge14" class="edge">
+<title>proc~convert&#45;&gt;proc~rgb_to_hsv</title>
+<path fill="none" stroke="#7fff00" d="M546.81,-556.8C557.16,-532.32 583.71,-476.18 622,-442.82 623.32,-441.67 624.71,-440.58 626.16,-439.53"/>
+<polygon fill="#7fff00" stroke="#7fff00" points="628.27,-442.34 634.9,-434.07 624.57,-436.4 628.27,-442.34"/>
+</g>
+<!-- proc~rgb_to_xyz -->
+<g id="program~~example26~~CallsGraph_node24" class="node">
+<title>proc~rgb_to_xyz</title>
+<g id="a_program~~example26~~CallsGraph_node24"><a xlink:href="../proc/rgb_to_xyz.html" xlink:title="rgb_to_xyz">
+<polygon fill="#d9534f" stroke="#d9534f" points="703.5,-391.82 634.5,-391.82 634.5,-367.82 703.5,-367.82 703.5,-391.82"/>
+<text text-anchor="middle" x="669" y="-377.42" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">rgb_to_xyz</text>
+</a>
+</g>
+</g>
+<!-- proc~convert&#45;&gt;proc~rgb_to_xyz -->
+<g id="program~~example26~~CallsGraph_edge15" class="edge">
+<title>proc~convert&#45;&gt;proc~rgb_to_xyz</title>
+<path fill="none" stroke="#7fff00" d="M544.75,-556.57C552.12,-526.28 575.03,-447.04 622,-400.82 623.1,-399.75 624.26,-398.72 625.47,-397.74"/>
+<polygon fill="#7fff00" stroke="#7fff00" points="627.73,-400.43 634.06,-391.93 623.81,-394.63 627.73,-400.43"/>
+</g>
+<!-- proc~xyz_to_rgb -->
+<g id="program~~example26~~CallsGraph_node34" class="node">
+<title>proc~xyz_to_rgb</title>
+<g id="a_program~~example26~~CallsGraph_node34"><a xlink:href="../proc/xyz_to_rgb.html" xlink:title="xyz_to_rgb">
+<polygon fill="#d9534f" stroke="#d9534f" points="703.5,-349.82 634.5,-349.82 634.5,-325.82 703.5,-325.82 703.5,-349.82"/>
+<text text-anchor="middle" x="669" y="-335.42" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">xyz_to_rgb</text>
+</a>
+</g>
+</g>
+<!-- proc~convert&#45;&gt;proc~xyz_to_rgb -->
+<g id="program~~example26~~CallsGraph_edge16" class="edge">
+<title>proc~convert&#45;&gt;proc~xyz_to_rgb</title>
+<path fill="none" stroke="#7fff00" d="M543.39,-556.71C548.03,-521.61 565.96,-418.59 622,-358.82 623.2,-357.55 624.49,-356.34 625.85,-355.2"/>
+<polygon fill="#7fff00" stroke="#7fff00" points="628.01,-357.96 634.26,-349.41 624.04,-352.2 628.01,-357.96"/>
+</g>
+<!-- proc~get_cmyk -->
+<g id="program~~example26~~CallsGraph_node8" class="node">
+<title>proc~get_cmyk</title>
+<g id="a_program~~example26~~CallsGraph_node8"><a xlink:href="../proc/get_cmyk.html" xlink:title="color%get_cmyk">
+<polygon fill="#d9534f" stroke="#d9534f" points="320.5,-728.82 220.5,-728.82 220.5,-704.82 320.5,-704.82 320.5,-728.82"/>
+<text text-anchor="middle" x="270.5" y="-714.42" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">color%get_cmyk</text>
+</a>
+</g>
+</g>
+<!-- proc~get&#45;&gt;proc~get_cmyk -->
+<g id="program~~example26~~CallsGraph_edge17" class="edge">
+<title>proc~get&#45;&gt;proc~get_cmyk</title>
+<path fill="none" stroke="#00ffff" d="M147.34,-603.05C156.54,-624.76 178.55,-670.18 211,-695.82 212.79,-697.24 214.68,-698.56 216.65,-699.8"/>
+<polygon fill="#00ffff" stroke="#00ffff" points="215.19,-702.99 225.65,-704.7 218.54,-696.84 215.19,-702.99"/>
+</g>
+<!-- proc~get_decimal -->
+<g id="program~~example26~~CallsGraph_node9" class="node">
+<title>proc~get_decimal</title>
+<g id="a_program~~example26~~CallsGraph_node9"><a xlink:href="../proc/get_decimal.html" xlink:title="color%get_decimal">
+<polygon fill="#d9534f" stroke="#d9534f" points="328,-686.82 213,-686.82 213,-662.82 328,-662.82 328,-686.82"/>
+<text text-anchor="middle" x="270.5" y="-672.42" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">color%get_decimal</text>
+</a>
+</g>
+</g>
+<!-- proc~get&#45;&gt;proc~get_decimal -->
+<g id="program~~example26~~CallsGraph_edge18" class="edge">
+<title>proc~get&#45;&gt;proc~get_decimal</title>
+<path fill="none" stroke="#00ffff" d="M152.99,-603.06C165.53,-617.03 187.78,-639.77 211,-653.82 213.82,-655.53 216.79,-657.12 219.85,-658.61"/>
+<polygon fill="#00ffff" stroke="#00ffff" points="218.63,-661.9 229.18,-662.76 221.47,-655.5 218.63,-661.9"/>
+</g>
+<!-- proc~get_hex -->
+<g id="program~~example26~~CallsGraph_node10" class="node">
+<title>proc~get_hex</title>
+<g id="a_program~~example26~~CallsGraph_node10"><a xlink:href="../proc/get_hex.html" xlink:title="color%get_hex">
+<polygon fill="#d9534f" stroke="#d9534f" points="316,-644.82 225,-644.82 225,-620.82 316,-620.82 316,-644.82"/>
+<text text-anchor="middle" x="270.5" y="-630.42" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">color%get_hex</text>
+</a>
+</g>
+</g>
+<!-- proc~get&#45;&gt;proc~get_hex -->
+<g id="program~~example26~~CallsGraph_edge19" class="edge">
+<title>proc~get&#45;&gt;proc~get_hex</title>
+<path fill="none" stroke="#00ffff" d="M175.21,-601.64C189.81,-606.47 207.29,-612.25 223.2,-617.51"/>
+<polygon fill="#00ffff" stroke="#00ffff" points="222.28,-620.89 232.87,-620.71 224.48,-614.25 222.28,-620.89"/>
+</g>
+<!-- proc~get_hsl -->
+<g id="program~~example26~~CallsGraph_node11" class="node">
+<title>proc~get_hsl</title>
+<g id="a_program~~example26~~CallsGraph_node11"><a xlink:href="../proc/get_hsl.html" xlink:title="color%get_hsl">
+<polygon fill="#d9534f" stroke="#d9534f" points="314,-602.82 227,-602.82 227,-578.82 314,-578.82 314,-602.82"/>
+<text text-anchor="middle" x="270.5" y="-588.42" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">color%get_hsl</text>
+</a>
+</g>
+</g>
+<!-- proc~get&#45;&gt;proc~get_hsl -->
+<g id="program~~example26~~CallsGraph_edge20" class="edge">
+<title>proc~get&#45;&gt;proc~get_hsl</title>
+<path fill="none" stroke="#00ffff" d="M175.21,-590.82C187.86,-590.82 202.67,-590.82 216.75,-590.82"/>
+<polygon fill="#00ffff" stroke="#00ffff" points="216.84,-594.32 226.84,-590.82 216.84,-587.32 216.84,-594.32"/>
+</g>
+<!-- proc~get_hsv -->
+<g id="program~~example26~~CallsGraph_node12" class="node">
+<title>proc~get_hsv</title>
+<g id="a_program~~example26~~CallsGraph_node12"><a xlink:href="../proc/get_hsv.html" xlink:title="color%get_hsv">
+<polygon fill="#d9534f" stroke="#d9534f" points="315.5,-560.82 225.5,-560.82 225.5,-536.82 315.5,-536.82 315.5,-560.82"/>
+<text text-anchor="middle" x="270.5" y="-546.42" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">color%get_hsv</text>
+</a>
+</g>
+</g>
+<!-- proc~get&#45;&gt;proc~get_hsv -->
+<g id="program~~example26~~CallsGraph_edge21" class="edge">
+<title>proc~get&#45;&gt;proc~get_hsv</title>
+<path fill="none" stroke="#00ffff" d="M175.21,-580.01C189.81,-575.18 207.29,-569.4 223.2,-564.13"/>
+<polygon fill="#00ffff" stroke="#00ffff" points="224.48,-567.4 232.87,-560.94 222.28,-560.75 224.48,-567.4"/>
+</g>
+<!-- proc~get_name -->
+<g id="program~~example26~~CallsGraph_node13" class="node">
+<title>proc~get_name</title>
+<g id="a_program~~example26~~CallsGraph_node13"><a xlink:href="../proc/get_name.html" xlink:title="color%get_name">
+<polygon fill="#d9534f" stroke="#d9534f" points="322,-518.82 219,-518.82 219,-494.82 322,-494.82 322,-518.82"/>
+<text text-anchor="middle" x="270.5" y="-504.42" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">color%get_name</text>
+</a>
+</g>
+</g>
+<!-- proc~get&#45;&gt;proc~get_name -->
+<g id="program~~example26~~CallsGraph_edge22" class="edge">
+<title>proc~get&#45;&gt;proc~get_name</title>
+<path fill="none" stroke="#00ffff" d="M152.99,-578.59C165.53,-564.62 187.78,-541.87 211,-527.82 213.82,-526.12 216.79,-524.52 219.85,-523.03"/>
+<polygon fill="#00ffff" stroke="#00ffff" points="221.47,-526.14 229.18,-518.88 218.63,-519.75 221.47,-526.14"/>
+</g>
+<!-- proc~get_rgb -->
+<g id="program~~example26~~CallsGraph_node14" class="node">
+<title>proc~get_rgb</title>
+<g id="a_program~~example26~~CallsGraph_node14"><a xlink:href="../proc/get_rgb.html" xlink:title="color%get_rgb">
+<polygon fill="#d9534f" stroke="#d9534f" points="315.5,-476.82 225.5,-476.82 225.5,-452.82 315.5,-452.82 315.5,-476.82"/>
+<text text-anchor="middle" x="270.5" y="-462.42" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">color%get_rgb</text>
+</a>
+</g>
+</g>
+<!-- proc~get&#45;&gt;proc~get_rgb -->
+<g id="program~~example26~~CallsGraph_edge23" class="edge">
+<title>proc~get&#45;&gt;proc~get_rgb</title>
+<path fill="none" stroke="#00ffff" d="M147.34,-578.6C156.54,-556.88 178.55,-511.46 211,-485.82 212.79,-484.41 214.68,-483.09 216.65,-481.85"/>
+<polygon fill="#00ffff" stroke="#00ffff" points="218.54,-484.8 225.65,-476.95 215.19,-478.66 218.54,-484.8"/>
+</g>
+<!-- proc~get_xyz -->
+<g id="program~~example26~~CallsGraph_node15" class="node">
+<title>proc~get_xyz</title>
+<g id="a_program~~example26~~CallsGraph_node15"><a xlink:href="../proc/get_xyz.html" xlink:title="color%get_xyz">
+<polygon fill="#d9534f" stroke="#d9534f" points="315,-434.82 226,-434.82 226,-410.82 315,-410.82 315,-434.82"/>
+<text text-anchor="middle" x="270.5" y="-420.42" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">color%get_xyz</text>
+</a>
+</g>
+</g>
+<!-- proc~get&#45;&gt;proc~get_xyz -->
+<g id="program~~example26~~CallsGraph_edge24" class="edge">
+<title>proc~get&#45;&gt;proc~get_xyz</title>
+<path fill="none" stroke="#00ffff" d="M144.84,-578.67C150.81,-550.84 169.2,-481.97 211,-443.82 212.88,-442.1 214.92,-440.52 217.06,-439.07"/>
+<polygon fill="#00ffff" stroke="#00ffff" points="218.82,-442.09 225.75,-434.08 215.34,-436.02 218.82,-442.09"/>
+</g>
+<!-- proc~set_by_name -->
+<g id="program~~example26~~CallsGraph_node25" class="node">
+<title>proc~set_by_name</title>
+<g id="a_program~~example26~~CallsGraph_node25"><a xlink:href="../proc/set_by_name.html" xlink:title="color%set_by_name">
+<polygon fill="#d9534f" stroke="#d9534f" points="330,-392.82 211,-392.82 211,-368.82 330,-368.82 330,-392.82"/>
+<text text-anchor="middle" x="270.5" y="-378.42" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">color%set_by_name</text>
+</a>
+</g>
+</g>
+<!-- proc~set~2&#45;&gt;proc~set_by_name -->
+<g id="program~~example26~~CallsGraph_edge25" class="edge">
+<title>proc~set~2&#45;&gt;proc~set_by_name</title>
+<path fill="none" stroke="#7f00ff" d="M144.84,-224.98C150.81,-252.81 169.2,-321.68 211,-359.82 212.32,-361.02 213.7,-362.16 215.15,-363.22"/>
+<polygon fill="#7f00ff" stroke="#7f00ff" points="213.63,-366.4 223.98,-368.68 217.31,-360.44 213.63,-366.4"/>
+</g>
+<!-- proc~set_cmyk -->
+<g id="program~~example26~~CallsGraph_node26" class="node">
+<title>proc~set_cmyk</title>
+<g id="a_program~~example26~~CallsGraph_node26"><a xlink:href="../proc/set_cmyk.html" xlink:title="color%set_cmyk">
+<polygon fill="#d9534f" stroke="#d9534f" points="320,-350.82 221,-350.82 221,-326.82 320,-326.82 320,-350.82"/>
+<text text-anchor="middle" x="270.5" y="-336.42" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">color%set_cmyk</text>
+</a>
+</g>
+</g>
+<!-- proc~set~2&#45;&gt;proc~set_cmyk -->
+<g id="program~~example26~~CallsGraph_edge26" class="edge">
+<title>proc~set~2&#45;&gt;proc~set_cmyk</title>
+<path fill="none" stroke="#7f00ff" d="M147.34,-225.05C156.54,-246.76 178.55,-292.18 211,-317.82 212.79,-319.24 214.68,-320.56 216.65,-321.8"/>
+<polygon fill="#7f00ff" stroke="#7f00ff" points="215.19,-324.99 225.65,-326.7 218.54,-318.84 215.19,-324.99"/>
+</g>
+<!-- proc~set_decimal -->
+<g id="program~~example26~~CallsGraph_node27" class="node">
+<title>proc~set_decimal</title>
+<g id="a_program~~example26~~CallsGraph_node27"><a xlink:href="../proc/set_decimal.html" xlink:title="color%set_decimal">
+<polygon fill="#d9534f" stroke="#d9534f" points="327,-308.82 214,-308.82 214,-284.82 327,-284.82 327,-308.82"/>
+<text text-anchor="middle" x="270.5" y="-294.42" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">color%set_decimal</text>
+</a>
+</g>
+</g>
+<!-- proc~set~2&#45;&gt;proc~set_decimal -->
+<g id="program~~example26~~CallsGraph_edge27" class="edge">
+<title>proc~set~2&#45;&gt;proc~set_decimal</title>
+<path fill="none" stroke="#7f00ff" d="M152.99,-225.06C165.53,-239.03 187.78,-261.77 211,-275.82 213.82,-277.53 216.79,-279.12 219.85,-280.61"/>
+<polygon fill="#7f00ff" stroke="#7f00ff" points="218.63,-283.9 229.18,-284.76 221.47,-277.5 218.63,-283.9"/>
+</g>
+<!-- proc~set_hex -->
+<g id="program~~example26~~CallsGraph_node28" class="node">
+<title>proc~set_hex</title>
+<g id="a_program~~example26~~CallsGraph_node28"><a xlink:href="../proc/set_hex.html" xlink:title="color%set_hex">
+<polygon fill="#d9534f" stroke="#d9534f" points="315,-266.82 226,-266.82 226,-242.82 315,-242.82 315,-266.82"/>
+<text text-anchor="middle" x="270.5" y="-252.42" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">color%set_hex</text>
+</a>
+</g>
+</g>
+<!-- proc~set~2&#45;&gt;proc~set_hex -->
+<g id="program~~example26~~CallsGraph_edge28" class="edge">
+<title>proc~set~2&#45;&gt;proc~set_hex</title>
+<path fill="none" stroke="#7f00ff" d="M174.22,-223.31C188.94,-228.18 206.74,-234.07 222.95,-239.43"/>
+<polygon fill="#7f00ff" stroke="#7f00ff" points="222.2,-242.87 232.79,-242.68 224.39,-236.22 222.2,-242.87"/>
+</g>
+<!-- proc~set_hsl -->
+<g id="program~~example26~~CallsGraph_node29" class="node">
+<title>proc~set_hsl</title>
+<g id="a_program~~example26~~CallsGraph_node29"><a xlink:href="../proc/set_hsl.html" xlink:title="color%set_hsl">
+<polygon fill="#d9534f" stroke="#d9534f" points="313,-224.82 228,-224.82 228,-200.82 313,-200.82 313,-224.82"/>
+<text text-anchor="middle" x="270.5" y="-210.42" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">color%set_hsl</text>
+</a>
+</g>
+</g>
+<!-- proc~set~2&#45;&gt;proc~set_hsl -->
+<g id="program~~example26~~CallsGraph_edge29" class="edge">
+<title>proc~set~2&#45;&gt;proc~set_hsl</title>
+<path fill="none" stroke="#7f00ff" d="M174.22,-212.82C187.35,-212.82 202.93,-212.82 217.64,-212.82"/>
+<polygon fill="#7f00ff" stroke="#7f00ff" points="217.65,-216.32 227.65,-212.82 217.65,-209.32 217.65,-216.32"/>
+</g>
+<!-- proc~set_hsv -->
+<g id="program~~example26~~CallsGraph_node30" class="node">
+<title>proc~set_hsv</title>
+<g id="a_program~~example26~~CallsGraph_node30"><a xlink:href="../proc/set_hsv.html" xlink:title="color%set_hsv">
+<polygon fill="#d9534f" stroke="#d9534f" points="314.5,-182.82 226.5,-182.82 226.5,-158.82 314.5,-158.82 314.5,-182.82"/>
+<text text-anchor="middle" x="270.5" y="-168.42" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">color%set_hsv</text>
+</a>
+</g>
+</g>
+<!-- proc~set~2&#45;&gt;proc~set_hsv -->
+<g id="program~~example26~~CallsGraph_edge30" class="edge">
+<title>proc~set~2&#45;&gt;proc~set_hsv</title>
+<path fill="none" stroke="#7f00ff" d="M174.22,-202.33C188.94,-197.46 206.74,-191.58 222.95,-186.22"/>
+<polygon fill="#7f00ff" stroke="#7f00ff" points="224.39,-189.43 232.79,-182.96 222.2,-182.78 224.39,-189.43"/>
+</g>
+<!-- proc~set_name -->
+<g id="program~~example26~~CallsGraph_node31" class="node">
+<title>proc~set_name</title>
+<g id="a_program~~example26~~CallsGraph_node31"><a xlink:href="../proc/set_name.html" xlink:title="color%set_name">
+<polygon fill="#d9534f" stroke="#d9534f" points="321,-140.82 220,-140.82 220,-116.82 321,-116.82 321,-140.82"/>
+<text text-anchor="middle" x="270.5" y="-126.42" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">color%set_name</text>
+</a>
+</g>
+</g>
+<!-- proc~set~2&#45;&gt;proc~set_name -->
+<g id="program~~example26~~CallsGraph_edge31" class="edge">
+<title>proc~set~2&#45;&gt;proc~set_name</title>
+<path fill="none" stroke="#7f00ff" d="M152.99,-200.59C165.53,-186.62 187.78,-163.87 211,-149.82 213.82,-148.12 216.79,-146.52 219.85,-145.03"/>
+<polygon fill="#7f00ff" stroke="#7f00ff" points="221.47,-148.14 229.18,-140.88 218.63,-141.75 221.47,-148.14"/>
+</g>
+<!-- proc~set_rgb -->
+<g id="program~~example26~~CallsGraph_node32" class="node">
+<title>proc~set_rgb</title>
+<g id="a_program~~example26~~CallsGraph_node32"><a xlink:href="../proc/set_rgb.html" xlink:title="color%set_rgb">
+<polygon fill="#d9534f" stroke="#d9534f" points="314.5,-98.82 226.5,-98.82 226.5,-74.82 314.5,-74.82 314.5,-98.82"/>
+<text text-anchor="middle" x="270.5" y="-84.42" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">color%set_rgb</text>
+</a>
+</g>
+</g>
+<!-- proc~set~2&#45;&gt;proc~set_rgb -->
+<g id="program~~example26~~CallsGraph_edge32" class="edge">
+<title>proc~set~2&#45;&gt;proc~set_rgb</title>
+<path fill="none" stroke="#7f00ff" d="M147.34,-200.6C156.54,-178.88 178.55,-133.46 211,-107.82 213,-106.24 215.13,-104.77 217.35,-103.41"/>
+<polygon fill="#7f00ff" stroke="#7f00ff" points="219.07,-106.46 226.25,-98.67 215.78,-100.28 219.07,-106.46"/>
+</g>
+<!-- proc~set_xyz -->
+<g id="program~~example26~~CallsGraph_node33" class="node">
+<title>proc~set_xyz</title>
+<g id="a_program~~example26~~CallsGraph_node33"><a xlink:href="../proc/set_xyz.html" xlink:title="color%set_xyz">
+<polygon fill="#d9534f" stroke="#d9534f" points="314.5,-56.82 226.5,-56.82 226.5,-32.82 314.5,-32.82 314.5,-56.82"/>
+<text text-anchor="middle" x="270.5" y="-42.42" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">color%set_xyz</text>
+</a>
+</g>
+</g>
+<!-- proc~set~2&#45;&gt;proc~set_xyz -->
+<g id="program~~example26~~CallsGraph_edge33" class="edge">
+<title>proc~set~2&#45;&gt;proc~set_xyz</title>
+<path fill="none" stroke="#7f00ff" d="M144.84,-200.67C150.81,-172.84 169.2,-103.97 211,-65.82 212.95,-64.04 215.07,-62.41 217.3,-60.91"/>
+<polygon fill="#7f00ff" stroke="#7f00ff" points="219.37,-63.76 226.35,-55.79 215.92,-57.67 219.37,-63.76"/>
+</g>
+<!-- proc~initialize_colors -->
+<g id="program~~example26~~CallsGraph_node35" class="node">
+<title>proc~initialize_colors</title>
+<g id="a_program~~example26~~CallsGraph_node35"><a xlink:href="../proc/initialize_colors.html" xlink:title="initialize_colors">
+<polygon fill="#d9534f" stroke="#d9534f" points="460,-392.82 366,-392.82 366,-368.82 460,-368.82 460,-392.82"/>
+<text text-anchor="middle" x="413" y="-378.42" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">initialize_colors</text>
+</a>
+</g>
+</g>
+<!-- proc~set_by_name&#45;&gt;proc~initialize_colors -->
+<g id="program~~example26~~CallsGraph_edge34" class="edge">
+<title>proc~set_by_name&#45;&gt;proc~initialize_colors</title>
+<path fill="none" stroke="#0011ff" d="M330.27,-380.82C338.72,-380.82 347.39,-380.82 355.79,-380.82"/>
+<polygon fill="#0011ff" stroke="#0011ff" points="355.86,-384.32 365.86,-380.82 355.86,-377.32 355.86,-384.32"/>
+</g>
+<!-- proc~initialize_colors&#45;&gt;proc~convert -->
+<g id="program~~example26~~CallsGraph_edge35" class="edge">
+<title>proc~initialize_colors&#45;&gt;proc~convert</title>
+<path fill="none" stroke="#ff0000" d="M422.07,-392.87C443.09,-424.23 499.7,-508.7 526.1,-548.08"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="523.36,-550.28 531.83,-556.63 529.17,-546.38 523.36,-550.28"/>
+</g>
+<!-- proc~initialize_colors&#45;&gt;proc~set~2 -->
+<g id="program~~example26~~CallsGraph_edge36" class="edge">
+<title>proc~initialize_colors&#45;&gt;proc~set~2</title>
+<path fill="none" stroke="#ff0000" d="M411.17,-368.73C406.99,-311.47 386.09,-68.49 330,-23.82 288.63,9.12 254.3,6.54 211,-23.82 156.03,-62.37 144.99,-149.7 142.9,-190.74"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="139.4,-190.66 142.53,-200.78 146.4,-190.92 139.4,-190.66"/>
+</g>
+</g>
+</svg>
+</div>                <script>
+                  var panprogramexample26CallsGraph = svgPanZoom('#programexample26CallsGraph',
+                    {zoomEnabled: true, controlIconsEnabled: true, fit: true, center: true,}
+                  );
+                </script>          <div>
+            <a type="button" class="graph-help" data-bs-toggle="modal" href="#CallsGraph-help-text">Help</a>
+          </div>
+          <div class="modal fade" id="CallsGraph-help-text" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-lg" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h4 class="modal-title" id="-graph-help-label">Graph Key</h4>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+<p>Nodes of different colours represent the following: </p>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.43.0 (0)
+ -->
+<!-- Title: Graph Key Pages: 1 -->
+<svg width="641pt" height="28pt"
+ viewBox="0.00 0.00 641.00 27.51" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1.16 1.16) rotate(0) translate(4 28)">
+<title>Graph Key</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-28 741.5,-28 741.5,4 -4,4"/>
+<!-- Subroutine -->
+<g id="node1" class="node">
+<title>Subroutine</title>
+<polygon fill="#d9534f" stroke="#d9534f" points="70,-24 0,-24 0,0 70,0 70,-24"/>
+<text text-anchor="middle" x="35" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Subroutine</text>
+</g>
+<!-- Function -->
+<g id="node2" class="node">
+<title>Function</title>
+<polygon fill="#d94e8f" stroke="#d94e8f" points="146,-24 88,-24 88,0 146,0 146,-24"/>
+<text text-anchor="middle" x="117" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Function</text>
+</g>
+<!-- Interface -->
+<g id="node3" class="node">
+<title>Interface</title>
+<polygon fill="#a7506f" stroke="#a7506f" points="225.5,-24 164.5,-24 164.5,0 225.5,0 225.5,-24"/>
+<text text-anchor="middle" x="195" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Interface</text>
+</g>
+<!-- Type Bound Procedure -->
+<g id="node4" class="node">
+<title>Type Bound Procedure</title>
+<polygon fill="#a7506f" stroke="#a7506f" points="374,-24 244,-24 244,0 374,0 374,-24"/>
+<text text-anchor="middle" x="309" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Type Bound Procedure</text>
+</g>
+<!-- Unknown Procedure Type -->
+<g id="node5" class="node">
+<title>Unknown Procedure Type</title>
+<polygon fill="#777777" stroke="#777777" points="537.5,-24 392.5,-24 392.5,0 537.5,0 537.5,-24"/>
+<text text-anchor="middle" x="465" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Unknown Procedure Type</text>
+</g>
+<!-- Program -->
+<g id="node6" class="node">
+<title>Program</title>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="614,-24 556,-24 556,0 614,0 614,-24"/>
+<text text-anchor="middle" x="585" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Program</text>
+</g>
+<!-- This Page&#39;s Entity -->
+<g id="node7" class="node">
+<title>This Page&#39;s Entity</title>
+<polygon fill="none" stroke="black" points="737.5,-24 632.5,-24 632.5,0 737.5,0 737.5,-24"/>
+<text text-anchor="middle" x="685" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50">This Page&#39;s Entity</text>
+</g>
+</g>
+</svg>
+
+<p>Solid arrows point from a procedure to one which it calls. Dashed 
+arrows point from an interface to procedures which implement that interface.
+This could include the module procedures in a generic interface or the
+implementation in a submodule of an interface in a parent module.
+</p>
+ Where possible, edges connecting nodes are
+given different colours to make them easier to distinguish in
+large graphs.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+<br>
+
+    <section>
+    <h2>Variables</h2>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+<th></th><th scope="col">Initial</th>        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-b~21"></span>
+              integer(kind=ik)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>b</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-c~13"></span>
+              integer(kind=ik)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>c</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-custom_color~2"></span>
+              type(<a href='../type/color.html'>color</a>)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>custom_color</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-decimal~9"></span>
+              integer(kind=ik)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>decimal</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-g~21"></span>
+              integer(kind=ik)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>g</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-h~14"></span>
+              real(kind=rk)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>h</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-hex~9"></span>
+              character(len=7)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>hex</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-hl~5"></span>
+              real(kind=rk)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>hl</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-k~11"></span>
+              integer(kind=ik)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>k</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-m~11"></span>
+              integer(kind=ik)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>m</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-name~6"></span>
+              character(len=30)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>name</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-r~21"></span>
+              integer(kind=ik)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>r</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-s~13"></span>
+              real(kind=rk)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>s</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-sl~5"></span>
+              real(kind=rk)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>sl</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-tol"></span>
+              real(kind=rk),
+            </td>
+            <td>
+parameter               
+            </td>
+            <td>::</td>
+            <td><strong>tol</strong></td>
+<td> =</td>
+                <td>1e-4_rk</td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-v~9"></span>
+              real(kind=rk)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>v</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-vl~5"></span>
+              real(kind=rk)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>vl</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-xyz_x~5"></span>
+              real(kind=rk)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>xyz_x</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-xyz_y~5"></span>
+              real(kind=rk)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>xyz_y</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-xyz_z~5"></span>
+              real(kind=rk)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>xyz_z</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-y~14"></span>
+              integer(kind=ik)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>y</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+    </section>
+    <br>
+    
+    
+    
+
+    
+
+
+    <section>
+    <h2>Subroutines</h2>
+      <div class="card">
+    <div class="card-header codesum"><span class="anchor" id="proc-check"></span> <h3> subroutine <a href='../proc/check.html'>check</a>(tol, name, r, g, b, hex, decimal, c, m, y, k, h, s, v, hl, sl, vl, xyz_x, xyz_y, xyz_z)  
+</h3></div>
+    <div class="card-body">
+          
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-tol~2"></span>
+              real(kind=rk),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>tol</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-name~7"></span>
+              character(len=*),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>name</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-r~22"></span>
+              integer(kind=ik),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>r</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-g~22"></span>
+              integer(kind=ik),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>g</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-b~22"></span>
+              integer(kind=ik),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>b</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-hex~10"></span>
+              character(len=*),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>hex</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-decimal~10"></span>
+              integer(kind=ik),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>decimal</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-c~14"></span>
+              integer(kind=ik),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>c</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-m~12"></span>
+              integer(kind=ik),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>m</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-y~15"></span>
+              integer(kind=ik),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>y</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-k~12"></span>
+              integer(kind=ik),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>k</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-h~15"></span>
+              real(kind=rk),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>h</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-s~14"></span>
+              real(kind=rk),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>s</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-v~10"></span>
+              real(kind=rk),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>v</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-hl~6"></span>
+              real(kind=rk),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>hl</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-sl~6"></span>
+              real(kind=rk),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>sl</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-vl~6"></span>
+              real(kind=rk),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>vl</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-xyz_x~6"></span>
+              real(kind=rk),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>xyz_x</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-xyz_y~6"></span>
+              real(kind=rk),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>xyz_y</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-xyz_z~6"></span>
+              real(kind=rk),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>xyz_z</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+    </section>    
+    
+
+    <section>
+    <h2 id="src">Source Code</h2>
+    <div class="hl codehilite"><pre><span></span><span class="k">program </span><span class="n">example26</span>
+
+<span class="w">   </span><span class="k">use </span><span class="n">forimage</span><span class="p">,</span><span class="w"> </span><span class="k">only</span><span class="p">:</span><span class="w"> </span><span class="n">rk</span><span class="p">,</span><span class="w"> </span><span class="n">ik</span><span class="p">,</span><span class="w"> </span><span class="n">color</span>
+<span class="w">   </span><span class="k">implicit none</span>
+
+<span class="k">   type</span><span class="p">(</span><span class="n">color</span><span class="p">)</span><span class="w">         </span><span class="kd">::</span><span class="w"> </span><span class="n">custom_color</span>
+<span class="w">   </span><span class="kt">integer</span><span class="p">(</span><span class="n">ik</span><span class="p">)</span><span class="w">         </span><span class="kd">::</span><span class="w"> </span><span class="n">r</span><span class="p">,</span><span class="w"> </span><span class="n">g</span><span class="p">,</span><span class="w"> </span><span class="n">b</span>
+<span class="w">   </span><span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=</span><span class="mi">7</span><span class="p">)</span><span class="w">    </span><span class="kd">::</span><span class="w"> </span><span class="n">hex</span>
+<span class="w">   </span><span class="kt">integer</span><span class="p">(</span><span class="n">ik</span><span class="p">)</span><span class="w">         </span><span class="kd">::</span><span class="w"> </span><span class="n">decimal</span>
+<span class="w">   </span><span class="kt">integer</span><span class="p">(</span><span class="n">ik</span><span class="p">)</span><span class="w">         </span><span class="kd">::</span><span class="w"> </span><span class="n">c</span><span class="p">,</span><span class="w"> </span><span class="n">m</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="n">k</span>
+<span class="w">   </span><span class="kt">real</span><span class="p">(</span><span class="n">rk</span><span class="p">)</span><span class="w">            </span><span class="kd">::</span><span class="w"> </span><span class="n">h</span><span class="p">,</span><span class="w"> </span><span class="n">s</span><span class="p">,</span><span class="w"> </span><span class="n">v</span>
+<span class="w">   </span><span class="kt">real</span><span class="p">(</span><span class="n">rk</span><span class="p">)</span><span class="w">            </span><span class="kd">::</span><span class="w"> </span><span class="n">hl</span><span class="p">,</span><span class="w"> </span><span class="n">sl</span><span class="p">,</span><span class="w"> </span><span class="n">vl</span>
+<span class="w">   </span><span class="kt">real</span><span class="p">(</span><span class="n">rk</span><span class="p">)</span><span class="w">            </span><span class="kd">::</span><span class="w"> </span><span class="n">xyz_x</span><span class="p">,</span><span class="w"> </span><span class="n">xyz_y</span><span class="p">,</span><span class="w"> </span><span class="n">xyz_z</span>
+<span class="w">   </span><span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span><span class="w">   </span><span class="kd">::</span><span class="w"> </span><span class="n">name</span>
+<span class="w">   </span><span class="kt">real</span><span class="p">(</span><span class="n">rk</span><span class="p">),</span><span class="w"> </span><span class="k">parameter</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">tol</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1e-4_rk</span>
+
+
+<span class="w">   </span><span class="c">! Set the color using RGB values</span>
+<span class="w">   </span><span class="k">call </span><span class="n">custom_color</span><span class="p">%</span><span class="n">set</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;custom_color&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">r</span><span class="o">=</span><span class="mi">245_ik</span><span class="p">,</span><span class="w"> </span><span class="n">g</span><span class="o">=</span><span class="mi">127_ik</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="o">=</span><span class="mi">64_ik</span><span class="p">)</span>
+
+<span class="w">   </span><span class="c">! Convert the color to other color spaces</span>
+<span class="w">   </span><span class="k">call </span><span class="n">custom_color</span><span class="p">%</span><span class="n">convert</span><span class="p">(</span><span class="s1">&#39;rgb2all&#39;</span><span class="p">)</span>
+
+<span class="w">   </span><span class="c">! Get the name of the color</span>
+<span class="w">   </span><span class="k">call </span><span class="n">custom_color</span><span class="p">%</span><span class="n">get</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+
+<span class="w">   </span><span class="c">! Get the values of the color in other color spaces</span>
+<span class="w">   </span><span class="k">call </span><span class="n">custom_color</span><span class="p">%</span><span class="n">get</span><span class="p">(</span><span class="n">r</span><span class="o">=</span><span class="n">r</span><span class="p">,</span><span class="w"> </span><span class="n">g</span><span class="o">=</span><span class="n">g</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="o">=</span><span class="n">b</span><span class="p">)</span>
+<span class="w">   </span><span class="k">call </span><span class="n">custom_color</span><span class="p">%</span><span class="n">get</span><span class="p">(</span><span class="n">hex</span><span class="o">=</span><span class="n">hex</span><span class="p">)</span>
+<span class="w">   </span><span class="k">call </span><span class="n">custom_color</span><span class="p">%</span><span class="n">get</span><span class="p">(</span><span class="n">decimal</span><span class="o">=</span><span class="n">decimal</span><span class="p">)</span>
+<span class="w">   </span><span class="k">call </span><span class="n">custom_color</span><span class="p">%</span><span class="n">get</span><span class="p">(</span><span class="n">c</span><span class="o">=</span><span class="n">c</span><span class="p">,</span><span class="w"> </span><span class="n">m</span><span class="o">=</span><span class="n">m</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="o">=</span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="n">k</span><span class="o">=</span><span class="n">k</span><span class="p">)</span>
+<span class="w">   </span><span class="k">call </span><span class="n">custom_color</span><span class="p">%</span><span class="n">get</span><span class="p">(</span><span class="n">h</span><span class="o">=</span><span class="n">h</span><span class="p">,</span><span class="w"> </span><span class="n">s</span><span class="o">=</span><span class="n">s</span><span class="p">,</span><span class="w"> </span><span class="n">v</span><span class="o">=</span><span class="n">v</span><span class="p">)</span>
+<span class="w">   </span><span class="k">call </span><span class="n">custom_color</span><span class="p">%</span><span class="n">get</span><span class="p">(</span><span class="n">hl</span><span class="o">=</span><span class="n">hl</span><span class="p">,</span><span class="w"> </span><span class="n">sl</span><span class="o">=</span><span class="n">sl</span><span class="p">,</span><span class="w"> </span><span class="n">vl</span><span class="o">=</span><span class="n">vl</span><span class="p">)</span>
+<span class="w">   </span><span class="k">call </span><span class="n">custom_color</span><span class="p">%</span><span class="n">get</span><span class="p">(</span><span class="n">xyz_x</span><span class="o">=</span><span class="n">xyz_x</span><span class="p">,</span><span class="w"> </span><span class="n">xyz_y</span><span class="o">=</span><span class="n">xyz_y</span><span class="p">,</span><span class="w"> </span><span class="n">xyz_z</span><span class="o">=</span><span class="n">xyz_z</span><span class="p">)</span>
+
+<span class="w">   </span><span class="c">!</span>
+<span class="w">   </span><span class="k">call </span><span class="n">custom_color</span><span class="p">%</span><span class="k">print</span><span class="p">()</span>
+
+<span class="w">   </span><span class="c">! Check the values</span>
+<span class="w">   </span><span class="k">call </span><span class="n">check</span><span class="p">(</span><span class="n">tol</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">r</span><span class="p">,</span><span class="w"> </span><span class="n">g</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">,</span><span class="w"> </span><span class="n">hex</span><span class="p">,</span><span class="w"> </span><span class="n">decimal</span><span class="p">,</span><span class="w"> </span><span class="n">c</span><span class="p">,</span><span class="w"> </span><span class="n">m</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="n">k</span><span class="p">,</span><span class="w"> </span><span class="n">h</span><span class="p">,</span><span class="w"> </span><span class="n">s</span><span class="p">,</span><span class="w"> </span><span class="n">v</span><span class="p">,</span><span class="w"> </span><span class="n">hl</span><span class="p">,</span><span class="w"> </span><span class="n">sl</span><span class="p">,</span><span class="w"> </span><span class="n">vl</span><span class="p">,</span><span class="w"> </span><span class="n">xyz_x</span><span class="p">,</span><span class="w"> </span><span class="n">xyz_y</span><span class="p">,</span><span class="w"> </span><span class="n">xyz_z</span><span class="p">)</span>
+
+
+
+<span class="w">   </span><span class="c">! Set the color using a hex value</span>
+<span class="w">   </span><span class="k">call </span><span class="n">custom_color</span><span class="p">%</span><span class="n">set</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;custom_color&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">hex</span><span class="o">=</span><span class="s1">&#39;#F57F40&#39;</span><span class="p">)</span>
+
+<span class="w">   </span><span class="c">! Convert the color to other color spaces</span>
+<span class="w">   </span><span class="k">call </span><span class="n">custom_color</span><span class="p">%</span><span class="n">convert</span><span class="p">(</span><span class="s1">&#39;hex2all&#39;</span><span class="p">)</span>
+
+<span class="w">   </span><span class="c">! Get the values of the color in other color spaces</span>
+<span class="w">   </span><span class="k">call </span><span class="n">custom_color</span><span class="p">%</span><span class="n">get</span><span class="p">(</span><span class="n">r</span><span class="o">=</span><span class="n">r</span><span class="p">,</span><span class="w"> </span><span class="n">g</span><span class="o">=</span><span class="n">g</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="o">=</span><span class="n">b</span><span class="p">)</span>
+<span class="w">   </span><span class="k">call </span><span class="n">custom_color</span><span class="p">%</span><span class="n">get</span><span class="p">(</span><span class="n">hex</span><span class="o">=</span><span class="n">hex</span><span class="p">)</span>
+<span class="w">   </span><span class="k">call </span><span class="n">custom_color</span><span class="p">%</span><span class="n">get</span><span class="p">(</span><span class="n">decimal</span><span class="o">=</span><span class="n">decimal</span><span class="p">)</span>
+<span class="w">   </span><span class="k">call </span><span class="n">custom_color</span><span class="p">%</span><span class="n">get</span><span class="p">(</span><span class="n">c</span><span class="o">=</span><span class="n">c</span><span class="p">,</span><span class="w"> </span><span class="n">m</span><span class="o">=</span><span class="n">m</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="o">=</span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="n">k</span><span class="o">=</span><span class="n">k</span><span class="p">)</span>
+<span class="w">   </span><span class="k">call </span><span class="n">custom_color</span><span class="p">%</span><span class="n">get</span><span class="p">(</span><span class="n">h</span><span class="o">=</span><span class="n">h</span><span class="p">,</span><span class="w"> </span><span class="n">s</span><span class="o">=</span><span class="n">s</span><span class="p">,</span><span class="w"> </span><span class="n">v</span><span class="o">=</span><span class="n">v</span><span class="p">)</span>
+<span class="w">   </span><span class="k">call </span><span class="n">custom_color</span><span class="p">%</span><span class="n">get</span><span class="p">(</span><span class="n">hl</span><span class="o">=</span><span class="n">hl</span><span class="p">,</span><span class="w"> </span><span class="n">sl</span><span class="o">=</span><span class="n">sl</span><span class="p">,</span><span class="w"> </span><span class="n">vl</span><span class="o">=</span><span class="n">vl</span><span class="p">)</span>
+<span class="w">   </span><span class="k">call </span><span class="n">custom_color</span><span class="p">%</span><span class="n">get</span><span class="p">(</span><span class="n">xyz_x</span><span class="o">=</span><span class="n">xyz_x</span><span class="p">,</span><span class="w"> </span><span class="n">xyz_y</span><span class="o">=</span><span class="n">xyz_y</span><span class="p">,</span><span class="w"> </span><span class="n">xyz_z</span><span class="o">=</span><span class="n">xyz_z</span><span class="p">)</span>
+
+<span class="w">   </span><span class="c">!</span>
+<span class="w">   </span><span class="k">call </span><span class="n">custom_color</span><span class="p">%</span><span class="k">print</span><span class="p">()</span>
+
+<span class="w">   </span><span class="c">! Check the values</span>
+<span class="w">   </span><span class="k">call </span><span class="n">check</span><span class="p">(</span><span class="n">tol</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">r</span><span class="p">,</span><span class="w"> </span><span class="n">g</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">,</span><span class="w"> </span><span class="n">hex</span><span class="p">,</span><span class="w"> </span><span class="n">decimal</span><span class="p">,</span><span class="w"> </span><span class="n">c</span><span class="p">,</span><span class="w"> </span><span class="n">m</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="n">k</span><span class="p">,</span><span class="w"> </span><span class="n">h</span><span class="p">,</span><span class="w"> </span><span class="n">s</span><span class="p">,</span><span class="w"> </span><span class="n">v</span><span class="p">,</span><span class="w"> </span><span class="n">hl</span><span class="p">,</span><span class="w"> </span><span class="n">sl</span><span class="p">,</span><span class="w"> </span><span class="n">vl</span><span class="p">,</span><span class="w"> </span><span class="n">xyz_x</span><span class="p">,</span><span class="w"> </span><span class="n">xyz_y</span><span class="p">,</span><span class="w"> </span><span class="n">xyz_z</span><span class="p">)</span>
+
+
+
+<span class="w">   </span><span class="c">! Set the color using a decimal value</span>
+<span class="w">   </span><span class="k">call </span><span class="n">custom_color</span><span class="p">%</span><span class="n">set</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;custom_color&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">decimal</span><span class="o">=</span><span class="mi">16088896_ik</span><span class="p">)</span>
+
+<span class="w">   </span><span class="c">! Convert the color to other color spaces</span>
+<span class="w">   </span><span class="k">call </span><span class="n">custom_color</span><span class="p">%</span><span class="n">convert</span><span class="p">(</span><span class="s1">&#39;decimal2all&#39;</span><span class="p">)</span>
+
+<span class="w">   </span><span class="c">! Get the values of the color in other color spaces</span>
+<span class="w">   </span><span class="k">call </span><span class="n">custom_color</span><span class="p">%</span><span class="n">get</span><span class="p">(</span><span class="n">r</span><span class="o">=</span><span class="n">r</span><span class="p">,</span><span class="w"> </span><span class="n">g</span><span class="o">=</span><span class="n">g</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="o">=</span><span class="n">b</span><span class="p">)</span>
+<span class="w">   </span><span class="k">call </span><span class="n">custom_color</span><span class="p">%</span><span class="n">get</span><span class="p">(</span><span class="n">hex</span><span class="o">=</span><span class="n">hex</span><span class="p">)</span>
+<span class="w">   </span><span class="k">call </span><span class="n">custom_color</span><span class="p">%</span><span class="n">get</span><span class="p">(</span><span class="n">decimal</span><span class="o">=</span><span class="n">decimal</span><span class="p">)</span>
+<span class="w">   </span><span class="k">call </span><span class="n">custom_color</span><span class="p">%</span><span class="n">get</span><span class="p">(</span><span class="n">c</span><span class="o">=</span><span class="n">c</span><span class="p">,</span><span class="w"> </span><span class="n">m</span><span class="o">=</span><span class="n">m</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="o">=</span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="n">k</span><span class="o">=</span><span class="n">k</span><span class="p">)</span>
+<span class="w">   </span><span class="k">call </span><span class="n">custom_color</span><span class="p">%</span><span class="n">get</span><span class="p">(</span><span class="n">h</span><span class="o">=</span><span class="n">h</span><span class="p">,</span><span class="w"> </span><span class="n">s</span><span class="o">=</span><span class="n">s</span><span class="p">,</span><span class="w"> </span><span class="n">v</span><span class="o">=</span><span class="n">v</span><span class="p">)</span>
+<span class="w">   </span><span class="k">call </span><span class="n">custom_color</span><span class="p">%</span><span class="n">get</span><span class="p">(</span><span class="n">hl</span><span class="o">=</span><span class="n">hl</span><span class="p">,</span><span class="w"> </span><span class="n">sl</span><span class="o">=</span><span class="n">sl</span><span class="p">,</span><span class="w"> </span><span class="n">vl</span><span class="o">=</span><span class="n">vl</span><span class="p">)</span>
+<span class="w">   </span><span class="k">call </span><span class="n">custom_color</span><span class="p">%</span><span class="n">get</span><span class="p">(</span><span class="n">xyz_x</span><span class="o">=</span><span class="n">xyz_x</span><span class="p">,</span><span class="w"> </span><span class="n">xyz_y</span><span class="o">=</span><span class="n">xyz_y</span><span class="p">,</span><span class="w"> </span><span class="n">xyz_z</span><span class="o">=</span><span class="n">xyz_z</span><span class="p">)</span>
+
+<span class="w">   </span><span class="c">!</span>
+<span class="w">   </span><span class="k">call </span><span class="n">custom_color</span><span class="p">%</span><span class="k">print</span><span class="p">()</span>
+
+<span class="w">   </span><span class="c">! Check the values</span>
+<span class="w">   </span><span class="k">call </span><span class="n">check</span><span class="p">(</span><span class="n">tol</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">r</span><span class="p">,</span><span class="w"> </span><span class="n">g</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">,</span><span class="w"> </span><span class="n">hex</span><span class="p">,</span><span class="w"> </span><span class="n">decimal</span><span class="p">,</span><span class="w"> </span><span class="n">c</span><span class="p">,</span><span class="w"> </span><span class="n">m</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="n">k</span><span class="p">,</span><span class="w"> </span><span class="n">h</span><span class="p">,</span><span class="w"> </span><span class="n">s</span><span class="p">,</span><span class="w"> </span><span class="n">v</span><span class="p">,</span><span class="w"> </span><span class="n">hl</span><span class="p">,</span><span class="w"> </span><span class="n">sl</span><span class="p">,</span><span class="w"> </span><span class="n">vl</span><span class="p">,</span><span class="w"> </span><span class="n">xyz_x</span><span class="p">,</span><span class="w"> </span><span class="n">xyz_y</span><span class="p">,</span><span class="w"> </span><span class="n">xyz_z</span><span class="p">)</span>
+
+
+
+<span class="w">   </span><span class="c">! Set the color using a decimal value</span>
+<span class="w">   </span><span class="k">call </span><span class="n">custom_color</span><span class="p">%</span><span class="n">set</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;custom_color&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">c</span><span class="o">=</span><span class="mi">0_ik</span><span class="p">,</span><span class="w"> </span><span class="n">m</span><span class="o">=</span><span class="mi">48_ik</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="o">=</span><span class="mi">74_ik</span><span class="p">,</span><span class="w"> </span><span class="n">k</span><span class="o">=</span><span class="mi">4_ik</span><span class="p">)</span>
+
+<span class="w">   </span><span class="c">! Convert the color to other color spaces</span>
+<span class="w">   </span><span class="k">call </span><span class="n">custom_color</span><span class="p">%</span><span class="n">convert</span><span class="p">(</span><span class="s1">&#39;cmyk2all&#39;</span><span class="p">)</span>
+
+<span class="w">   </span><span class="c">! Get the values of the color in other color spaces</span>
+<span class="w">   </span><span class="k">call </span><span class="n">custom_color</span><span class="p">%</span><span class="n">get</span><span class="p">(</span><span class="n">r</span><span class="o">=</span><span class="n">r</span><span class="p">,</span><span class="w"> </span><span class="n">g</span><span class="o">=</span><span class="n">g</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="o">=</span><span class="n">b</span><span class="p">)</span>
+<span class="w">   </span><span class="k">call </span><span class="n">custom_color</span><span class="p">%</span><span class="n">get</span><span class="p">(</span><span class="n">hex</span><span class="o">=</span><span class="n">hex</span><span class="p">)</span>
+<span class="w">   </span><span class="k">call </span><span class="n">custom_color</span><span class="p">%</span><span class="n">get</span><span class="p">(</span><span class="n">decimal</span><span class="o">=</span><span class="n">decimal</span><span class="p">)</span>
+<span class="w">   </span><span class="k">call </span><span class="n">custom_color</span><span class="p">%</span><span class="n">get</span><span class="p">(</span><span class="n">c</span><span class="o">=</span><span class="n">c</span><span class="p">,</span><span class="w"> </span><span class="n">m</span><span class="o">=</span><span class="n">m</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="o">=</span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="n">k</span><span class="o">=</span><span class="n">k</span><span class="p">)</span>
+<span class="w">   </span><span class="k">call </span><span class="n">custom_color</span><span class="p">%</span><span class="n">get</span><span class="p">(</span><span class="n">h</span><span class="o">=</span><span class="n">h</span><span class="p">,</span><span class="w"> </span><span class="n">s</span><span class="o">=</span><span class="n">s</span><span class="p">,</span><span class="w"> </span><span class="n">v</span><span class="o">=</span><span class="n">v</span><span class="p">)</span>
+<span class="w">   </span><span class="k">call </span><span class="n">custom_color</span><span class="p">%</span><span class="n">get</span><span class="p">(</span><span class="n">hl</span><span class="o">=</span><span class="n">hl</span><span class="p">,</span><span class="w"> </span><span class="n">sl</span><span class="o">=</span><span class="n">sl</span><span class="p">,</span><span class="w"> </span><span class="n">vl</span><span class="o">=</span><span class="n">vl</span><span class="p">)</span>
+<span class="w">   </span><span class="k">call </span><span class="n">custom_color</span><span class="p">%</span><span class="n">get</span><span class="p">(</span><span class="n">xyz_x</span><span class="o">=</span><span class="n">xyz_x</span><span class="p">,</span><span class="w"> </span><span class="n">xyz_y</span><span class="o">=</span><span class="n">xyz_y</span><span class="p">,</span><span class="w"> </span><span class="n">xyz_z</span><span class="o">=</span><span class="n">xyz_z</span><span class="p">)</span>
+
+<span class="w">   </span><span class="c">!</span>
+<span class="w">   </span><span class="k">call </span><span class="n">custom_color</span><span class="p">%</span><span class="k">print</span><span class="p">()</span>
+
+<span class="w">   </span><span class="c">! Check the values</span>
+<span class="w">   </span><span class="k">call </span><span class="n">check</span><span class="p">(</span><span class="n">tol</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">r</span><span class="p">,</span><span class="w"> </span><span class="n">g</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">,</span><span class="w"> </span><span class="n">hex</span><span class="p">,</span><span class="w"> </span><span class="n">decimal</span><span class="p">,</span><span class="w"> </span><span class="n">c</span><span class="p">,</span><span class="w"> </span><span class="n">m</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="n">k</span><span class="p">,</span><span class="w"> </span><span class="n">h</span><span class="p">,</span><span class="w"> </span><span class="n">s</span><span class="p">,</span><span class="w"> </span><span class="n">v</span><span class="p">,</span><span class="w"> </span><span class="n">hl</span><span class="p">,</span><span class="w"> </span><span class="n">sl</span><span class="p">,</span><span class="w"> </span><span class="n">vl</span><span class="p">,</span><span class="w"> </span><span class="n">xyz_x</span><span class="p">,</span><span class="w"> </span><span class="n">xyz_y</span><span class="p">,</span><span class="w"> </span><span class="n">xyz_z</span><span class="p">)</span>
+
+
+
+<span class="w">   </span><span class="c">! Set the color using a hsv value</span>
+<span class="w">   </span><span class="k">call </span><span class="n">custom_color</span><span class="p">%</span><span class="n">set</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;custom_color&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">h</span><span class="o">=</span><span class="mi">2</span><span class="mf">0.8840_rk</span><span class="p">,</span><span class="w"> </span><span class="n">s</span><span class="o">=</span><span class="mi">7</span><span class="mf">3.8776_rk</span><span class="p">,</span><span class="w"> </span><span class="n">v</span><span class="o">=</span><span class="mi">9</span><span class="mf">6.0784_rk</span><span class="p">)</span>
+
+<span class="w">   </span><span class="c">! Convert the color to other color spaces</span>
+<span class="w">   </span><span class="k">call </span><span class="n">custom_color</span><span class="p">%</span><span class="n">convert</span><span class="p">(</span><span class="s1">&#39;hsv2all&#39;</span><span class="p">)</span>
+
+<span class="w">   </span><span class="c">! Get the values of the color in other color spaces</span>
+<span class="w">   </span><span class="k">call </span><span class="n">custom_color</span><span class="p">%</span><span class="n">get</span><span class="p">(</span><span class="n">r</span><span class="o">=</span><span class="n">r</span><span class="p">,</span><span class="w"> </span><span class="n">g</span><span class="o">=</span><span class="n">g</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="o">=</span><span class="n">b</span><span class="p">)</span>
+<span class="w">   </span><span class="k">call </span><span class="n">custom_color</span><span class="p">%</span><span class="n">get</span><span class="p">(</span><span class="n">hex</span><span class="o">=</span><span class="n">hex</span><span class="p">)</span>
+<span class="w">   </span><span class="k">call </span><span class="n">custom_color</span><span class="p">%</span><span class="n">get</span><span class="p">(</span><span class="n">decimal</span><span class="o">=</span><span class="n">decimal</span><span class="p">)</span>
+<span class="w">   </span><span class="k">call </span><span class="n">custom_color</span><span class="p">%</span><span class="n">get</span><span class="p">(</span><span class="n">c</span><span class="o">=</span><span class="n">c</span><span class="p">,</span><span class="w"> </span><span class="n">m</span><span class="o">=</span><span class="n">m</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="o">=</span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="n">k</span><span class="o">=</span><span class="n">k</span><span class="p">)</span>
+<span class="w">   </span><span class="k">call </span><span class="n">custom_color</span><span class="p">%</span><span class="n">get</span><span class="p">(</span><span class="n">h</span><span class="o">=</span><span class="n">h</span><span class="p">,</span><span class="w"> </span><span class="n">s</span><span class="o">=</span><span class="n">s</span><span class="p">,</span><span class="w"> </span><span class="n">v</span><span class="o">=</span><span class="n">v</span><span class="p">)</span>
+<span class="w">   </span><span class="k">call </span><span class="n">custom_color</span><span class="p">%</span><span class="n">get</span><span class="p">(</span><span class="n">hl</span><span class="o">=</span><span class="n">hl</span><span class="p">,</span><span class="w"> </span><span class="n">sl</span><span class="o">=</span><span class="n">sl</span><span class="p">,</span><span class="w"> </span><span class="n">vl</span><span class="o">=</span><span class="n">vl</span><span class="p">)</span>
+<span class="w">   </span><span class="k">call </span><span class="n">custom_color</span><span class="p">%</span><span class="n">get</span><span class="p">(</span><span class="n">xyz_x</span><span class="o">=</span><span class="n">xyz_x</span><span class="p">,</span><span class="w"> </span><span class="n">xyz_y</span><span class="o">=</span><span class="n">xyz_y</span><span class="p">,</span><span class="w"> </span><span class="n">xyz_z</span><span class="o">=</span><span class="n">xyz_z</span><span class="p">)</span>
+
+<span class="w">   </span><span class="c">!</span>
+<span class="w">   </span><span class="k">call </span><span class="n">custom_color</span><span class="p">%</span><span class="k">print</span><span class="p">()</span>
+
+<span class="w">   </span><span class="c">! Check the values</span>
+<span class="w">   </span><span class="k">call </span><span class="n">check</span><span class="p">(</span><span class="n">tol</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">r</span><span class="p">,</span><span class="w"> </span><span class="n">g</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">,</span><span class="w"> </span><span class="n">hex</span><span class="p">,</span><span class="w"> </span><span class="n">decimal</span><span class="p">,</span><span class="w"> </span><span class="n">c</span><span class="p">,</span><span class="w"> </span><span class="n">m</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="n">k</span><span class="p">,</span><span class="w"> </span><span class="n">h</span><span class="p">,</span><span class="w"> </span><span class="n">s</span><span class="p">,</span><span class="w"> </span><span class="n">v</span><span class="p">,</span><span class="w"> </span><span class="n">hl</span><span class="p">,</span><span class="w"> </span><span class="n">sl</span><span class="p">,</span><span class="w"> </span><span class="n">vl</span><span class="p">,</span><span class="w"> </span><span class="n">xyz_x</span><span class="p">,</span><span class="w"> </span><span class="n">xyz_y</span><span class="p">,</span><span class="w"> </span><span class="n">xyz_z</span><span class="p">)</span>
+
+
+
+<span class="w">   </span><span class="c">! Set the color using a hsv value</span>
+<span class="w">   </span><span class="k">call </span><span class="n">custom_color</span><span class="p">%</span><span class="n">set</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;custom_color&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">hl</span><span class="o">=</span><span class="mi">2</span><span class="mf">0.8840_rk</span><span class="p">,</span><span class="w"> </span><span class="n">sl</span><span class="o">=</span><span class="mi">9</span><span class="mf">0.0498_rk</span><span class="p">,</span><span class="w"> </span><span class="n">vl</span><span class="o">=</span><span class="mi">6</span><span class="mf">0.5882_rk</span><span class="p">)</span>
+
+<span class="w">   </span><span class="c">! Convert the color to other color spaces</span>
+<span class="w">   </span><span class="k">call </span><span class="n">custom_color</span><span class="p">%</span><span class="n">convert</span><span class="p">(</span><span class="s1">&#39;hsl2all&#39;</span><span class="p">)</span>
+
+<span class="w">   </span><span class="c">! Get the values of the color in other color spaces</span>
+<span class="w">   </span><span class="k">call </span><span class="n">custom_color</span><span class="p">%</span><span class="n">get</span><span class="p">(</span><span class="n">r</span><span class="o">=</span><span class="n">r</span><span class="p">,</span><span class="w"> </span><span class="n">g</span><span class="o">=</span><span class="n">g</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="o">=</span><span class="n">b</span><span class="p">)</span>
+<span class="w">   </span><span class="k">call </span><span class="n">custom_color</span><span class="p">%</span><span class="n">get</span><span class="p">(</span><span class="n">hex</span><span class="o">=</span><span class="n">hex</span><span class="p">)</span>
+<span class="w">   </span><span class="k">call </span><span class="n">custom_color</span><span class="p">%</span><span class="n">get</span><span class="p">(</span><span class="n">decimal</span><span class="o">=</span><span class="n">decimal</span><span class="p">)</span>
+<span class="w">   </span><span class="k">call </span><span class="n">custom_color</span><span class="p">%</span><span class="n">get</span><span class="p">(</span><span class="n">c</span><span class="o">=</span><span class="n">c</span><span class="p">,</span><span class="w"> </span><span class="n">m</span><span class="o">=</span><span class="n">m</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="o">=</span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="n">k</span><span class="o">=</span><span class="n">k</span><span class="p">)</span>
+<span class="w">   </span><span class="k">call </span><span class="n">custom_color</span><span class="p">%</span><span class="n">get</span><span class="p">(</span><span class="n">h</span><span class="o">=</span><span class="n">h</span><span class="p">,</span><span class="w"> </span><span class="n">s</span><span class="o">=</span><span class="n">s</span><span class="p">,</span><span class="w"> </span><span class="n">v</span><span class="o">=</span><span class="n">v</span><span class="p">)</span>
+<span class="w">   </span><span class="k">call </span><span class="n">custom_color</span><span class="p">%</span><span class="n">get</span><span class="p">(</span><span class="n">hl</span><span class="o">=</span><span class="n">hl</span><span class="p">,</span><span class="w"> </span><span class="n">sl</span><span class="o">=</span><span class="n">sl</span><span class="p">,</span><span class="w"> </span><span class="n">vl</span><span class="o">=</span><span class="n">vl</span><span class="p">)</span>
+<span class="w">   </span><span class="k">call </span><span class="n">custom_color</span><span class="p">%</span><span class="n">get</span><span class="p">(</span><span class="n">xyz_x</span><span class="o">=</span><span class="n">xyz_x</span><span class="p">,</span><span class="w"> </span><span class="n">xyz_y</span><span class="o">=</span><span class="n">xyz_y</span><span class="p">,</span><span class="w"> </span><span class="n">xyz_z</span><span class="o">=</span><span class="n">xyz_z</span><span class="p">)</span>
+
+<span class="w">   </span><span class="c">!</span>
+<span class="w">   </span><span class="k">call </span><span class="n">custom_color</span><span class="p">%</span><span class="k">print</span><span class="p">()</span>
+
+<span class="w">   </span><span class="c">! Check the values</span>
+<span class="w">   </span><span class="k">call </span><span class="n">check</span><span class="p">(</span><span class="n">tol</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">r</span><span class="p">,</span><span class="w"> </span><span class="n">g</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">,</span><span class="w"> </span><span class="n">hex</span><span class="p">,</span><span class="w"> </span><span class="n">decimal</span><span class="p">,</span><span class="w"> </span><span class="n">c</span><span class="p">,</span><span class="w"> </span><span class="n">m</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="n">k</span><span class="p">,</span><span class="w"> </span><span class="n">h</span><span class="p">,</span><span class="w"> </span><span class="n">s</span><span class="p">,</span><span class="w"> </span><span class="n">v</span><span class="p">,</span><span class="w"> </span><span class="n">hl</span><span class="p">,</span><span class="w"> </span><span class="n">sl</span><span class="p">,</span><span class="w"> </span><span class="n">vl</span><span class="p">,</span><span class="w"> </span><span class="n">xyz_x</span><span class="p">,</span><span class="w"> </span><span class="n">xyz_y</span><span class="p">,</span><span class="w"> </span><span class="n">xyz_z</span><span class="p">)</span>
+
+
+
+<span class="w">   </span><span class="c">! Set the color using a hsv value</span>
+<span class="w">   </span><span class="k">call </span><span class="n">custom_color</span><span class="p">%</span><span class="n">set</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;custom_color&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">xyz_x</span><span class="o">=</span><span class="mi">4</span><span class="mf">6.1753_rk</span><span class="p">,</span><span class="w"> </span><span class="n">xyz_y</span><span class="o">=</span><span class="mi">3</span><span class="mf">4.9669_rk</span><span class="p">,</span><span class="w"> </span><span class="n">xyz_z</span><span class="o">=</span><span class="mf">9.1672_rk</span><span class="p">)</span>
+
+<span class="w">   </span><span class="c">! Convert the color to other color spaces</span>
+<span class="w">   </span><span class="k">call </span><span class="n">custom_color</span><span class="p">%</span><span class="n">convert</span><span class="p">(</span><span class="s1">&#39;xyz2all&#39;</span><span class="p">)</span>
+
+<span class="w">   </span><span class="c">! Get the values of the color in other color spaces</span>
+<span class="w">   </span><span class="k">call </span><span class="n">custom_color</span><span class="p">%</span><span class="n">get</span><span class="p">(</span><span class="n">r</span><span class="o">=</span><span class="n">r</span><span class="p">,</span><span class="w"> </span><span class="n">g</span><span class="o">=</span><span class="n">g</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="o">=</span><span class="n">b</span><span class="p">)</span>
+<span class="w">   </span><span class="k">call </span><span class="n">custom_color</span><span class="p">%</span><span class="n">get</span><span class="p">(</span><span class="n">hex</span><span class="o">=</span><span class="n">hex</span><span class="p">)</span>
+<span class="w">   </span><span class="k">call </span><span class="n">custom_color</span><span class="p">%</span><span class="n">get</span><span class="p">(</span><span class="n">decimal</span><span class="o">=</span><span class="n">decimal</span><span class="p">)</span>
+<span class="w">   </span><span class="k">call </span><span class="n">custom_color</span><span class="p">%</span><span class="n">get</span><span class="p">(</span><span class="n">c</span><span class="o">=</span><span class="n">c</span><span class="p">,</span><span class="w"> </span><span class="n">m</span><span class="o">=</span><span class="n">m</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="o">=</span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="n">k</span><span class="o">=</span><span class="n">k</span><span class="p">)</span>
+<span class="w">   </span><span class="k">call </span><span class="n">custom_color</span><span class="p">%</span><span class="n">get</span><span class="p">(</span><span class="n">h</span><span class="o">=</span><span class="n">h</span><span class="p">,</span><span class="w"> </span><span class="n">s</span><span class="o">=</span><span class="n">s</span><span class="p">,</span><span class="w"> </span><span class="n">v</span><span class="o">=</span><span class="n">v</span><span class="p">)</span>
+<span class="w">   </span><span class="k">call </span><span class="n">custom_color</span><span class="p">%</span><span class="n">get</span><span class="p">(</span><span class="n">hl</span><span class="o">=</span><span class="n">hl</span><span class="p">,</span><span class="w"> </span><span class="n">sl</span><span class="o">=</span><span class="n">sl</span><span class="p">,</span><span class="w"> </span><span class="n">vl</span><span class="o">=</span><span class="n">vl</span><span class="p">)</span>
+<span class="w">   </span><span class="k">call </span><span class="n">custom_color</span><span class="p">%</span><span class="n">get</span><span class="p">(</span><span class="n">xyz_x</span><span class="o">=</span><span class="n">xyz_x</span><span class="p">,</span><span class="w"> </span><span class="n">xyz_y</span><span class="o">=</span><span class="n">xyz_y</span><span class="p">,</span><span class="w"> </span><span class="n">xyz_z</span><span class="o">=</span><span class="n">xyz_z</span><span class="p">)</span>
+
+<span class="w">   </span><span class="c">!</span>
+<span class="w">   </span><span class="k">call </span><span class="n">custom_color</span><span class="p">%</span><span class="k">print</span><span class="p">()</span>
+
+<span class="w">   </span><span class="c">! Check the values</span>
+<span class="w">   </span><span class="k">call </span><span class="n">check</span><span class="p">(</span><span class="n">tol</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">r</span><span class="p">,</span><span class="w"> </span><span class="n">g</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">,</span><span class="w"> </span><span class="n">hex</span><span class="p">,</span><span class="w"> </span><span class="n">decimal</span><span class="p">,</span><span class="w"> </span><span class="n">c</span><span class="p">,</span><span class="w"> </span><span class="n">m</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="n">k</span><span class="p">,</span><span class="w"> </span><span class="n">h</span><span class="p">,</span><span class="w"> </span><span class="n">s</span><span class="p">,</span><span class="w"> </span><span class="n">v</span><span class="p">,</span><span class="w"> </span><span class="n">hl</span><span class="p">,</span><span class="w"> </span><span class="n">sl</span><span class="p">,</span><span class="w"> </span><span class="n">vl</span><span class="p">,</span><span class="w"> </span><span class="n">xyz_x</span><span class="p">,</span><span class="w"> </span><span class="n">xyz_y</span><span class="p">,</span><span class="w"> </span><span class="n">xyz_z</span><span class="p">)</span>
+
+
+
+<span class="k">contains</span>
+
+<span class="k">   subroutine </span><span class="n">check</span><span class="p">(</span><span class="n">tol</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">r</span><span class="p">,</span><span class="w"> </span><span class="n">g</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">,</span><span class="w"> </span><span class="n">hex</span><span class="p">,</span><span class="w"> </span><span class="n">decimal</span><span class="p">,</span><span class="w"> </span><span class="n">c</span><span class="p">,</span><span class="w"> </span><span class="n">m</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="n">k</span><span class="p">,</span><span class="w"> </span><span class="n">h</span><span class="p">,</span><span class="w"> </span><span class="n">s</span><span class="p">,</span><span class="w"> </span><span class="n">v</span><span class="p">,</span><span class="w"> </span><span class="n">hl</span><span class="p">,</span><span class="w"> </span><span class="n">sl</span><span class="p">,</span><span class="w"> </span><span class="n">vl</span><span class="p">,</span><span class="w"> </span><span class="n">xyz_x</span><span class="p">,</span><span class="w"> </span><span class="n">xyz_y</span><span class="p">,</span><span class="w"> </span><span class="n">xyz_z</span><span class="p">)</span>
+<span class="w">      </span><span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=*</span><span class="p">),</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">name</span>
+<span class="w">      </span><span class="kt">integer</span><span class="p">(</span><span class="n">ik</span><span class="p">),</span><span class="w">      </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">r</span><span class="p">,</span><span class="w"> </span><span class="n">g</span><span class="p">,</span><span class="w"> </span><span class="n">b</span>
+<span class="w">      </span><span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=*</span><span class="p">),</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">hex</span>
+<span class="w">      </span><span class="kt">integer</span><span class="p">(</span><span class="n">ik</span><span class="p">),</span><span class="w">      </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">decimal</span>
+<span class="w">      </span><span class="kt">integer</span><span class="p">(</span><span class="n">ik</span><span class="p">),</span><span class="w">      </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">c</span><span class="p">,</span><span class="w"> </span><span class="n">m</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="n">k</span>
+<span class="w">      </span><span class="kt">real</span><span class="p">(</span><span class="n">rk</span><span class="p">),</span><span class="w">         </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">h</span><span class="p">,</span><span class="w"> </span><span class="n">s</span><span class="p">,</span><span class="w"> </span><span class="n">v</span>
+<span class="w">      </span><span class="kt">real</span><span class="p">(</span><span class="n">rk</span><span class="p">),</span><span class="w">         </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">hl</span><span class="p">,</span><span class="w"> </span><span class="n">sl</span><span class="p">,</span><span class="w"> </span><span class="n">vl</span>
+<span class="w">      </span><span class="kt">real</span><span class="p">(</span><span class="n">rk</span><span class="p">),</span><span class="w">         </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">xyz_x</span><span class="p">,</span><span class="w"> </span><span class="n">xyz_y</span><span class="p">,</span><span class="w"> </span><span class="n">xyz_z</span>
+<span class="w">      </span><span class="kt">real</span><span class="p">(</span><span class="n">rk</span><span class="p">),</span><span class="w">         </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">tol</span>
+
+<span class="w">      </span><span class="c">! check output:</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">name</span><span class="w">    </span><span class="o">/=</span><span class="w"> </span><span class="s1">&#39;custom_color&#39;</span><span class="p">)</span><span class="w">                 </span><span class="k">print</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;ERROR: name /= &#39;&#39;custom_color&#39;&#39;&#39;</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">r</span><span class="w">       </span><span class="o">/=</span><span class="w"> </span><span class="mi">245_ik</span><span class="p">)</span><span class="w">                         </span><span class="k">print</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;ERROR: r /= 245&#39;</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">g</span><span class="w">       </span><span class="o">/=</span><span class="w"> </span><span class="mi">127_ik</span><span class="p">)</span><span class="w">                         </span><span class="k">print</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;ERROR: g /= 127&#39;</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">b</span><span class="w">       </span><span class="o">/=</span><span class="w"> </span><span class="mi">64_ik</span><span class="p">)</span><span class="w">                          </span><span class="k">print</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;ERROR: b /= 64&#39;</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">hex</span><span class="w">     </span><span class="o">/=</span><span class="w"> </span><span class="s1">&#39;#F57F40&#39;</span><span class="p">)</span><span class="w">                      </span><span class="k">print</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;ERROR: hex /= &#39;&#39;#F57F40&#39;&#39;&#39;</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">decimal</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="mi">16088896_ik</span><span class="p">)</span><span class="w">                    </span><span class="k">print</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;ERROR: decimal /= 16088896&#39;</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">c</span><span class="w">       </span><span class="o">/=</span><span class="w"> </span><span class="mi">0_ik</span><span class="p">)</span><span class="w">                           </span><span class="k">print</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;ERROR: c /= 0&#39;</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">m</span><span class="w">       </span><span class="o">/=</span><span class="w"> </span><span class="mi">48_ik</span><span class="p">)</span><span class="w">                          </span><span class="k">print</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;ERROR: m /= 48&#39;</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">y</span><span class="w">       </span><span class="o">/=</span><span class="w"> </span><span class="mi">74_ik</span><span class="p">)</span><span class="w">                          </span><span class="k">print</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;ERROR: y /= 74&#39;</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">k</span><span class="w">       </span><span class="o">/=</span><span class="w"> </span><span class="mi">4_ik</span><span class="p">)</span><span class="w">                           </span><span class="k">print</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;ERROR: k /= 4&#39;</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">h</span><span class="w">     </span><span class="o">-</span><span class="w"> </span><span class="mi">2</span><span class="mf">0.883977900552487_rk</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">tol</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">print</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;ERROR: h /= 20.8840&#39;</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">s</span><span class="w">     </span><span class="o">-</span><span class="w"> </span><span class="mi">7</span><span class="mf">3.877551020408163_rk</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">tol</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">print</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;ERROR: s /= 73.8776&#39;</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">v</span><span class="w">     </span><span class="o">-</span><span class="w"> </span><span class="mi">9</span><span class="mf">6.078431372549019_rk</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">tol</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">print</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;ERROR: v /= 96.0784&#39;</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">hl</span><span class="w">    </span><span class="o">-</span><span class="w"> </span><span class="mi">2</span><span class="mf">0.883977900552487_rk</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">tol</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">print</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;ERROR: hl /= 20.8840&#39;</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">sl</span><span class="w">    </span><span class="o">-</span><span class="w"> </span><span class="mi">9</span><span class="mf">0.049751243781117_rk</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">tol</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">print</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;ERROR: sl /= 90.0498&#39;</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">vl</span><span class="w">    </span><span class="o">-</span><span class="w"> </span><span class="mi">6</span><span class="mf">0.588235294117652_rk</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">tol</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">print</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;ERROR: vl /= 60.5882&#39;</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">xyz_x</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">4</span><span class="mf">6.175296219509761_rk</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">tol</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">print</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;ERROR: xyz_x /= 46.1753&#39;</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">xyz_y</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">3</span><span class="mf">4.966900449347115_rk</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">tol</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">print</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;ERROR: xyz_y /= 34.9669&#39;</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">xyz_z</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mf">9.1671542959237478_rk</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">tol</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">print</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;ERROR: xyz_z /= 9.1672&#39;</span>
+<span class="w">   </span><span class="k">end subroutine </span><span class="n">check</span>
+<span class="k">end program </span><span class="n">example26</span>
+</pre></div>
+
+    </section>
+    
+    </div>
+  </div>
+
+      <hr>
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+        <div class="row justify-content-between">
+          <div class="col">
+            <p>
+              ForImage
+ was developed by Seyed Ali Ghasemi<br>              &copy; 2023-2024 BSD 3-Clause
+</p>
+          </div>
+          <div class="col">
+            <p class="text-end">
+              Documentation generated by
+              <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
+ on 2024-04-23T13:38:53.839855             </p>
+          </div>
+        </div>
+        <br>
+      </div> <!-- /container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>    
+
+    <!-- MathJax JavaScript
+             ================================================== -->
+             <!-- Placed at the end of the document so the pages load faster -->
+        <script type="text/x-mathjax-config">
+          MathJax.Hub.Config({
+          TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } },
+          jax: ['input/TeX','input/MathML','output/HTML-CSS'],
+          extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']
+          });
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+          <script src="../tipuesearch/tipuesearch_content.js"></script>
+          <script src="../tipuesearch/tipuesearch_set.js"></script>
+          <script src="../tipuesearch/tipuesearch.js"></script>
+
+  </body>
+</html>
