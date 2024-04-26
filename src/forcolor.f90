@@ -39,6 +39,9 @@ module forcolor
       procedure, private :: get_hsv
       procedure, private :: get_hsl
       procedure, private :: get_xyz
+      procedure :: get_r
+      procedure :: get_g
+      procedure :: get_b
       procedure :: print
       procedure, private :: print_name
       procedure, private :: print_rgb
@@ -386,6 +389,36 @@ contains
       if (present(xyz_x) .and. present(xyz_y) .and. present(xyz_z))      call this%get_xyz(xyz_x, xyz_y, xyz_z)
 
    end subroutine get
+   !===============================================================================
+
+
+   !===============================================================================
+   !> author: Seyed Ali Ghasemi
+   elemental pure function get_r(this) result(r)
+      class(color), intent(in) :: this
+      integer(ik) :: r
+      r = this%r
+   end function
+   !===============================================================================
+
+
+   !===============================================================================
+   !> author: Seyed Ali Ghasemi
+   elemental pure function get_g(this) result(g)
+      class(color), intent(in) :: this
+      integer(ik) :: g
+      g = this%g
+   end function
+   !===============================================================================
+
+
+   !===============================================================================
+   !> author: Seyed Ali Ghasemi
+   elemental pure function get_b(this) result(b)
+      class(color), intent(in) :: this
+      integer(ik) :: b
+      b = this%b
+   end function
    !===============================================================================
 
 

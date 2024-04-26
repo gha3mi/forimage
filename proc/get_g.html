@@ -10,7 +10,7 @@
     <meta name="author" content="Seyed Ali Ghasemi" >
     <link rel="icon" href="../favicon.png">
 
-    <title>get_dim_colors &ndash; ForImage</title>
+    <title>get_g &ndash; ForImage</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
@@ -65,7 +65,7 @@
 
     <div class="container">
   <div class="row">
-    <h1>get_dim_colors
+    <h1>get_g
       <small>Function</small>
       
     </h1>
@@ -83,16 +83,16 @@
 
             <li class="list-inline-item" id="source-file">
               <i class="fa fa-code"></i>
-              <a href="../src/lut.f90"> Source File</a>
+              <a href="../src/forcolor.f90"> Source File</a>
             </li>
         </ul>
       </div>
       <div class="col">
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb justify-content-end mb-0">
-                <li class="breadcrumb-item"><a href='../sourcefile/lut.f90.html'>lut.f90</a></li>
-                <li class="breadcrumb-item"><a href='../module/lut.html'>lut</a></li>
-            <li class="breadcrumb-item active" aria-current="page">get_dim_colors</li>
+                <li class="breadcrumb-item"><a href='../sourcefile/forcolor.f90.html'>forcolor.f90</a></li>
+                <li class="breadcrumb-item"><a href='../module/forcolor.html'>forcolor</a></li>
+            <li class="breadcrumb-item active" aria-current="page">get_g</li>
           </ol>
         </nav>
       </div>
@@ -130,12 +130,6 @@
   
   
   
-    <div class="card card-primary">
-      <div class="card-header text-left"><h3 class="card-title">Source Code</h3></div>
-      <div class="list-group">
-        <a class="list-group-item" href="../proc/get_dim_colors.html#src">get_dim_colors</a>
-      </div>
-    </div>
 
 
   </div>
@@ -143,13 +137,13 @@
     </div>
     
     <div class="col-md-9" id='text'>
-    <h2>private pure elemental function get_dim_colors(this) result(dim_colors)  
+    <h2>private pure elemental function get_g(this) result(g)  
 </h2>
     
 
 
     <h3>Type Bound</h3>
-    <p><a href='../type/format_lut.html'>format_lut</a></p>
+    <p><a href='../type/color.html'>color</a></p>
 
     <h3>Arguments</h3>
         <table class="table table-striped varlist">
@@ -164,8 +158,8 @@
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-this~39"></span>
-              class(<a href='../type/format_lut.html'>format_lut</a>),
+              <span class="anchor" id="variable-this~66"></span>
+              class(<a href='../type/color.html'>color</a>),
             </td>
 <td>intent(in)</td>
               <td></td>            <td>
@@ -182,8 +176,8 @@
 
       <h3>Return Value
         <small>
-          <span class="anchor" id="variable-dim_colors~4"></span>
-          integer
+          <span class="anchor" id="variable-g~9"></span>
+          integer(kind=ik)
         </small>
       </h3>
       
@@ -199,17 +193,6 @@
 
 
     
-    <section>
-    <h2><span class="anchor" id="src"></span>Source Code</h2>
-    <div class="hl codehilite"><pre><span></span><span class="w">   </span><span class="k">pure elemental function </span><span class="n">get_dim_colors</span><span class="p">(</span><span class="n">this</span><span class="p">)</span><span class="w"> </span><span class="k">result</span><span class="p">(</span><span class="n">dim_colors</span><span class="p">)</span>
-<span class="w">      </span><span class="k">class</span><span class="p">(</span><span class="n">format_lut</span><span class="p">),</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">this</span>
-<span class="w">      </span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">dim_colors</span>
-<span class="w">      </span><span class="n">dim_colors</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">this</span><span class="p">%</span><span class="n">dim_colors</span>
-<span class="w">   </span><span class="k">end function </span><span class="n">get_dim_colors</span>
-</pre></div>
-
-    </section>
-    <br>
     
     </div>
   </div>
