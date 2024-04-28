@@ -150,6 +150,7 @@ Note: The executable must be run from the forimage directory.
 ## Projects Utilizing ForImage
 
 - [ForColormap](https://github.com/vmagnin/forcolormap): A Fortran library for colormaps
+- [ForCAD](https://github.com/gha3mi/forcad): A Fortran library for Geometric Modeling using NURBS
 
 If your project utilizes ForImage and you want to be added to this list, please add your project and create a pull request.
 
