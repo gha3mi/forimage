@@ -629,10 +629,11 @@ contains
    !===============================================================================
    !> author: Seyed Ali Ghasemi
    !> license: BSD 3-Clause
-   !> Deallocates memory for the pixels of the PNM image.
+   !> Deallocates memory for the PNM image.
    elemental pure subroutine deallocate_pnm(this)
       class(format_pnm), intent(inout)    :: this
       if (allocated(this%pixels)) deallocate(this%pixels)
+      if (allocated(this%comment)) deallocate(this%comment)
    end subroutine deallocate_pnm
    !===============================================================================
 
