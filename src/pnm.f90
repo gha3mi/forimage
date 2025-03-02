@@ -677,7 +677,7 @@ contains
                read(nunit, iostat=iostat, pos=pos) buffer_ch
                if (iostat /= 0) error stop 'Error reading the file.'
                call this%allocate_pixels()
-               this%pixels = iachar(transpose(reshape(buffer_ch, [this%width, this%height])), kind=ik)
+               call decode_binary_pbm_pixels(this, buffer_ch)
                close(nunit)
              case ('pgm')
                open (newunit = nunit, file = file_name//'.'//file_format,&
@@ -1026,13 +1026,25 @@ contains
          if (iostat /= 0) error stop 'Error opening the file.'
          write(nunit, '(*(g0,1x))', advance='no') transpose(this%pixels)
          close(nunit)
-       case ('P4', 'P5', 'P6')
+       case ('P4')
          open (newunit = nunit, file = file_name//'.'//this%file_format,&
          status='replace', iostat=iostat, form='formatted', action='write')
          if (iostat /= 0) error stop 'Error opening the file.'
          call write_header(this, nunit)
          close(nunit)
 
+         open (newunit = nunit, file = file_name//'.'//this%file_format,&
+         status='old', iostat=iostat, access='stream', form='unformatted', action='write', position='append')
+         if (iostat /= 0) error stop 'Error opening the file.'
+         write(nunit) encode_binary_pbm_pixels(this)
+         write(nunit) transpose(achar(this%pixels))
+         close(nunit)
+      case('P5', 'P6')
+         open (newunit = nunit, file = file_name//'.'//this%file_format,&
+         status='replace', iostat=iostat, form='formatted', action='write')
+         if (iostat /= 0) error stop 'Error opening the file.'
+         call write_header(this, nunit)
+         close(nunit)
          open (newunit = nunit, file = file_name//'.'//this%file_format,&
          status='old', iostat=iostat, access='stream', form='unformatted', action='write', position='append')
          if (iostat /= 0) error stop 'Error opening the file.'
@@ -1109,6 +1121,47 @@ contains
          inquire(nunit, pos=pos)
       end if
    end subroutine read_header
+   !===============================================================================
+
+
+   !===============================================================================
+   !> author: Seyed Ali Ghasemi
+   !> license: BSD 3-Clause
+   !> Packs pixel bits into characters to create the binary representation for PBM images.
+   pure function encode_binary_pbm_pixels(this) result(packed_data)
+      class(format_pnm), intent(in) :: this
+      character(len=1), allocatable :: packed_data(:)
+      integer, allocatable :: temp(:)
+      integer :: row, col, nbytes
+
+      nbytes = (this%width+7)/8
+      allocate(packed_data(this%height*nbytes))
+      allocate(temp(nbytes))
+      do row = 1, this%height
+         temp = 0
+         do col = 0, this%width-1
+            temp(col/8+1) = temp(col/8+1) + this%pixels(row, col+1) * 2**(7-mod(col, 8))
+         end do
+         packed_data((row-1)*nbytes+1 : row*nbytes) = achar(temp)
+      end do
+   end function encode_binary_pbm_pixels
+   !===============================================================================
+
+
+   !===============================================================================
+   !> author: Seyed Ali Ghasemi
+   !> license: BSD 3-Clause
+   !> Unpacks binary data from a character buffer into the image's pixel array.
+   pure subroutine decode_binary_pbm_pixels(this, buffer)
+      class(format_pnm), intent(inout) :: this
+      character(len=1), intent(in) :: buffer(:)
+      integer :: row, col, nbytes
+
+      nbytes = (this%width+7)/8
+      do concurrent (row = 0:this%height-1, col = 0:this%width-1)
+         this%pixels(row+1, col+1) = ibits(ichar(buffer(row*nbytes+col/8+1)), 7-mod(col, 8), 1)
+      end do
+   end subroutine decode_binary_pbm_pixels
    !===============================================================================
 
 end module pnm
