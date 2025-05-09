@@ -12,14 +12,29 @@
 
     <title>demo_color &ndash; ForImage</title>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link href="../css/pygments.css" rel="stylesheet">
-    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <!-- Font Awesome -->
+    <link href="../css/fontawesome.min.css" rel="stylesheet">
+    <link href="../css/brands.min.css" rel="stylesheet">
+    <link href="../css/regular.min.css" rel="stylesheet">
+    <link href="../css/solid.min.css" rel="stylesheet">
+    <link href="../css/v4-font-face.min.css" rel="stylesheet">
+    <link href="../css/v4-shims.min.css" rel="stylesheet">
+    <!-- MathJax -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        TeX: { equationNumbers: { autoNumber: "AMS" } }
+      });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async
+            integrity="sha256-DViIOMYdwlM/axqoGDPeUyf0urLoHMN4QACBKyB58Uw=" crossorigin="anonymous"></script>
+    <!-- Other scripts and stylesheets -->
     <link href="../css/local.css" rel="stylesheet">
-      <link  href="../tipuesearch/tipuesearch.css" rel="stylesheet">
-
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <link href="../css/pygments.css" rel="stylesheet">
     <script src="../js/svg-pan-zoom.min.js"></script>
   </head>
 
@@ -96,9 +111,11 @@
     </div>
   </div>
   <script>
-    $(function () {
-    $('[data-bs-toggle="tooltip"]').tooltip()
-    })
+    // Enable Bootstrap tooltips
+    (function () {
+      const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+      const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+    })();
   </script>
 
   </div>
@@ -117,7 +134,7 @@
         <div class="list-group list-group-flush">
             <a class="list-group-item" href="../program/demo_color.html#variable-b">b</a>
             <a class="list-group-item" href="../program/demo_color.html#variable-c~2">c</a>
-            <a class="list-group-item" href="../program/demo_color.html#variable-custom_color">custom_color</a>
+            <a class="list-group-item" href="../program/demo_color.html#variable-custom_color~2">custom_color</a>
             <a class="list-group-item" href="../program/demo_color.html#variable-decimal">decimal</a>
             <a class="list-group-item" href="../program/demo_color.html#variable-g">g</a>
             <a class="list-group-item" href="../program/demo_color.html#variable-h">h</a>
@@ -125,7 +142,7 @@
             <a class="list-group-item" href="../program/demo_color.html#variable-hl">hl</a>
             <a class="list-group-item" href="../program/demo_color.html#variable-k">k</a>
             <a class="list-group-item" href="../program/demo_color.html#variable-m">m</a>
-            <a class="list-group-item" href="../program/demo_color.html#variable-nearest_color">nearest_color</a>
+            <a class="list-group-item" href="../program/demo_color.html#variable-nearest_color~2">nearest_color</a>
             <a class="list-group-item" href="../program/demo_color.html#variable-r">r</a>
             <a class="list-group-item" href="../program/demo_color.html#variable-s">s</a>
             <a class="list-group-item" href="../program/demo_color.html#variable-sl">sl</a>
@@ -487,18 +504,18 @@ large graphs.</div>
 <path fill="none" stroke="#ff0000" d="M76.13,-502.03C84,-503.1 92.65,-504.27 101.56,-505.48"/>
 <polygon fill="#ff0000" stroke="#ff0000" points="101.35,-508.98 111.72,-506.85 102.29,-502.04 101.35,-508.98"/>
 </g>
-<!-- proc~set -->
+<!-- proc~set~2 -->
 <g id="program~~demo_color~~CallsGraph_node7" class="node">
-<title>proc~set</title>
-<g id="a_program~~demo_color~~CallsGraph_node7"><a xlink:href="../proc/set.html" xlink:title="color%set">
+<title>proc~set~2</title>
+<g id="a_program~~demo_color~~CallsGraph_node7"><a xlink:href="../proc/set~2.html" xlink:title="color%set">
 <polygon fill="#d9534f" stroke="#d9534f" points="542.5,-192 477.5,-192 477.5,-168 542.5,-168 542.5,-192"/>
 <text text-anchor="middle" x="510" y="-177.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">color%set</text>
 </a>
 </g>
 </g>
-<!-- program~demo_color&#45;&gt;proc~set -->
+<!-- program~demo_color&#45;&gt;proc~set~2 -->
 <g id="program~~demo_color~~CallsGraph_edge6" class="edge">
-<title>program~demo_color&#45;&gt;proc~set</title>
+<title>program~demo_color&#45;&gt;proc~set~2</title>
 <path fill="none" stroke="#ff0000" d="M42.98,-484.83C52.11,-458.1 76.57,-393.06 112,-348 184.17,-256.21 204.19,-219.7 314,-180 364.38,-161.79 426.97,-166.09 467.44,-172.03"/>
 <polygon fill="#ff0000" stroke="#ff0000" points="467.06,-175.51 477.48,-173.61 468.14,-168.6 467.06,-175.51"/>
 </g>
@@ -844,9 +861,9 @@ large graphs.</div>
 </a>
 </g>
 </g>
-<!-- proc~set&#45;&gt;proc~set_by_name -->
+<!-- proc~set~2&#45;&gt;proc~set_by_name -->
 <g id="program~~demo_color~~CallsGraph_edge31" class="edge">
-<title>proc~set&#45;&gt;proc~set_by_name</title>
+<title>proc~set~2&#45;&gt;proc~set_by_name</title>
 <path fill="none" stroke="#ff00ff" d="M514.35,-192.18C522.63,-220.05 546.65,-289 591,-327 592.54,-328.32 594.16,-329.55 595.85,-330.71"/>
 <polygon fill="#ff00ff" stroke="#ff00ff" points="594.38,-333.9 604.78,-335.91 597.9,-327.85 594.38,-333.9"/>
 </g>
@@ -859,9 +876,9 @@ large graphs.</div>
 </a>
 </g>
 </g>
-<!-- proc~set&#45;&gt;proc~set_cmyk -->
+<!-- proc~set~2&#45;&gt;proc~set_cmyk -->
 <g id="program~~demo_color~~CallsGraph_edge32" class="edge">
-<title>proc~set&#45;&gt;proc~set_cmyk</title>
+<title>proc~set~2&#45;&gt;proc~set_cmyk</title>
 <path fill="none" stroke="#ff00ff" d="M517.21,-192.21C528.82,-213.89 555.87,-259.27 591,-285 593.09,-286.53 595.31,-287.97 597.61,-289.3"/>
 <polygon fill="#ff00ff" stroke="#ff00ff" points="596.3,-292.56 606.8,-293.98 599.47,-286.32 596.3,-292.56"/>
 </g>
@@ -874,9 +891,9 @@ large graphs.</div>
 </a>
 </g>
 </g>
-<!-- proc~set&#45;&gt;proc~set_decimal -->
+<!-- proc~set~2&#45;&gt;proc~set_decimal -->
 <g id="program~~demo_color~~CallsGraph_edge33" class="edge">
-<title>proc~set&#45;&gt;proc~set_decimal</title>
+<title>proc~set~2&#45;&gt;proc~set_decimal</title>
 <path fill="none" stroke="#ff00ff" d="M523.65,-192.11C538.69,-205.97 565.02,-228.61 591,-243 594.21,-244.78 597.6,-246.45 601.06,-248.02"/>
 <polygon fill="#ff00ff" stroke="#ff00ff" points="599.76,-251.27 610.34,-251.93 602.48,-244.82 599.76,-251.27"/>
 </g>
@@ -889,9 +906,9 @@ large graphs.</div>
 </a>
 </g>
 </g>
-<!-- proc~set&#45;&gt;proc~set_hex -->
+<!-- proc~set~2&#45;&gt;proc~set_hex -->
 <g id="program~~demo_color~~CallsGraph_edge34" class="edge">
-<title>proc~set&#45;&gt;proc~set_hex</title>
+<title>proc~set~2&#45;&gt;proc~set_hex</title>
 <path fill="none" stroke="#ff00ff" d="M542.77,-189.64C559.71,-194.77 580.92,-201.2 599.96,-206.98"/>
 <polygon fill="#ff00ff" stroke="#ff00ff" points="599.11,-210.38 609.69,-209.93 601.14,-203.68 599.11,-210.38"/>
 </g>
@@ -904,9 +921,9 @@ large graphs.</div>
 </a>
 </g>
 </g>
-<!-- proc~set&#45;&gt;proc~set_hsl -->
+<!-- proc~set~2&#45;&gt;proc~set_hsl -->
 <g id="program~~demo_color~~CallsGraph_edge35" class="edge">
-<title>proc~set&#45;&gt;proc~set_hsl</title>
+<title>proc~set~2&#45;&gt;proc~set_hsl</title>
 <path fill="none" stroke="#ff00ff" d="M542.77,-180C559.08,-180 579.36,-180 597.84,-180"/>
 <polygon fill="#ff00ff" stroke="#ff00ff" points="597.89,-183.5 607.89,-180 597.89,-176.5 597.89,-183.5"/>
 </g>
@@ -919,9 +936,9 @@ large graphs.</div>
 </a>
 </g>
 </g>
-<!-- proc~set&#45;&gt;proc~set_hsv -->
+<!-- proc~set~2&#45;&gt;proc~set_hsv -->
 <g id="program~~demo_color~~CallsGraph_edge36" class="edge">
-<title>proc~set&#45;&gt;proc~set_hsv</title>
+<title>proc~set~2&#45;&gt;proc~set_hsv</title>
 <path fill="none" stroke="#ff00ff" d="M542.77,-170.36C559.71,-165.23 580.92,-158.8 599.96,-153.02"/>
 <polygon fill="#ff00ff" stroke="#ff00ff" points="601.14,-156.32 609.69,-150.07 599.11,-149.62 601.14,-156.32"/>
 </g>
@@ -934,9 +951,9 @@ large graphs.</div>
 </a>
 </g>
 </g>
-<!-- proc~set&#45;&gt;proc~set_name -->
+<!-- proc~set~2&#45;&gt;proc~set_name -->
 <g id="program~~demo_color~~CallsGraph_edge37" class="edge">
-<title>proc~set&#45;&gt;proc~set_name</title>
+<title>proc~set~2&#45;&gt;proc~set_name</title>
 <path fill="none" stroke="#ff00ff" d="M523.65,-167.89C538.69,-154.03 565.02,-131.39 591,-117 594.21,-115.22 597.6,-113.55 601.06,-111.98"/>
 <polygon fill="#ff00ff" stroke="#ff00ff" points="602.48,-115.18 610.34,-108.07 599.76,-108.73 602.48,-115.18"/>
 </g>
@@ -949,9 +966,9 @@ large graphs.</div>
 </a>
 </g>
 </g>
-<!-- proc~set&#45;&gt;proc~set_rgb -->
+<!-- proc~set~2&#45;&gt;proc~set_rgb -->
 <g id="program~~demo_color~~CallsGraph_edge38" class="edge">
-<title>proc~set&#45;&gt;proc~set_rgb</title>
+<title>proc~set~2&#45;&gt;proc~set_rgb</title>
 <path fill="none" stroke="#ff00ff" d="M517.21,-167.79C528.82,-146.11 555.87,-100.73 591,-75 593.09,-73.47 595.31,-72.03 597.61,-70.7"/>
 <polygon fill="#ff00ff" stroke="#ff00ff" points="599.47,-73.68 606.8,-66.02 596.3,-67.44 599.47,-73.68"/>
 </g>
@@ -964,9 +981,9 @@ large graphs.</div>
 </a>
 </g>
 </g>
-<!-- proc~set&#45;&gt;proc~set_xyz -->
+<!-- proc~set~2&#45;&gt;proc~set_xyz -->
 <g id="program~~demo_color~~CallsGraph_edge39" class="edge">
-<title>proc~set&#45;&gt;proc~set_xyz</title>
+<title>proc~set~2&#45;&gt;proc~set_xyz</title>
 <path fill="none" stroke="#ff00ff" d="M514.35,-167.82C522.63,-139.95 546.65,-71 591,-33 592.97,-31.31 595.09,-29.75 597.31,-28.32"/>
 <polygon fill="#ff00ff" stroke="#ff00ff" points="599.21,-31.26 606.27,-23.37 595.83,-25.14 599.21,-31.26"/>
 </g>
@@ -976,9 +993,9 @@ large graphs.</div>
 <path fill="none" stroke="#00ff99" d="M398.82,-549.15C420.06,-558.95 450.16,-572.84 473.53,-583.63"/>
 <polygon fill="#00ff99" stroke="#00ff99" points="472.22,-586.88 482.76,-587.89 475.15,-580.52 472.22,-586.88"/>
 </g>
-<!-- proc~initialize_colors&#45;&gt;proc~set -->
+<!-- proc~initialize_colors&#45;&gt;proc~set~2 -->
 <g id="program~~demo_color~~CallsGraph_edge41" class="edge">
-<title>proc~initialize_colors&#45;&gt;proc~set</title>
+<title>proc~initialize_colors&#45;&gt;proc~set~2</title>
 <path fill="none" stroke="#00ff99" d="M418.02,-524.91C422.11,-522.46 425.88,-519.53 429,-516 450.26,-491.97 491.9,-273.22 504.97,-202.18"/>
 <polygon fill="#00ff99" stroke="#00ff99" points="508.46,-202.56 506.82,-192.09 501.57,-201.3 508.46,-202.56"/>
 </g>
@@ -1123,7 +1140,7 @@ large graphs.</div>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-custom_color"></span>
+              <span class="anchor" id="variable-custom_color~2"></span>
               type(<a href='../type/color.html'>color</a>)
             </td>
             <td>
@@ -1251,7 +1268,7 @@ large graphs.</div>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-nearest_color"></span>
+              <span class="anchor" id="variable-nearest_color~2"></span>
               type(<a href='../type/color.html'>color</a>)
             </td>
             <td>
@@ -1629,33 +1646,11 @@ large graphs.</div>
             <p class="text-end">
               Documentation generated by
               <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
- on 2025-03-02T20:09:55.775003+0000             </p>
+ on 2025-05-09T11:37:17.709750+0000             </p>
           </div>
         </div>
         <br>
       </div> <!-- /container -->
     </footer>
-
-    <!-- Bootstrap core JavaScript -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>    
-
-    <!-- MathJax JavaScript
-             ================================================== -->
-             <!-- Placed at the end of the document so the pages load faster -->
-        <script type="text/x-mathjax-config">
-          MathJax.Hub.Config({
-          TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } },
-          jax: ['input/TeX','input/MathML','output/HTML-CSS'],
-          extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']
-          });
-        </script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-
-          <script src="../tipuesearch/tipuesearch_content.js"></script>
-          <script src="../tipuesearch/tipuesearch_set.js"></script>
-          <script src="../tipuesearch/tipuesearch.js"></script>
-
   </body>
 </html>

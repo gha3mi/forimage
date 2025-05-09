@@ -987,6 +987,7 @@ contains
       character(*),      intent(in), optional     :: encoding
       integer                                     :: nunit
       integer                                     :: iostat
+      integer                                     :: i
 
       if (present(encoding)) then
          call this%set_format(encoding)
@@ -1048,7 +1049,9 @@ contains
          open (newunit = nunit, file = file_name//'.'//this%file_format,&
          status='old', iostat=iostat, access='stream', form='unformatted', action='write', position='append')
          if (iostat /= 0) error stop 'Error opening the file.'
-         write(nunit) transpose(achar(this%pixels))
+         do i = 1, size(this%pixels, 1)
+            write(nunit) achar(this%pixels(i,:))
+         end do
          close(nunit)
       end select
    end subroutine export_pnm

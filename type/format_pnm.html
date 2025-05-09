@@ -12,14 +12,29 @@
 
     <title>format_pnm &ndash; ForImage </title>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link href="../css/pygments.css" rel="stylesheet">
-    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <!-- Font Awesome -->
+    <link href="../css/fontawesome.min.css" rel="stylesheet">
+    <link href="../css/brands.min.css" rel="stylesheet">
+    <link href="../css/regular.min.css" rel="stylesheet">
+    <link href="../css/solid.min.css" rel="stylesheet">
+    <link href="../css/v4-font-face.min.css" rel="stylesheet">
+    <link href="../css/v4-shims.min.css" rel="stylesheet">
+    <!-- MathJax -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        TeX: { equationNumbers: { autoNumber: "AMS" } }
+      });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async
+            integrity="sha256-DViIOMYdwlM/axqoGDPeUyf0urLoHMN4QACBKyB58Uw=" crossorigin="anonymous"></script>
+    <!-- Other scripts and stylesheets -->
     <link href="../css/local.css" rel="stylesheet">
-      <link  href="../tipuesearch/tipuesearch.css" rel="stylesheet">
-
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <link href="../css/pygments.css" rel="stylesheet">
     <script src="../js/svg-pan-zoom.min.js"></script>
   </head>
 
@@ -78,7 +93,7 @@
 
             <li class="list-inline-item" id="statements"><i class="fa fa-list-ol"></i>
               <a data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true"
-                 title="<p>36.5% of total for derived types.</p>Including implementation: 614 statements, 48.2% of total for derived types.">38 statements</a>
+                 title="<p>36.5% of total for derived types.</p>Including implementation: 617 statements, 48.3% of total for derived types.">38 statements</a>
             </li>
 
             <li class="list-inline-item" id="source-file">
@@ -99,9 +114,11 @@
     </div>
   </div>
   <script>
-    $(function () {
-    $('[data-bs-toggle="tooltip"]').tooltip()
-    })
+    // Enable Bootstrap tooltips
+    (function () {
+      const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+      const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+    })();
   </script>
 
   </div>
@@ -122,10 +139,10 @@
             <a class="list-group-item" href="../type/format_pnm.html#variable-comment">comment</a>
             <a class="list-group-item" href="../type/format_pnm.html#variable-encoding">encoding</a>
             <a class="list-group-item" href="../type/format_pnm.html#variable-file_format">file_format</a>
-            <a class="list-group-item" href="../type/format_pnm.html#variable-height~3">height</a>
+            <a class="list-group-item" href="../type/format_pnm.html#variable-height">height</a>
             <a class="list-group-item" href="../type/format_pnm.html#variable-magic_number">magic_number</a>
             <a class="list-group-item" href="../type/format_pnm.html#variable-max_color">max_color</a>
-            <a class="list-group-item" href="../type/format_pnm.html#variable-width~3">width</a>
+            <a class="list-group-item" href="../type/format_pnm.html#variable-width">width</a>
         </div>
       </div>
     </div>
@@ -285,7 +302,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-height~3"></span>
+              <span class="anchor" id="variable-height"></span>
               integer,
             </td>
               <td>private</td>
@@ -336,7 +353,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-width~3"></span>
+              <span class="anchor" id="variable-width"></span>
               integer,
             </td>
               <td>private</td>
@@ -371,15 +388,15 @@
         
       </h3>
     </div>
-      <div class="card-body">
-        
-        <blockquote>
+        <div class="card-body">
+          
+          <blockquote>
 <p>Adjust the brightness and darkness of the image.</p>
 </blockquote>
-      </div>
-    <ul class="list-group">
-        <li class="list-group-item">
-                  <h3>
+        </div>
+      <ul class="list-group">
+          <li class="list-group-item">
+                    <h3>
     private pure elemental subroutine <a href='../proc/brighten.html'>brighten</a>(this, factor)  
 </h3>
         <dl class="dl-horizontal">
@@ -435,8 +452,8 @@
   </table>
 
 
-        </li>
-    </ul>
+          </li>
+      </ul>
   </div>
 
           </div>
@@ -450,15 +467,15 @@
         
       </h3>
     </div>
-      <div class="card-body">
-        
-        <blockquote>
+        <div class="card-body">
+          
+          <blockquote>
 <p>Crop the image to a specified region.</p>
 </blockquote>
-      </div>
-    <ul class="list-group">
-        <li class="list-group-item">
-                  <h3>
+        </div>
+      <ul class="list-group">
+          <li class="list-group-item">
+                    <h3>
     private pure elemental subroutine <a href='../proc/crop.html'>crop</a>(this, start_row, end_row, start_col, end_col)  
 </h3>
         <dl class="dl-horizontal">
@@ -559,8 +576,8 @@
   </table>
 
 
-        </li>
-    </ul>
+          </li>
+      </ul>
   </div>
 
           </div>
@@ -574,15 +591,15 @@
         
       </h3>
     </div>
-      <div class="card-body">
-        
-        <blockquote>
+        <div class="card-body">
+          
+          <blockquote>
 <p>Write an image to a file.</p>
 </blockquote>
-      </div>
-    <ul class="list-group">
-        <li class="list-group-item">
-                  <h3>
+        </div>
+      <ul class="list-group">
+          <li class="list-group-item">
+                    <h3>
     private impure subroutine <a href='../proc/export_pnm.html'>export_pnm</a>(this, file_name, encoding)  
 </h3>
         <dl class="dl-horizontal">
@@ -653,8 +670,8 @@
   </table>
 
 
-        </li>
-    </ul>
+          </li>
+      </ul>
   </div>
 
           </div>
@@ -668,15 +685,15 @@
         
       </h3>
     </div>
-      <div class="card-body">
-        
-        <blockquote>
+        <div class="card-body">
+          
+          <blockquote>
 <p>Clean up allocated memory for the PNM image.</p>
 </blockquote>
-      </div>
-    <ul class="list-group">
-        <li class="list-group-item">
-                  <h3>
+        </div>
+      <ul class="list-group">
+          <li class="list-group-item">
+                    <h3>
     private pure elemental subroutine <a href='../proc/deallocate_pnm.html'>deallocate_pnm</a>(this)  
 </h3>
         <dl class="dl-horizontal">
@@ -717,8 +734,8 @@
   </table>
 
 
-        </li>
-    </ul>
+          </li>
+      </ul>
   </div>
 
           </div>
@@ -732,15 +749,15 @@
         
       </h3>
     </div>
-      <div class="card-body">
-        
-        <blockquote>
+        <div class="card-body">
+          
+          <blockquote>
 <p>Flip the image horizontally.</p>
 </blockquote>
-      </div>
-    <ul class="list-group">
-        <li class="list-group-item">
-                  <h3>
+        </div>
+      <ul class="list-group">
+          <li class="list-group-item">
+                    <h3>
     private pure elemental subroutine <a href='../proc/flip_horizontal.html'>flip_horizontal</a>(this)  
 </h3>
         <dl class="dl-horizontal">
@@ -781,8 +798,8 @@
   </table>
 
 
-        </li>
-    </ul>
+          </li>
+      </ul>
   </div>
 
           </div>
@@ -796,15 +813,15 @@
         
       </h3>
     </div>
-      <div class="card-body">
-        
-        <blockquote>
+        <div class="card-body">
+          
+          <blockquote>
 <p>Flip the image vertically.</p>
 </blockquote>
-      </div>
-    <ul class="list-group">
-        <li class="list-group-item">
-                  <h3>
+        </div>
+      <ul class="list-group">
+          <li class="list-group-item">
+                    <h3>
     private pure elemental subroutine <a href='../proc/flip_vertical.html'>flip_vertical</a>(this)  
 </h3>
         <dl class="dl-horizontal">
@@ -845,8 +862,8 @@
   </table>
 
 
-        </li>
-    </ul>
+          </li>
+      </ul>
   </div>
 
           </div>
@@ -860,15 +877,15 @@
         
       </h3>
     </div>
-      <div class="card-body">
-        
-        <blockquote>
+        <div class="card-body">
+          
+          <blockquote>
 <p>Get the encoding of the PNM image.</p>
 </blockquote>
-      </div>
-    <ul class="list-group">
-        <li class="list-group-item">
-                  <h3>
+        </div>
+      <ul class="list-group">
+          <li class="list-group-item">
+                    <h3>
     private pure function <a href='../proc/get_format.html'>get_format</a>(this) result(encoding)  
 </h3>
         <dl class="dl-horizontal">
@@ -914,8 +931,8 @@
     </h4>
     
 
-        </li>
-    </ul>
+          </li>
+      </ul>
   </div>
 
           </div>
@@ -929,15 +946,15 @@
         
       </h3>
     </div>
-      <div class="card-body">
-        
-        <blockquote>
+        <div class="card-body">
+          
+          <blockquote>
 <p>Convert a color image to greyscale.</p>
 </blockquote>
-      </div>
-    <ul class="list-group">
-        <li class="list-group-item">
-                  <h3>
+        </div>
+      <ul class="list-group">
+          <li class="list-group-item">
+                    <h3>
     private pure elemental subroutine <a href='../proc/greyscale.html'>greyscale</a>(this)  
 </h3>
         <dl class="dl-horizontal">
@@ -978,8 +995,8 @@
   </table>
 
 
-        </li>
-    </ul>
+          </li>
+      </ul>
   </div>
 
           </div>
@@ -993,15 +1010,15 @@
         
       </h3>
     </div>
-      <div class="card-body">
-        
-        <blockquote>
+        <div class="card-body">
+          
+          <blockquote>
 <p>Read an image from a file.</p>
 </blockquote>
-      </div>
-    <ul class="list-group">
-        <li class="list-group-item">
-                  <h3>
+        </div>
+      <ul class="list-group">
+          <li class="list-group-item">
+                    <h3>
     private impure subroutine <a href='../proc/import_pnm.html'>import_pnm</a>(this, file_name, file_format, encoding)  
 </h3>
         <dl class="dl-horizontal">
@@ -1087,8 +1104,8 @@
   </table>
 
 
-        </li>
-    </ul>
+          </li>
+      </ul>
   </div>
 
           </div>
@@ -1102,15 +1119,15 @@
         
       </h3>
     </div>
-      <div class="card-body">
-        
-        <blockquote>
+        <div class="card-body">
+          
+          <blockquote>
 <p>Invert the colors of the image.             </p>
 </blockquote>
-      </div>
-    <ul class="list-group">
-        <li class="list-group-item">
-                  <h3>
+        </div>
+      <ul class="list-group">
+          <li class="list-group-item">
+                    <h3>
     private pure elemental subroutine <a href='../proc/negative.html'>negative</a>(this)  
 </h3>
         <dl class="dl-horizontal">
@@ -1151,8 +1168,8 @@
   </table>
 
 
-        </li>
-    </ul>
+          </li>
+      </ul>
   </div>
 
           </div>
@@ -1166,15 +1183,15 @@
         
       </h3>
     </div>
-      <div class="card-body">
-        
-        <blockquote>
+        <div class="card-body">
+          
+          <blockquote>
 <p>Display information about the image (dimensions, aspect ratio, etc.).</p>
 </blockquote>
-      </div>
-    <ul class="list-group">
-        <li class="list-group-item">
-                  <h3>
+        </div>
+      <ul class="list-group">
+          <li class="list-group-item">
+                    <h3>
     private impure elemental subroutine <a href='../proc/print_info.html'>print_info</a>(this)  
 </h3>
         <dl class="dl-horizontal">
@@ -1215,8 +1232,8 @@
   </table>
 
 
-        </li>
-    </ul>
+          </li>
+      </ul>
   </div>
 
           </div>
@@ -1230,15 +1247,15 @@
         
       </h3>
     </div>
-      <div class="card-body">
-        
-        <blockquote>
+        <div class="card-body">
+          
+          <blockquote>
 <p>Remove one or more RGB channels from the image.</p>
 </blockquote>
-      </div>
-    <ul class="list-group">
-        <li class="list-group-item">
-                  <h3>
+        </div>
+      <ul class="list-group">
+          <li class="list-group-item">
+                    <h3>
     private pure elemental subroutine <a href='../proc/remove_channels.html'>remove_channels</a>(this, remove_r, remove_g, remove_b)  
 </h3>
         <dl class="dl-horizontal">
@@ -1324,8 +1341,8 @@
   </table>
 
 
-        </li>
-    </ul>
+          </li>
+      </ul>
   </div>
 
           </div>
@@ -1339,15 +1356,15 @@
         
       </h3>
     </div>
-      <div class="card-body">
-        
-        <blockquote>
+        <div class="card-body">
+          
+          <blockquote>
 <p>Resize the image to a specified size.</p>
 </blockquote>
-      </div>
-    <ul class="list-group">
-        <li class="list-group-item">
-                  <h3>
+        </div>
+      <ul class="list-group">
+          <li class="list-group-item">
+                    <h3>
     private pure elemental subroutine <a href='../proc/resize.html'>resize</a>(this, new_height, new_width)  
 </h3>
         <dl class="dl-horizontal">
@@ -1418,8 +1435,8 @@
   </table>
 
 
-        </li>
-    </ul>
+          </li>
+      </ul>
   </div>
 
           </div>
@@ -1433,15 +1450,15 @@
         
       </h3>
     </div>
-      <div class="card-body">
-        
-        <blockquote>
+        <div class="card-body">
+          
+          <blockquote>
 <p>Rotate the image by a specified angle.</p>
 </blockquote>
-      </div>
-    <ul class="list-group">
-        <li class="list-group-item">
-                  <h3>
+        </div>
+      <ul class="list-group">
+          <li class="list-group-item">
+                    <h3>
     private pure elemental subroutine <a href='../proc/rotate.html'>rotate</a>(this, angle)  
 </h3>
         <dl class="dl-horizontal">
@@ -1497,8 +1514,8 @@
   </table>
 
 
-        </li>
-    </ul>
+          </li>
+      </ul>
   </div>
 
           </div>
@@ -1512,15 +1529,15 @@
         
       </h3>
     </div>
-      <div class="card-body">
-        
-        <blockquote>
+        <div class="card-body">
+          
+          <blockquote>
 <p>Set the encoding of the PNM image.</p>
 </blockquote>
-      </div>
-    <ul class="list-group">
-        <li class="list-group-item">
-                  <h3>
+        </div>
+      <ul class="list-group">
+          <li class="list-group-item">
+                    <h3>
     private pure elemental subroutine <a href='../proc/set_format.html'>set_format</a>(this, encoding)  
 </h3>
         <dl class="dl-horizontal">
@@ -1576,8 +1593,8 @@
   </table>
 
 
-        </li>
-    </ul>
+          </li>
+      </ul>
   </div>
 
           </div>
@@ -1591,15 +1608,15 @@
         
       </h3>
     </div>
-      <div class="card-body">
-        
-        <blockquote>
+        <div class="card-body">
+          
+          <blockquote>
 <p>Set the attributes of the PNM image.</p>
 </blockquote>
-      </div>
-    <ul class="list-group">
-        <li class="list-group-item">
-                  <h3>
+        </div>
+      <ul class="list-group">
+          <li class="list-group-item">
+                    <h3>
     private pure subroutine <a href='../proc/set_pnm.html'>set_pnm</a>(this, encoding, file_format, width, height, max_color, comment, pixels)  
 </h3>
         <dl class="dl-horizontal">
@@ -1745,8 +1762,8 @@
   </table>
 
 
-        </li>
-    </ul>
+          </li>
+      </ul>
   </div>
 
           </div>
@@ -1760,15 +1777,15 @@
         
       </h3>
     </div>
-      <div class="card-body">
-        
-        <blockquote>
+        <div class="card-body">
+          
+          <blockquote>
 <p>Swap the RGB channels of the image.</p>
 </blockquote>
-      </div>
-    <ul class="list-group">
-        <li class="list-group-item">
-                  <h3>
+        </div>
+      <ul class="list-group">
+          <li class="list-group-item">
+                    <h3>
     private pure elemental subroutine <a href='../proc/swap_channels.html'>swap_channels</a>(this, swap)  
 </h3>
         <dl class="dl-horizontal">
@@ -1824,8 +1841,8 @@
   </table>
 
 
-        </li>
-    </ul>
+          </li>
+      </ul>
   </div>
 
           </div>
@@ -1839,15 +1856,15 @@
         
       </h3>
     </div>
-      <div class="card-body">
-        
-        <blockquote>
+        <div class="card-body">
+          
+          <blockquote>
 <p>Allocate memory for the pixels of the PNM image.</p>
 </blockquote>
-      </div>
-    <ul class="list-group">
-        <li class="list-group-item">
-                  <h3>
+        </div>
+      <ul class="list-group">
+          <li class="list-group-item">
+                    <h3>
     private pure elemental subroutine <a href='../proc/allocate_pixels.html'>allocate_pixels</a>(this)  
 </h3>
         <dl class="dl-horizontal">
@@ -1888,8 +1905,8 @@
   </table>
 
 
-        </li>
-    </ul>
+          </li>
+      </ul>
   </div>
 
           </div>
@@ -1903,15 +1920,15 @@
         
       </h3>
     </div>
-      <div class="card-body">
-        
-        <blockquote>
+        <div class="card-body">
+          
+          <blockquote>
 <p>Check if the pixel values are within the valid range.</p>
 </blockquote>
-      </div>
-    <ul class="list-group">
-        <li class="list-group-item">
-                  <h3>
+        </div>
+      <ul class="list-group">
+          <li class="list-group-item">
+                    <h3>
     private pure subroutine <a href='../proc/check_pixel_range.html'>check_pixel_range</a>(this, pixels)  
 </h3>
         <dl class="dl-horizontal">
@@ -1967,8 +1984,8 @@
   </table>
 
 
-        </li>
-    </ul>
+          </li>
+      </ul>
   </div>
 
           </div>
@@ -1982,15 +1999,15 @@
         
       </h3>
     </div>
-      <div class="card-body">
-        
-        <blockquote>
+        <div class="card-body">
+          
+          <blockquote>
 <p>Set a comment for the PNM image.</p>
 </blockquote>
-      </div>
-    <ul class="list-group">
-        <li class="list-group-item">
-                  <h3>
+        </div>
+      <ul class="list-group">
+          <li class="list-group-item">
+                    <h3>
     private pure elemental subroutine <a href='../proc/set_comment.html'>set_comment</a>(this, comment)  
 </h3>
         <dl class="dl-horizontal">
@@ -2046,8 +2063,8 @@
   </table>
 
 
-        </li>
-    </ul>
+          </li>
+      </ul>
   </div>
 
           </div>
@@ -2061,15 +2078,15 @@
         
       </h3>
     </div>
-      <div class="card-body">
-        
-        <blockquote>
+        <div class="card-body">
+          
+          <blockquote>
 <p>Set the file format of the PNM image.</p>
 </blockquote>
-      </div>
-    <ul class="list-group">
-        <li class="list-group-item">
-                  <h3>
+        </div>
+      <ul class="list-group">
+          <li class="list-group-item">
+                    <h3>
     private pure elemental subroutine <a href='../proc/set_file_format.html'>set_file_format</a>(this, file_format)  
 </h3>
         <dl class="dl-horizontal">
@@ -2125,8 +2142,8 @@
   </table>
 
 
-        </li>
-    </ul>
+          </li>
+      </ul>
   </div>
 
           </div>
@@ -2140,15 +2157,15 @@
         
       </h3>
     </div>
-      <div class="card-body">
-        
-        <blockquote>
+        <div class="card-body">
+          
+          <blockquote>
 <p>Set the header of the PNM image.</p>
 </blockquote>
-      </div>
-    <ul class="list-group">
-        <li class="list-group-item">
-                  <h3>
+        </div>
+      <ul class="list-group">
+          <li class="list-group-item">
+                    <h3>
     private pure elemental subroutine <a href='../proc/set_header.html'>set_header</a>(this, magic_number, width, height, comment, max_color)  
 </h3>
         <dl class="dl-horizontal">
@@ -2264,8 +2281,8 @@
   </table>
 
 
-        </li>
-    </ul>
+          </li>
+      </ul>
   </div>
 
           </div>
@@ -2279,15 +2296,15 @@
         
       </h3>
     </div>
-      <div class="card-body">
-        
-        <blockquote>
+        <div class="card-body">
+          
+          <blockquote>
 <p>Set the height of the PNM image.</p>
 </blockquote>
-      </div>
-    <ul class="list-group">
-        <li class="list-group-item">
-                  <h3>
+        </div>
+      <ul class="list-group">
+          <li class="list-group-item">
+                    <h3>
     private pure elemental subroutine <a href='../proc/set_height.html'>set_height</a>(this, height)  
 </h3>
         <dl class="dl-horizontal">
@@ -2343,8 +2360,8 @@
   </table>
 
 
-        </li>
-    </ul>
+          </li>
+      </ul>
   </div>
 
           </div>
@@ -2358,15 +2375,15 @@
         
       </h3>
     </div>
-      <div class="card-body">
-        
-        <blockquote>
+        <div class="card-body">
+          
+          <blockquote>
 <p>Set the magic number of the PNM image.</p>
 </blockquote>
-      </div>
-    <ul class="list-group">
-        <li class="list-group-item">
-                  <h3>
+        </div>
+      <ul class="list-group">
+          <li class="list-group-item">
+                    <h3>
     private pure elemental subroutine <a href='../proc/set_magicnumber.html'>set_magicnumber</a>(this, magic_number)  
 </h3>
         <dl class="dl-horizontal">
@@ -2422,8 +2439,8 @@
   </table>
 
 
-        </li>
-    </ul>
+          </li>
+      </ul>
   </div>
 
           </div>
@@ -2437,15 +2454,15 @@
         
       </h3>
     </div>
-      <div class="card-body">
-        
-        <blockquote>
+        <div class="card-body">
+          
+          <blockquote>
 <p>Set the maximum color value of the PNM image.</p>
 </blockquote>
-      </div>
-    <ul class="list-group">
-        <li class="list-group-item">
-                  <h3>
+        </div>
+      <ul class="list-group">
+          <li class="list-group-item">
+                    <h3>
     private pure elemental subroutine <a href='../proc/set_max_color.html'>set_max_color</a>(this, max_color)  
 </h3>
         <dl class="dl-horizontal">
@@ -2501,8 +2518,8 @@
   </table>
 
 
-        </li>
-    </ul>
+          </li>
+      </ul>
   </div>
 
           </div>
@@ -2516,15 +2533,15 @@
         
       </h3>
     </div>
-      <div class="card-body">
-        
-        <blockquote>
+        <div class="card-body">
+          
+          <blockquote>
 <p>Set the pixel values of the PNM image.</p>
 </blockquote>
-      </div>
-    <ul class="list-group">
-        <li class="list-group-item">
-                  <h3>
+        </div>
+      <ul class="list-group">
+          <li class="list-group-item">
+                    <h3>
     private pure subroutine <a href='../proc/set_pixels.html'>set_pixels</a>(this, pixels)  
 </h3>
         <dl class="dl-horizontal">
@@ -2580,8 +2597,8 @@
   </table>
 
 
-        </li>
-    </ul>
+          </li>
+      </ul>
   </div>
 
           </div>
@@ -2595,15 +2612,15 @@
         
       </h3>
     </div>
-      <div class="card-body">
-        
-        <blockquote>
+        <div class="card-body">
+          
+          <blockquote>
 <p>Set the width of the PNM image.</p>
 </blockquote>
-      </div>
-    <ul class="list-group">
-        <li class="list-group-item">
-                  <h3>
+        </div>
+      <ul class="list-group">
+          <li class="list-group-item">
+                    <h3>
     private pure elemental subroutine <a href='../proc/set_width.html'>set_width</a>(this, width)  
 </h3>
         <dl class="dl-horizontal">
@@ -2659,8 +2676,8 @@
   </table>
 
 
-        </li>
-    </ul>
+          </li>
+      </ul>
   </div>
 
           </div>
@@ -2735,33 +2752,11 @@
             <p class="text-end">
               Documentation generated by
               <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
- on 2025-03-02T20:09:55.775003+0000             </p>
+ on 2025-05-09T11:37:17.709750+0000             </p>
           </div>
         </div>
         <br>
       </div> <!-- /container -->
     </footer>
-
-    <!-- Bootstrap core JavaScript -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>    
-
-    <!-- MathJax JavaScript
-             ================================================== -->
-             <!-- Placed at the end of the document so the pages load faster -->
-        <script type="text/x-mathjax-config">
-          MathJax.Hub.Config({
-          TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } },
-          jax: ['input/TeX','input/MathML','output/HTML-CSS'],
-          extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']
-          });
-        </script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-
-          <script src="../tipuesearch/tipuesearch_content.js"></script>
-          <script src="../tipuesearch/tipuesearch_set.js"></script>
-          <script src="../tipuesearch/tipuesearch.js"></script>
-
   </body>
 </html>

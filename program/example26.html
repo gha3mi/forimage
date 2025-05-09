@@ -12,14 +12,29 @@
 
     <title>example26 &ndash; ForImage</title>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link href="../css/pygments.css" rel="stylesheet">
-    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <!-- Font Awesome -->
+    <link href="../css/fontawesome.min.css" rel="stylesheet">
+    <link href="../css/brands.min.css" rel="stylesheet">
+    <link href="../css/regular.min.css" rel="stylesheet">
+    <link href="../css/solid.min.css" rel="stylesheet">
+    <link href="../css/v4-font-face.min.css" rel="stylesheet">
+    <link href="../css/v4-shims.min.css" rel="stylesheet">
+    <!-- MathJax -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        TeX: { equationNumbers: { autoNumber: "AMS" } }
+      });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async
+            integrity="sha256-DViIOMYdwlM/axqoGDPeUyf0urLoHMN4QACBKyB58Uw=" crossorigin="anonymous"></script>
+    <!-- Other scripts and stylesheets -->
     <link href="../css/local.css" rel="stylesheet">
-      <link  href="../tipuesearch/tipuesearch.css" rel="stylesheet">
-
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <link href="../css/pygments.css" rel="stylesheet">
     <script src="../js/svg-pan-zoom.min.js"></script>
   </head>
 
@@ -96,9 +111,11 @@
     </div>
   </div>
   <script>
-    $(function () {
-    $('[data-bs-toggle="tooltip"]').tooltip()
-    })
+    // Enable Bootstrap tooltips
+    (function () {
+      const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+      const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+    })();
   </script>
 
   </div>
@@ -115,18 +132,18 @@
       </a>
       <div id="vars-0" class="collapse">
         <div class="list-group list-group-flush">
-            <a class="list-group-item" href="../program/example26.html#variable-b~21">b</a>
+            <a class="list-group-item" href="../program/example26.html#variable-b~22">b</a>
             <a class="list-group-item" href="../program/example26.html#variable-c~12">c</a>
-            <a class="list-group-item" href="../program/example26.html#variable-custom_color~2">custom_color</a>
+            <a class="list-group-item" href="../program/example26.html#variable-custom_color~3">custom_color</a>
             <a class="list-group-item" href="../program/example26.html#variable-decimal~9">decimal</a>
-            <a class="list-group-item" href="../program/example26.html#variable-g~21">g</a>
+            <a class="list-group-item" href="../program/example26.html#variable-g~22">g</a>
             <a class="list-group-item" href="../program/example26.html#variable-h~13">h</a>
             <a class="list-group-item" href="../program/example26.html#variable-hex~9">hex</a>
             <a class="list-group-item" href="../program/example26.html#variable-hl~5">hl</a>
-            <a class="list-group-item" href="../program/example26.html#variable-k~9">k</a>
+            <a class="list-group-item" href="../program/example26.html#variable-k~11">k</a>
             <a class="list-group-item" href="../program/example26.html#variable-m~11">m</a>
             <a class="list-group-item" href="../program/example26.html#variable-name~6">name</a>
-            <a class="list-group-item" href="../program/example26.html#variable-r~21">r</a>
+            <a class="list-group-item" href="../program/example26.html#variable-r~22">r</a>
             <a class="list-group-item" href="../program/example26.html#variable-s~13">s</a>
             <a class="list-group-item" href="../program/example26.html#variable-sl~5">sl</a>
             <a class="list-group-item" href="../program/example26.html#variable-tol">tol</a>
@@ -469,18 +486,18 @@ large graphs.</div>
 <path fill="none" stroke="#ff0000" d="M52.27,-661.58C69.49,-647.77 97.68,-625.16 117.55,-609.23"/>
 <polygon fill="#ff0000" stroke="#ff0000" points="119.89,-611.84 125.5,-602.85 115.51,-606.38 119.89,-611.84"/>
 </g>
-<!-- proc~set -->
+<!-- proc~set~2 -->
 <g id="program~~example26~~CallsGraph_node5" class="node">
-<title>proc~set</title>
-<g id="a_program~~example26~~CallsGraph_node5"><a xlink:href="../proc/set.html" xlink:title="color%set">
+<title>proc~set~2</title>
+<g id="a_program~~example26~~CallsGraph_node5"><a xlink:href="../proc/set~2.html" xlink:title="color%set">
 <polygon fill="#d9534f" stroke="#d9534f" points="174,-224.82 109,-224.82 109,-200.82 174,-200.82 174,-224.82"/>
 <text text-anchor="middle" x="141.5" y="-210.42" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">color%set</text>
 </a>
 </g>
 </g>
-<!-- program~example26&#45;&gt;proc~set -->
+<!-- program~example26&#45;&gt;proc~set~2 -->
 <g id="program~~example26~~CallsGraph_edge4" class="edge">
-<title>program~example26&#45;&gt;proc~set</title>
+<title>program~example26&#45;&gt;proc~set~2</title>
 <path fill="none" stroke="#ff0000" d="M39.77,-661.49C53.8,-599 117.11,-316.99 135.49,-235.15"/>
 <polygon fill="#ff0000" stroke="#ff0000" points="139,-235.5 137.77,-224.98 132.17,-233.97 139,-235.5"/>
 </g>
@@ -793,9 +810,9 @@ large graphs.</div>
 </a>
 </g>
 </g>
-<!-- proc~set&#45;&gt;proc~set_by_name -->
+<!-- proc~set~2&#45;&gt;proc~set_by_name -->
 <g id="program~~example26~~CallsGraph_edge25" class="edge">
-<title>proc~set&#45;&gt;proc~set_by_name</title>
+<title>proc~set~2&#45;&gt;proc~set_by_name</title>
 <path fill="none" stroke="#7f00ff" d="M144.84,-224.98C150.81,-252.81 169.2,-321.68 211,-359.82 212.32,-361.02 213.7,-362.16 215.15,-363.22"/>
 <polygon fill="#7f00ff" stroke="#7f00ff" points="213.63,-366.4 223.98,-368.68 217.31,-360.44 213.63,-366.4"/>
 </g>
@@ -808,9 +825,9 @@ large graphs.</div>
 </a>
 </g>
 </g>
-<!-- proc~set&#45;&gt;proc~set_cmyk -->
+<!-- proc~set~2&#45;&gt;proc~set_cmyk -->
 <g id="program~~example26~~CallsGraph_edge26" class="edge">
-<title>proc~set&#45;&gt;proc~set_cmyk</title>
+<title>proc~set~2&#45;&gt;proc~set_cmyk</title>
 <path fill="none" stroke="#7f00ff" d="M147.34,-225.05C156.54,-246.76 178.55,-292.18 211,-317.82 212.79,-319.24 214.68,-320.56 216.65,-321.8"/>
 <polygon fill="#7f00ff" stroke="#7f00ff" points="215.19,-324.99 225.65,-326.7 218.54,-318.84 215.19,-324.99"/>
 </g>
@@ -823,9 +840,9 @@ large graphs.</div>
 </a>
 </g>
 </g>
-<!-- proc~set&#45;&gt;proc~set_decimal -->
+<!-- proc~set~2&#45;&gt;proc~set_decimal -->
 <g id="program~~example26~~CallsGraph_edge27" class="edge">
-<title>proc~set&#45;&gt;proc~set_decimal</title>
+<title>proc~set~2&#45;&gt;proc~set_decimal</title>
 <path fill="none" stroke="#7f00ff" d="M152.99,-225.06C165.53,-239.03 187.78,-261.77 211,-275.82 213.82,-277.53 216.79,-279.12 219.85,-280.61"/>
 <polygon fill="#7f00ff" stroke="#7f00ff" points="218.63,-283.9 229.18,-284.76 221.47,-277.5 218.63,-283.9"/>
 </g>
@@ -838,9 +855,9 @@ large graphs.</div>
 </a>
 </g>
 </g>
-<!-- proc~set&#45;&gt;proc~set_hex -->
+<!-- proc~set~2&#45;&gt;proc~set_hex -->
 <g id="program~~example26~~CallsGraph_edge28" class="edge">
-<title>proc~set&#45;&gt;proc~set_hex</title>
+<title>proc~set~2&#45;&gt;proc~set_hex</title>
 <path fill="none" stroke="#7f00ff" d="M174.22,-223.31C188.94,-228.18 206.74,-234.07 222.95,-239.43"/>
 <polygon fill="#7f00ff" stroke="#7f00ff" points="222.2,-242.87 232.79,-242.68 224.39,-236.22 222.2,-242.87"/>
 </g>
@@ -853,9 +870,9 @@ large graphs.</div>
 </a>
 </g>
 </g>
-<!-- proc~set&#45;&gt;proc~set_hsl -->
+<!-- proc~set~2&#45;&gt;proc~set_hsl -->
 <g id="program~~example26~~CallsGraph_edge29" class="edge">
-<title>proc~set&#45;&gt;proc~set_hsl</title>
+<title>proc~set~2&#45;&gt;proc~set_hsl</title>
 <path fill="none" stroke="#7f00ff" d="M174.22,-212.82C187.35,-212.82 202.93,-212.82 217.64,-212.82"/>
 <polygon fill="#7f00ff" stroke="#7f00ff" points="217.65,-216.32 227.65,-212.82 217.65,-209.32 217.65,-216.32"/>
 </g>
@@ -868,9 +885,9 @@ large graphs.</div>
 </a>
 </g>
 </g>
-<!-- proc~set&#45;&gt;proc~set_hsv -->
+<!-- proc~set~2&#45;&gt;proc~set_hsv -->
 <g id="program~~example26~~CallsGraph_edge30" class="edge">
-<title>proc~set&#45;&gt;proc~set_hsv</title>
+<title>proc~set~2&#45;&gt;proc~set_hsv</title>
 <path fill="none" stroke="#7f00ff" d="M174.22,-202.33C188.94,-197.46 206.74,-191.58 222.95,-186.22"/>
 <polygon fill="#7f00ff" stroke="#7f00ff" points="224.39,-189.43 232.79,-182.96 222.2,-182.78 224.39,-189.43"/>
 </g>
@@ -883,9 +900,9 @@ large graphs.</div>
 </a>
 </g>
 </g>
-<!-- proc~set&#45;&gt;proc~set_name -->
+<!-- proc~set~2&#45;&gt;proc~set_name -->
 <g id="program~~example26~~CallsGraph_edge31" class="edge">
-<title>proc~set&#45;&gt;proc~set_name</title>
+<title>proc~set~2&#45;&gt;proc~set_name</title>
 <path fill="none" stroke="#7f00ff" d="M152.99,-200.59C165.53,-186.62 187.78,-163.87 211,-149.82 213.82,-148.12 216.79,-146.52 219.85,-145.03"/>
 <polygon fill="#7f00ff" stroke="#7f00ff" points="221.47,-148.14 229.18,-140.88 218.63,-141.75 221.47,-148.14"/>
 </g>
@@ -898,9 +915,9 @@ large graphs.</div>
 </a>
 </g>
 </g>
-<!-- proc~set&#45;&gt;proc~set_rgb -->
+<!-- proc~set~2&#45;&gt;proc~set_rgb -->
 <g id="program~~example26~~CallsGraph_edge32" class="edge">
-<title>proc~set&#45;&gt;proc~set_rgb</title>
+<title>proc~set~2&#45;&gt;proc~set_rgb</title>
 <path fill="none" stroke="#7f00ff" d="M147.34,-200.6C156.54,-178.88 178.55,-133.46 211,-107.82 213,-106.24 215.13,-104.77 217.35,-103.41"/>
 <polygon fill="#7f00ff" stroke="#7f00ff" points="219.07,-106.46 226.25,-98.67 215.78,-100.28 219.07,-106.46"/>
 </g>
@@ -913,9 +930,9 @@ large graphs.</div>
 </a>
 </g>
 </g>
-<!-- proc~set&#45;&gt;proc~set_xyz -->
+<!-- proc~set~2&#45;&gt;proc~set_xyz -->
 <g id="program~~example26~~CallsGraph_edge33" class="edge">
-<title>proc~set&#45;&gt;proc~set_xyz</title>
+<title>proc~set~2&#45;&gt;proc~set_xyz</title>
 <path fill="none" stroke="#7f00ff" d="M144.84,-200.67C150.81,-172.84 169.2,-103.97 211,-65.82 212.95,-64.04 215.07,-62.41 217.3,-60.91"/>
 <polygon fill="#7f00ff" stroke="#7f00ff" points="219.37,-63.76 226.35,-55.79 215.92,-57.67 219.37,-63.76"/>
 </g>
@@ -940,9 +957,9 @@ large graphs.</div>
 <path fill="none" stroke="#ff0000" d="M422.07,-392.87C443.09,-424.23 499.7,-508.7 526.1,-548.08"/>
 <polygon fill="#ff0000" stroke="#ff0000" points="523.36,-550.28 531.83,-556.63 529.17,-546.38 523.36,-550.28"/>
 </g>
-<!-- proc~initialize_colors&#45;&gt;proc~set -->
+<!-- proc~initialize_colors&#45;&gt;proc~set~2 -->
 <g id="program~~example26~~CallsGraph_edge36" class="edge">
-<title>proc~initialize_colors&#45;&gt;proc~set</title>
+<title>proc~initialize_colors&#45;&gt;proc~set~2</title>
 <path fill="none" stroke="#ff0000" d="M411.17,-368.73C406.99,-311.47 386.09,-68.49 330,-23.82 288.63,9.12 254.3,6.54 211,-23.82 156.03,-62.37 144.99,-149.7 142.9,-190.74"/>
 <polygon fill="#ff0000" stroke="#ff0000" points="139.4,-190.66 142.53,-200.78 146.4,-190.92 139.4,-190.66"/>
 </g>
@@ -1049,7 +1066,7 @@ large graphs.</div>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-b~21"></span>
+              <span class="anchor" id="variable-b~22"></span>
               integer(kind=ik)
             </td>
             <td>
@@ -1081,7 +1098,7 @@ large graphs.</div>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-custom_color~2"></span>
+              <span class="anchor" id="variable-custom_color~3"></span>
               type(<a href='../type/color.html'>color</a>)
             </td>
             <td>
@@ -1113,7 +1130,7 @@ large graphs.</div>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-g~21"></span>
+              <span class="anchor" id="variable-g~22"></span>
               integer(kind=ik)
             </td>
             <td>
@@ -1177,7 +1194,7 @@ large graphs.</div>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-k~9"></span>
+              <span class="anchor" id="variable-k~11"></span>
               integer(kind=ik)
             </td>
             <td>
@@ -1225,7 +1242,7 @@ large graphs.</div>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-r~21"></span>
+              <span class="anchor" id="variable-r~22"></span>
               integer(kind=ik)
             </td>
             <td>
@@ -1447,7 +1464,7 @@ parameter
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-r~22"></span>
+              <span class="anchor" id="variable-r~23"></span>
               integer(kind=ik),
             </td>
 <td>intent(in)</td>
@@ -1462,7 +1479,7 @@ parameter
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-g~22"></span>
+              <span class="anchor" id="variable-g~23"></span>
               integer(kind=ik),
             </td>
 <td>intent(in)</td>
@@ -1477,7 +1494,7 @@ parameter
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-b~22"></span>
+              <span class="anchor" id="variable-b~23"></span>
               integer(kind=ik),
             </td>
 <td>intent(in)</td>
@@ -1567,7 +1584,7 @@ parameter
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-k~10"></span>
+              <span class="anchor" id="variable-k~12"></span>
               integer(kind=ik),
             </td>
 <td>intent(in)</td>
@@ -1965,33 +1982,11 @@ parameter
             <p class="text-end">
               Documentation generated by
               <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
- on 2025-03-02T20:09:55.775003+0000             </p>
+ on 2025-05-09T11:37:17.709750+0000             </p>
           </div>
         </div>
         <br>
       </div> <!-- /container -->
     </footer>
-
-    <!-- Bootstrap core JavaScript -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>    
-
-    <!-- MathJax JavaScript
-             ================================================== -->
-             <!-- Placed at the end of the document so the pages load faster -->
-        <script type="text/x-mathjax-config">
-          MathJax.Hub.Config({
-          TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } },
-          jax: ['input/TeX','input/MathML','output/HTML-CSS'],
-          extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']
-          });
-        </script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-
-          <script src="../tipuesearch/tipuesearch_content.js"></script>
-          <script src="../tipuesearch/tipuesearch_set.js"></script>
-          <script src="../tipuesearch/tipuesearch.js"></script>
-
   </body>
 </html>
