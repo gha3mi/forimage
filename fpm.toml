@@ -176,3 +176,27 @@ main       = "test28.f90"
 name       = "test29"
 source-dir = "test"
 main       = "test29.f90"
+
+
+[extra.ford]
+project             = "ForImage"
+version             = "0.4.0"
+summary             = "A Fortran library for processing and editing images and managing colors"
+year                = "2023-2025"
+project_github      = "https://github.com/gha3mi/fortime"
+author              = "Seyed Ali Ghasemi"
+email               = "info@gha3mi.com"
+github              = "https://github.com/gha3mi"
+license             = "BSD 3-Clause"
+src_dir             = ["src", "example", "test"]
+output_dir          = "doc"
+source              = true
+incl_src            = true
+graph               = true
+coloured_edges      = true
+search              = true
+print_creation_date = true
+sort                = "permission-alpha"
+display             = ["public", "private", "protected"]
+favicon             ="media/logo.png"
+media_dir           ="media"
