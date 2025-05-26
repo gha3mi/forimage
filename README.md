@@ -163,7 +163,7 @@ To generate the API documentation for `ForImage` using
 command:
 
 ```shell
-ford README.yml
+ford README.md
 ```
 
 ## Contributing
