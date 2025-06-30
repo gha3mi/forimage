@@ -134,7 +134,7 @@
       </a>
       <div id="vars-0" class="collapse">
         <div class="list-group list-group-flush">
-            <a class="list-group-item" href="../type/format_lut.html#variable-colors">colors</a>
+            <a class="list-group-item" href="../type/format_lut.html#variable-colors~2">colors</a>
             <a class="list-group-item" href="../type/format_lut.html#variable-dim_colors">dim_colors</a>
             <a class="list-group-item" href="../type/format_lut.html#variable-num_colors">num_colors</a>
         </div>
@@ -212,7 +212,7 @@
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-colors"></span>
+              <span class="anchor" id="variable-colors~2"></span>
               integer,
             </td>
               <td>public,</td>
@@ -1063,23 +1063,23 @@
 
     <section>
     <h3><span class="anchor" id="src"></span>Source Code</h3>
-    <div class="hl codehilite"><pre><span></span><span class="w">   </span><span class="k">type </span><span class="n">format_lut</span>
-<span class="w">      </span><span class="kt">integer</span><span class="w">                              </span><span class="kd">::</span><span class="w"> </span><span class="n">num_colors</span>
-<span class="w">      </span><span class="kt">integer</span><span class="w">                              </span><span class="kd">::</span><span class="w"> </span><span class="n">dim_colors</span>
-<span class="w">      </span><span class="kt">integer</span><span class="p">,</span><span class="w"> </span><span class="k">dimension</span><span class="p">(:,:),</span><span class="w"> </span><span class="k">allocatable</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">colors</span>
+    <div class="hl codehilite"><pre><span></span><span class="w">   </span><span class="k">type </span><span class="n">format_lut</span><span class="w"></span>
+<span class="w">      </span><span class="kt">integer</span><span class="w">                              </span><span class="kd">::</span><span class="w"> </span><span class="n">num_colors</span><span class="w"></span>
+<span class="w">      </span><span class="kt">integer</span><span class="w">                              </span><span class="kd">::</span><span class="w"> </span><span class="n">dim_colors</span><span class="w"></span>
+<span class="w">      </span><span class="kt">integer</span><span class="p">,</span><span class="w"> </span><span class="k">dimension</span><span class="p">(:,:),</span><span class="w"> </span><span class="k">allocatable</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">colors</span><span class="w"></span>
 <span class="w">   </span><span class="k">contains</span>
-<span class="k">      procedure</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">allocate_colors</span>
-<span class="w">      </span><span class="k">procedure</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">set</span>
-<span class="w">      </span><span class="k">procedure</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">set_num_colors</span>
-<span class="w">      </span><span class="k">procedure</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">get_num_colors</span>
-<span class="w">      </span><span class="k">procedure</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">set_dim_colors</span>
-<span class="w">      </span><span class="k">procedure</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">get_dim_colors</span>
-<span class="w">      </span><span class="k">procedure</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">set_colors</span>
-<span class="w">      </span><span class="k">procedure</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">get_colors</span>
-<span class="w">      </span><span class="k">procedure</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">export</span>
+<span class="k">      procedure</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">allocate_colors</span><span class="w"></span>
+<span class="w">      </span><span class="k">procedure</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">set</span><span class="w"></span>
+<span class="w">      </span><span class="k">procedure</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">set_num_colors</span><span class="w"></span>
+<span class="w">      </span><span class="k">procedure</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">get_num_colors</span><span class="w"></span>
+<span class="w">      </span><span class="k">procedure</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">set_dim_colors</span><span class="w"></span>
+<span class="w">      </span><span class="k">procedure</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">get_dim_colors</span><span class="w"></span>
+<span class="w">      </span><span class="k">procedure</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">set_colors</span><span class="w"></span>
+<span class="w">      </span><span class="k">procedure</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">get_colors</span><span class="w"></span>
+<span class="w">      </span><span class="k">procedure</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">export</span><span class="w"></span>
 <span class="w">      </span><span class="k">procedure</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="k">import</span>
-<span class="k">      procedure</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">finalize</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">deallocate_lut</span>
-<span class="w">   </span><span class="k">end type </span><span class="n">format_lut</span>
+<span class="k">      procedure</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">finalize</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">deallocate_lut</span><span class="w"></span>
+<span class="w">   </span><span class="k">end type </span><span class="n">format_lut</span><span class="w"></span>
 </pre></div>
 
     </section>
@@ -1102,7 +1102,7 @@
             <p class="text-end">
               Documentation generated by
               <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
- on 2025-05-26T13:22:46.421071+0000             </p>
+ on 2025-06-30T17:34:56.853404+0000             </p>
           </div>
         </div>
         <br>

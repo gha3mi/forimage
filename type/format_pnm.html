@@ -139,10 +139,10 @@
             <a class="list-group-item" href="../type/format_pnm.html#variable-comment">comment</a>
             <a class="list-group-item" href="../type/format_pnm.html#variable-encoding">encoding</a>
             <a class="list-group-item" href="../type/format_pnm.html#variable-file_format">file_format</a>
-            <a class="list-group-item" href="../type/format_pnm.html#variable-height">height</a>
+            <a class="list-group-item" href="../type/format_pnm.html#variable-height~3">height</a>
             <a class="list-group-item" href="../type/format_pnm.html#variable-magic_number">magic_number</a>
             <a class="list-group-item" href="../type/format_pnm.html#variable-max_color">max_color</a>
-            <a class="list-group-item" href="../type/format_pnm.html#variable-width">width</a>
+            <a class="list-group-item" href="../type/format_pnm.html#variable-width~3">width</a>
         </div>
       </div>
     </div>
@@ -302,7 +302,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-height"></span>
+              <span class="anchor" id="variable-height~3"></span>
               integer,
             </td>
               <td>private</td>
@@ -353,7 +353,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-width"></span>
+              <span class="anchor" id="variable-width~3"></span>
               integer,
             </td>
               <td>private</td>
@@ -2685,7 +2685,7 @@
 
     <section>
     <h3><span class="anchor" id="src"></span>Source Code</h3>
-    <div class="hl codehilite"><pre><span></span><span class="w">   </span><span class="k">type </span><span class="n">format_pnm</span>
+    <div class="hl codehilite"><pre><span></span><span class="w">   </span><span class="k">type </span><span class="n">format_pnm</span><span class="w"></span>
 <span class="w">      </span><span class="kt">character</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="w">                             </span><span class="p">,</span><span class="w"> </span><span class="k">private</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">magic_number</span><span class="w"> </span><span class="c">!! Magic number representing the PNM image type (`P1`, `P2`, `P3`, `P4`, `P5`, `P6`).</span>
 <span class="w">      </span><span class="kt">integer</span><span class="w">                                  </span><span class="p">,</span><span class="w"> </span><span class="k">private</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">width</span><span class="w">        </span><span class="c">!! Width (number of columns) of the image.</span>
 <span class="w">      </span><span class="kt">integer</span><span class="w">                                  </span><span class="p">,</span><span class="w"> </span><span class="k">private</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">height</span><span class="w">       </span><span class="c">!! Height (number of rows) of the image.</span>
@@ -2694,7 +2694,7 @@
 <span class="w">      </span><span class="kt">integer</span><span class="p">(</span><span class="n">ik</span><span class="p">),</span><span class="w"> </span><span class="k">dimension</span><span class="p">(:,:),</span><span class="w"> </span><span class="k">allocatable</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">pixels</span><span class="w">                 </span><span class="c">!! Pixel values of the image.</span>
 <span class="w">      </span><span class="kt">character</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="w">                             </span><span class="p">,</span><span class="w"> </span><span class="k">private</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">file_format</span><span class="w">  </span><span class="c">!! File format of the PNM image (`pbm`, `pgm`, `ppm`).</span>
 <span class="w">      </span><span class="kt">character</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span><span class="w">                             </span><span class="p">,</span><span class="w"> </span><span class="k">private</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">encoding</span><span class="w">     </span><span class="c">!! Encoding of the PNM image (`ascii` or `plain`, `binary` or `raw`).</span>
-<span class="w">   </span><span class="k">contains</span>
+<span class="w">   </span><span class="k">contains</span><span class="w"></span>
 <span class="w">      </span><span class="c">! Procedures for setting individual attributes</span>
 <span class="w">      </span><span class="k">procedure</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">set_format</span><span class="w">                 </span><span class="c">!!&gt; Set the encoding of the PNM image.</span>
 <span class="w">      </span><span class="k">procedure</span><span class="p">,</span><span class="w"> </span><span class="k">private</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">set_file_format</span><span class="w">   </span><span class="c">!!&gt; Set the file format of the PNM image.</span>
@@ -2729,7 +2729,7 @@
 <span class="w">      </span><span class="k">procedure</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">flip_vertical</span><span class="w">              </span><span class="c">!!&gt; Flip the image vertically.</span>
 <span class="w">      </span><span class="k">procedure</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">crop</span><span class="w">                       </span><span class="c">!!&gt; Crop the image to a specified region.</span>
 <span class="w">      </span><span class="k">procedure</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">resize</span><span class="w">                     </span><span class="c">!!&gt; Resize the image to a specified size.</span>
-<span class="w">   </span><span class="k">end type </span><span class="n">format_pnm</span>
+<span class="w">   </span><span class="k">end type </span><span class="n">format_pnm</span><span class="w"></span>
 </pre></div>
 
     </section>
@@ -2752,7 +2752,7 @@
             <p class="text-end">
               Documentation generated by
               <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
- on 2025-05-26T13:22:46.421071+0000             </p>
+ on 2025-06-30T17:34:56.853404+0000             </p>
           </div>
         </div>
         <br>
