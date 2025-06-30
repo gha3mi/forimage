@@ -87,13 +87,13 @@ jobs:
         run: |
           cmake -B build -DCMAKE_BUILD_TYPE=Debug -DCMAKE_Fortran_COMPILER=${{ matrix.compiler }} -DBUILD_TESTING=TRUE -GNinja
           cmake --build build --config Debug
-          ctest -C Debug
+          ctest --test-dir build/test --output-on-failure
 
       - name: cmake test (release)
         run: |
           cmake -B build -DCMAKE_BUILD_TYPE=Release -DCMAKE_Fortran_COMPILER=${{ matrix.compiler }} -DBUILD_TESTING=TRUE -GNinja
           cmake --build build --config Release
-          ctest -C Release
+          ctest --test-dir build/test --output-on-failure
 
   doc_ford:
     name: Generate FORD Documentation
