@@ -147,6 +147,11 @@ Run the `demo_color` example:
 ```
 Note: The executable must be run from the forimage directory.
 
+## Status
+
+<!-- STATUS:setup-fortran-conda:START -->
+<!-- STATUS:setup-fortran-conda:END -->
+
 ## Projects Utilizing ForImage
 
 - [ForColormap](https://github.com/vmagnin/forcolormap): A Fortran library for colormaps
