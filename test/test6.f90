@@ -3,7 +3,7 @@
 program test6
     use forimage, only: format_pnm, ik
     implicit none
-    
+
     ! Declare an object of type format_pnm
     type(format_pnm) :: image
 

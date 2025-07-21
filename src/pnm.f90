@@ -37,7 +37,7 @@ module pnm
       procedure, private :: allocate_pixels   !!> Allocate memory for the pixels of the PNM image.
       procedure, private :: check_pixel_range !!> Check if the pixel values are within the valid range.
       procedure, private :: set_pixels        !!> Set the pixel values of the PNM image.
-      
+
       ! Procedures for setting individual attributes
       procedure :: get_format                 !!> Get the encoding of the PNM image.
 
@@ -49,7 +49,7 @@ module pnm
       procedure :: finalize => deallocate_pnm !!> Clean up allocated memory for the PNM image.
 
       ! Image manipulation procedures
-      procedure :: negative                   !!> Invert the colors of the image.             
+      procedure :: negative                   !!> Invert the colors of the image.
       procedure :: brighten                   !!> Adjust the brightness and darkness of the image.
       procedure :: swap_channels              !!> Swap the RGB channels of the image.
       procedure :: remove_channels            !!> Remove one or more RGB channels from the image.
@@ -1108,7 +1108,7 @@ contains
          k = k + 1
       end do
       inquire(nunit, pos=pos)
-      
+
       rewind(nunit)
       read(nunit,*) this%magic_number
       this%comment = ''

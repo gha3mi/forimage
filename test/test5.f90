@@ -3,7 +3,7 @@
 program test
     use forimage, only: format_pnm, ik
     implicit none
-    
+
     ! Declare an object of type format_pnm
     type(format_pnm) :: image
 
@@ -3621,7 +3621,7 @@ program test
 
     ! Export the PNM image to a file named 'img2_binary' in the specified format
     call image%export_pnm('pnm_files/img2_binary')
-    
+
     ! Print the image information to the screen
     call image%print_info()
 

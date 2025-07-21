@@ -200,3 +200,7 @@ sort                = "permission-alpha"
 display             = ["public", "private", "protected"]
 favicon             ="media/logo.png"
 media_dir           ="media"
+
+
+[extra.fortitude.check]
+ignore = ["S001", "S061", "C003", "C121", "C072"]

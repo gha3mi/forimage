@@ -1,7 +1,7 @@
 program test11
     use forimage, only: format_pnm
     implicit none
-    
+
     type(format_pnm) :: image
 
     print*,' '

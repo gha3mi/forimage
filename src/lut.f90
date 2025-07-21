@@ -148,7 +148,7 @@ contains
          rewind(nunit)
          do i = 1, num_rows
             read(nunit, *) buffer
-            this%colors(i,:) = buffer 
+            this%colors(i,:) = buffer
          end do
       close(nunit)
       else

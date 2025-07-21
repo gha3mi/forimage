@@ -1,7 +1,7 @@
 program test18
     use forimage, only: format_pnm, ik
     implicit none
-    
+
     type(format_pnm) :: image2, image3
     integer(ik), dimension(60,60) :: px2
     integer(ik), dimension(4,12) :: px3
