@@ -1,6 +1,6 @@
 name       = "forimage"
 description= "A Fortran library for processing and editing images and managing colors"
-version    = "0.4.0"
+version    = "VERSION"
 license    = "BSD 3-Clause License"
 author     = "Seyed Ali Ghasemi"
 maintainer = "info@gha3mi.com"
@@ -180,7 +180,6 @@ main       = "test29.f90"
 
 [extra.ford]
 project             = "ForImage"
-version             = "0.4.0"
 summary             = "A Fortran library for processing and editing images and managing colors"
 year                = "2023-2025"
 project_github      = "https://github.com/gha3mi/fortime"
