@@ -1,7 +1,7 @@
 program test22
     use forimage, only: format_pnm, ik
     implicit none
-    
+
     type(format_pnm) ::  image1, image2, image3
     integer(ik), dimension(10,6) :: px1
     integer(ik), dimension(60,60) :: px2
@@ -33,7 +33,7 @@ program test22
 
 
 
-    
+
     px2 = transpose(reshape(&
     [255,&
     255,&

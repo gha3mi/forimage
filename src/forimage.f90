@@ -5,6 +5,8 @@ module forimage
    use pnm
    use lut
 
+   implicit none
+
    private
    public format_pnm, format_lut, rk, ik, pi, color
 

@@ -135,14 +135,14 @@
       </a>
       <div id="vars-0" class="collapse">
         <div class="list-group list-group-flush">
-            <a class="list-group-item" href="../type/format_pnm.html#variable-pixels">pixels</a>
+            <a class="list-group-item" href="../type/format_pnm.html#variable-pixels~2">pixels</a>
             <a class="list-group-item" href="../type/format_pnm.html#variable-comment">comment</a>
             <a class="list-group-item" href="../type/format_pnm.html#variable-encoding">encoding</a>
             <a class="list-group-item" href="../type/format_pnm.html#variable-file_format">file_format</a>
-            <a class="list-group-item" href="../type/format_pnm.html#variable-height">height</a>
+            <a class="list-group-item" href="../type/format_pnm.html#variable-height~4">height</a>
             <a class="list-group-item" href="../type/format_pnm.html#variable-magic_number">magic_number</a>
             <a class="list-group-item" href="../type/format_pnm.html#variable-max_color">max_color</a>
-            <a class="list-group-item" href="../type/format_pnm.html#variable-width">width</a>
+            <a class="list-group-item" href="../type/format_pnm.html#variable-width~4">width</a>
         </div>
       </div>
     </div>
@@ -172,7 +172,7 @@
             <a class="list-group-item" href="../type/format_pnm.html#boundprocedure-brighten">brighten</a>
             <a class="list-group-item" href="../type/format_pnm.html#boundprocedure-crop">crop</a>
             <a class="list-group-item" href="../type/format_pnm.html#boundprocedure-export_pnm">export_pnm</a>
-            <a class="list-group-item" href="../type/format_pnm.html#boundprocedure-finalize">finalize</a>
+            <a class="list-group-item" href="../type/format_pnm.html#boundprocedure-finalize~2">finalize</a>
             <a class="list-group-item" href="../type/format_pnm.html#boundprocedure-flip_horizontal">flip_horizontal</a>
             <a class="list-group-item" href="../type/format_pnm.html#boundprocedure-flip_vertical">flip_vertical</a>
             <a class="list-group-item" href="../type/format_pnm.html#boundprocedure-get_format">get_format</a>
@@ -234,7 +234,7 @@
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-pixels"></span>
+              <span class="anchor" id="variable-pixels~2"></span>
               integer(kind=ik),
             </td>
               <td>public,</td>
@@ -302,7 +302,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-height"></span>
+              <span class="anchor" id="variable-height~4"></span>
               integer,
             </td>
               <td>private</td>
@@ -353,7 +353,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-width"></span>
+              <span class="anchor" id="variable-width~4"></span>
               integer,
             </td>
               <td>private</td>
@@ -678,7 +678,7 @@
           <div class="row">
               <div class="card mt-3">
     <div class="card-header codesum">
-      <span class="anchor" id="boundprocedure-finalize"></span>
+      <span class="anchor" id="boundprocedure-finalize~2"></span>
       <h3>
           procedure, public ::
   <strong>finalize</strong> => <a href='/home/runner/work/forimage/forimage/doc/proc/deallocate_pnm.html'>deallocate_pnm</a>
@@ -1122,7 +1122,7 @@
         <div class="card-body">
           
           <blockquote>
-<p>Invert the colors of the image.             </p>
+<p>Invert the colors of the image.</p>
 </blockquote>
         </div>
       <ul class="list-group">
@@ -2707,7 +2707,7 @@
 <span class="w">      </span><span class="k">procedure</span><span class="p">,</span><span class="w"> </span><span class="k">private</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">allocate_pixels</span><span class="w">   </span><span class="c">!!&gt; Allocate memory for the pixels of the PNM image.</span>
 <span class="w">      </span><span class="k">procedure</span><span class="p">,</span><span class="w"> </span><span class="k">private</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">check_pixel_range</span><span class="w"> </span><span class="c">!!&gt; Check if the pixel values are within the valid range.</span>
 <span class="w">      </span><span class="k">procedure</span><span class="p">,</span><span class="w"> </span><span class="k">private</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">set_pixels</span><span class="w">        </span><span class="c">!!&gt; Set the pixel values of the PNM image.</span>
-<span class="w">      </span>
+
 <span class="w">      </span><span class="c">! Procedures for setting individual attributes</span>
 <span class="w">      </span><span class="k">procedure</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">get_format</span><span class="w">                 </span><span class="c">!!&gt; Get the encoding of the PNM image.</span>
 
@@ -2719,7 +2719,7 @@
 <span class="w">      </span><span class="k">procedure</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">finalize</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">deallocate_pnm</span><span class="w"> </span><span class="c">!!&gt; Clean up allocated memory for the PNM image.</span>
 
 <span class="w">      </span><span class="c">! Image manipulation procedures</span>
-<span class="w">      </span><span class="k">procedure</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">negative</span><span class="w">                   </span><span class="c">!!&gt; Invert the colors of the image.             </span>
+<span class="w">      </span><span class="k">procedure</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">negative</span><span class="w">                   </span><span class="c">!!&gt; Invert the colors of the image.</span>
 <span class="w">      </span><span class="k">procedure</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">brighten</span><span class="w">                   </span><span class="c">!!&gt; Adjust the brightness and darkness of the image.</span>
 <span class="w">      </span><span class="k">procedure</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">swap_channels</span><span class="w">              </span><span class="c">!!&gt; Swap the RGB channels of the image.</span>
 <span class="w">      </span><span class="k">procedure</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">remove_channels</span><span class="w">            </span><span class="c">!!&gt; Remove one or more RGB channels from the image.</span>
@@ -2752,7 +2752,7 @@
             <p class="text-end">
               Documentation generated by
               <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
- on 2025-07-21T09:12:21.308555+0000             </p>
+ on 2025-07-21T09:25:26.762641+0000             </p>
           </div>
         </div>
         <br>

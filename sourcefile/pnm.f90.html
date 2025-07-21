@@ -874,7 +874,7 @@ large graphs.</div>
 <a id="ln-37" name="ln-37" href="#ln-37"></a><span class="w">      </span><span class="k">procedure</span><span class="p">,</span><span class="w"> </span><span class="k">private</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">allocate_pixels</span><span class="w">   </span><span class="c">!!&gt; Allocate memory for the pixels of the PNM image.</span>
 <a id="ln-38" name="ln-38" href="#ln-38"></a><span class="w">      </span><span class="k">procedure</span><span class="p">,</span><span class="w"> </span><span class="k">private</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">check_pixel_range</span><span class="w"> </span><span class="c">!!&gt; Check if the pixel values are within the valid range.</span>
 <a id="ln-39" name="ln-39" href="#ln-39"></a><span class="w">      </span><span class="k">procedure</span><span class="p">,</span><span class="w"> </span><span class="k">private</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">set_pixels</span><span class="w">        </span><span class="c">!!&gt; Set the pixel values of the PNM image.</span>
-<a id="ln-40" name="ln-40" href="#ln-40"></a><span class="w">      </span>
+<a id="ln-40" name="ln-40" href="#ln-40"></a>
 <a id="ln-41" name="ln-41" href="#ln-41"></a><span class="w">      </span><span class="c">! Procedures for setting individual attributes</span>
 <a id="ln-42" name="ln-42" href="#ln-42"></a><span class="w">      </span><span class="k">procedure</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">get_format</span><span class="w">                 </span><span class="c">!!&gt; Get the encoding of the PNM image.</span>
 <a id="ln-43" name="ln-43" href="#ln-43"></a>
@@ -886,7 +886,7 @@ large graphs.</div>
 <a id="ln-49" name="ln-49" href="#ln-49"></a><span class="w">      </span><span class="k">procedure</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">finalize</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">deallocate_pnm</span><span class="w"> </span><span class="c">!!&gt; Clean up allocated memory for the PNM image.</span>
 <a id="ln-50" name="ln-50" href="#ln-50"></a>
 <a id="ln-51" name="ln-51" href="#ln-51"></a><span class="w">      </span><span class="c">! Image manipulation procedures</span>
-<a id="ln-52" name="ln-52" href="#ln-52"></a><span class="w">      </span><span class="k">procedure</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">negative</span><span class="w">                   </span><span class="c">!!&gt; Invert the colors of the image.             </span>
+<a id="ln-52" name="ln-52" href="#ln-52"></a><span class="w">      </span><span class="k">procedure</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">negative</span><span class="w">                   </span><span class="c">!!&gt; Invert the colors of the image.</span>
 <a id="ln-53" name="ln-53" href="#ln-53"></a><span class="w">      </span><span class="k">procedure</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">brighten</span><span class="w">                   </span><span class="c">!!&gt; Adjust the brightness and darkness of the image.</span>
 <a id="ln-54" name="ln-54" href="#ln-54"></a><span class="w">      </span><span class="k">procedure</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">swap_channels</span><span class="w">              </span><span class="c">!!&gt; Swap the RGB channels of the image.</span>
 <a id="ln-55" name="ln-55" href="#ln-55"></a><span class="w">      </span><span class="k">procedure</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">remove_channels</span><span class="w">            </span><span class="c">!!&gt; Remove one or more RGB channels from the image.</span>
@@ -1945,7 +1945,7 @@ large graphs.</div>
 <a id="ln-1108" name="ln-1108" href="#ln-1108"></a><span class="k">         </span><span class="n">k</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">k</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="w"></span>
 <a id="ln-1109" name="ln-1109" href="#ln-1109"></a><span class="w">      </span><span class="k">end do</span>
 <a id="ln-1110" name="ln-1110" href="#ln-1110"></a><span class="k">      inquire</span><span class="p">(</span><span class="n">nunit</span><span class="p">,</span><span class="w"> </span><span class="n">pos</span><span class="o">=</span><span class="n">pos</span><span class="p">)</span><span class="w"></span>
-<a id="ln-1111" name="ln-1111" href="#ln-1111"></a><span class="w">      </span>
+<a id="ln-1111" name="ln-1111" href="#ln-1111"></a>
 <a id="ln-1112" name="ln-1112" href="#ln-1112"></a><span class="w">      </span><span class="k">rewind</span><span class="p">(</span><span class="n">nunit</span><span class="p">)</span><span class="w"></span>
 <a id="ln-1113" name="ln-1113" href="#ln-1113"></a><span class="w">      </span><span class="k">read</span><span class="p">(</span><span class="n">nunit</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="n">this</span><span class="p">%</span><span class="n">magic_number</span><span class="w"></span>
 <a id="ln-1114" name="ln-1114" href="#ln-1114"></a><span class="w">      </span><span class="n">this</span><span class="p">%</span><span class="n">comment</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;&#39;</span><span class="w"></span>
@@ -2026,7 +2026,7 @@ large graphs.</div>
             <p class="text-end">
               Documentation generated by
               <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
- on 2025-07-21T09:12:21.308555+0000             </p>
+ on 2025-07-21T09:25:26.762641+0000             </p>
           </div>
         </div>
         <br>

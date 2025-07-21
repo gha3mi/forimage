@@ -1,7 +1,7 @@
 program test15
     use forimage, only: format_lut
     implicit none
-    
+
     type(format_lut) :: image
     integer, dimension(1:8, 3) :: colors = reshape( [ &
           0,     0,     0,   &
