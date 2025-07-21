@@ -263,7 +263,33 @@ contains
 
       do concurrent (i = 1: size(colors))
          if (trim(colors(i)%color_name) == trim(name)) then
-            this = colors(i)
+            ! this = colors(i)
+
+            ! this = colors(i) relplaced by the following lines to avoid flang compiler issue
+            this%r = colors(i)%r
+            this%g = colors(i)%g
+            this%b = colors(i)%b
+
+            this%c = colors(i)%c
+            this%m = colors(i)%m
+            this%y = colors(i)%y
+            this%k = colors(i)%k
+
+            this%decimal = colors(i)%decimal
+            this%hex = colors(i)%hex
+            this%h = colors(i)%h
+            this%s = colors(i)%s
+            this%v = colors(i)%v
+
+            this%hl = colors(i)%hl
+            this%sl = colors(i)%sl
+            this%vl = colors(i)%vl
+
+            this%xyz_x = colors(i)%xyz_x
+            this%xyz_y = colors(i)%xyz_y
+            this%xyz_z = colors(i)%xyz_z
+
+            this%color_name = colors(i)%color_name
          end if
       end do
 
