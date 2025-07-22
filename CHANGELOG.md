@@ -1,3 +1,19 @@
+## [v0.5.1](https://github.com/gha3mi/forimage/compare/v0.5.0...v0.5.1) - 2025-07-22
+
+
+### Others
+
+* refactor: restrict module usage to only necessary components ([a95eb70b](https://github.com/gha3mi/forimage/commit/a95eb70b794c2acf12254d080371262311071804)) by [@gha3mi](https://github.com/gha3mi)
+* refactor: add generic set_pixels ([fd2553c8](https://github.com/gha3mi/forimage/commit/fd2553c8ecd36fcfda1026c8f11336a7c0ed7235)) by [@gha3mi](https://github.com/gha3mi)
+
+
+### Contributors
+- [@gha3mi](https://github.com/gha3mi)
+
+
+
+Full Changelog: [v0.5.0...v0.5.1](https://github.com/gha3mi/forimage/compare/v0.5.0...v0.5.1)
+
 ## [v0.5.0](https://github.com/gha3mi/forimage/compare/v0.4.0...v0.5.0) - 2025-07-21
 
 
@@ -22,5 +38,3 @@
 
 
 Full Changelog: [v0.4.0...v0.5.0](https://github.com/gha3mi/forimage/compare/v0.4.0...v0.5.0)
-
-
