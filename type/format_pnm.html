@@ -44,7 +44,7 @@
     <div class="container-fluid mb-sm-4 mb-xl-2">
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
         <div class="container">
-          <a class="navbar-brand" href="../index.html">ForImage <small>0.4.0</small></a>
+          <a class="navbar-brand" href="../index.html">ForImage </a>
           <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar"
                   aria-expanded="false" aria-controls="navbar" aria-label="Toggle navigation">
                   <span class="navbar-toggler-icon">
@@ -93,7 +93,7 @@
 
             <li class="list-inline-item" id="statements"><i class="fa fa-list-ol"></i>
               <a data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true"
-                 title="<p>36.5% of total for derived types.</p>Including implementation: 617 statements, 47.6% of total for derived types.">38 statements</a>
+                 title="<p>37.1% of total for derived types.</p>Including implementation: 634 statements, 48.3% of total for derived types.">39 statements</a>
             </li>
 
             <li class="list-inline-item" id="source-file">
@@ -135,14 +135,14 @@
       </a>
       <div id="vars-0" class="collapse">
         <div class="list-group list-group-flush">
-            <a class="list-group-item" href="../type/format_pnm.html#variable-pixels">pixels</a>
+            <a class="list-group-item" href="../type/format_pnm.html#variable-pixels~2">pixels</a>
             <a class="list-group-item" href="../type/format_pnm.html#variable-comment">comment</a>
             <a class="list-group-item" href="../type/format_pnm.html#variable-encoding">encoding</a>
             <a class="list-group-item" href="../type/format_pnm.html#variable-file_format">file_format</a>
-            <a class="list-group-item" href="../type/format_pnm.html#variable-height~3">height</a>
+            <a class="list-group-item" href="../type/format_pnm.html#variable-height~2">height</a>
             <a class="list-group-item" href="../type/format_pnm.html#variable-magic_number">magic_number</a>
             <a class="list-group-item" href="../type/format_pnm.html#variable-max_color">max_color</a>
-            <a class="list-group-item" href="../type/format_pnm.html#variable-width~3">width</a>
+            <a class="list-group-item" href="../type/format_pnm.html#variable-width~2">width</a>
         </div>
       </div>
     </div>
@@ -194,6 +194,8 @@
             <a class="list-group-item" href="../type/format_pnm.html#boundprocedure-set_height">set_height</a>
             <a class="list-group-item" href="../type/format_pnm.html#boundprocedure-set_magicnumber">set_magicnumber</a>
             <a class="list-group-item" href="../type/format_pnm.html#boundprocedure-set_max_color">set_max_color</a>
+            <a class="list-group-item" href="../type/format_pnm.html#boundprocedure-set_pixel_a">set_pixel_a</a>
+            <a class="list-group-item" href="../type/format_pnm.html#boundprocedure-set_pixel_b">set_pixel_b</a>
             <a class="list-group-item" href="../type/format_pnm.html#boundprocedure-set_pixels">set_pixels</a>
             <a class="list-group-item" href="../type/format_pnm.html#boundprocedure-set_width">set_width</a>
         </div>
@@ -234,7 +236,7 @@
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-pixels"></span>
+              <span class="anchor" id="variable-pixels~2"></span>
               integer(kind=ik),
             </td>
               <td>public,</td>
@@ -302,7 +304,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-height~3"></span>
+              <span class="anchor" id="variable-height~2"></span>
               integer,
             </td>
               <td>private</td>
@@ -353,7 +355,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-width~3"></span>
+              <span class="anchor" id="variable-width~2"></span>
               integer,
             </td>
               <td>private</td>
@@ -2526,23 +2528,17 @@
           <div class="row">
               <div class="card mt-3">
     <div class="card-header codesum">
-      <span class="anchor" id="boundprocedure-set_pixels"></span>
+      <span class="anchor" id="boundprocedure-set_pixel_a"></span>
       <h3>
           procedure, private ::
-  <strong>set_pixels</strong>
+  <strong>set_pixel_a</strong>
         
       </h3>
     </div>
-        <div class="card-body">
-          
-          <blockquote>
-<p>Set the pixel values of the PNM image.</p>
-</blockquote>
-        </div>
       <ul class="list-group">
           <li class="list-group-item">
                     <h3>
-    private pure subroutine <a href='../proc/set_pixels.html'>set_pixels</a>(this, pixels)  
+    private pure subroutine <a href='../proc/set_pixel_a.html'>set_pixel_a</a>(this, pixels)  
 </h3>
         <dl class="dl-horizontal">
         <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
@@ -2589,6 +2585,372 @@
             </td>
             <td>::</td>
             <td><strong>pixels</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+          </li>
+      </ul>
+  </div>
+
+          </div>
+          <div class="row">
+              <div class="card mt-3">
+    <div class="card-header codesum">
+      <span class="anchor" id="boundprocedure-set_pixel_b"></span>
+      <h3>
+          procedure, private ::
+  <strong>set_pixel_b</strong>
+        
+      </h3>
+    </div>
+        <div class="card-body">
+          
+          <blockquote>
+<p>Set the pixel values of the PNM image.</p>
+</blockquote>
+        </div>
+      <ul class="list-group">
+          <li class="list-group-item">
+                    <h3>
+    private pure elemental subroutine <a href='../proc/set_pixel_b.html'>set_pixel_b</a>(this, grey, r, g, b, i, j)  
+</h3>
+        <dl class="dl-horizontal">
+        <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
+        <dt>License</dt><dd>BSD 3-Clause</dd>
+    </dl>
+
+
+  <p>Sets the pixel values of the PNM image.</p>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='format_pnm.html'>format_pnm</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>this</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              integer,
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>grey</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              integer,
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>r</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              integer,
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>g</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              integer,
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>b</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              integer,
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>i</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              integer,
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>j</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+          </li>
+      </ul>
+  </div>
+
+          </div>
+          <div class="row">
+              <div class="card mt-3">
+    <div class="card-header codesum">
+      <span class="anchor" id="boundprocedure-set_pixels"></span>
+      <h3>
+          generic, private ::
+  <strong>set_pixels</strong> => <a href='/home/runner/work/forimage/forimage/doc/type/format_pnm.html#boundprocedure-set_pixel_a'>set_pixel_a</a>, <a href='/home/runner/work/forimage/forimage/doc/type/format_pnm.html#boundprocedure-set_pixel_b'>set_pixel_b</a>
+        
+      </h3>
+    </div>
+        <div class="card-body">
+          
+          <blockquote>
+<p>Set the pixel values of the PNM image.</p>
+</blockquote>
+        </div>
+      <ul class="list-group">
+          <li class="list-group-item">
+                    <h3>
+    private pure subroutine <a href='../proc/set_pixel_a.html'>set_pixel_a</a>(this, pixels)  
+</h3>
+        <dl class="dl-horizontal">
+        <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
+        <dt>License</dt><dd>BSD 3-Clause</dd>
+    </dl>
+
+
+  <p>Sets the pixel values of the PNM image.</p>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='format_pnm.html'>format_pnm</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>this</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              integer(kind=ik),
+            </td>
+<td>intent(in),</td>
+              <td></td>            <td>
+              dimension(:,:)
+            </td>
+            <td>::</td>
+            <td><strong>pixels</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+          </li>
+          <li class="list-group-item">
+                    <h3>
+    private pure elemental subroutine <a href='../proc/set_pixel_b.html'>set_pixel_b</a>(this, grey, r, g, b, i, j)  
+</h3>
+        <dl class="dl-horizontal">
+        <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
+        <dt>License</dt><dd>BSD 3-Clause</dd>
+    </dl>
+
+
+  <p>Sets the pixel values of the PNM image.</p>
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='format_pnm.html'>format_pnm</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>this</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              integer,
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>grey</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              integer,
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>r</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              integer,
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>g</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              integer,
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>b</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              integer,
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>i</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              integer,
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>j</strong></td>
             <td>
 
             </td>
@@ -2706,7 +3068,8 @@
 <span class="w">      </span><span class="k">procedure</span><span class="p">,</span><span class="w"> </span><span class="k">private</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">set_header</span><span class="w">        </span><span class="c">!!&gt; Set the header of the PNM image.</span>
 <span class="w">      </span><span class="k">procedure</span><span class="p">,</span><span class="w"> </span><span class="k">private</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">allocate_pixels</span><span class="w">   </span><span class="c">!!&gt; Allocate memory for the pixels of the PNM image.</span>
 <span class="w">      </span><span class="k">procedure</span><span class="p">,</span><span class="w"> </span><span class="k">private</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">check_pixel_range</span><span class="w"> </span><span class="c">!!&gt; Check if the pixel values are within the valid range.</span>
-<span class="w">      </span><span class="k">procedure</span><span class="p">,</span><span class="w"> </span><span class="k">private</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">set_pixels</span><span class="w">        </span><span class="c">!!&gt; Set the pixel values of the PNM image.</span>
+<span class="w">      </span><span class="k">procedure</span><span class="p">,</span><span class="w"> </span><span class="k">private</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">set_pixel_a</span><span class="p">,</span><span class="w"> </span><span class="n">set_pixel_b</span><span class="w">              </span><span class="c">!!&gt; Set the pixel values of the PNM image.</span>
+<span class="w">      </span><span class="k">generic</span><span class="p">,</span><span class="w"> </span><span class="k">private</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">set_pixels</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">set_pixel_a</span><span class="p">,</span><span class="w"> </span><span class="n">set_pixel_b</span><span class="w">  </span><span class="c">!!&gt; Set the pixel values of the PNM image.</span>
 
 <span class="w">      </span><span class="c">! Procedures for setting individual attributes</span>
 <span class="w">      </span><span class="k">procedure</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">get_format</span><span class="w">                 </span><span class="c">!!&gt; Get the encoding of the PNM image.</span>
@@ -2752,7 +3115,7 @@
             <p class="text-end">
               Documentation generated by
               <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
- on 2025-07-21T09:32:14.344057+0000             </p>
+ on 2025-07-22T11:47:51.033300+0000             </p>
           </div>
         </div>
         <br>
