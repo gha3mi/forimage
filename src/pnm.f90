@@ -36,7 +36,8 @@ module pnm
       procedure, private :: set_header        !!> Set the header of the PNM image.
       procedure, private :: allocate_pixels   !!> Allocate memory for the pixels of the PNM image.
       procedure, private :: check_pixel_range !!> Check if the pixel values are within the valid range.
-      procedure, private :: set_pixels        !!> Set the pixel values of the PNM image.
+      procedure, private :: set_pixel_a, set_pixel_b              !!> Set the pixel values of the PNM image.
+      generic, private :: set_pixels => set_pixel_a, set_pixel_b  !!> Set the pixel values of the PNM image.
 
       ! Procedures for setting individual attributes
       procedure :: get_format                 !!> Get the encoding of the PNM image.
@@ -943,14 +944,14 @@ contains
    !> author: Seyed Ali Ghasemi
    !> license: BSD 3-Clause
    !> Sets the pixel values of the PNM image.
-   pure subroutine set_pixels(this, pixels)
+   pure subroutine set_pixel_a(this, pixels)
       class(format_pnm), intent(inout) :: this
       integer(ik), dimension(:,:), intent(in) :: pixels
 
       call this%check_pixel_range(pixels)
 
       this%pixels = pixels
-   end subroutine set_pixels
+   end subroutine set_pixel_a
    !===============================================================================
 
 
@@ -958,7 +959,7 @@ contains
    !> author: Seyed Ali Ghasemi
    !> license: BSD 3-Clause
    !> Sets the pixel values of the PNM image.
-   elemental pure subroutine set_pixel(this, grey,r,g,b, i, j)
+   elemental pure subroutine set_pixel_b(this, grey,r,g,b, i, j)
       class(format_pnm), intent(inout) :: this
       integer, intent(in), optional    :: grey
       integer, intent(in), optional    :: r, g, b
@@ -973,7 +974,7 @@ contains
          this%pixels(i,3*j-1) = g
          this%pixels(i,3*j-0) = b
       end select
-   end subroutine set_pixel
+   end subroutine set_pixel_b
    !===============================================================================
 
 
