@@ -261,7 +261,11 @@ contains
 
       call initialize_colors(colors)
 
+#if defined(__NVCOMPILER)
+      do i = 1, size(colors)
+#else
       do concurrent (i = 1: size(colors))
+#endif
          if (trim(colors(i)%color_name) == trim(name)) then
             ! this = colors(i)
 
@@ -1165,7 +1169,11 @@ contains
       min_dist = huge(min_dist)
       closestColorIndex = 0
 
+#if defined(__NVCOMPILER)
+      do i = 1, size(colors)
+#else
       do concurrent (i = 1: size(colors))
+#endif
          call colors(i)%get_rgb(ri, gi, bi)
          dist = sqrt(&
             (real((ri-this%r), kind=rk)/255.0_rk)**2&

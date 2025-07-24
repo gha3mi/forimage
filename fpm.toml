@@ -22,6 +22,9 @@ implicit-typing   = false
 implicit-external = false
 source-form       = "free"
 
+[preprocess]
+[preprocess.cpp]
+
 [[example]]
 name       = "demo_ppm"
 source-dir = "example"
@@ -202,4 +205,4 @@ media_dir           ="media"
 
 
 [extra.fortitude.check]
-ignore = ["S001", "C003", "S061", "C072"]
+ignore = ["S001", "C003", "S061", "C072", "E001"]

@@ -1063,7 +1063,7 @@ contains
    !> author: Seyed Ali Ghasemi
    !> license: BSD 3-Clause
    !> Writes the header of the PNM image to a file. Required before writing the pixels to the file.
-   subroutine write_header(this, nunit)
+   impure subroutine write_header(this, nunit)
       type(format_pnm), intent(in) :: this
       integer, intent(in)           :: nunit
       integer :: i, k
@@ -1093,7 +1093,7 @@ contains
    !> author: Seyed Ali Ghasemi
    !> license: BSD 3-Clause
    !> Reads the header of the PNM image from a file. Required before reading the pixels from the file.
-   subroutine read_header(this, nunit, pos)
+   impure subroutine read_header(this, nunit, pos)
       class(format_pnm), intent(inout) :: this
       integer, intent(in)           :: nunit
       integer, intent(out)          :: pos
@@ -1162,9 +1162,17 @@ contains
       integer :: row, col, nbytes
 
       nbytes = (this%width+7)/8
+#if defined(__NVCOMPILER)
+      do row = 0, this%height-1
+         do col = 0, this%width-1
+            this%pixels(row+1, col+1) = ibits(ichar(buffer(row*nbytes+col/8+1)), 7-mod(col, 8), 1)
+         end do
+      end do
+#else
       do concurrent (row = 0:this%height-1, col = 0:this%width-1)
          this%pixels(row+1, col+1) = ibits(ichar(buffer(row*nbytes+col/8+1)), 7-mod(col, 8), 1)
       end do
+#endif
    end subroutine decode_binary_pbm_pixels
    !===============================================================================
 
