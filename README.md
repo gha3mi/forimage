@@ -1,12 +1,9 @@
 [![GitHub](https://img.shields.io/badge/GitHub-ForImage-blue.svg?style=social&logo=github)](https://github.com/gha3mi/forimage)
 [![Version](https://img.shields.io/github/release/gha3mi/forimage.svg)](https://github.com/gha3mi/forimage/releases/latest)
 [![Documentation](https://img.shields.io/badge/ford-Documentation%20-blueviolet.svg)](https://gha3mi.github.io/forimage/)
-[![CI_test](https://github.com/gha3mi/forimage/actions/workflows/CI_test.yml/badge.svg)](https://github.com/gha3mi/forimage/actions/workflows/CI_test.yml)
-[![cmake](https://github.com/gha3mi/forimage/actions/workflows/cmake.yml/badge.svg)](https://github.com/gha3mi/forimage/actions/workflows/cmake.yml)
-[![CI_doc](https://github.com/gha3mi/forimage/actions/workflows/CI_doc.yml/badge.svg)](https://github.com/gha3mi/forimage/actions/workflows/CI_doc.yml) 
+[![Setup Fortran Conda CI/CD](https://github.com/gha3mi/forimage/actions/workflows/CI-CD.yml/badge.svg?branch=main)](https://github.com/gha3mi/forimage/actions/workflows/CI-CD.yml)
+[![codecov](https://codecov.io/gh/gha3mi/forimage/graph/badge.svg?token=Q7FKDYKQAB)](https://codecov.io/gh/gha3mi/forimage)
 [![License](https://img.shields.io/github/license/gha3mi/forimage?color=green)](https://github.com/gha3mi/forimage/blob/main/LICENSE)
-
-<img alt="ForImage" src="https://github.com/gha3mi/forimage/raw/main/media/logo.png" width="750">
 
 **ForImage**: A Fortran library for processing and editing PNM images and managing colors.
 
