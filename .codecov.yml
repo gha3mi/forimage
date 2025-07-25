@@ -1,0 +1,4 @@
+coverage:
+  ignore:
+    - "build/dependencies/**"
+    - "example/**"
