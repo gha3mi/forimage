@@ -1,3 +1,23 @@
+## [v0.6.0](https://github.com/gha3mi/forimage/compare/v0.5.1...v0.6.0) - 2025-07-25
+
+
+### Features
+
+* feat: add Codecov configuration and workflow for coverage reporting ([1d2dbc59](https://github.com/gha3mi/forimage/commit/1d2dbc59f4756820799e6c30f96694613403eeea)) by [@gha3mi](https://github.com/gha3mi)
+
+### Fixes
+
+* fix: guard  `do concurrent` loops for nvfortran ([59028212](https://github.com/gha3mi/forimage/commit/59028212c63c98ec6cb5252a23d6a58a5b83f3d1)) by [@gha3mi](https://github.com/gha3mi)
+* fix: update README badges and remove logo image ([e7b51173](https://github.com/gha3mi/forimage/commit/e7b51173300e14fd4f2b8afcabd772eb1118e0a9)) by [@gha3mi](https://github.com/gha3mi)
+
+
+### Contributors
+- [@gha3mi](https://github.com/gha3mi)
+
+
+
+Full Changelog: [v0.5.1...v0.6.0](https://github.com/gha3mi/forimage/compare/v0.5.1...v0.6.0)
+
 ## [v0.5.1](https://github.com/gha3mi/forimage/compare/v0.5.0...v0.5.1) - 2025-07-22
 
 
