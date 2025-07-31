@@ -55,10 +55,12 @@ jobs:
           extra-packages: ${{ matrix.extra-packages }}
 
       - name: fpm test (debug)
-        run: fpm test @${{ matrix.os }}_${{ matrix.compiler }}_debug --verbose
+        if: always()
+        run: fpm @${{ matrix.os }}_${{ matrix.compiler }}_debug --verbose
 
       - name: fpm test (release)
-        run: fpm test @${{ matrix.os }}_${{ matrix.compiler }}_release --verbose
+        if: always()
+        run: fpm @${{ matrix.os }}_${{ matrix.compiler }}_release --verbose
 
   test_cmake:
     if: ${{ !contains(github.event.head_commit.message, '[skip ci]') }}
@@ -71,11 +73,11 @@ jobs:
         compiler: [gfortran, ifx, lfortran, flang-new, nvfortran]
         include:
           - os: ubuntu-latest
-            extra-packages: "cmake, ninja"
+            extra-packages: ""
           - os: windows-latest
-            extra-packages: "cmake, ninja"
+            extra-packages: ""
           - os: macos-latest
-            extra-packages: "cmake, ninja"
+            extra-packages: ""
         exclude:
           - os: macos-latest
             compiler: flang-new
@@ -95,19 +97,21 @@ jobs:
           extra-packages: ${{ matrix.extra-packages }}
 
       - name: cmake test (debug)
+        if: always()
         run: |
-          cmake -B build -DCMAKE_BUILD_TYPE=Debug -DCMAKE_Fortran_COMPILER=${{ matrix.compiler }} -DBUILD_TESTING=TRUE -GNinja
+          cmake -B build -DCMAKE_BUILD_TYPE=Debug -DBUILD_TESTING=TRUE -G Ninja
           cmake --build build --config Debug
           ctest --test-dir build/test --output-on-failure
 
       - name: cmake test (release)
+        if: always()
         run: |
-          cmake -B build -DCMAKE_BUILD_TYPE=Release -DCMAKE_Fortran_COMPILER=${{ matrix.compiler }} -DBUILD_TESTING=TRUE -GNinja
+          cmake -B build -DCMAKE_BUILD_TYPE=Release -DBUILD_TESTING=TRUE -G Ninja
           cmake --build build --config Release
           ctest --test-dir build/test --output-on-failure
 
   doc_ford:
-    if: ${{ github.event_name == 'push' && !contains(github.event.head_commit.message, '[skip ci]') }}
+    if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' && !contains(github.event.head_commit.message, '[skip ci]') }}
     name: Generate FORD Documentation
     runs-on: ubuntu-latest
     steps:
