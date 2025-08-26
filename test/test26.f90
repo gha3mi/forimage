@@ -11,7 +11,7 @@ program example26
    real(rk)            :: h, s, v
    real(rk)            :: hl, sl, vl
    real(rk)            :: xyz_x, xyz_y, xyz_z
-   character(len=30)   :: name
+   character(len=:), allocatable :: name
    real(rk), parameter :: tol = 1e-4_rk
 
 
