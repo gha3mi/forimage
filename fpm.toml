@@ -4,9 +4,10 @@ version    = "VERSION"
 license    = "BSD 3-Clause License"
 author     = "Seyed Ali Ghasemi"
 maintainer = "info@gha3mi.com"
-copyright  = "Copyright 2023-2024, Seyed Ali Ghasemi"
+homepage   = "https://github.com/gha3mi/forimage"
+copyright  = "Copyright 2023-2025, Seyed Ali Ghasemi"
 categories = ["graphics"]
-keywords   = ["Fortran", "image","pnm", "ppm","pgm","pbm","colors"]
+keywords   = ["Fortran", "image", "pnm", "ppm", "pgm", "pbm", "colors"]
 
 [build]
 auto-executables = false
@@ -205,4 +206,4 @@ media_dir           ="media"
 
 
 [extra.fortitude.check]
-ignore = ["S001", "C003", "S061", "C072", "E001"]
+ignore = ["C003", "S001", "S061", "E001"]
