@@ -93,20 +93,20 @@
 
             <li class="list-inline-item" id="statements"><i class="fa fa-list-ol"></i>
               <a data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true"
-                 title=" 0.5% of total for procedures.">9 statements</a>
+                 title=" 1.6% of total for procedures.">26 statements</a>
             </li>
 
             <li class="list-inline-item" id="source-file">
               <i class="fa fa-code"></i>
-              <a href="../src/lut.f90"> Source File</a>
+              <a href="../src/forcolor.F90"> Source File</a>
             </li>
         </ul>
       </div>
       <div class="col">
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb justify-content-end mb-0">
-                <li class="breadcrumb-item"><a href='../sourcefile/lut.f90.html'>lut.f90</a></li>
-                <li class="breadcrumb-item"><a href='../module/lut.html'>lut</a></li>
+                <li class="breadcrumb-item"><a href='../sourcefile/forcolor.f90.html'>forcolor.F90</a></li>
+                <li class="breadcrumb-item"><a href='../module/forcolor.html'>forcolor</a></li>
             <li class="breadcrumb-item active" aria-current="page">set</li>
           </ol>
         </nav>
@@ -160,13 +160,13 @@
     </div>
     
     <div class="col-md-9" id='text'>
-    <h2>private pure subroutine set(this, num_colors, dim_colors, colors)  
+    <h2>private pure elemental subroutine set(this, name, r, g, b, c, m, y, k, decimal, hex, h, s, v, hl, sl, vl, xyz_x, xyz_y, xyz_z, use_library)  
 </h2>
     
 
 
     <h3>Type Bound</h3>
-    <p><a href='../type/format_lut.html'>format_lut</a></p>
+    <p><a href='../type/color.html'>color</a></p>
 
     <h3>Arguments</h3>
         <table class="table table-striped varlist">
@@ -181,8 +181,8 @@
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-this~74"></span>
-              class(<a href='../type/format_lut.html'>format_lut</a>),
+              <span class="anchor" id="variable-this~56"></span>
+              class(<a href='../type/color.html'>color</a>),
             </td>
 <td>intent(inout)</td>
               <td></td>            <td>
@@ -196,45 +196,300 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-num_colors~2"></span>
-              integer,
+              <span class="anchor" id="variable-name"></span>
+              character(len=*),
             </td>
 <td>intent(in)</td>
               <td></td>            <td>
               
             </td>
             <td>::</td>
-            <td><strong>num_colors</strong></td>
+            <td><strong>name</strong></td>
             <td>
                 
             </td>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-dim_colors~2"></span>
-              integer,
-            </td>
-<td>intent(in)</td>
-              <td></td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>dim_colors</strong></td>
-            <td>
-                
-            </td>
-        </tr>
-        <tr>
-            <td>
-              <span class="anchor" id="variable-colors~8"></span>
-              integer,
+              <span class="anchor" id="variable-r~3"></span>
+              integer(kind=ik),
             </td>
 <td>intent(in),</td>
-              <td></td>            <td>
-              dimension(:,:)
+              <td>optional</td>            <td>
+              
             </td>
             <td>::</td>
-            <td><strong>colors</strong></td>
+            <td><strong>r</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-g~3"></span>
+              integer(kind=ik),
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>g</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-b~3"></span>
+              integer(kind=ik),
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>b</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-c~4"></span>
+              integer(kind=ik),
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>c</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-m~2"></span>
+              integer(kind=ik),
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>m</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-y~3"></span>
+              integer(kind=ik),
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>y</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-k~4"></span>
+              integer(kind=ik),
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>k</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-decimal~2"></span>
+              integer(kind=ik),
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>decimal</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-hex~2"></span>
+              character(len=*),
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>hex</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-h~3"></span>
+              real(kind=rk),
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>h</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-s~2"></span>
+              real(kind=rk),
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>s</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-v~2"></span>
+              real(kind=rk),
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>v</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-hl~2"></span>
+              real(kind=rk),
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>hl</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-sl~2"></span>
+              real(kind=rk),
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>sl</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-vl~2"></span>
+              real(kind=rk),
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>vl</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-xyz_x~2"></span>
+              real(kind=rk),
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>xyz_x</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-xyz_y~2"></span>
+              real(kind=rk),
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>xyz_y</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-xyz_z~2"></span>
+              real(kind=rk),
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>xyz_z</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-use_library"></span>
+              logical,
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>use_library</strong></td>
             <td>
                 
             </td>
@@ -251,34 +506,370 @@
   <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<!-- Generated by graphviz version 13.1.1 (20250720.1534)
+<!-- Generated by graphviz version 13.1.2 (20250809.0930)
  -->
 <!-- Title: proc~~set~2~~CallsGraph Pages: 1 -->
-<svg id="procset2CallsGraph" width="292pt" height="32pt"
- viewBox="0.00 0.00 292.00 32.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<g id="proc~~set~2~~CallsGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 28.27)">
+<svg id="procset2CallsGraph" width="609pt" height="494pt"
+ viewBox="0.00 0.00 609.00 494.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="proc~~set~2~~CallsGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 490.27)">
 <title>proc~~set~2~~CallsGraph</title>
-<polygon fill="white" stroke="none" points="-4,4 -4,-28.27 288.04,-28.27 288.04,4 -4,4"/>
+<polygon fill="white" stroke="none" points="-4,4 -4,-490.27 605.35,-490.27 605.35,4 -4,4"/>
 <!-- proc~set~2 -->
 <g id="proc~~set~2~~CallsGraph_node1" class="node">
 <title>proc~set~2</title>
-<polygon fill="none" stroke="black" points="91.77,-24.27 0,-24.27 0,0 91.77,0 91.77,-24.27"/>
-<text xml:space="preserve" text-anchor="middle" x="45.88" y="-8.53" font-family="Helvetica,sans-Serif" font-size="10.50">format_lut%set</text>
+<polygon fill="none" stroke="black" points="64.02,-254.27 0,-254.27 0,-230 64.02,-230 64.02,-254.27"/>
+<text xml:space="preserve" text-anchor="middle" x="32.01" y="-238.53" font-family="Helvetica,sans-Serif" font-size="10.50">color%set</text>
 </g>
-<!-- proc~allocate_colors -->
+<!-- proc~set_by_name -->
 <g id="proc~~set~2~~CallsGraph_node2" class="node">
-<title>proc~allocate_colors</title>
-<g id="a_proc~~set~2~~CallsGraph_node2"><a xlink:href="../proc/allocate_colors.html" xlink:title="format_lut%allocate_colors">
-<polygon fill="#d9534f" stroke="#d9534f" points="284.04,-24.27 127.77,-24.27 127.77,0 284.04,0 284.04,-24.27"/>
-<text xml:space="preserve" text-anchor="middle" x="205.9" y="-8.53" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">format_lut%allocate_colors</text>
+<title>proc~set_by_name</title>
+<g id="a_proc~~set~2~~CallsGraph_node2"><a xlink:href="../proc/set_by_name.html" xlink:title="color%set_by_name">
+<polygon fill="#d9534f" stroke="#d9534f" points="218.04,-443.27 100.02,-443.27 100.02,-419 218.04,-419 218.04,-443.27"/>
+<text xml:space="preserve" text-anchor="middle" x="159.03" y="-427.53" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">color%set_by_name</text>
 </a>
 </g>
 </g>
-<!-- proc~set~2&#45;&gt;proc~allocate_colors -->
+<!-- proc~set~2&#45;&gt;proc~set_by_name -->
 <g id="proc~~set~2~~CallsGraph_edge1" class="edge">
-<title>proc~set~2&#45;&gt;proc~allocate_colors</title>
-<path fill="none" stroke="#ff0000" d="M92.17,-12.13C99.75,-12.13 107.85,-12.13 116.09,-12.13"/>
-<polygon fill="#ff0000" stroke="#ff0000" points="115.87,-15.64 125.87,-12.14 115.87,-8.64 115.87,-15.64"/>
+<title>proc~set~2&#45;&gt;proc~set_by_name</title>
+<path fill="none" stroke="#ff0000" d="M34.48,-254.6C38.77,-285.35 54,-365.57 100.02,-410.13 100.76,-410.85 101.53,-411.55 102.32,-412.21"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="100.06,-414.91 110.29,-417.67 104.02,-409.13 100.06,-414.91"/>
+</g>
+<!-- proc~set_cmyk -->
+<g id="proc~~set~2~~CallsGraph_node3" class="node">
+<title>proc~set_cmyk</title>
+<g id="a_proc~~set~2~~CallsGraph_node3"><a xlink:href="../proc/set_cmyk.html" xlink:title="color%set_cmyk">
+<polygon fill="#d9534f" stroke="#d9534f" points="207.92,-401.27 110.15,-401.27 110.15,-377 207.92,-377 207.92,-401.27"/>
+<text xml:space="preserve" text-anchor="middle" x="159.03" y="-385.53" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">color%set_cmyk</text>
+</a>
+</g>
+</g>
+<!-- proc~set~2&#45;&gt;proc~set_cmyk -->
+<g id="proc~~set~2~~CallsGraph_edge2" class="edge">
+<title>proc~set~2&#45;&gt;proc~set_cmyk</title>
+<path fill="none" stroke="#ff0000" d="M36.28,-254.41C43.55,-279.36 63.34,-336.31 100.02,-368.13 101.09,-369.06 102.2,-369.95 103.35,-370.8"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="101.13,-373.54 111.48,-375.8 104.8,-367.58 101.13,-373.54"/>
+</g>
+<!-- proc~set_decimal -->
+<g id="proc~~set~2~~CallsGraph_node4" class="node">
+<title>proc~set_decimal</title>
+<g id="a_proc~~set~2~~CallsGraph_node4"><a xlink:href="../proc/set_decimal.html" xlink:title="color%set_decimal">
+<polygon fill="#d9534f" stroke="#d9534f" points="215.04,-359.27 103.02,-359.27 103.02,-335 215.04,-335 215.04,-359.27"/>
+<text xml:space="preserve" text-anchor="middle" x="159.03" y="-343.53" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">color%set_decimal</text>
+</a>
+</g>
+</g>
+<!-- proc~set~2&#45;&gt;proc~set_decimal -->
+<g id="proc~~set~2~~CallsGraph_edge3" class="edge">
+<title>proc~set~2&#45;&gt;proc~set_decimal</title>
+<path fill="none" stroke="#ff0000" d="M39.83,-254.47C50.45,-272.61 72.59,-306.45 100.02,-326.13 101.58,-327.25 103.2,-328.31 104.87,-329.32"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="103.03,-332.31 113.51,-333.86 106.28,-326.12 103.03,-332.31"/>
+</g>
+<!-- proc~set_hex -->
+<g id="proc~~set~2~~CallsGraph_node5" class="node">
+<title>proc~set_hex</title>
+<g id="a_proc~~set~2~~CallsGraph_node5"><a xlink:href="../proc/set_hex.html" xlink:title="color%set_hex">
+<polygon fill="#d9534f" stroke="#d9534f" points="203.04,-317.27 115.02,-317.27 115.02,-293 203.04,-293 203.04,-317.27"/>
+<text xml:space="preserve" text-anchor="middle" x="159.03" y="-301.53" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">color%set_hex</text>
+</a>
+</g>
+</g>
+<!-- proc~set~2&#45;&gt;proc~set_hex -->
+<g id="proc~~set~2~~CallsGraph_edge4" class="edge">
+<title>proc~set~2&#45;&gt;proc~set_hex</title>
+<path fill="none" stroke="#ff0000" d="M50.61,-254.62C63.79,-263.6 82.5,-275.59 100.02,-284.13 102.95,-285.57 106.01,-286.95 109.12,-288.29"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="107.81,-291.53 118.39,-292.04 110.43,-285.04 107.81,-291.53"/>
+</g>
+<!-- proc~set_hsl -->
+<g id="proc~~set~2~~CallsGraph_node6" class="node">
+<title>proc~set_hsl</title>
+<g id="a_proc~~set~2~~CallsGraph_node6"><a xlink:href="../proc/set_hsl.html" xlink:title="color%set_hsl">
+<polygon fill="#d9534f" stroke="#d9534f" points="201.17,-275.27 116.9,-275.27 116.9,-251 201.17,-251 201.17,-275.27"/>
+<text xml:space="preserve" text-anchor="middle" x="159.03" y="-259.53" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">color%set_hsl</text>
+</a>
+</g>
+</g>
+<!-- proc~set~2&#45;&gt;proc~set_hsl -->
+<g id="proc~~set~2~~CallsGraph_edge5" class="edge">
+<title>proc~set~2&#45;&gt;proc~set_hsl</title>
+<path fill="none" stroke="#ff0000" d="M64.24,-247.38C76.79,-249.49 91.61,-251.98 105.72,-254.35"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="104.9,-257.76 115.34,-255.96 106.06,-250.86 104.9,-257.76"/>
+</g>
+<!-- proc~set_hsv -->
+<g id="proc~~set~2~~CallsGraph_node7" class="node">
+<title>proc~set_hsv</title>
+<g id="a_proc~~set~2~~CallsGraph_node7"><a xlink:href="../proc/set_hsv.html" xlink:title="color%set_hsv">
+<polygon fill="#d9534f" stroke="#d9534f" points="202.67,-233.27 115.4,-233.27 115.4,-209 202.67,-209 202.67,-233.27"/>
+<text xml:space="preserve" text-anchor="middle" x="159.03" y="-217.53" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">color%set_hsv</text>
+</a>
+</g>
+</g>
+<!-- proc~set~2&#45;&gt;proc~set_hsv -->
+<g id="proc~~set~2~~CallsGraph_edge6" class="edge">
+<title>proc~set~2&#45;&gt;proc~set_hsv</title>
+<path fill="none" stroke="#ff0000" d="M64.24,-236.89C76.21,-234.88 90.26,-232.52 103.78,-230.25"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="104.18,-233.73 113.46,-228.62 103.02,-226.83 104.18,-233.73"/>
+</g>
+<!-- proc~set_name -->
+<g id="proc~~set~2~~CallsGraph_node8" class="node">
+<title>proc~set_name</title>
+<g id="a_proc~~set~2~~CallsGraph_node8"><a xlink:href="../proc/set_name.html" xlink:title="color%set_name">
+<polygon fill="#d9534f" stroke="#d9534f" points="209.04,-191.27 109.02,-191.27 109.02,-167 209.04,-167 209.04,-191.27"/>
+<text xml:space="preserve" text-anchor="middle" x="159.03" y="-175.53" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">color%set_name</text>
+</a>
+</g>
+</g>
+<!-- proc~set~2&#45;&gt;proc~set_name -->
+<g id="proc~~set~2~~CallsGraph_edge7" class="edge">
+<title>proc~set~2&#45;&gt;proc~set_name</title>
+<path fill="none" stroke="#ff0000" d="M50.61,-229.65C63.79,-220.67 82.5,-208.68 100.02,-200.13 102.95,-198.7 106.01,-197.32 109.12,-195.98"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="110.43,-199.23 118.39,-192.23 107.81,-192.74 110.43,-199.23"/>
+</g>
+<!-- proc~set_rgb -->
+<g id="proc~~set~2~~CallsGraph_node9" class="node">
+<title>proc~set_rgb</title>
+<g id="a_proc~~set~2~~CallsGraph_node9"><a xlink:href="../proc/set_rgb.html" xlink:title="color%set_rgb">
+<polygon fill="#d9534f" stroke="#d9534f" points="202.67,-149.27 115.4,-149.27 115.4,-125 202.67,-125 202.67,-149.27"/>
+<text xml:space="preserve" text-anchor="middle" x="159.03" y="-133.53" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">color%set_rgb</text>
+</a>
+</g>
+</g>
+<!-- proc~set~2&#45;&gt;proc~set_rgb -->
+<g id="proc~~set~2~~CallsGraph_edge8" class="edge">
+<title>proc~set~2&#45;&gt;proc~set_rgb</title>
+<path fill="none" stroke="#ff0000" d="M39.83,-229.8C50.45,-211.66 72.59,-177.82 100.02,-158.13 101.61,-157 103.26,-155.92 104.96,-154.89"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="106.57,-158 113.81,-150.27 103.32,-151.79 106.57,-158"/>
+</g>
+<!-- proc~set_xyz -->
+<g id="proc~~set~2~~CallsGraph_node10" class="node">
+<title>proc~set_xyz</title>
+<g id="a_proc~~set~2~~CallsGraph_node10"><a xlink:href="../proc/set_xyz.html" xlink:title="color%set_xyz">
+<polygon fill="#d9534f" stroke="#d9534f" points="202.29,-107.27 115.77,-107.27 115.77,-83 202.29,-83 202.29,-107.27"/>
+<text xml:space="preserve" text-anchor="middle" x="159.03" y="-91.53" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">color%set_xyz</text>
+</a>
+</g>
+</g>
+<!-- proc~set~2&#45;&gt;proc~set_xyz -->
+<g id="proc~~set~2~~CallsGraph_edge9" class="edge">
+<title>proc~set~2&#45;&gt;proc~set_xyz</title>
+<path fill="none" stroke="#ff0000" d="M36.28,-229.86C43.55,-204.91 63.34,-147.96 100.02,-116.13 101.72,-114.66 103.53,-113.29 105.42,-112.01"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="107.12,-115.07 114.11,-107.11 103.68,-108.97 107.12,-115.07"/>
+</g>
+<!-- proc~initialize_colors -->
+<g id="proc~~set~2~~CallsGraph_node11" class="node">
+<title>proc~initialize_colors</title>
+<g id="a_proc~~set~2~~CallsGraph_node11"><a xlink:href="../proc/initialize_colors.html" xlink:title="initialize_colors">
+<polygon fill="#d9534f" stroke="#d9534f" points="347.31,-255.27 254.04,-255.27 254.04,-231 347.31,-231 347.31,-255.27"/>
+<text xml:space="preserve" text-anchor="middle" x="300.68" y="-239.53" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">initialize_colors</text>
+</a>
+</g>
+</g>
+<!-- proc~set_by_name&#45;&gt;proc~initialize_colors -->
+<g id="proc~~set~2~~CallsGraph_edge10" class="edge">
+<title>proc~set_by_name&#45;&gt;proc~initialize_colors</title>
+<path fill="none" stroke="#ff0000" d="M205.69,-418.57C210.15,-416.21 214.37,-413.43 218.04,-410.13 262.05,-370.61 284.89,-302.08 294.31,-266.34"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="297.61,-267.58 296.63,-257.03 290.81,-265.88 297.61,-267.58"/>
+</g>
+<!-- proc~initialize_colors&#45;&gt;proc~set~2 -->
+<g id="proc~~set~2~~CallsGraph_edge12" class="edge">
+<title>proc~initialize_colors&#45;&gt;proc~set~2</title>
+<path fill="none" stroke="#ff0000" d="M298.13,-230.87C293.29,-198.36 275.17,-109.99 218.04,-74.13 173.61,-46.25 143.44,-44.71 100.02,-74.13 51.91,-106.74 38.34,-180.01 34.51,-218.1"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="31.03,-217.8 33.68,-228.06 38,-218.38 31.03,-217.8"/>
+</g>
+<!-- proc~convert -->
+<g id="proc~~set~2~~CallsGraph_node12" class="node">
+<title>proc~convert</title>
+<g id="a_proc~~set~2~~CallsGraph_node12"><a xlink:href="../proc/convert.html" xlink:title="color%convert">
+<polygon fill="#d9534f" stroke="#d9534f" points="472.08,-255.27 383.31,-255.27 383.31,-231 472.08,-231 472.08,-255.27"/>
+<text xml:space="preserve" text-anchor="middle" x="427.7" y="-239.53" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">color%convert</text>
+</a>
+</g>
+</g>
+<!-- proc~initialize_colors&#45;&gt;proc~convert -->
+<g id="proc~~set~2~~CallsGraph_edge11" class="edge">
+<title>proc~initialize_colors&#45;&gt;proc~convert</title>
+<path fill="none" stroke="#ff0000" d="M347.52,-243.13C355.38,-243.13 363.62,-243.13 371.7,-243.13"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="371.43,-246.64 381.43,-243.14 371.43,-239.64 371.43,-246.64"/>
+</g>
+<!-- proc~cmyk_to_rgb -->
+<g id="proc~~set~2~~CallsGraph_node13" class="node">
+<title>proc~cmyk_to_rgb</title>
+<g id="a_proc~~set~2~~CallsGraph_node13"><a xlink:href="../proc/cmyk_to_rgb.html" xlink:title="cmyk_to_rgb">
+<polygon fill="#d9534f" stroke="#d9534f" points="594.23,-486.27 515.21,-486.27 515.21,-462 594.23,-462 594.23,-486.27"/>
+<text xml:space="preserve" text-anchor="middle" x="554.72" y="-470.53" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">cmyk_to_rgb</text>
+</a>
+</g>
+</g>
+<!-- proc~convert&#45;&gt;proc~cmyk_to_rgb -->
+<g id="proc~~set~2~~CallsGraph_edge13" class="edge">
+<title>proc~convert&#45;&gt;proc~cmyk_to_rgb</title>
+<path fill="none" stroke="#ff0000" d="M430.12,-255.75C434.77,-291.29 452.53,-393.56 508.08,-453.13 508.66,-453.76 509.26,-454.36 509.88,-454.95"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="507.55,-457.58 517.65,-460.79 511.76,-451.98 507.55,-457.58"/>
+</g>
+<!-- proc~decimal_to_rgb -->
+<g id="proc~~set~2~~CallsGraph_node14" class="node">
+<title>proc~decimal_to_rgb</title>
+<g id="a_proc~~set~2~~CallsGraph_node14"><a xlink:href="../proc/decimal_to_rgb.html" xlink:title="decimal_to_rgb">
+<polygon fill="#d9534f" stroke="#d9534f" points="601.35,-444.27 508.08,-444.27 508.08,-420 601.35,-420 601.35,-444.27"/>
+<text xml:space="preserve" text-anchor="middle" x="554.72" y="-428.53" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">decimal_to_rgb</text>
+</a>
+</g>
+</g>
+<!-- proc~convert&#45;&gt;proc~decimal_to_rgb -->
+<g id="proc~~set~2~~CallsGraph_edge14" class="edge">
+<title>proc~convert&#45;&gt;proc~decimal_to_rgb</title>
+<path fill="none" stroke="#ff0000" d="M431.4,-255.38C438.67,-285.65 461.31,-364.84 508.08,-411.13 508.81,-411.86 509.57,-412.56 510.36,-413.24"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="508.14,-415.96 518.33,-418.86 512.17,-410.24 508.14,-415.96"/>
+</g>
+<!-- proc~hex_to_rgb -->
+<g id="proc~~set~2~~CallsGraph_node15" class="node">
+<title>proc~hex_to_rgb</title>
+<g id="a_proc~~set~2~~CallsGraph_node15"><a xlink:href="../proc/hex_to_rgb.html" xlink:title="hex_to_rgb">
+<polygon fill="#d9534f" stroke="#d9534f" points="589.35,-402.27 520.08,-402.27 520.08,-378 589.35,-378 589.35,-402.27"/>
+<text xml:space="preserve" text-anchor="middle" x="554.72" y="-386.53" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">hex_to_rgb</text>
+</a>
+</g>
+</g>
+<!-- proc~convert&#45;&gt;proc~hex_to_rgb -->
+<g id="proc~~set~2~~CallsGraph_edge15" class="edge">
+<title>proc~convert&#45;&gt;proc~hex_to_rgb</title>
+<path fill="none" stroke="#ff0000" d="M433.61,-255.53C443.96,-280.19 470.17,-335.89 508.08,-369.13 509,-369.94 509.95,-370.72 510.94,-371.47"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="508.83,-374.28 519.13,-376.78 512.64,-368.41 508.83,-374.28"/>
+</g>
+<!-- proc~hsl_to_rgb -->
+<g id="proc~~set~2~~CallsGraph_node16" class="node">
+<title>proc~hsl_to_rgb</title>
+<g id="a_proc~~set~2~~CallsGraph_node16"><a xlink:href="../proc/hsl_to_rgb.html" xlink:title="hsl_to_rgb">
+<polygon fill="#d9534f" stroke="#d9534f" points="587.48,-360.27 521.96,-360.27 521.96,-336 587.48,-336 587.48,-360.27"/>
+<text xml:space="preserve" text-anchor="middle" x="554.72" y="-344.53" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">hsl_to_rgb</text>
+</a>
+</g>
+</g>
+<!-- proc~convert&#45;&gt;proc~hsl_to_rgb -->
+<g id="proc~~set~2~~CallsGraph_edge16" class="edge">
+<title>proc~convert&#45;&gt;proc~hsl_to_rgb</title>
+<path fill="none" stroke="#ff0000" d="M438,-255.68C451.71,-273.47 478.9,-306.19 508.08,-327.13 509.59,-328.22 511.17,-329.27 512.78,-330.28"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="510.63,-333.08 521.06,-334.92 514.05,-326.98 510.63,-333.08"/>
+</g>
+<!-- proc~hsv_to_rgb -->
+<g id="proc~~set~2~~CallsGraph_node17" class="node">
+<title>proc~hsv_to_rgb</title>
+<g id="a_proc~~set~2~~CallsGraph_node17"><a xlink:href="../proc/hsv_to_rgb.html" xlink:title="hsv_to_rgb">
+<polygon fill="#d9534f" stroke="#d9534f" points="588.98,-318.27 520.46,-318.27 520.46,-294 588.98,-294 588.98,-318.27"/>
+<text xml:space="preserve" text-anchor="middle" x="554.72" y="-302.53" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">hsv_to_rgb</text>
+</a>
+</g>
+</g>
+<!-- proc~convert&#45;&gt;proc~hsv_to_rgb -->
+<g id="proc~~set~2~~CallsGraph_edge17" class="edge">
+<title>proc~convert&#45;&gt;proc~hsv_to_rgb</title>
+<path fill="none" stroke="#ff0000" d="M451.45,-255.6C467.23,-264.14 488.79,-275.6 508.08,-285.13 510.61,-286.39 513.23,-287.66 515.88,-288.92"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="514.18,-291.99 524.72,-293.08 517.16,-285.65 514.18,-291.99"/>
+</g>
+<!-- proc~rgb_to_cmyk -->
+<g id="proc~~set~2~~CallsGraph_node18" class="node">
+<title>proc~rgb_to_cmyk</title>
+<g id="a_proc~~set~2~~CallsGraph_node18"><a xlink:href="../proc/rgb_to_cmyk.html" xlink:title="rgb_to_cmyk">
+<polygon fill="#d9534f" stroke="#d9534f" points="594.23,-276.27 515.21,-276.27 515.21,-252 594.23,-252 594.23,-276.27"/>
+<text xml:space="preserve" text-anchor="middle" x="554.72" y="-260.53" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">rgb_to_cmyk</text>
+</a>
+</g>
+</g>
+<!-- proc~convert&#45;&gt;proc~rgb_to_cmyk -->
+<g id="proc~~set~2~~CallsGraph_edge18" class="edge">
+<title>proc~convert&#45;&gt;proc~rgb_to_cmyk</title>
+<path fill="none" stroke="#ff0000" d="M472.42,-250.48C482.45,-252.16 493.19,-253.97 503.46,-255.69"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="502.88,-259.14 513.32,-257.35 504.04,-252.24 502.88,-259.14"/>
+</g>
+<!-- proc~rgb_to_decimal -->
+<g id="proc~~set~2~~CallsGraph_node19" class="node">
+<title>proc~rgb_to_decimal</title>
+<g id="a_proc~~set~2~~CallsGraph_node19"><a xlink:href="../proc/rgb_to_decimal.html" xlink:title="rgb_to_decimal">
+<polygon fill="#d9534f" stroke="#d9534f" points="601.35,-234.27 508.08,-234.27 508.08,-210 601.35,-210 601.35,-234.27"/>
+<text xml:space="preserve" text-anchor="middle" x="554.72" y="-218.53" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">rgb_to_decimal</text>
+</a>
+</g>
+</g>
+<!-- proc~convert&#45;&gt;proc~rgb_to_decimal -->
+<g id="proc~~set~2~~CallsGraph_edge19" class="edge">
+<title>proc~convert&#45;&gt;proc~rgb_to_decimal</title>
+<path fill="none" stroke="#ff0000" d="M472.42,-235.79C480.17,-234.49 488.35,-233.11 496.41,-231.76"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="496.9,-235.23 506.19,-230.12 495.74,-228.32 496.9,-235.23"/>
+</g>
+<!-- proc~rgb_to_hex -->
+<g id="proc~~set~2~~CallsGraph_node20" class="node">
+<title>proc~rgb_to_hex</title>
+<g id="a_proc~~set~2~~CallsGraph_node20"><a xlink:href="../proc/rgb_to_hex.html" xlink:title="rgb_to_hex">
+<polygon fill="#d9534f" stroke="#d9534f" points="589.35,-192.27 520.08,-192.27 520.08,-168 589.35,-168 589.35,-192.27"/>
+<text xml:space="preserve" text-anchor="middle" x="554.72" y="-176.53" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">rgb_to_hex</text>
+</a>
+</g>
+</g>
+<!-- proc~convert&#45;&gt;proc~rgb_to_hex -->
+<g id="proc~~set~2~~CallsGraph_edge20" class="edge">
+<title>proc~convert&#45;&gt;proc~rgb_to_hex</title>
+<path fill="none" stroke="#ff0000" d="M451.45,-230.67C467.23,-222.13 488.79,-210.67 508.08,-201.13 510.61,-199.88 513.23,-198.61 515.88,-197.35"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="517.16,-200.62 524.72,-193.19 514.18,-194.28 517.16,-200.62"/>
+</g>
+<!-- proc~rgb_to_hsl -->
+<g id="proc~~set~2~~CallsGraph_node21" class="node">
+<title>proc~rgb_to_hsl</title>
+<g id="a_proc~~set~2~~CallsGraph_node21"><a xlink:href="../proc/rgb_to_hsl.html" xlink:title="rgb_to_hsl">
+<polygon fill="#d9534f" stroke="#d9534f" points="587.48,-150.27 521.96,-150.27 521.96,-126 587.48,-126 587.48,-150.27"/>
+<text xml:space="preserve" text-anchor="middle" x="554.72" y="-134.53" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">rgb_to_hsl</text>
+</a>
+</g>
+</g>
+<!-- proc~convert&#45;&gt;proc~rgb_to_hsl -->
+<g id="proc~~set~2~~CallsGraph_edge21" class="edge">
+<title>proc~convert&#45;&gt;proc~rgb_to_hsl</title>
+<path fill="none" stroke="#ff0000" d="M438,-230.59C451.71,-212.8 478.9,-180.08 508.08,-159.13 509.59,-158.05 511.17,-157 512.78,-155.99"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="514.05,-159.29 521.06,-151.35 510.63,-153.19 514.05,-159.29"/>
+</g>
+<!-- proc~rgb_to_hsv -->
+<g id="proc~~set~2~~CallsGraph_node22" class="node">
+<title>proc~rgb_to_hsv</title>
+<g id="a_proc~~set~2~~CallsGraph_node22"><a xlink:href="../proc/rgb_to_hsv.html" xlink:title="rgb_to_hsv">
+<polygon fill="#d9534f" stroke="#d9534f" points="588.98,-108.27 520.46,-108.27 520.46,-84 588.98,-84 588.98,-108.27"/>
+<text xml:space="preserve" text-anchor="middle" x="554.72" y="-92.53" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">rgb_to_hsv</text>
+</a>
+</g>
+</g>
+<!-- proc~convert&#45;&gt;proc~rgb_to_hsv -->
+<g id="proc~~set~2~~CallsGraph_edge22" class="edge">
+<title>proc~convert&#45;&gt;proc~rgb_to_hsv</title>
+<path fill="none" stroke="#ff0000" d="M433.61,-230.74C443.96,-206.08 470.17,-150.38 508.08,-117.13 509,-116.33 509.95,-115.55 510.94,-114.8"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="512.64,-117.86 519.13,-109.49 508.83,-111.99 512.64,-117.86"/>
+</g>
+<!-- proc~rgb_to_xyz -->
+<g id="proc~~set~2~~CallsGraph_node23" class="node">
+<title>proc~rgb_to_xyz</title>
+<g id="a_proc~~set~2~~CallsGraph_node23"><a xlink:href="../proc/rgb_to_xyz.html" xlink:title="rgb_to_xyz">
+<polygon fill="#d9534f" stroke="#d9534f" points="588.6,-66.27 520.83,-66.27 520.83,-42 588.6,-42 588.6,-66.27"/>
+<text xml:space="preserve" text-anchor="middle" x="554.72" y="-50.53" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">rgb_to_xyz</text>
+</a>
+</g>
+</g>
+<!-- proc~convert&#45;&gt;proc~rgb_to_xyz -->
+<g id="proc~~set~2~~CallsGraph_edge23" class="edge">
+<title>proc~convert&#45;&gt;proc~rgb_to_xyz</title>
+<path fill="none" stroke="#ff0000" d="M431.4,-230.89C438.67,-200.62 461.31,-121.43 508.08,-75.13 509.09,-74.13 510.16,-73.18 511.27,-72.26"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="512.93,-75.36 519.24,-66.85 509,-69.57 512.93,-75.36"/>
+</g>
+<!-- proc~xyz_to_rgb -->
+<g id="proc~~set~2~~CallsGraph_node24" class="node">
+<title>proc~xyz_to_rgb</title>
+<g id="a_proc~~set~2~~CallsGraph_node24"><a xlink:href="../proc/xyz_to_rgb.html" xlink:title="xyz_to_rgb">
+<polygon fill="#d9534f" stroke="#d9534f" points="588.6,-24.27 520.83,-24.27 520.83,0 588.6,0 588.6,-24.27"/>
+<text xml:space="preserve" text-anchor="middle" x="554.72" y="-8.53" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">xyz_to_rgb</text>
+</a>
+</g>
+</g>
+<!-- proc~convert&#45;&gt;proc~xyz_to_rgb -->
+<g id="proc~~set~2~~CallsGraph_edge24" class="edge">
+<title>proc~convert&#45;&gt;proc~xyz_to_rgb</title>
+<path fill="none" stroke="#ff0000" d="M430.12,-230.52C434.77,-194.98 452.53,-92.71 508.08,-33.13 509.08,-32.06 510.15,-31.03 511.28,-30.06"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="513.26,-32.94 519.46,-24.35 509.25,-27.2 513.26,-32.94"/>
 </g>
 </g>
 </svg>
@@ -297,7 +888,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<!-- Generated by graphviz version 13.1.1 (20250720.1534)
+<!-- Generated by graphviz version 13.1.2 (20250809.0930)
  -->
 <!-- Title: Graph Key Pages: 1 -->
 <svg width="641pt" height="28pt"
@@ -371,34 +962,205 @@ large graphs.</div>
   <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<!-- Generated by graphviz version 13.1.1 (20250720.1534)
+<!-- Generated by graphviz version 13.1.2 (20250809.0930)
  -->
 <!-- Title: proc~~set~2~~CalledByGraph Pages: 1 -->
-<svg id="procset2CalledByGraph" width="190pt" height="32pt"
- viewBox="0.00 0.00 190.00 32.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<g id="proc~~set~2~~CalledByGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 28.27)">
+<svg id="procset2CalledByGraph" width="566pt" height="200pt"
+ viewBox="0.00 0.00 566.00 200.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="proc~~set~2~~CalledByGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 196.27)">
 <title>proc~~set~2~~CalledByGraph</title>
-<polygon fill="white" stroke="none" points="-4,4 -4,-28.27 185.77,-28.27 185.77,4 -4,4"/>
+<polygon fill="white" stroke="none" points="-4,4 -4,-196.27 562.33,-196.27 562.33,4 -4,4"/>
 <!-- proc~set~2 -->
 <g id="proc~~set~2~~CalledByGraph_node1" class="node">
 <title>proc~set~2</title>
-<polygon fill="none" stroke="black" points="181.77,-24.27 90,-24.27 90,0 181.77,0 181.77,-24.27"/>
-<text xml:space="preserve" text-anchor="middle" x="135.88" y="-8.53" font-family="Helvetica,sans-Serif" font-size="10.50">format_lut%set</text>
+<polygon fill="none" stroke="black" points="224.79,-150.27 160.77,-150.27 160.77,-126 224.79,-126 224.79,-150.27"/>
+<text xml:space="preserve" text-anchor="middle" x="192.78" y="-134.53" font-family="Helvetica,sans-Serif" font-size="10.50">color%set</text>
 </g>
-<!-- program~test15 -->
-<g id="proc~~set~2~~CalledByGraph_node2" class="node">
-<title>program~test15</title>
-<g id="a_proc~~set~2~~CalledByGraph_node2"><a xlink:href="../program/test15.html" xlink:title="test15">
-<polygon fill="#f0ad4e" stroke="#f0ad4e" points="54,-24.27 0,-24.27 0,0 54,0 54,-24.27"/>
-<text xml:space="preserve" text-anchor="middle" x="27" y="-8.53" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">test15</text>
+<!-- proc~set_by_name -->
+<g id="proc~~set~2~~CalledByGraph_node10" class="node">
+<title>proc~set_by_name</title>
+<g id="a_proc~~set~2~~CalledByGraph_node10"><a xlink:href="../proc/set_by_name.html" xlink:title="color%set_by_name">
+<polygon fill="#d9534f" stroke="#d9534f" points="429.06,-182.27 311.04,-182.27 311.04,-158 429.06,-158 429.06,-182.27"/>
+<text xml:space="preserve" text-anchor="middle" x="370.05" y="-166.53" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">color%set_by_name</text>
 </a>
 </g>
 </g>
-<!-- program~test15&#45;&gt;proc~set~2 -->
+<!-- proc~set~2&#45;&gt;proc~set_by_name -->
+<g id="proc~~set~2~~CalledByGraph_edge16" class="edge">
+<title>proc~set~2&#45;&gt;proc~set_by_name</title>
+<path fill="none" stroke="#7f00ff" d="M225.11,-143.86C245.79,-147.63 273.7,-152.73 299.45,-157.43"/>
+<polygon fill="#7f00ff" stroke="#7f00ff" points="298.75,-160.86 309.22,-159.21 300.01,-153.97 298.75,-160.86"/>
+</g>
+<!-- proc~initialize_colors -->
+<g id="proc~~set~2~~CalledByGraph_node2" class="node">
+<title>proc~initialize_colors</title>
+<g id="a_proc~~set~2~~CalledByGraph_node2"><a xlink:href="../proc/initialize_colors.html" xlink:title="initialize_colors">
+<polygon fill="#d9534f" stroke="#d9534f" points="558.33,-104.27 465.06,-104.27 465.06,-80 558.33,-80 558.33,-104.27"/>
+<text xml:space="preserve" text-anchor="middle" x="511.69" y="-88.54" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">initialize_colors</text>
+</a>
+</g>
+</g>
+<!-- proc~initialize_colors&#45;&gt;proc~set~2 -->
 <g id="proc~~set~2~~CalledByGraph_edge1" class="edge">
-<title>program~test15&#45;&gt;proc~set~2</title>
-<path fill="none" stroke="#ff0000" d="M54.42,-12.13C61.73,-12.13 69.96,-12.13 78.28,-12.13"/>
-<polygon fill="#ff0000" stroke="#ff0000" points="78.12,-15.64 88.12,-12.14 78.12,-8.64 78.12,-15.64"/>
+<title>proc~initialize_colors&#45;&gt;proc~set~2</title>
+<path fill="none" stroke="#ff0000" d="M464.6,-101.73C453.02,-103.98 440.61,-106.27 429.06,-108.14 361.98,-118.97 283.62,-128.3 236.39,-133.57"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="236.14,-130.07 226.59,-134.65 236.91,-137.03 236.14,-130.07"/>
+</g>
+<!-- program~demo_color -->
+<g id="proc~~set~2~~CalledByGraph_node3" class="node">
+<title>program~demo_color</title>
+<g id="a_proc~~set~2~~CalledByGraph_node3"><a xlink:href="../program/demo_color.html" xlink:title="demo_color">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="74.52,-66.27 0,-66.27 0,-42 74.52,-42 74.52,-66.27"/>
+<text xml:space="preserve" text-anchor="middle" x="37.26" y="-50.53" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">demo_color</text>
+</a>
+</g>
+</g>
+<!-- program~demo_color&#45;&gt;proc~set~2 -->
+<g id="proc~~set~2~~CalledByGraph_edge2" class="edge">
+<title>program~demo_color&#45;&gt;proc~set~2</title>
+<path fill="none" stroke="#ff0000" d="M62.43,-66.6C66.63,-69.18 70.83,-72.07 74.52,-75.14 93.43,-90.85 89.66,-104.13 110.52,-117.14 122.09,-124.35 136.06,-129.1 149.13,-132.21"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="148.32,-135.62 158.82,-134.25 149.75,-128.77 148.32,-135.62"/>
+</g>
+<!-- proc~find_nearest -->
+<g id="proc~~set~2~~CalledByGraph_node7" class="node">
+<title>proc~find_nearest</title>
+<g id="a_proc~~set~2~~CalledByGraph_node7"><a xlink:href="../proc/find_nearest.html" xlink:title="color%find_nearest">
+<polygon fill="#d9534f" stroke="#d9534f" points="249.54,-108.27 136.02,-108.27 136.02,-84 249.54,-84 249.54,-108.27"/>
+<text xml:space="preserve" text-anchor="middle" x="192.78" y="-92.54" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">color%find_nearest</text>
+</a>
+</g>
+</g>
+<!-- program~demo_color&#45;&gt;proc~find_nearest -->
+<g id="proc~~set~2~~CalledByGraph_edge10" class="edge">
+<title>program~demo_color&#45;&gt;proc~find_nearest</title>
+<path fill="none" stroke="#ff0000" d="M74.96,-65.03C86.34,-68.35 98.93,-71.95 110.52,-75.14 117.25,-76.98 124.31,-78.87 131.34,-80.73"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="130.27,-84.07 140.84,-83.22 132.05,-77.3 130.27,-84.07"/>
+</g>
+<!-- proc~print_available_colors -->
+<g id="proc~~set~2~~CalledByGraph_node8" class="node">
+<title>proc~print_available_colors</title>
+<g id="a_proc~~set~2~~CalledByGraph_node8"><a xlink:href="../proc/print_available_colors.html" xlink:title="color%print_available_colors">
+<polygon fill="#d9534f" stroke="#d9534f" points="275.04,-66.27 110.52,-66.27 110.52,-42 275.04,-42 275.04,-66.27"/>
+<text xml:space="preserve" text-anchor="middle" x="192.78" y="-50.53" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">color%print_available_colors</text>
+</a>
+</g>
+</g>
+<!-- program~demo_color&#45;&gt;proc~print_available_colors -->
+<g id="proc~~set~2~~CalledByGraph_edge12" class="edge">
+<title>program~demo_color&#45;&gt;proc~print_available_colors</title>
+<path fill="none" stroke="#7fff00" d="M74.64,-54.13C82.16,-54.13 90.41,-54.13 98.93,-54.13"/>
+<polygon fill="#7fff00" stroke="#7fff00" points="98.74,-57.64 108.74,-54.14 98.74,-50.64 98.74,-57.64"/>
+</g>
+<!-- proc~save_available_colors -->
+<g id="proc~~set~2~~CalledByGraph_node9" class="node">
+<title>proc~save_available_colors</title>
+<g id="a_proc~~set~2~~CalledByGraph_node9"><a xlink:href="../proc/save_available_colors.html" xlink:title="color%save_available_colors">
+<polygon fill="#d9534f" stroke="#d9534f" points="275.04,-24.27 110.52,-24.27 110.52,0 275.04,0 275.04,-24.27"/>
+<text xml:space="preserve" text-anchor="middle" x="192.78" y="-8.53" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">color%save_available_colors</text>
+</a>
+</g>
+</g>
+<!-- program~demo_color&#45;&gt;proc~save_available_colors -->
+<g id="proc~~set~2~~CalledByGraph_edge14" class="edge">
+<title>program~demo_color&#45;&gt;proc~save_available_colors</title>
+<path fill="none" stroke="#00ffff" d="M74.96,-43.24C86.34,-39.92 98.93,-36.32 110.52,-33.13 117.25,-31.29 124.31,-29.4 131.34,-27.54"/>
+<polygon fill="#00ffff" stroke="#00ffff" points="132.05,-30.97 140.84,-25.05 130.27,-24.2 132.05,-30.97"/>
+</g>
+<!-- program~example26 -->
+<g id="proc~~set~2~~CalledByGraph_node4" class="node">
+<title>program~example26</title>
+<g id="a_proc~~set~2~~CalledByGraph_node4"><a xlink:href="../program/example26.html" xlink:title="example26">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="72.64,-150.27 1.87,-150.27 1.87,-126 72.64,-126 72.64,-150.27"/>
+<text xml:space="preserve" text-anchor="middle" x="37.26" y="-134.53" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">example26</text>
+</a>
+</g>
+</g>
+<!-- program~example26&#45;&gt;proc~set~2 -->
+<g id="proc~~set~2~~CalledByGraph_edge3" class="edge">
+<title>program~example26&#45;&gt;proc~set~2</title>
+<path fill="none" stroke="#ff0000" d="M73.1,-138.13C95.68,-138.13 125.24,-138.13 149.21,-138.13"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="148.96,-141.64 158.96,-138.14 148.96,-134.64 148.96,-141.64"/>
+</g>
+<!-- program~example27 -->
+<g id="proc~~set~2~~CalledByGraph_node5" class="node">
+<title>program~example27</title>
+<g id="a_proc~~set~2~~CalledByGraph_node5"><a xlink:href="../program/example27.html" xlink:title="example27">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="72.64,-108.27 1.87,-108.27 1.87,-84 72.64,-84 72.64,-108.27"/>
+<text xml:space="preserve" text-anchor="middle" x="37.26" y="-92.54" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">example27</text>
+</a>
+</g>
+</g>
+<!-- program~example27&#45;&gt;proc~set~2 -->
+<g id="proc~~set~2~~CalledByGraph_edge4" class="edge">
+<title>program~example27&#45;&gt;proc~set~2</title>
+<path fill="none" stroke="#ff0000" d="M73.12,-106.49C84.97,-109.95 98.3,-113.78 110.52,-117.14 123.11,-120.59 136.83,-124.2 149.36,-127.43"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="148.44,-130.81 159,-129.9 150.18,-124.03 148.44,-130.81"/>
+</g>
+<!-- program~example27&#45;&gt;proc~find_nearest -->
+<g id="proc~~set~2~~CalledByGraph_edge11" class="edge">
+<title>program~example27&#45;&gt;proc~find_nearest</title>
+<path fill="none" stroke="#ff0000" d="M73.1,-96.14C88.26,-96.14 106.58,-96.14 124.24,-96.14"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="124.19,-99.64 134.19,-96.14 124.19,-92.64 124.19,-99.64"/>
+</g>
+<!-- program~example28 -->
+<g id="proc~~set~2~~CalledByGraph_node6" class="node">
+<title>program~example28</title>
+<g id="a_proc~~set~2~~CalledByGraph_node6"><a xlink:href="../program/example28.html" xlink:title="example28">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="72.64,-192.27 1.87,-192.27 1.87,-168 72.64,-168 72.64,-192.27"/>
+<text xml:space="preserve" text-anchor="middle" x="37.26" y="-176.53" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">example28</text>
+</a>
+</g>
+</g>
+<!-- program~example28&#45;&gt;proc~set~2 -->
+<g id="proc~~set~2~~CalledByGraph_edge5" class="edge">
+<title>program~example28&#45;&gt;proc~set~2</title>
+<path fill="none" stroke="#ff0000" d="M73.1,-170.6C95.78,-164.4 125.51,-156.27 149.53,-149.69"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="150.29,-153.11 159.01,-147.1 148.44,-146.36 150.29,-153.11"/>
+</g>
+<!-- proc~find_nearest&#45;&gt;proc~initialize_colors -->
+<g id="proc~~set~2~~CalledByGraph_edge6" class="edge">
+<title>proc~find_nearest&#45;&gt;proc~initialize_colors</title>
+<path fill="none" stroke="#ff0000" d="M249.71,-95.43C306.9,-94.71 395.31,-93.59 453.09,-92.86"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="453.11,-96.36 463.07,-92.74 453.02,-89.36 453.11,-96.36"/>
+</g>
+<!-- proc~print_available_colors&#45;&gt;proc~initialize_colors -->
+<g id="proc~~set~2~~CalledByGraph_edge7" class="edge">
+<title>proc~print_available_colors&#45;&gt;proc~initialize_colors</title>
+<path fill="none" stroke="#ff0000" d="M275.39,-63.92C331.2,-70.61 403.79,-79.32 453.5,-85.28"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="452.83,-88.72 463.17,-86.44 453.66,-81.77 452.83,-88.72"/>
+</g>
+<!-- proc~save_available_colors&#45;&gt;proc~initialize_colors -->
+<g id="proc~~set~2~~CalledByGraph_edge8" class="edge">
+<title>proc~save_available_colors&#45;&gt;proc~initialize_colors</title>
+<path fill="none" stroke="#ff0000" d="M260.2,-24.73C307.6,-34.22 372.68,-48.29 429.06,-64.14 441.21,-67.55 454.2,-71.75 466.16,-75.84"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="464.78,-79.07 475.38,-79.05 467.09,-72.46 464.78,-79.07"/>
+</g>
+<!-- proc~set_by_name&#45;&gt;proc~initialize_colors -->
+<g id="proc~~set~2~~CalledByGraph_edge9" class="edge">
+<title>proc~set_by_name&#45;&gt;proc~initialize_colors</title>
+<path fill="none" stroke="#ff0000" d="M401.26,-157.59C410.33,-153.56 420.22,-148.9 429.06,-144.13 447.63,-134.13 467.61,-121.44 483.16,-111.1"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="485.08,-114.02 491.42,-105.54 481.17,-108.22 485.08,-114.02"/>
+</g>
+<!-- program~example29 -->
+<g id="proc~~set~2~~CalledByGraph_node11" class="node">
+<title>program~example29</title>
+<g id="a_proc~~set~2~~CalledByGraph_node11"><a xlink:href="../program/example29.html" xlink:title="example29">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="72.64,-24.27 1.87,-24.27 1.87,0 72.64,0 72.64,-24.27"/>
+<text xml:space="preserve" text-anchor="middle" x="37.26" y="-8.53" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">example29</text>
+</a>
+</g>
+</g>
+<!-- program~example29&#45;&gt;proc~print_available_colors -->
+<g id="proc~~set~2~~CalledByGraph_edge13" class="edge">
+<title>program~example29&#45;&gt;proc~print_available_colors</title>
+<path fill="none" stroke="#7fff00" d="M73.12,-22.49C84.97,-25.95 98.3,-29.78 110.52,-33.13 117.25,-34.98 124.31,-36.87 131.34,-38.73"/>
+<polygon fill="#7fff00" stroke="#7fff00" points="130.27,-42.07 140.84,-41.22 132.05,-35.3 130.27,-42.07"/>
+</g>
+<!-- program~example29&#45;&gt;proc~save_available_colors -->
+<g id="proc~~set~2~~CalledByGraph_edge15" class="edge">
+<title>program~example29&#45;&gt;proc~save_available_colors</title>
+<path fill="none" stroke="#00ffff" d="M73.1,-12.13C81.02,-12.13 89.81,-12.13 98.91,-12.13"/>
+<polygon fill="#00ffff" stroke="#00ffff" points="98.61,-15.64 108.61,-12.14 98.61,-8.64 98.61,-15.64"/>
 </g>
 </g>
 </svg>
@@ -417,7 +1179,7 @@ large graphs.</div>
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<!-- Generated by graphviz version 13.1.1 (20250720.1534)
+<!-- Generated by graphviz version 13.1.2 (20250809.0930)
  -->
 <!-- Title: Graph Key Pages: 1 -->
 <svg width="641pt" height="28pt"
@@ -497,16 +1259,34 @@ large graphs.</div>
     
     <section>
     <h2><span class="anchor" id="src"></span>Source Code</h2>
-    <div class="hl codehilite"><pre><span></span><span class="w">   </span><span class="k">pure subroutine </span><span class="n">set</span><span class="p">(</span><span class="n">this</span><span class="p">,</span><span class="w"> </span><span class="n">num_colors</span><span class="p">,</span><span class="w"> </span><span class="n">dim_colors</span><span class="p">,</span><span class="w"> </span><span class="n">colors</span><span class="p">)</span><span class="w"></span>
-<span class="w">      </span><span class="k">class</span><span class="p">(</span><span class="n">format_lut</span><span class="p">),</span><span class="w">       </span><span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">this</span><span class="w"></span>
-<span class="w">      </span><span class="kt">integer</span><span class="p">,</span><span class="w">                 </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w">    </span><span class="kd">::</span><span class="w"> </span><span class="n">num_colors</span><span class="p">,</span><span class="w"> </span><span class="n">dim_colors</span><span class="w"></span>
-<span class="w">      </span><span class="kt">integer</span><span class="p">,</span><span class="w"> </span><span class="k">dimension</span><span class="p">(:,:),</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w">    </span><span class="kd">::</span><span class="w"> </span><span class="n">colors</span><span class="w"></span>
+    <div class="hl codehilite"><pre><span></span><span class="w">   </span><span class="k">elemental pure subroutine </span><span class="n">set</span><span class="p">(</span><span class="n">this</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">r</span><span class="p">,</span><span class="n">g</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="w"> </span><span class="n">c</span><span class="p">,</span><span class="n">m</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">k</span><span class="p">,</span><span class="w"> </span><span class="n">decimal</span><span class="p">,</span><span class="w"> </span><span class="n">hex</span><span class="p">,</span><span class="w"> </span><span class="n">h</span><span class="p">,</span><span class="n">s</span><span class="p">,</span><span class="n">v</span><span class="p">,</span><span class="w"> </span><span class="n">hl</span><span class="p">,</span><span class="n">sl</span><span class="p">,</span><span class="n">vl</span><span class="p">,</span><span class="w"> </span><span class="n">xyz_x</span><span class="p">,</span><span class="n">xyz_y</span><span class="p">,</span><span class="n">xyz_z</span><span class="p">,</span><span class="w"> </span><span class="n">use_library</span><span class="p">)</span><span class="w"></span>
+<span class="w">      </span><span class="k">class</span><span class="p">(</span><span class="n">color</span><span class="p">),</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">this</span><span class="w"></span>
+<span class="w">      </span><span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=*</span><span class="p">),</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">name</span><span class="w"></span>
+<span class="w">      </span><span class="kt">integer</span><span class="p">(</span><span class="n">ik</span><span class="p">),</span><span class="w">  </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">),</span><span class="w"> </span><span class="k">optional</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">r</span><span class="p">,</span><span class="w"> </span><span class="n">g</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">,</span><span class="w"> </span><span class="n">c</span><span class="p">,</span><span class="w"> </span><span class="n">m</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="n">k</span><span class="p">,</span><span class="w"> </span><span class="n">decimal</span><span class="w"></span>
+<span class="w">      </span><span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=*</span><span class="p">),</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">),</span><span class="w"> </span><span class="k">optional</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">hex</span><span class="w"></span>
+<span class="w">      </span><span class="kt">real</span><span class="p">(</span><span class="n">rk</span><span class="p">),</span><span class="w">     </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">),</span><span class="w"> </span><span class="k">optional</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">h</span><span class="p">,</span><span class="w"> </span><span class="n">s</span><span class="p">,</span><span class="w"> </span><span class="n">v</span><span class="p">,</span><span class="w"> </span><span class="n">hl</span><span class="p">,</span><span class="w"> </span><span class="n">sl</span><span class="p">,</span><span class="w"> </span><span class="n">vl</span><span class="p">,</span><span class="w"> </span><span class="n">xyz_x</span><span class="p">,</span><span class="w"> </span><span class="n">xyz_y</span><span class="p">,</span><span class="w"> </span><span class="n">xyz_z</span><span class="w"></span>
+<span class="w">      </span><span class="kt">logical</span><span class="p">,</span><span class="w">      </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">),</span><span class="w"> </span><span class="k">optional</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">use_library</span><span class="w"></span>
+<span class="w">      </span><span class="kt">logical</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">use_library_</span><span class="w"></span>
 
-<span class="w">      </span><span class="n">this</span><span class="p">%</span><span class="n">num_colors</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">num_colors</span><span class="w"></span>
-<span class="w">      </span><span class="n">this</span><span class="p">%</span><span class="n">dim_colors</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dim_colors</span><span class="w"></span>
-<span class="w">      </span><span class="k">call </span><span class="n">this</span><span class="p">%</span><span class="n">allocate_colors</span><span class="p">()</span><span class="w"></span>
-<span class="w">      </span><span class="n">this</span><span class="p">%</span><span class="n">colors</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">colors</span><span class="w"></span>
-<span class="w">   </span><span class="k">end subroutine </span><span class="n">set</span><span class="w"></span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">use_library</span><span class="p">))</span><span class="w"> </span><span class="k">then</span>
+<span class="k">         </span><span class="n">use_library_</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">use_library</span><span class="w"></span>
+<span class="w">      </span><span class="k">else</span>
+<span class="k">         </span><span class="n">use_library_</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">.</span><span class="n">false</span><span class="p">.</span><span class="w"></span>
+<span class="w">      </span><span class="k">end if</span>
+
+<span class="k">      if</span><span class="w"> </span><span class="p">(</span><span class="n">use_library_</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">         call </span><span class="n">this</span><span class="p">%</span><span class="n">set_by_name</span><span class="p">(</span><span class="n">name</span><span class="p">)</span><span class="w"></span>
+<span class="w">      </span><span class="k">else</span>
+<span class="k">         call </span><span class="n">this</span><span class="p">%</span><span class="n">set_name</span><span class="p">(</span><span class="n">name</span><span class="p">)</span><span class="w"></span>
+<span class="w">         </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">r</span><span class="p">)</span><span class="w"> </span><span class="p">.</span><span class="nb">and</span><span class="p">.</span><span class="w"> </span><span class="nb">present</span><span class="p">(</span><span class="n">g</span><span class="p">)</span><span class="w"> </span><span class="p">.</span><span class="nb">and</span><span class="p">.</span><span class="w"> </span><span class="nb">present</span><span class="p">(</span><span class="n">b</span><span class="p">))</span><span class="w">                  </span><span class="k">call </span><span class="n">this</span><span class="p">%</span><span class="n">set_rgb</span><span class="p">(</span><span class="n">r</span><span class="p">,</span><span class="w"> </span><span class="n">g</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="w"></span>
+<span class="w">         </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">c</span><span class="p">)</span><span class="w"> </span><span class="p">.</span><span class="nb">and</span><span class="p">.</span><span class="w"> </span><span class="nb">present</span><span class="p">(</span><span class="n">m</span><span class="p">)</span><span class="w"> </span><span class="p">.</span><span class="nb">and</span><span class="p">.</span><span class="w"> </span><span class="nb">present</span><span class="p">(</span><span class="n">y</span><span class="p">)</span><span class="w"> </span><span class="p">.</span><span class="nb">and</span><span class="p">.</span><span class="w"> </span><span class="nb">present</span><span class="p">(</span><span class="n">k</span><span class="p">))</span><span class="w"> </span><span class="k">call </span><span class="n">this</span><span class="p">%</span><span class="n">set_cmyk</span><span class="p">(</span><span class="n">c</span><span class="p">,</span><span class="w"> </span><span class="n">m</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="n">k</span><span class="p">)</span><span class="w"></span>
+<span class="w">         </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">decimal</span><span class="p">))</span><span class="w">                                              </span><span class="k">call </span><span class="n">this</span><span class="p">%</span><span class="n">set_decimal</span><span class="p">(</span><span class="n">decimal</span><span class="p">)</span><span class="w"></span>
+<span class="w">         </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">hex</span><span class="p">))</span><span class="w">                                                  </span><span class="k">call </span><span class="n">this</span><span class="p">%</span><span class="n">set_hex</span><span class="p">(</span><span class="n">hex</span><span class="p">)</span><span class="w"></span>
+<span class="w">         </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">h</span><span class="p">)</span><span class="w"> </span><span class="p">.</span><span class="nb">and</span><span class="p">.</span><span class="w"> </span><span class="nb">present</span><span class="p">(</span><span class="n">s</span><span class="p">)</span><span class="w"> </span><span class="p">.</span><span class="nb">and</span><span class="p">.</span><span class="w"> </span><span class="nb">present</span><span class="p">(</span><span class="n">v</span><span class="p">))</span><span class="w">                  </span><span class="k">call </span><span class="n">this</span><span class="p">%</span><span class="n">set_hsv</span><span class="p">(</span><span class="n">h</span><span class="p">,</span><span class="w"> </span><span class="n">s</span><span class="p">,</span><span class="w"> </span><span class="n">v</span><span class="p">)</span><span class="w"></span>
+<span class="w">         </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">hl</span><span class="p">)</span><span class="w"> </span><span class="p">.</span><span class="nb">and</span><span class="p">.</span><span class="w"> </span><span class="nb">present</span><span class="p">(</span><span class="n">sl</span><span class="p">)</span><span class="w"> </span><span class="p">.</span><span class="nb">and</span><span class="p">.</span><span class="w"> </span><span class="nb">present</span><span class="p">(</span><span class="n">vl</span><span class="p">))</span><span class="w">               </span><span class="k">call </span><span class="n">this</span><span class="p">%</span><span class="n">set_hsl</span><span class="p">(</span><span class="n">hl</span><span class="p">,</span><span class="w"> </span><span class="n">sl</span><span class="p">,</span><span class="w"> </span><span class="n">vl</span><span class="p">)</span><span class="w"></span>
+<span class="w">         </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">xyz_x</span><span class="p">)</span><span class="w"> </span><span class="p">.</span><span class="nb">and</span><span class="p">.</span><span class="w"> </span><span class="nb">present</span><span class="p">(</span><span class="n">xyz_y</span><span class="p">)</span><span class="w"> </span><span class="p">.</span><span class="nb">and</span><span class="p">.</span><span class="w"> </span><span class="nb">present</span><span class="p">(</span><span class="n">xyz_z</span><span class="p">))</span><span class="w">      </span><span class="k">call </span><span class="n">this</span><span class="p">%</span><span class="n">set_xyz</span><span class="p">(</span><span class="n">xyz_x</span><span class="p">,</span><span class="w"> </span><span class="n">xyz_y</span><span class="p">,</span><span class="w"> </span><span class="n">xyz_z</span><span class="p">)</span><span class="w"></span>
+<span class="w">      </span><span class="k">end if</span>
+<span class="k">   end subroutine </span><span class="n">set</span><span class="w"></span>
 </pre></div>
 
     </section>
@@ -530,7 +1310,7 @@ large graphs.</div>
             <p class="text-end">
               Documentation generated by
               <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
- on 2025-07-31T11:53:19.724291+0000             </p>
+ on 2025-08-26T19:48:47.445581+0000             </p>
           </div>
         </div>
         <br>

@@ -134,17 +134,17 @@
       </a>
       <div id="vars-0" class="collapse">
         <div class="list-group list-group-flush">
-            <a class="list-group-item" href="../type/color.html#variable-b">b</a>
-            <a class="list-group-item" href="../type/color.html#variable-c~2">c</a>
+            <a class="list-group-item" href="../type/color.html#variable-b~2">b</a>
+            <a class="list-group-item" href="../type/color.html#variable-c~3">c</a>
             <a class="list-group-item" href="../type/color.html#variable-color_name">color_name</a>
             <a class="list-group-item" href="../type/color.html#variable-decimal">decimal</a>
-            <a class="list-group-item" href="../type/color.html#variable-g">g</a>
-            <a class="list-group-item" href="../type/color.html#variable-h">h</a>
+            <a class="list-group-item" href="../type/color.html#variable-g~2">g</a>
+            <a class="list-group-item" href="../type/color.html#variable-h~2">h</a>
             <a class="list-group-item" href="../type/color.html#variable-hex">hex</a>
             <a class="list-group-item" href="../type/color.html#variable-hl">hl</a>
-            <a class="list-group-item" href="../type/color.html#variable-k">k</a>
+            <a class="list-group-item" href="../type/color.html#variable-k~3">k</a>
             <a class="list-group-item" href="../type/color.html#variable-m">m</a>
-            <a class="list-group-item" href="../type/color.html#variable-r">r</a>
+            <a class="list-group-item" href="../type/color.html#variable-r~2">r</a>
             <a class="list-group-item" href="../type/color.html#variable-s">s</a>
             <a class="list-group-item" href="../type/color.html#variable-sl">sl</a>
             <a class="list-group-item" href="../type/color.html#variable-v">v</a>
@@ -152,7 +152,7 @@
             <a class="list-group-item" href="../type/color.html#variable-xyz_x">xyz_x</a>
             <a class="list-group-item" href="../type/color.html#variable-xyz_y">xyz_y</a>
             <a class="list-group-item" href="../type/color.html#variable-xyz_z">xyz_z</a>
-            <a class="list-group-item" href="../type/color.html#variable-y">y</a>
+            <a class="list-group-item" href="../type/color.html#variable-y~2">y</a>
         </div>
       </div>
     </div>
@@ -190,7 +190,7 @@
             <a class="list-group-item" href="../type/color.html#boundprocedure-print_available_colors">print_available_colors</a>
             <a class="list-group-item" href="../type/color.html#boundprocedure-save">save</a>
             <a class="list-group-item" href="../type/color.html#boundprocedure-save_available_colors">save_available_colors</a>
-            <a class="list-group-item" href="../type/color.html#boundprocedure-set">set</a>
+            <a class="list-group-item" href="../type/color.html#boundprocedure-set~2">set</a>
             <a class="list-group-item" href="../type/color.html#boundprocedure-copy_color">copy_color</a>
             <a class="list-group-item" href="../type/color.html#boundprocedure-get_cmyk">get_cmyk</a>
             <a class="list-group-item" href="../type/color.html#boundprocedure-get_decimal">get_decimal</a>
@@ -255,7 +255,7 @@
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-b"></span>
+              <span class="anchor" id="variable-b~2"></span>
               integer(kind=ik),
             </td>
               <td>private</td>
@@ -272,7 +272,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-c~2"></span>
+              <span class="anchor" id="variable-c~3"></span>
               integer(kind=ik),
             </td>
               <td>private</td>
@@ -323,7 +323,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-g"></span>
+              <span class="anchor" id="variable-g~2"></span>
               integer(kind=ik),
             </td>
               <td>private</td>
@@ -340,7 +340,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-h"></span>
+              <span class="anchor" id="variable-h~2"></span>
               real(kind=rk),
             </td>
               <td>private</td>
@@ -391,7 +391,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-k"></span>
+              <span class="anchor" id="variable-k~3"></span>
               integer(kind=ik),
             </td>
               <td>private</td>
@@ -425,7 +425,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-r"></span>
+              <span class="anchor" id="variable-r~2"></span>
               integer(kind=ik),
             </td>
               <td>private</td>
@@ -561,7 +561,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-y"></span>
+              <span class="anchor" id="variable-y~2"></span>
               integer(kind=ik),
             </td>
               <td>private</td>
@@ -818,7 +818,7 @@
       <ul class="list-group">
           <li class="list-group-item">
                     <h3>
-    private pure elemental subroutine <a href='../proc/get.html'>get</a>(this, name, r, g, b, c, m, y, k, decimal, hex, h, s, v, hl, sl, vl, xyz_x, xyz_y, xyz_z)  
+    private pure subroutine <a href='../proc/get.html'>get</a>(this, name, r, g, b, c, m, y, k, decimal, hex, h, s, v, hl, sl, vl, xyz_x, xyz_y, xyz_z)  
 </h3>
         <dl class="dl-horizontal">
         <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
@@ -857,11 +857,11 @@
         <tr>
             <td>
               <span class="anchor" ></span>
-              character(len=*),
+              character(len=:),
             </td>
 <td>intent(out),</td>
-              <td>optional</td>            <td>
-              
+              <td>optional,</td>            <td>
+              allocatable
             </td>
             <td>::</td>
             <td><strong>name</strong></td>
@@ -1677,7 +1677,7 @@
           <div class="row">
               <div class="card mt-3">
     <div class="card-header codesum">
-      <span class="anchor" id="boundprocedure-set"></span>
+      <span class="anchor" id="boundprocedure-set~2"></span>
       <h3>
           procedure, public ::
   <strong>set</strong>
@@ -1687,7 +1687,7 @@
       <ul class="list-group">
           <li class="list-group-item">
                     <h3>
-    private pure elemental subroutine <a href='../proc/set.html'>set</a>(this, name, r, g, b, c, m, y, k, decimal, hex, h, s, v, hl, sl, vl, xyz_x, xyz_y, xyz_z, use_library)  
+    private pure elemental subroutine <a href='../proc/set~2.html'>set</a>(this, name, r, g, b, c, m, y, k, decimal, hex, h, s, v, hl, sl, vl, xyz_x, xyz_y, xyz_z, use_library)  
 </h3>
         <dl class="dl-horizontal">
         <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
@@ -2309,7 +2309,7 @@
       <ul class="list-group">
           <li class="list-group-item">
                     <h3>
-    private pure elemental subroutine <a href='../proc/get_hex.html'>get_hex</a>(this, hex)  
+    private pure subroutine <a href='../proc/get_hex.html'>get_hex</a>(this, hex)  
 </h3>
         <dl class="dl-horizontal">
         <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
@@ -2348,7 +2348,7 @@
         <tr>
             <td>
               <span class="anchor" ></span>
-              character(len=*),
+              character(len=7),
             </td>
 <td>intent(out)</td>
               <td></td>            <td>
@@ -2588,7 +2588,7 @@
       <ul class="list-group">
           <li class="list-group-item">
                     <h3>
-    private pure elemental subroutine <a href='../proc/get_name.html'>get_name</a>(this, name)  
+    private pure subroutine <a href='../proc/get_name.html'>get_name</a>(this, name)  
 </h3>
         <dl class="dl-horizontal">
         <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
@@ -2627,11 +2627,11 @@
         <tr>
             <td>
               <span class="anchor" ></span>
-              character(len=*),
+              character(len=:),
             </td>
-<td>intent(out)</td>
+<td>intent(out),</td>
               <td></td>            <td>
-              
+              allocatable
             </td>
             <td>::</td>
             <td><strong>name</strong></td>
@@ -4215,7 +4215,7 @@
             <p class="text-end">
               Documentation generated by
               <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
- on 2025-07-31T11:53:19.724291+0000             </p>
+ on 2025-08-26T19:48:47.445581+0000             </p>
           </div>
         </div>
         <br>

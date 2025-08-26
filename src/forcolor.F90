@@ -402,9 +402,9 @@ contains
 
    !===============================================================================
    !> author: Seyed Ali Ghasemi
-   elemental pure subroutine get(this, name, r,g,b, c,m,y,k, decimal, hex, h,s,v, hl,sl,vl, xyz_x,xyz_y,xyz_z)
+   pure subroutine get(this, name, r,g,b, c,m,y,k, decimal, hex, h,s,v, hl,sl,vl, xyz_x,xyz_y,xyz_z)
       class(color), intent(inout) :: this
-      character(len=*), intent(out), optional :: name
+      character(len=:), allocatable, intent(out), optional :: name
       integer(ik),  intent(out), optional :: r, g, b, c, m, y, k, decimal
       character(len=7), intent(out), optional :: hex
       real(rk),     intent(out), optional :: h, s, v, hl, sl, vl, xyz_x, xyz_y, xyz_z
@@ -454,11 +454,11 @@ contains
 
    !===============================================================================
    !> author: Seyed Ali Ghasemi
-   elemental pure subroutine get_name(this, name)
+   pure subroutine get_name(this, name)
       class(color), intent(in) :: this
-      character(len=*), intent(out) :: name
+      character(len=:), allocatable, intent(out) :: name
 
-      name = this%color_name
+      name = trim(this%color_name)
    end subroutine get_name
    !===============================================================================
 
@@ -516,9 +516,9 @@ contains
 
    !===============================================================================
    !> author: Seyed Ali Ghasemi
-   elemental pure subroutine get_hex(this, hex)
+   pure subroutine get_hex(this, hex)
       class(color), intent(in)    :: this
-      character(len=*), intent(out) :: hex
+      character(len=7), intent(out) :: hex
 
       hex = this%hex
    end subroutine get_hex
