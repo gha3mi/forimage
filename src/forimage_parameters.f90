@@ -1,5 +1,5 @@
 module forimage_parameters
-    use iso_fortran_env, only: rk=>real64, ik=>int32
+    use, intrinsic :: iso_fortran_env, only: rk=>real64, ik=>int32
     implicit none
     private
     public :: rk, ik, pi

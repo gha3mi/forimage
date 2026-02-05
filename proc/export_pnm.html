@@ -93,7 +93,7 @@
 
             <li class="list-inline-item" id="statements"><i class="fa fa-list-ol"></i>
               <a data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true"
-                 title=" 4.2% of total for procedures.">70 statements</a>
+                 title=" 4.5% of total for procedures.">78 statements</a>
             </li>
 
             <li class="list-inline-item" id="source-file">
@@ -182,7 +182,7 @@
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-this~68"></span>
+              <span class="anchor" id="variable-this~31"></span>
               class(<a href='../type/format_pnm.html'>format_pnm</a>),
             </td>
 <td>intent(inout)</td>
@@ -197,7 +197,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-file_name~4"></span>
+              <span class="anchor" id="variable-file_name~2"></span>
               character(len=*),
             </td>
 <td>intent(in)</td>
@@ -894,6 +894,8 @@ large graphs.</div>
 <span class="w">               </span><span class="n">this</span><span class="p">%</span><span class="n">magic_number</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;P2&#39;</span>
 <span class="w">             </span><span class="k">case</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;ppm&#39;</span><span class="p">)</span>
 <span class="w">               </span><span class="n">this</span><span class="p">%</span><span class="n">magic_number</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;P3&#39;</span>
+<span class="w">             </span><span class="k">case </span><span class="n">default</span>
+<span class="w">               </span><span class="k">error stop</span><span class="w"> </span><span class="s1">&#39;error: unsupported file format for ascii(plain) encoding.&#39;</span>
 <span class="w">            </span><span class="k">end select</span>
 <span class="k">          case</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;binary&#39;</span><span class="p">,</span><span class="s1">&#39;raw&#39;</span><span class="p">)</span>
 <span class="w">            </span><span class="k">select case</span><span class="w"> </span><span class="p">(</span><span class="n">this</span><span class="p">%</span><span class="n">file_format</span><span class="p">)</span>
@@ -903,8 +905,12 @@ large graphs.</div>
 <span class="w">               </span><span class="n">this</span><span class="p">%</span><span class="n">magic_number</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;P5&#39;</span>
 <span class="w">             </span><span class="k">case</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;ppm&#39;</span><span class="p">)</span>
 <span class="w">               </span><span class="n">this</span><span class="p">%</span><span class="n">magic_number</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;P6&#39;</span>
+<span class="w">             </span><span class="k">case </span><span class="n">default</span>
+<span class="w">               </span><span class="k">error stop</span><span class="w"> </span><span class="s1">&#39;error: unsupported file format for binary(raw) encoding.&#39;</span>
 <span class="w">            </span><span class="k">end select</span>
-<span class="k">         end select</span>
+<span class="k">         case </span><span class="n">default</span>
+<span class="w">            </span><span class="k">error stop</span><span class="w"> </span><span class="s1">&#39;error: unsupported encoding. Supported encodings are ascii(plain) and binary(raw).&#39;</span>
+<span class="w">         </span><span class="k">end select</span>
 <span class="k">      end if</span>
 
 <span class="k">      select case</span><span class="w"> </span><span class="p">(</span><span class="n">this</span><span class="p">%</span><span class="n">magic_number</span><span class="p">)</span>
@@ -952,6 +958,8 @@ large graphs.</div>
 <span class="w">            </span><span class="k">write</span><span class="p">(</span><span class="n">nunit</span><span class="p">)</span><span class="w"> </span><span class="nb">achar</span><span class="p">(</span><span class="n">row</span><span class="p">)</span>
 <span class="w">         </span><span class="k">end do</span>
 <span class="k">         close</span><span class="p">(</span><span class="n">nunit</span><span class="p">)</span>
+<span class="w">      </span><span class="k">case </span><span class="n">default</span>
+<span class="w">         </span><span class="k">error stop</span><span class="w"> </span><span class="s1">&#39;error: unsupported magic number. Supported magic numbers are P1, P2, P3, P4, P5, and P6.&#39;</span>
 <span class="w">      </span><span class="k">end select</span>
 <span class="k">   end subroutine </span><span class="n">export_pnm</span>
 </pre></div>
@@ -977,7 +985,7 @@ large graphs.</div>
             <p class="text-end">
               Documentation generated by
               <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
- on 2026-02-05T19:22:00.726857+0000             </p>
+ on 2026-02-05T19:49:54.837100+0000             </p>
           </div>
         </div>
         <br>
