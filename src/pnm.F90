@@ -725,7 +725,7 @@ contains
                read(nunit, iostat=iostat, pos=pos) buffer_ch
                if (iostat /= 0) error stop 'Error reading the file.'
                call this%allocate_pixels()
-               this%pixels = iachar(transpose(reshape(buffer_ch, [this%width, this%height])), kind=ik)
+               this%pixels = iachar(reshape(buffer_ch, [this%height, this%width], order=[2,1]), kind=ik)
                close(nunit)
              case ('ppm')
                open (newunit = nunit, file = file_name//'.'//file_format,&
@@ -741,7 +741,7 @@ contains
                if (iostat /= 0) error stop 'Error opening the file.'
                read(nunit,iostat=iostat, pos=pos) buffer_ch
                call this%allocate_pixels()
-               this%pixels = iachar(transpose(reshape(buffer_ch, [this%width*3, this%height])), kind=ik)
+               this%pixels = iachar(reshape(buffer_ch, [this%height, this%width*3], order=[2,1]), kind=ik)
                close(nunit)
              case default
                error stop 'Error: Invalid file format. Supported formats are pbm, pgm, and ppm.'
@@ -759,7 +759,7 @@ contains
                buffer_int = 0_ik
                read(nunit, *) buffer_int
                call this%allocate_pixels()
-               this%pixels = transpose(reshape(buffer_int, [this%width, this%height]))
+               this%pixels = reshape(buffer_int, [this%height, this%width], order=[2,1])
                close(nunit)
                call this%check_pixel_range(this%pixels)
              case ('pgm')
@@ -771,7 +771,7 @@ contains
                buffer_int = 0_ik
                read(nunit, *) buffer_int
                call this%allocate_pixels()
-               this%pixels = transpose(reshape(buffer_int, [this%width, this%height]))
+               this%pixels = reshape(buffer_int, [this%height, this%width], order=[2,1])
                call this%check_pixel_range(this%pixels)
                close(nunit)
              case ('ppm')
@@ -783,7 +783,7 @@ contains
                buffer_int = 0_ik
                read(nunit, *) buffer_int
                call this%allocate_pixels()
-               this%pixels = transpose(reshape(buffer_int, [this%width*3, this%height]))
+               this%pixels = reshape(buffer_int, [this%height, this%width*3], order=[2,1])
                call this%check_pixel_range(this%pixels)
                close(nunit)
                case default
