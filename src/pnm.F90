@@ -80,6 +80,8 @@ contains
          call average_colors(this, avg)
        case ('ppm')
          call average_colors(this, avg, avg_red, avg_green, avg_blue)
+      case default
+         error stop 'print_info: Unsupported file format.'
       end select
       call aspect_ratio(this, asp_ratio)
       call pixel_size(this, pixel_size_kb, pixel_size_mb)
@@ -100,6 +102,8 @@ contains
        case ('ppm')
          print '(a, g0)'                       , 'Max Color   : ', this%max_color
          print '(a, a, f6.2, a, f6.2, a, f6.2)', 'Average RGB : ', 'R:', avg_red, ' G:', avg_green, ' B:', avg_blue
+       case default
+         error stop 'print_info: Unsupported file format.'
       end select
       print '(a)'                           , '-------------------------------------------'
    end subroutine print_info
@@ -122,6 +126,8 @@ contains
          bytes_per_pixel = bits_per_channel
        case ('ppm')
          bytes_per_pixel = bits_per_channel*3
+      case default
+         error stop 'pixel_size: Unsupported file format.'
       end select
 
       pixel_size_kb = real(this%width*this%height * bytes_per_pixel, kind=rk) / 1024.0_rk
@@ -149,6 +155,8 @@ contains
          avg_green = sum(this%pixels(:, 2:this%width:3)) / real(this%width*this%height, kind=rk)
          avg_blue  = sum(this%pixels(:, 3:this%width:3)) / real(this%width*this%height, kind=rk)
 
+      case default
+          error stop 'average_colors: Unsupported file format.'
       end select
 
    end subroutine average_colors
@@ -213,6 +221,9 @@ contains
             end do
          end do
 
+       case default
+          error stop 'resize: Unsupported file format.'
+
       end select
 
       call this%set_height(new_height)
@@ -272,6 +283,9 @@ contains
             end do
          end do
 
+       case default
+          error stop 'crop: Unsupported file format.'
+
       end select
 
       ! Update image dimensions and pixels
@@ -305,6 +319,8 @@ contains
          call this%set_width(size(this%pixels,2))
        case ('ppm')
          call this%set_width(size(this%pixels,2)/3)
+       case default
+         error stop 'flip_vertical: Unsupported file format.'
       end select
    end subroutine flip_vertical
    !===============================================================================
@@ -332,6 +348,9 @@ contains
 
          call this%check_pixel_range(this%pixels)
 
+       case default
+         error stop 'flip_horizontal: Unsupported file format.'
+
       end select
 
       call this%set_height(size(this%pixels,1))
@@ -341,6 +360,8 @@ contains
          call this%set_width(size(this%pixels,2))
        case ('ppm')
          call this%set_width(size(this%pixels,2)/3)
+       case default
+         error stop 'flip_horizontal: Unsupported file format.'
       end select
 
    end subroutine flip_horizontal
@@ -396,6 +417,8 @@ contains
                   rotated_pixels(this%width-j+1, i) = this%pixels(i, j)
                end do
             end do
+          case default
+             error stop "Invalid rotation angle. Valid angles are 90, 180, 270, -90, -180, -270."
          end select
 
        case ('ppm')
@@ -423,7 +446,12 @@ contains
                   rotated_pixels(this%width-j+1, 3*i-2:3*i) = this%pixels(i, 3*j-2:3*j)
                end do
             end do
+          case default
+              error stop "Invalid rotation angle. Valid angles are 90, 180, 270, -90, -180, -270."
          end select
+
+       case default
+          error stop 'rotate: Unsupported file format.'
 
       end select
 
@@ -571,6 +599,8 @@ contains
          error stop 'brighten: This function is not supported for pbm files.'
        case ('pgm', 'ppm')
          call this%set_pixels(min(this%max_color, max(0, this%pixels + factor)))
+       case default
+         error stop 'brighten: Unsupported file format.'
       end select
    end subroutine brighten
    !===============================================================================
@@ -713,6 +743,8 @@ contains
                call this%allocate_pixels()
                this%pixels = iachar(transpose(reshape(buffer_ch, [this%width*3, this%height])), kind=ik)
                close(nunit)
+             case default
+               error stop 'Error: Invalid file format. Supported formats are pbm, pgm, and ppm.'
             end select
 
           case ('ascii','plain')
@@ -754,7 +786,12 @@ contains
                this%pixels = transpose(reshape(buffer_int, [this%width*3, this%height]))
                call this%check_pixel_range(this%pixels)
                close(nunit)
+               case default
+               error stop 'Error: Invalid file format. Supported formats are pbm, pgm, and ppm.'
             end select
+
+          case default
+             error stop 'Error: Invalid encoding. Supported encodings are ascii(plain) and binary(raw).'
 
          end select
 
@@ -792,6 +829,8 @@ contains
             magic_number = 'P2'
           case ('ppm')
             magic_number = 'P3'
+          case default
+            error stop 'set_pnm: Invalid file format for ascii(plain) encoding.'
          end select
        case ('binary','raw')
          select case (this%file_format)
@@ -801,7 +840,11 @@ contains
             magic_number = 'P5'
           case ('ppm')
             magic_number = 'P6'
+          case default
+            error stop 'set_pnm: Invalid file format for binary(raw) encoding.'
          end select
+         case default
+            error stop 'set_pnm: Invalid encoding. Valid encodings are ascii(plain) and binary(raw).'
       end select
 
       call this%set_header(magic_number,width,height,comment,max_color)
@@ -830,6 +873,8 @@ contains
          if (.not.allocated(this%pixels)) allocate(this%pixels(this%height, this%width))
        case('P6')
          if (.not.allocated(this%pixels)) allocate(this%pixels(this%height, 3*this%width))
+       case default
+         error stop 'allocate_pixels: Invalid magic number. Valid magic numbers are P1, P2, P3, P4, P5, and P6.'
       end select
    end subroutine allocate_pixels
    !===============================================================================
@@ -935,6 +980,8 @@ contains
        case ('ppm')
          if (maxval(pixels) > this%max_color .or. minval(pixels) < 0)&
          error stop 'set_pixels: Invalid pixel values. Valid values are between 0 and max_color.'
+       case default
+         error stop 'check_pixel_range: Invalid file format. Valid file formats are pbm, pgm, and ppm.'
       end select
    end subroutine check_pixel_range
    !===============================================================================
@@ -973,6 +1020,8 @@ contains
          this%pixels(i,3*j-2) = r
          this%pixels(i,3*j-1) = g
          this%pixels(i,3*j-0) = b
+       case default
+         error stop 'set_pixel_b: Invalid magic number. Valid magic numbers are P1, P2, and P3.'
       end select
    end subroutine set_pixel_b
    !===============================================================================
@@ -1003,6 +1052,8 @@ contains
                this%magic_number = 'P2'
              case ('ppm')
                this%magic_number = 'P3'
+             case default
+               error stop 'error: unsupported file format for ascii(plain) encoding.'
             end select
           case ('binary','raw')
             select case (this%file_format)
@@ -1012,7 +1063,11 @@ contains
                this%magic_number = 'P5'
              case ('ppm')
                this%magic_number = 'P6'
+             case default
+               error stop 'error: unsupported file format for binary(raw) encoding.'
             end select
+         case default
+            error stop 'error: unsupported encoding. Supported encodings are ascii(plain) and binary(raw).'
          end select
       end if
 
@@ -1061,6 +1116,8 @@ contains
             write(nunit) achar(row)
          end do
          close(nunit)
+      case default
+         error stop 'error: unsupported magic number. Supported magic numbers are P1, P2, P3, P4, P5, and P6.'
       end select
    end subroutine export_pnm
    !===============================================================================

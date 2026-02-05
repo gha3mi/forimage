@@ -730,6 +730,9 @@ contains
          call rgb_to_hsv(this%r, this%g, this%b, this%h, this%s, this%v)
          call rgb_to_hsl(this%r, this%g, this%b, this%hl, this%sl, this%vl)
 
+       case default
+         error stop "Unsupported conversion type."
+
       end select
    end subroutine convert
    !===============================================================================
@@ -1023,6 +1026,8 @@ contains
          r1 = c
          g1 = 0.0_rk
          b1 = x
+       case default
+         error stop "Invalid hue value in hsl_to_rgb"
       end select
 
       m = ln - c / 2.0_rk
