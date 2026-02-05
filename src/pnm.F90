@@ -115,7 +115,7 @@ contains
    !> license: BSD 3-Clause
    !> Calculates imgae size in KB and MB. Required for `print_info` method.
    elemental pure subroutine pixel_size(this, pixel_size_kb, pixel_size_mb)
-      class(format_pnm), intent(in) :: this
+      type(format_pnm), intent(in) :: this
       real(rk), intent(out) :: pixel_size_kb, pixel_size_mb
       integer :: bits_per_channel, bytes_per_pixel
 
@@ -141,7 +141,7 @@ contains
    !> license: BSD 3-Clause
    !> Calculates the average color values of the image. Required for `print_info` method.
    elemental pure subroutine average_colors(this, avg, avg_red, avg_green, avg_blue)
-      class(format_pnm), intent(in) :: this
+      type(format_pnm), intent(in) :: this
       real(rk), intent(out), optional :: avg_red, avg_green, avg_blue, avg
 
       select case (this%file_format)
@@ -168,7 +168,7 @@ contains
    !> license: BSD 3-Clause
    !> Calculates the aspect ratio of the image. Required for `print_info` method.
    elemental pure subroutine aspect_ratio(this, ratio)
-      class(format_pnm), intent(in) :: this
+      type(format_pnm), intent(in) :: this
       real(rk), intent(out) :: ratio
       ratio = real(this%width, kind=rk) / real(this%height, kind=rk)
    end subroutine aspect_ratio
@@ -1158,7 +1158,7 @@ contains
    !> license: BSD 3-Clause
    !> Reads the header of the PNM image from a file. Required before reading the pixels from the file.
    impure subroutine read_header(this, nunit, pos)
-      class(format_pnm), intent(inout) :: this
+      type(format_pnm), intent(inout) :: this
       integer, intent(in)           :: nunit
       integer, intent(out)          :: pos
       character(len=70) :: comment
@@ -1197,7 +1197,7 @@ contains
    !> license: BSD 3-Clause
    !> Packs pixel bits into characters to create the binary representation for PBM images.
    pure function encode_binary_pbm_pixels(this) result(packed_data)
-      class(format_pnm), intent(in) :: this
+      type(format_pnm), intent(in) :: this
       character(len=1), allocatable :: packed_data(:)
       integer, allocatable :: temp(:)
       integer :: row, col, nbytes
@@ -1221,7 +1221,7 @@ contains
    !> license: BSD 3-Clause
    !> Unpacks binary data from a character buffer into the image's pixel array.
    pure subroutine decode_binary_pbm_pixels(this, buffer)
-      class(format_pnm), intent(inout) :: this
+      type(format_pnm), intent(inout) :: this
       character(len=1), intent(in) :: buffer(:)
       integer :: row, col, nbytes
 
