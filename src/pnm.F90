@@ -1082,7 +1082,11 @@ contains
          open (newunit = nunit, file = file_name//'.'//this%file_format,&
          status='old', iostat=iostat, form='formatted', action='write', position='append')
          if (iostat /= 0) error stop 'Error opening the file.'
-         write(nunit, '(*(g0,1x))', advance='no') transpose(this%pixels)
+         allocate(row(size(this%pixels, 2)))
+         do i = 1, size(this%pixels, 1)
+            row = this%pixels(i,:)
+            write(nunit, '(*(g0,1x))', advance='no') row
+         end do
          close(nunit)
        case ('P4')
          open (newunit = nunit, file = file_name//'.'//this%file_format,&
