@@ -989,6 +989,7 @@ contains
       integer                                     :: nunit
       integer                                     :: iostat
       integer                                     :: i
+      integer(ik), allocatable                    :: row(:)
 
       if (present(encoding)) then
          call this%set_format(encoding)
@@ -1039,7 +1040,11 @@ contains
          status='old', iostat=iostat, access='stream', form='unformatted', action='write', position='append')
          if (iostat /= 0) error stop 'Error opening the file.'
          write(nunit) encode_binary_pbm_pixels(this)
-         write(nunit) transpose(achar(this%pixels))
+         allocate(row(size(this%pixels, 2)))
+         do i = 1, size(this%pixels, 1)
+            row = this%pixels(i,:)
+            write(nunit) achar(row)
+         end do
          close(nunit)
       case('P5', 'P6')
          open (newunit = nunit, file = file_name//'.'//this%file_format,&
@@ -1050,8 +1055,10 @@ contains
          open (newunit = nunit, file = file_name//'.'//this%file_format,&
          status='old', iostat=iostat, access='stream', form='unformatted', action='write', position='append')
          if (iostat /= 0) error stop 'Error opening the file.'
+         allocate(row(size(this%pixels, 2)))
          do i = 1, size(this%pixels, 1)
-            write(nunit) achar(this%pixels(i,:))
+            row = this%pixels(i,:)
+            write(nunit) achar(row)
          end do
          close(nunit)
       end select
