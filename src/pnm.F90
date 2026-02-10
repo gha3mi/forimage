@@ -240,48 +240,29 @@ contains
    elemental pure subroutine crop(this, start_row, end_row, start_col, end_col)
       class(format_pnm), intent(inout)         :: this
       integer,           intent(in)            :: start_row, end_row, start_col, end_col
-      integer                                  :: cropped_start_row, cropped_end_row, cropped_start_col, cropped_end_col
+      integer                                  :: r1, r2, c1, c2
       integer(ik), dimension(:,:), allocatable :: cropped_pixels
-      integer                                  :: i, j, cropped_height, cropped_width
+      integer                                  :: cropped_height, cropped_width
 
       ! Check if the cropping coordinates are within the image boundaries
-      cropped_start_row = max(1, start_row)
-      cropped_end_row   = min(this%height, end_row)
-      cropped_start_col = max(1, start_col)
-      cropped_end_col   = min(this%width, end_col)
+      r1 = max(1, start_row)
+      r2 = min(this%height, end_row)
+      c1 = max(1, start_col)
+      c2 = min(this%width, end_col)
 
       ! Calculate the dimensions of the cropped image
-      cropped_height = cropped_end_row - cropped_start_row + 1
-      cropped_width  = cropped_end_col - cropped_start_col + 1
+      cropped_height = r2 - r1 + 1
+      cropped_width  = c2 - c1 + 1
 
       select case (this%file_format)
        case ('pbm', 'pgm')
-
-         ! Allocate memory for cropped image pixels
          allocate(cropped_pixels(cropped_height, cropped_width))
-
-         ! Copy the cropped pixels to the new array
-         do i = 1, cropped_height
-            do j = 1, cropped_width
-               cropped_pixels(i, j) = this%pixels(cropped_start_row-1+i, (cropped_start_col-1)+j)
-            end do
-         end do
-
+         cropped_pixels = this%pixels(r1:r2, c1:c2)
        case ('ppm')
-
-         ! Allocate memory for cropped image pixels
          allocate(cropped_pixels(cropped_height, 3*cropped_width))
-
-         ! Copy the cropped pixels to the new array
-         do i = 1, cropped_height
-            do j = 1, 3*cropped_width
-               cropped_pixels(i, j) = this%pixels(cropped_start_row-1+i, (cropped_start_col-1)*3+j)
-            end do
-         end do
-
+         cropped_pixels = this%pixels(r1:r2, 3*(c1-1)+1 : 3*c2)
        case default
           error stop 'crop: Unsupported file format.'
-
       end select
 
       ! Update image dimensions and pixels
