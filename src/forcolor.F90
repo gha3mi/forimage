@@ -70,22 +70,22 @@ contains
 
       allocate(colors(14))
 
-      call colors(1)%set( name='red',           r=255_ik,    g=0_ik,      b=0_ik)
-      call colors(2)%set( name='green',         r=0_ik,      g=128_ik,    b=0_ik)
-      call colors(3)%set( name='blue',          r=0_ik,      g=0_ik,      b=255_ik)
-      call colors(4)%set( name='yellow',        r=255_ik,    g=255_ik,    b=0_ik)
-      call colors(5)%set( name='cyan',          r=0_ik,      g=255_ik,    b=255_ik)
-      call colors(6)%set( name='magenta',       r=255_ik,    g=0_ik,      b=255_ik)
-      call colors(7)%set( name='black',         r=0_ik,      g=0_ik,      b=0_ik)
-      call colors(8)%set( name='white',         r=255_ik,    g=255_ik,    b=255_ik)
-      call colors(9)%set( name='gray',          r=128_ik,    g=128_ik,    b=128_ik)
-      call colors(10)%set(name='brown',         r=165_ik,    g=42_ik,     b=42_ik)
-      call colors(11)%set(name='orange',        r=255_ik,    g=165_ik,    b=0_ik)
-      call colors(12)%set(name='gold',          r=255_ik,    g=215_ik,    b=0_ik)
-      call colors(13)%set(name='pink',          r=255_ik,    g=192_ik,    b=203_ik)
-      call colors(14)%set(name='violet',        r=138_ik,    g=43_ik,     b=226_ik)
+      colors(1)%color_name  = 'red'    ; colors(1)%r  = 255_ik ; colors(1)%g  =   0_ik ; colors(1)%b  =   0_ik
+      colors(2)%color_name  = 'green'  ; colors(2)%r  =   0_ik ; colors(2)%g  = 128_ik ; colors(2)%b  =   0_ik
+      colors(3)%color_name  = 'blue'   ; colors(3)%r  =   0_ik ; colors(3)%g  =   0_ik ; colors(3)%b  = 255_ik
+      colors(4)%color_name  = 'yellow' ; colors(4)%r  = 255_ik ; colors(4)%g  = 255_ik ; colors(4)%b  =   0_ik
+      colors(5)%color_name  = 'cyan'   ; colors(5)%r  =   0_ik ; colors(5)%g  = 255_ik ; colors(5)%b  = 255_ik
+      colors(6)%color_name  = 'magenta'; colors(6)%r  = 255_ik ; colors(6)%g  =   0_ik ; colors(6)%b  = 255_ik
+      colors(7)%color_name  = 'black'  ; colors(7)%r  =   0_ik ; colors(7)%g  =   0_ik ; colors(7)%b  =   0_ik
+      colors(8)%color_name  = 'white'  ; colors(8)%r  = 255_ik ; colors(8)%g  = 255_ik ; colors(8)%b  = 255_ik
+      colors(9)%color_name  = 'gray'   ; colors(9)%r  = 128_ik ; colors(9)%g  = 128_ik ; colors(9)%b  = 128_ik
+      colors(10)%color_name = 'brown'  ; colors(10)%r = 165_ik ; colors(10)%g =  42_ik ; colors(10)%b =  42_ik
+      colors(11)%color_name = 'orange' ; colors(11)%r = 255_ik ; colors(11)%g = 165_ik ; colors(11)%b =   0_ik
+      colors(12)%color_name = 'gold'   ; colors(12)%r = 255_ik ; colors(12)%g = 215_ik ; colors(12)%b =   0_ik
+      colors(13)%color_name = 'pink'   ; colors(13)%r = 255_ik ; colors(13)%g = 192_ik ; colors(13)%b = 203_ik
+      colors(14)%color_name = 'violet' ; colors(14)%r = 138_ik ; colors(14)%g =  43_ik ; colors(14)%b = 226_ik
 
-      call colors(1:14)%convert('rgb2all')
+      call colors(:)%convert('rgb2all')
    end subroutine initialize_colors
    !===============================================================================
 
