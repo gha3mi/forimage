@@ -177,7 +177,7 @@ program example26
    ! Check the values
    call check(tol, name, r, g, b, hex, decimal, c, m, y, k, h, s, v, hl, sl, vl, xyz_x, xyz_y, xyz_z)
 
-
+   if (allocated(name)) deallocate(name)
 
 contains
 
