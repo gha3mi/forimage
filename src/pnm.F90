@@ -228,11 +228,7 @@ contains
 
       call this%set_height(new_height)
       call this%set_width(new_width)
-      deallocate(this%pixels)
-      call this%allocate_pixels()
-      call this%set_pixels(resized_pixels)
-
-      deallocate(resized_pixels)
+      call move_alloc(resized_pixels, this%pixels)
    end subroutine resize
    !===============================================================================
 
@@ -291,13 +287,7 @@ contains
       ! Update image dimensions and pixels
       call this%set_height(cropped_height)
       call this%set_width(cropped_width)
-      deallocate(this%pixels)
-      call this%allocate_pixels()
-
-      call this%set_pixels(cropped_pixels)
-
-      ! Deallocate temporary array
-      deallocate(cropped_pixels)
+      call move_alloc(cropped_pixels, this%pixels)
    end subroutine crop
    !===============================================================================
 
@@ -458,15 +448,7 @@ contains
       ! Update height and width of the image
       call this%set_height(target_height)
       call this%set_width(target_width)
-
-      deallocate(this%pixels)
-      call this%allocate_pixels()
-
-      ! Update the original pixels with rotated pixels
-      call this%set_pixels(rotated_pixels)
-
-      ! Deallocate rotated_pixels array
-      deallocate(rotated_pixels)
+      call move_alloc(rotated_pixels, this%pixels)
    end subroutine rotate
    !===============================================================================
 
