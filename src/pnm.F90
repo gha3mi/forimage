@@ -1048,7 +1048,7 @@ contains
          allocate(row(size(this%pixels, 2)))
          do i = 1, size(this%pixels, 1)
             row = this%pixels(i,:)
-            write(nunit, '(*(g0,1x))', advance='no') row
+            write(nunit, '(*(g0,1x))', advance='yes') row
          end do
          close(nunit)
        case ('P4')
