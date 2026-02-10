@@ -151,9 +151,9 @@ contains
 
        case ('ppm')
 
-         avg_red   = sum(this%pixels(:, 1:this%width:3)) / real(this%width*this%height, kind=rk)
-         avg_green = sum(this%pixels(:, 2:this%width:3)) / real(this%width*this%height, kind=rk)
-         avg_blue  = sum(this%pixels(:, 3:this%width:3)) / real(this%width*this%height, kind=rk)
+         avg_red   = sum(this%pixels(:, 1:3*this%width:3)) / real(this%width*this%height, kind=rk)
+         avg_green = sum(this%pixels(:, 2:3*this%width:3)) / real(this%width*this%height, kind=rk)
+         avg_blue  = sum(this%pixels(:, 3:3*this%width:3)) / real(this%width*this%height, kind=rk)
 
       case default
           error stop 'average_colors: Unsupported file format.'
