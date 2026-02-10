@@ -1126,33 +1126,63 @@ contains
    !> Reads the header of the PNM image from a file. Required before reading the pixels from the file.
    impure subroutine read_header(this, nunit, pos)
       type(format_pnm), intent(inout) :: this
-      integer, intent(in)           :: nunit
-      integer, intent(out)          :: pos
-      character(len=70) :: comment
-      character :: temp
-      integer :: i, k
+      integer,          intent(in)    :: nunit
+      integer,          intent(out)   :: pos
 
-      read(nunit,*)
-      k = 0
-      do
-         read(nunit,'(a)') temp
-         if (temp /= '#') exit
-         k = k + 1
-      end do
-      inquire(nunit, pos=pos)
+      character(len=256) :: line
+      integer            :: iostat
+      logical            :: have_dims
 
-      rewind(nunit)
-      read(nunit,*) this%magic_number
+      read(nunit,'(a)', iostat=iostat) line
+      if (iostat /= 0) error stop 'read_header: failed to read magic number.'
+      this%magic_number = adjustl(line(1:min(len_trim(line), len(this%magic_number))))
+
       this%comment = ''
-      do i = 1, k
-         read(nunit,'(a,a,a)') temp, temp, comment
-         this%comment = this%comment//comment
+      have_dims = .false.
+
+      do
+         inquire(nunit, pos=pos)
+         read(nunit,'(a)', iostat=iostat) line
+         if (iostat /= 0) error stop 'read_header: unexpected EOF in header.'
+
+         line = adjustl(line)
+
+         if (len_trim(line) == 0) cycle
+
+         if (line(1:1) == '#') then
+            if (len_trim(this%comment) > 0) this%comment = this%comment//' '
+            if (len_trim(line) >= 2) then
+               if (line(2:2) == ' ') then
+                  this%comment = this%comment//trim(line(3:))
+               else
+                  this%comment = this%comment//trim(line(2:))
+               end if
+            end if
+            cycle
+         end if
+
+         read(line, *, iostat=iostat) this%width, this%height
+         if (iostat /= 0) error stop 'read_header: failed to parse width/height.'
+         have_dims = .true.
+         exit
       end do
-      read(nunit,*) this%width, this%height
+
+      if (.not. have_dims) error stop 'read_header: missing width/height.'
+
       inquire(nunit, pos=pos)
 
       if (this%file_format == 'pgm' .or. this%file_format == 'ppm') then
-         read(nunit,*) this%max_color
+         do
+            inquire(nunit, pos=pos)
+            read(nunit,'(a)', iostat=iostat) line
+            if (iostat /= 0) error stop 'read_header: unexpected EOF reading max_color.'
+            line = adjustl(line)
+            if (len_trim(line) == 0) cycle
+            if (line(1:1) == '#') cycle
+            read(line, *, iostat=iostat) this%max_color
+            if (iostat /= 0) error stop 'read_header: failed to parse max_color.'
+            exit
+         end do
          inquire(nunit, pos=pos)
       end if
    end subroutine read_header
