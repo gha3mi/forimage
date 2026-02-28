@@ -147,13 +147,17 @@ Note: The executable must be run from the forimage directory.
 ## Status
 
 <!-- STATUS:setup-fortran-conda:START -->
-| Compiler   | macos | ubuntu | windows |
-|------------|----------------------|----------------------|----------------------|
-| `flang-new` | - | fpm ✅  cmake ✅ | fpm ❌  cmake ❌ |
-| `gfortran` | fpm ✅  cmake ✅ | fpm ✅  cmake ✅ | fpm ✅  cmake ✅ |
-| `ifx` | - | fpm ✅  cmake ✅ | fpm ✅  cmake ✅ |
-| `lfortran` | fpm ❌  cmake ❌ | fpm ❌  cmake ❌ | fpm ❌  cmake ❌ |
-| `nvfortran` | - | fpm ✅  cmake ✅ | - |
+
+| OS | Compiler | Version | fpm | cmake |
+| --- | --- | ---: | :---: | :---: |
+| ubuntu 24.04 | `flang-new` | 21.1.8 | 0.13.0 ✅ | 4.2.3 ✅ |
+| ubuntu 24.04 | `gfortran` | 15.2.0 | 0.13.0 ✅ | 4.2.3 ✅ |
+| ubuntu 24.04 | `ifx` | 2025.3.2 | 0.13.0 ✅ | 4.2.3 ✅ |
+| ubuntu 24.04 | `nvfortran` | 26.1 | 0.13.0 ✅ | 4.2.3 ✅ |
+| macos 15 | `gfortran` | 15.2.0 | 0.13.0 ✅ | 4.2.3 ✅ |
+| windows 2025 | `gfortran` | 15.2.0 | 0.13.0 ✅ | 4.2.3 ✅ |
+| windows 2025 | `ifx` | 2025.3.2 | 0.12.0 ✅ | 4.2.3 ✅ |
+
 <!-- STATUS:setup-fortran-conda:END -->
 
 ## Projects Utilizing ForImage
