@@ -150,13 +150,13 @@ Note: The executable must be run from the forimage directory.
 
 | OS | Compiler | Version | fpm | cmake |
 | --- | --- | ---: | :---: | :---: |
-| ubuntu 24.04 | `flang-new` | 21.1.8 | 0.13.0 ✅ | 4.2.3 ✅ |
-| ubuntu 24.04 | `gfortran` | 15.2.0 | 0.13.0 ✅ | 4.2.3 ✅ |
-| ubuntu 24.04 | `ifx` | 2025.3.2 | 0.13.0 ✅ | 4.2.3 ✅ |
-| ubuntu 24.04 | `nvfortran` | 26.1 | 0.13.0 ✅ | 4.2.3 ✅ |
-| macos 15 | `gfortran` | 15.2.0 | 0.13.0 ✅ | 4.2.3 ✅ |
-| windows 2025 | `gfortran` | 15.2.0 | 0.13.0 ✅ | 4.2.3 ✅ |
-| windows 2025 | `ifx` | 2025.3.2 | 0.12.0 ✅ | 4.2.3 ✅ |
+| ubuntu 24.04 | `flang-new` | 22.1.0 | 0.13.0 ✅ | 4.3.0 ✅ |
+| ubuntu 24.04 | `gfortran` | 15.2.0 | 0.13.0 ✅ | 4.3.0 ✅ |
+| ubuntu 24.04 | `ifx` | 2025.3.2 | 0.13.0 ✅ | 4.3.0 ✅ |
+| ubuntu 24.04 | `nvfortran` | 26.1 | 0.13.0 ✅ | 4.3.0 ✅ |
+| macos 15 | `gfortran` | 15.2.0 | 0.13.0 ✅ | 4.3.0 ✅ |
+| windows 2025 | `gfortran` | 15.2.0 | 0.13.0 ✅ | 4.3.0 ✅ |
+| windows 2025 | `ifx` | 2025.3.2 | 0.12.0 ✅ | 4.3.0 ✅ |
 
 <!-- STATUS:setup-fortran-conda:END -->
 
