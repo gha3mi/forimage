@@ -26,13 +26,13 @@ jobs:
         - {os: ubuntu-latest,  compiler: ifx      }
         - {os: ubuntu-latest,  compiler: flang-new}
         - {os: ubuntu-latest,  compiler: nvfortran}
-        # - {os: ubuntu-latest,  compiler: lfortran, fpm-version: "0.12.0"}
+        - {os: ubuntu-latest,  compiler: lfortran, fpm-version: "0.12.0"}
         - {os: windows-latest, compiler: gfortran }
         - {os: windows-latest, compiler: ifx,      fpm-version: "0.12.0"}
         # - {os: windows-latest, compiler: flang-new}
-        # - {os: windows-latest, compiler: lfortran, fpm-version: "0.12.0"}
+        - {os: windows-latest, compiler: lfortran, fpm-version: "0.12.0"}
         - {os: macos-latest,   compiler: gfortran }
-        # - {os: macos-latest,   compiler: lfortran, fpm-version: "0.12.0"}
+        - {os: macos-latest,   compiler: lfortran, fpm-version: "0.12.0"}
 
     steps:
       - name: Setup Fortran
@@ -61,13 +61,13 @@ jobs:
         - {os: ubuntu-latest,  compiler: ifx      }
         - {os: ubuntu-latest,  compiler: flang-new}
         - {os: ubuntu-latest,  compiler: nvfortran}
-        # - {os: ubuntu-latest,  compiler: lfortran }
+        - {os: ubuntu-latest,  compiler: lfortran }
         - {os: windows-latest, compiler: gfortran }
         - {os: windows-latest, compiler: ifx      }
         # - {os: windows-latest, compiler: flang-new}
-        # - {os: windows-latest, compiler: lfortran }
+        - {os: windows-latest, compiler: lfortran }
         - {os: macos-latest,   compiler: gfortran }
-        # - {os: macos-latest,   compiler: lfortran }
+        - {os: macos-latest,   compiler: lfortran }
 
     steps:
       - name: Setup Fortran
