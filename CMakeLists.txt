@@ -30,7 +30,7 @@ set(PROJECT_INCLUDE_DIR ${PROJECT_BINARY_DIR}/include)
 
 # Build
 add_subdirectory(src)
-add_fortran_library(
+forimage_add_fortran_library(
   ${PROJECT_NAME}
   ${PROJECT_INCLUDE_DIR}
   ${CMAKE_INSTALL_INCLUDEDIR}
