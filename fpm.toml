@@ -5,7 +5,7 @@ license    = "BSD 3-Clause License"
 author     = "Seyed Ali Ghasemi"
 maintainer = "info@gha3mi.com"
 homepage   = "https://github.com/gha3mi/forimage"
-copyright  = "Copyright 2023-2025, Seyed Ali Ghasemi"
+copyright  = "Copyright 2023-2026, Seyed Ali Ghasemi"
 categories = ["graphics"]
 keywords   = ["Fortran", "image", "pnm", "ppm", "pgm", "pbm", "colors"]
 
@@ -185,7 +185,7 @@ main       = "test29.f90"
 [extra.ford]
 project             = "ForImage"
 summary             = "A Fortran library for processing and editing images and managing colors"
-year                = "2023-2025"
+year                = "2023-2026"
 project_github      = "https://github.com/gha3mi/forimage"
 author              = "Seyed Ali Ghasemi"
 email               = "info@gha3mi.com"
